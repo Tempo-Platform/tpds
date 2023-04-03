@@ -1,0 +1,96 @@
+{
+  "name": "TPDS",
+  "description": "TPDS - The Tempo Platform Design System",
+  "homepage": "https://github.com/Tempo-Platform/tpds",
+  "version": "0.0.1",
+  "babelMacros": {
+    "twin": {
+      "preset": "styled-components"
+    }
+  },
+  "scripts": {
+    "develop": "gatsby develop",
+    "develop-m": "gatsby develop -H 0.0.0.0 -p 8000",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "publish_patch": "npm run build_module_and_publish_patch",
+    "publish_minor": "npm run build_module_and_publish_minor",
+    "publish_major": "npm run build_module_and_publish_major",
+    "publish_patch_and_commit": "npm run build_module_and_publish_patch && npm run commit",
+    "publish_minor_and_commit": "npm run build_module_and_publish_minor && npm run commit",
+    "publish_major_and_commit": "npm run build_module_and_publish_major && npm run commit",
+    "build_module_and_publish_patch": "npm version --no-git-tag-version patch && yarn && yarn pull-tokens && rm -rf ./npm_module/_dist && yarn packindex && yarn pack_categories && cd npm_module && npm version --no-git-tag-version patch && npm publish",
+    "build_module_and_publish_minor": "npm version --no-git-tag-version minor && yarn && yarn pull-tokens && rm -rf ./npm_module/_dist && yarn packindex && yarn pack_categories && cd npm_module && npm version --no-git-tag-version minor && npm publish",
+    "build_module_and_publish_major": "npm version --no-git-tag-version major && yarn && yarn pull-tokens && rm -rf ./npm_module/_dist && yarn packindex && yarn pack_categories && cd npm_module && npm version --no-git-tag-version major && npm publish",
+    "commit": "git add . && git commit -m 'Update NPM module to '$npm_package_version",
+    "pack_categories": "yarn packcomponents && yarn packelements && yarn packconstants && yarn packsystem && yarn packtokens && yarn packassets",
+    "packindex": "babel ./tpds/index.js --out-file ./npm_module/_dist/index.js",
+    "packelements": "babel ./tpds/elements/**/**/**/** -d ./npm_module/_dist/elements && rm ./npm_module/_dist/elements/*.*",
+    "packconstants": "babel ./tpds/constants/**/**/**/** -d ./npm_module/_dist/constants && rm ./npm_module/_dist/constants/*.*",
+    "packcomponents": "babel ./tpds/components/**/**/**/** -d ./npm_module/_dist/components && rm ./npm_module/_dist/components/*.*",
+    "packsystem": "babel ./tpds/system/**/**/**/** -d ./npm_module/_dist/system",
+    "packtokens": "mkdir -p ./npm_module/_dist && mkdir -p ./npm_module/_dist/tokens && cp ./tpds/tokens/index.json ./npm_module/_dist/tokens",
+    "packassets": "yarn packsvgs && yarn packfonts",
+    "packsvgs": "babel ./tpds/assets/svgs/**/**/** -d ./npm_module/_dist/assets/svgs && rm ./npm_module/_dist/assets/svgs/*.*",
+    "packfonts": "copyfiles -u 2 ./tpds/assets/fonts/**/**/*.* ./npm_module/_dist/assets/",
+    "pull-tokens": "node ./scripts/getFigmaTokens.js"
+  },
+  "keywords": [
+    "hummingbot",
+    "ui",
+    "library",
+    "design",
+    "system",
+    "react",
+    "tailwind",
+    "twin.macro"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tempo-Platform/tpds/issues"
+  },
+  "dependencies": {
+    "@babel/core": "^7.13.8",
+    "@headlessui/react": "^1.7.4",
+    "@heroicons/react": "v1",
+    "copy-webpack-plugin": "^10.2.4",
+    "gatsby": "^5.0.1",
+    "gatsby-plugin-manifest": "^5.0.0",
+    "gatsby-plugin-styled-components": "^6.0.0",
+    "lodash": "^4.17.21",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-refresh": "^0.14.0",
+    "react-syntax-highlighter": "^15.5.0",
+    "shx": "^0.3.4",
+    "styled-components": "^5.3.3",
+    "twin.macro": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/plugin-proposal-export-default-from": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "axios": "^1.1.3",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-styled-components": "^2.0.7",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.4",
+    "babel-plugin-twin": "^1.0.2",
+    "color": "^4.2.3",
+    "copyfiles": "^2.4.1",
+    "css-loader": "^6.7.1",
+    "dotenv": "^16.0.3",
+    "file-loader": "^6.2.0",
+    "tailwindcss": "^3.2.2",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "volta": {
+    "node": "18.14.0"
+  }
+}

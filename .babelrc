@@ -1,0 +1,24 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    [
+      "babel-preset-gatsby",
+      {
+        "targets": {
+          "browsers": [
+            ">0.25%",
+            "not dead"
+          ]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "babel-plugin-macros",
+    "babel-plugin-styled-components",
+    "@babel/plugin-syntax-jsx",
+    ["@babel/plugin-proposal-private-methods", { "loose": true }],
+    ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+  ]
+}
