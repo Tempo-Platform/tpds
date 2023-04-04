@@ -65,25 +65,25 @@ function ArrowUpIcon(_ref4) {
 }
 var _StyledPath = (0, _styledComponents["default"])("path").withConfig({
   displayName: "arrows___StyledPath",
-  componentId: "sc-1p3qrjs-0"
+  componentId: "sc-135jk6v-0"
 })({
   "fill": "currentColor"
 });
 var _StyledPath2 = (0, _styledComponents["default"])("path").withConfig({
   displayName: "arrows___StyledPath2",
-  componentId: "sc-1p3qrjs-1"
+  componentId: "sc-135jk6v-1"
 })({
   "fill": "currentColor"
 });
 var _StyledPath3 = (0, _styledComponents["default"])("path").withConfig({
   displayName: "arrows___StyledPath3",
-  componentId: "sc-1p3qrjs-2"
+  componentId: "sc-135jk6v-2"
 })({
   "fill": "currentColor"
 });
 var _StyledPath4 = (0, _styledComponents["default"])("path").withConfig({
   displayName: "arrows___StyledPath4",
-  componentId: "sc-1p3qrjs-3"
+  componentId: "sc-135jk6v-3"
 })({
   "fill": "currentColor"
 });

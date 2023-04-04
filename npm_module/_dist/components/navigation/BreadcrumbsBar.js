@@ -51,7 +51,7 @@ var _default = BreadcrumbsBar;
 exports["default"] = _default;
 var BreadcrumbsBarRoot = _styledComponents["default"].div.withConfig({
   displayName: "BreadcrumbsBar__BreadcrumbsBarRoot",
-  componentId: "sc-1yf3xco-0"
+  componentId: "sc-1ooa3yw-0"
 })(function (_ref2) {
   var isUppercase = _ref2.isUppercase,
     isDisabled = _ref2.isDisabled;
@@ -72,11 +72,7 @@ var BreadcrumbsBarRoot = _styledComponents["default"].div.withConfig({
     "borderColor": "var(--border-body)"
   }, (0, _styledComponents.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n    a.active {\n      ", "\n    }\n    .home-icon {\n      ", "\n    }\n    .divider {\n      ", "\n      display: inline;\n      line-height: 100%;\n    }\n    .inner-chevron-right, .divider {\n      ", "\n    }\n  "])), {
     "--tw-text-opacity": "1",
-    "color": "rgb(0 194 206 / var(--tw-text-opacity))",
-    ".dark &": {
-      "--tw-text-opacity": "1",
-      "color": "rgb(95 255 215 / var(--tw-text-opacity))"
-    }
+    "color": "rgb(0 194 206 / var(--tw-text-opacity))"
   }, {
     "position": "relative",
     "top": "-1px"
@@ -90,7 +86,7 @@ var BreadcrumbsBarRoot = _styledComponents["default"].div.withConfig({
 });
 var LinksRow = _styledComponents["default"].div.withConfig({
   displayName: "BreadcrumbsBar__LinksRow",
-  componentId: "sc-1yf3xco-1"
+  componentId: "sc-1ooa3yw-1"
 })(function () {
   return [{
     "display": "flex",
@@ -112,21 +108,21 @@ function ChevronRight() {
 }
 var _StyledHomeIcon = (0, _styledComponents["default"])(_Home["default"]).withConfig({
   displayName: "BreadcrumbsBar___StyledHomeIcon",
-  componentId: "sc-1yf3xco-2"
+  componentId: "sc-1ooa3yw-2"
 })({
   "fill": "currentColor",
   "color": "var(--text-primary)"
 });
 var _StyledSpan = (0, _styledComponents["default"])("span").withConfig({
   displayName: "BreadcrumbsBar___StyledSpan",
-  componentId: "sc-1yf3xco-3"
+  componentId: "sc-1ooa3yw-3"
 })({
   "display": "flex",
   "alignItems": "center"
 });
 var _StyledPSmall = (0, _styledComponents["default"])(_typography.PSmall).withConfig({
   displayName: "BreadcrumbsBar___StyledPSmall",
-  componentId: "sc-1yf3xco-4"
+  componentId: "sc-1ooa3yw-4"
 })({
   "display": "flex",
   "cursor": "pointer",

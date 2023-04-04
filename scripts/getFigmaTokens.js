@@ -25,7 +25,7 @@ const getFormattedObjectValue = function(obj, valueProperty) {
 
 async function getDesignTokens(url = '', data = {}) {
   
-  console.log('HBUI ::: Fetching Figma document...')
+  console.log('TPDS ::: Fetching Figma document...')
 
   const res = await axios.get(`https://api.figma.com/v1/files/${fileId}/styles`, {
     headers: { 'X-FIGMA-TOKEN': FIGMA_API_TOKEN}
@@ -34,7 +34,7 @@ async function getDesignTokens(url = '', data = {}) {
   const types = []
   let styleNodeIdsString = ''
   const stylesData = []
-  
+  console.log('res.data.meta.styles.length', res.data.meta.styles.length)
   // step 1 - grab references to the styles we are interested in
   for (var i = 0; i <= res.data.meta.styles.length - 1; i++) {
     const newType = res.data.meta.styles[i].style_type
@@ -51,15 +51,15 @@ async function getDesignTokens(url = '', data = {}) {
     }
   }
   
-  console.log('HBUI ::: Found ' + res.data.meta.styles.length + ' styles.')
-  console.log('HBUI ::: Picking up ' + stylesData.length + ' styles.')
-  console.log('HBUI ::: Fetching styles data...')
+  console.log('TPDS ::: Found ' + res.data.meta.styles.length + ' styles.')
+  console.log('TPDS ::: Picking up ' + stylesData.length + ' styles.')
+  console.log('TPDS ::: Fetching styles data...')
     
   const res2 = await axios.get(`https://api.figma.com/v1/files/${fileId}/nodes?ids=${styleNodeIdsString}`, {
     headers: { 'X-FIGMA-TOKEN': FIGMA_API_TOKEN }
   })
 
-  console.log('HBUI ::: Processing styles...')
+  console.log('TPDS ::: Processing styles...')
 
   // step 2 - generate clean array of styles
   const nodes = res2.data.nodes
@@ -177,11 +177,11 @@ async function getDesignTokens(url = '', data = {}) {
     }
   }
 
-  console.log('HBUI ::: Collected ' + cleanColorObjects.length + ' color styles.')
-  console.log('HBUI ::: Collected ' + cleanTextObjects.length + ' text styles.')
-  console.log('HBUI ::: Collected ' + spacingsArray.length + ' spacings.')
-  console.log('HBUI ::: Collected ' + breakpointsArray.length + ' breakpoints.')
-  console.log('HBUI ::: Creating files...')
+  console.log('TPDS ::: Collected ' + cleanColorObjects.length + ' color styles.')
+  console.log('TPDS ::: Collected ' + cleanTextObjects.length + ' text styles.')
+  console.log('TPDS ::: Collected ' + spacingsArray.length + ' spacings.')
+  console.log('TPDS ::: Collected ' + breakpointsArray.length + ' breakpoints.')
+  console.log('TPDS ::: Creating files...')
 
   const finalDataObject = {
     text: textData,
@@ -191,10 +191,10 @@ async function getDesignTokens(url = '', data = {}) {
     colors: colorData
   }
 
-  fs.writeFileSync('./hbui/tokens/index.json', JSON.stringify(finalDataObject, null, 2))
+  fs.writeFileSync('./tpds/tokens/index.json', JSON.stringify(finalDataObject, null, 2))
 }
 
 getDesignTokens()
   .then(() => {
-    console.log('HBUI ::: Design tokens saved.');
+    console.log('TPDS ::: Design tokens saved.');
   });

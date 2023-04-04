@@ -25,7 +25,7 @@ var _default = Copy;
 exports["default"] = _default;
 var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
   displayName: "Copy___StyledSvg",
-  componentId: "sc-l7f55c-0"
+  componentId: "sc-w02nbh-0"
 })({
   "fill": "currentColor",
   "color": "var(--text-primary)"

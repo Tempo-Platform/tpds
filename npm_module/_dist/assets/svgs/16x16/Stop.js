@@ -23,7 +23,7 @@ var _default = Stop;
 exports["default"] = _default;
 var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
   displayName: "Stop___StyledSvg",
-  componentId: "sc-1e6lruu-0"
+  componentId: "sc-1ksts7w-0"
 })({
   "fill": "currentColor",
   "color": "var(--text-primary)"

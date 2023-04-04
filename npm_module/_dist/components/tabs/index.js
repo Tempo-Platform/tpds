@@ -75,7 +75,7 @@ function Tabs(_ref) {
 }
 var _StyledTabList = (0, _styledComponents["default"])(_react2.Tab.List).withConfig({
   displayName: "tabs___StyledTabList",
-  componentId: "sc-eav6nh-0"
+  componentId: "sc-1bxmsro-0"
 })({
   "display": "flex",
   "> :not([hidden]) ~ :not([hidden])": {
@@ -89,19 +89,19 @@ var _StyledTabList = (0, _styledComponents["default"])(_react2.Tab.List).withCon
 });
 var _StyledButton = (0, _styledComponents["default"])("button").withConfig({
   displayName: "tabs___StyledButton",
-  componentId: "sc-eav6nh-1"
+  componentId: "sc-1bxmsro-1"
 })(["", ""], function (p) {
   return p.$_css;
 });
 var _StyledTabPanels = (0, _styledComponents["default"])(_react2.Tab.Panels).withConfig({
   displayName: "tabs___StyledTabPanels",
-  componentId: "sc-eav6nh-2"
+  componentId: "sc-1bxmsro-2"
 })({
   "marginTop": "0.5rem"
 });
 var _StyledTabPanel = (0, _styledComponents["default"])(_react2.Tab.Panel).withConfig({
   displayName: "tabs___StyledTabPanel",
-  componentId: "sc-eav6nh-3"
+  componentId: "sc-1bxmsro-3"
 })({
   "marginTop": "24px",
   "borderRadius": "0.5rem",

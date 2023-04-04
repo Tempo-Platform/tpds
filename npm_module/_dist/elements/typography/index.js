@@ -67,7 +67,7 @@ var sharedTransforms = function sharedTransforms(props) {
 };
 var PNano = _styledComponents["default"].p.withConfig({
   displayName: "typography__PNano",
-  componentId: "sc-9kw1vl-0"
+  componentId: "sc-10zh2fc-0"
 })({}, function (props) {
   return [{
     "fontSize": "11px"
@@ -76,7 +76,7 @@ var PNano = _styledComponents["default"].p.withConfig({
 exports.PNano = PNano;
 var PTiny = _styledComponents["default"].p.withConfig({
   displayName: "typography__PTiny",
-  componentId: "sc-9kw1vl-1"
+  componentId: "sc-10zh2fc-1"
 })({}, function (props) {
   return [{
     "fontSize": "0.75rem"
@@ -85,7 +85,7 @@ var PTiny = _styledComponents["default"].p.withConfig({
 exports.PTiny = PTiny;
 var PSmall = _styledComponents["default"].p.withConfig({
   displayName: "typography__PSmall",
-  componentId: "sc-9kw1vl-2"
+  componentId: "sc-10zh2fc-2"
 })({}, function (props) {
   return [{
     "fontSize": "0.8125rem"
@@ -94,7 +94,7 @@ var PSmall = _styledComponents["default"].p.withConfig({
 exports.PSmall = PSmall;
 var P = _styledComponents["default"].p.withConfig({
   displayName: "typography__P",
-  componentId: "sc-9kw1vl-3"
+  componentId: "sc-10zh2fc-3"
 })({}, function (props) {
   return [{
     "fontSize": "0.9375rem",
@@ -106,7 +106,7 @@ var P = _styledComponents["default"].p.withConfig({
 exports.P = P;
 var PLarge = _styledComponents["default"].p.withConfig({
   displayName: "typography__PLarge",
-  componentId: "sc-9kw1vl-4"
+  componentId: "sc-10zh2fc-4"
 })({}, function (props) {
   return [{
     "fontSize": "1.125rem",
@@ -118,7 +118,7 @@ var PLarge = _styledComponents["default"].p.withConfig({
 exports.PLarge = PLarge;
 var H6 = _styledComponents["default"].h6.withConfig({
   displayName: "typography__H6",
-  componentId: "sc-9kw1vl-5"
+  componentId: "sc-10zh2fc-5"
 })({}, function (props) {
   return [{
     "fontSize": "1.125rem",
@@ -133,7 +133,7 @@ var H6 = _styledComponents["default"].h6.withConfig({
 exports.H6 = H6;
 var H5 = _styledComponents["default"].h5.withConfig({
   displayName: "typography__H5",
-  componentId: "sc-9kw1vl-6"
+  componentId: "sc-10zh2fc-6"
 })({}, function (props) {
   return [{
     "fontSize": "1.25rem",
@@ -150,7 +150,7 @@ var H5 = _styledComponents["default"].h5.withConfig({
 exports.H5 = H5;
 var H4 = _styledComponents["default"].h4.withConfig({
   displayName: "typography__H4",
-  componentId: "sc-9kw1vl-7"
+  componentId: "sc-10zh2fc-7"
 })({}, function (props) {
   return [{
     "fontSize": "1.5rem",
@@ -167,7 +167,7 @@ var H4 = _styledComponents["default"].h4.withConfig({
 exports.H4 = H4;
 var H3 = _styledComponents["default"].h3.withConfig({
   displayName: "typography__H3",
-  componentId: "sc-9kw1vl-8"
+  componentId: "sc-10zh2fc-8"
 })({}, function (props) {
   return [{
     "fontSize": "1.875rem",
@@ -184,7 +184,7 @@ var H3 = _styledComponents["default"].h3.withConfig({
 exports.H3 = H3;
 var H2 = _styledComponents["default"].h2.withConfig({
   displayName: "typography__H2",
-  componentId: "sc-9kw1vl-9"
+  componentId: "sc-10zh2fc-9"
 })({}, function (props) {
   return [{
     "fontSize": "2.25rem",
@@ -201,7 +201,7 @@ var H2 = _styledComponents["default"].h2.withConfig({
 exports.H2 = H2;
 var H1 = _styledComponents["default"].h1.withConfig({
   displayName: "typography__H1",
-  componentId: "sc-9kw1vl-10"
+  componentId: "sc-10zh2fc-10"
 })({}, function (props) {
   return [{
     "fontSize": "3rem",
@@ -220,56 +220,56 @@ var H1 = _styledComponents["default"].h1.withConfig({
 exports.H1 = H1;
 var PrimaryColor = _styledComponents["default"].span.withConfig({
   displayName: "typography__PrimaryColor",
-  componentId: "sc-9kw1vl-11"
+  componentId: "sc-10zh2fc-11"
 })({
   color: _colors.green
 });
 exports.PrimaryColor = PrimaryColor;
 var Bold = _styledComponents["default"].span.withConfig({
   displayName: "typography__Bold",
-  componentId: "sc-9kw1vl-12"
+  componentId: "sc-10zh2fc-12"
 })({
   fontWeight: 'bold'
 });
 exports.Bold = Bold;
 var Medium = _styledComponents["default"].span.withConfig({
   displayName: "typography__Medium",
-  componentId: "sc-9kw1vl-13"
+  componentId: "sc-10zh2fc-13"
 })({
   fontWeight: '500'
 });
 exports.Medium = Medium;
 var Underline = _styledComponents["default"].span.withConfig({
   displayName: "typography__Underline",
-  componentId: "sc-9kw1vl-14"
+  componentId: "sc-10zh2fc-14"
 })({
   textDecoration: 'underline'
 });
 exports.Underline = Underline;
 var Red = _styledComponents["default"].span.withConfig({
   displayName: "typography__Red",
-  componentId: "sc-9kw1vl-15"
+  componentId: "sc-10zh2fc-15"
 })({
   color: _colors.red
 });
 exports.Red = Red;
 var Blue = _styledComponents["default"].span.withConfig({
   displayName: "typography__Blue",
-  componentId: "sc-9kw1vl-16"
+  componentId: "sc-10zh2fc-16"
 })({
   color: _colors.blue
 });
 exports.Blue = Blue;
 var Green = _styledComponents["default"].span.withConfig({
   displayName: "typography__Green",
-  componentId: "sc-9kw1vl-17"
+  componentId: "sc-10zh2fc-17"
 })({
   color: _colors.green
 });
 exports.Green = Green;
 var Orange = _styledComponents["default"].span.withConfig({
   displayName: "typography__Orange",
-  componentId: "sc-9kw1vl-18"
+  componentId: "sc-10zh2fc-18"
 })({
   color: _colors.orange
 });
@@ -278,28 +278,28 @@ var Orange = _styledComponents["default"].span.withConfig({
 exports.Orange = Orange;
 var FieldLabelNano = (0, _styledComponents["default"])(PNano).withConfig({
   displayName: "typography__FieldLabelNano",
-  componentId: "sc-9kw1vl-19"
+  componentId: "sc-10zh2fc-19"
 })({
   fontFamily: 'Inter',
   lineHeight: '1 !important'
 });
 var FieldLabelTiny = (0, _styledComponents["default"])(PTiny).withConfig({
   displayName: "typography__FieldLabelTiny",
-  componentId: "sc-9kw1vl-20"
+  componentId: "sc-10zh2fc-20"
 })({
   fontFamily: 'Inter',
   lineHeight: '1 !important'
 });
 var FieldLabelSmall = (0, _styledComponents["default"])(PSmall).withConfig({
   displayName: "typography__FieldLabelSmall",
-  componentId: "sc-9kw1vl-21"
+  componentId: "sc-10zh2fc-21"
 })({
   fontFamily: 'Inter',
   lineHeight: '1 !important'
 });
 var FieldLabel = (0, _styledComponents["default"])(P).withConfig({
   displayName: "typography__FieldLabel",
-  componentId: "sc-9kw1vl-22"
+  componentId: "sc-10zh2fc-22"
 })({
   fontFamily: 'Inter',
   lineHeight: '1 !important'
@@ -313,28 +313,28 @@ var labelStyles = [{
 }];
 var LabelNano = (0, _styledComponents["default"])(FieldLabelNano).withConfig({
   displayName: "typography__LabelNano",
-  componentId: "sc-9kw1vl-23"
+  componentId: "sc-10zh2fc-23"
 })({}, function (props) {
   return labelStyles;
 });
 exports.LabelNano = LabelNano;
 var LabelTiny = (0, _styledComponents["default"])(FieldLabelTiny).withConfig({
   displayName: "typography__LabelTiny",
-  componentId: "sc-9kw1vl-24"
+  componentId: "sc-10zh2fc-24"
 })({}, function (props) {
   return labelStyles;
 });
 exports.LabelTiny = LabelTiny;
 var LabelSmall = (0, _styledComponents["default"])(FieldLabelSmall).withConfig({
   displayName: "typography__LabelSmall",
-  componentId: "sc-9kw1vl-25"
+  componentId: "sc-10zh2fc-25"
 })({}, function (props) {
   return labelStyles;
 });
 exports.LabelSmall = LabelSmall;
 var Label = (0, _styledComponents["default"])(FieldLabel).withConfig({
   displayName: "typography__Label",
-  componentId: "sc-9kw1vl-26"
+  componentId: "sc-10zh2fc-26"
 })({}, function (props) {
   return labelStyles;
 });

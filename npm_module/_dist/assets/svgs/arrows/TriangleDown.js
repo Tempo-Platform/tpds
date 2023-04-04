@@ -22,7 +22,7 @@ var _default = TriangleDown;
 exports["default"] = _default;
 var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
   displayName: "TriangleDown___StyledSvg",
-  componentId: "sc-i4pljy-0"
+  componentId: "sc-16ysro1-0"
 })({
   "fill": "currentColor",
   "color": "var(--text-primary)"

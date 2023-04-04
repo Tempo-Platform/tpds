@@ -24,7 +24,7 @@ var _default = Reboot;
 exports["default"] = _default;
 var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
   displayName: "Reboot___StyledSvg",
-  componentId: "sc-1qkt86a-0"
+  componentId: "sc-jq5vbc-0"
 })({
   "fill": "currentColor",
   "color": "var(--text-primary)"

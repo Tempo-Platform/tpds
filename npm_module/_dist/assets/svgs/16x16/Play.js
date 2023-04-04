@@ -23,7 +23,7 @@ var _default = Play;
 exports["default"] = _default;
 var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
   displayName: "Play___StyledSvg",
-  componentId: "sc-1luzib-0"
+  componentId: "sc-18v2g9j-0"
 })({
   "fill": "currentColor",
   "color": "var(--text-primary)"

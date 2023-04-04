@@ -79,13 +79,13 @@ var _default = SwitchElement;
 exports["default"] = _default;
 var _StyledSwitch = (0, _styledComponents["default"])(_react2.Switch).withConfig({
   displayName: "switch___StyledSwitch",
-  componentId: "sc-yb8qyk-0"
+  componentId: "sc-5ckee2-0"
 })(["", ""], function (p) {
   return p.$_css;
 });
 var _StyledSpan = (0, _styledComponents["default"])("span").withConfig({
   displayName: "switch___StyledSpan",
-  componentId: "sc-yb8qyk-1"
+  componentId: "sc-5ckee2-1"
 })(["", ""], function (p) {
   return p.$_css2;
 });

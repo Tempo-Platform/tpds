@@ -35,7 +35,7 @@ module.exports = {
       '2xl': breakpoints['2xl']
     },
     fontFamily: {
-      sans: ['Satoshi', 'sans-serif'],
+      sans: ['Graphik', 'sans-serif'],
       serif: ['Courier New', 'serif'],
       mono: ['SF Mono', 'mono']
     },
@@ -53,7 +53,6 @@ module.exports = {
       current: 'currentColor',
       'black': colors.black,
       'white': colors.white,
-      'terminal': colors.terminal,
       'green': colorPalettes.green['500'],
       'red': colorPalettes.red['500'],
       'blue': colorPalettes.blue['500'],

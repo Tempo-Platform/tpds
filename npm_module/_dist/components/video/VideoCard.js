@@ -34,7 +34,7 @@ var _default = VideoCard;
 exports["default"] = _default;
 var VideoRoot = _styledComponents["default"].div.withConfig({
   displayName: "VideoCard__VideoRoot",
-  componentId: "sc-1fox1hc-0"
+  componentId: "sc-1h57zd3-0"
 })(function () {
   return [{
     "borderWidth": "1px",
@@ -45,12 +45,6 @@ var VideoRoot = _styledComponents["default"].div.withConfig({
       "borderColor": "rgb(0 194 206 / var(--tw-border-opacity))",
       "--tw-text-opacity": "1",
       "color": "rgb(0 194 206 / var(--tw-text-opacity))"
-    },
-    ".dark &:hover": {
-      "--tw-border-opacity": "1",
-      "borderColor": "rgb(95 255 215 / var(--tw-border-opacity))",
-      "--tw-text-opacity": "1",
-      "color": "rgb(95 255 215 / var(--tw-text-opacity))"
     }
   }, {
     "borderRadius": "8px",
@@ -65,7 +59,7 @@ var VideoRoot = _styledComponents["default"].div.withConfig({
 });
 var HeaderSection = _styledComponents["default"].div.withConfig({
   displayName: "VideoCard__HeaderSection",
-  componentId: "sc-1fox1hc-1"
+  componentId: "sc-1h57zd3-1"
 })(function () {
   return [{
     "display": "flex",
@@ -76,7 +70,7 @@ var HeaderSection = _styledComponents["default"].div.withConfig({
 });
 var Header = (0, _styledComponents["default"])(_typography.H6).withConfig({
   displayName: "VideoCard__Header",
-  componentId: "sc-1fox1hc-2"
+  componentId: "sc-1h57zd3-2"
 })(function () {
   return [{
     "lineHeight": "1"
@@ -84,7 +78,7 @@ var Header = (0, _styledComponents["default"])(_typography.H6).withConfig({
 });
 var Description = (0, _styledComponents["default"])(_typography.P).withConfig({
   displayName: "VideoCard__Description",
-  componentId: "sc-1fox1hc-3"
+  componentId: "sc-1h57zd3-3"
 })(function () {
   return [{
     "paddingTop": "16px",
@@ -94,7 +88,7 @@ var Description = (0, _styledComponents["default"])(_typography.P).withConfig({
 });
 var _StyledIframe = (0, _styledComponents["default"])("iframe").withConfig({
   displayName: "VideoCard___StyledIframe",
-  componentId: "sc-1fox1hc-4"
+  componentId: "sc-1h57zd3-4"
 })({
   "aspectRatio": "16 / 9",
   "width": "100%",

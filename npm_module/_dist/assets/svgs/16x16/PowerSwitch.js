@@ -25,7 +25,7 @@ var _default = PowerSwitch;
 exports["default"] = _default;
 var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
   displayName: "PowerSwitch___StyledSvg",
-  componentId: "sc-1l1ny36-0"
+  componentId: "sc-1cbr6x8-0"
 })({
   "fill": "currentColor",
   "color": "var(--text-primary)"

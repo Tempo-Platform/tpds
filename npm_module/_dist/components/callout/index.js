@@ -100,7 +100,7 @@ var CalloutNote = function CalloutNote(_ref8) {
 exports.CalloutNote = CalloutNote;
 var Root = _styledComponents["default"].div.withConfig({
   displayName: "callout__Root",
-  componentId: "sc-19ipjvn-0"
+  componentId: "sc-f1aur2-0"
 })(function (_ref9) {
   var type = _ref9.type;
   return [{
@@ -114,7 +114,7 @@ var Root = _styledComponents["default"].div.withConfig({
 });
 var RootDefault = (0, _styledComponents["default"])(Root).withConfig({
   displayName: "callout__RootDefault",
-  componentId: "sc-19ipjvn-1"
+  componentId: "sc-f1aur2-1"
 })(function () {
   return [{
     "--tw-border-opacity": "1",
@@ -129,7 +129,7 @@ var RootDefault = (0, _styledComponents["default"])(Root).withConfig({
 });
 var RootSuccess = (0, _styledComponents["default"])(Root).withConfig({
   displayName: "callout__RootSuccess",
-  componentId: "sc-19ipjvn-2"
+  componentId: "sc-f1aur2-2"
 })(function () {
   return [{
     "--tw-border-opacity": "1",
@@ -145,7 +145,7 @@ var RootSuccess = (0, _styledComponents["default"])(Root).withConfig({
 });
 var RootInfo = (0, _styledComponents["default"])(Root).withConfig({
   displayName: "callout__RootInfo",
-  componentId: "sc-19ipjvn-3"
+  componentId: "sc-f1aur2-3"
 })(function () {
   return [{
     "--tw-border-opacity": "1",
@@ -161,7 +161,7 @@ var RootInfo = (0, _styledComponents["default"])(Root).withConfig({
 });
 var RootDanger = (0, _styledComponents["default"])(Root).withConfig({
   displayName: "callout__RootDanger",
-  componentId: "sc-19ipjvn-4"
+  componentId: "sc-f1aur2-4"
 })(function () {
   return [{
     "--tw-border-opacity": "1",
@@ -177,7 +177,7 @@ var RootDanger = (0, _styledComponents["default"])(Root).withConfig({
 });
 var RootWarning = (0, _styledComponents["default"])(Root).withConfig({
   displayName: "callout__RootWarning",
-  componentId: "sc-19ipjvn-5"
+  componentId: "sc-f1aur2-5"
 })(function () {
   return [{
     "--tw-border-opacity": "1",
@@ -193,7 +193,7 @@ var RootWarning = (0, _styledComponents["default"])(Root).withConfig({
 });
 var RootTip = (0, _styledComponents["default"])(Root).withConfig({
   displayName: "callout__RootTip",
-  componentId: "sc-19ipjvn-6"
+  componentId: "sc-f1aur2-6"
 })(function () {
   return [{
     "--tw-border-opacity": "1",
@@ -209,7 +209,7 @@ var RootTip = (0, _styledComponents["default"])(Root).withConfig({
 });
 var RootBug = (0, _styledComponents["default"])(Root).withConfig({
   displayName: "callout__RootBug",
-  componentId: "sc-19ipjvn-7"
+  componentId: "sc-f1aur2-7"
 })(function () {
   return [{
     "--tw-border-opacity": "1",
@@ -225,7 +225,7 @@ var RootBug = (0, _styledComponents["default"])(Root).withConfig({
 });
 var RootNote = (0, _styledComponents["default"])(Root).withConfig({
   displayName: "callout__RootNote",
-  componentId: "sc-19ipjvn-8"
+  componentId: "sc-f1aur2-8"
 })(function () {
   return [{
     "--tw-border-opacity": "1",
@@ -239,7 +239,7 @@ var RootNote = (0, _styledComponents["default"])(Root).withConfig({
 });
 var Header = _styledComponents["default"].div.withConfig({
   displayName: "callout__Header",
-  componentId: "sc-19ipjvn-9"
+  componentId: "sc-f1aur2-9"
 })(function (_ref10) {
   var type = _ref10.type;
   return [{
@@ -254,7 +254,7 @@ var Header = _styledComponents["default"].div.withConfig({
 });
 var HeaderDefault = (0, _styledComponents["default"])(Header).withConfig({
   displayName: "callout__HeaderDefault",
-  componentId: "sc-19ipjvn-10"
+  componentId: "sc-f1aur2-10"
 })(function (_ref11) {
   var type = _ref11.type;
   return [{
@@ -268,7 +268,7 @@ var HeaderDefault = (0, _styledComponents["default"])(Header).withConfig({
 });
 var HeaderSuccess = (0, _styledComponents["default"])(Header).withConfig({
   displayName: "callout__HeaderSuccess",
-  componentId: "sc-19ipjvn-11"
+  componentId: "sc-f1aur2-11"
 })(function (_ref12) {
   var type = _ref12.type;
   return [{
@@ -282,7 +282,7 @@ var HeaderSuccess = (0, _styledComponents["default"])(Header).withConfig({
 });
 var HeaderInfo = (0, _styledComponents["default"])(Header).withConfig({
   displayName: "callout__HeaderInfo",
-  componentId: "sc-19ipjvn-12"
+  componentId: "sc-f1aur2-12"
 })(function (_ref13) {
   var type = _ref13.type;
   return [{
@@ -296,7 +296,7 @@ var HeaderInfo = (0, _styledComponents["default"])(Header).withConfig({
 });
 var HeaderDanger = (0, _styledComponents["default"])(Header).withConfig({
   displayName: "callout__HeaderDanger",
-  componentId: "sc-19ipjvn-13"
+  componentId: "sc-f1aur2-13"
 })(function (_ref14) {
   var type = _ref14.type;
   return [{
@@ -310,7 +310,7 @@ var HeaderDanger = (0, _styledComponents["default"])(Header).withConfig({
 });
 var HeaderWarning = (0, _styledComponents["default"])(Header).withConfig({
   displayName: "callout__HeaderWarning",
-  componentId: "sc-19ipjvn-14"
+  componentId: "sc-f1aur2-14"
 })(function (_ref15) {
   var type = _ref15.type;
   return [{
@@ -324,7 +324,7 @@ var HeaderWarning = (0, _styledComponents["default"])(Header).withConfig({
 });
 var HeaderTip = (0, _styledComponents["default"])(Header).withConfig({
   displayName: "callout__HeaderTip",
-  componentId: "sc-19ipjvn-15"
+  componentId: "sc-f1aur2-15"
 })(function (_ref16) {
   var type = _ref16.type;
   return [{
@@ -338,7 +338,7 @@ var HeaderTip = (0, _styledComponents["default"])(Header).withConfig({
 });
 var HeaderBug = (0, _styledComponents["default"])(Header).withConfig({
   displayName: "callout__HeaderBug",
-  componentId: "sc-19ipjvn-16"
+  componentId: "sc-f1aur2-16"
 })(function (_ref17) {
   var type = _ref17.type;
   return [{
@@ -352,7 +352,7 @@ var HeaderBug = (0, _styledComponents["default"])(Header).withConfig({
 });
 var HeaderNote = (0, _styledComponents["default"])(Header).withConfig({
   displayName: "callout__HeaderNote",
-  componentId: "sc-19ipjvn-17"
+  componentId: "sc-f1aur2-17"
 })(function (_ref18) {
   var type = _ref18.type;
   return [{
@@ -366,7 +366,7 @@ var HeaderNote = (0, _styledComponents["default"])(Header).withConfig({
 });
 var Text = _styledComponents["default"].div.withConfig({
   displayName: "callout__Text",
-  componentId: "sc-19ipjvn-18"
+  componentId: "sc-f1aur2-18"
 })(function () {
   return [{
     "paddingLeft": "1rem",

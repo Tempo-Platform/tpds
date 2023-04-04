@@ -5,19 +5,6 @@ var colorPalettes = colorTokens.color_palettes;
 module.exports = {
   white: colorTokens.white,
   black: colorTokens.black,
-  terminal: colorTokens.terminal,
-  // success_hovered: colorTokens['button-state-colors']['success-hovered'],
-  // success_active: colorTokens['button-state-colors']['success-active'],
-
-  // danger_hovered: colorTokens['button-state-colors']['danger-hovered'],
-  // danger_active: colorTokens['button-state-colors']['danger-active'],
-
-  // warning_hovered: colorTokens['button-state-colors']['warning-hovered'],
-  // warning_active: colorTokens['button-state-colors']['warning-active'],
-
-  // info_hovered: colorTokens['button-state-colors']['info-hovered'],
-  // info_active: colorTokens['button-state-colors']['info-active'],
-
   green: colorPalettes.green['500'],
   blue: colorPalettes.blue['500'],
   orange: colorPalettes.orange['500'],

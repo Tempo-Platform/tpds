@@ -24,7 +24,7 @@ var _default = Home;
 exports["default"] = _default;
 var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
   displayName: "Home___StyledSvg",
-  componentId: "sc-1hv2db3-0"
+  componentId: "sc-v2wnc1-0"
 })({
   "fill": "currentColor",
   "color": "var(--text-secondary)"

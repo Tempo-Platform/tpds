@@ -50,13 +50,13 @@ function CardA(_ref) {
 }
 var ExternalA = _styledComponents["default"].a.withConfig({
   displayName: "CardA__ExternalA",
-  componentId: "sc-kwttha-0"
+  componentId: "sc-8asmcj-0"
 })(function () {
   return [];
 });
 var Root = _styledComponents["default"].div.withConfig({
   displayName: "CardA__Root",
-  componentId: "sc-kwttha-1"
+  componentId: "sc-8asmcj-1"
 })(function () {
   return [{
     "borderRadius": "8px",
@@ -70,12 +70,6 @@ var Root = _styledComponents["default"].div.withConfig({
       "--tw-text-opacity": "1",
       "color": "rgb(0 194 206 / var(--tw-text-opacity))"
     },
-    ".dark &:hover": {
-      "--tw-border-opacity": "1",
-      "borderColor": "rgb(95 255 215 / var(--tw-border-opacity))",
-      "--tw-text-opacity": "1",
-      "color": "rgb(95 255 215 / var(--tw-text-opacity))"
-    },
     "@media (min-width: 1024px)": {
       "padding": "16px"
     },
@@ -86,7 +80,7 @@ var Root = _styledComponents["default"].div.withConfig({
 });
 var HoverlessRoot = _styledComponents["default"].div.withConfig({
   displayName: "CardA__HoverlessRoot",
-  componentId: "sc-kwttha-2"
+  componentId: "sc-8asmcj-2"
 })(function () {
   return [{
     "borderRadius": "8px",
@@ -104,7 +98,7 @@ var HoverlessRoot = _styledComponents["default"].div.withConfig({
 });
 var Image = _styledComponents["default"].img.withConfig({
   displayName: "CardA__Image",
-  componentId: "sc-kwttha-3"
+  componentId: "sc-8asmcj-3"
 })(function () {
   return [{
     "width": "100%",
@@ -114,7 +108,7 @@ var Image = _styledComponents["default"].img.withConfig({
 });
 var HeaderSection = _styledComponents["default"].div.withConfig({
   displayName: "CardA__HeaderSection",
-  componentId: "sc-kwttha-4"
+  componentId: "sc-8asmcj-4"
 })(function () {
   return [{
     "display": "flex",
@@ -125,7 +119,7 @@ var HeaderSection = _styledComponents["default"].div.withConfig({
 });
 var Header = (0, _styledComponents["default"])(_typography.H6).withConfig({
   displayName: "CardA__Header",
-  componentId: "sc-kwttha-5"
+  componentId: "sc-8asmcj-5"
 })(function () {
   return [{
     "lineHeight": "1"
@@ -133,7 +127,7 @@ var Header = (0, _styledComponents["default"])(_typography.H6).withConfig({
 });
 var Description = (0, _styledComponents["default"])(_typography.P).withConfig({
   displayName: "CardA__Description",
-  componentId: "sc-kwttha-6"
+  componentId: "sc-8asmcj-6"
 })(function () {
   return [{
     "lineHeight": "1.25",
@@ -142,19 +136,19 @@ var Description = (0, _styledComponents["default"])(_typography.P).withConfig({
 });
 var _StyledDiv = (0, _styledComponents["default"])("div").withConfig({
   displayName: "CardA___StyledDiv",
-  componentId: "sc-kwttha-7"
+  componentId: "sc-8asmcj-7"
 })({
   "marginTop": "1rem"
 });
 var _StyledExternalLinkIcon = (0, _styledComponents["default"])(_buttons.ExternalLinkIcon).withConfig({
   displayName: "CardA___StyledExternalLinkIcon",
-  componentId: "sc-kwttha-8"
+  componentId: "sc-8asmcj-8"
 })({
   "marginLeft": "16px"
 });
 var _StyledDiv2 = (0, _styledComponents["default"])("div").withConfig({
   displayName: "CardA___StyledDiv2",
-  componentId: "sc-kwttha-9"
+  componentId: "sc-8asmcj-9"
 })({
   "marginTop": "1rem"
 });

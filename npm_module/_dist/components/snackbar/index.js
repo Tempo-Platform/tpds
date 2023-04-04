@@ -34,7 +34,7 @@ var getStateIcon = function getStateIcon(type) {
 };
 var Root = _styledComponents["default"].div.withConfig({
   displayName: "snackbar__Root",
-  componentId: "sc-1z0imi3-0"
+  componentId: "sc-4dlxbf-0"
 })(function (_ref2) {
   var type = _ref2.type;
   return [{
@@ -59,7 +59,7 @@ var Root = _styledComponents["default"].div.withConfig({
 });
 var IconBox = _styledComponents["default"].div.withConfig({
   displayName: "snackbar__IconBox",
-  componentId: "sc-1z0imi3-1"
+  componentId: "sc-4dlxbf-1"
 })(function (_ref3) {
   var type = _ref3.type;
   return [{
@@ -87,7 +87,7 @@ var IconBox = _styledComponents["default"].div.withConfig({
 });
 var Text = _styledComponents["default"].div.withConfig({
   displayName: "snackbar__Text",
-  componentId: "sc-1z0imi3-2"
+  componentId: "sc-4dlxbf-2"
 })(function () {
   return [{
     "display": "flex",

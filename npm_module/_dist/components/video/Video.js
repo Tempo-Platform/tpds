@@ -25,7 +25,7 @@ var _default = Video;
 exports["default"] = _default;
 var _StyledIframe = (0, _styledComponents["default"])("iframe").withConfig({
   displayName: "Video___StyledIframe",
-  componentId: "sc-1qzaspb-0"
+  componentId: "sc-1aoviva-0"
 })({
   "aspectRatio": "16 / 9",
   "width": "100%",

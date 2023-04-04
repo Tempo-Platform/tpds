@@ -5,12 +5,12 @@ exports.__esModule = true;
 exports["default"] = void 0;
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _react = _interopRequireDefault(require("react"));
-var _typography = require("../../../hbui/elements/typography");
+var _typography = require("../../../tpds/elements/typography");
 /* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 
 var PropsTableRowElement = _styledComponents["default"].span.withConfig({
   displayName: "PropsTable__PropsTableRowElement",
-  componentId: "sc-1lfobs4-0"
+  componentId: "sc-1obsa2a-0"
 })(function () {
   return [{
     "display": "grid",
@@ -20,13 +20,13 @@ var PropsTableRowElement = _styledComponents["default"].span.withConfig({
 });
 var _StyledPropsTableRowElement2 = (0, _styledComponents["default"])(PropsTableRowElement).withConfig({
   displayName: "PropsTable___StyledPropsTableRowElement2",
-  componentId: "sc-1lfobs4-1"
+  componentId: "sc-1obsa2a-1"
 })({
   "marginBottom": "1rem"
 });
 var _StyledPropsTableRowElement = (0, _styledComponents["default"])(PropsTableRowElement).withConfig({
   displayName: "PropsTable___StyledPropsTableRowElement",
-  componentId: "sc-1lfobs4-2"
+  componentId: "sc-1obsa2a-2"
 })({
   "marginBottom": "2rem",
   "borderBottomWidth": "1px",
@@ -35,7 +35,7 @@ var _StyledPropsTableRowElement = (0, _styledComponents["default"])(PropsTableRo
   "paddingBottom": "0.5rem",
   ".dark &": {
     "--tw-border-opacity": "1",
-    "borderColor": "rgb(95 255 215 / var(--tw-border-opacity))"
+    "borderColor": "rgb(0 194 206 / var(--tw-border-opacity))"
   }
 });
 var defaultStyle = [{
@@ -58,7 +58,7 @@ var lastPVariants = {
 };
 var CustomP = (0, _styledComponents["default"])(_typography.P).withConfig({
   displayName: "PropsTable__CustomP",
-  componentId: "sc-1lfobs4-3"
+  componentId: "sc-1obsa2a-3"
 })(function () {
   return [{
     "overflow": "hidden",
@@ -68,55 +68,55 @@ var CustomP = (0, _styledComponents["default"])(_typography.P).withConfig({
 });
 var _StyledCustomP8 = (0, _styledComponents["default"])(CustomP).withConfig({
   displayName: "PropsTable___StyledCustomP8",
-  componentId: "sc-1lfobs4-4"
+  componentId: "sc-1obsa2a-4"
 })({
   "gridColumn": "span 2 / span 2"
 });
 var _StyledCustomP7 = (0, _styledComponents["default"])(CustomP).withConfig({
   displayName: "PropsTable___StyledCustomP7",
-  componentId: "sc-1lfobs4-5"
+  componentId: "sc-1obsa2a-5"
 })({
   "gridColumn": "span 2 / span 2"
 });
 var _StyledCustomP6 = (0, _styledComponents["default"])(CustomP).withConfig({
   displayName: "PropsTable___StyledCustomP6",
-  componentId: "sc-1lfobs4-6"
+  componentId: "sc-1obsa2a-6"
 })({
   "gridColumn": "span 2 / span 2"
 });
 var _StyledCustomP5 = (0, _styledComponents["default"])(CustomP).withConfig({
   displayName: "PropsTable___StyledCustomP5",
-  componentId: "sc-1lfobs4-7"
+  componentId: "sc-1obsa2a-7"
 })({
   "gridColumn": "span 2 / span 2"
 });
 var _StyledCustomP4 = (0, _styledComponents["default"])(CustomP).withConfig({
   displayName: "PropsTable___StyledCustomP4",
-  componentId: "sc-1lfobs4-8"
+  componentId: "sc-1obsa2a-8"
 })({
   "gridColumn": "span 2 / span 2"
 });
 var _StyledCustomP3 = (0, _styledComponents["default"])(CustomP).withConfig({
   displayName: "PropsTable___StyledCustomP3",
-  componentId: "sc-1lfobs4-9"
+  componentId: "sc-1obsa2a-9"
 })({
   "gridColumn": "span 2 / span 2"
 });
 var _StyledCustomP2 = (0, _styledComponents["default"])(CustomP).withConfig({
   displayName: "PropsTable___StyledCustomP2",
-  componentId: "sc-1lfobs4-10"
+  componentId: "sc-1obsa2a-10"
 })({
   "gridColumn": "span 2 / span 2"
 });
 var _StyledCustomP = (0, _styledComponents["default"])(CustomP).withConfig({
   displayName: "PropsTable___StyledCustomP",
-  componentId: "sc-1lfobs4-11"
+  componentId: "sc-1obsa2a-11"
 })({
   "gridColumn": "span 2 / span 2"
 });
 var LastP = (0, _styledComponents["default"])(_typography.P).withConfig({
   displayName: "PropsTable__LastP",
-  componentId: "sc-1lfobs4-12"
+  componentId: "sc-1obsa2a-12"
 })(function () {
   return [function (_ref) {
     var _ref$variant = _ref.variant,

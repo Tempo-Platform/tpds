@@ -45,7 +45,7 @@ var bwColors = {
 };
 var LogoSVG = _styledComponents["default"].svg.withConfig({
   displayName: "HummingbotLogo__LogoSVG",
-  componentId: "sc-1but1eo-0"
+  componentId: "sc-z12t3p-0"
 })(function () {
   return [function (_ref) {
     var _ref$size = _ref.size,

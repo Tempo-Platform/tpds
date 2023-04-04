@@ -199,7 +199,7 @@ var _default = Icons;
 exports["default"] = _default;
 var _StyledChevronDownIcon = (0, _styledComponents["default"])(_solid.ChevronDownIcon).withConfig({
   displayName: "HeroIcons___StyledChevronDownIcon",
-  componentId: "sc-pxutor-0"
+  componentId: "sc-68fln7-0"
 })({
   "marginLeft": "0.5rem",
   "marginRight": "-0.25rem",
@@ -214,7 +214,7 @@ var _StyledChevronDownIcon = (0, _styledComponents["default"])(_solid.ChevronDow
 });
 var _StyledChevronRightIcon = (0, _styledComponents["default"])(_solid.ChevronRightIcon).withConfig({
   displayName: "HeroIcons___StyledChevronRightIcon",
-  componentId: "sc-pxutor-1"
+  componentId: "sc-68fln7-1"
 })({
   "marginLeft": "0.25rem"
 });

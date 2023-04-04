@@ -45,13 +45,13 @@ function ExternalLinkIcon(_ref2) {
 }
 var _StyledExternalLinkIcon = (0, _styledComponents["default"])(ExternalLinkIcon).withConfig({
   displayName: "buttons___StyledExternalLinkIcon",
-  componentId: "sc-42vy15-0"
+  componentId: "sc-bbri2b-0"
 })({
   "marginLeft": "16px"
 });
 var CustomExternalLinkButton = (0, _styledComponents["default"])(_buttons.Button).withConfig({
   displayName: "buttons__CustomExternalLinkButton",
-  componentId: "sc-42vy15-1"
+  componentId: "sc-bbri2b-1"
 })(function () {
   return [{
     "display": "flex",
@@ -66,10 +66,6 @@ var CustomExternalLinkButton = (0, _styledComponents["default"])(_buttons.Button
     ":hover": {
       "--tw-text-opacity": "1 !important",
       "color": "rgb(0 194 206 / var(--tw-text-opacity)) !important"
-    },
-    ".dark &": {
-      "--tw-text-opacity": "1",
-      "color": "rgb(95 255 215 / var(--tw-text-opacity))"
     }
   }, {
     "--tw-border-opacity": "1",
@@ -85,22 +81,6 @@ var CustomExternalLinkButton = (0, _styledComponents["default"])(_buttons.Button
       "borderColor": "rgb(0 194 206 / 0.3)",
       "backgroundColor": "transparent"
     }
-  }, {
-    ".dark &": {
-      "borderColor": "rgb(95 255 215 / 0)",
-      "backgroundColor": "rgba(95, 255, 215, 0.10)"
-    },
-    ".dark &:hover": {
-      "--tw-border-opacity": "1 !important",
-      "borderColor": "rgb(95 255 215 / var(--tw-border-opacity)) !important",
-      "backgroundColor": "transparent",
-      "--tw-text-opacity": "1 !important",
-      "color": "rgb(95 255 215 / var(--tw-text-opacity)) !important"
-    },
-    ".dark &:active": {
-      "borderColor": "rgb(95 255 215 / 0.5) !important",
-      "backgroundColor": "transparent"
-    }
   }];
 });
 exports.CustomExternalLinkButton = CustomExternalLinkButton;
@@ -111,14 +91,14 @@ function ExternalLinkButton(_ref3) {
 }
 var _StyledSpinner = (0, _styledComponents["default"])(_spinner["default"]).withConfig({
   displayName: "buttons___StyledSpinner",
-  componentId: "sc-42vy15-2"
+  componentId: "sc-bbri2b-2"
 })({
   "marginLeft": "8px",
   "display": "block"
 });
 var _StyledPath = (0, _styledComponents["default"])("path").withConfig({
   displayName: "buttons___StyledPath",
-  componentId: "sc-42vy15-3"
+  componentId: "sc-bbri2b-3"
 })({
   "fill": "currentColor"
 });

@@ -11,7 +11,7 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 var Button = _styledComponents["default"].button.withConfig({
   displayName: "buttons__Button",
-  componentId: "sc-1q5x9yw-0"
+  componentId: "sc-1lww4qa-0"
 })(function (_ref) {
   var isSecondary = _ref.isSecondary,
     isInfo = _ref.isInfo,
@@ -25,8 +25,7 @@ var Button = _styledComponents["default"].button.withConfig({
     isDisabled = _ref.isDisabled,
     isUppercase = _ref.isUppercase,
     isGhost = _ref.isGhost,
-    iconColor = _ref.iconColor,
-    isTerminal = _ref.isTerminal;
+    iconColor = _ref.iconColor;
   return [{
     "display": "flex",
     "transitionProperty": "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
@@ -210,44 +209,11 @@ var dangerStyle = [{
     "borderColor": "var(--border-button-danger-active)"
   }
 }];
-var terminalStyle = [{
-  "--tw-text-opacity": "1",
-  "color": "rgb(0 0 0 / var(--tw-text-opacity))",
-  ":hover": {
-    "--tw-text-opacity": "1",
-    "color": "rgb(95 255 215 / var(--tw-text-opacity))"
-  },
-  ":active": {
-    "--tw-text-opacity": "1",
-    "color": "rgb(95 255 215 / var(--tw-text-opacity))"
-  }
-}, {
-  "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(95 255 215 / var(--tw-bg-opacity))",
-  ":hover": {
-    "backgroundColor": "transparent"
-  },
-  ":active": {
-    "backgroundColor": "transparent"
-  }
-}, {
-  "--tw-border-opacity": "1",
-  "borderColor": "rgb(95 255 215 / var(--tw-border-opacity))",
-  ":hover": {
-    "--tw-border-opacity": "1",
-    "borderColor": "rgb(95 255 215 / var(--tw-border-opacity))"
-  },
-  ":active": {
-    "--tw-border-opacity": "1",
-    "borderColor": "rgb(95 255 215 / var(--tw-border-opacity))"
-  }
-}];
 var buttonVariants = {
   "default": defaultStyle,
   secondary: secondaryStyle,
   success: successStyle,
   info: infoStyle,
   warning: warningStyle,
-  danger: dangerStyle,
-  terminal: terminalStyle
+  danger: dangerStyle
 };

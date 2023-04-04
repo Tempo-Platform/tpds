@@ -43,13 +43,13 @@ function CardC(_ref) {
 }
 var ExternalA = _styledComponents["default"].a.withConfig({
   displayName: "CardC__ExternalA",
-  componentId: "sc-v9rx65-0"
+  componentId: "sc-1wc49f-0"
 })(function () {
   return [];
 });
 var Root = _styledComponents["default"].div.withConfig({
   displayName: "CardC__Root",
-  componentId: "sc-v9rx65-1"
+  componentId: "sc-1wc49f-1"
 })(function () {
   return [{
     "position": "relative",
@@ -64,12 +64,6 @@ var Root = _styledComponents["default"].div.withConfig({
       "--tw-text-opacity": "1",
       "color": "rgb(0 194 206 / var(--tw-text-opacity))"
     },
-    ".dark &:hover": {
-      "--tw-border-opacity": "1",
-      "borderColor": "rgb(95 255 215 / var(--tw-border-opacity))",
-      "--tw-text-opacity": "1",
-      "color": "rgb(95 255 215 / var(--tw-text-opacity))"
-    },
     "@media (min-width: 1024px)": {
       "padding": "16px"
     },
@@ -80,7 +74,7 @@ var Root = _styledComponents["default"].div.withConfig({
 });
 var HoverlessRoot = _styledComponents["default"].div.withConfig({
   displayName: "CardC__HoverlessRoot",
-  componentId: "sc-v9rx65-2"
+  componentId: "sc-1wc49f-2"
 })(function () {
   return [{
     "position": "relative",
@@ -99,7 +93,7 @@ var HoverlessRoot = _styledComponents["default"].div.withConfig({
 });
 var HeaderSection = _styledComponents["default"].div.withConfig({
   displayName: "CardC__HeaderSection",
-  componentId: "sc-v9rx65-3"
+  componentId: "sc-1wc49f-3"
 })(function () {
   return [{
     "display": "flex",
@@ -109,7 +103,7 @@ var HeaderSection = _styledComponents["default"].div.withConfig({
 });
 var Header = (0, _styledComponents["default"])(_typography.H6).withConfig({
   displayName: "CardC__Header",
-  componentId: "sc-v9rx65-4"
+  componentId: "sc-1wc49f-4"
 })(function () {
   return [{
     "lineHeight": "1"
@@ -117,7 +111,7 @@ var Header = (0, _styledComponents["default"])(_typography.H6).withConfig({
 });
 var Description = (0, _styledComponents["default"])(_typography.P).withConfig({
   displayName: "CardC__Description",
-  componentId: "sc-v9rx65-5"
+  componentId: "sc-1wc49f-5"
 })(function () {
   return [{
     "marginTop": "8px",
@@ -127,25 +121,25 @@ var Description = (0, _styledComponents["default"])(_typography.P).withConfig({
 });
 var _StyledDiv = (0, _styledComponents["default"])("div").withConfig({
   displayName: "CardC___StyledDiv",
-  componentId: "sc-v9rx65-6"
+  componentId: "sc-1wc49f-6"
 })({
   "paddingRight": "16px"
 });
 var _StyledDiv2 = (0, _styledComponents["default"])("div").withConfig({
   displayName: "CardC___StyledDiv2",
-  componentId: "sc-v9rx65-7"
+  componentId: "sc-1wc49f-7"
 })({
   "marginTop": "1rem"
 });
 var _StyledDiv3 = (0, _styledComponents["default"])("div").withConfig({
   displayName: "CardC___StyledDiv3",
-  componentId: "sc-v9rx65-8"
+  componentId: "sc-1wc49f-8"
 })({
   "paddingRight": "16px"
 });
 var _StyledExternalLinkIcon = (0, _styledComponents["default"])(_buttons.ExternalLinkIcon).withConfig({
   displayName: "CardC___StyledExternalLinkIcon",
-  componentId: "sc-v9rx65-9"
+  componentId: "sc-1wc49f-9"
 })({
   "position": "absolute",
   "top": "16px",
@@ -153,7 +147,7 @@ var _StyledExternalLinkIcon = (0, _styledComponents["default"])(_buttons.Externa
 });
 var _StyledDiv4 = (0, _styledComponents["default"])("div").withConfig({
   displayName: "CardC___StyledDiv4",
-  componentId: "sc-v9rx65-10"
+  componentId: "sc-1wc49f-10"
 })({
   "marginTop": "16px"
 });

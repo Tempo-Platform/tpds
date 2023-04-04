@@ -42,7 +42,7 @@ var _default = ThemeToggle;
 exports["default"] = _default;
 var _StyledButton = (0, _styledComponents["default"])("button").withConfig({
   displayName: "ThemeToggle___StyledButton",
-  componentId: "sc-1fzyx1j-0"
+  componentId: "sc-1krttqy-0"
 })({
   "height": "1.5rem",
   "width": "1.5rem",
