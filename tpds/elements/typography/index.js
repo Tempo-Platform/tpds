@@ -8,7 +8,6 @@ import {
 
 const sharedTransforms = props => [
   tw`text-primary`,
-  tw`leading-none`,
   tw`m-0 font-normal`,
   props.isSmall && tw`text-sm`,
   props.isUnderline && tw`underline`,
@@ -28,10 +27,7 @@ const sharedTransforms = props => [
   props.isBlue && tw`!text-blue`,
   props.isOrange && tw`!text-orange`,
   props.isYellow && tw`!text-yellow`,
-  props.leadingNone &&
-    css`
-      line-height: 100% !important;
-    `,
+  props.leadingNone && tw`!leading-none`,
   props.isLabel &&
     css`
       user-select: none;
@@ -39,8 +35,10 @@ const sharedTransforms = props => [
       line-height: 100% !important;
     `,
   css`
-    a {
-      text-decoration: underline;
+    p {
+      a {
+        text-decoration: underline;
+      }
     }
   `,
 ]
