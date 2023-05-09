@@ -38,7 +38,7 @@ var TextInput = _styledComponents["default"].input.withConfig({
     "borderWidth": "2px",
     ":focus": {
       "--tw-border-opacity": "1",
-      "borderColor": "rgb(49 141 255 / var(--tw-border-opacity))"
+      "borderColor": "rgb(25 114 245 / var(--tw-border-opacity))"
     }
   }, isValid && [{
     "--tw-border-opacity": "1",

@@ -56,7 +56,7 @@ var sharedTransforms = function sharedTransforms(props) {
     "color": "rgb(235 87 87 / var(--tw-text-opacity)) !important"
   }, props.isBlue && {
     "--tw-text-opacity": "1 !important",
-    "color": "rgb(49 141 255 / var(--tw-text-opacity)) !important"
+    "color": "rgb(25 114 245 / var(--tw-text-opacity)) !important"
   }, props.isOrange && {
     "--tw-text-opacity": "1 !important",
     "color": "rgb(240 135 39 / var(--tw-text-opacity)) !important"

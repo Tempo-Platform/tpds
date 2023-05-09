@@ -143,7 +143,7 @@ var _StyledPath2 = (0, _styledComponents["default"])("path").withConfig({
 })({
   "stroke": "currentColor",
   "--tw-text-opacity": "1",
-  "color": "rgb(49 141 255 / var(--tw-text-opacity))"
+  "color": "rgb(25 114 245 / var(--tw-text-opacity))"
 });
 var _StyledPath3 = (0, _styledComponents["default"])("path").withConfig({
   displayName: "spinner___StyledPath3",

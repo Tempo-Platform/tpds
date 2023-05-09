@@ -31,8 +31,8 @@ var defaultStyle = [{
 }, (0, _styledComponents.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["p { color: ", ";"])), "#AEB3B6")];
 var infoStyle = [{
   "--tw-border-opacity": "1",
-  "borderColor": "rgb(49 141 255 / var(--tw-border-opacity))"
-}, (0, _styledComponents.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["p { color: ", ";"])), "#318DFF")];
+  "borderColor": "rgb(25 114 245 / var(--tw-border-opacity))"
+}, (0, _styledComponents.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["p { color: ", ";"])), "#1972F5")];
 var successStyle = [{
   "--tw-border-opacity": "1",
   "borderColor": "rgb(0 194 206 / var(--tw-border-opacity))"

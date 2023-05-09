@@ -149,13 +149,13 @@ var RootInfo = (0, _styledComponents["default"])(Root).withConfig({
 })(function () {
   return [{
     "--tw-border-opacity": "1",
-    "borderColor": "rgb(191 220 255 / var(--tw-border-opacity))",
-    "backgroundColor": "rgb(191 220 255 / 0.2)"
+    "borderColor": "rgb(209 227 253 / var(--tw-border-opacity))",
+    "backgroundColor": "rgb(209 227 253 / 0.2)"
   }, {
     ".dark &": {
       "--tw-border-opacity": "1",
-      "borderColor": "rgb(117 179 255 / var(--tw-border-opacity))",
-      "backgroundColor": "rgb(117 179 255 / 0.1)"
+      "borderColor": "rgb(117 170 249 / var(--tw-border-opacity))",
+      "backgroundColor": "rgb(117 170 249 / 0.1)"
     }
   }];
 });
@@ -287,10 +287,10 @@ var HeaderInfo = (0, _styledComponents["default"])(Header).withConfig({
   var type = _ref13.type;
   return [{
     "--tw-text-opacity": "1",
-    "color": "rgb(49 141 255 / var(--tw-text-opacity))",
+    "color": "rgb(25 114 245 / var(--tw-text-opacity))",
     ".dark &": {
       "--tw-text-opacity": "1",
-      "color": "rgb(117 179 255 / var(--tw-text-opacity))"
+      "color": "rgb(117 170 249 / var(--tw-text-opacity))"
     }
   }];
 });

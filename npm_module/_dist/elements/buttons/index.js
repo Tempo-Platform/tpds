@@ -147,7 +147,7 @@ var infoStyle = [{
   }
 }, {
   "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(49 141 255 / var(--tw-bg-opacity))",
+  "backgroundColor": "rgb(25 114 245 / var(--tw-bg-opacity))",
   ":hover": {
     "backgroundColor": "var(--bg-info-hover)"
   },

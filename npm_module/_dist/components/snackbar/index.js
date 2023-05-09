@@ -76,7 +76,7 @@ var IconBox = _styledComponents["default"].div.withConfig({
     "backgroundColor": "rgb(0 194 206 / var(--tw-bg-opacity))"
   }], type === 'info' && [{
     "--tw-bg-opacity": "1",
-    "backgroundColor": "rgb(49 141 255 / var(--tw-bg-opacity))"
+    "backgroundColor": "rgb(25 114 245 / var(--tw-bg-opacity))"
   }], type === 'danger' && [{
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(235 87 87 / var(--tw-bg-opacity))"
