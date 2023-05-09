@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import tw, { css, styled } from 'twin.macro'
-import { P, PSmall } from '../../../tpds/elements/typography'
+import { PLarge, P, PSmall } from '../../../tpds/elements/typography'
 import navigation from './navigation'
 
 import ThemeToggle from '../../../tpds/system/ThemeToggle'
@@ -15,9 +15,9 @@ function DSMSidebar({...props}) {
           <GithubIcon />
         </a>
         <SidebarBrand>
-          <P isBold tw='pb-sm text-primary'>TPDS</P>
-          <PSmall isMedium tw='text-secondary'>Tempo Platform Design System</PSmall>
-          <PSmall isMedium tw='text-secondary'>v{packageJson.version}</PSmall>
+          <PLarge isBold tw='pb-xxs text-primary'>TPDS</PLarge>
+          <PSmall isMedium tw='pb-[2px] text-secondary'>Tempo Platform Design System</PSmall>
+          <PSmall tw='text-secondary'>v{packageJson.version}</PSmall>
         </SidebarBrand>
         <ThemeToggle />
         <br />
@@ -66,9 +66,6 @@ const Sidebar = styled.div(() => [
 const SidebarBrand = styled.div({
   width: '100%',
   marginBottom: '30px',
-  '& p': {
-    padding: '0',
-  },
 })
 
 const SidebarNav = styled.nav({
