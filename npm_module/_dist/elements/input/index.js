@@ -33,7 +33,7 @@ var TextInput = _styledComponents["default"].input.withConfig({
   }, {
     "borderColor": "var(--border-input)",
     "backgroundColor": "var(--bg-input)",
-    "color": "var(--text-input)"
+    "color": "var(--text-primary)"
   }, {
     "borderWidth": "2px",
     ":focus": {

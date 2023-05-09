@@ -7,14 +7,12 @@ exports.Underline = exports.Red = exports.PrimaryColor = exports.PTiny = exports
 var _taggedTemplateLiteralLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteralLoose"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _colors = require("../../constants/colors");
-var _templateObject, _templateObject2, _templateObject3;
+var _templateObject, _templateObject2;
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 var sharedTransforms = function sharedTransforms(props) {
   return [{
     "color": "var(--text-primary)"
-  }, {
-    "lineHeight": "1"
   }, {
     "margin": "0px",
     "fontWeight": "400"
@@ -65,7 +63,9 @@ var sharedTransforms = function sharedTransforms(props) {
   }, props.isYellow && {
     "--tw-text-opacity": "1 !important",
     "color": "rgb(252 219 23 / var(--tw-text-opacity)) !important"
-  }, props.leadingNone && (0, _styledComponents.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n      line-height: 100% !important;\n    "]))), props.isLabel && (0, _styledComponents.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n      user-select: none;\n      font-family: Inter !important;\n      line-height: 100% !important;\n    "]))), (0, _styledComponents.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteralLoose2["default"])(["\n    a {\n      text-decoration: underline;\n    }\n  "])))];
+  }, props.leadingNone && {
+    "lineHeight": "1 !important"
+  }, props.isLabel && (0, _styledComponents.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n      user-select: none;\n      font-family: Inter !important;\n      line-height: 100% !important;\n    "]))), (0, _styledComponents.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n    p {\n      a {\n        text-decoration: underline;\n      }\n    }\n  "])))];
 };
 var PNano = _styledComponents["default"].p.withConfig({
   displayName: "typography__PNano",
