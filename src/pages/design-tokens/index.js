@@ -12,7 +12,7 @@ import tokens from '../../../tpds/tokens/index.json'
 const DesignTokens = () => (
   <Layout>
     <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
-      <H1 isBold>Design Tokens</H1>
+      <H1 isMedium>Design Tokens</H1>
     </Hero>
     <MainContent>
       <P>

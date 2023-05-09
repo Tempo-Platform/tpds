@@ -22,7 +22,7 @@ import PropsTable from '../../../tpds/components/table/PropsTable'
 const CalloutPage = () => (
   <Layout>
     <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
-      <H1 isBold>Callout</H1>
+      <H1 isMedium>Callout</H1>
       <P>The Callout component serves to convey highlighted information content of different types.</P>
     </Hero>
     <MainContent>

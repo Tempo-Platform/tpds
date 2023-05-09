@@ -14,7 +14,7 @@ const TextInputPage = () => {
   return (
     <Layout>
       <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
-        <H1 isBold>TextInput</H1>
+        <H1 isMedium>TextInput</H1>
         <P>The TextInput component extends the functionality of the TextInput element with additional labels.</P>
       </Hero>
       <MainContent>

@@ -18,7 +18,7 @@ import ErrorIcon from '../../../tpds/assets/svgs/notifications/ErrorIcon'
 const Brand = () => (
   <Layout>
     <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
-      <H1 isBold>CoinAlpha Brand</H1>
+      <H1 isMedium>CoinAlpha Brand</H1>
     </Hero>
     <MainContent>
       <PLarge>Our brand and product logos are clear, impactful and recognizable. In everything we do, we aim to bring focus and clarity to teams without distracting, so our logos and symbols are direct, clear, and impactful. To accomplish this, we adhere to the guidelines below.</PLarge>

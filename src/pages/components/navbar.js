@@ -42,7 +42,7 @@ const linkCTA = {
 const Navigation = () => (
   <Layout>
     <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
-      <H1 isBold>NavBar</H1>
+      <H1 isMedium>NavBar</H1>
       <P>The NavBar components offers a quick and easy way to set up a working navigation</P>
     </Hero>
     <MainContent>

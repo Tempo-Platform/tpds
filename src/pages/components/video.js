@@ -12,7 +12,7 @@ import Hero from '../../../tpds/components/hero/Hero'
 const VideoPage = () => (
   <Layout>
     <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
-      <H1 isBold>Video</H1>
+      <H1 isMedium>Video</H1>
       <P>Collection of Video components</P>
     </Hero>
     <MainContent>

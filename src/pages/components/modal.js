@@ -14,7 +14,7 @@ import PropsTable from '../../../tpds/components/table/PropsTable'
 const ModalPage = () => (
   <Layout>
     <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
-      <H1 isBold>Modal</H1>
+      <H1 isMedium>Modal</H1>
       <P>Configurable modal component with keyboard control</P>
     </Hero>
     <MainContent>
