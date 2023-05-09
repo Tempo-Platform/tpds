@@ -21,10 +21,9 @@ const FAQ = () => (
       <H6>How can I use it?</H6>
       <P>If you are a developer, you will want to install the related NPM module: <a href='https://www.npmjs.com/package/@tempoplatform/tpds'>@tempoplatform/tpds</a>. Then have a look at the elements and components pages to learn how to use the specific parts.</P>
       <P>If you are a designer, have a look at the <a href='/guidelines'>Guidelines</a> and <a href='/design-tokens'>Design tokens</a>.</P>
-      <P>If you are a journalist or marketeer, have a look at the <a href='/guidelines/coinalpha-brand'>CoinAlpha brand</a> and <a href='/downloads'>Downloads</a> pages.</P>
       <br />
       <H6>Can I contribute?</H6>
-      <P>Yes. Check out the <a href='https://github.com/CoinAlpha/dsm'>project</a> and play around.</P>
+      <P>Yes. Check out the <a href='https://github.com/Tempo/dsm'>project</a> and play around.</P>
       <br />
     </MainContent>
   </Layout>

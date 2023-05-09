@@ -115,7 +115,7 @@ const Typography = () => (
           <PTiny tw='py-2 pl-3 font-medium'>Graphik Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'</PTiny>
         </div>
         <div tw="grid col-span-12 md:col-span-4">
-          <PTiny tw='py-2 pl-3 font-medium'>Default font-family for CoinAplha DSM products</PTiny>
+          <PTiny tw='py-2 pl-3 font-medium'>Default font-family for Tempo DSM products</PTiny>
         </div>
         <div tw="grid col-span-12 md:col-span-4">
           <PSmall tw='py-2 pl-3 font-medium'>{'<H4 isLight>Aa</H4>'}</PSmall>
@@ -129,7 +129,7 @@ const Typography = () => (
           <PTiny tw='py-2 pl-3 font-medium'>Graphik Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'</PTiny>
         </div>
         <div tw="grid col-span-12 md:col-span-4">
-          <PTiny tw='py-2 pl-3 font-medium'>Default font-family for CoinAplha DSM products</PTiny>
+          <PTiny tw='py-2 pl-3 font-medium'>Default font-family for Tempo DSM products</PTiny>
         </div>
         <div tw="grid col-span-12 md:col-span-4">
           <PSmall tw='py-2 pl-3 font-medium'>None (default)</PSmall>
@@ -143,7 +143,7 @@ const Typography = () => (
           <PTiny tw='py-2 pl-3 font-medium'>Graphik Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'</PTiny>
         </div>
         <div tw="grid col-span-12 md:col-span-4">
-          <PTiny tw='py-2 pl-3 font-medium'>Default font-family for CoinAplha DSM products</PTiny>
+          <PTiny tw='py-2 pl-3 font-medium'>Default font-family for Tempo DSM products</PTiny>
         </div>
         <div tw="grid col-span-12 md:col-span-4">
           <PSmall tw='py-2 pl-3 font-medium'>{'<H4 isMedium>Aa</H4>'}</PSmall>
@@ -157,7 +157,7 @@ const Typography = () => (
           <PTiny tw='py-2 pl-3 font-medium'>Graphik Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'</PTiny>
         </div>
         <div tw="grid col-span-12 md:col-span-4">
-          <PTiny tw='py-2 pl-3 font-medium'>Default font-family for CoinAplha DSM products</PTiny>
+          <PTiny tw='py-2 pl-3 font-medium'>Default font-family for Tempo DSM products</PTiny>
         </div>
         <div tw="grid col-span-12 md:col-span-4">
           <PSmall tw='py-2 pl-3 font-medium'>{'<H4 isBold>Aa</H4>'}</PSmall>
@@ -171,7 +171,7 @@ const Typography = () => (
           <PTiny tw='py-2 pl-3 font-medium'>Graphik Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'</PTiny>
         </div>
         <div tw="grid col-span-12 md:col-span-4">
-          <PTiny tw='py-2 pl-3 font-medium'>Default font-family for CoinAplha DSM products</PTiny>
+          <PTiny tw='py-2 pl-3 font-medium'>Default font-family for Tempo DSM products</PTiny>
         </div>
         <div tw="grid col-span-12 md:col-span-4">
           <PSmall tw='py-2 pl-3 font-medium'>{'<H4 isExtraBold>Aa</H4>'}</PSmall>
@@ -185,7 +185,7 @@ const Typography = () => (
           <PTiny tw='py-2 pl-3 font-medium'>Graphik Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'</PTiny>
         </div>
         <div tw="grid col-span-12 md:col-span-4">
-          <PTiny tw='py-2 pl-3 font-medium'>Default font-family for CoinAplha DSM products</PTiny>
+          <PTiny tw='py-2 pl-3 font-medium'>Default font-family for Tempo DSM products</PTiny>
         </div>
         <div tw="grid col-span-12 md:col-span-4">
           <PSmall tw='py-2 pl-3 font-medium'>{'<H4 isHeavy>Aa</H4>'}</PSmall>

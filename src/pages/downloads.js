@@ -24,10 +24,10 @@ const Downloads = () => (
       <br />
       <br />
       <DownloadCard
-        title='CoinAlpha Logotype'
+        title='Tempo Logotype'
         updatedAt='Feb 2023'
-        downloadLink='/assets/downloads/coinalpha/coinalpha_logotype.zip'
-        image='/assets/downloads_page/coinalpha_logotype.png'
+        downloadLink='/assets/downloads/Tempo/Tempo_logotype.zip'
+        image='/assets/downloads_page/Tempo_logotype.png'
       />
       <br />
       <DownloadCard
