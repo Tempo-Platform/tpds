@@ -15,7 +15,7 @@ function DSMSidebar({...props}) {
           <GithubIcon />
         </a>
         <SidebarBrand>
-          <P isBold tw='pb-sm text-white'>TPDS</P>
+          <P isBold tw='pb-sm text-primary'>TPDS</P>
           <PSmall isMedium tw='text-secondary'>Tempo Platform Design System</PSmall>
           <PSmall isMedium tw='text-secondary'>v{packageJson.version}</PSmall>
         </SidebarBrand>
@@ -82,7 +82,7 @@ const NavItemRoot = styled.div(({ hasSubItems }) => [
 ])
 
 const SidebarNavItem = styled(Link)(({ hasSubItems }) => [
-  tw`py-0.5 text-white`,
+  tw`py-0.5 text-primary`,
   css`
     display: flex;
     width: 100%;
@@ -90,7 +90,7 @@ const SidebarNavItem = styled(Link)(({ hasSubItems }) => [
     font-weight: ${hasSubItems ? '600' : '400'};
     align-items: center;
     &:hover p {
-      ${tw`text-white`};
+      ${tw`underline`};
     }
     svg {
       ${tw`transition-transform`};
@@ -102,7 +102,7 @@ const SidebarNavItem = styled(Link)(({ hasSubItems }) => [
     }
     &.is-active {
       p {
-        ${tw`font-bold text-white`};
+        ${tw`font-medium!`};
       }
     }
   `,

@@ -20,7 +20,7 @@ function Checkbox(_ref) {
 }
 var CheckboxRoot = _styledComponents["default"].div.withConfig({
   displayName: "checkbox__CheckboxRoot",
-  componentId: "sc-ku3wwu-0"
+  componentId: "sc-10spodz-0"
 })(function (_ref2) {
   var active = _ref2.active,
     disabled = _ref2.disabled;
@@ -104,7 +104,7 @@ var _default = Checkbox;
 exports["default"] = _default;
 var _StyledPath = (0, _styledComponents["default"])("path").withConfig({
   displayName: "checkbox___StyledPath",
-  componentId: "sc-ku3wwu-1"
+  componentId: "sc-10spodz-1"
 })({
   "fill": "currentColor",
   "--tw-text-opacity": "1",
@@ -116,7 +116,7 @@ var _StyledPath = (0, _styledComponents["default"])("path").withConfig({
 });
 var _StyledPath2 = (0, _styledComponents["default"])("path").withConfig({
   displayName: "checkbox___StyledPath2",
-  componentId: "sc-ku3wwu-2"
+  componentId: "sc-10spodz-2"
 })({
   "fill": "currentColor",
   "--tw-text-opacity": "1",

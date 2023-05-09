@@ -50,7 +50,7 @@ var _default = Spinner;
 exports["default"] = _default;
 var SpinnerBlock = _styledComponents["default"].div.withConfig({
   displayName: "spinner__SpinnerBlock",
-  componentId: "sc-1madyfo-0"
+  componentId: "sc-16n5twj-0"
 })({
   display: 'flex',
   width: '100%',
@@ -109,13 +109,13 @@ var getPathElement = function getPathElement(color) {
 };
 var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
   displayName: "spinner___StyledSvg",
-  componentId: "sc-1madyfo-1"
+  componentId: "sc-16n5twj-1"
 })(["", ""], function (p) {
   return p.$_css2;
 });
 var _StyledCircle = (0, _styledComponents["default"])("circle").withConfig({
   displayName: "spinner___StyledCircle",
-  componentId: "sc-1madyfo-2"
+  componentId: "sc-16n5twj-2"
 })({
   "stroke": "currentColor",
   "--tw-text-opacity": "1",
@@ -127,7 +127,7 @@ var _StyledCircle = (0, _styledComponents["default"])("circle").withConfig({
 });
 var _StyledPath = (0, _styledComponents["default"])("path").withConfig({
   displayName: "spinner___StyledPath",
-  componentId: "sc-1madyfo-3"
+  componentId: "sc-16n5twj-3"
 })({
   "stroke": "currentColor",
   "--tw-text-opacity": "1",
@@ -139,7 +139,7 @@ var _StyledPath = (0, _styledComponents["default"])("path").withConfig({
 });
 var _StyledPath2 = (0, _styledComponents["default"])("path").withConfig({
   displayName: "spinner___StyledPath2",
-  componentId: "sc-1madyfo-4"
+  componentId: "sc-16n5twj-4"
 })({
   "stroke": "currentColor",
   "--tw-text-opacity": "1",
@@ -147,7 +147,7 @@ var _StyledPath2 = (0, _styledComponents["default"])("path").withConfig({
 });
 var _StyledPath3 = (0, _styledComponents["default"])("path").withConfig({
   displayName: "spinner___StyledPath3",
-  componentId: "sc-1madyfo-5"
+  componentId: "sc-16n5twj-5"
 })({
   "stroke": "currentColor",
   "--tw-text-opacity": "1",
@@ -155,7 +155,7 @@ var _StyledPath3 = (0, _styledComponents["default"])("path").withConfig({
 });
 var _StyledPath4 = (0, _styledComponents["default"])("path").withConfig({
   displayName: "spinner___StyledPath4",
-  componentId: "sc-1madyfo-6"
+  componentId: "sc-16n5twj-6"
 })({
   "stroke": "currentColor",
   "--tw-text-opacity": "1",
@@ -163,7 +163,7 @@ var _StyledPath4 = (0, _styledComponents["default"])("path").withConfig({
 });
 var _StyledPath5 = (0, _styledComponents["default"])("path").withConfig({
   displayName: "spinner___StyledPath5",
-  componentId: "sc-1madyfo-7"
+  componentId: "sc-16n5twj-7"
 })({
   "stroke": "currentColor",
   "--tw-text-opacity": "1",

@@ -39,7 +39,7 @@ var _default = MenuDropdown;
 exports["default"] = _default;
 var KebabMenuRoot = _styledComponents["default"].div.withConfig({
   displayName: "menudropdown__KebabMenuRoot",
-  componentId: "sc-x2un25-0"
+  componentId: "sc-ofjyyj-0"
 })(function () {
   return [{
     "position": "relative",
@@ -48,7 +48,7 @@ var KebabMenuRoot = _styledComponents["default"].div.withConfig({
 });
 var KebabMenuContent = _styledComponents["default"].div.withConfig({
   displayName: "menudropdown__KebabMenuContent",
-  componentId: "sc-x2un25-1"
+  componentId: "sc-ofjyyj-1"
 })(function (_ref2) {
   var side = _ref2.side;
   return [(0, _styledComponents.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n    min-width: 80px;\n  "]))), {
@@ -75,7 +75,7 @@ var KebabMenuContent = _styledComponents["default"].div.withConfig({
 });
 var KebabControlRoot = _styledComponents["default"].div.withConfig({
   displayName: "menudropdown__KebabControlRoot",
-  componentId: "sc-x2un25-2"
+  componentId: "sc-ofjyyj-2"
 })(function (_ref3) {
   var active = _ref3.active;
   return [{
@@ -86,7 +86,7 @@ var KebabControlRoot = _styledComponents["default"].div.withConfig({
 });
 var KebabMenuItem = (0, _styledComponents["default"])(_typography.LabelSmall).withConfig({
   displayName: "menudropdown__KebabMenuItem",
-  componentId: "sc-x2un25-3"
+  componentId: "sc-ofjyyj-3"
 })(function (_ref4) {
   var active = _ref4.active;
   return [{
@@ -151,7 +151,7 @@ function TriangleDown() {
 }
 var _StyledDiv = (0, _styledComponents["default"])("div").withConfig({
   displayName: "menudropdown___StyledDiv",
-  componentId: "sc-x2un25-4"
+  componentId: "sc-ofjyyj-4"
 })({
   "position": "absolute",
   "top": "-2px",
@@ -163,7 +163,7 @@ var _StyledDiv = (0, _styledComponents["default"])("div").withConfig({
 });
 var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
   displayName: "menudropdown___StyledSvg",
-  componentId: "sc-x2un25-5"
+  componentId: "sc-ofjyyj-5"
 })({
   "position": "absolute",
   "top": "0px",
@@ -174,7 +174,7 @@ var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
 });
 var _StyledSvg2 = (0, _styledComponents["default"])("svg").withConfig({
   displayName: "menudropdown___StyledSvg2",
-  componentId: "sc-x2un25-6"
+  componentId: "sc-ofjyyj-6"
 })({
   "fill": "currentColor",
   "color": "var(--text-primary)"

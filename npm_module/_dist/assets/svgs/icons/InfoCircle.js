@@ -20,7 +20,7 @@ var _default = InfoCircle;
 exports["default"] = _default;
 var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
   displayName: "InfoCircle___StyledSvg",
-  componentId: "sc-ghlh1m-0"
+  componentId: "sc-mjaswd-0"
 })({
   "fill": "currentColor",
   "color": "var(--text-tertiary)"

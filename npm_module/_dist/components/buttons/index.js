@@ -45,13 +45,13 @@ function ExternalLinkIcon(_ref2) {
 }
 var _StyledExternalLinkIcon = (0, _styledComponents["default"])(ExternalLinkIcon).withConfig({
   displayName: "buttons___StyledExternalLinkIcon",
-  componentId: "sc-bbri2b-0"
+  componentId: "sc-vgl6gh-0"
 })({
   "marginLeft": "16px"
 });
 var CustomExternalLinkButton = (0, _styledComponents["default"])(_buttons.Button).withConfig({
   displayName: "buttons__CustomExternalLinkButton",
-  componentId: "sc-bbri2b-1"
+  componentId: "sc-vgl6gh-1"
 })(function () {
   return [{
     "display": "flex",
@@ -91,14 +91,14 @@ function ExternalLinkButton(_ref3) {
 }
 var _StyledSpinner = (0, _styledComponents["default"])(_spinner["default"]).withConfig({
   displayName: "buttons___StyledSpinner",
-  componentId: "sc-bbri2b-2"
+  componentId: "sc-vgl6gh-2"
 })({
   "marginLeft": "8px",
   "display": "block"
 });
 var _StyledPath = (0, _styledComponents["default"])("path").withConfig({
   displayName: "buttons___StyledPath",
-  componentId: "sc-bbri2b-3"
+  componentId: "sc-vgl6gh-3"
 })({
   "fill": "currentColor"
 });

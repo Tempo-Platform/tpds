@@ -14,6 +14,8 @@ var sharedTransforms = function sharedTransforms(props) {
   return [{
     "color": "var(--text-primary)"
   }, {
+    "lineHeight": "1"
+  }, {
     "margin": "0px",
     "fontWeight": "400"
   }, props.isSmall && {
@@ -67,7 +69,7 @@ var sharedTransforms = function sharedTransforms(props) {
 };
 var PNano = _styledComponents["default"].p.withConfig({
   displayName: "typography__PNano",
-  componentId: "sc-10zh2fc-0"
+  componentId: "sc-1glziry-0"
 })({}, function (props) {
   return [{
     "fontSize": "11px"
@@ -76,25 +78,43 @@ var PNano = _styledComponents["default"].p.withConfig({
 exports.PNano = PNano;
 var PTiny = _styledComponents["default"].p.withConfig({
   displayName: "typography__PTiny",
-  componentId: "sc-10zh2fc-1"
+  componentId: "sc-1glziry-1"
 })({}, function (props) {
   return [{
-    "fontSize": "0.75rem"
+    "fontSize": "0.6875rem",
+    "@media (min-width: 1024px)": {
+      "fontSize": "0.75rem"
+    }
   }];
 }, sharedTransforms);
 exports.PTiny = PTiny;
 var PSmall = _styledComponents["default"].p.withConfig({
   displayName: "typography__PSmall",
-  componentId: "sc-10zh2fc-2"
+  componentId: "sc-1glziry-2"
 })({}, function (props) {
   return [{
-    "fontSize": "0.8125rem"
+    "fontSize": "0.75rem",
+    "@media (min-width: 1024px)": {
+      "fontSize": "0.8125rem"
+    }
   }];
 }, sharedTransforms);
 exports.PSmall = PSmall;
 var P = _styledComponents["default"].p.withConfig({
   displayName: "typography__P",
-  componentId: "sc-10zh2fc-3"
+  componentId: "sc-1glziry-3"
+})({}, function (props) {
+  return [{
+    "fontSize": "0.8125rem",
+    "@media (min-width: 1024px)": {
+      "fontSize": "0.9375rem"
+    }
+  }];
+}, sharedTransforms);
+exports.P = P;
+var PLarge = _styledComponents["default"].p.withConfig({
+  displayName: "typography__PLarge",
+  componentId: "sc-1glziry-4"
 })({}, function (props) {
   return [{
     "fontSize": "0.9375rem",
@@ -103,45 +123,27 @@ var P = _styledComponents["default"].p.withConfig({
     }
   }];
 }, sharedTransforms);
-exports.P = P;
-var PLarge = _styledComponents["default"].p.withConfig({
-  displayName: "typography__PLarge",
-  componentId: "sc-10zh2fc-4"
-})({}, function (props) {
-  return [{
-    "fontSize": "1.125rem",
-    "@media (min-width: 768px)": {
-      "fontSize": "1.25rem"
-    }
-  }];
-}, sharedTransforms);
 exports.PLarge = PLarge;
 var H6 = _styledComponents["default"].h6.withConfig({
   displayName: "typography__H6",
-  componentId: "sc-10zh2fc-5"
+  componentId: "sc-1glziry-5"
 })({}, function (props) {
   return [{
     "fontSize": "1.125rem",
-    "@media (min-width: 768px)": {
-      "fontSize": "1.25rem"
-    },
     "@media (min-width: 1024px)": {
-      "fontSize": "1.5rem"
+      "fontSize": "1.25rem"
     }
   }];
 }, sharedTransforms);
 exports.H6 = H6;
 var H5 = _styledComponents["default"].h5.withConfig({
   displayName: "typography__H5",
-  componentId: "sc-10zh2fc-6"
+  componentId: "sc-1glziry-6"
 })({}, function (props) {
   return [{
     "fontSize": "1.25rem",
-    "@media (min-width: 768px)": {
-      "fontSize": "1.5rem"
-    },
     "@media (min-width: 1024px)": {
-      "fontSize": "1.875rem"
+      "fontSize": "1.5rem"
     }
   }, {
     "letterSpacing": "0em"
@@ -150,7 +152,7 @@ var H5 = _styledComponents["default"].h5.withConfig({
 exports.H5 = H5;
 var H4 = _styledComponents["default"].h4.withConfig({
   displayName: "typography__H4",
-  componentId: "sc-10zh2fc-7"
+  componentId: "sc-1glziry-7"
 })({}, function (props) {
   return [{
     "fontSize": "1.5rem",
@@ -167,7 +169,7 @@ var H4 = _styledComponents["default"].h4.withConfig({
 exports.H4 = H4;
 var H3 = _styledComponents["default"].h3.withConfig({
   displayName: "typography__H3",
-  componentId: "sc-10zh2fc-8"
+  componentId: "sc-1glziry-8"
 })({}, function (props) {
   return [{
     "fontSize": "1.875rem",
@@ -184,7 +186,7 @@ var H3 = _styledComponents["default"].h3.withConfig({
 exports.H3 = H3;
 var H2 = _styledComponents["default"].h2.withConfig({
   displayName: "typography__H2",
-  componentId: "sc-10zh2fc-9"
+  componentId: "sc-1glziry-9"
 })({}, function (props) {
   return [{
     "fontSize": "2.25rem",
@@ -201,7 +203,7 @@ var H2 = _styledComponents["default"].h2.withConfig({
 exports.H2 = H2;
 var H1 = _styledComponents["default"].h1.withConfig({
   displayName: "typography__H1",
-  componentId: "sc-10zh2fc-10"
+  componentId: "sc-1glziry-10"
 })({}, function (props) {
   return [{
     "fontSize": "3rem",
@@ -220,56 +222,56 @@ var H1 = _styledComponents["default"].h1.withConfig({
 exports.H1 = H1;
 var PrimaryColor = _styledComponents["default"].span.withConfig({
   displayName: "typography__PrimaryColor",
-  componentId: "sc-10zh2fc-11"
+  componentId: "sc-1glziry-11"
 })({
   color: _colors.green
 });
 exports.PrimaryColor = PrimaryColor;
 var Bold = _styledComponents["default"].span.withConfig({
   displayName: "typography__Bold",
-  componentId: "sc-10zh2fc-12"
+  componentId: "sc-1glziry-12"
 })({
   fontWeight: 'bold'
 });
 exports.Bold = Bold;
 var Medium = _styledComponents["default"].span.withConfig({
   displayName: "typography__Medium",
-  componentId: "sc-10zh2fc-13"
+  componentId: "sc-1glziry-13"
 })({
   fontWeight: '500'
 });
 exports.Medium = Medium;
 var Underline = _styledComponents["default"].span.withConfig({
   displayName: "typography__Underline",
-  componentId: "sc-10zh2fc-14"
+  componentId: "sc-1glziry-14"
 })({
   textDecoration: 'underline'
 });
 exports.Underline = Underline;
 var Red = _styledComponents["default"].span.withConfig({
   displayName: "typography__Red",
-  componentId: "sc-10zh2fc-15"
+  componentId: "sc-1glziry-15"
 })({
   color: _colors.red
 });
 exports.Red = Red;
 var Blue = _styledComponents["default"].span.withConfig({
   displayName: "typography__Blue",
-  componentId: "sc-10zh2fc-16"
+  componentId: "sc-1glziry-16"
 })({
   color: _colors.blue
 });
 exports.Blue = Blue;
 var Green = _styledComponents["default"].span.withConfig({
   displayName: "typography__Green",
-  componentId: "sc-10zh2fc-17"
+  componentId: "sc-1glziry-17"
 })({
   color: _colors.green
 });
 exports.Green = Green;
 var Orange = _styledComponents["default"].span.withConfig({
   displayName: "typography__Orange",
-  componentId: "sc-10zh2fc-18"
+  componentId: "sc-1glziry-18"
 })({
   color: _colors.orange
 });
@@ -278,28 +280,28 @@ var Orange = _styledComponents["default"].span.withConfig({
 exports.Orange = Orange;
 var FieldLabelNano = (0, _styledComponents["default"])(PNano).withConfig({
   displayName: "typography__FieldLabelNano",
-  componentId: "sc-10zh2fc-19"
+  componentId: "sc-1glziry-19"
 })({
   fontFamily: 'Inter',
   lineHeight: '1 !important'
 });
 var FieldLabelTiny = (0, _styledComponents["default"])(PTiny).withConfig({
   displayName: "typography__FieldLabelTiny",
-  componentId: "sc-10zh2fc-20"
+  componentId: "sc-1glziry-20"
 })({
   fontFamily: 'Inter',
   lineHeight: '1 !important'
 });
 var FieldLabelSmall = (0, _styledComponents["default"])(PSmall).withConfig({
   displayName: "typography__FieldLabelSmall",
-  componentId: "sc-10zh2fc-21"
+  componentId: "sc-1glziry-21"
 })({
   fontFamily: 'Inter',
   lineHeight: '1 !important'
 });
 var FieldLabel = (0, _styledComponents["default"])(P).withConfig({
   displayName: "typography__FieldLabel",
-  componentId: "sc-10zh2fc-22"
+  componentId: "sc-1glziry-22"
 })({
   fontFamily: 'Inter',
   lineHeight: '1 !important'
@@ -313,28 +315,28 @@ var labelStyles = [{
 }];
 var LabelNano = (0, _styledComponents["default"])(FieldLabelNano).withConfig({
   displayName: "typography__LabelNano",
-  componentId: "sc-10zh2fc-23"
+  componentId: "sc-1glziry-23"
 })({}, function (props) {
   return labelStyles;
 });
 exports.LabelNano = LabelNano;
 var LabelTiny = (0, _styledComponents["default"])(FieldLabelTiny).withConfig({
   displayName: "typography__LabelTiny",
-  componentId: "sc-10zh2fc-24"
+  componentId: "sc-1glziry-24"
 })({}, function (props) {
   return labelStyles;
 });
 exports.LabelTiny = LabelTiny;
 var LabelSmall = (0, _styledComponents["default"])(FieldLabelSmall).withConfig({
   displayName: "typography__LabelSmall",
-  componentId: "sc-10zh2fc-25"
+  componentId: "sc-1glziry-25"
 })({}, function (props) {
   return labelStyles;
 });
 exports.LabelSmall = LabelSmall;
 var Label = (0, _styledComponents["default"])(FieldLabel).withConfig({
   displayName: "typography__Label",
-  componentId: "sc-10zh2fc-26"
+  componentId: "sc-1glziry-26"
 })({}, function (props) {
   return labelStyles;
 });

@@ -54,7 +54,7 @@ var tagVariants = {
 };
 var TagElement = _styledComponents["default"].div.withConfig({
   displayName: "tag__TagElement",
-  componentId: "sc-1citax8-0"
+  componentId: "sc-3iyutg-0"
 })(function (_ref2) {
   var isUppercase = _ref2.isUppercase;
   return [{
@@ -74,7 +74,7 @@ var TagElement = _styledComponents["default"].div.withConfig({
 });
 var _StyledLabelNano = (0, _styledComponents["default"])(_typography.LabelNano).withConfig({
   displayName: "tag___StyledLabelNano",
-  componentId: "sc-1citax8-1"
+  componentId: "sc-3iyutg-1"
 })({
   "fontWeight": "500"
 });

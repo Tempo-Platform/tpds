@@ -1,8 +1,8 @@
 {
-  "name": "TPDS",
+  "name": "tpds",
   "description": "TPDS - The Tempo Platform Design System",
   "homepage": "https://github.com/Tempo-Platform/tpds",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "babelMacros": {
     "twin": {
       "preset": "styled-components"

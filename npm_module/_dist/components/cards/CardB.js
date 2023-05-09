@@ -43,13 +43,13 @@ function CardB(_ref) {
 }
 var ExternalA = _styledComponents["default"].a.withConfig({
   displayName: "CardB__ExternalA",
-  componentId: "sc-189rf8e-0"
+  componentId: "sc-yuq74v-0"
 })(function () {
   return [];
 });
 var Root = _styledComponents["default"].div.withConfig({
   displayName: "CardB__Root",
-  componentId: "sc-189rf8e-1"
+  componentId: "sc-yuq74v-1"
 })(function () {
   return [{
     "borderRadius": "8px",
@@ -73,7 +73,7 @@ var Root = _styledComponents["default"].div.withConfig({
 });
 var HoverlessRoot = _styledComponents["default"].div.withConfig({
   displayName: "CardB__HoverlessRoot",
-  componentId: "sc-189rf8e-2"
+  componentId: "sc-yuq74v-2"
 })(function () {
   return [{
     "borderRadius": "8px",
@@ -91,7 +91,7 @@ var HoverlessRoot = _styledComponents["default"].div.withConfig({
 });
 var HeaderSection = _styledComponents["default"].div.withConfig({
   displayName: "CardB__HeaderSection",
-  componentId: "sc-189rf8e-3"
+  componentId: "sc-yuq74v-3"
 })(function () {
   return [{
     "display": "flex",
@@ -102,7 +102,7 @@ var HeaderSection = _styledComponents["default"].div.withConfig({
 });
 var Header = (0, _styledComponents["default"])(_typography.H6).withConfig({
   displayName: "CardB__Header",
-  componentId: "sc-189rf8e-4"
+  componentId: "sc-yuq74v-4"
 })(function () {
   return [{
     "lineHeight": "1"
@@ -110,7 +110,7 @@ var Header = (0, _styledComponents["default"])(_typography.H6).withConfig({
 });
 var Description = (0, _styledComponents["default"])(_typography.P).withConfig({
   displayName: "CardB__Description",
-  componentId: "sc-189rf8e-5"
+  componentId: "sc-yuq74v-5"
 })(function () {
   return [{
     "lineHeight": "1.25",
@@ -119,31 +119,31 @@ var Description = (0, _styledComponents["default"])(_typography.P).withConfig({
 });
 var _StyledDiv = (0, _styledComponents["default"])("div").withConfig({
   displayName: "CardB___StyledDiv",
-  componentId: "sc-189rf8e-6"
+  componentId: "sc-yuq74v-6"
 })({
   "marginBottom": "16px"
 });
 var _StyledDiv2 = (0, _styledComponents["default"])("div").withConfig({
   displayName: "CardB___StyledDiv2",
-  componentId: "sc-189rf8e-7"
+  componentId: "sc-yuq74v-7"
 })({
   "marginTop": "1rem"
 });
 var _StyledDiv3 = (0, _styledComponents["default"])("div").withConfig({
   displayName: "CardB___StyledDiv3",
-  componentId: "sc-189rf8e-8"
+  componentId: "sc-yuq74v-8"
 })({
   "marginBottom": "16px"
 });
 var _StyledExternalLinkIcon = (0, _styledComponents["default"])(_buttons.ExternalLinkIcon).withConfig({
   displayName: "CardB___StyledExternalLinkIcon",
-  componentId: "sc-189rf8e-9"
+  componentId: "sc-yuq74v-9"
 })({
   "marginLeft": "16px"
 });
 var _StyledDiv4 = (0, _styledComponents["default"])("div").withConfig({
   displayName: "CardB___StyledDiv4",
-  componentId: "sc-189rf8e-10"
+  componentId: "sc-yuq74v-10"
 })({
   "marginTop": "1rem"
 });

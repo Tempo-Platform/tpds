@@ -34,7 +34,7 @@ var _default = VideoCard;
 exports["default"] = _default;
 var VideoRoot = _styledComponents["default"].div.withConfig({
   displayName: "VideoCard__VideoRoot",
-  componentId: "sc-1h57zd3-0"
+  componentId: "sc-12tvz0a-0"
 })(function () {
   return [{
     "borderWidth": "1px",
@@ -59,7 +59,7 @@ var VideoRoot = _styledComponents["default"].div.withConfig({
 });
 var HeaderSection = _styledComponents["default"].div.withConfig({
   displayName: "VideoCard__HeaderSection",
-  componentId: "sc-1h57zd3-1"
+  componentId: "sc-12tvz0a-1"
 })(function () {
   return [{
     "display": "flex",
@@ -70,7 +70,7 @@ var HeaderSection = _styledComponents["default"].div.withConfig({
 });
 var Header = (0, _styledComponents["default"])(_typography.H6).withConfig({
   displayName: "VideoCard__Header",
-  componentId: "sc-1h57zd3-2"
+  componentId: "sc-12tvz0a-2"
 })(function () {
   return [{
     "lineHeight": "1"
@@ -78,7 +78,7 @@ var Header = (0, _styledComponents["default"])(_typography.H6).withConfig({
 });
 var Description = (0, _styledComponents["default"])(_typography.P).withConfig({
   displayName: "VideoCard__Description",
-  componentId: "sc-1h57zd3-3"
+  componentId: "sc-12tvz0a-3"
 })(function () {
   return [{
     "paddingTop": "16px",
@@ -88,7 +88,7 @@ var Description = (0, _styledComponents["default"])(_typography.P).withConfig({
 });
 var _StyledIframe = (0, _styledComponents["default"])("iframe").withConfig({
   displayName: "VideoCard___StyledIframe",
-  componentId: "sc-1h57zd3-4"
+  componentId: "sc-12tvz0a-4"
 })({
   "aspectRatio": "16 / 9",
   "width": "100%",

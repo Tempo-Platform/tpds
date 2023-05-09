@@ -21,7 +21,7 @@ var _default = HeroBlock;
 exports["default"] = _default;
 var _StyledSection = (0, _styledComponents["default"])(_layout.Section).withConfig({
   displayName: "Hero___StyledSection",
-  componentId: "sc-1nu7mqq-0"
+  componentId: "sc-ww0j4p-0"
 })({
   "height": "300px",
   "@media (min-width: 768px)": {
@@ -39,7 +39,7 @@ var _StyledSection = (0, _styledComponents["default"])(_layout.Section).withConf
 });
 var _StyledContainer = (0, _styledComponents["default"])(_layout.Container).withConfig({
   displayName: "Hero___StyledContainer",
-  componentId: "sc-1nu7mqq-1"
+  componentId: "sc-ww0j4p-1"
 })({
   "display": "flex",
   "height": "100%",

@@ -27,7 +27,7 @@ var _default = DummyIcon;
 exports["default"] = _default;
 var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
   displayName: "DummyIcon___StyledSvg",
-  componentId: "sc-1kbgjkr-0"
+  componentId: "sc-1dr87ar-0"
 })({
   "fill": "currentColor",
   "color": "var(--text-primary)"

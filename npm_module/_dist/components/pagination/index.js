@@ -131,7 +131,7 @@ function renderItems(_ref2) {
 }
 var PaginationRoot = _styledComponents["default"].div.withConfig({
   displayName: "pagination__PaginationRoot",
-  componentId: "sc-1xdjivc-0"
+  componentId: "sc-2ovshh-0"
 })(function () {
   return [{
     "display": "flex",
@@ -142,7 +142,7 @@ var PaginationRoot = _styledComponents["default"].div.withConfig({
 });
 var PaginationItem = _styledComponents["default"].li.withConfig({
   displayName: "pagination__PaginationItem",
-  componentId: "sc-1xdjivc-1"
+  componentId: "sc-2ovshh-1"
 })(function (_ref3) {
   var active = _ref3.active,
     dimmed = _ref3.dimmed;

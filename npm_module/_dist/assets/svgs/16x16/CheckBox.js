@@ -34,7 +34,7 @@ var _default = CheckBox;
 exports["default"] = _default;
 var SVG = _styledComponents["default"].svg.withConfig({
   displayName: "CheckBox__SVG",
-  componentId: "sc-thx93m-0"
+  componentId: "sc-oiznm-0"
 })(function (_ref2) {
   var active = _ref2.active;
   return [{

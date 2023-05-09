@@ -10,7 +10,7 @@ var _typography = require("../../../tpds/elements/typography");
 
 var PropsTableRowElement = _styledComponents["default"].span.withConfig({
   displayName: "PropsTable__PropsTableRowElement",
-  componentId: "sc-1obsa2a-0"
+  componentId: "sc-6yc7gf-0"
 })(function () {
   return [{
     "display": "grid",
@@ -20,13 +20,13 @@ var PropsTableRowElement = _styledComponents["default"].span.withConfig({
 });
 var _StyledPropsTableRowElement2 = (0, _styledComponents["default"])(PropsTableRowElement).withConfig({
   displayName: "PropsTable___StyledPropsTableRowElement2",
-  componentId: "sc-1obsa2a-1"
+  componentId: "sc-6yc7gf-1"
 })({
   "marginBottom": "1rem"
 });
 var _StyledPropsTableRowElement = (0, _styledComponents["default"])(PropsTableRowElement).withConfig({
   displayName: "PropsTable___StyledPropsTableRowElement",
-  componentId: "sc-1obsa2a-2"
+  componentId: "sc-6yc7gf-2"
 })({
   "marginBottom": "2rem",
   "borderBottomWidth": "1px",
@@ -58,7 +58,7 @@ var lastPVariants = {
 };
 var CustomP = (0, _styledComponents["default"])(_typography.P).withConfig({
   displayName: "PropsTable__CustomP",
-  componentId: "sc-1obsa2a-3"
+  componentId: "sc-6yc7gf-3"
 })(function () {
   return [{
     "overflow": "hidden",
@@ -68,55 +68,55 @@ var CustomP = (0, _styledComponents["default"])(_typography.P).withConfig({
 });
 var _StyledCustomP8 = (0, _styledComponents["default"])(CustomP).withConfig({
   displayName: "PropsTable___StyledCustomP8",
-  componentId: "sc-1obsa2a-4"
+  componentId: "sc-6yc7gf-4"
 })({
   "gridColumn": "span 2 / span 2"
 });
 var _StyledCustomP7 = (0, _styledComponents["default"])(CustomP).withConfig({
   displayName: "PropsTable___StyledCustomP7",
-  componentId: "sc-1obsa2a-5"
+  componentId: "sc-6yc7gf-5"
 })({
   "gridColumn": "span 2 / span 2"
 });
 var _StyledCustomP6 = (0, _styledComponents["default"])(CustomP).withConfig({
   displayName: "PropsTable___StyledCustomP6",
-  componentId: "sc-1obsa2a-6"
+  componentId: "sc-6yc7gf-6"
 })({
   "gridColumn": "span 2 / span 2"
 });
 var _StyledCustomP5 = (0, _styledComponents["default"])(CustomP).withConfig({
   displayName: "PropsTable___StyledCustomP5",
-  componentId: "sc-1obsa2a-7"
+  componentId: "sc-6yc7gf-7"
 })({
   "gridColumn": "span 2 / span 2"
 });
 var _StyledCustomP4 = (0, _styledComponents["default"])(CustomP).withConfig({
   displayName: "PropsTable___StyledCustomP4",
-  componentId: "sc-1obsa2a-8"
+  componentId: "sc-6yc7gf-8"
 })({
   "gridColumn": "span 2 / span 2"
 });
 var _StyledCustomP3 = (0, _styledComponents["default"])(CustomP).withConfig({
   displayName: "PropsTable___StyledCustomP3",
-  componentId: "sc-1obsa2a-9"
+  componentId: "sc-6yc7gf-9"
 })({
   "gridColumn": "span 2 / span 2"
 });
 var _StyledCustomP2 = (0, _styledComponents["default"])(CustomP).withConfig({
   displayName: "PropsTable___StyledCustomP2",
-  componentId: "sc-1obsa2a-10"
+  componentId: "sc-6yc7gf-10"
 })({
   "gridColumn": "span 2 / span 2"
 });
 var _StyledCustomP = (0, _styledComponents["default"])(CustomP).withConfig({
   displayName: "PropsTable___StyledCustomP",
-  componentId: "sc-1obsa2a-11"
+  componentId: "sc-6yc7gf-11"
 })({
   "gridColumn": "span 2 / span 2"
 });
 var LastP = (0, _styledComponents["default"])(_typography.P).withConfig({
   displayName: "PropsTable__LastP",
-  componentId: "sc-1obsa2a-12"
+  componentId: "sc-6yc7gf-12"
 })(function () {
   return [function (_ref) {
     var _ref$variant = _ref.variant,

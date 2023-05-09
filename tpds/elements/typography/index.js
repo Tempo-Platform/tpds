@@ -8,6 +8,7 @@ import {
 
 const sharedTransforms = props => [
   tw`text-primary`,
+  tw`leading-none`,
   tw`m-0 font-normal`,
   props.isSmall && tw`text-sm`,
   props.isUnderline && tw`underline`,
@@ -51,37 +52,37 @@ export const PNano = styled.p(
 )
 export const PTiny = styled.p(
   {},
-  props => [tw`text-xs`],
+  props => [tw`text-xxs lg:text-xs`],
   sharedTransforms,
 )
 
 export const PSmall = styled.p(
   {},
-  props => [tw`text-sm`],
+  props => [tw`text-xs lg:text-sm`],
   sharedTransforms,
 )
 
 export const P = styled.p(
   {},
-  props => [tw`text-base lg:text-lg`],
+  props => [tw`text-sm lg:text-base`],
   sharedTransforms,
 )
 
 export const PLarge = styled.p(
   {},
-  props => [tw`text-lg md:text-xl`],
+  props => [tw`text-base lg:text-lg`],
   sharedTransforms,
 )
 
 export const H6 = styled.h6(
   {},
-  props => [tw`text-lg md:text-xl lg:text-2xl`],
+  props => [tw`text-lg lg:text-xl`],
   sharedTransforms,
 )
 
 export const H5 = styled.h5(
   {},
-  props => [tw`text-xl md:text-2xl lg:text-3xl`, tw`tracking-normal`],
+  props => [tw`text-xl lg:text-2xl`, tw`tracking-normal`],
   sharedTransforms,
 )
 

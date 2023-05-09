@@ -51,7 +51,7 @@ var _default = BreadcrumbsBar;
 exports["default"] = _default;
 var BreadcrumbsBarRoot = _styledComponents["default"].div.withConfig({
   displayName: "BreadcrumbsBar__BreadcrumbsBarRoot",
-  componentId: "sc-1ooa3yw-0"
+  componentId: "sc-18w6svh-0"
 })(function (_ref2) {
   var isUppercase = _ref2.isUppercase,
     isDisabled = _ref2.isDisabled;
@@ -86,7 +86,7 @@ var BreadcrumbsBarRoot = _styledComponents["default"].div.withConfig({
 });
 var LinksRow = _styledComponents["default"].div.withConfig({
   displayName: "BreadcrumbsBar__LinksRow",
-  componentId: "sc-1ooa3yw-1"
+  componentId: "sc-18w6svh-1"
 })(function () {
   return [{
     "display": "flex",
@@ -108,21 +108,21 @@ function ChevronRight() {
 }
 var _StyledHomeIcon = (0, _styledComponents["default"])(_Home["default"]).withConfig({
   displayName: "BreadcrumbsBar___StyledHomeIcon",
-  componentId: "sc-1ooa3yw-2"
+  componentId: "sc-18w6svh-2"
 })({
   "fill": "currentColor",
   "color": "var(--text-primary)"
 });
 var _StyledSpan = (0, _styledComponents["default"])("span").withConfig({
   displayName: "BreadcrumbsBar___StyledSpan",
-  componentId: "sc-1ooa3yw-3"
+  componentId: "sc-18w6svh-3"
 })({
   "display": "flex",
   "alignItems": "center"
 });
 var _StyledPSmall = (0, _styledComponents["default"])(_typography.PSmall).withConfig({
   displayName: "BreadcrumbsBar___StyledPSmall",
-  componentId: "sc-1ooa3yw-4"
+  componentId: "sc-18w6svh-4"
 })({
   "display": "flex",
   "cursor": "pointer",
