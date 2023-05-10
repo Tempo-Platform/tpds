@@ -5,7 +5,7 @@ import Spinner from '../spinner'
 
 export const Button = ({ label, iconBefore, iconAfter, variant, loading, ...props }) => {
   return (
-    <ButtonElement variant={variant} {...props}>
+    <ButtonElement variant={variant} label={label} {...props}>
       {iconBefore && <span className="icon-before">{iconBefore}</span>}
       {label}
       {iconAfter && <span className="icon-after">{iconAfter}</span>}

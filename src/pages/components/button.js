@@ -65,6 +65,16 @@ const Button = () => (
       <CodeBlock code={codeWithIconBeforeAndAfter} />
       <br />
       <br />
+      <PLarge>Button only with icon (no label)</PLarge>
+      <br />
+      <ButtonComponent
+        variant='secondary'
+        iconBefore={<Play tw='fill-current' />}
+      />
+      <br />
+      <CodeBlock code={codeWithIconBeforeAndAfter} />
+      <br />
+      <br />
       <PLarge>Button with "success" variant and custom icon color</PLarge>
       <br />
       <ButtonComponent

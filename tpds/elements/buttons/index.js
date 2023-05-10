@@ -2,18 +2,12 @@ import tw, { styled, css } from 'twin.macro'
 
 export const Button = styled.button(
   ({
-    isSecondary,
-    isInfo,
-    isSuccess,
-    isWarning,
-    isDanger,
+    label,
     isSmall,
     isTiny,
     isLarge,
-    isExtraLarge,
     isDisabled,
     isUppercase,
-    isGhost,
     iconColor,
   }) => [
     tw`flex transition duration-100`,
@@ -44,11 +38,14 @@ export const Button = styled.button(
       `,
     ],
 
+    
     ({ variant = 'default' }) => buttonVariants[variant],
     
     isSmall && [tw`px-2 pt-[2px] pb-[1.5px] text-[13px]`],
     isTiny && [tw`px-1 pt-0 pb-0 text-[11px]`],
     isLarge && [tw`px-4 py-1.5 text-[16px]`],
+    
+    !label && [tw`p-[5px]! px-[7px]!`],
 
     isDisabled && [tw`pointer-events-none opacity-30`],
   ],
