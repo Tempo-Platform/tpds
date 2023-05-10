@@ -9,7 +9,7 @@ export const Button = ({ label, iconBefore, iconAfter, variant, loading, ...prop
       {iconBefore && <span className="icon-before">{iconBefore}</span>}
       {label}
       {iconAfter && <span className="icon-after">{iconAfter}</span>}
-      {loading && <Spinner color='white' tw='block ml-xxs' radius={15} />}
+      {loading && <Spinner color='white' tw='block' radius={15} />}
     </ButtonElement>
   )
 }

@@ -18,7 +18,7 @@ export const Button = styled.button(
   }) => [
     tw`flex transition duration-100`,
     tw`font-medium! text-[14px]`,
-    tw`px-3 pt-[5px] pb-[5px] border rounded-sm focus:outline-none`,
+    tw`px-3 gap-x-2 pt-[5px] pb-[5px] border rounded-sm focus:outline-none`,
     css`
       font-family: 'Inter';
       align-items: center;
@@ -26,11 +26,9 @@ export const Button = styled.button(
       user-select: none;
       cursor: pointer;
       .icon-before {
-        margin-right: 10px;
         position: relative;
       }
       .icon-after {
-        margin-left: 10px;
         position: relative;
       }
       .icon-before * {
