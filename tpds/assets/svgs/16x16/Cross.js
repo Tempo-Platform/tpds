@@ -20,5 +20,4 @@ function CrossIcon() {
     );
   }
 
-  export default Copy
-  
+  export default CrossIcon
