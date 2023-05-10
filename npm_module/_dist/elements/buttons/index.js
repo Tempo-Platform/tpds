@@ -13,18 +13,12 @@ var Button = _styledComponents["default"].button.withConfig({
   displayName: "buttons__Button",
   componentId: "sc-a6v1fr-0"
 })(function (_ref) {
-  var isSecondary = _ref.isSecondary,
-    isInfo = _ref.isInfo,
-    isSuccess = _ref.isSuccess,
-    isWarning = _ref.isWarning,
-    isDanger = _ref.isDanger,
+  var label = _ref.label,
     isSmall = _ref.isSmall,
     isTiny = _ref.isTiny,
     isLarge = _ref.isLarge,
-    isExtraLarge = _ref.isExtraLarge,
     isDisabled = _ref.isDisabled,
     isUppercase = _ref.isUppercase,
-    isGhost = _ref.isGhost,
     iconColor = _ref.iconColor;
   return [{
     "display": "flex",
@@ -68,6 +62,10 @@ var Button = _styledComponents["default"].button.withConfig({
     "paddingTop": "0.375rem",
     "paddingBottom": "0.375rem",
     "fontSize": "16px"
+  }], !label && [{
+    "padding": "5px !important",
+    "paddingLeft": "7px !important",
+    "paddingRight": "7px !important"
   }], isDisabled && [{
     "pointerEvents": "none",
     "opacity": "0.3"

@@ -21,7 +21,8 @@ var Button = function Button(_ref) {
     loading = _ref.loading,
     props = (0, _objectWithoutPropertiesLoose2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_buttons.Button, Object.assign({
-    variant: variant
+    variant: variant,
+    label: label
   }, props), iconBefore && /*#__PURE__*/_react["default"].createElement("span", {
     className: "icon-before"
   }, iconBefore), label, iconAfter && /*#__PURE__*/_react["default"].createElement("span", {

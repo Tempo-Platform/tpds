@@ -4,11 +4,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `HBUI - The Hummingbot Design System`,
-        short_name: `HBUI`,
+        name: `HBUI - The Tempo Platform System`,
+        short_name: `TPDS`,
         start_url: `/`,
         background_color: `#222222`,
-        theme_color: `#5FFFD7`,
+        theme_color: `#553DED`,
         display: `minimal-ui`,
         icon: './src/assets/favicon.svg',
       },
