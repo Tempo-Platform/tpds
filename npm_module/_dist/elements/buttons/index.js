@@ -35,6 +35,7 @@ var Button = _styledComponents["default"].button.withConfig({
     "fontSize": "14px",
     "fontWeight": "500 !important"
   }, {
+    "columnGap": "0.5rem",
     "borderRadius": "0.125rem",
     "borderWidth": "1px",
     "paddingLeft": "0.75rem",
@@ -45,7 +46,7 @@ var Button = _styledComponents["default"].button.withConfig({
       "outline": "2px solid transparent",
       "outlineOffset": "2px"
     }
-  }, (0, _styledComponents.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n      font-family: 'Inter';\n      align-items: center;\n      justify-content: center;\n      user-select: none;\n      cursor: pointer;\n      .icon-before {\n        margin-right: 10px;\n        position: relative;\n      }\n      .icon-after {\n        margin-left: 10px;\n        position: relative;\n      }\n      .icon-before * {\n        fill: ", ";\n      }\n      .icon-after * {\n        fill: ", ";\n      }\n    "])), iconColor ? iconColor : 'auto', iconColor ? iconColor : 'auto'), isUppercase && [(0, _styledComponents.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        text-transform: uppercase;\n      "])))], function (_ref2) {
+  }, (0, _styledComponents.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n      font-family: 'Inter';\n      align-items: center;\n      justify-content: center;\n      user-select: none;\n      cursor: pointer;\n      .icon-before {\n        position: relative;\n      }\n      .icon-after {\n        position: relative;\n      }\n      .icon-before * {\n        fill: ", ";\n      }\n      .icon-after * {\n        fill: ", ";\n      }\n    "])), iconColor ? iconColor : 'auto', iconColor ? iconColor : 'auto'), isUppercase && [(0, _styledComponents.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        text-transform: uppercase;\n      "])))], function (_ref2) {
     var _ref2$variant = _ref2.variant,
       variant = _ref2$variant === void 0 ? 'default' : _ref2$variant;
     return buttonVariants[variant];

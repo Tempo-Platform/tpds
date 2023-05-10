@@ -93,7 +93,6 @@ var _StyledSpinner = (0, _styledComponents["default"])(_spinner["default"]).with
   displayName: "buttons___StyledSpinner",
   componentId: "sc-vgl6gh-2"
 })({
-  "marginLeft": "8px",
   "display": "block"
 });
 var _StyledPath = (0, _styledComponents["default"])("path").withConfig({
