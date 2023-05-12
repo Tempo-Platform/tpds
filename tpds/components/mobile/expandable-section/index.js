@@ -5,6 +5,12 @@ import { PSmall } from '../../../elements/typography'
 import MinusIcon from "../../../assets/svgs/icons/MinusIcon";
 import PlusIcon from "../../../assets/svgs/icons/PlusIcon";
 
+const RootDiv = styled.div((props) => [
+	tw`bg-window border border-window`,
+    props.removeBorderTop && tw`border-t-0`,
+    props.removeBorderBottom && tw`border-b-0`,
+]);
+
 const Header = styled.div((props) => [
 	tw`h-[44px] w-full flex justify-between items-center px-[16px] transition-all cursor-pointer`,
     props.isOpen ? tw`border-b border-window` : tw`border-b border-transparent`,
@@ -66,7 +72,14 @@ const handleToggleHeader = (
 	}
 };
 
-function ExpandableSection({title, children, shouldClose, elementHeightDiscountId}) {
+function ExpandableSection({
+    title,
+    children,
+    shouldClose,
+    elementHeightDiscountId,
+    removeBorderTop,
+    removeBorderBottom
+}) {
 	const headerRef = React.useRef(null);
 	const [isOpen, toggleOpen] = React.useState(false);
 	if (children && typeof children === "string") {
@@ -78,7 +91,7 @@ function ExpandableSection({title, children, shouldClose, elementHeightDiscountI
 	}
 
 	return (
-		<div tw='bg-window border border-window' ref={headerRef}>
+		<RootDiv removeBorderBottom={removeBorderBottom} removeBorderTop={removeBorderTop} ref={headerRef}>
 			<Header isOpen={isOpen} onClick={() => handleToggleHeader(isOpen, toggleOpen, headerRef, elementHeightDiscountId)}>
 				<PSmall isMedium>{title}</PSmall>
 				{isOpen ? <MinusIcon tw='fill-current' /> : <PlusIcon tw='fill-current' />}
@@ -86,7 +99,7 @@ function ExpandableSection({title, children, shouldClose, elementHeightDiscountI
 			<Content isOpen={isOpen}>
 				<InnerDiv>{children}</InnerDiv>
 			</Content>
-		</div>
+		</RootDiv>
 	);
 };
 
