@@ -66,11 +66,15 @@ const handleToggleHeader = (
 	}
 };
 
-function ExpandableSection({title, children, elementHeightDiscountId}) {
+function ExpandableSection({title, children, shouldClose, elementHeightDiscountId}) {
 	const headerRef = React.useRef(null);
 	const [isOpen, toggleOpen] = React.useState(false);
 	if (children && typeof children === "string") {
 		children = <PSmall>{children}</PSmall>;
+	}
+
+	if (!shouldClose && isOpen) {
+		toggleOpen(false);
 	}
 
 	return (
