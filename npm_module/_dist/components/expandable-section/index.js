@@ -13,9 +13,23 @@ var _PlusIcon = _interopRequireDefault(require("../../../assets/svgs/icons/PlusI
 var _templateObject, _templateObject2;
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+var RootDiv = _styledComponents["default"].div.withConfig({
+  displayName: "expandable-section__RootDiv",
+  componentId: "sc-1ky4e3d-0"
+})(function (props) {
+  return [{
+    "borderWidth": "1px",
+    "borderColor": "var(--border-window)",
+    "backgroundColor": "var(--bg-window)"
+  }, props.removeBorderTop && {
+    "borderTopWidth": "0px"
+  }, props.removeBorderBottom && {
+    "borderBottomWidth": "0px"
+  }];
+});
 var Header = _styledComponents["default"].div.withConfig({
   displayName: "expandable-section__Header",
-  componentId: "sc-1ky4e3d-0"
+  componentId: "sc-1ky4e3d-1"
 })(function (props) {
   return [{
     "display": "flex",
@@ -39,7 +53,7 @@ var Header = _styledComponents["default"].div.withConfig({
 });
 var Content = _styledComponents["default"].div.withConfig({
   displayName: "expandable-section__Content",
-  componentId: "sc-1ky4e3d-1"
+  componentId: "sc-1ky4e3d-2"
 })(function (props) {
   return [{
     "display": "grid",
@@ -53,7 +67,7 @@ var Content = _styledComponents["default"].div.withConfig({
 });
 var InnerDiv = _styledComponents["default"].div.withConfig({
   displayName: "expandable-section__InnerDiv",
-  componentId: "sc-1ky4e3d-2"
+  componentId: "sc-1ky4e3d-3"
 })(function (props) {
   return [{
     "overflow": "hidden",
@@ -95,7 +109,9 @@ function ExpandableSection(_ref) {
   var title = _ref.title,
     children = _ref.children,
     shouldClose = _ref.shouldClose,
-    elementHeightDiscountId = _ref.elementHeightDiscountId;
+    elementHeightDiscountId = _ref.elementHeightDiscountId,
+    removeBorderTop = _ref.removeBorderTop,
+    removeBorderBottom = _ref.removeBorderBottom;
   var headerRef = _react["default"].useRef(null);
   var _React$useState = _react["default"].useState(false),
     isOpen = _React$useState[0],
@@ -106,7 +122,9 @@ function ExpandableSection(_ref) {
   if (!shouldClose && isOpen) {
     toggleOpen(false);
   }
-  return /*#__PURE__*/_react["default"].createElement(_StyledDiv, {
+  return /*#__PURE__*/_react["default"].createElement(RootDiv, {
+    removeBorderBottom: removeBorderBottom,
+    removeBorderTop: removeBorderTop,
     ref: headerRef
   }, /*#__PURE__*/_react["default"].createElement(Header, {
     isOpen: isOpen,
@@ -122,14 +140,6 @@ function ExpandableSection(_ref) {
 ;
 var _default = ExpandableSection;
 exports["default"] = _default;
-var _StyledDiv = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "expandable-section___StyledDiv",
-  componentId: "sc-1ky4e3d-3"
-})({
-  "borderWidth": "1px",
-  "borderColor": "var(--border-window)",
-  "backgroundColor": "var(--bg-window)"
-});
 var _StyledMinusIcon = (0, _styledComponents["default"])(_MinusIcon["default"]).withConfig({
   displayName: "expandable-section___StyledMinusIcon",
   componentId: "sc-1ky4e3d-4"
