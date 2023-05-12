@@ -94,6 +94,7 @@ var handleToggleHeader = function handleToggleHeader(isOpen, toggleOpen, headerR
 function ExpandableSection(_ref) {
   var title = _ref.title,
     children = _ref.children,
+    shouldClose = _ref.shouldClose,
     elementHeightDiscountId = _ref.elementHeightDiscountId;
   var headerRef = _react["default"].useRef(null);
   var _React$useState = _react["default"].useState(false),
@@ -101,6 +102,9 @@ function ExpandableSection(_ref) {
     toggleOpen = _React$useState[1];
   if (children && typeof children === "string") {
     children = /*#__PURE__*/_react["default"].createElement(_typography.PSmall, null, children);
+  }
+  if (!shouldClose && isOpen) {
+    toggleOpen(false);
   }
   return /*#__PURE__*/_react["default"].createElement(_StyledDiv, {
     ref: headerRef
