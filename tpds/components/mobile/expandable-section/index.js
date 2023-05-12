@@ -33,13 +33,13 @@ const InnerDiv = styled.div((props) => [
     `,
 ]);
 
-const elementIsVisibleInViewport = (el, elementHeightDiscountId) => {
+const elementIsVisibleInViewport = (el, excludeElementId) => {
 	const rect = el.getBoundingClientRect();
     let discountHeight = 0;
-    if(elementHeightDiscountId) {
-        const elementHeightDiscount = document.getElementById(elementHeightDiscountId);
+    if(excludeElementId) {
+        const elementHeightDiscount = document.getElementById(excludeElementId);
         if(!elementHeightDiscount && elementHeightDiscount.clientHeight) {
-            console.error(`elementHeightDiscountId ${elementHeightDiscountId} not found`);
+            console.error(`excludeElementId ${excludeElementId} not found`);
         } else {
             discountHeight = elementHeightDiscount.clientHeight;
         }
@@ -56,13 +56,13 @@ const handleToggleHeader = (
 	isOpen,
 	toggleOpen,
 	headerRef,
-	elementHeightDiscountId
+	excludeElementId
 ) => {
 	const applyScrollIntoView = !isOpen;
 	toggleOpen(!isOpen);
 	if (applyScrollIntoView) {
 		setTimeout(() => {
-			if (!elementIsVisibleInViewport(headerRef.current, elementHeightDiscountId)) {
+			if (!elementIsVisibleInViewport(headerRef.current, excludeElementId)) {
 				headerRef.current.scrollIntoView({
 					behavior: "smooth",
 					block: "center",
@@ -76,7 +76,7 @@ function ExpandableSection({
     title,
     children,
     shouldClose,
-    elementHeightDiscountId,
+    excludeElementId,
     removeBorderTop,
     removeBorderBottom
 }) {
@@ -92,7 +92,7 @@ function ExpandableSection({
 
 	return (
 		<RootDiv removeBorderBottom={removeBorderBottom} removeBorderTop={removeBorderTop} ref={headerRef}>
-			<Header isOpen={isOpen} onClick={() => handleToggleHeader(isOpen, toggleOpen, headerRef, elementHeightDiscountId)}>
+			<Header isOpen={isOpen} onClick={() => handleToggleHeader(isOpen, toggleOpen, headerRef, excludeElementId)}>
 				<PSmall isMedium>{title}</PSmall>
 				{isOpen ? <MinusIcon tw='fill-current' /> : <PlusIcon tw='fill-current' />}
 			</Header>
