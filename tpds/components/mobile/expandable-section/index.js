@@ -86,7 +86,7 @@ function ExpandableSection({
 		children = <PSmall>{children}</PSmall>;
 	}
 
-	if (!shouldClose && isOpen) {
+	if (shouldClose && isOpen) {
 		toggleOpen(false);
 	}
 
