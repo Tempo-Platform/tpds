@@ -119,7 +119,7 @@ function ExpandableSection(_ref) {
   if (children && typeof children === "string") {
     children = /*#__PURE__*/_react["default"].createElement(_typography.PSmall, null, children);
   }
-  if (!shouldClose && isOpen) {
+  if (shouldClose && isOpen) {
     toggleOpen(false);
   }
   return /*#__PURE__*/_react["default"].createElement(RootDiv, {
