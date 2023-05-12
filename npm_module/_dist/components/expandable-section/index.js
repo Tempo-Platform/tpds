@@ -78,25 +78,25 @@ var InnerDiv = _styledComponents["default"].div.withConfig({
     "paddingBottom": "1rem"
   })];
 });
-var elementIsVisibleInViewport = function elementIsVisibleInViewport(el, elementHeightDiscountId) {
+var elementIsVisibleInViewport = function elementIsVisibleInViewport(el, excludeElementId) {
   var rect = el.getBoundingClientRect();
   var discountHeight = 0;
-  if (elementHeightDiscountId) {
-    var elementHeightDiscount = document.getElementById(elementHeightDiscountId);
+  if (excludeElementId) {
+    var elementHeightDiscount = document.getElementById(excludeElementId);
     if (!elementHeightDiscount && elementHeightDiscount.clientHeight) {
-      console.error("elementHeightDiscountId " + elementHeightDiscountId + " not found");
+      console.error("excludeElementId " + excludeElementId + " not found");
     } else {
       discountHeight = elementHeightDiscount.clientHeight;
     }
   }
   return rect.top >= 0 && rect.left >= 0 && rect.bottom <= window.innerHeight - discountHeight && rect.right <= window.innerWidth;
 };
-var handleToggleHeader = function handleToggleHeader(isOpen, toggleOpen, headerRef, elementHeightDiscountId) {
+var handleToggleHeader = function handleToggleHeader(isOpen, toggleOpen, headerRef, excludeElementId) {
   var applyScrollIntoView = !isOpen;
   toggleOpen(!isOpen);
   if (applyScrollIntoView) {
     setTimeout(function () {
-      if (!elementIsVisibleInViewport(headerRef.current, elementHeightDiscountId)) {
+      if (!elementIsVisibleInViewport(headerRef.current, excludeElementId)) {
         headerRef.current.scrollIntoView({
           behavior: "smooth",
           block: "center"
@@ -109,7 +109,7 @@ function ExpandableSection(_ref) {
   var title = _ref.title,
     children = _ref.children,
     shouldClose = _ref.shouldClose,
-    elementHeightDiscountId = _ref.elementHeightDiscountId,
+    excludeElementId = _ref.excludeElementId,
     removeBorderTop = _ref.removeBorderTop,
     removeBorderBottom = _ref.removeBorderBottom;
   var headerRef = _react["default"].useRef(null);
@@ -129,7 +129,7 @@ function ExpandableSection(_ref) {
   }, /*#__PURE__*/_react["default"].createElement(Header, {
     isOpen: isOpen,
     onClick: function onClick() {
-      return handleToggleHeader(isOpen, toggleOpen, headerRef, elementHeightDiscountId);
+      return handleToggleHeader(isOpen, toggleOpen, headerRef, excludeElementId);
     }
   }, /*#__PURE__*/_react["default"].createElement(_typography.PSmall, {
     isMedium: true
