@@ -156,8 +156,8 @@ spanBStyles[true] = {
   "display": "flex",
   "alignItems": "center",
   "paddingLeft": "0.75rem",
-  "--tw-text-opacity": "1",
-  "color": "currentColor"
+  "color": "rgb(0 194 206 / var(--tw-text-opacity))",
+  "--tw-text-opacity": "1"
 };
 spanBStyles[false] = {
   "position": "absolute",
@@ -167,8 +167,8 @@ spanBStyles[false] = {
   "display": "flex",
   "alignItems": "center",
   "paddingLeft": "0.75rem",
-  "--tw-text-opacity": "1",
-  "color": "currentColor"
+  "color": "rgb(240 135 39 / var(--tw-text-opacity))",
+  "--tw-text-opacity": "1"
 };
 var _StyledDiv = (0, _styledComponents["default"])("div").withConfig({
   displayName: "combobox___StyledDiv",
@@ -276,10 +276,10 @@ var _StyledDiv3 = (0, _styledComponents["default"])("div").withConfig({
   "position": "relative",
   "cursor": "default",
   "userSelect": "none",
-  "paddingTop": "0.5rem",
-  "paddingBottom": "0.5rem",
   "paddingLeft": "1rem",
   "paddingRight": "1rem",
+  "paddingTop": "0.5rem",
+  "paddingBottom": "0.5rem",
   "color": "var(--text-primary)"
 });
 var _StyledComboboxOption = (0, _styledComponents["default"])(_react2.Combobox.Option).withConfig({

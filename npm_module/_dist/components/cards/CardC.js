@@ -142,8 +142,8 @@ var _StyledExternalLinkIcon = (0, _styledComponents["default"])(_buttons.Externa
   componentId: "sc-l8kwp6-9"
 })({
   "position": "absolute",
-  "top": "16px",
-  "right": "16px"
+  "right": "16px",
+  "top": "16px"
 });
 var _StyledDiv4 = (0, _styledComponents["default"])("div").withConfig({
   displayName: "CardC___StyledDiv4",

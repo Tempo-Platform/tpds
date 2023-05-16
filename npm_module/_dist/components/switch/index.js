@@ -28,7 +28,7 @@ stylesA[false] = {
   "borderRadius": "9999px",
   "--tw-bg-opacity": "1",
   "backgroundColor": "rgb(201 205 207 / var(--tw-bg-opacity))",
-  ".dark &": {
+  ":is(.dark &)": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(62 67 71 / var(--tw-bg-opacity))"
   }

@@ -4,35 +4,39 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 var _typeof = require("@babel/runtime/helpers/typeof");
 exports.__esModule = true;
 exports["default"] = void 0;
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
 var _taggedTemplateLiteralLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteralLoose"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _react = _interopRequireDefault(require("react"));
 var _typography = require("../../elements/typography");
 var _Check = _interopRequireDefault(require("../../assets/svgs/icons/Check"));
+require("./style.css");
+var _excluded = ["steps", "currentStepIndex"];
 var _templateObject, _templateObject2;
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-var Root = _styledComponents["default"].div.withConfig({
-  displayName: "steps__Root",
+var StepsRoot = _styledComponents["default"].div.withConfig({
+  displayName: "steps__StepsRoot",
   componentId: "sc-1vtzxe4-0"
 })(function () {
   return [{
     "display": "flex",
     "width": "100%",
     "alignItems": "center",
-    "justifyContent": "space-between"
+    "justifyContent": "space-between",
+    "columnGap": "3%"
   }, (0, _styledComponents.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n    .default {\n      ", ",\n      p {\n        ", "\n      }\n    }\n    .completed {\n      ", ",\n      p {\n        ", "\n      }\n      svg * {\n        ", "\n      }\n    }\n    .active {\n      ", ",\n      p {\n        ", "\n      }\n    }\n  "])), {
     "--tw-border-opacity": "1",
     "borderColor": "rgb(201 205 207 / var(--tw-border-opacity))",
     "backgroundColor": "var(--bg-window)",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-border-opacity": "1",
       "borderColor": "rgb(134 142 147 / var(--tw-border-opacity))",
       "backgroundColor": "var(--bg-window)"
     }
   }, {
     "color": "var(--text-primary)",
-    ".dark &": {
+    ":is(.dark &)": {
       "color": "var(--text-primary)"
     }
   }, {
@@ -40,7 +44,7 @@ var Root = _styledComponents["default"].div.withConfig({
     "borderColor": "rgb(25 114 245 / var(--tw-border-opacity))",
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(25 114 245 / var(--tw-bg-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-border-opacity": "1",
       "borderColor": "rgb(25 114 245 / var(--tw-border-opacity))",
       "--tw-bg-opacity": "1",
@@ -49,7 +53,7 @@ var Root = _styledComponents["default"].div.withConfig({
   }, {
     "--tw-text-opacity": "1",
     "color": "rgb(255 255 255 / var(--tw-text-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-text-opacity": "1",
       "color": "rgb(0 0 0 / var(--tw-text-opacity))"
     }
@@ -60,7 +64,7 @@ var Root = _styledComponents["default"].div.withConfig({
     "borderColor": "rgb(0 0 0 / var(--tw-border-opacity))",
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-border-opacity": "1",
       "borderColor": "rgb(255 255 255 / var(--tw-border-opacity))",
       "--tw-bg-opacity": "1",
@@ -69,7 +73,7 @@ var Root = _styledComponents["default"].div.withConfig({
   }, {
     "--tw-text-opacity": "1",
     "color": "rgb(255 255 255 / var(--tw-text-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-text-opacity": "1",
       "color": "rgb(0 0 0 / var(--tw-text-opacity))"
     }
@@ -98,13 +102,11 @@ var Line = _styledComponents["default"].div.withConfig({
   componentId: "sc-1vtzxe4-2"
 })(function () {
   return [{
-    "marginLeft": "5%",
-    "marginRight": "5%",
     "height": "2px",
     "width": "10%",
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(233 235 236 / var(--tw-bg-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-bg-opacity": "1",
       "backgroundColor": "rgb(62 67 71 / var(--tw-bg-opacity))"
     }
@@ -125,7 +127,9 @@ var inserLines = function inserLines(array) {
   array.forEach(function (item, index) {
     newArray.push(item);
     if (index % 1 === 0) {
-      newArray.push( /*#__PURE__*/_react["default"].createElement(Line, null));
+      newArray.push( /*#__PURE__*/_react["default"].createElement(Line, {
+        className: "tpds-steps-line"
+      }));
     }
   });
   return newArray;
@@ -142,20 +146,26 @@ function calculateStepState(index, currentStepIndex) {
 function StepsComponent(_ref) {
   var steps = _ref.steps,
     _ref$currentStepIndex = _ref.currentStepIndex,
-    currentStepIndex = _ref$currentStepIndex === void 0 ? 0 : _ref$currentStepIndex;
+    currentStepIndex = _ref$currentStepIndex === void 0 ? 0 : _ref$currentStepIndex,
+    props = (0, _objectWithoutPropertiesLoose2["default"])(_ref, _excluded);
   var items = steps.map(function (step, index) {
-    return /*#__PURE__*/_react["default"].createElement(StepRoot, null, /*#__PURE__*/_react["default"].createElement(StepCircle, {
+    return /*#__PURE__*/_react["default"].createElement(StepRoot, {
+      className: "tpds-step"
+    }, /*#__PURE__*/_react["default"].createElement(StepCircle, {
       className: calculateStepState(index, currentStepIndex).toString(),
       key: index + 1
     }, currentStepIndex > index ? /*#__PURE__*/_react["default"].createElement(_Check["default"], null) : /*#__PURE__*/_react["default"].createElement(_StyledPSmall, {
       isMedium: true
     }, index + 1)), /*#__PURE__*/_react["default"].createElement(_StyledP, {
-      isMedium: true
+      isMedium: true,
+      className: "tpds-steps-label"
     }, step.title));
   });
   var itemsWithLines = inserLines(items);
   itemsWithLines.pop();
-  return /*#__PURE__*/_react["default"].createElement(Root, null, itemsWithLines);
+  return /*#__PURE__*/_react["default"].createElement(StepsRoot, Object.assign({
+    className: "container-query"
+  }, props), itemsWithLines);
 }
 var _default = StepsComponent;
 exports["default"] = _default;

@@ -46,7 +46,7 @@ var Root = _styledComponents["default"].div.withConfig({
     "--tw-shadow": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
     "--tw-shadow-colored": "0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color)",
     "boxShadow": "var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-bg-opacity": "1",
       "backgroundColor": "rgb(40 44 47 / var(--tw-bg-opacity))",
       "--tw-shadow": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
@@ -97,7 +97,7 @@ var Text = _styledComponents["default"].div.withConfig({
     "fontWeight": "500",
     "--tw-text-opacity": "1",
     "color": "rgb(72 77 81 / var(--tw-text-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-text-opacity": "1",
       "color": "rgb(255 255 255 / var(--tw-text-opacity))"
     }

@@ -34,8 +34,8 @@ var Button = _styledComponents["default"].button.withConfig({
     "borderWidth": "1px",
     "paddingLeft": "0.75rem",
     "paddingRight": "0.75rem",
-    "paddingTop": "5px",
     "paddingBottom": "5px",
+    "paddingTop": "5px",
     ":focus": {
       "outline": "2px solid transparent",
       "outlineOffset": "2px"
@@ -47,14 +47,14 @@ var Button = _styledComponents["default"].button.withConfig({
   }, isSmall && [{
     "paddingLeft": "0.5rem",
     "paddingRight": "0.5rem",
-    "paddingTop": "2px",
     "paddingBottom": "1.5px",
+    "paddingTop": "2px",
     "fontSize": "13px"
   }], isTiny && [{
     "paddingLeft": "0.25rem",
     "paddingRight": "0.25rem",
-    "paddingTop": "0px",
     "paddingBottom": "0px",
+    "paddingTop": "0px",
     "fontSize": "11px"
   }], isLarge && [{
     "paddingLeft": "1rem",

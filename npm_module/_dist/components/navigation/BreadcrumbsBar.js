@@ -63,10 +63,10 @@ var BreadcrumbsBarRoot = _styledComponents["default"].div.withConfig({
     "alignItems": "center"
   }, {
     "position": "relative",
-    "paddingTop": "0.625rem",
-    "paddingBottom": "0.625rem",
     "paddingLeft": "1rem",
-    "paddingRight": "1rem"
+    "paddingRight": "1rem",
+    "paddingTop": "0.625rem",
+    "paddingBottom": "0.625rem"
   }, {
     "borderBottomWidth": "1px",
     "borderColor": "var(--border-body)"

@@ -173,10 +173,7 @@ var _StyledDialog = (0, _styledComponents["default"])(_react2.Dialog).withConfig
   componentId: "sc-14wlk1c-0"
 })({
   "position": "fixed",
-  "top": "0px",
-  "right": "0px",
-  "bottom": "0px",
-  "left": "0px",
+  "inset": "0px",
   "zIndex": "10",
   "overflowY": "auto"
 });
@@ -194,10 +191,7 @@ var _StyledDialogOverlay = (0, _styledComponents["default"])(_react2.Dialog.Over
   componentId: "sc-14wlk1c-2"
 })({
   "position": "fixed",
-  "top": "0px",
-  "right": "0px",
-  "bottom": "0px",
-  "left": "0px",
+  "inset": "0px",
   "--tw-bg-opacity": "1",
   "backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))",
   "opacity": "0.5"
@@ -215,10 +209,10 @@ var _StyledDiv2 = (0, _styledComponents["default"])("div").withConfig({
   "overflow": "hidden",
   "borderColor": "var(--border-window)",
   "backgroundColor": "var(--bg-window)",
-  "paddingTop": "1rem",
-  "paddingBottom": "1rem",
   "paddingLeft": "1.5rem",
   "paddingRight": "1.5rem",
+  "paddingTop": "1rem",
+  "paddingBottom": "1rem",
   "textAlign": "left",
   "verticalAlign": "middle",
   "--tw-text-opacity": "1",

@@ -201,8 +201,8 @@ var _StyledChevronDownIcon = (0, _styledComponents["default"])(_solid.ChevronDow
   displayName: "HeroIcons___StyledChevronDownIcon",
   componentId: "sc-7nr2b5-0"
 })({
-  "marginLeft": "0.5rem",
   "marginRight": "-0.25rem",
+  "marginLeft": "0.5rem",
   "height": "1.25rem",
   "width": "1.25rem",
   "--tw-text-opacity": "1",

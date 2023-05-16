@@ -109,7 +109,7 @@ var _StyledPath = (0, _styledComponents["default"])("path").withConfig({
   "fill": "currentColor",
   "--tw-text-opacity": "1",
   "color": "rgb(255 255 255 / var(--tw-text-opacity))",
-  ".dark &": {
+  ":is(.dark &)": {
     "--tw-text-opacity": "1",
     "color": "rgb(0 0 0 / var(--tw-text-opacity))"
   }
@@ -121,7 +121,7 @@ var _StyledPath2 = (0, _styledComponents["default"])("path").withConfig({
   "fill": "currentColor",
   "--tw-text-opacity": "1",
   "color": "rgb(255 255 255 / var(--tw-text-opacity))",
-  ".dark &": {
+  ":is(.dark &)": {
     "--tw-text-opacity": "1",
     "color": "rgb(0 0 0 / var(--tw-text-opacity))"
   }

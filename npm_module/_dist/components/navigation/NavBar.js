@@ -253,7 +253,7 @@ var NavMobileH4 = (0, _styledComponents["default"])(_typography.H4).withConfig({
     "fontWeight": "500",
     "--tw-text-opacity": "1",
     "color": "rgb(0 0 0 / var(--tw-text-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-text-opacity": "1",
       "color": "rgb(255 255 255 / var(--tw-text-opacity))"
     }
@@ -289,8 +289,8 @@ var NavBarRoot = (0, _styledComponents["default"])(_layout.Section).withConfig({
     isDisabled = _ref2.isDisabled;
   return [{
     "position": "fixed",
-    "top": "0px",
     "left": "0px",
+    "top": "0px",
     "zIndex": "50"
   }, {
     "borderBottomWidth": "1px",
@@ -363,17 +363,17 @@ var MobileNavRoot = _styledComponents["default"].div.withConfig({
     "backgroundColor": "var(--bg-body)"
   }, {
     "position": "fixed",
-    "top": "0px",
     "left": "0px",
+    "top": "0px",
     "zIndex": "50"
   }, {
     "height": "2000px",
     "width": "100%"
   }, {
-    "paddingTop": "64px",
-    "paddingBottom": "64px",
     "paddingLeft": "24px",
-    "paddingRight": "24px"
+    "paddingRight": "24px",
+    "paddingTop": "64px",
+    "paddingBottom": "64px"
   }];
 });
 function ProfileIcon() {
@@ -424,8 +424,8 @@ var _StyledCloseIcon = (0, _styledComponents["default"])(CloseIcon).withConfig({
   componentId: "sc-1coj501-18"
 })({
   "position": "absolute",
-  "top": "10px",
   "right": "12px",
+  "top": "10px",
   "cursor": "pointer"
 });
 var _StyledDiv = (0, _styledComponents["default"])("div").withConfig({
@@ -509,7 +509,7 @@ var _StyledDiv5 = (0, _styledComponents["default"])("div").withConfig({
   "width": "16px",
   "--tw-bg-opacity": "1",
   "backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))",
-  ".dark &": {
+  ":is(.dark &)": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))"
   }
@@ -523,7 +523,7 @@ var _StyledDiv6 = (0, _styledComponents["default"])("div").withConfig({
   "width": "16px",
   "--tw-bg-opacity": "1",
   "backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))",
-  ".dark &": {
+  ":is(.dark &)": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))"
   }
@@ -536,7 +536,7 @@ var _StyledDiv7 = (0, _styledComponents["default"])("div").withConfig({
   "width": "16px",
   "--tw-bg-opacity": "1",
   "backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))",
-  ".dark &": {
+  ":is(.dark &)": {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))"
   }

@@ -177,22 +177,22 @@ var Window = _styledComponents["default"].div.withConfig({
     "borderWidth": "1px",
     "borderColor": "var(--border-window)",
     "backgroundColor": "var(--bg-window)",
-    "paddingTop": "16px",
-    "paddingBottom": "16px",
     "paddingLeft": "16px",
     "paddingRight": "16px",
+    "paddingTop": "16px",
+    "paddingBottom": "16px",
     "@media (min-width: 768px)": {
-      "paddingTop": "16px",
-      "paddingBottom": "16px",
       "paddingLeft": "24px",
-      "paddingRight": "24px"
+      "paddingRight": "24px",
+      "paddingTop": "16px",
+      "paddingBottom": "16px"
     },
     "@media (min-width: 1024px)": {
       "borderRadius": "0.25rem",
-      "paddingTop": "24px",
-      "paddingBottom": "24px",
       "paddingLeft": "32px",
-      "paddingRight": "32px"
+      "paddingRight": "32px",
+      "paddingTop": "24px",
+      "paddingBottom": "24px"
     }
   }];
 });

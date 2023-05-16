@@ -33,7 +33,7 @@ var _StyledPropsTableRowElement = (0, _styledComponents["default"])(PropsTableRo
   "--tw-border-opacity": "1",
   "borderColor": "rgb(0 194 206 / var(--tw-border-opacity))",
   "paddingBottom": "0.5rem",
-  ".dark &": {
+  ":is(.dark &)": {
     "--tw-border-opacity": "1",
     "borderColor": "rgb(0 194 206 / var(--tw-border-opacity))"
   }

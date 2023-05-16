@@ -120,7 +120,7 @@ var _StyledCircle = (0, _styledComponents["default"])("circle").withConfig({
   "stroke": "currentColor",
   "--tw-text-opacity": "1",
   "color": "rgb(223 225 226 / var(--tw-text-opacity))",
-  ".dark &": {
+  ":is(.dark &)": {
     "--tw-text-opacity": "1",
     "color": "rgb(62 67 71 / var(--tw-text-opacity))"
   }
@@ -132,7 +132,7 @@ var _StyledPath = (0, _styledComponents["default"])("path").withConfig({
   "stroke": "currentColor",
   "--tw-text-opacity": "1",
   "color": "rgb(0 0 0 / var(--tw-text-opacity))",
-  ".dark &": {
+  ":is(.dark &)": {
     "--tw-text-opacity": "1",
     "color": "rgb(255 255 255 / var(--tw-text-opacity))"
   }

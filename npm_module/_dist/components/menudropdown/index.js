@@ -67,7 +67,7 @@ var KebabMenuContent = _styledComponents["default"].div.withConfig({
   }, {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(201 205 207 / var(--tw-bg-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-bg-opacity": "1",
       "backgroundColor": "rgb(40 44 47 / var(--tw-bg-opacity))"
     }
@@ -103,7 +103,7 @@ var KebabMenuItem = (0, _styledComponents["default"])(_typography.LabelSmall).wi
   }, {
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(252 252 252 / var(--tw-bg-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-bg-opacity": "1",
       "backgroundColor": "rgb(40 44 47 / var(--tw-bg-opacity))"
     }
@@ -112,7 +112,7 @@ var KebabMenuItem = (0, _styledComponents["default"])(_typography.LabelSmall).wi
       "--tw-bg-opacity": "1",
       "backgroundColor": "rgb(241 243 243 / var(--tw-bg-opacity))"
     },
-    ".dark &:hover": {
+    ":is(.dark &:hover)": {
       "--tw-bg-opacity": "1",
       "backgroundColor": "rgb(30 34 36 / var(--tw-bg-opacity))"
     }
@@ -154,8 +154,8 @@ var _StyledDiv = (0, _styledComponents["default"])("div").withConfig({
   componentId: "sc-ofjyyj-4"
 })({
   "position": "absolute",
-  "top": "-2px",
   "left": "-3px",
+  "top": "-2px",
   "height": "20px",
   "width": "16px",
   "borderRadius": "0.125rem",
@@ -166,8 +166,8 @@ var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
   componentId: "sc-ofjyyj-5"
 })({
   "position": "absolute",
-  "top": "0px",
   "left": "0px",
+  "top": "0px",
   "cursor": "pointer",
   "fill": "currentColor",
   "color": "var(--text-primary)"

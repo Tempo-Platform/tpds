@@ -165,7 +165,7 @@ var PaginationItem = _styledComponents["default"].li.withConfig({
     ":hover": {
       "fill": "#000000"
     },
-    ".dark &:hover": {
+    ":is(.dark &):hover": {
       "fill": "#FFFFFF"
     }
   }, {

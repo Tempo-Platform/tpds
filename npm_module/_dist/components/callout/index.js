@@ -105,9 +105,9 @@ var Root = _styledComponents["default"].div.withConfig({
   var type = _ref9.type;
   return [{
     "borderRadius": "0.25rem",
+    "borderBottomWidth": "1px",
     "borderLeftWidth": "8px",
     "borderRightWidth": "1px",
-    "borderBottomWidth": "1px",
     "borderTopWidth": "1px",
     "borderStyle": "solid"
   }, (0, _styledComponents.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n    svg {\n      margin-right: 10px;\n    }\n  "])))];
@@ -122,7 +122,7 @@ var RootDefault = (0, _styledComponents["default"])(Root).withConfig({
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(241 243 243 / var(--tw-bg-opacity))"
   }, {
-    ".dark &": {
+    ":is(.dark &)": {
       "backgroundColor": "rgb(250 250 250 / 0.05)"
     }
   }];
@@ -136,7 +136,7 @@ var RootSuccess = (0, _styledComponents["default"])(Root).withConfig({
     "borderColor": "rgb(176 236 240 / var(--tw-border-opacity))",
     "backgroundColor": "rgb(176 236 240 / 0.2)"
   }, {
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-border-opacity": "1",
       "borderColor": "rgb(84 214 222 / var(--tw-border-opacity))",
       "backgroundColor": "rgb(0 194 206 / 0.1)"
@@ -152,7 +152,7 @@ var RootInfo = (0, _styledComponents["default"])(Root).withConfig({
     "borderColor": "rgb(209 227 253 / var(--tw-border-opacity))",
     "backgroundColor": "rgb(209 227 253 / 0.2)"
   }, {
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-border-opacity": "1",
       "borderColor": "rgb(117 170 249 / var(--tw-border-opacity))",
       "backgroundColor": "rgb(117 170 249 / 0.1)"
@@ -168,7 +168,7 @@ var RootDanger = (0, _styledComponents["default"])(Root).withConfig({
     "borderColor": "rgb(249 203 203 / var(--tw-border-opacity))",
     "backgroundColor": "rgb(249 203 203 / 0.2)"
   }, {
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-border-opacity": "1",
       "borderColor": "rgb(242 142 142 / var(--tw-border-opacity))",
       "backgroundColor": "rgb(242 142 142 / 0.1)"
@@ -184,7 +184,7 @@ var RootWarning = (0, _styledComponents["default"])(Root).withConfig({
     "borderColor": "rgb(250 218 188 / var(--tw-border-opacity))",
     "backgroundColor": "rgb(250 218 188 / 0.2)"
   }, {
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-border-opacity": "1",
       "borderColor": "rgb(245 175 110 / var(--tw-border-opacity))",
       "backgroundColor": "rgb(245 175 110 / 0.1)"
@@ -200,7 +200,7 @@ var RootTip = (0, _styledComponents["default"])(Root).withConfig({
     "borderColor": "rgb(206 176 250 / var(--tw-border-opacity))",
     "backgroundColor": "rgb(206 176 250 / 0.2)"
   }, {
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-border-opacity": "1",
       "borderColor": "rgb(150 84 244 / var(--tw-border-opacity))",
       "backgroundColor": "rgb(150 84 244 / 0.1)"
@@ -216,7 +216,7 @@ var RootBug = (0, _styledComponents["default"])(Root).withConfig({
     "borderColor": "rgb(250 218 188 / var(--tw-border-opacity))",
     "backgroundColor": "rgb(250 218 188 / 0.2)"
   }, {
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-border-opacity": "1",
       "borderColor": "rgb(245 175 110 / var(--tw-border-opacity))",
       "backgroundColor": "rgb(245 175 110 / 0.1)"
@@ -232,7 +232,7 @@ var RootNote = (0, _styledComponents["default"])(Root).withConfig({
     "borderColor": "rgb(223 225 226 / var(--tw-border-opacity))",
     "backgroundColor": "rgb(223 225 226 / 0.2)"
   }, {
-    ".dark &": {
+    ":is(.dark &)": {
       "backgroundColor": "rgb(250 250 250 / 0.05)"
     }
   }];
@@ -260,7 +260,7 @@ var HeaderDefault = (0, _styledComponents["default"])(Header).withConfig({
   return [{
     "--tw-text-opacity": "1",
     "color": "rgb(21 24 25 / var(--tw-text-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-text-opacity": "1",
       "color": "rgb(201 205 207 / var(--tw-text-opacity))"
     }
@@ -274,7 +274,7 @@ var HeaderSuccess = (0, _styledComponents["default"])(Header).withConfig({
   return [{
     "--tw-text-opacity": "1",
     "color": "rgb(0 194 206 / var(--tw-text-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-text-opacity": "1",
       "color": "rgb(51 206 216 / var(--tw-text-opacity))"
     }
@@ -288,7 +288,7 @@ var HeaderInfo = (0, _styledComponents["default"])(Header).withConfig({
   return [{
     "--tw-text-opacity": "1",
     "color": "rgb(25 114 245 / var(--tw-text-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-text-opacity": "1",
       "color": "rgb(117 170 249 / var(--tw-text-opacity))"
     }
@@ -302,7 +302,7 @@ var HeaderDanger = (0, _styledComponents["default"])(Header).withConfig({
   return [{
     "--tw-text-opacity": "1",
     "color": "rgb(235 87 87 / var(--tw-text-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-text-opacity": "1",
       "color": "rgb(239 121 121 / var(--tw-text-opacity))"
     }
@@ -316,7 +316,7 @@ var HeaderWarning = (0, _styledComponents["default"])(Header).withConfig({
   return [{
     "--tw-text-opacity": "1",
     "color": "rgb(240 135 39 / var(--tw-text-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-text-opacity": "1",
       "color": "rgb(243 159 82 / var(--tw-text-opacity))"
     }
@@ -330,7 +330,7 @@ var HeaderTip = (0, _styledComponents["default"])(Header).withConfig({
   return [{
     "--tw-text-opacity": "1",
     "color": "rgb(98 0 238 / var(--tw-text-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-text-opacity": "1",
       "color": "rgb(206 176 250 / var(--tw-text-opacity))"
     }
@@ -344,7 +344,7 @@ var HeaderBug = (0, _styledComponents["default"])(Header).withConfig({
   return [{
     "--tw-text-opacity": "1",
     "color": "rgb(240 135 39 / var(--tw-text-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-text-opacity": "1",
       "color": "rgb(243 159 82 / var(--tw-text-opacity))"
     }
@@ -358,7 +358,7 @@ var HeaderNote = (0, _styledComponents["default"])(Header).withConfig({
   return [{
     "--tw-text-opacity": "1",
     "color": "rgb(21 24 25 / var(--tw-text-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-text-opacity": "1",
       "color": "rgb(255 255 255 / var(--tw-text-opacity))"
     }
@@ -376,7 +376,7 @@ var Text = _styledComponents["default"].div.withConfig({
     "fontWeight": "500",
     "--tw-text-opacity": "1",
     "color": "rgb(72 77 81 / var(--tw-text-opacity))",
-    ".dark &": {
+    ":is(.dark &)": {
       "--tw-text-opacity": "1",
       "color": "rgb(255 255 255 / var(--tw-text-opacity))"
     }
