@@ -3,9 +3,10 @@ import React from 'react'
 import tw, { styled, css } from 'twin.macro'
 import { PSmall, P } from '../../elements/typography'
 import CheckIcon from '../../assets/svgs/icons/Check'
+import './style.css'
 
-const Root = styled.div(() => [
-  tw`w-full flex justify-between items-center`,
+const StepsRoot = styled.div(() => [
+  tw`w-full flex justify-between items-center gap-x-[3%]`,
   css`
     .default {
       ${tw`bg-window border-grey-light-scale-500 dark:(bg-window border-grey-light-scale-800)`},
@@ -42,7 +43,7 @@ const StepCircle = styled.div(() => [
 ])
 
 const Line = styled.div(() => [
-  tw`w-[10%] h-[2px] bg-grey-light-scale-300 dark:bg-grey-dark-scale-300 mx-[5%]`,
+  tw`w-[10%] h-[2px] bg-grey-light-scale-300 dark:bg-grey-dark-scale-300`,
 ])
 
 const StepRoot = styled.div(() => [tw`flex gap-x-2 items-center`])
@@ -52,7 +53,7 @@ const inserLines = array => {
   array.forEach((item, index) => {
     newArray.push(item)
     if (index % 1 === 0) {
-      newArray.push(<Line />)
+      newArray.push(<Line className="tpds-steps-line" />)
     }
   })
   return newArray
@@ -68,9 +69,9 @@ function calculateStepState(index, currentStepIndex) {
   return 'default'
 }
 
-function StepsComponent({ steps, currentStepIndex = 0 }) {
+function StepsComponent({ steps, currentStepIndex = 0, ...props }) {
   const items = steps.map((step, index) => (
-    <StepRoot>
+    <StepRoot className="tpds-step">
       <StepCircle
         className={calculateStepState(index, currentStepIndex).toString()}
         key={index + 1}
@@ -83,14 +84,22 @@ function StepsComponent({ steps, currentStepIndex = 0 }) {
           </PSmall>
         )}
       </StepCircle>
-      <P isMedium tw="leading-none relative top-[-2px] whitespace-nowrap">
+      <P
+        isMedium
+        className="tpds-steps-label"
+        tw="leading-none relative top-[-2px] whitespace-nowrap"
+      >
         {step.title}
       </P>
     </StepRoot>
   ))
   const itemsWithLines = inserLines(items)
   itemsWithLines.pop()
-  return <Root>{itemsWithLines}</Root>
+  return (
+    <StepsRoot className="container-query" {...props}>
+      {itemsWithLines}
+    </StepsRoot>
+  )
 }
 
 export default StepsComponent

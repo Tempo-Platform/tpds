@@ -31,7 +31,11 @@ const StepsPage = () => {
       <MainContent>
         <br />
         <br />
-        <Steps steps={steps} currentStepIndex={currentStep} />
+        <Steps
+          style={{ maxWidth: '500px' }}
+          steps={steps}
+          currentStepIndex={currentStep}
+        />
         <br />
         <br />
         <CodeBlock code={code} />

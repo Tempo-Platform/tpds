@@ -1,0 +1,15 @@
+.tpds-steps-label {
+  white-space: nowrap;
+}
+
+@container (max-width: 500px) {
+  .tpds-steps-label {
+    white-space: normal;
+  }
+}
+
+@container (max-width: 400px) {
+  .tpds-steps-line {
+    display: none;
+  }
+}
