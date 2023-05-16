@@ -4,8 +4,6 @@ var tokens = require('../tokens/index.json');
 var colors = tokens.colors;
 var text = tokens.text;
 var breakpoints = tokens.breakpoints;
-// const colorsDark = colors.dark
-// const colorsLight = colors.light
 var colorPalettes = colors.color_palettes;
 module.exports = {
   darkMode: 'class',
@@ -180,20 +178,7 @@ module.exports = {
         'checkbox-unselected-hover': 'var(--border-checkbox-unselected-hover)',
         'checkbox-unselected-active': 'var(--border-checkbox-unselected-active)'
       }
-    },
-    containers: {
-      xs: '20rem',
-      sm: '24rem',
-      md: '28rem',
-      lg: '32rem',
-      xl: '36rem',
-      '2xl': '42rem',
-      '3xl': '48rem',
-      '4xl': '56rem',
-      '5xl': '64rem',
-      '6xl': '72rem',
-      '7xl': '80rem'
     }
   },
-  plugins: [require('@tailwindcss/container-queries')]
+  plugins: []
 };

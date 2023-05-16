@@ -2,8 +2,6 @@ const tokens = require('../tokens/index.json')
 const colors = tokens.colors
 const text = tokens.text
 const breakpoints = tokens.breakpoints
-// const colorsDark = colors.dark
-// const colorsLight = colors.light
 const colorPalettes = colors.color_palettes
 
 module.exports = {
@@ -181,19 +179,6 @@ module.exports = {
           'var(--border-checkbox-unselected-active)',
       },
     },
-    containers: {
-      xs: '20rem',
-      sm: '24rem',
-      md: '28rem',
-      lg: '32rem',
-      xl: '36rem',
-      '2xl': '42rem',
-      '3xl': '48rem',
-      '4xl': '56rem',
-      '5xl': '64rem',
-      '6xl': '72rem',
-      '7xl': '80rem',
-    },
   },
-  plugins: [require('@tailwindcss/container-queries')],
+  plugins: [],
 }

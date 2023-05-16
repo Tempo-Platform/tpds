@@ -10,7 +10,6 @@ var _styledComponents = _interopRequireWildcard(require("styled-components"));
 var _react = _interopRequireDefault(require("react"));
 var _typography = require("../../elements/typography");
 var _Check = _interopRequireDefault(require("../../assets/svgs/icons/Check"));
-require("./style.css");
 var _excluded = ["steps", "currentStepIndex"];
 var _templateObject, _templateObject2;
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -163,9 +162,7 @@ function StepsComponent(_ref) {
   });
   var itemsWithLines = inserLines(items);
   itemsWithLines.pop();
-  return /*#__PURE__*/_react["default"].createElement(StepsRoot, Object.assign({
-    className: "container-query"
-  }, props), itemsWithLines);
+  return /*#__PURE__*/_react["default"].createElement(StepsRoot, props, itemsWithLines);
 }
 var _default = StepsComponent;
 exports["default"] = _default;

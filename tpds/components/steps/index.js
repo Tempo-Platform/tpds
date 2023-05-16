@@ -3,7 +3,6 @@ import React from 'react'
 import tw, { styled, css } from 'twin.macro'
 import { PSmall, P } from '../../elements/typography'
 import CheckIcon from '../../assets/svgs/icons/Check'
-import './style.css'
 
 const StepsRoot = styled.div(() => [
   tw`w-full flex justify-between items-center gap-x-[3%]`,
@@ -95,11 +94,7 @@ function StepsComponent({ steps, currentStepIndex = 0, ...props }) {
   ))
   const itemsWithLines = inserLines(items)
   itemsWithLines.pop()
-  return (
-    <StepsRoot className="container-query" {...props}>
-      {itemsWithLines}
-    </StepsRoot>
-  )
+  return <StepsRoot {...props}>{itemsWithLines}</StepsRoot>
 }
 
 export default StepsComponent

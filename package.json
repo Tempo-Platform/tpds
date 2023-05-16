@@ -2,7 +2,7 @@
   "name": "tpds",
   "description": "TPDS - The Tempo Platform Design System",
   "homepage": "https://github.com/Tempo-Platform/tpds",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "babelMacros": {
     "twin": {
       "preset": "styled-components"
@@ -55,7 +55,6 @@
     "@babel/core": "^7.13.8",
     "@headlessui/react": "^1.7.4",
     "@heroicons/react": "v1",
-    "@tailwindcss/container-queries": "^0.1.1",
     "copy-webpack-plugin": "^10.2.4",
     "gatsby": "^5.0.1",
     "gatsby-plugin-manifest": "^5.0.0",
