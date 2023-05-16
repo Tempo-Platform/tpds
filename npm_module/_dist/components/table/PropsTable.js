@@ -5,7 +5,7 @@ exports.__esModule = true;
 exports["default"] = void 0;
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _react = _interopRequireDefault(require("react"));
-var _typography = require("../../../tpds/elements/typography");
+var _typography = require("../../elements/typography");
 /* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 
 var PropsTableRowElement = _styledComponents["default"].span.withConfig({
@@ -134,31 +134,31 @@ var getLastPVariant = function getLastPVariant(skipColumn2, skipColumn3, skipCol
 };
 function PropsTable(_ref2) {
   var _ref2$title = _ref2.title,
-    title = _ref2$title === void 0 ? "Props" : _ref2$title,
+    title = _ref2$title === void 0 ? 'Props' : _ref2$title,
     _ref2$items = _ref2.items,
     items = _ref2$items === void 0 ? null : _ref2$items,
     _ref2$omitTitle = _ref2.omitTitle,
     omitTitle = _ref2$omitTitle === void 0 ? false : _ref2$omitTitle,
     _ref2$col1Name = _ref2.col1Name,
-    col1Name = _ref2$col1Name === void 0 ? "Prop Name" : _ref2$col1Name,
+    col1Name = _ref2$col1Name === void 0 ? 'Prop Name' : _ref2$col1Name,
     _ref2$col2Name = _ref2.col2Name,
-    col2Name = _ref2$col2Name === void 0 ? "Type" : _ref2$col2Name,
+    col2Name = _ref2$col2Name === void 0 ? 'Type' : _ref2$col2Name,
     _ref2$col3Name = _ref2.col3Name,
-    col3Name = _ref2$col3Name === void 0 ? "Default" : _ref2$col3Name,
+    col3Name = _ref2$col3Name === void 0 ? 'Default' : _ref2$col3Name,
     _ref2$col4Name = _ref2.col4Name,
-    col4Name = _ref2$col4Name === void 0 ? "Required" : _ref2$col4Name,
+    col4Name = _ref2$col4Name === void 0 ? 'Required' : _ref2$col4Name,
     _ref2$col5Name = _ref2.col5Name,
-    col5Name = _ref2$col5Name === void 0 ? "Description" : _ref2$col5Name,
+    col5Name = _ref2$col5Name === void 0 ? 'Description' : _ref2$col5Name,
     _ref2$param1Name = _ref2.param1Name,
-    param1Name = _ref2$param1Name === void 0 ? "propName" : _ref2$param1Name,
+    param1Name = _ref2$param1Name === void 0 ? 'propName' : _ref2$param1Name,
     _ref2$param2Name = _ref2.param2Name,
-    param2Name = _ref2$param2Name === void 0 ? "type" : _ref2$param2Name,
+    param2Name = _ref2$param2Name === void 0 ? 'type' : _ref2$param2Name,
     _ref2$param3Name = _ref2.param3Name,
-    param3Name = _ref2$param3Name === void 0 ? "default" : _ref2$param3Name,
+    param3Name = _ref2$param3Name === void 0 ? 'default' : _ref2$param3Name,
     _ref2$param4Name = _ref2.param4Name,
-    param4Name = _ref2$param4Name === void 0 ? "required" : _ref2$param4Name,
+    param4Name = _ref2$param4Name === void 0 ? 'required' : _ref2$param4Name,
     _ref2$param5Name = _ref2.param5Name,
-    param5Name = _ref2$param5Name === void 0 ? "description" : _ref2$param5Name,
+    param5Name = _ref2$param5Name === void 0 ? 'description' : _ref2$param5Name,
     _ref2$skipColumn = _ref2.skipColumn2,
     skipColumn2 = _ref2$skipColumn === void 0 ? false : _ref2$skipColumn,
     _ref2$skipColumn2 = _ref2.skipColumn3,
