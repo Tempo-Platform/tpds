@@ -78,6 +78,10 @@ const select = {
   link: '/components/select',
   title: 'Select',
 }
+const steps = {
+  link: '/components/steps',
+  title: 'Steps',
+}
 const radiogroup = {
   link: '/components/radiogroup',
   title: 'RadioGroup',
@@ -115,6 +119,7 @@ const links = [
   snackbar,
   spinner,
   switchPage,
+  steps,
   video,
   windowComponent,
   tabs,
