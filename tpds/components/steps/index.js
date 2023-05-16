@@ -1,8 +1,8 @@
 /* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 import React from 'react'
 import tw, { styled, css } from 'twin.macro'
-import { PSmall, P } from '../../../tpds/elements/typography'
-import CheckIcon from '../../../tpds/assets/svgs/icons/Check'
+import { PSmall, P } from '../../elements/typography'
+import CheckIcon from '../../assets/svgs/icons/Check'
 
 const Root = styled.div(() => [
   tw`w-full flex justify-between items-center`,
