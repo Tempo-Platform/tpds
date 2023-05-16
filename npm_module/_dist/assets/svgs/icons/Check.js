@@ -1,0 +1,30 @@
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports["default"] = void 0;
+var _objectDestructuringEmpty2 = _interopRequireDefault(require("@babel/runtime/helpers/objectDestructuringEmpty"));
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _react = _interopRequireDefault(require("react"));
+/* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
+
+function CheckIcon(_ref) {
+  var props = Object.assign({}, ((0, _objectDestructuringEmpty2["default"])(_ref), _ref));
+  return /*#__PURE__*/_react["default"].createElement(_StyledSvg, Object.assign({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "11",
+    height: "9",
+    viewBox: "0 0 11 9"
+  }, props), /*#__PURE__*/_react["default"].createElement("path", {
+    d: "M9.563.088c.117-.117.304-.117.398 0l.68.656c.093.117.093.305 0 .399l-7.032 7.03a.27.27 0 01-.398 0L.07 5.058c-.094-.118-.094-.305 0-.399l.679-.68c.094-.093.281-.093.398 0l2.25 2.274L9.563.088z"
+  }));
+}
+var _default = CheckIcon;
+exports["default"] = _default;
+var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
+  displayName: "Check___StyledSvg",
+  componentId: "sc-1cosxyp-0"
+})({
+  "fill": "currentColor",
+  "color": "var(--text-primary)"
+});

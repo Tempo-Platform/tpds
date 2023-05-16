@@ -1,0 +1,176 @@
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _typeof = require("@babel/runtime/helpers/typeof");
+exports.__esModule = true;
+exports["default"] = void 0;
+var _taggedTemplateLiteralLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteralLoose"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _react = _interopRequireDefault(require("react"));
+var _typography = require("../../../tpds/elements/typography");
+var _Check = _interopRequireDefault(require("../../../tpds/assets/svgs/icons/Check"));
+var _templateObject, _templateObject2;
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+var Root = _styledComponents["default"].div.withConfig({
+  displayName: "steps__Root",
+  componentId: "sc-1vtzxe4-0"
+})(function () {
+  return [{
+    "display": "flex",
+    "width": "100%",
+    "alignItems": "center",
+    "justifyContent": "space-between"
+  }, (0, _styledComponents.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n    .default {\n      ", ",\n      p {\n        ", "\n      }\n    }\n    .completed {\n      ", ",\n      p {\n        ", "\n      }\n      svg * {\n        ", "\n      }\n    }\n    .active {\n      ", ",\n      p {\n        ", "\n      }\n    }\n  "])), {
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(201 205 207 / var(--tw-border-opacity))",
+    "backgroundColor": "var(--bg-window)",
+    ".dark &": {
+      "--tw-border-opacity": "1",
+      "borderColor": "rgb(134 142 147 / var(--tw-border-opacity))",
+      "backgroundColor": "var(--bg-window)"
+    }
+  }, {
+    "color": "var(--text-primary)",
+    ".dark &": {
+      "color": "var(--text-primary)"
+    }
+  }, {
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(25 114 245 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(25 114 245 / var(--tw-bg-opacity))",
+    ".dark &": {
+      "--tw-border-opacity": "1",
+      "borderColor": "rgb(25 114 245 / var(--tw-border-opacity))",
+      "--tw-bg-opacity": "1",
+      "backgroundColor": "rgb(25 114 245 / var(--tw-bg-opacity))"
+    }
+  }, {
+    "--tw-text-opacity": "1",
+    "color": "rgb(255 255 255 / var(--tw-text-opacity))",
+    ".dark &": {
+      "--tw-text-opacity": "1",
+      "color": "rgb(0 0 0 / var(--tw-text-opacity))"
+    }
+  }, {
+    "fill": "#FFFFFF"
+  }, {
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(0 0 0 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))",
+    ".dark &": {
+      "--tw-border-opacity": "1",
+      "borderColor": "rgb(255 255 255 / var(--tw-border-opacity))",
+      "--tw-bg-opacity": "1",
+      "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))"
+    }
+  }, {
+    "--tw-text-opacity": "1",
+    "color": "rgb(255 255 255 / var(--tw-text-opacity))",
+    ".dark &": {
+      "--tw-text-opacity": "1",
+      "color": "rgb(0 0 0 / var(--tw-text-opacity))"
+    }
+  })];
+});
+var StepCircle = _styledComponents["default"].div.withConfig({
+  displayName: "steps__StepCircle",
+  componentId: "sc-1vtzxe4-1"
+})(function () {
+  return [{
+    "display": "flex",
+    "height": "26px !important",
+    "width": "26px !important",
+    "alignItems": "center",
+    "justifyContent": "center",
+    "borderRadius": "50%",
+    "borderWidth": "2px"
+  }, (0, _styledComponents.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n      p {\n        ", "\n      }\n    }\n  "])), {
+    "position": "relative",
+    "top": "-1px",
+    "fontSize": "14px !important"
+  })];
+});
+var Line = _styledComponents["default"].div.withConfig({
+  displayName: "steps__Line",
+  componentId: "sc-1vtzxe4-2"
+})(function () {
+  return [{
+    "marginLeft": "5%",
+    "marginRight": "5%",
+    "height": "2px",
+    "width": "10%",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(233 235 236 / var(--tw-bg-opacity))",
+    ".dark &": {
+      "--tw-bg-opacity": "1",
+      "backgroundColor": "rgb(62 67 71 / var(--tw-bg-opacity))"
+    }
+  }];
+});
+var StepRoot = _styledComponents["default"].div.withConfig({
+  displayName: "steps__StepRoot",
+  componentId: "sc-1vtzxe4-3"
+})(function () {
+  return [{
+    "display": "flex",
+    "alignItems": "center",
+    "columnGap": "0.5rem"
+  }];
+});
+var inserLines = function inserLines(array) {
+  var newArray = [];
+  array.forEach(function (item, index) {
+    newArray.push(item);
+    if (index % 1 === 0) {
+      newArray.push( /*#__PURE__*/_react["default"].createElement(Line, null));
+    }
+  });
+  return newArray;
+};
+function calculateStepState(index, currentStepIndex) {
+  if (index === currentStepIndex) {
+    return 'active';
+  }
+  if (index < currentStepIndex) {
+    return 'completed';
+  }
+  return 'default';
+}
+function StepsComponent(_ref) {
+  var steps = _ref.steps,
+    _ref$currentStepIndex = _ref.currentStepIndex,
+    currentStepIndex = _ref$currentStepIndex === void 0 ? 0 : _ref$currentStepIndex;
+  var items = steps.map(function (step, index) {
+    return /*#__PURE__*/_react["default"].createElement(StepRoot, null, /*#__PURE__*/_react["default"].createElement(StepCircle, {
+      className: calculateStepState(index, currentStepIndex).toString(),
+      key: index + 1
+    }, currentStepIndex > index ? /*#__PURE__*/_react["default"].createElement(_Check["default"], null) : /*#__PURE__*/_react["default"].createElement(_StyledPSmall, {
+      isMedium: true
+    }, index + 1)), /*#__PURE__*/_react["default"].createElement(_StyledP, {
+      isMedium: true
+    }, step.title));
+  });
+  var itemsWithLines = inserLines(items);
+  itemsWithLines.pop();
+  return /*#__PURE__*/_react["default"].createElement(Root, null, itemsWithLines);
+}
+var _default = StepsComponent;
+exports["default"] = _default;
+var _StyledPSmall = (0, _styledComponents["default"])(_typography.PSmall).withConfig({
+  displayName: "steps___StyledPSmall",
+  componentId: "sc-1vtzxe4-4"
+})({
+  "lineHeight": "1"
+});
+var _StyledP = (0, _styledComponents["default"])(_typography.P).withConfig({
+  displayName: "steps___StyledP",
+  componentId: "sc-1vtzxe4-5"
+})({
+  "position": "relative",
+  "top": "-2px",
+  "whiteSpace": "nowrap",
+  "lineHeight": "1"
+});
