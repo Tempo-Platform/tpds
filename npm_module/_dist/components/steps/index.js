@@ -178,7 +178,7 @@ var _StyledP = (0, _styledComponents["default"])(_typography.P).withConfig({
   componentId: "sc-1vtzxe4-5"
 })({
   "position": "relative",
-  "top": "-2px",
+  "top": "-1px",
   "whiteSpace": "nowrap",
   "lineHeight": "1"
 });
