@@ -70,10 +70,9 @@ function calculateStepState(index, currentStepIndex) {
 
 function StepsComponent({ steps, currentStepIndex = 0, ...props }) {
   const items = steps.map((step, index) => (
-    <StepRoot className="tpds-step">
+    <StepRoot className="tpds-step" key={index + 1}>
       <StepCircle
         className={calculateStepState(index, currentStepIndex).toString()}
-        key={index + 1}
       >
         {currentStepIndex > index ? (
           <CheckIcon />
