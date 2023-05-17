@@ -149,10 +149,10 @@ function StepsComponent(_ref) {
     props = (0, _objectWithoutPropertiesLoose2["default"])(_ref, _excluded);
   var items = steps.map(function (step, index) {
     return /*#__PURE__*/_react["default"].createElement(StepRoot, {
-      className: "tpds-step"
-    }, /*#__PURE__*/_react["default"].createElement(StepCircle, {
-      className: calculateStepState(index, currentStepIndex).toString(),
+      className: "tpds-step",
       key: index + 1
+    }, /*#__PURE__*/_react["default"].createElement(StepCircle, {
+      className: calculateStepState(index, currentStepIndex).toString()
     }, currentStepIndex > index ? /*#__PURE__*/_react["default"].createElement(_Check["default"], null) : /*#__PURE__*/_react["default"].createElement(_StyledPSmall, {
       isMedium: true
     }, index + 1)), /*#__PURE__*/_react["default"].createElement(_StyledP, {
