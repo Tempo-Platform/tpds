@@ -52,7 +52,9 @@ const inserLines = array => {
   array.forEach((item, index) => {
     newArray.push(item)
     if (index % 1 === 0) {
-      newArray.push(<Line className="tpds-steps-line" />)
+      newArray.push(
+        <Line className="tpds-steps-line" key={`{tpds-steps-line-${index}}`} />,
+      )
     }
   })
   return newArray
