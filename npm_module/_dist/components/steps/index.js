@@ -127,7 +127,8 @@ var inserLines = function inserLines(array) {
     newArray.push(item);
     if (index % 1 === 0) {
       newArray.push( /*#__PURE__*/_react["default"].createElement(Line, {
-        className: "tpds-steps-line"
+        className: "tpds-steps-line",
+        key: "{tpds-steps-line-" + index + "}"
       }));
     }
   });
