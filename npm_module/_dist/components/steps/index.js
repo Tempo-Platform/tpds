@@ -150,7 +150,7 @@ function StepsComponent(_ref) {
   var items = steps.map(function (step, index) {
     return /*#__PURE__*/_react["default"].createElement(StepRoot, {
       className: "tpds-step",
-      key: index + 1
+      key: step.title
     }, /*#__PURE__*/_react["default"].createElement(StepCircle, {
       className: calculateStepState(index, currentStepIndex).toString()
     }, currentStepIndex > index ? /*#__PURE__*/_react["default"].createElement(_Check["default"], null) : /*#__PURE__*/_react["default"].createElement(_StyledPSmall, {
