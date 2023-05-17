@@ -87,7 +87,7 @@ function StepsComponent({ steps, currentStepIndex = 0, ...props }) {
       <P
         isMedium
         className="tpds-steps-label"
-        tw="leading-none relative top-[-2px] whitespace-nowrap"
+        tw="leading-none relative top-[-1px] whitespace-nowrap"
       >
         {step.title}
       </P>
