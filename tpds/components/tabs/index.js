@@ -15,17 +15,17 @@ export default function Tabs({ items, tabGroupProps }) {
   if (!items) return null
   return (
     <Tab.Group {...tabGroupProps}>
-      <Tab.List tw="flex p-1 space-x-1 bg-green-scale-900/20 rounded-lg">
+      <Tab.List tw="flex p-1 space-x-1 bg-grey-light-scale-200 rounded-lg dark:bg-grey-dark-scale-500">
         {Object.keys(items).map(category => (
           <Tab as={Fragment} key={category}>
             {({ selected }) => (
               <button
                 css={[
-                  tw`w-full py-2.5 text-sm leading-5 font-medium text-green-scale-700 rounded-lg
-                  focus:(outline-none ring-2) (ring-offset-2 ring-offset-green-scale-400 ring-green ring-opacity-60)`,
+                  tw`w-full py-2.5 text-sm leading-5 font-medium text-blue-scale-700 rounded-lg
+                  focus:(outline-none ring-2) (ring-offset-2 ring-offset-blue-scale-400 ring-blue ring-opacity-60)`,
                   selected
-                    ? tw`bg-green! shadow text-black`
-                    : tw`text-primary hover:(bg-green/20 text-primary)`,
+                    ? tw`bg-blue! shadow text-white dark:text-black`
+                    : tw`text-primary hover:(bg-blue text-primary)`,
                 ]}
               >
                 {category}
@@ -38,7 +38,7 @@ export default function Tabs({ items, tabGroupProps }) {
         {Object.values(items).map((group, idx) => (
           <Tab.Panel
             key={idx}
-            tw="rounded-lg mt-sm focus:(outline-none ring-2) (ring-offset-2 ring-offset-green-scale-400 ring-green ring-opacity-60)"
+            tw="rounded-lg mt-sm focus:(outline-none ring-2) (ring-offset-2 ring-offset-blue-scale-400 ring-blue ring-opacity-60)"
           >
             <ul>{group}</ul>
           </Tab.Panel>

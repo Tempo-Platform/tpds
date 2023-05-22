@@ -17,13 +17,9 @@ const lastPVariants = {
   skip3Columns: skip3ColumnsStyle,
 }
 
-const CustomP = styled(P)(() => [
-  tw`whitespace-nowrap text-ellipsis overflow-hidden`,
-])
+const CustomP = styled(P)(() => [tw`whitespace-nowrap text-ellipsis overflow-hidden`])
 
-const LastP = styled(P)(() => [
-  ({ variant = 'default' }) => lastPVariants[variant],
-])
+const LastP = styled(P)(() => [({ variant = 'default' }) => lastPVariants[variant]])
 
 const getLastPVariant = (skipColumn2, skipColumn3, skipColumn4) => {
   let skipColumnsNum = 0
@@ -57,7 +53,7 @@ function PropsTable({
     <div>
       {!omitTitle && <H6>{title || 'Props'}</H6>}
       {!omitTitle && <br />}
-      <PropsTableRowElement tw="pb-2 mb-8 border-b border-green dark:border-green">
+      <PropsTableRowElement tw="pb-2 mb-8 border-b border-grey-light-scale-500 dark:border-grey-light-scale-900">
         <CustomP isBold tw="col-span-2">
           {col1Name}
         </CustomP>
@@ -85,15 +81,9 @@ function PropsTable({
           <CustomP tw="col-span-2" isBold>
             {item[param1Name]}
           </CustomP>
-          {!skipColumn2 && (
-            <CustomP tw="col-span-2">{item[param2Name]}</CustomP>
-          )}
-          {!skipColumn3 && (
-            <CustomP tw="col-span-2">{item[param3Name]}</CustomP>
-          )}
-          {!skipColumn4 && (
-            <CustomP tw="col-span-2">{item[param4Name]}</CustomP>
-          )}
+          {!skipColumn2 && <CustomP tw="col-span-2">{item[param2Name]}</CustomP>}
+          {!skipColumn3 && <CustomP tw="col-span-2">{item[param3Name]}</CustomP>}
+          {!skipColumn4 && <CustomP tw="col-span-2">{item[param4Name]}</CustomP>}
           <LastP variant={lastPVariant}>{item[param5Name]}</LastP>
         </PropsTableRowElement>
       ))}

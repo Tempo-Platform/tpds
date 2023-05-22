@@ -18,8 +18,7 @@ const TextInput = ({
   const [inputFocused, setInputFocused] = useState(false)
   const stateIcon = getStateIcon(props)
   const placeholder = props.placeholder
-  const hasValue =
-    value && value !== '' && typeof value === 'string' && value.length > 0
+  const hasValue = value && value !== '' && typeof value === 'string' && value.length > 0
   if (!placeholder) {
     console.error('TextInput Component: A placeholder value is required')
   }
@@ -38,14 +37,10 @@ const TextInput = ({
           {required && <span tw="text-red ml-1">*</span>}
         </PlaceholderLabel>
       )}
-      {prefix && (
-        <PrefixLabel className="prefix-label">
-          {prefix}
-        </PrefixLabel>
-      )}
+      {prefix && <PrefixLabel className="prefix-label">{prefix}</PrefixLabel>}
       <TextInputElement
         type="text"
-        className='input-element'
+        className="input-element"
         inputFocused
         onFocus={() => setInputFocused(true)}
         onBlur={() => setInputFocused(false)}

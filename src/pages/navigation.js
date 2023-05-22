@@ -12,13 +12,19 @@ import ThemeToggle from '../../tpds/system/ThemeToggle'
 import packageJson from '../../package.json'
 
 const Navigation = () => (
-  <div tw='w-full'>
+  <div tw="w-full">
     <Layout navigationPage={true}>
       <MobileNav>
         <MobileNavBrand>
-          <H5 isBold tw='text-blue'>TPDS</H5>
-          <P isMedium tw='text-secondary'>Tempo Platform Design System</P>
-          <P isMedium tw='text-secondary'>v{packageJson.version}</P>
+          <H5 isBold tw="text-blue">
+            TPDS
+          </H5>
+          <P isMedium tw="text-secondary">
+            Tempo Platform Design System
+          </P>
+          <P isMedium tw="text-secondary">
+            v{packageJson.version}
+          </P>
         </MobileNavBrand>
         <ThemeToggle />
         <br />
@@ -27,19 +33,16 @@ const Navigation = () => (
         <MobileNavNav>
           {navigation.map(navItem => (
             <NavItemRoot key={navItem.title} hasSubItems={navItem.subItems}>
-              <MobileNavNavItem
-                activeClassName='is-active'
-                to={navItem.link}
-              >
+              <MobileNavNavItem activeClassName="is-active" to={navItem.link}>
                 <H6>{navItem.title}</H6>
                 {navItem.subItems && <TriangleRight />}
               </MobileNavNavItem>
-              <div tw='flex flex-col items-start'>
-                { navItem.subItems &&
+              <div tw="flex flex-col items-start">
+                {navItem.subItems &&
                   navItem.subItems.map(subItem => (
                     <SubMobileNavNavItem
                       key={subItem.link}
-                      activeClassName='is-active'
+                      activeClassName="is-active"
                       to={subItem.link}
                     >
                       <H6>{subItem.title}</H6>
@@ -66,7 +69,6 @@ const MobileNav = styled.div(() => [
   `,
 ])
 
-
 const MobileNavBrand = styled.div({
   marginBottom: '30px',
   '& p': {
@@ -79,9 +81,7 @@ const MobileNavNav = styled.nav({
   flexDirection: 'column',
 })
 
-const NavItemRoot = styled.div(({ hasSubItems }) => [
-  hasSubItems && tw`my-3`,
-])
+const NavItemRoot = styled.div(({ hasSubItems }) => [hasSubItems && tw`my-3`])
 
 const MobileNavNavItem = styled(Link)(({ hasSubItems }) => [
   tw`py-0.5 text-blue`,
@@ -108,7 +108,8 @@ const MobileNavNavItem = styled(Link)(({ hasSubItems }) => [
   `,
 ])
 
-const SubMobileNavNavItem = styled(MobileNavNavItem)({},
+const SubMobileNavNavItem = styled(MobileNavNavItem)(
+  {},
   [tw`pl-3 lg:pl-4`],
   css`
     &.active {

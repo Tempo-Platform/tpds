@@ -3,16 +3,11 @@ import React from 'react'
 import tw, { css, styled } from 'twin.macro'
 import { H6, P } from '../../elements/typography'
 
-function VideoCard({
-  videoEmbedSrc,
-  title,
-  description,
-  ...props
-  }) {
+function VideoCard({ videoEmbedSrc, title, description, ...props }) {
   return (
     <VideoRoot {...props}>
       <iframe
-        tw='w-full aspect-video rounded'
+        tw="w-full aspect-video rounded"
         src={videoEmbedSrc}
         title={title}
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -21,16 +16,12 @@ function VideoCard({
         mozallowfullscreen="true"
         allowFullScreen
       />
-      { title &&
+      {title && (
         <HeaderSection>
           <Header isBold>{title}</Header>
         </HeaderSection>
-      }
-      {description && 
-        <Description>
-          {description}
-        </Description>
-      }
+      )}
+      {description && <Description>{description}</Description>}
     </VideoRoot>
   )
 }
@@ -42,17 +33,13 @@ const VideoRoot = styled.div(() => [
   tw`p-xxs lg:p-xs xl:p-sm rounded-[8px]`,
 ])
 
-const HeaderSection = styled.div(() => [
-  tw`w-full flex items-center pt-xs`,
-])
+const HeaderSection = styled.div(() => [tw`w-full flex items-center pt-xs`])
 
 const Header = styled(H6)(() => [
   tw`leading-none`,
   css`
     color: inherit;
-  `
+  `,
 ])
 
-const Description = styled(P)(() => [
-  tw`text-secondary leading-tight pt-xs`,
-])
+const Description = styled(P)(() => [tw`text-secondary leading-tight pt-xs`])

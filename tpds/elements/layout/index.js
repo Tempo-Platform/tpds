@@ -18,7 +18,7 @@ export const Container = styled.div(() => [
   css`
     align-self: center;
   `,
-  ({ variant = 'large' }) => containerVariants[variant]
+  ({ variant = 'large' }) => containerVariants[variant],
 ])
 
 export const ContainerRow = styled(Container)`
@@ -80,13 +80,9 @@ export const SeparatorBase = styled.div(props => [
   `,
 ])
 
-export const Separator = styled(SeparatorBase)(props => [
-  tw`border-body`,
-])
+export const Separator = styled(SeparatorBase)(props => [tw`border-body`])
 
-export const SeparatorWindow = styled(SeparatorBase)(props => [
-  tw`border-window`,
-])
+export const SeparatorWindow = styled(SeparatorBase)(props => [tw`border-window`])
 
 export const Window = styled.div(() => [
   tw`bg-window border border-window rounded-sm py-xs px-xs md:(py-xs px-sm) lg:(py-sm px-md rounded)`,

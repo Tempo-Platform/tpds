@@ -13,18 +13,20 @@ const TextInputPage = () => {
   const [inputValue, setInputValue] = useState('')
   return (
     <Layout>
-      <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
+      <Hero tw="bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200">
         <H1 isMedium>TextInput</H1>
-        <P>The TextInput component extends the functionality of the TextInput element with additional labels.</P>
+        <P>
+          The TextInput component extends the functionality of the TextInput element with additional
+          labels.
+        </P>
       </Hero>
       <MainContent>
         {/*{navigation}*/}
         <br />
         <br />
         <P>
-          The <Bold>regular</Bold> variant uses the same value for{' '}
-          <Bold>placeholder</Bold> and <Bold>label</Bold>, and has no{' '}
-          <Bold>extended label</Bold> below.
+          The <Bold>regular</Bold> variant uses the same value for <Bold>placeholder</Bold> and{' '}
+          <Bold>label</Bold>, and has no <Bold>extended label</Bold> below.
         </P>
         <br />
         <P>Try writing in one of the inputs to see the label in action.</P>
@@ -83,9 +85,9 @@ const TextInputPage = () => {
         <br />
         <br />
         <P>
-          The following variant takes a <Bold>custom label</Bold> as <Bold>label</Bold>{' '}
-          instead of the <Bold>placeholder</Bold>, which in this cases works in
-          the standard way, and has no <Bold>extended label</Bold> below.
+          The following variant takes a <Bold>custom label</Bold> as <Bold>label</Bold> instead of
+          the <Bold>placeholder</Bold>, which in this cases works in the standard way, and has no{' '}
+          <Bold>extended label</Bold> below.
         </P>
         <br />
         <P>Try writing in the input below to see the label in action.</P>
@@ -111,9 +113,8 @@ const TextInputPage = () => {
         <br />
         <P>
           The following variant takes an <Bold>extended label</Bold> which appears{' '}
-          <Bold>below</Bold>. It can be displayed with <Bold>success</Bold>,{' '}
-          <Bold>info</Bold>, <Bold>warning</Bold>, and <Bold>danger</Bold>{' '}
-          styles.
+          <Bold>below</Bold>. It can be displayed with <Bold>success</Bold>, <Bold>info</Bold>,{' '}
+          <Bold>warning</Bold>, and <Bold>danger</Bold> styles.
         </P>
         <br />
         <br />
@@ -191,12 +192,13 @@ const TextInputPage = () => {
         <br />
         <br />
         <P>
-          Since the prefix length may vary, a <Bold>customPrefixPadding</Bold> prop is available to allow setting a custom padding size to provide the necessary space for the prefix.
+          Since the prefix length may vary, a <Bold>customPrefixPadding</Bold> prop is available to
+          allow setting a custom padding size to provide the necessary space for the prefix.
         </P>
         <br />
         <TextInput
           prefix="Averylongprefix"
-          customPrefixPadding='135px'
+          customPrefixPadding="135px"
           placeholder="Your address"
           value={inputValue}
           onChange={e => setInputValue(e.target.value)}
@@ -211,13 +213,10 @@ const TextInputPage = () => {
         <br />
         <br />
         <P>
-          The <Bold>required</Bold> variant show a <Bold>red wildcard</Bold>{' '}
-          next to the label.
+          The <Bold>required</Bold> variant show a <Bold>red wildcard</Bold> next to the label.
         </P>
         <br />
-        <P>
-          Try writing in the input below to see the wildcard next to the label.
-        </P>
+        <P>Try writing in the input below to see the wildcard next to the label.</P>
         <br />
         <br />
         <br />
@@ -342,7 +341,6 @@ const codeInvalidExtendedLabel = String.raw`import TextInput from '@tempoplatfor
 //   onChange={yourChangeHandler}
 // />
 // `
-
 
 const codeCustomPrefixPadding = String.raw`import TextInput from '@tempoplatform/tpds/components/input/TextInput'
 

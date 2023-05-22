@@ -12,16 +12,14 @@ import CodeGridComponent from '../../components/CodeGridComponent'
 
 const HeroPage = () => (
   <Layout>
-    <Hero tw='bg-window border border-b border-window'>
+    <Hero tw="bg-window border border-b border-window">
       <H3>Logo</H3>
       <P>Hummingbot logo variations</P>
     </Hero>
     <MainContent>
       <H4>Basic usage</H4>
       <br />
-      <CodeBlock
-        code={basicCodeBlock}
-      />
+      <CodeBlock code={basicCodeBlock} />
       <br />
       <br />
       <P>There are 4 color variations and 5 default sizes.</P>
@@ -34,31 +32,28 @@ const HeroPage = () => (
       <br />
       <CodeGridComponent
         code={"<HummingbotLogo size='tiny' />"}
-        element={<HummingbotLogo size='tiny' />}
+        element={<HummingbotLogo size="tiny" />}
       />
       <br />
       <br />
-      <CodeGridComponent
-        code={"<HummingbotLogo />"}
-        element={<HummingbotLogo />}
-      />
+      <CodeGridComponent code={'<HummingbotLogo />'} element={<HummingbotLogo />} />
       <br />
       <br />
       <CodeGridComponent
         code={"<HummingbotLogo size='medium' />"}
-        element={<HummingbotLogo size='medium' />}
+        element={<HummingbotLogo size="medium" />}
       />
       <br />
       <br />
       <CodeGridComponent
         code={"<HummingbotLogo size='large' />"}
-        element={<HummingbotLogo size='large' />}
+        element={<HummingbotLogo size="large" />}
       />
       <br />
       <br />
       <CodeGridComponent
         code={"<HummingbotLogo size='huge' />"}
-        element={<HummingbotLogo size='huge' />}
+        element={<HummingbotLogo size="huge" />}
       />
       <br />
       <br />
@@ -68,17 +63,14 @@ const HeroPage = () => (
       <br />
       <H6>Classic Green (default)</H6>
       <br />
-      <CodeGridComponent
-        code={"<HummingbotLogo />"}
-        element={<HummingbotLogo />}
-      />
+      <CodeGridComponent code={'<HummingbotLogo />'} element={<HummingbotLogo />} />
       <br />
       <br />
       <H6>White on Black</H6>
       <br />
       <CodeGridComponent
         code={"<HummingbotLogo \n  colorStyle='white-black'\n/>"}
-        element={<HummingbotLogo colorStyle='white-black' />}
+        element={<HummingbotLogo colorStyle="white-black" />}
       />
       <br />
       <br />
@@ -87,8 +79,8 @@ const HeroPage = () => (
       <CodeGridComponent
         code={"<HummingbotLogo \n  colorStyle='black-white'\n/>"}
         element={
-          <div tw='bg-white p-sm inline-flex'>
-            <HummingbotLogo colorStyle='black-white' />
+          <div tw="bg-white p-sm inline-flex">
+            <HummingbotLogo colorStyle="black-white" />
           </div>
         }
       />
@@ -100,7 +92,6 @@ const HeroPage = () => (
 
 export default HeroPage
 
-const basicCodeBlock = String.raw
-`import HummingbotLogo from '@tempoplatform/tpds/assets/svgs/logos/HummingbotLogo
+const basicCodeBlock = String.raw`import HummingbotLogo from '@tempoplatform/tpds/assets/svgs/logos/HummingbotLogo
 
 <HummingbotLogo />`

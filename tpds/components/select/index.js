@@ -10,7 +10,13 @@ import HeroIcons from '../../assets/svgs/icons/HeroIcons'
  * https://headlessui.dev/react/listbox
  */
 
-export default function Select({ items, selected, setSelected, listboxProps, listboxOptionsProps }) {
+export default function Select({
+  items,
+  selected,
+  setSelected,
+  listboxProps,
+  listboxOptionsProps,
+}) {
   // const [selected, setSelected] = useState(items[0])
   if (items.length === 0) return null
   return (
@@ -38,7 +44,13 @@ export default function Select({ items, selected, setSelected, listboxProps, lis
 }
 function ListboxOption(item, index) {
   return (
-    <Listbox.Option as={Fragment} key={index} value={item} disabled={item.disabled} style={{opacity: item.disabled ? '0.5' : '1'}}>
+    <Listbox.Option
+      as={Fragment}
+      key={index}
+      value={item}
+      disabled={item.disabled}
+      style={{ opacity: item.disabled ? '0.5' : '1' }}
+    >
       {props => <Option label={item.label} {...props} />}
     </Listbox.Option>
   )
@@ -62,11 +74,7 @@ function Option({ label, active, selected, ...rest }) {
       ]}
       {...rest}
     >
-      <span
-        css={[tw`block truncate`, selected ? tw`font-medium` : tw`font-normal`]}
-      >
-        {label}
-      </span>
+      <span css={[tw`block truncate`, selected ? tw`font-medium` : tw`font-normal`]}>{label}</span>
       {selected && (
         <span
           css={[

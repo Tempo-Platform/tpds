@@ -13,18 +13,18 @@ export function CardA({
   linkClass,
   external,
   ...props
-  }) {
-  if(!linkURL) {
+}) {
+  if (!linkURL) {
     return (
       <HoverlessRoot {...props}>
-        {imgSrc && <Image src={imgSrc} alt={imgAlt || (headerText || 'image')} />}
-        {headerText &&
+        {imgSrc && <Image src={imgSrc} alt={imgAlt || headerText || 'image'} />}
+        {headerText && (
           <HeaderSection>
             <Header isBold>{headerText}</Header>
           </HeaderSection>
-        }
+        )}
         {descriptionText && <Description>{descriptionText}</Description>}
-        {children && <div tw='mt-4'>{children}</div>}
+        {children && <div tw="mt-4">{children}</div>}
       </HoverlessRoot>
     )
   }
@@ -33,17 +33,22 @@ export function CardA({
     LinkElement = linkClass
   }
   return (
-    <LinkElement to={linkURL} href={linkURL} target={external ? '_blank' : null} rel={external ? "noreferrer" : null}>
+    <LinkElement
+      to={linkURL}
+      href={linkURL}
+      target={external ? '_blank' : null}
+      rel={external ? 'noreferrer' : null}
+    >
       <Root {...props}>
-        {imgSrc && <Image src={imgSrc} alt={imgAlt || (headerText || 'image')} />}
-        {headerText &&
+        {imgSrc && <Image src={imgSrc} alt={imgAlt || headerText || 'image'} />}
+        {headerText && (
           <HeaderSection>
             <Header isBold>{headerText}</Header>
-            {external && <ExternalLinkIcon tw='ml-xs' />}
+            {external && <ExternalLinkIcon tw="ml-xs" />}
           </HeaderSection>
-        }
+        )}
         {descriptionText && <Description>{descriptionText}</Description>}
-        {children && <div tw='mt-4'>{children}</div>}
+        {children && <div tw="mt-4">{children}</div>}
       </Root>
     </LinkElement>
   )
@@ -59,21 +64,15 @@ const HoverlessRoot = styled.div(() => [
   tw`bg-window border border-window p-xxs lg:p-xs xl:p-sm rounded-[8px]`,
 ])
 
-const Image = styled.img(() => [
-  tw`w-full pb-sm rounded-[6px]`,
-])
+const Image = styled.img(() => [tw`w-full pb-sm rounded-[6px]`])
 
-const HeaderSection = styled.div(() => [
-  tw`w-full flex items-center pb-xs`,
-])
+const HeaderSection = styled.div(() => [tw`w-full flex items-center pb-xs`])
 
 const Header = styled(H6)(() => [
   tw`leading-none`,
   css`
     color: inherit;
-  `
+  `,
 ])
 
-const Description = styled(P)(() => [
-  tw`text-secondary leading-tight`,
-])
+const Description = styled(P)(() => [tw`text-secondary leading-tight`])

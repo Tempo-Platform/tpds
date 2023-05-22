@@ -11,7 +11,7 @@ import CodeBlock from '../../../tpds/components/code/CodeBlock'
 
 const HeroPage = () => (
   <Layout>
-    <Hero tw='bg-window border border-b border-window'>
+    <Hero tw="bg-window border border-b border-window">
       <H3>Window</H3>
       <P>The standard Window</P>
     </Hero>
@@ -21,14 +21,20 @@ const HeroPage = () => (
       <Window>
         <H5>Example Window</H5>
         <br />
-        <P>The Window component uses the tw prop "bg-window" as background color, and <span tw='font-bold'>works best placed over a background using the background color "bg-body".</span></P>
+        <P>
+          The Window component uses the tw prop "bg-window" as background color, and{' '}
+          <span tw="font-bold">
+            works best placed over a background using the background color "bg-body".
+          </span>
+        </P>
         <br />
-        <P>The Window component also has a thin border around it, and rounded corners that become tighter in smller screens.</P>
+        <P>
+          The Window component also has a thin border around it, and rounded corners that become
+          tighter in smller screens.
+        </P>
       </Window>
       <br />
-      <CodeBlock
-        code={codeBlock}
-      />
+      <CodeBlock code={codeBlock} />
       <br />
       <br />
       <br />
@@ -38,8 +44,7 @@ const HeroPage = () => (
 
 export default HeroPage
 
-const codeBlock = String.raw
-`import { Window } from '@tempoplatform/tpds/elements/layout'
+const codeBlock = String.raw`import { Window } from '@tempoplatform/tpds/elements/layout'
 
 <Window>
   <H5>Example Window</H5>

@@ -52,9 +52,7 @@ const inserLines = array => {
   array.forEach((item, index) => {
     newArray.push(item)
     if (index % 1 === 0) {
-      newArray.push(
-        <Line className="tpds-steps-line" key={`{tpds-steps-line-${index}}`} />,
-      )
+      newArray.push(<Line className="tpds-steps-line" key={`{tpds-steps-line-${index}}`} />)
     }
   })
   return newArray
@@ -73,9 +71,7 @@ function calculateStepState(index, currentStepIndex) {
 function StepsComponent({ steps, currentStepIndex = 0, ...props }) {
   const items = steps.map((step, index) => (
     <StepRoot className="tpds-step" key={step.title}>
-      <StepCircle
-        className={calculateStepState(index, currentStepIndex).toString()}
-      >
+      <StepCircle className={calculateStepState(index, currentStepIndex).toString()}>
         {currentStepIndex > index ? (
           <CheckIcon />
         ) : (

@@ -18,18 +18,14 @@ const items = [
 
 const SelectPage = () => {
   const [selected, setSelected] = useState(items[0])
-  return(
+  return (
     <Layout>
-      <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
+      <Hero tw="bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200">
         <H1 isMedium>Select</H1>
         <P>Simple Select with keyboard control</P>
       </Hero>
       <MainContent>
-        <Select
-          items={items}
-          selected={selected}
-          setSelected={setSelected}
-        />
+        <Select items={items} selected={selected} setSelected={setSelected} />
         <br />
         <P>Selected:</P>
         <P isBold>{selected.label}</P>

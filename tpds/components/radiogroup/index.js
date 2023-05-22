@@ -16,9 +16,7 @@ export default function RadioGroup({ screenReaderLabel, items }) {
   if (items.length === 0) return null
   return (
     <HeadlessUiRadioGroup value={selected} onChange={setSelected}>
-      <HeadlessUiRadioGroup.Label tw="sr-only">
-        {screenReaderLabel}
-      </HeadlessUiRadioGroup.Label>
+      <HeadlessUiRadioGroup.Label tw="sr-only">{screenReaderLabel}</HeadlessUiRadioGroup.Label>
       <div tw="space-y-2">{items.map(item)}</div>
     </HeadlessUiRadioGroup>
   )
@@ -39,10 +37,7 @@ function item(item) {
             <div tw="text-sm">
               <HeadlessUiRadioGroup.Label
                 as={P}
-                css={[
-                  tw`font-bold`,
-                  checked ? tw`text-white` : tw`text-grey-light-scale-900`,
-                ]}
+                css={[tw`font-bold`, checked ? tw`text-white` : tw`text-grey-light-scale-900`]}
               >
                 {item.name}
               </HeadlessUiRadioGroup.Label>
@@ -56,8 +51,7 @@ function item(item) {
                 <span>
                   {item.ram}/{item.cpus}
                 </span>{' '}
-                <span aria-hidden="true">&middot;</span>{' '}
-                <span>{item.disk}</span>
+                <span aria-hidden="true">&middot;</span> <span>{item.disk}</span>
               </HeadlessUiRadioGroup.Description>
             </div>
           </div>

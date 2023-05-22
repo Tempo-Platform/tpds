@@ -9,8 +9,8 @@ const siteNameA = 'TPDS'
 const siteNameB = 'Gatsby Boilerplate'
 const linksLeft = null
 const linksRight = [
-  { url: "/", label: "Home" },
-  { url: "/instructions", label: "Instructions" },
+  { url: '/', label: 'Home' },
+  { url: '/instructions', label: 'Instructions' },
 ]
 const linkCTA = {
   label: 'CTA',
@@ -30,9 +30,9 @@ function Navigation() {
       linksLeft={linksLeft}
       linksRight={linksRight}
       linkCTA={linkCTA}
-      position='relative'
-      bgColor='transparent'
-      containerVariant='short'
+      position="relative"
+      bgColor="transparent"
+      containerVariant="short"
     />
   )
 }

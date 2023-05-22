@@ -10,7 +10,7 @@ import Hero from '../../../tpds/components/hero/Hero'
 function CodeBlockPage() {
   return (
     <Layout>
-      <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
+      <Hero tw="bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200">
         <H1 isMedium>Code</H1>
         <P>Code components</P>
       </Hero>
@@ -18,9 +18,7 @@ function CodeBlockPage() {
         <H4>CodeBlock</H4>
         <P>Show blocks of code with Tempo styled syntax highlighting.</P>
         <br />
-        <CodeBlock
-          code={codeblockCode}
-        />
+        <CodeBlock code={codeblockCode} />
         <br />
         <br />
         <br />

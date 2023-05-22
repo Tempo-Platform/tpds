@@ -11,9 +11,7 @@ import NoteIcon from '../../assets/svgs/notifications/NoteIcon'
 export const Callout = ({ title, text, ...props }) => {
   return (
     <RootDefault {...props}>
-      <HeaderDefault>
-        {title}
-      </HeaderDefault>
+      <HeaderDefault>{title}</HeaderDefault>
       <Text className="text">{text}</Text>
     </RootDefault>
   )
@@ -139,9 +137,7 @@ const RootNote = styled(Root)(() => [
   tw`dark:bg-grey-light-scale-100/5`,
 ])
 
-const Header = styled.div(({ type }) => [
-  tw`flex items-center font-medium text-lg pt-4 px-4`,
-])
+const Header = styled.div(({ type }) => [tw`flex items-center font-medium text-lg pt-4 px-4`])
 
 const HeaderDefault = styled(Header)(({ type }) => [
   tw`text-grey-dark-scale-700 dark:text-grey-light-scale-500`,
@@ -149,12 +145,8 @@ const HeaderDefault = styled(Header)(({ type }) => [
 const HeaderSuccess = styled(Header)(({ type }) => [
   tw`text-green-scale-500 dark:text-green-scale-400`,
 ])
-const HeaderInfo = styled(Header)(({ type }) => [
-  tw`text-blue-scale-500 dark:text-blue-scale-300`,
-])
-const HeaderDanger = styled(Header)(({ type }) => [
-  tw`text-red-scale-500 dark:text-red-scale-400`,
-])
+const HeaderInfo = styled(Header)(({ type }) => [tw`text-blue-scale-500 dark:text-blue-scale-300`])
+const HeaderDanger = styled(Header)(({ type }) => [tw`text-red-scale-500 dark:text-red-scale-400`])
 const HeaderWarning = styled(Header)(({ type }) => [
   tw`text-orange-scale-500 dark:text-orange-scale-400`,
 ])
@@ -164,9 +156,7 @@ const HeaderTip = styled(Header)(({ type }) => [
 const HeaderBug = styled(Header)(({ type }) => [
   tw`text-orange-scale-500 dark:text-orange-scale-400`,
 ])
-const HeaderNote = styled(Header)(({ type }) => [
-  tw`text-grey-dark-scale-700 dark:text-white`
-])
+const HeaderNote = styled(Header)(({ type }) => [tw`text-grey-dark-scale-700 dark:text-white`])
 
 const Text = styled.div(() => [
   tw`font-medium text-grey-dark-scale-200 dark:text-white px-4 pb-4 pt-2`,

@@ -11,7 +11,7 @@ import Hero from '../../../tpds/components/hero/Hero'
 
 const TagPage = () => (
   <Layout>
-    <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
+    <Hero tw="bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200">
       <H1 isMedium>Tag</H1>
       <P>Simple Tag component with multiple states</P>
     </Hero>
@@ -20,10 +20,7 @@ const TagPage = () => (
       <br />
       <PLarge>Default</PLarge>
       <br />
-      <Tag
-        label='Default'
-        variant='default'
-      />
+      <Tag label="Default" variant="default" />
       <br />
       <br />
       <CodeBlock code={codeDefault} />
@@ -31,11 +28,7 @@ const TagPage = () => (
       <br />
       <PLarge>Uppercase</PLarge>
       <br />
-      <Tag
-        isUppercase={true}
-        label='UPPERCASE'
-        variant='default'
-      />
+      <Tag isUppercase={true} label="UPPERCASE" variant="default" />
       <br />
       <br />
       <CodeBlock code={codeUppercase} />
@@ -43,10 +36,7 @@ const TagPage = () => (
       <br />
       <PLarge>Success</PLarge>
       <br />
-      <Tag
-        label='Success'
-        variant='success'
-      />
+      <Tag label="Success" variant="success" />
       <br />
       <br />
       <CodeBlock code={codeSuccess} />
@@ -54,10 +44,7 @@ const TagPage = () => (
       <br />
       <PLarge>Info</PLarge>
       <br />
-      <Tag
-        label='Info'
-        variant='info'
-      />
+      <Tag label="Info" variant="info" />
       <br />
       <br />
       <CodeBlock code={codeInfo} />
@@ -65,10 +52,7 @@ const TagPage = () => (
       <br />
       <PLarge>Warning</PLarge>
       <br />
-      <Tag
-        label='Warning'
-        variant='warning'
-      />
+      <Tag label="Warning" variant="warning" />
       <br />
       <br />
       <CodeBlock code={codeWarning} />
@@ -76,10 +60,7 @@ const TagPage = () => (
       <br />
       <PLarge>Danger</PLarge>
       <br />
-      <Tag
-        label='Danger'
-        variant='danger'
-      />
+      <Tag label="Danger" variant="danger" />
       <br />
       <br />
       <CodeBlock code={codeDanger} />
@@ -90,7 +71,6 @@ const TagPage = () => (
 )
 
 export default TagPage
-
 
 const codeDefault = String.raw`import Tag from '@tempoplatform/tpds/components/tag'
 

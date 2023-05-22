@@ -4,7 +4,7 @@ const colorPalettes = colorTokens.color_palettes
 module.exports = {
   white: colorTokens.white,
   black: colorTokens.black,
-  
+
   green: colorPalettes.green['500'],
   blue: colorPalettes.blue['500'],
   orange: colorPalettes.orange['500'],
@@ -12,7 +12,7 @@ module.exports = {
   yellow: colorPalettes.yellow['500'],
   purple: colorPalettes.purple['500'],
   magenta: colorPalettes.magenta['500'],
-  
+
   grey_light: colorPalettes['grey-light'],
   grey_dark: colorPalettes['grey-dark'],
 

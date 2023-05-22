@@ -21,9 +21,9 @@ const items = [
 const ComboboxPage = () => {
   const [selected, setSelected] = useState(null)
   const [selectedMultiple, setSelectedMultiple] = useState([])
-  return(
+  return (
     <Layout>
-      <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
+      <Hero tw="bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200">
         <H1 isMedium>ComboBox</H1>
         <P>Generic combobox with autocomplete</P>
       </Hero>
@@ -36,7 +36,7 @@ const ComboboxPage = () => {
         <P isBold>{selected ? selected.label : 'none'}</P>
         <br />
         <ComboBox
-          placeholderName='Name'
+          placeholderName="Name"
           items={items}
           selected={selected}
           setSelected={setSelected}
@@ -52,13 +52,15 @@ const ComboboxPage = () => {
         <br />
         <br />
         <P>Selected:</P>
-        {selectedMultiple.map((item) => (
-          <P isBold key={item.id}>{item.label}</P>
+        {selectedMultiple.map(item => (
+          <P isBold key={item.id}>
+            {item.label}
+          </P>
         ))}
         <br />
         <ComboBox
           multiple={true}
-          placeholderName='People'
+          placeholderName="People"
           items={items}
           selected={selectedMultiple}
           setSelected={setSelectedMultiple}
@@ -94,7 +96,6 @@ const [selected, setSelected] = useState(items[0])
   selected={selected}
   setSelected={setSelected}
 />`
-
 
 const codeComboBoxMultiple = String.raw`import React, { useState } from 'react'
 import ComboBox from '@tempoplatform/tpds/components/combobox'

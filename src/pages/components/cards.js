@@ -16,7 +16,7 @@ import PropsTable from '../../../tpds/components/table/PropsTable'
 
 const CardsPage = () => (
   <Layout>
-    <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
+    <Hero tw="bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200">
       <H1 isMedium>Cards</H1>
       <P>Collection of Card components</P>
     </Hero>
@@ -24,9 +24,9 @@ const CardsPage = () => (
       <H4>CardA</H4>
       <P>Most standard Card style</P>
       <br />
-      <div tw='w-full grid grid-cols-1 gap-0 gap-y-4 lg:(grid-cols-3 gap-1 gap-y-0)'>
+      <div tw="w-full grid grid-cols-1 gap-0 gap-y-4 lg:(grid-cols-3 gap-1 gap-y-0)">
         <CardA
-          tw='mr-xs'
+          tw="mr-xs"
           imgSrc="https://picsum.photos/id/1/328/200"
           imgAlt="Test"
           headerText="Inner Site Link"
@@ -36,14 +36,14 @@ const CardsPage = () => (
           external={false}
         />
         <CardA
-          tw='mr-xs'
+          tw="mr-xs"
           imgSrc="https://picsum.photos/id/1/328/200"
           imgAlt="Test"
           headerText="External Link"
           descriptionText="Card with custom content."
           children={
             <div>
-              <Button variant='info'>Button</Button>
+              <Button variant="info">Button</Button>
             </div>
           }
           linkURL="https://www.google.com"
@@ -61,64 +61,65 @@ const CardsPage = () => (
       <br />
       <br />
       <PropsTable
-        title='CardA Props'
+        title="CardA Props"
         items={[
           {
             propName: 'imgSrc',
             type: 'String',
             default: "' '",
             required: 'optional',
-            description: 'URL to image'
+            description: 'URL to image',
           },
           {
             propName: 'imgAlt',
             type: 'String',
             default: "' '",
             required: 'optional',
-            description: 'ALT image description'
+            description: 'ALT image description',
           },
           {
             propName: 'headerText',
             type: 'String',
             default: '"Props"',
             required: 'optional',
-            description: 'card title'
+            description: 'card title',
           },
           {
             propName: 'descriptionText',
             type: 'String',
             default: "' '",
             required: 'optional',
-            description: 'card description'
+            description: 'card description',
           },
           {
             propName: 'children',
             type: 'JSX',
             default: 'null',
             required: 'optional',
-            description: 'Custom JSX content'
+            description: 'Custom JSX content',
           },
           {
             propName: 'linkURL',
             type: 'String',
             default: "' '",
             required: 'optional',
-            description: 'link destination URL'
+            description: 'link destination URL',
           },
           {
             propName: 'external',
             type: 'Boolean',
             default: 'Boolean',
             required: 'conditional',
-            description: 'when a link is external, pass {true}'
+            description: 'when a link is external, pass {true}',
           },
           {
             propName: 'linkClass',
             type: 'Class',
             default: 'null',
             required: 'conditional',
-            description: 'if "linkUrl" is given and refers to an internal link, pass the "Link" class you are using, eg. imported from react-router-dom or gatsby'
-          }
+            description:
+              'if "linkUrl" is given and refers to an internal link, pass the "Link" class you are using, eg. imported from react-router-dom or gatsby',
+          },
         ]}
       />
       <br />
@@ -131,10 +132,10 @@ const CardsPage = () => (
       <H4>CardB</H4>
       <P>Using an icon instead of an image</P>
       <br />
-      <div tw='w-full grid grid-cols-1 gap-0 gap-y-4 lg:(grid-cols-3 gap-1 gap-y-0)'>
+      <div tw="w-full grid grid-cols-1 gap-0 gap-y-4 lg:(grid-cols-3 gap-1 gap-y-0)">
         <CardB
-          tw='mr-xs'
-          iconElement={<IconA/>}
+          tw="mr-xs"
+          iconElement={<IconA />}
           headerText="Icon Card 1"
           descriptionText="Inner site link. Vestibulum id ligula porta felis euismod semper. Maecenas faucibus."
           linkURL="/"
@@ -142,13 +143,13 @@ const CardsPage = () => (
           external={false}
         />
         <CardB
-          tw='mr-xs'
-          iconElement={<IconB/>}
-          headerText="Icon Card 2"          
+          tw="mr-xs"
+          iconElement={<IconB />}
+          headerText="Icon Card 2"
           descriptionText="Card with custom content."
           children={
             <div>
-              <Button variant='info'>Button</Button>
+              <Button variant="info">Button</Button>
             </div>
           }
           linkURL="https://www.google.com"
@@ -166,50 +167,51 @@ const CardsPage = () => (
       <br />
       <br />
       <PropsTable
-        title='CardB Props'
+        title="CardB Props"
         items={[
           {
             propName: 'headerText',
             type: 'String',
             default: '"Props"',
             required: 'optional',
-            description: 'card title'
+            description: 'card title',
           },
           {
             propName: 'descriptionText',
             type: 'String',
             default: "' '",
             required: 'optional',
-            description: 'card description'
+            description: 'card description',
           },
           {
             propName: 'children',
             type: 'JSX',
             default: 'null',
             required: 'optional',
-            description: 'Custom JSX content'
+            description: 'Custom JSX content',
           },
           {
             propName: 'linkURL',
             type: 'String',
             default: "' '",
             required: 'optional',
-            description: 'link destination URL'
+            description: 'link destination URL',
           },
           {
             propName: 'external',
             type: 'Boolean',
             default: 'Boolean',
             required: 'conditional',
-            description: 'when a link is external, pass {true}'
+            description: 'when a link is external, pass {true}',
           },
           {
             propName: 'linkClass',
             type: 'Class',
             default: 'null',
             required: 'conditional',
-            description: 'if "linkUrl" is given and refers to an internal link, pass the "Link" class you are using, eg. imported from react-router-dom or gatsby'
-          }
+            description:
+              'if "linkUrl" is given and refers to an internal link, pass the "Link" class you are using, eg. imported from react-router-dom or gatsby',
+          },
         ]}
       />
       <br />
@@ -222,9 +224,9 @@ const CardsPage = () => (
       <H4>CardC</H4>
       <P>Bar style card</P>
       <br />
-      <div tw='grid grid-cols-1 gap-xs lg:grid-cols-2 w-full content-between'>
+      <div tw="grid grid-cols-1 gap-xs lg:grid-cols-2 w-full content-between">
         <CardC
-          iconElement={<IconB/>}
+          iconElement={<IconB />}
           headerText="External Link Card 1"
           descriptionText="Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum."
           linkURL="https://www.google.com"
@@ -232,12 +234,12 @@ const CardsPage = () => (
           external={true}
         />
         <CardC
-          iconElement={<IconB/>}
+          iconElement={<IconB />}
           headerText="Internal Link Card 2"
           descriptionText="Card with custom content."
           children={
             <div>
-              <Button variant='info'>Button</Button>
+              <Button variant="info">Button</Button>
             </div>
           }
           linkURL="/"
@@ -245,7 +247,7 @@ const CardsPage = () => (
           linkClass={Link}
         />
         <CardC
-          iconElement={<IconB/>}
+          iconElement={<IconB />}
           headerText="External Link Card 3"
           descriptionText="Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum."
           linkURL="https://www.google.com"
@@ -264,50 +266,51 @@ const CardsPage = () => (
       <CodeBlock code={codeCardC} />
       <br />
       <PropsTable
-        title='CardC Props'
+        title="CardC Props"
         items={[
           {
             propName: 'headerText',
             type: 'String',
             default: '"Props"',
             required: 'optional',
-            description: 'card title'
+            description: 'card title',
           },
           {
             propName: 'descriptionText',
             type: 'String',
             default: "' '",
             required: 'optional',
-            description: 'card description'
+            description: 'card description',
           },
           {
             propName: 'children',
             type: 'JSX',
             default: 'null',
             required: 'optional',
-            description: 'Custom JSX content'
+            description: 'Custom JSX content',
           },
           {
             propName: 'linkURL',
             type: 'String',
             default: "' '",
             required: 'optional',
-            description: 'link destination URL'
+            description: 'link destination URL',
           },
           {
             propName: 'external',
             type: 'Boolean',
             default: 'Boolean',
             required: 'conditional',
-            description: 'when a link is external, pass {true}'
+            description: 'when a link is external, pass {true}',
           },
           {
             propName: 'linkClass',
             type: 'Class',
             default: 'null',
             required: 'conditional',
-            description: 'if "linkUrl" is given and refers to an internal link, pass the "Link" class you are using, eg. imported from react-router-dom or gatsby'
-          }
+            description:
+              'if "linkUrl" is given and refers to an internal link, pass the "Link" class you are using, eg. imported from react-router-dom or gatsby',
+          },
         ]}
       />
       <br />
@@ -490,8 +493,6 @@ function IconB() {
   );
 }`
 
-
-
 function IconA() {
   return (
     <svg
@@ -509,9 +510,8 @@ function IconA() {
       <path d="M12 8L12 12"></path>
       <path d="M12 16L12.01 16"></path>
     </svg>
-  );
+  )
 }
-
 
 function IconB() {
   return (
@@ -528,7 +528,7 @@ function IconB() {
     >
       <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"></path>
     </svg>
-  );
+  )
 }
 
 function IconC() {
@@ -547,5 +547,5 @@ function IconC() {
       <path d="M16 18L22 12 16 6"></path>
       <path d="M8 6L2 12 8 18"></path>
     </svg>
-  );
+  )
 }

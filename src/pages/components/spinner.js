@@ -11,12 +11,12 @@ import Hero from '../../../tpds/components/hero/Hero'
 
 const SpinnerPage = () => (
   <Layout>
-    <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
+    <Hero tw="bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200">
       <H1 isMedium>Spinner</H1>
       <P>Versatile SVG-based spinner component to use in loading scenarios</P>
     </Hero>
     <MainContent>
-      <PLarge>Default color: black & white. Custom colors: green, red, orange, blue.{' '}</PLarge>
+      <PLarge>Default color: black & white. Custom colors: green, red, orange, blue. </PLarge>
       <br />
       <br />
       <Separator />

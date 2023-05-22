@@ -12,24 +12,20 @@ export function CardC({
   external,
   linkClass,
   ...props
-  }) {
-  if(!linkURL) {
+}) {
+  if (!linkURL) {
     return (
       <HoverlessRoot {...props}>
         <HeaderSection>
-          {iconElement &&
-            <div tw='pr-xs'>
-              {iconElement}
-            </div>
-          }
-          {headerText &&
+          {iconElement && <div tw="pr-xs">{iconElement}</div>}
+          {headerText && (
             <HeaderSection>
               <Header isBold>{headerText}</Header>
             </HeaderSection>
-          }
+          )}
         </HeaderSection>
         {descriptionText && <Description>{descriptionText}</Description>}
-        {children && <div tw='mt-4'>{children}</div>}
+        {children && <div tw="mt-4">{children}</div>}
       </HoverlessRoot>
     )
   }
@@ -38,23 +34,24 @@ export function CardC({
     LinkElement = linkClass
   }
   return (
-    <LinkElement to={linkURL} href={linkURL} target={external ? '_blank' : null} rel={external ? "noreferrer" : null}>
+    <LinkElement
+      to={linkURL}
+      href={linkURL}
+      target={external ? '_blank' : null}
+      rel={external ? 'noreferrer' : null}
+    >
       <Root {...props}>
         <HeaderSection>
-          {iconElement &&
-            <div tw='pr-xs'>
-              {iconElement}
-            </div>
-          }
-          {headerText &&
+          {iconElement && <div tw="pr-xs">{iconElement}</div>}
+          {headerText && (
             <HeaderSection>
               <Header isBold>{headerText}</Header>
             </HeaderSection>
-          }
-          {external && <ExternalLinkIcon tw='absolute top-xs right-xs' />}
+          )}
+          {external && <ExternalLinkIcon tw="absolute top-xs right-xs" />}
         </HeaderSection>
         {descriptionText && <Description>{descriptionText}</Description>}
-        {children && <div tw='mt-xs'>{children}</div>}
+        {children && <div tw="mt-xs">{children}</div>}
       </Root>
     </LinkElement>
   )
@@ -70,17 +67,13 @@ const HoverlessRoot = styled.div(() => [
   tw`relative bg-window border border-window p-xxs lg:p-xs xl:p-sm rounded-[8px]`,
 ])
 
-const HeaderSection = styled.div(() => [
-  tw`w-full flex items-center`,
-])
+const HeaderSection = styled.div(() => [tw`w-full flex items-center`])
 
 const Header = styled(H6)(() => [
   tw`leading-none`,
   css`
     color: inherit;
-  `
+  `,
 ])
 
-const Description = styled(P)(() => [
-  tw`text-secondary leading-tight mt-xxs`,
-])
+const Description = styled(P)(() => [tw`text-secondary leading-tight mt-xxs`])

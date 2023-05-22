@@ -38,7 +38,6 @@ export default function Modal({
     setIsOpen(showOpen)
   }, [showOpen])
 
- 
   return (
     <div>
       {(showOpen || isOpen) && (
@@ -48,10 +47,7 @@ export default function Modal({
           open={showOpen || isOpen}
         >
           <div tw="min-h-screen px-4 text-center">
-            <Dialog.Overlay
-              tw="fixed inset-0 bg-black opacity-50"
-              {...overlayProps}
-            />
+            <Dialog.Overlay tw="fixed inset-0 bg-black opacity-50" {...overlayProps} />
             <CenterAlignmentHack />
             <div tw="inline-block w-full max-w-md py-4 px-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-window border-window shadow-xl text-grey-light-scale-900">
               <Content
@@ -110,11 +106,7 @@ function Content({
         {title}
       </Dialog.Title>
       {description && (
-        <Dialog.Description
-          {...descriptionProps}
-          as={P}
-          tw="text-tertiary leading-tight"
-        >
+        <Dialog.Description {...descriptionProps} as={P} tw="text-tertiary leading-tight">
           {description}
         </Dialog.Description>
       )}

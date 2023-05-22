@@ -15,40 +15,28 @@ import PropsTable from '../../../tpds/components/table/PropsTable'
 
 const Button = () => (
   <Layout>
-    <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
+    <Hero tw="bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200">
       <H1 isMedium>Button</H1>
       <P>Button component - to be used together with icons</P>
     </Hero>
     <MainContent>
       <PLarge>Button with loading state</PLarge>
       <br />
-      <ButtonComponent
-        loading={true}
-        variant='secondary'
-        label="Loading..."
-      />
+      <ButtonComponent loading={true} variant="secondary" label="Loading..." />
       <br />
       <CodeBlock code={codeWithLoading} />
       <br />
       <br />
       <PLarge>Button with dark-mode ready icon (before)</PLarge>
       <br />
-      <ButtonComponent
-        variant='secondary'
-        label="Button"
-        iconBefore={<Play tw='fill-current' />}
-      />
+      <ButtonComponent variant="secondary" label="Button" iconBefore={<Play tw="fill-current" />} />
       <br />
       <CodeBlock code={codeWithIconBefore} />
       <br />
       <br />
       <PLarge>Button with dark-mode ready icon (after)</PLarge>
       <br />
-      <ButtonComponent
-        variant='secondary'
-        label="Button"
-        iconAfter={<Play tw='fill-current' />}
-      />
+      <ButtonComponent variant="secondary" label="Button" iconAfter={<Play tw="fill-current" />} />
       <br />
       <CodeBlock code={codeWithIconAfter} />
       <br />
@@ -56,9 +44,9 @@ const Button = () => (
       <PLarge>Button with dark-mode ready icon (before and after)</PLarge>
       <br />
       <ButtonComponent
-        variant='secondary'
+        variant="secondary"
         label="Button"
-        iconBefore={<Play tw='fill-current' />}
+        iconBefore={<Play tw="fill-current" />}
         iconAfter={<MenuDropdown linkClass={Link} links={[]} />}
       />
       <br />
@@ -67,10 +55,7 @@ const Button = () => (
       <br />
       <PLarge>Button only with icon (no label)</PLarge>
       <br />
-      <ButtonComponent
-        variant='secondary'
-        iconBefore={<Play tw='fill-current' />}
-      />
+      <ButtonComponent variant="secondary" iconBefore={<Play tw="fill-current" />} />
       <br />
       <CodeBlock code={codeWithIconBeforeAndAfter} />
       <br />
@@ -78,7 +63,7 @@ const Button = () => (
       <PLarge>Button with "success" variant and custom icon color</PLarge>
       <br />
       <ButtonComponent
-        variant='success'
+        variant="success"
         label="Button"
         iconBefore={<DummyIcon />}
         iconColor="white"
@@ -88,42 +73,44 @@ const Button = () => (
       <br />
       <br />
       <PropsTable
-        title='Button Props'
+        title="Button Props"
         items={[
           {
             propName: 'label',
             type: 'String',
             default: "' '",
             required: 'required',
-            description: 'The label of the button.'
+            description: 'The label of the button.',
           },
           {
             propName: 'variant',
             type: 'String',
-            default: "default",
+            default: 'default',
             required: 'optional',
-            description: 'The variant identifies the type of the Button (success, info, danger etc.)'
+            description:
+              'The variant identifies the type of the Button (success, info, danger etc.)',
           },
           {
             propName: 'iconBefore',
             type: 'SVG JSX',
-            default: "null",
+            default: 'null',
             required: 'optional',
-            description: 'Optional icon to show before the label'
+            description: 'Optional icon to show before the label',
           },
           {
             propName: 'iconAfter',
             type: 'SVG JSX',
-            default: "null",
+            default: 'null',
             required: 'optional',
-            description: 'Optional icon to show after the label'
+            description: 'Optional icon to show after the label',
           },
           {
             propName: 'iconColor',
             type: 'HEX String',
-            default: "null",
+            default: 'null',
             required: 'optional',
-            description: "If iconBefore or iconAfter is passed, this color will be applied to it's fill."
+            description:
+              "If iconBefore or iconAfter is passed, this color will be applied to it's fill.",
           },
         ]}
       />

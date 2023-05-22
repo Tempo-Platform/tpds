@@ -9,18 +9,18 @@ import Tabs from '../../../tpds/components/tabs'
 import Hero from '../../../tpds/components/hero/Hero'
 
 const TabsPage = () => {
-  return(
+  return (
     <Layout>
-      <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
+      <Hero tw="bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200">
         <H1 isMedium>Tabs</H1>
         <P>Tabs component with keyboard control</P>
       </Hero>
       <MainContent>
         <Tabs
           items={{
-            "Tab 1": <div tw='border border-red p-sm'>Tab 1 content</div>,
-            "Tab 2": <div tw='border border-blue p-sm'>Tab 2 content</div>,
-            "Tab 3": <div tw='border border-yellow p-sm'>Tab 3 content</div>
+            'Tab 1': <div tw="border border-red p-sm">Tab 1 content</div>,
+            'Tab 2': <div tw="border border-blue p-sm">Tab 2 content</div>,
+            'Tab 3': <div tw="border border-yellow p-sm">Tab 3 content</div>,
           }}
           tabGroupProps={{}}
         />

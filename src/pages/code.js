@@ -10,7 +10,7 @@ import { Section, Container } from '../../tpds/elements/layout'
 
 const Code = () => (
   <Layout>
-    <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
+    <Hero tw="bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200">
       <H1 isBold>Code</H1>
       <P>The code foundations of the Tempo Platform Design System</P>
     </Hero>
@@ -18,15 +18,14 @@ const Code = () => (
       <H5>Overview</H5>
       <br />
       <P>
-        The Tempo Platform Design System provides a ready-to-use code framework
-        which makes the UI development quick and consistent.
+        The Tempo Platform Design System provides a ready-to-use code framework which makes the UI
+        development quick and consistent.
       </P>
       <br />
       <P>
-        To avoid re-inventing the wheel, the Tempo Platform Design System is built
-        upon existing 3rd-party libraries to leverage the support of active
-        communities that evolve independently and provide well-maintained
-        documentation.
+        To avoid re-inventing the wheel, the Tempo Platform Design System is built upon existing
+        3rd-party libraries to leverage the support of active communities that evolve independently
+        and provide well-maintained documentation.
       </P>
       <br />
       <br />
@@ -39,26 +38,34 @@ const Code = () => (
       <TailwindLogo />
       <br />
       <P>
-        <a href='https://tailwindcss.com/' target='_blank' rel="noreferrer"><Bold>Tailwind CSS</Bold></a> is a utility-first framework which generates
-        a set of utility classes based on design tokens from our Design System created in Figma.
-        This provides a reliable set of standards to ensure consistency across all Tempo Platform
-        projects with the added benefit of a large active community as well
-        as a great documentation site.
+        <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
+          <Bold>Tailwind CSS</Bold>
+        </a>{' '}
+        is a utility-first framework which generates a set of utility classes based on design tokens
+        from our Design System created in Figma. This provides a reliable set of standards to ensure
+        consistency across all Tempo Platform projects with the added benefit of a large active
+        community as well as a great documentation site.
       </P>
       <br />
       <br />
       <TwinMacroLogo />
       <br />
       <P>
-        <a href='https://github.com/ben-rogerson/twin.macro' target='_blank' rel="noreferrer"><Bold>Twin.macro</Bold></a> allows us to use the generated utility classes inside
-        JavaScript and ensures only the used classes are bundled with the final code.
+        <a href="https://github.com/ben-rogerson/twin.macro" target="_blank" rel="noreferrer">
+          <Bold>Twin.macro</Bold>
+        </a>{' '}
+        allows us to use the generated utility classes inside JavaScript and ensures only the used
+        classes are bundled with the final code.
       </P>
       <br />
       <br />
-      <div style={{fontSize: '50px'}}>💅</div>
+      <div style={{ fontSize: '50px' }}>💅</div>
       <P>
-        <a href='https://styled-components.com/' target='_blank' rel="noreferrer"><Bold>styled-components</Bold></a> is the most popular css-in-js library
-        available, with a large community and a complete feature set.
+        <a href="https://styled-components.com/" target="_blank" rel="noreferrer">
+          <Bold>styled-components</Bold>
+        </a>{' '}
+        is the most popular css-in-js library available, with a large community and a complete
+        feature set.
       </P>
       <br />
       <br />

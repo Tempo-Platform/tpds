@@ -131,17 +131,11 @@ function renderItems({ count, currentPage, setCurrentPage, onPageChange }) {
 
   return (
     <>
-      <PaginationItem
-        onClick={() => handlePrevClick()}
-        dimmed={currentPage === 1}
-      >
+      <PaginationItem onClick={() => handlePrevClick()} dimmed={currentPage === 1}>
         <ChevronLeftIcon />
       </PaginationItem>
       {renderPageNumbers()}
-      <PaginationItem
-        onClick={() => handleNextClick()}
-        dimmed={currentPage === totalPages}
-      >
+      <PaginationItem onClick={() => handleNextClick()} dimmed={currentPage === totalPages}>
         <ChevronRightIcon />
       </PaginationItem>
     </>

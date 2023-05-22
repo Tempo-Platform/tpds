@@ -11,7 +11,7 @@ import Hero from '../../../tpds/components/hero/Hero'
 
 const PropsTablePage = () => (
   <Layout>
-    <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
+    <Hero tw="bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200">
       <H1 isMedium>PropsTable</H1>
       <P>Table components designed to display to prop lists</P>
     </Hero>
@@ -31,50 +31,51 @@ const PropsTablePage = () => (
       <br />
       <br />
       <PropsTable
-        title='Standard Props Table Example'
+        title="Standard Props Table Example"
         items={[
           {
-            propName: "title",
+            propName: 'title',
             type: 'String',
             default: '"Props"',
             required: 'optional',
-            description: 'The title of the component, shown as a header.'
+            description: 'The title of the component, shown as a header.',
           },
           {
             propName: 'description',
             type: 'String',
             default: "' '",
             required: 'optional',
-            description: 'card description'
+            description: 'card description',
           },
           {
             propName: 'children',
             type: 'JSX',
             default: 'null',
             required: 'optional',
-            description: 'Custom JSX content'
+            description: 'Custom JSX content',
           },
           {
             propName: 'linkURL',
             type: 'String',
             default: "' '",
             required: 'optional',
-            description: 'link destination URL'
+            description: 'link destination URL',
           },
           {
             propName: 'external',
             type: 'Boolean',
             default: 'false',
             required: 'conditional',
-            description: 'when a link is external, pass {true}'
+            description: 'when a link is external, pass {true}',
           },
           {
             propName: 'linkClass',
             type: 'Class',
             default: 'null',
             required: 'conditional',
-            description: 'if "linkUrl" is given and refers to an internal link, pass the "Link" class you are using, eg. imported from "react-router-dom" or "gatsby" or "next/link"'
-          }
+            description:
+              'if "linkUrl" is given and refers to an internal link, pass the "Link" class you are using, eg. imported from "react-router-dom" or "gatsby" or "next/link"',
+          },
         ]}
       />
       <br />
@@ -100,7 +101,7 @@ const PropsTablePage = () => (
       <br />
       <br />
       <PropsTable
-        title='Custom example'
+        title="Custom example"
         skipColumn4
         col1Name="Ingredient"
         col2Name="Amount"
@@ -112,29 +113,29 @@ const PropsTablePage = () => (
         param5Name="notes"
         items={[
           {
-            name: "Chocolate",
+            name: 'Chocolate',
             grams: '100',
             minutes: '20',
-            notes: 'Must be Swiss made.'
+            notes: 'Must be Swiss made.',
           },
           {
             name: 'Egg',
             grams: '20',
-            minutes: "15",
-            notes: 'Scrambled to perfection.'
+            minutes: '15',
+            notes: 'Scrambled to perfection.',
           },
           {
             name: 'Chantilly',
             grams: '5',
             minutes: '7',
-            notes: 'Add on top only at the end.'
+            notes: 'Add on top only at the end.',
           },
           {
             name: 'Cherry',
             grams: '3',
             minutes: "Don't cook",
-            notes: 'Place on top of the chantilly to finalize.'
-          }
+            notes: 'Place on top of the chantilly to finalize.',
+          },
         ]}
       />
       <br />
@@ -148,120 +149,120 @@ const PropsTablePage = () => (
       <br />
       <br />
       <PropsTable
-        title='PropsTable Props'
+        title="PropsTable Props"
         items={[
           {
-            propName: "title",
+            propName: 'title',
             type: 'String',
             default: 'Props',
             required: 'optional',
-            description: "The table's title header"
+            description: "The table's title header",
           },
           {
             propName: 'items',
             type: 'Array',
             default: 'true',
             required: 'required',
-            description: 'Array of objects with the properties as shown in the example code.'
+            description: 'Array of objects with the properties as shown in the example code.',
           },
           {
             propName: 'omitTitle',
             type: 'Boolean',
             default: 'false',
             required: 'no',
-            description: 'Pass "true" to omit the title header.'
+            description: 'Pass "true" to omit the title header.',
           },
           {
-            propName: "col1Name",
-            type: "String",
-            default: "Prop Name",
-            required: "optional",
-            description: "Set to customise the name of the first header label",
+            propName: 'col1Name',
+            type: 'String',
+            default: 'Prop Name',
+            required: 'optional',
+            description: 'Set to customise the name of the first header label',
           },
           {
-            propName: "col2Name",
-            type: "String",
-            default: "Type",
-            required: "optional",
-            description: "Set to customise the name of the second header label",
+            propName: 'col2Name',
+            type: 'String',
+            default: 'Type',
+            required: 'optional',
+            description: 'Set to customise the name of the second header label',
           },
           {
-            propName: "col3Name",
-            type: "String",
-            default: "Default",
-            required: "optional",
-            description: "Set to customise the name of the third header label",
+            propName: 'col3Name',
+            type: 'String',
+            default: 'Default',
+            required: 'optional',
+            description: 'Set to customise the name of the third header label',
           },
           {
-            propName: "col4Name",
-            type: "String",
-            default: "Required",
-            required: "optional",
-            description: "Set to customise the name of the fourth header label",
+            propName: 'col4Name',
+            type: 'String',
+            default: 'Required',
+            required: 'optional',
+            description: 'Set to customise the name of the fourth header label',
           },
           {
-            propName: "col5Name",
-            type: "String",
-            default: "Description",
-            required: "optional",
-            description: "Set to customise the name of the fifth header label",
+            propName: 'col5Name',
+            type: 'String',
+            default: 'Description',
+            required: 'optional',
+            description: 'Set to customise the name of the fifth header label',
           },
           {
-            propName: "param1Name",
-            type: "String",
-            default: "propName",
-            required: "optional",
-            description: "Set to customise the name of the first property name",
+            propName: 'param1Name',
+            type: 'String',
+            default: 'propName',
+            required: 'optional',
+            description: 'Set to customise the name of the first property name',
           },
           {
-            propName: "param2Name",
-            type: "String",
-            default: "type",
-            required: "optional",
-            description: "Set to customise the name of the second property name",
+            propName: 'param2Name',
+            type: 'String',
+            default: 'type',
+            required: 'optional',
+            description: 'Set to customise the name of the second property name',
           },
           {
-            propName: "param3Name",
-            type: "String",
-            default: "default",
-            required: "optional",
-            description: "Set to customise the name of the third property name",
+            propName: 'param3Name',
+            type: 'String',
+            default: 'default',
+            required: 'optional',
+            description: 'Set to customise the name of the third property name',
           },
           {
-            propName: "param4Name",
-            type: "String",
-            default: "required",
-            required: "optional",
-            description: "Set to customise the name of the fourth property name",
+            propName: 'param4Name',
+            type: 'String',
+            default: 'required',
+            required: 'optional',
+            description: 'Set to customise the name of the fourth property name',
           },
           {
-            propName: "param5Name",
-            type: "String",
-            default: "description",
-            required: "optional",
-            description: "Set to customise the name of the fifth property name",
+            propName: 'param5Name',
+            type: 'String',
+            default: 'description',
+            required: 'optional',
+            description: 'Set to customise the name of the fifth property name',
           },
           {
-            propName: "skipColumn2",
-            type: "Boolean",
-            default: "false",
-            required: "optional",
+            propName: 'skipColumn2',
+            type: 'Boolean',
+            default: 'false',
+            required: 'optional',
             description: "Set 'true' to skip the second column",
           },
           {
-            propName: "skipColumn3",
-            type: "Boolean",
-            default: "false",
-            required: "optional",
+            propName: 'skipColumn3',
+            type: 'Boolean',
+            default: 'false',
+            required: 'optional',
             description: "Set 'true' to skip the third column",
           },
           {
-            propName: "skipColum4",
-            type: "Boolean",
-            default: "false",
-            required: "optional",
+            propName: 'skipColum4',
+            type: 'Boolean',
+            default: 'false',
+            required: 'optional',
             description: "Set 'true' to skip the fourth column",
-          }
+          },
         ]}
       />
       <br />

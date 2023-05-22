@@ -10,13 +10,24 @@ import Hero from '../../tpds/components/hero/Hero'
 
 const Downloads = () => (
   <Layout>
-    <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
+    <Hero tw="bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200">
       <H1 isBold>Downloads</H1>
     </Hero>
     <MainContent>
       <br />
       <br />
-      <PLarge>In addition to the assets provided here, there are additional design resources available in our <a href='https://www.figma.com/file/HLmNcoB2XSKbv5dKJd2JpK/Tempo-Platform-Design-System' target='_blank' rel="noreferrer">Figma workspace</a>.</PLarge>
+      <PLarge>
+        In addition to the assets provided here, there are additional design resources available in
+        our{' '}
+        <a
+          href="https://www.figma.com/file/HLmNcoB2XSKbv5dKJd2JpK/Tempo-Platform-Design-System"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Figma workspace
+        </a>
+        .
+      </PLarge>
       <br />
       <br />
       <H5 isBold>Logo</H5>
@@ -24,46 +35,48 @@ const Downloads = () => (
       <br />
       <br />
       <DownloadCard
-        title='Tempo Logotype'
-        updatedAt='Feb 2023'
-        downloadLink='/assets/downloads/Tempo/Tempo_logotype.zip'
-        image='/assets/downloads_page/Tempo_logotype.png'
+        title="Tempo Logotype"
+        updatedAt="Feb 2023"
+        downloadLink="/assets/downloads/Tempo/Tempo_logotype.zip"
+        image="/assets/downloads_page/Tempo_logotype.png"
       />
       <br />
       <DownloadCard
-        title='Hummingbot Logotype'
-        updatedAt='Feb 2023'
-        downloadLink='/assets/downloads/hummingbot/hummingbot_logotype.zip'
-        image='/assets/downloads_page/hummingbot_logotype.png'
+        title="Hummingbot Logotype"
+        updatedAt="Feb 2023"
+        downloadLink="/assets/downloads/hummingbot/hummingbot_logotype.zip"
+        image="/assets/downloads_page/hummingbot_logotype.png"
       />
       <br />
       <br />
       <br />
       <br />
       <br />
-      <H5 isBold id='typography'>Typeface</H5>
+      <H5 isBold id="typography">
+        Typeface
+      </H5>
       <Separator />
       <br />
       <br />
       <DownloadCard
-        title='Main typeface'
-        updatedAt='Feb 2023'
-        downloadLink='/assets/downloads/typography/satoshi.zip'
-        image='/assets/downloads_page/brand_typeface.png'
+        title="Main typeface"
+        updatedAt="Feb 2023"
+        downloadLink="/assets/downloads/typography/satoshi.zip"
+        image="/assets/downloads_page/brand_typeface.png"
       />
       <br />
       <DownloadCard
-        title='Typeface for small labels'
-        updatedAt='Feb 2023'
-        downloadLink='/assets/downloads/typography/inter.zip'
-        image='/assets/downloads_page/labels_typeface.png'
+        title="Typeface for small labels"
+        updatedAt="Feb 2023"
+        downloadLink="/assets/downloads/typography/inter.zip"
+        image="/assets/downloads_page/labels_typeface.png"
       />
       <br />
       <DownloadCard
-        title='Monospaced typeface'
-        updatedAt='Feb 2023'
-        downloadLink='/assets/downloads/typography/sfmono.zip'
-        image='/assets/downloads_page/monospaced_typeface.png'
+        title="Monospaced typeface"
+        updatedAt="Feb 2023"
+        downloadLink="/assets/downloads/typography/sfmono.zip"
+        image="/assets/downloads_page/monospaced_typeface.png"
       />
       <br />
       <br />
@@ -75,17 +88,17 @@ const Downloads = () => (
       <br />
       <br />
       <DownloadCard
-        title='Annotations'
-        updatedAt='Feb 2023'
-        downloadLink='/assets/downloads/typography/indie_flower.zip'
-        image='/assets/downloads_page/annotations_typeface.png'
+        title="Annotations"
+        updatedAt="Feb 2023"
+        downloadLink="/assets/downloads/typography/indie_flower.zip"
+        image="/assets/downloads_page/annotations_typeface.png"
       />
       <br />
       <DownloadCard
-        title='Arrows & Utilities'
-        updatedAt='Feb 2023'
-        downloadLink='/assets/downloads/typography/pw_new_arrows.zip'
-        image='/assets/downloads_page/utilities_typeface.png'
+        title="Arrows & Utilities"
+        updatedAt="Feb 2023"
+        downloadLink="/assets/downloads/typography/pw_new_arrows.zip"
+        image="/assets/downloads_page/utilities_typeface.png"
       />
       <br />
       <br />
@@ -97,23 +110,25 @@ const Downloads = () => (
 
 export default Downloads
 
-const DownloadCard = ({title, updatedAt, downloadLink, image}) => {
+const DownloadCard = ({ title, updatedAt, downloadLink, image }) => {
   return (
-    <DownloadCardElement tw='flex border-2 border-window rounded'>
-      <img src={image} alt={title} tw='max-h-40 lg:max-h-60 border-r border-window' />
-      <div tw='py-2 px-3 lg:(py-4 px-6) grid justify-between content-between '>
+    <DownloadCardElement tw="flex border-2 border-window rounded">
+      <img src={image} alt={title} tw="max-h-40 lg:max-h-60 border-r border-window" />
+      <div tw="py-2 px-3 lg:(py-4 px-6) grid justify-between content-between ">
         <div>
-          <H6 isMedium tw='mb-2'>{title}</H6>
-          <P tw='text-tertiary'>Updated {updatedAt}</P>
+          <H6 isMedium tw="mb-2">
+            {title}
+          </H6>
+          <P tw="text-tertiary">Updated {updatedAt}</P>
         </div>
-        <a href={downloadLink} target='_blank' rel='noreferrer'><Button isPrimary>Download</Button></a>
+        <a href={downloadLink} target="_blank" rel="noreferrer">
+          <Button isPrimary>Download</Button>
+        </a>
       </div>
     </DownloadCardElement>
   )
 }
 
 const DownloadCardElement = styled.div({
-  '& img': {
-
-  }
+  '& img': {},
 })

@@ -18,9 +18,9 @@ const items = [
 ]
 
 const RadioGroupPage = () => {
-  return(
+  return (
     <Layout>
-      <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
+      <Hero tw="bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200">
         <H1 isMedium>Radio Group</H1>
         <P>Keyboard-ready radio group component</P>
       </Hero>

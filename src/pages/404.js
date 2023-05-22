@@ -10,18 +10,16 @@ import { Link } from 'gatsby'
 
 const ErrorPage = () => (
   <Layout>
-    <PageRoot tw='bg-body'>
+    <PageRoot tw="bg-body">
       <Navigation />
       <Section>
-        <Container tw='bg-window border border-window p-sm'>
+        <Container tw="bg-window border border-window p-sm">
           <H1>404</H1>
           <br />
           <H6>Page not found</H6>
           <br />
-          <Link to='/'>
-            <Button isSuccess>
-              return home
-            </Button>
+          <Link to="/">
+            <Button isSuccess>return home</Button>
           </Link>
         </Container>
       </Section>

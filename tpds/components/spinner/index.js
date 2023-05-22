@@ -15,7 +15,9 @@ function Spinner({ color, radius, style, duration, strokeWidth, center, ...props
         viewBox="0 0 42 42"
         css={css`
           @keyframes rotate {
-            100% {transform: rotate(360deg);}
+            100% {
+              transform: rotate(360deg);
+            }
           }
           animation-name: rotate;
           animation-timing-function: linear;
@@ -25,7 +27,7 @@ function Spinner({ color, radius, style, duration, strokeWidth, center, ...props
         style={{
           animationDuration: `${duration ? duration : 900}ms`,
           width: `${radius ? radius : 40}px`,
-          height: `${radius ? radius : 40}px`
+          height: `${radius ? radius : 40}px`,
         }}
       >
         <g fill="none" transform="translate(3 3)" strokeWidth="3">

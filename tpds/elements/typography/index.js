@@ -1,10 +1,5 @@
 import tw, { css, styled } from 'twin.macro'
-import {
-  green,
-  red,
-  blue,
-  orange,
-} from '../../constants/colors'
+import { green, red, blue, orange } from '../../constants/colors'
 
 const sharedTransforms = props => [
   tw`text-primary`,
@@ -43,40 +38,16 @@ const sharedTransforms = props => [
   `,
 ]
 
-export const PNano = styled.p(
-  {},
-  props => [tw`text-[11px]`],
-  sharedTransforms,
-)
-export const PTiny = styled.p(
-  {},
-  props => [tw`text-xxs lg:text-xs`],
-  sharedTransforms,
-)
+export const PNano = styled.p({}, props => [tw`text-[11px]`], sharedTransforms)
+export const PTiny = styled.p({}, props => [tw`text-xxs lg:text-xs`], sharedTransforms)
 
-export const PSmall = styled.p(
-  {},
-  props => [tw`text-xs lg:text-sm`],
-  sharedTransforms,
-)
+export const PSmall = styled.p({}, props => [tw`text-xs lg:text-sm`], sharedTransforms)
 
-export const P = styled.p(
-  {},
-  props => [tw`text-sm lg:text-base`],
-  sharedTransforms,
-)
+export const P = styled.p({}, props => [tw`text-sm lg:text-base`], sharedTransforms)
 
-export const PLarge = styled.p(
-  {},
-  props => [tw`text-base lg:text-lg`],
-  sharedTransforms,
-)
+export const PLarge = styled.p({}, props => [tw`text-base lg:text-lg`], sharedTransforms)
 
-export const H6 = styled.h6(
-  {},
-  props => [tw`text-lg lg:text-xl`],
-  sharedTransforms,
-)
+export const H6 = styled.h6({}, props => [tw`text-lg lg:text-xl`], sharedTransforms)
 
 export const H5 = styled.h5(
   {},
@@ -146,29 +117,25 @@ export const Orange = styled.span({
 
 const FieldLabelNano = styled(PNano)({
   fontFamily: 'Inter',
-  lineHeight: '1 !important'
+  lineHeight: '1 !important',
 })
 
 const FieldLabelTiny = styled(PTiny)({
   fontFamily: 'Inter',
-  lineHeight: '1 !important'
+  lineHeight: '1 !important',
 })
 
 const FieldLabelSmall = styled(PSmall)({
   fontFamily: 'Inter',
-  lineHeight: '1 !important'
+  lineHeight: '1 !important',
 })
 
 const FieldLabel = styled(P)({
   fontFamily: 'Inter',
-  lineHeight: '1 !important'
+  lineHeight: '1 !important',
 })
 
-const labelStyles = [
-  tw`text-tertiary`,
-  tw`font-medium`,
-  tw`leading-none`,
-]
+const labelStyles = [tw`text-tertiary`, tw`font-medium`, tw`leading-none`]
 
 export const LabelNano = styled(FieldLabelNano)({}, props => labelStyles)
 export const LabelTiny = styled(FieldLabelTiny)({}, props => labelStyles)

@@ -10,7 +10,7 @@ import Hero from '../../../tpds/components/hero/Hero'
 
 const SnackBar = () => (
   <Layout>
-    <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
+    <Hero tw="bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200">
       <H1 isMedium>Snackbar</H1>
       <P>The Snackbar component is used to display notifications in various states.</P>
     </Hero>
@@ -56,34 +56,28 @@ const SnackBar = () => (
 
 export default SnackBar
 
-const codeImport = String.raw
-`import Snackbar from '@tempoplatform/tpds/components/snackbar'`
+const codeImport = String.raw`import Snackbar from '@tempoplatform/tpds/components/snackbar'`
 
-const codeDefault = String.raw
-`<Snackbar
+const codeDefault = String.raw`<Snackbar
   label='Default'
 />`
 
-const codeSuccess = String.raw
-`<Snackbar
+const codeSuccess = String.raw`<Snackbar
   type='success'
   label='Success'
 />`
 
-const codeInfo = String.raw
-`<Snackbar
+const codeInfo = String.raw`<Snackbar
   type='info'
   label='Info'
 />`
 
-const codeWarning = String.raw
-`<Snackbar
+const codeWarning = String.raw`<Snackbar
   type='warning'
   label='Warning'
 />`
 
-const codeDanger = String.raw
-`<Snackbar
+const codeDanger = String.raw`<Snackbar
   type='danger'
   label='Danger'
 />`

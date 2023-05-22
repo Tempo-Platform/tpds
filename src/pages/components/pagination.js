@@ -15,10 +15,7 @@ const RadioGroupPage = () => {
     <Layout>
       <Hero tw="bg-window border-b-2 border-green">
         <H1 isMedium>Pagination</H1>
-        <P>
-          A component that lead user to specific of the page by displaying the
-          pages number
-        </P>
+        <P>A component that lead user to specific of the page by displaying the pages number</P>
       </Hero>
       <MainContent>
         <H5> Current page is : {currentPage}</H5>

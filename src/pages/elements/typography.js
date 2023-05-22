@@ -22,20 +22,24 @@ import {
   LabelTiny,
   LabelSmall,
 } from '../../../tpds/elements/typography'
-import {
-  Separator
-} from '../../../tpds/elements/layout'
+import { Separator } from '../../../tpds/elements/layout'
 import CodeBlock from '../../../tpds/components/code/CodeBlock'
 
 const Typography = () => (
   <Layout>
-    <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
+    <Hero tw="bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200">
       <H1 isMedium>Typography</H1>
-      <P>Use the typography elements directly. They are all responsive by default and will ensure typographic consistency.</P>
+      <P>
+        Use the typography elements directly. They are all responsive by default and will ensure
+        typographic consistency.
+      </P>
     </Hero>
     <MainContent>
       <H4>Paragraphs</H4>
-      <P>The standard typography unit, available in large, default, small, tiny and nano sizes. Uses the brand's main typeface: Satoshi.</P>
+      <P>
+        The standard typography unit, available in large, default, small, tiny and nano sizes. Uses
+        the brand's main typeface: Satoshi.
+      </P>
       <Separator />
       <br />
       <br />
@@ -78,7 +82,10 @@ const Typography = () => (
       <br />
       <br />
       <H4>Labels</H4>
-      <P>Typography elements for forms, these use the font "Inter" for better readability in small sizes. Available in default, small, tiny and nano sizes.</P>
+      <P>
+        Typography elements for forms, these use the font "Inter" for better readability in small
+        sizes. Available in default, small, tiny and nano sizes.
+      </P>
       <Separator />
       <br />
       <br />
@@ -126,7 +133,6 @@ const codeParagraphs = String.raw`import {
 <PSmall>The quick brown fox jumps over the lazy dog</PSmall>
 <P>The quick brown fox jumps over the lazy dog</P>
 <PLarge>The quick brown fox jumps over the lazy dog</PLarge>`
-
 
 const codeH1 = String.raw`import {
   H6,

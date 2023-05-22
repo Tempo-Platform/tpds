@@ -11,16 +11,20 @@ import Hero from '../../../tpds/components/hero/Hero'
 
 const VideoPage = () => (
   <Layout>
-    <Hero tw='bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200'>
+    <Hero tw="bg-window border-b-2 border-grey-light-scale-400 dark:border-grey-dark-scale-200">
       <H1 isMedium>Video</H1>
       <P>Collection of Video components</P>
     </Hero>
     <MainContent>
       <H4>Video Card</H4>
-      <P>Video component in Card style. Both <Bold>title</Bold> and <Bold>description</Bold> props are optional. If you only pass the videoEmbedSrc prop, the video will still keep a smooth card style.</P>
+      <P>
+        Video component in Card style. Both <Bold>title</Bold> and <Bold>description</Bold> props
+        are optional. If you only pass the videoEmbedSrc prop, the video will still keep a smooth
+        card style.
+      </P>
       <br />
       <VideoCard
-        videoEmbedSrc='https://www.youtube.com/embed/T3AuplcGNyo'
+        videoEmbedSrc="https://www.youtube.com/embed/T3AuplcGNyo"
         title="Test"
         description="Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum."
       />
@@ -31,9 +35,7 @@ const VideoPage = () => (
       <H4>Video</H4>
       <P>Barebones video component</P>
       <br />
-      <Video
-        videoEmbedSrc='https://www.youtube.com/embed/T3AuplcGNyo'
-      />
+      <Video videoEmbedSrc="https://www.youtube.com/embed/T3AuplcGNyo" />
       <br />
       <CodeBlock code={videoStandaloneCode} />
       <br />
