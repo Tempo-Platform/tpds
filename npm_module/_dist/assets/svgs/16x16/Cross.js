@@ -3,10 +3,12 @@
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
 exports["default"] = void 0;
+var _objectDestructuringEmpty2 = _interopRequireDefault(require("@babel/runtime/helpers/objectDestructuringEmpty"));
 var _react = _interopRequireDefault(require("react"));
 /* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 
-function CrossIcon() {
+function CrossIcon(_ref) {
+  var props = Object.assign({}, ((0, _objectDestructuringEmpty2["default"])(_ref), _ref));
   return /*#__PURE__*/_react["default"].createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     width: "16",
