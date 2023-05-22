@@ -127,7 +127,7 @@ function item(item) {
       }]
     }, /*#__PURE__*/_react["default"].createElement("span", null, item.ram, "/", item.cpus), ' ', /*#__PURE__*/_react["default"].createElement("span", {
       "aria-hidden": "true"
-    }, "\xB7"), ' ', /*#__PURE__*/_react["default"].createElement("span", null, item.disk)))), checked && /*#__PURE__*/_react["default"].createElement("div", {
+    }, "\xB7"), " ", /*#__PURE__*/_react["default"].createElement("span", null, item.disk)))), checked && /*#__PURE__*/_react["default"].createElement("div", {
       css: {
         "flexShrink": "0",
         "--tw-text-opacity": "1",

@@ -21,7 +21,7 @@ function ComboBox(_ref) {
     query = _useState[0],
     setQuery = _useState[1];
 
-  // reset to empty query when selected is no longer valid value 
+  // reset to empty query when selected is no longer valid value
   (0, _react.useEffect)(function () {
     if (!selected) {
       setQuery('');

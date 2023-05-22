@@ -52,14 +52,14 @@ var Content = _styled2["default"].div(function (props) {
     "gridTemplateRows": "1fr"
   } : {
     "gridTemplateRows": "0fr"
-  }, (0, _react.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n\t\ttransition: grid-template-rows 300ms;\n\t"])))];
+  }, (0, _react.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n    transition: grid-template-rows 300ms;\n  "])))];
 });
 var InnerDiv = _styled2["default"].div(function (props) {
   return [{
     "overflow": "hidden",
     "paddingTop": "0",
     "paddingBottom": "0"
-  }, (0, _react.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        > * {\n            ", "\n        }\n    "])), {
+  }, (0, _react.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n    > * {\n      ", "\n    }\n  "])), {
     "paddingTop": "1rem",
     "paddingBottom": "1rem"
   })];
@@ -84,8 +84,8 @@ var handleToggleHeader = function handleToggleHeader(isOpen, toggleOpen, headerR
     setTimeout(function () {
       if (!elementIsVisibleInViewport(headerRef.current, excludeElementId)) {
         headerRef.current.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
+          behavior: 'smooth',
+          block: 'center'
         });
       }
     }, 300);
@@ -102,7 +102,7 @@ function ExpandableSection(_ref) {
   var _React$useState = _react2["default"].useState(false),
     isOpen = _React$useState[0],
     toggleOpen = _React$useState[1];
-  if (children && typeof children === "string") {
+  if (children && typeof children === 'string') {
     children = /*#__PURE__*/_react2["default"].createElement(_typography.PSmall, null, children);
   }
   if (shouldClose && isOpen) {
@@ -131,6 +131,5 @@ function ExpandableSection(_ref) {
     isOpen: isOpen
   }, /*#__PURE__*/_react2["default"].createElement(InnerDiv, null, children)));
 }
-;
 var _default = ExpandableSection;
 exports["default"] = _default;

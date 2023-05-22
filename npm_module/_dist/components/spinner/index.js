@@ -28,7 +28,7 @@ function Spinner(_ref) {
     style: styles
   }, /*#__PURE__*/_react2["default"].createElement("svg", Object.assign({}, props, {
     viewBox: "0 0 42 42",
-    css: (0, _react.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n          @keyframes rotate {\n            100% {transform: rotate(360deg);}\n          }\n          animation-name: rotate;\n          animation-timing-function: linear;\n          display: inline-block;\n          animation-iteration-count: infinite;\n        "]))),
+    css: (0, _react.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n          @keyframes rotate {\n            100% {\n              transform: rotate(360deg);\n            }\n          }\n          animation-name: rotate;\n          animation-timing-function: linear;\n          display: inline-block;\n          animation-iteration-count: infinite;\n        "]))),
     style: {
       animationDuration: (duration ? duration : 900) + "ms",
       width: (radius ? radius : 40) + "px",

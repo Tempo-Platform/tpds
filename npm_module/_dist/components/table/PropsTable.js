@@ -94,11 +94,11 @@ function PropsTable(_ref2) {
       "marginBottom": "2rem",
       "borderBottomWidth": "1px",
       "--tw-border-opacity": "1",
-      "borderColor": "rgb(45 185 45 / var(--tw-border-opacity))",
+      "borderColor": "rgb(201 205 207 / var(--tw-border-opacity))",
       "paddingBottom": "0.5rem",
       ":is(.dark &)": {
         "--tw-border-opacity": "1",
-        "borderColor": "rgb(45 185 45 / var(--tw-border-opacity))"
+        "borderColor": "rgb(117 126 132 / var(--tw-border-opacity))"
       }
     }
   }, /*#__PURE__*/_react["default"].createElement(CustomP, {

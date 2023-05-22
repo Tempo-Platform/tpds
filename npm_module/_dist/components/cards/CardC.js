@@ -42,7 +42,7 @@ function CardC(_ref) {
     to: linkURL,
     href: linkURL,
     target: external ? '_blank' : null,
-    rel: external ? "noreferrer" : null
+    rel: external ? 'noreferrer' : null
   }, /*#__PURE__*/_react2["default"].createElement(Root, props, /*#__PURE__*/_react2["default"].createElement(HeaderSection, null, iconElement && /*#__PURE__*/_react2["default"].createElement("div", {
     css: {
       "paddingRight": "16px"

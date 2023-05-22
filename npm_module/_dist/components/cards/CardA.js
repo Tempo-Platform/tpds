@@ -42,7 +42,7 @@ function CardA(_ref) {
     to: linkURL,
     href: linkURL,
     target: external ? '_blank' : null,
-    rel: external ? "noreferrer" : null
+    rel: external ? 'noreferrer' : null
   }, /*#__PURE__*/_react2["default"].createElement(Root, props, imgSrc && /*#__PURE__*/_react2["default"].createElement(Image, {
     src: imgSrc,
     alt: imgAlt || headerText || 'image'

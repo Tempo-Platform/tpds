@@ -57,10 +57,6 @@ var Button = _styled2["default"].button(function (_ref) {
     "paddingTop": "0.375rem",
     "paddingBottom": "0.375rem",
     "fontSize": "16px"
-  }], !label && [{
-    "padding": "5px !important",
-    "paddingLeft": "7px !important",
-    "paddingRight": "7px !important"
   }], isDisabled && [{
     "pointerEvents": "none",
     "opacity": "0.3"
@@ -68,139 +64,207 @@ var Button = _styled2["default"].button(function (_ref) {
 });
 exports.Button = Button;
 var defaultStyle = [{
-  "color": "var(--text-button)",
-  ":hover": {
-    "color": "var(--text-button-hover)"
+  "--tw-text-opacity": "1",
+  "color": "rgb(72 77 81 / var(--tw-text-opacity))",
+  ":is(.dark &)": {
+    "--tw-text-opacity": "1",
+    "color": "rgb(233 235 236 / var(--tw-text-opacity))"
   }
 }, {
-  "backgroundColor": "var(--bg-button)",
-  ":hover": {
-    "backgroundColor": "var(--bg-button-hover)"
-  },
-  ":active": {
-    "backgroundColor": "var(--bg-button-active)"
+  "--tw-border-opacity": "1",
+  "borderColor": "rgb(223 225 226 / var(--tw-border-opacity))",
+  "--tw-bg-opacity": "1",
+  "backgroundColor": "rgb(223 225 226 / var(--tw-bg-opacity))",
+  ":is(.dark &)": {
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(40 44 47 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(40 44 47 / var(--tw-bg-opacity))"
   }
 }, {
-  "borderColor": "var(--border-button)",
   ":hover": {
-    "borderColor": "var(--border-button-hover)"
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(201 205 207 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(201 205 207 / var(--tw-bg-opacity))"
   },
+  ":is(.dark &:hover)": {
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(50 54 57 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(50 54 57 / var(--tw-bg-opacity))"
+  }
+}, {
   ":active": {
-    "borderColor": "var(--border-button-active)"
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(233 235 236 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(233 235 236 / var(--tw-bg-opacity))"
+  },
+  ":is(.dark &:active)": {
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(30 34 36 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(30 34 36 / var(--tw-bg-opacity))"
   }
 }];
 var secondaryStyle = [{
-  "color": "var(--text-button-secondary)",
-  ":hover": {
-    "color": "var(--text-button-secondary-hover)"
+  "--tw-text-opacity": "1",
+  "color": "rgb(72 77 81 / var(--tw-text-opacity))",
+  ":is(.dark &)": {
+    "--tw-text-opacity": "1",
+    "color": "rgb(233 235 236 / var(--tw-text-opacity))"
   }
 }, {
-  "backgroundColor": "var(--bg-button-secondary)",
-  ":hover": {
-    "backgroundColor": "var(--bg-button-secondary-hover)"
-  },
-  ":active": {
-    "backgroundColor": "var(--bg-button-secondary-active)"
+  "--tw-border-opacity": "1",
+  "borderColor": "rgb(223 225 226 / var(--tw-border-opacity))",
+  "--tw-bg-opacity": "1",
+  "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
+  ":is(.dark &)": {
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(72 77 81 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(40 44 47 / var(--tw-bg-opacity))"
   }
 }, {
-  "borderColor": "var(--border-button-secondary)",
   ":hover": {
-    "borderColor": "var(--border-button-secondary-hover)"
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(201 205 207 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))"
   },
+  ":is(.dark &:hover)": {
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(120 129 135 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(40 44 47 / var(--tw-bg-opacity))"
+  }
+}, {
   ":active": {
-    "borderColor": "var(--border-button-secondary-active)"
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(147 155 159 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))"
+  },
+  ":is(.dark &:active)": {
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(174 179 182 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(40 44 47 / var(--tw-bg-opacity))"
   }
 }];
 var successStyle = [{
-  "color": "var(--text-button-success)",
-  ":hover": {
-    "color": "var(--text-button-success-hover)"
+  "--tw-text-opacity": "1",
+  "color": "rgb(255 255 255 / var(--tw-text-opacity))",
+  ":is(.dark &)": {
+    "--tw-text-opacity": "1",
+    "color": "rgb(0 0 0 / var(--tw-text-opacity))"
   }
 }, {
+  "--tw-border-opacity": "1",
+  "borderColor": "rgb(45 185 45 / var(--tw-border-opacity))",
   "--tw-bg-opacity": "1",
   "backgroundColor": "rgb(45 185 45 / var(--tw-bg-opacity))",
-  ":hover": {
-    "backgroundColor": "var(--bg-success-hover)"
-  },
-  ":active": {
-    "backgroundColor": "var(--bg-success-active)"
+  ":is(.dark &)": {
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(50 205 50 / var(--tw-bg-opacity))"
   }
 }, {
-  "borderColor": "var(--border-button-success)",
   ":hover": {
-    "borderColor": "var(--border-button-success-hover)"
-  },
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(50 205 50 / var(--tw-bg-opacity))"
+  }
+}, {
   ":active": {
-    "borderColor": "var(--border-button-success-active)"
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(40 164 40 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(40 164 40 / var(--tw-bg-opacity))"
   }
 }];
 var infoStyle = [{
-  "color": "var(--text-button-info)",
-  ":hover": {
-    "color": "var(--text-button-info-hover)"
+  "--tw-text-opacity": "1",
+  "color": "rgb(255 255 255 / var(--tw-text-opacity))",
+  ":is(.dark &)": {
+    "--tw-text-opacity": "1",
+    "color": "rgb(0 0 0 / var(--tw-text-opacity))"
   }
 }, {
+  "--tw-border-opacity": "1",
+  "borderColor": "rgb(25 114 245 / var(--tw-border-opacity))",
   "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(25 114 245 / var(--tw-bg-opacity))",
+  "backgroundColor": "rgb(25 114 245 / var(--tw-bg-opacity))"
+}, {
   ":hover": {
-    "backgroundColor": "var(--bg-info-hover)"
-  },
-  ":active": {
-    "backgroundColor": "var(--bg-info-active)"
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(71 142 247 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(71 142 247 / var(--tw-bg-opacity))"
   }
 }, {
-  "borderColor": "var(--border-button-info)",
-  ":hover": {
-    "borderColor": "var(--border-button-info-hover)"
-  },
   ":active": {
-    "borderColor": "var(--border-button-info-active)"
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(21 97 208 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(21 97 208 / var(--tw-bg-opacity))"
   }
 }];
 var warningStyle = [{
-  "color": "var(--text-button-warning)",
-  ":hover": {
-    "color": "var(--text-button-warning-hover)"
+  "--tw-text-opacity": "1",
+  "color": "rgb(255 255 255 / var(--tw-text-opacity))",
+  ":is(.dark &)": {
+    "--tw-text-opacity": "1",
+    "color": "rgb(0 0 0 / var(--tw-text-opacity))"
   }
 }, {
+  "--tw-border-opacity": "1",
+  "borderColor": "rgb(240 135 39 / var(--tw-border-opacity))",
   "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(240 135 39 / var(--tw-bg-opacity))",
+  "backgroundColor": "rgb(240 135 39 / var(--tw-bg-opacity))"
+}, {
   ":hover": {
-    "backgroundColor": "var(--bg-warning-hover)"
-  },
-  ":active": {
-    "backgroundColor": "var(--bg-warning-active)"
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(243 159 82 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(243 159 82 / var(--tw-bg-opacity))"
   }
 }, {
-  "borderColor": "var(--border-button-warning)",
-  ":hover": {
-    "borderColor": "var(--border-button-warning-hover)"
-  },
   ":active": {
-    "borderColor": "var(--border-button-warning-active)"
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(218 123 35 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(218 123 35 / var(--tw-bg-opacity))"
   }
 }];
 var dangerStyle = [{
-  "color": "var(--text-button-danger)",
-  ":hover": {
-    "color": "var(--text-button-danger-hover)"
+  "--tw-text-opacity": "1",
+  "color": "rgb(255 255 255 / var(--tw-text-opacity))",
+  ":is(.dark &)": {
+    "--tw-text-opacity": "1",
+    "color": "rgb(0 0 0 / var(--tw-text-opacity))"
   }
 }, {
+  "--tw-border-opacity": "1",
+  "borderColor": "rgb(235 87 87 / var(--tw-border-opacity))",
   "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(235 87 87 / var(--tw-bg-opacity))",
+  "backgroundColor": "rgb(235 87 87 / var(--tw-bg-opacity))"
+}, {
   ":hover": {
-    "backgroundColor": "var(--bg-danger-hover)"
-  },
-  ":active": {
-    "backgroundColor": "var(--bg-danger-active)"
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(239 121 121 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(239 121 121 / var(--tw-bg-opacity))"
   }
 }, {
-  "borderColor": "var(--border-button-danger)",
-  ":hover": {
-    "borderColor": "var(--border-button-danger-hover)"
-  },
   ":active": {
-    "borderColor": "var(--border-button-danger-active)"
+    "--tw-border-opacity": "1",
+    "borderColor": "rgb(214 79 79 / var(--tw-border-opacity))",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(214 79 79 / var(--tw-bg-opacity))"
   }
 }];
 var buttonVariants = {

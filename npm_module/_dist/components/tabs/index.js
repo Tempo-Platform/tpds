@@ -29,8 +29,13 @@ function Tabs(_ref) {
         "marginLeft": "calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))"
       },
       "borderRadius": "0.5rem",
-      "backgroundColor": "rgb(15 62 15 / 0.2)",
-      "padding": "0.25rem"
+      "--tw-bg-opacity": "1",
+      "backgroundColor": "rgb(241 243 243 / var(--tw-bg-opacity))",
+      "padding": "0.25rem",
+      ":is(.dark &)": {
+        "--tw-bg-opacity": "1",
+        "backgroundColor": "rgb(40 44 47 / var(--tw-bg-opacity))"
+      }
     }
   }, Object.keys(items).map(function (category) {
     return /*#__PURE__*/_react["default"].createElement(_react2.Tab, {
@@ -48,11 +53,11 @@ function Tabs(_ref) {
           "fontWeight": "500",
           "lineHeight": "1.25rem",
           "--tw-text-opacity": "1",
-          "color": "rgb(30 123 30 / var(--tw-text-opacity))",
+          "color": "rgb(18 80 171 / var(--tw-text-opacity))",
           "--tw-ring-opacity": "0.6",
-          "--tw-ring-color": "rgb(45 185 45 / var(--tw-ring-opacity))",
+          "--tw-ring-color": "rgb(25 114 245 / var(--tw-ring-opacity))",
           "--tw-ring-offset-width": "2px",
-          "--tw-ring-offset-color": "#32CD32",
+          "--tw-ring-offset-color": "#478EF7",
           ":focus": {
             "outline": "2px solid transparent",
             "outlineOffset": "2px",
@@ -62,16 +67,21 @@ function Tabs(_ref) {
           }
         }, selected ? {
           "--tw-bg-opacity": "1 !important",
-          "backgroundColor": "rgb(45 185 45 / var(--tw-bg-opacity)) !important",
+          "backgroundColor": "rgb(25 114 245 / var(--tw-bg-opacity)) !important",
           "--tw-text-opacity": "1",
-          "color": "rgb(0 0 0 / var(--tw-text-opacity))",
+          "color": "rgb(255 255 255 / var(--tw-text-opacity))",
           "--tw-shadow": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
           "--tw-shadow-colored": "0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color)",
-          "boxShadow": "var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)"
+          "boxShadow": "var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)",
+          ":is(.dark &)": {
+            "--tw-text-opacity": "1",
+            "color": "rgb(0 0 0 / var(--tw-text-opacity))"
+          }
         } : {
           "color": "var(--text-primary)",
           ":hover": {
-            "backgroundColor": "rgb(45 185 45 / 0.2)",
+            "--tw-bg-opacity": "1",
+            "backgroundColor": "rgb(25 114 245 / var(--tw-bg-opacity))",
             "color": "var(--text-primary)"
           }
         }]
@@ -88,9 +98,9 @@ function Tabs(_ref) {
         "marginTop": "24px",
         "borderRadius": "0.5rem",
         "--tw-ring-opacity": "0.6",
-        "--tw-ring-color": "rgb(45 185 45 / var(--tw-ring-opacity))",
+        "--tw-ring-color": "rgb(25 114 245 / var(--tw-ring-opacity))",
         "--tw-ring-offset-width": "2px",
-        "--tw-ring-offset-color": "#32CD32",
+        "--tw-ring-offset-color": "#478EF7",
         ":focus": {
           "outline": "2px solid transparent",
           "outlineOffset": "2px",
