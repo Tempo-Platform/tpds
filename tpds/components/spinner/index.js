@@ -1,5 +1,19 @@
 import React from 'react'
-import { styled, css } from 'twin.macro'
+import tw, { styled, css } from 'twin.macro'
+
+const SVG = styled.svg(() => [
+  css`
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    animation-name: rotate;
+    animation-timing-function: linear;
+    display: inline-block;
+    animation-iteration-count: infinite;
+  `,
+])
 
 function Spinner({ color, radius, style, duration, strokeWidth, center, ...props }) {
   const styles = style || {}
@@ -10,20 +24,9 @@ function Spinner({ color, radius, style, duration, strokeWidth, center, ...props
   const Path = getPathElement(color)
   return (
     <span style={styles}>
-      <svg
+      <SVG
         {...props}
         viewBox="0 0 42 42"
-        css={css`
-          @keyframes rotate {
-            100% {
-              transform: rotate(360deg);
-            }
-          }
-          animation-name: rotate;
-          animation-timing-function: linear;
-          display: inline-block;
-          animation-iteration-count: infinite;
-        `}
         style={{
           animationDuration: `${duration ? duration : 900}ms`,
           width: `${radius ? radius : 40}px`,
@@ -39,7 +42,7 @@ function Spinner({ color, radius, style, duration, strokeWidth, center, ...props
           />
           {Path}
         </g>
-      </svg>
+      </SVG>
     </span>
   )
 }
