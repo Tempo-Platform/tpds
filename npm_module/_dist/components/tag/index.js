@@ -40,8 +40,8 @@ var infoStyle = [{
 }, (0, _react.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["p { color: ", ";"])), "#1972F5")];
 var successStyle = [{
   "--tw-border-opacity": "1",
-  "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))"
-}, (0, _react.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteralLoose2["default"])(["p { color: ", ";"])), "#32CD32")];
+  "borderColor": "rgb(45 185 45 / var(--tw-border-opacity))"
+}, (0, _react.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteralLoose2["default"])(["p { color: ", ";"])), "#2DB92D")];
 var dangerStyle = [{
   "--tw-border-opacity": "1",
   "borderColor": "rgb(235 87 87 / var(--tw-border-opacity))"

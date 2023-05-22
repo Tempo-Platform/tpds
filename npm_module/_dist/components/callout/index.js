@@ -128,7 +128,7 @@ var RootSuccess = (0, _styled2["default"])(Root)(function () {
     ":is(.dark &)": {
       "--tw-border-opacity": "1",
       "borderColor": "rgb(132 225 132 / var(--tw-border-opacity))",
-      "backgroundColor": "rgb(50 205 50 / 0.1)"
+      "backgroundColor": "rgb(45 185 45 / 0.1)"
     }
   }];
 });
@@ -235,10 +235,10 @@ var HeaderSuccess = (0, _styled2["default"])(Header)(function (_ref12) {
   var type = _ref12.type;
   return [{
     "--tw-text-opacity": "1",
-    "color": "rgb(50 205 50 / var(--tw-text-opacity))",
+    "color": "rgb(45 185 45 / var(--tw-text-opacity))",
     ":is(.dark &)": {
       "--tw-text-opacity": "1",
-      "color": "rgb(91 215 91 / var(--tw-text-opacity))"
+      "color": "rgb(50 205 50 / var(--tw-text-opacity))"
     }
   }];
 });

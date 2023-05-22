@@ -167,7 +167,7 @@ var PaginationItem = _styled2["default"].li(function (_ref3) {
     "fontWeight": "700"
   }, dimmed && (0, _react.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n      opacity: 20%;\n    "]))), active && {
     "--tw-text-opacity": "1",
-    "color": "rgb(50 205 50 / var(--tw-text-opacity))"
+    "color": "rgb(45 185 45 / var(--tw-text-opacity))"
   }, (0, _react.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteralLoose2["default"])(["\n    user-select: none;\n\n    cursor: pointer;\n    width: 50px;\n\n    :first-child {\n      padding-right: 12px;\n      margin-right: 12px;\n    }\n\n    :last-child {\n      padding-left: 12px;\n      margin-left: 12px;\n    }\n  "])))];
 });
 function ChevronRightIcon(_ref4) {

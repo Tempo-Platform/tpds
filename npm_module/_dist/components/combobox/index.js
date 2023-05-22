@@ -261,7 +261,7 @@ spanBStyles[true] = {
   "display": "flex",
   "alignItems": "center",
   "paddingLeft": "0.75rem",
-  "color": "rgb(50 205 50 / var(--tw-text-opacity))",
+  "color": "rgb(45 185 45 / var(--tw-text-opacity))",
   "--tw-text-opacity": "1"
 };
 spanBStyles[false] = {

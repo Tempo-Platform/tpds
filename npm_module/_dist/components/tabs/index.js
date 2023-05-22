@@ -29,7 +29,7 @@ function Tabs(_ref) {
         "marginLeft": "calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))"
       },
       "borderRadius": "0.5rem",
-      "backgroundColor": "rgb(20 82 20 / 0.2)",
+      "backgroundColor": "rgb(15 62 15 / 0.2)",
       "padding": "0.25rem"
     }
   }, Object.keys(items).map(function (category) {
@@ -48,11 +48,11 @@ function Tabs(_ref) {
           "fontWeight": "500",
           "lineHeight": "1.25rem",
           "--tw-text-opacity": "1",
-          "color": "rgb(40 164 40 / var(--tw-text-opacity))",
+          "color": "rgb(30 123 30 / var(--tw-text-opacity))",
           "--tw-ring-opacity": "0.6",
-          "--tw-ring-color": "rgb(50 205 50 / var(--tw-ring-opacity))",
+          "--tw-ring-color": "rgb(45 185 45 / var(--tw-ring-opacity))",
           "--tw-ring-offset-width": "2px",
-          "--tw-ring-offset-color": "#5BD75B",
+          "--tw-ring-offset-color": "#32CD32",
           ":focus": {
             "outline": "2px solid transparent",
             "outlineOffset": "2px",
@@ -62,7 +62,7 @@ function Tabs(_ref) {
           }
         }, selected ? {
           "--tw-bg-opacity": "1 !important",
-          "backgroundColor": "rgb(50 205 50 / var(--tw-bg-opacity)) !important",
+          "backgroundColor": "rgb(45 185 45 / var(--tw-bg-opacity)) !important",
           "--tw-text-opacity": "1",
           "color": "rgb(0 0 0 / var(--tw-text-opacity))",
           "--tw-shadow": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
@@ -71,7 +71,7 @@ function Tabs(_ref) {
         } : {
           "color": "var(--text-primary)",
           ":hover": {
-            "backgroundColor": "rgb(50 205 50 / 0.2)",
+            "backgroundColor": "rgb(45 185 45 / 0.2)",
             "color": "var(--text-primary)"
           }
         }]
@@ -88,9 +88,9 @@ function Tabs(_ref) {
         "marginTop": "24px",
         "borderRadius": "0.5rem",
         "--tw-ring-opacity": "0.6",
-        "--tw-ring-color": "rgb(50 205 50 / var(--tw-ring-opacity))",
+        "--tw-ring-color": "rgb(45 185 45 / var(--tw-ring-opacity))",
         "--tw-ring-offset-width": "2px",
-        "--tw-ring-offset-color": "#5BD75B",
+        "--tw-ring-offset-color": "#32CD32",
         ":focus": {
           "outline": "2px solid transparent",
           "outlineOffset": "2px",

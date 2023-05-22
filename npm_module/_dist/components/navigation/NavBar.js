@@ -262,7 +262,7 @@ var NavItem = _styled2["default"].div(function () {
     ":hover": {
       "borderBottomWidth": "2px",
       "--tw-border-opacity": "1",
-      "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))"
+      "borderColor": "rgb(45 185 45 / var(--tw-border-opacity))"
     }
   }, (0, _react.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteralLoose2["default"])(["\n    display: block;\n    padding: 0 !important;\n    user-select: none;\n    cursor: pointer;\n    border-bottom: 2px solid transparent;\n  "])))];
 });

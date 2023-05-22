@@ -41,7 +41,7 @@ var CheckboxRoot = _styled2["default"].div(function (_ref2) {
     "borderColor": "var(--border-body)",
     ":hover": {
       "--tw-border-opacity": "1",
-      "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))"
+      "borderColor": "rgb(45 185 45 / var(--tw-border-opacity))"
     }
   }, {
     "borderColor": "var(--border-checkbox-unselected-enabled)",

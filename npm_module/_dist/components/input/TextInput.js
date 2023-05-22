@@ -101,7 +101,7 @@ var Root = _styled2["default"].div(function (_ref2) {
     customPrefixPadding = _ref2.customPrefixPadding;
   return [{
     "position": "relative"
-  }, (0, _react.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n      .top-label {\n        top: 0px;\n        left: 8px;\n      }\n      .prefix-label {\n        top: 8px;\n      }\n    "]))), prefix && (0, _react.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        input {\n          padding-left: 60px;\n        }\n      "]))), customPrefixPadding && (0, _react.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        input {\n          padding-left: ", ";\n        }\n      "])), customPrefixPadding), hasValue && (0, _react.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          opacity: 1;\n          top: -14px;\n        }\n      "]))), hasValue && inputFocused && (0, _react.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          color: ", ";\n        }\n      "])), "#1972F5"), isValid && (0, _react.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          color: ", ";\n        }\n      "])), "#32CD32"), isInvalid && (0, _react.css)(_templateObject7 || (_templateObject7 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          color: ", ";\n        }\n      "])), "#EB5757"), isWarning && (0, _react.css)(_templateObject8 || (_templateObject8 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          color: ", ";\n        }\n      "])), "#F08727")];
+  }, (0, _react.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n      .top-label {\n        top: 0px;\n        left: 8px;\n      }\n      .prefix-label {\n        top: 8px;\n      }\n    "]))), prefix && (0, _react.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        input {\n          padding-left: 60px;\n        }\n      "]))), customPrefixPadding && (0, _react.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        input {\n          padding-left: ", ";\n        }\n      "])), customPrefixPadding), hasValue && (0, _react.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          opacity: 1;\n          top: -14px;\n        }\n      "]))), hasValue && inputFocused && (0, _react.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          color: ", ";\n        }\n      "])), "#1972F5"), isValid && (0, _react.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          color: ", ";\n        }\n      "])), "#2DB92D"), isInvalid && (0, _react.css)(_templateObject7 || (_templateObject7 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          color: ", ";\n        }\n      "])), "#EB5757"), isWarning && (0, _react.css)(_templateObject8 || (_templateObject8 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          color: ", ";\n        }\n      "])), "#F08727")];
 });
 var PrefixLabel = _styled2["default"].span(function () {
   return [{
@@ -140,10 +140,10 @@ var PlaceholderLabel = _styled2["default"].span(function (_ref3) {
     }
   }, isValid && [{
     "--tw-text-opacity": "1",
-    "color": "rgb(50 205 50 / var(--tw-text-opacity))",
+    "color": "rgb(45 185 45 / var(--tw-text-opacity))",
     ":focus": {
       "--tw-text-opacity": "1",
-      "color": "rgb(50 205 50 / var(--tw-text-opacity))"
+      "color": "rgb(45 185 45 / var(--tw-text-opacity))"
     }
   }], isInvalid && [{
     "--tw-text-opacity": "1",
@@ -186,12 +186,12 @@ var BottomLabel = _styled2["default"].div(function (_ref4) {
     }
   }, isValid && [{
     "borderRadius": "0.25rem",
-    "backgroundColor": "rgb(50 205 50 / 0.1)",
+    "backgroundColor": "rgb(45 185 45 / 0.1)",
     "--tw-text-opacity": "1",
-    "color": "rgb(50 205 50 / var(--tw-text-opacity))",
+    "color": "rgb(45 185 45 / var(--tw-text-opacity))",
     ":focus": {
       "--tw-text-opacity": "1",
-      "color": "rgb(50 205 50 / var(--tw-text-opacity))"
+      "color": "rgb(45 185 45 / var(--tw-text-opacity))"
     }
   }], isInvalid && [{
     "borderRadius": "0.25rem",

@@ -39,10 +39,10 @@ var TextInput = _styled2["default"].input(function (_ref) {
     }
   }, isValid && [{
     "--tw-border-opacity": "1",
-    "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))",
+    "borderColor": "rgb(45 185 45 / var(--tw-border-opacity))",
     ":focus": {
       "--tw-border-opacity": "1",
-      "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))"
+      "borderColor": "rgb(45 185 45 / var(--tw-border-opacity))"
     }
   }], isInvalid && [{
     "--tw-border-opacity": "1",

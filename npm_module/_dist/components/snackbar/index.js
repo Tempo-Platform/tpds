@@ -67,7 +67,7 @@ var IconBox = _styled2["default"].div(function (_ref3) {
     "paddingBottom": "0.75rem"
   }, type === 'success' && [{
     "--tw-bg-opacity": "1",
-    "backgroundColor": "rgb(50 205 50 / var(--tw-bg-opacity))"
+    "backgroundColor": "rgb(45 185 45 / var(--tw-bg-opacity))"
   }], type === 'info' && [{
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(25 114 245 / var(--tw-bg-opacity))"

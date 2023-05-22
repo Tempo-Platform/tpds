@@ -118,7 +118,7 @@ var successStyle = [{
   }
 }, {
   "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(50 205 50 / var(--tw-bg-opacity))",
+  "backgroundColor": "rgb(45 185 45 / var(--tw-bg-opacity))",
   ":hover": {
     "backgroundColor": "var(--bg-success-hover)"
   },

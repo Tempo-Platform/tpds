@@ -113,7 +113,7 @@ function Label(_ref3) {
         "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
         "boxShadow": "var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)",
         "--tw-ring-opacity": "0.75",
-        "--tw-ring-color": "rgb(50 205 50 / var(--tw-ring-opacity))",
+        "--tw-ring-color": "rgb(45 185 45 / var(--tw-ring-opacity))",
         "--tw-ring-offset-width": "2px",
         "--tw-ring-offset-color": "#84E184"
       },
@@ -168,7 +168,7 @@ function Option(_ref4) {
       }
     }, active ? {
       "--tw-bg-opacity": "1",
-      "backgroundColor": "rgb(50 205 50 / var(--tw-bg-opacity))",
+      "backgroundColor": "rgb(45 185 45 / var(--tw-bg-opacity))",
       "fontWeight": "700",
       "--tw-text-opacity": "1",
       "color": "rgb(255 255 255 / var(--tw-text-opacity))"

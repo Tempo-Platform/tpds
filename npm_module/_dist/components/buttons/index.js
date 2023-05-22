@@ -63,20 +63,20 @@ var CustomExternalLinkButton = (0, _styled2["default"])(_buttons.Button)(functio
     "color": "rgb(255 255 255 / var(--tw-text-opacity))",
     ":hover": {
       "--tw-text-opacity": "1 !important",
-      "color": "rgb(50 205 50 / var(--tw-text-opacity)) !important"
+      "color": "rgb(45 185 45 / var(--tw-text-opacity)) !important"
     }
   }, {
     "--tw-border-opacity": "1",
-    "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))",
+    "borderColor": "rgb(45 185 45 / var(--tw-border-opacity))",
     "--tw-bg-opacity": "1",
-    "backgroundColor": "rgb(50 205 50 / var(--tw-bg-opacity))",
+    "backgroundColor": "rgb(45 185 45 / var(--tw-bg-opacity))",
     ":hover": {
       "--tw-border-opacity": "1",
-      "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))",
+      "borderColor": "rgb(45 185 45 / var(--tw-border-opacity))",
       "backgroundColor": "transparent"
     },
     ":active": {
-      "borderColor": "rgb(50 205 50 / 0.3)",
+      "borderColor": "rgb(45 185 45 / 0.3)",
       "backgroundColor": "transparent"
     }
   }];

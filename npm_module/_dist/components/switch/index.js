@@ -16,7 +16,7 @@ stylesA[true] = {
   "alignItems": "center",
   "borderRadius": "9999px",
   "--tw-bg-opacity": "1 !important",
-  "backgroundColor": "rgb(50 205 50 / var(--tw-bg-opacity)) !important"
+  "backgroundColor": "rgb(45 185 45 / var(--tw-bg-opacity)) !important"
 };
 stylesA[false] = {
   "position": "relative",

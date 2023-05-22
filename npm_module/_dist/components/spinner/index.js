@@ -95,7 +95,7 @@ function GreenPath() {
     css: {
       "stroke": "currentColor",
       "--tw-text-opacity": "1",
-      "color": "rgb(50 205 50 / var(--tw-text-opacity))"
+      "color": "rgb(45 185 45 / var(--tw-text-opacity))"
     },
     d: "M36 18c0-9.94-8.06-18-18-18",
     strokeLinecap: "round",

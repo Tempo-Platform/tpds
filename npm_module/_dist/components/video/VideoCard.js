@@ -42,9 +42,9 @@ var VideoRoot = _styled2["default"].div(function () {
     "backgroundColor": "var(--bg-window)",
     ":hover": {
       "--tw-border-opacity": "1",
-      "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))",
+      "borderColor": "rgb(45 185 45 / var(--tw-border-opacity))",
       "--tw-text-opacity": "1",
-      "color": "rgb(50 205 50 / var(--tw-text-opacity))"
+      "color": "rgb(45 185 45 / var(--tw-text-opacity))"
     }
   }, {
     "borderRadius": "8px",

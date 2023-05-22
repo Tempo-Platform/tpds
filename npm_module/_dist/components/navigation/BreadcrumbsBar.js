@@ -88,7 +88,7 @@ var BreadcrumbsBarRoot = _styled2["default"].div(function (_ref2) {
     "borderColor": "var(--border-body)"
   }, (0, _react.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n    a.active {\n      ", "\n    }\n    .home-icon {\n      ", "\n    }\n    .divider {\n      ", "\n      display: inline;\n      line-height: 100%;\n    }\n    .inner-chevron-right, .divider {\n      ", "\n    }\n  "])), {
     "--tw-text-opacity": "1",
-    "color": "rgb(50 205 50 / var(--tw-text-opacity))"
+    "color": "rgb(45 185 45 / var(--tw-text-opacity))"
   }, {
     "position": "relative",
     "top": "-1px"
