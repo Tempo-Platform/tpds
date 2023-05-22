@@ -6,11 +6,10 @@ function CrossIcon({ ...props }) {
   return (
     <svg
       viewBox="0 0 16 16"
-      tw="fill-current text-primary"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
-      fill="none"
+      tw="fill-current text-primary"
       {...props}
     >
       <path fill="#D9D9D9" d="M0 0H16V16H0z" opacity="0.01"></path>

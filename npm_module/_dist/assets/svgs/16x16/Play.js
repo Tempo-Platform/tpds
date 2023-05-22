@@ -10,10 +10,10 @@ var _react = _interopRequireDefault(require("react"));
 function Play(_ref) {
   var props = Object.assign({}, ((0, _objectDestructuringEmpty2["default"])(_ref), _ref));
   return /*#__PURE__*/_react["default"].createElement("svg", Object.assign({
+    viewBox: "0 0 11 13",
     xmlns: "http://www.w3.org/2000/svg",
     width: "11",
     height: "13",
-    viewBox: "0 0 11 13",
     css: {
       "fill": "currentColor",
       "color": "var(--text-primary)"
