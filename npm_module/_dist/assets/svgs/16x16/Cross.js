@@ -9,13 +9,17 @@ var _react = _interopRequireDefault(require("react"));
 
 function CrossIcon(_ref) {
   var props = Object.assign({}, ((0, _objectDestructuringEmpty2["default"])(_ref), _ref));
-  return /*#__PURE__*/_react["default"].createElement("svg", {
+  return /*#__PURE__*/_react["default"].createElement("svg", Object.assign({
+    viewBox: "0 0 16 16",
+    css: {
+      "fill": "currentColor",
+      "color": "var(--text-primary)"
+    },
     xmlns: "http://www.w3.org/2000/svg",
     width: "16",
     height: "16",
-    fill: "none",
-    viewBox: "0 0 16 16"
-  }, /*#__PURE__*/_react["default"].createElement("path", {
+    fill: "none"
+  }, props), /*#__PURE__*/_react["default"].createElement("path", {
     fill: "#D9D9D9",
     d: "M0 0H16V16H0z",
     opacity: "0.01"
