@@ -6,8 +6,9 @@ exports.__esModule = true;
 exports["default"] = void 0;
 var _taggedTemplateLiteralLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteralLoose"));
 var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
-var _react = _interopRequireWildcard(require("react"));
+var _react = require("@emotion/react");
+var _styled2 = _interopRequireDefault(require("@emotion/styled"));
+var _react2 = _interopRequireWildcard(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _input = require("../../elements/input");
 var _CheckIcon = _interopRequireDefault(require("../../assets/svgs/notifications/CheckIcon"));
@@ -25,7 +26,7 @@ var TextInput = function TextInput(_ref) {
     bottomLabel = _ref.bottomLabel,
     prefix = _ref.prefix,
     props = (0, _objectWithoutPropertiesLoose2["default"])(_ref, _excluded);
-  var _useState = (0, _react.useState)(false),
+  var _useState = (0, _react2.useState)(false),
     inputFocused = _useState[0],
     setInputFocused = _useState[1];
   var stateIcon = getStateIcon(props);
@@ -35,16 +36,22 @@ var TextInput = function TextInput(_ref) {
     console.error('TextInput Component: A placeholder value is required');
   }
   var labelValue = customTopLabel || placeholder;
-  return /*#__PURE__*/_react["default"].createElement(Root, Object.assign({
+  return /*#__PURE__*/_react2["default"].createElement(Root, Object.assign({
     prefix: prefix,
     hasValue: hasValue,
     inputFocused: inputFocused,
     placeholder: placeholder
-  }, props), labelValue && /*#__PURE__*/_react["default"].createElement(PlaceholderLabel, Object.assign({
+  }, props), labelValue && /*#__PURE__*/_react2["default"].createElement(PlaceholderLabel, Object.assign({
     className: "top-label"
-  }, props), labelValue, required && /*#__PURE__*/_react["default"].createElement(_StyledSpan, null, "*")), prefix && /*#__PURE__*/_react["default"].createElement(PrefixLabel, {
+  }, props), labelValue, required && /*#__PURE__*/_react2["default"].createElement("span", {
+    css: {
+      "marginLeft": "0.25rem",
+      "--tw-text-opacity": "1",
+      "color": "rgb(235 87 87 / var(--tw-text-opacity))"
+    }
+  }, "*")), prefix && /*#__PURE__*/_react2["default"].createElement(PrefixLabel, {
     className: "prefix-label"
-  }, prefix), /*#__PURE__*/_react["default"].createElement(_input.TextInput, Object.assign({
+  }, prefix), /*#__PURE__*/_react2["default"].createElement(_input.TextInput, Object.assign({
     type: "text",
     className: "input-element",
     inputFocused: true,
@@ -56,7 +63,7 @@ var TextInput = function TextInput(_ref) {
     },
     value: value,
     onChange: onChange
-  }, props)), bottomLabel && /*#__PURE__*/_react["default"].createElement(BottomLabel, props, stateIcon, " ", bottomLabel));
+  }, props)), bottomLabel && /*#__PURE__*/_react2["default"].createElement(BottomLabel, props, stateIcon, " ", bottomLabel));
 };
 var _default = TextInput;
 exports["default"] = _default;
@@ -79,15 +86,12 @@ TextInput.defaultProps = {
   isInvalid: false
 };
 var getStateIcon = function getStateIcon(props) {
-  if (props.isValid) return /*#__PURE__*/_react["default"].createElement(_CheckIcon["default"], null);
-  if (props.isWarning) return /*#__PURE__*/_react["default"].createElement(_WarningIcon["default"], null);
-  if (props.isInvalid) return /*#__PURE__*/_react["default"].createElement(_ErrorIcon["default"], null);
+  if (props.isValid) return /*#__PURE__*/_react2["default"].createElement(_CheckIcon["default"], null);
+  if (props.isWarning) return /*#__PURE__*/_react2["default"].createElement(_WarningIcon["default"], null);
+  if (props.isInvalid) return /*#__PURE__*/_react2["default"].createElement(_ErrorIcon["default"], null);
   return null;
 };
-var Root = _styledComponents["default"].div.withConfig({
-  displayName: "TextInput__Root",
-  componentId: "sc-10iykmm-0"
-})(function (_ref2) {
+var Root = _styled2["default"].div(function (_ref2) {
   var hasValue = _ref2.hasValue,
     isValid = _ref2.isValid,
     isInvalid = _ref2.isInvalid,
@@ -97,12 +101,9 @@ var Root = _styledComponents["default"].div.withConfig({
     customPrefixPadding = _ref2.customPrefixPadding;
   return [{
     "position": "relative"
-  }, (0, _styledComponents.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n      .top-label {\n        top: 0px;\n        left: 8px;\n      }\n      .prefix-label {\n        top: 8px;\n      }\n    "]))), prefix && (0, _styledComponents.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        input {\n          padding-left: 60px;\n        }\n      "]))), customPrefixPadding && (0, _styledComponents.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        input {\n          padding-left: ", ";\n        }\n      "])), customPrefixPadding), hasValue && (0, _styledComponents.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          opacity: 1;\n          top: -14px;\n        }\n      "]))), hasValue && inputFocused && (0, _styledComponents.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          color: ", ";\n        }\n      "])), "#1972F5"), isValid && (0, _styledComponents.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          color: ", ";\n        }\n      "])), "#00C2CE"), isInvalid && (0, _styledComponents.css)(_templateObject7 || (_templateObject7 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          color: ", ";\n        }\n      "])), "#EB5757"), isWarning && (0, _styledComponents.css)(_templateObject8 || (_templateObject8 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          color: ", ";\n        }\n      "])), "#F08727")];
+  }, (0, _react.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n      .top-label {\n        top: 0px;\n        left: 8px;\n      }\n      .prefix-label {\n        top: 8px;\n      }\n    "]))), prefix && (0, _react.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        input {\n          padding-left: 60px;\n        }\n      "]))), customPrefixPadding && (0, _react.css)(_templateObject3 || (_templateObject3 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        input {\n          padding-left: ", ";\n        }\n      "])), customPrefixPadding), hasValue && (0, _react.css)(_templateObject4 || (_templateObject4 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          opacity: 1;\n          top: -14px;\n        }\n      "]))), hasValue && inputFocused && (0, _react.css)(_templateObject5 || (_templateObject5 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          color: ", ";\n        }\n      "])), "#1972F5"), isValid && (0, _react.css)(_templateObject6 || (_templateObject6 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          color: ", ";\n        }\n      "])), "#32CD32"), isInvalid && (0, _react.css)(_templateObject7 || (_templateObject7 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          color: ", ";\n        }\n      "])), "#EB5757"), isWarning && (0, _react.css)(_templateObject8 || (_templateObject8 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        .top-label {\n          color: ", ";\n        }\n      "])), "#F08727")];
 });
-var PrefixLabel = _styledComponents["default"].span.withConfig({
-  displayName: "TextInput__PrefixLabel",
-  componentId: "sc-10iykmm-1"
-})(function () {
+var PrefixLabel = _styled2["default"].span(function () {
   return [{
     "pointerEvents": "none",
     "position": "absolute",
@@ -112,10 +113,7 @@ var PrefixLabel = _styledComponents["default"].span.withConfig({
     "color": "var(--text-tertiary)"
   }];
 });
-var PlaceholderLabel = _styledComponents["default"].span.withConfig({
-  displayName: "TextInput__PlaceholderLabel",
-  componentId: "sc-10iykmm-2"
-})(function (_ref3) {
+var PlaceholderLabel = _styled2["default"].span(function (_ref3) {
   var isValid = _ref3.isValid,
     isInvalid = _ref3.isInvalid,
     isWarning = _ref3.isWarning;
@@ -142,10 +140,10 @@ var PlaceholderLabel = _styledComponents["default"].span.withConfig({
     }
   }, isValid && [{
     "--tw-text-opacity": "1",
-    "color": "rgb(0 194 206 / var(--tw-text-opacity))",
+    "color": "rgb(50 205 50 / var(--tw-text-opacity))",
     ":focus": {
       "--tw-text-opacity": "1",
-      "color": "rgb(0 194 206 / var(--tw-text-opacity))"
+      "color": "rgb(50 205 50 / var(--tw-text-opacity))"
     }
   }], isInvalid && [{
     "--tw-text-opacity": "1",
@@ -163,10 +161,7 @@ var PlaceholderLabel = _styledComponents["default"].span.withConfig({
     }
   }]];
 });
-var BottomLabel = _styledComponents["default"].div.withConfig({
-  displayName: "TextInput__BottomLabel",
-  componentId: "sc-10iykmm-3"
-})(function (_ref4) {
+var BottomLabel = _styled2["default"].div(function (_ref4) {
   var isValid = _ref4.isValid,
     isInvalid = _ref4.isInvalid,
     isWarning = _ref4.isWarning;
@@ -191,12 +186,12 @@ var BottomLabel = _styledComponents["default"].div.withConfig({
     }
   }, isValid && [{
     "borderRadius": "0.25rem",
-    "backgroundColor": "rgb(0 194 206 / 0.1)",
+    "backgroundColor": "rgb(50 205 50 / 0.1)",
     "--tw-text-opacity": "1",
-    "color": "rgb(0 194 206 / var(--tw-text-opacity))",
+    "color": "rgb(50 205 50 / var(--tw-text-opacity))",
     ":focus": {
       "--tw-text-opacity": "1",
-      "color": "rgb(0 194 206 / var(--tw-text-opacity))"
+      "color": "rgb(50 205 50 / var(--tw-text-opacity))"
     }
   }], isInvalid && [{
     "borderRadius": "0.25rem",
@@ -216,13 +211,5 @@ var BottomLabel = _styledComponents["default"].div.withConfig({
       "--tw-text-opacity": "1",
       "color": "rgb(240 135 39 / var(--tw-text-opacity))"
     }
-  }], (0, _styledComponents.css)(_templateObject9 || (_templateObject9 = (0, _taggedTemplateLiteralLoose2["default"])(["\n    svg {\n      margin-right: 6px;\n    }\n  "])))];
-});
-var _StyledSpan = (0, _styledComponents["default"])("span").withConfig({
-  displayName: "TextInput___StyledSpan",
-  componentId: "sc-10iykmm-4"
-})({
-  "marginLeft": "0.25rem",
-  "--tw-text-opacity": "1",
-  "color": "rgb(235 87 87 / var(--tw-text-opacity))"
+  }], (0, _react.css)(_templateObject9 || (_templateObject9 = (0, _taggedTemplateLiteralLoose2["default"])(["\n    svg {\n      margin-right: 6px;\n    }\n  "])))];
 });

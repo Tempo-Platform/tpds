@@ -3,11 +3,8 @@
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
 exports.TextInput = void 0;
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-var TextInput = _styledComponents["default"].input.withConfig({
-  displayName: "input__TextInput",
-  componentId: "sc-an2vjp-0"
-})(function (_ref) {
+var _styled2 = _interopRequireDefault(require("@emotion/styled"));
+var TextInput = _styled2["default"].input(function (_ref) {
   var isValid = _ref.isValid,
     isInvalid = _ref.isInvalid,
     isWarning = _ref.isWarning;
@@ -42,10 +39,10 @@ var TextInput = _styledComponents["default"].input.withConfig({
     }
   }, isValid && [{
     "--tw-border-opacity": "1",
-    "borderColor": "rgb(0 194 206 / var(--tw-border-opacity))",
+    "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))",
     ":focus": {
       "--tw-border-opacity": "1",
-      "borderColor": "rgb(0 194 206 / var(--tw-border-opacity))"
+      "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))"
     }
   }], isInvalid && [{
     "--tw-border-opacity": "1",

@@ -1,58 +1,74 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-var _typeof = require("@babel/runtime/helpers/typeof");
 exports.__esModule = true;
 exports["default"] = void 0;
 var _taggedTemplateLiteralLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteralLoose"));
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
-var _react = _interopRequireDefault(require("react"));
+var _react = require("@emotion/react");
+var _styled2 = _interopRequireDefault(require("@emotion/styled"));
+var _react2 = _interopRequireDefault(require("react"));
 var _typography = require("../../elements/typography");
 var _layout = require("../../elements/layout");
 var _buttons = require("../../elements/buttons");
 var _Home = _interopRequireDefault(require("../../assets/svgs/icons/Home"));
 var _templateObject;
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function BreadcrumbsBar(_ref) {
   var links = _ref.links,
     linkClass = _ref.linkClass,
     buttons = _ref.buttons,
     history = _ref.history;
   var LinkClass = linkClass;
-  return /*#__PURE__*/_react["default"].createElement(BreadcrumbsBarRoot, null, links && /*#__PURE__*/_react["default"].createElement(_StyledHomeIcon, null), links && /*#__PURE__*/_react["default"].createElement(ChevronRight, null), links && /*#__PURE__*/_react["default"].createElement(LinksRow, null, links.map(function (link, index) {
-    return /*#__PURE__*/_react["default"].createElement(_StyledSpan, {
-      key: link.url + index
-    }, index !== 0 && /*#__PURE__*/_react["default"].createElement(_typography.P, {
+  return /*#__PURE__*/_react2["default"].createElement(BreadcrumbsBarRoot, null, links && /*#__PURE__*/_react2["default"].createElement(_Home["default"], {
+    css: {
+      "fill": "currentColor",
+      "color": "var(--text-primary)"
+    }
+  }), links && /*#__PURE__*/_react2["default"].createElement(ChevronRight, null), links && /*#__PURE__*/_react2["default"].createElement(LinksRow, null, links.map(function (link, index) {
+    return /*#__PURE__*/_react2["default"].createElement("span", {
+      key: link.url + index,
+      css: {
+        "display": "flex",
+        "alignItems": "center"
+      }
+    }, index !== 0 && /*#__PURE__*/_react2["default"].createElement(_typography.P, {
       className: "divider"
-    }, "/"), /*#__PURE__*/_react["default"].createElement(LinkClass, {
+    }, "/"), /*#__PURE__*/_react2["default"].createElement(LinkClass, {
       to: link.url,
       href: link.url
-    }, /*#__PURE__*/_react["default"].createElement(_StyledPSmall, null, link.label)));
-  })), buttons && /*#__PURE__*/_react["default"].createElement("div", {
+    }, /*#__PURE__*/_react2["default"].createElement(_typography.PSmall, {
+      css: {
+        "display": "flex",
+        "cursor": "pointer",
+        "userSelect": "none",
+        "fontWeight": "500",
+        "color": "var(--text-tertiary)",
+        ":focus": {
+          "outline": "2px solid transparent",
+          "outlineOffset": "2px"
+        }
+      }
+    }, link.label)));
+  })), buttons && /*#__PURE__*/_react2["default"].createElement("div", {
     style: {
       margin: '0 auto',
       width: '696px'
     }
-  }, /*#__PURE__*/_react["default"].createElement(_layout.ItemsRow, null, buttons.map(function (button, index) {
-    return /*#__PURE__*/_react["default"].createElement(LinkClass, {
+  }, /*#__PURE__*/_react2["default"].createElement(_layout.ItemsRow, null, buttons.map(function (button, index) {
+    return /*#__PURE__*/_react2["default"].createElement(LinkClass, {
       key: button.url + index,
       to: button.url,
       href: button.url
-    }, button.url === history.pathname ? /*#__PURE__*/_react["default"].createElement(_buttons.Button, {
+    }, button.url === history.pathname ? /*#__PURE__*/_react2["default"].createElement(_buttons.Button, {
       isSuccess: true,
       isSmall: true
-    }, button.label) : /*#__PURE__*/_react["default"].createElement(_buttons.Button, {
+    }, button.label) : /*#__PURE__*/_react2["default"].createElement(_buttons.Button, {
       isSmall: true
     }, button.label));
   }))));
 }
 var _default = BreadcrumbsBar;
 exports["default"] = _default;
-var BreadcrumbsBarRoot = _styledComponents["default"].div.withConfig({
-  displayName: "BreadcrumbsBar__BreadcrumbsBarRoot",
-  componentId: "sc-18w6svh-0"
-})(function (_ref2) {
+var BreadcrumbsBarRoot = _styled2["default"].div(function (_ref2) {
   var isUppercase = _ref2.isUppercase,
     isDisabled = _ref2.isDisabled;
   return [{
@@ -70,9 +86,9 @@ var BreadcrumbsBarRoot = _styledComponents["default"].div.withConfig({
   }, {
     "borderBottomWidth": "1px",
     "borderColor": "var(--border-body)"
-  }, (0, _styledComponents.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n    a.active {\n      ", "\n    }\n    .home-icon {\n      ", "\n    }\n    .divider {\n      ", "\n      display: inline;\n      line-height: 100%;\n    }\n    .inner-chevron-right, .divider {\n      ", "\n    }\n  "])), {
+  }, (0, _react.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n    a.active {\n      ", "\n    }\n    .home-icon {\n      ", "\n    }\n    .divider {\n      ", "\n      display: inline;\n      line-height: 100%;\n    }\n    .inner-chevron-right, .divider {\n      ", "\n    }\n  "])), {
     "--tw-text-opacity": "1",
-    "color": "rgb(0 194 206 / var(--tw-text-opacity))"
+    "color": "rgb(50 205 50 / var(--tw-text-opacity))"
   }, {
     "position": "relative",
     "top": "-1px"
@@ -84,53 +100,22 @@ var BreadcrumbsBarRoot = _styledComponents["default"].div.withConfig({
     "marginRight": "10px"
   })];
 });
-var LinksRow = _styledComponents["default"].div.withConfig({
-  displayName: "BreadcrumbsBar__LinksRow",
-  componentId: "sc-18w6svh-1"
-})(function () {
+var LinksRow = _styled2["default"].div(function () {
   return [{
     "display": "flex",
     "alignItems": "center"
   }];
 });
 function ChevronRight() {
-  return /*#__PURE__*/_react["default"].createElement("svg", {
+  return /*#__PURE__*/_react2["default"].createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     width: "5",
     height: "9",
     fill: "none",
     viewBox: "0 0 5 9",
     className: "inner-chevron-right"
-  }, /*#__PURE__*/_react["default"].createElement("path", {
+  }, /*#__PURE__*/_react2["default"].createElement("path", {
     fill: "#788187",
     d: "M1.086.562C.876.328.524.328.289.54c-.234.211-.234.563-.023.797l3 3.164-3 3.187c-.211.235-.211.586.023.797.235.211.586.211.797-.023l3.375-3.563a.665.665 0 00.164-.398c0-.117-.07-.258-.164-.375L1.086.562z"
   }));
 }
-var _StyledHomeIcon = (0, _styledComponents["default"])(_Home["default"]).withConfig({
-  displayName: "BreadcrumbsBar___StyledHomeIcon",
-  componentId: "sc-18w6svh-2"
-})({
-  "fill": "currentColor",
-  "color": "var(--text-primary)"
-});
-var _StyledSpan = (0, _styledComponents["default"])("span").withConfig({
-  displayName: "BreadcrumbsBar___StyledSpan",
-  componentId: "sc-18w6svh-3"
-})({
-  "display": "flex",
-  "alignItems": "center"
-});
-var _StyledPSmall = (0, _styledComponents["default"])(_typography.PSmall).withConfig({
-  displayName: "BreadcrumbsBar___StyledPSmall",
-  componentId: "sc-18w6svh-4"
-})({
-  "display": "flex",
-  "cursor": "pointer",
-  "userSelect": "none",
-  "fontWeight": "500",
-  "color": "var(--text-tertiary)",
-  ":focus": {
-    "outline": "2px solid transparent",
-    "outlineOffset": "2px"
-  }
-});

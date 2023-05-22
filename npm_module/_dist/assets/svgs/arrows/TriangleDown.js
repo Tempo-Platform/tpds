@@ -3,13 +3,16 @@
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
 exports["default"] = void 0;
-var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _react = _interopRequireDefault(require("react"));
 /* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 
 function TriangleDown() {
-  return /*#__PURE__*/_react["default"].createElement(_StyledSvg, {
+  return /*#__PURE__*/_react["default"].createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
+    css: {
+      "fill": "currentColor",
+      "color": "var(--text-primary)"
+    },
     width: "10",
     height: "6",
     viewBox: "0 0 10 6",
@@ -20,10 +23,3 @@ function TriangleDown() {
 }
 var _default = TriangleDown;
 exports["default"] = _default;
-var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
-  displayName: "TriangleDown___StyledSvg",
-  componentId: "sc-248fu3-0"
-})({
-  "fill": "currentColor",
-  "color": "var(--text-primary)"
-});

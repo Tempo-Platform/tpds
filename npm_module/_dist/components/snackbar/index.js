@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 exports.__esModule = true;
 exports["default"] = void 0;
 var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styled2 = _interopRequireDefault(require("@emotion/styled"));
 var _react = _interopRequireDefault(require("react"));
 var _SuccessIcon = _interopRequireDefault(require("../../assets/svgs/alerts/SuccessIcon"));
 var _WarningIcon = _interopRequireDefault(require("../../assets/svgs/alerts/WarningIcon"));
@@ -32,10 +32,7 @@ var getStateIcon = function getStateIcon(type) {
   if (type === 'info') return /*#__PURE__*/_react["default"].createElement(_InfoIcon["default"], null);
   return /*#__PURE__*/_react["default"].createElement(_DefaultIcon["default"], null);
 };
-var Root = _styledComponents["default"].div.withConfig({
-  displayName: "snackbar__Root",
-  componentId: "sc-1k3fc0p-0"
-})(function (_ref2) {
+var Root = _styled2["default"].div(function (_ref2) {
   var type = _ref2.type;
   return [{
     "display": "inline-flex",
@@ -57,10 +54,7 @@ var Root = _styledComponents["default"].div.withConfig({
     "marginBottom": "1rem"
   }];
 });
-var IconBox = _styledComponents["default"].div.withConfig({
-  displayName: "snackbar__IconBox",
-  componentId: "sc-1k3fc0p-1"
-})(function (_ref3) {
+var IconBox = _styled2["default"].div(function (_ref3) {
   var type = _ref3.type;
   return [{
     "display": "flex",
@@ -73,7 +67,7 @@ var IconBox = _styledComponents["default"].div.withConfig({
     "paddingBottom": "0.75rem"
   }, type === 'success' && [{
     "--tw-bg-opacity": "1",
-    "backgroundColor": "rgb(0 194 206 / var(--tw-bg-opacity))"
+    "backgroundColor": "rgb(50 205 50 / var(--tw-bg-opacity))"
   }], type === 'info' && [{
     "--tw-bg-opacity": "1",
     "backgroundColor": "rgb(25 114 245 / var(--tw-bg-opacity))"
@@ -85,10 +79,7 @@ var IconBox = _styledComponents["default"].div.withConfig({
     "backgroundColor": "rgb(240 135 39 / var(--tw-bg-opacity))"
   }]];
 });
-var Text = _styledComponents["default"].div.withConfig({
-  displayName: "snackbar__Text",
-  componentId: "sc-1k3fc0p-2"
-})(function () {
+var Text = _styled2["default"].div(function () {
   return [{
     "display": "flex",
     "alignItems": "center",

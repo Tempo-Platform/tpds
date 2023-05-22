@@ -5,7 +5,6 @@ var _typeof = require("@babel/runtime/helpers/typeof");
 exports.__esModule = true;
 exports["default"] = ComboBox;
 var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _react = _interopRequireWildcard(require("react"));
 var _react2 = require("@headlessui/react");
 var _solid = require("@heroicons/react/solid");
@@ -62,7 +61,43 @@ function ComboBox(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_react2.Combobox, Object.assign({
     value: selected,
     onChange: setSelected
-  }, props), /*#__PURE__*/_react["default"].createElement(_StyledDiv, null, /*#__PURE__*/_react["default"].createElement(_StyledDiv2, null, /*#__PURE__*/_react["default"].createElement(_StyledComboboxInput, {
+  }, props), /*#__PURE__*/_react["default"].createElement("div", {
+    css: {
+      "position": "relative"
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    css: {
+      "position": "relative",
+      "width": "100%",
+      "cursor": "default",
+      "overflow": "hidden",
+      "borderRadius": "0.25rem",
+      "textAlign": "left",
+      ":focus": {
+        "outline": "2px solid transparent",
+        "outlineOffset": "2px"
+      },
+      "@media (min-width: 640px)": {
+        "fontSize": "0.8125rem"
+      }
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_react2.Combobox.Input, {
+    css: {
+      "width": "100%",
+      "borderWidth": "1px",
+      "borderColor": "var(--border-window)",
+      "backgroundColor": "var(--bg-window)",
+      "paddingTop": "0.5rem",
+      "paddingBottom": "0.5rem",
+      "paddingLeft": "0.75rem",
+      "paddingRight": "2.5rem",
+      "fontSize": "0.8125rem",
+      "fontWeight": "500",
+      "lineHeight": "1.25rem",
+      "color": "var(--text-secondary)",
+      "outline": "2px solid transparent",
+      "outlineOffset": "2px"
+    },
     placeholder: getPlaceholder(),
     displayValue: function displayValue(item) {
       return !selected ? '' : props.multiple ? '' : selected.label;
@@ -71,26 +106,96 @@ function ComboBox(_ref) {
       return setQuery(event.target.value);
     },
     autoComplete: "off"
-  }), /*#__PURE__*/_react["default"].createElement(_StyledComboboxButton, null, hasSelection() && /*#__PURE__*/_react["default"].createElement(_StyledXIcon, {
+  }), /*#__PURE__*/_react["default"].createElement(_react2.Combobox.Button, {
+    css: {
+      "position": "absolute",
+      "top": "0px",
+      "bottom": "0px",
+      "right": "0px",
+      "display": "flex",
+      "alignItems": "center",
+      "paddingRight": "0.5rem"
+    }
+  }, hasSelection() && /*#__PURE__*/_react["default"].createElement(_solid.XIcon, {
+    css: {
+      "height": "1.25rem",
+      "width": "1.25rem",
+      "color": "var(--text-tertiary)"
+    },
     "aria-hidden": "true",
     onClick: function onClick() {
       setSelected(props.multiple ? [] : null);
       setQuery('');
     }
-  }), /*#__PURE__*/_react["default"].createElement(_StyledSelectorIcon, {
+  }), /*#__PURE__*/_react["default"].createElement(_solid.SelectorIcon, {
+    css: {
+      "height": "1.25rem",
+      "width": "1.25rem",
+      "color": "var(--text-tertiary)"
+    },
     "aria-hidden": "true"
-  }))), /*#__PURE__*/_react["default"].createElement(_StyledComboboxOptions, null, filteredItems.length === 0 && query !== '' ? /*#__PURE__*/_react["default"].createElement(_StyledDiv3, null, "Nothing found.") : filteredItems.map(function (item) {
-    return /*#__PURE__*/_react["default"].createElement(_StyledComboboxOption, {
+  }))), /*#__PURE__*/_react["default"].createElement(_react2.Combobox.Options, {
+    css: {
+      "position": "absolute",
+      "zIndex": "50",
+      "marginTop": "0.25rem",
+      "maxHeight": "15rem",
+      "width": "100%",
+      "overflow": "auto",
+      "borderRadius": "0.375rem",
+      "borderWidth": "1px",
+      "borderColor": "var(--border-window)",
+      "backgroundColor": "var(--bg-window)",
+      "paddingTop": "0.25rem",
+      "paddingBottom": "0.25rem",
+      "fontSize": "0.9375rem",
+      "--tw-shadow": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+      "--tw-shadow-colored": "0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)",
+      "boxShadow": "var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)",
+      ":focus": {
+        "outline": "2px solid transparent",
+        "outlineOffset": "2px"
+      },
+      "@media (min-width: 640px)": {
+        "fontSize": "0.8125rem"
+      }
+    }
+  }, filteredItems.length === 0 && query !== '' ? /*#__PURE__*/_react["default"].createElement("div", {
+    css: {
+      "position": "relative",
+      "cursor": "default",
+      "userSelect": "none",
+      "paddingLeft": "1rem",
+      "paddingRight": "1rem",
+      "paddingTop": "0.5rem",
+      "paddingBottom": "0.5rem",
+      "color": "var(--text-primary)"
+    }
+  }, "Nothing found.") : filteredItems.map(function (item) {
+    return /*#__PURE__*/_react["default"].createElement(_react2.Combobox.Option, {
       key: item.id,
+      css: function css(_ref2) {
+        var active = _ref2.active;
+        return comboBoxStyles[active];
+      },
       value: item
-    }, function (_ref2) {
-      var selected = _ref2.selected,
-        active = _ref2.active;
-      return /*#__PURE__*/_react["default"].createElement(_StyledSpan, null, /*#__PURE__*/_react["default"].createElement(_StyledSpan2, {
-        $_css: spanStyles[active]
-      }, item.label), selected ? /*#__PURE__*/_react["default"].createElement(_StyledSpan3, {
-        $_css2: spanBStyles[active]
-      }, /*#__PURE__*/_react["default"].createElement(_StyledCheckIcon, {
+    }, function (_ref3) {
+      var selected = _ref3.selected,
+        active = _ref3.active;
+      return /*#__PURE__*/_react["default"].createElement("span", {
+        css: {
+          "position": "relative",
+          "display": "block"
+        }
+      }, /*#__PURE__*/_react["default"].createElement("span", {
+        css: spanStyles[active]
+      }, item.label), selected ? /*#__PURE__*/_react["default"].createElement("span", {
+        css: spanBStyles[active]
+      }, /*#__PURE__*/_react["default"].createElement(_solid.CheckIcon, {
+        css: {
+          "height": "1.25rem",
+          "width": "1.25rem"
+        },
         "aria-hidden": "true"
       })) : null);
     });
@@ -156,7 +261,7 @@ spanBStyles[true] = {
   "display": "flex",
   "alignItems": "center",
   "paddingLeft": "0.75rem",
-  "color": "rgb(0 194 206 / var(--tw-text-opacity))",
+  "color": "rgb(50 205 50 / var(--tw-text-opacity))",
   "--tw-text-opacity": "1"
 };
 spanBStyles[false] = {
@@ -170,148 +275,3 @@ spanBStyles[false] = {
   "color": "rgb(240 135 39 / var(--tw-text-opacity))",
   "--tw-text-opacity": "1"
 };
-var _StyledDiv = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "combobox___StyledDiv",
-  componentId: "sc-z3m15z-0"
-})({
-  "position": "relative"
-});
-var _StyledDiv2 = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "combobox___StyledDiv2",
-  componentId: "sc-z3m15z-1"
-})({
-  "position": "relative",
-  "width": "100%",
-  "cursor": "default",
-  "overflow": "hidden",
-  "borderRadius": "0.25rem",
-  "textAlign": "left",
-  ":focus": {
-    "outline": "2px solid transparent",
-    "outlineOffset": "2px"
-  },
-  "@media (min-width: 640px)": {
-    "fontSize": "0.8125rem"
-  }
-});
-var _StyledComboboxInput = (0, _styledComponents["default"])(_react2.Combobox.Input).withConfig({
-  displayName: "combobox___StyledComboboxInput",
-  componentId: "sc-z3m15z-2"
-})({
-  "width": "100%",
-  "borderWidth": "1px",
-  "borderColor": "var(--border-window)",
-  "backgroundColor": "var(--bg-window)",
-  "paddingTop": "0.5rem",
-  "paddingBottom": "0.5rem",
-  "paddingLeft": "0.75rem",
-  "paddingRight": "2.5rem",
-  "fontSize": "0.8125rem",
-  "fontWeight": "500",
-  "lineHeight": "1.25rem",
-  "color": "var(--text-secondary)",
-  "outline": "2px solid transparent",
-  "outlineOffset": "2px"
-});
-var _StyledComboboxButton = (0, _styledComponents["default"])(_react2.Combobox.Button).withConfig({
-  displayName: "combobox___StyledComboboxButton",
-  componentId: "sc-z3m15z-3"
-})({
-  "position": "absolute",
-  "top": "0px",
-  "bottom": "0px",
-  "right": "0px",
-  "display": "flex",
-  "alignItems": "center",
-  "paddingRight": "0.5rem"
-});
-var _StyledXIcon = (0, _styledComponents["default"])(_solid.XIcon).withConfig({
-  displayName: "combobox___StyledXIcon",
-  componentId: "sc-z3m15z-4"
-})({
-  "height": "1.25rem",
-  "width": "1.25rem",
-  "color": "var(--text-tertiary)"
-});
-var _StyledSelectorIcon = (0, _styledComponents["default"])(_solid.SelectorIcon).withConfig({
-  displayName: "combobox___StyledSelectorIcon",
-  componentId: "sc-z3m15z-5"
-})({
-  "height": "1.25rem",
-  "width": "1.25rem",
-  "color": "var(--text-tertiary)"
-});
-var _StyledComboboxOptions = (0, _styledComponents["default"])(_react2.Combobox.Options).withConfig({
-  displayName: "combobox___StyledComboboxOptions",
-  componentId: "sc-z3m15z-6"
-})({
-  "position": "absolute",
-  "zIndex": "50",
-  "marginTop": "0.25rem",
-  "maxHeight": "15rem",
-  "width": "100%",
-  "overflow": "auto",
-  "borderRadius": "0.375rem",
-  "borderWidth": "1px",
-  "borderColor": "var(--border-window)",
-  "backgroundColor": "var(--bg-window)",
-  "paddingTop": "0.25rem",
-  "paddingBottom": "0.25rem",
-  "fontSize": "0.9375rem",
-  "--tw-shadow": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
-  "--tw-shadow-colored": "0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)",
-  "boxShadow": "var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)",
-  ":focus": {
-    "outline": "2px solid transparent",
-    "outlineOffset": "2px"
-  },
-  "@media (min-width: 640px)": {
-    "fontSize": "0.8125rem"
-  }
-});
-var _StyledDiv3 = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "combobox___StyledDiv3",
-  componentId: "sc-z3m15z-7"
-})({
-  "position": "relative",
-  "cursor": "default",
-  "userSelect": "none",
-  "paddingLeft": "1rem",
-  "paddingRight": "1rem",
-  "paddingTop": "0.5rem",
-  "paddingBottom": "0.5rem",
-  "color": "var(--text-primary)"
-});
-var _StyledComboboxOption = (0, _styledComponents["default"])(_react2.Combobox.Option).withConfig({
-  displayName: "combobox___StyledComboboxOption",
-  componentId: "sc-z3m15z-8"
-})(["", ""], function (_ref3) {
-  var active = _ref3.active;
-  return comboBoxStyles[active];
-});
-var _StyledSpan = (0, _styledComponents["default"])("span").withConfig({
-  displayName: "combobox___StyledSpan",
-  componentId: "sc-z3m15z-9"
-})({
-  "position": "relative",
-  "display": "block"
-});
-var _StyledSpan2 = (0, _styledComponents["default"])("span").withConfig({
-  displayName: "combobox___StyledSpan2",
-  componentId: "sc-z3m15z-10"
-})(["", ""], function (p) {
-  return p.$_css;
-});
-var _StyledSpan3 = (0, _styledComponents["default"])("span").withConfig({
-  displayName: "combobox___StyledSpan3",
-  componentId: "sc-z3m15z-11"
-})(["", ""], function (p) {
-  return p.$_css2;
-});
-var _StyledCheckIcon = (0, _styledComponents["default"])(_solid.CheckIcon).withConfig({
-  displayName: "combobox___StyledCheckIcon",
-  componentId: "sc-z3m15z-12"
-})({
-  "height": "1.25rem",
-  "width": "1.25rem"
-});

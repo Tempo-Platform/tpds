@@ -4,7 +4,6 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 exports.__esModule = true;
 exports["default"] = void 0;
 var _objectDestructuringEmpty2 = _interopRequireDefault(require("@babel/runtime/helpers/objectDestructuringEmpty"));
-var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _react = _interopRequireDefault(require("react"));
 var _ThemeContext = require("./ThemeContext");
 var ThemeToggle = function ThemeToggle(_ref) {
@@ -15,8 +14,21 @@ var ThemeToggle = function ThemeToggle(_ref) {
   function isDark() {
     return theme === 'dark';
   }
-  return /*#__PURE__*/_react["default"].createElement(_StyledButton, Object.assign({}, props, {
+  return /*#__PURE__*/_react["default"].createElement("button", Object.assign({}, props, {
     className: "theme-toggle",
+    css: {
+      "height": "1.5rem",
+      "width": "1.5rem",
+      "fill": "currentColor",
+      "color": "var(--text-primary)",
+      ":hover": {
+        "color": "var(--text-secondary)"
+      },
+      ":focus": {
+        "outline": "2px solid transparent",
+        "outlineOffset": "2px"
+      }
+    },
     onClick: function onClick() {
       return setTheme(isDark() ? 'light' : 'dark');
     }
@@ -40,19 +52,3 @@ var Moon = function Moon() {
 };
 var _default = ThemeToggle;
 exports["default"] = _default;
-var _StyledButton = (0, _styledComponents["default"])("button").withConfig({
-  displayName: "ThemeToggle___StyledButton",
-  componentId: "sc-ckmcbt-0"
-})({
-  "height": "1.5rem",
-  "width": "1.5rem",
-  "fill": "currentColor",
-  "color": "var(--text-primary)",
-  ":hover": {
-    "color": "var(--text-secondary)"
-  },
-  ":focus": {
-    "outline": "2px solid transparent",
-    "outlineOffset": "2px"
-  }
-});

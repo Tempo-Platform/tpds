@@ -3,40 +3,17 @@
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
 exports["default"] = void 0;
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styled2 = _interopRequireDefault(require("@emotion/styled"));
 var _react = _interopRequireDefault(require("react"));
 var _typography = require("../../elements/typography");
 /* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 
-var PropsTableRowElement = _styledComponents["default"].span.withConfig({
-  displayName: "PropsTable__PropsTableRowElement",
-  componentId: "sc-6yc7gf-0"
-})(function () {
+var PropsTableRowElement = _styled2["default"].span(function () {
   return [{
     "display": "grid",
     "gridTemplateColumns": "repeat(12, minmax(0, 1fr))",
     "gap": "1rem"
   }];
-});
-var _StyledPropsTableRowElement2 = (0, _styledComponents["default"])(PropsTableRowElement).withConfig({
-  displayName: "PropsTable___StyledPropsTableRowElement2",
-  componentId: "sc-6yc7gf-1"
-})({
-  "marginBottom": "1rem"
-});
-var _StyledPropsTableRowElement = (0, _styledComponents["default"])(PropsTableRowElement).withConfig({
-  displayName: "PropsTable___StyledPropsTableRowElement",
-  componentId: "sc-6yc7gf-2"
-})({
-  "marginBottom": "2rem",
-  "borderBottomWidth": "1px",
-  "--tw-border-opacity": "1",
-  "borderColor": "rgb(0 194 206 / var(--tw-border-opacity))",
-  "paddingBottom": "0.5rem",
-  ":is(.dark &)": {
-    "--tw-border-opacity": "1",
-    "borderColor": "rgb(0 194 206 / var(--tw-border-opacity))"
-  }
 });
 var defaultStyle = [{
   "gridColumn": "span 4 / span 4"
@@ -56,68 +33,14 @@ var lastPVariants = {
   skip2Columns: skip2ColumnsStyle,
   skip3Columns: skip3ColumnsStyle
 };
-var CustomP = (0, _styledComponents["default"])(_typography.P).withConfig({
-  displayName: "PropsTable__CustomP",
-  componentId: "sc-6yc7gf-3"
-})(function () {
+var CustomP = (0, _styled2["default"])(_typography.P)(function () {
   return [{
     "overflow": "hidden",
     "textOverflow": "ellipsis",
     "whiteSpace": "nowrap"
   }];
 });
-var _StyledCustomP8 = (0, _styledComponents["default"])(CustomP).withConfig({
-  displayName: "PropsTable___StyledCustomP8",
-  componentId: "sc-6yc7gf-4"
-})({
-  "gridColumn": "span 2 / span 2"
-});
-var _StyledCustomP7 = (0, _styledComponents["default"])(CustomP).withConfig({
-  displayName: "PropsTable___StyledCustomP7",
-  componentId: "sc-6yc7gf-5"
-})({
-  "gridColumn": "span 2 / span 2"
-});
-var _StyledCustomP6 = (0, _styledComponents["default"])(CustomP).withConfig({
-  displayName: "PropsTable___StyledCustomP6",
-  componentId: "sc-6yc7gf-6"
-})({
-  "gridColumn": "span 2 / span 2"
-});
-var _StyledCustomP5 = (0, _styledComponents["default"])(CustomP).withConfig({
-  displayName: "PropsTable___StyledCustomP5",
-  componentId: "sc-6yc7gf-7"
-})({
-  "gridColumn": "span 2 / span 2"
-});
-var _StyledCustomP4 = (0, _styledComponents["default"])(CustomP).withConfig({
-  displayName: "PropsTable___StyledCustomP4",
-  componentId: "sc-6yc7gf-8"
-})({
-  "gridColumn": "span 2 / span 2"
-});
-var _StyledCustomP3 = (0, _styledComponents["default"])(CustomP).withConfig({
-  displayName: "PropsTable___StyledCustomP3",
-  componentId: "sc-6yc7gf-9"
-})({
-  "gridColumn": "span 2 / span 2"
-});
-var _StyledCustomP2 = (0, _styledComponents["default"])(CustomP).withConfig({
-  displayName: "PropsTable___StyledCustomP2",
-  componentId: "sc-6yc7gf-10"
-})({
-  "gridColumn": "span 2 / span 2"
-});
-var _StyledCustomP = (0, _styledComponents["default"])(CustomP).withConfig({
-  displayName: "PropsTable___StyledCustomP",
-  componentId: "sc-6yc7gf-11"
-})({
-  "gridColumn": "span 2 / span 2"
-});
-var LastP = (0, _styledComponents["default"])(_typography.P).withConfig({
-  displayName: "PropsTable__LastP",
-  componentId: "sc-6yc7gf-12"
-})(function () {
+var LastP = (0, _styled2["default"])(_typography.P)(function () {
   return [function (_ref) {
     var _ref$variant = _ref.variant,
       variant = _ref$variant === void 0 ? 'default' : _ref$variant;
@@ -166,23 +89,65 @@ function PropsTable(_ref2) {
     _ref2$skipColumn3 = _ref2.skipColumn4,
     skipColumn4 = _ref2$skipColumn3 === void 0 ? false : _ref2$skipColumn3;
   var lastPVariant = getLastPVariant(skipColumn2, skipColumn3, skipColumn4);
-  return /*#__PURE__*/_react["default"].createElement("div", null, !omitTitle && /*#__PURE__*/_react["default"].createElement(_typography.H6, null, title || 'Props'), !omitTitle && /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement(_StyledPropsTableRowElement, null, /*#__PURE__*/_react["default"].createElement(_StyledCustomP, {
-    isBold: true
-  }, col1Name), !skipColumn2 && /*#__PURE__*/_react["default"].createElement(_StyledCustomP2, {
-    isBold: true
-  }, col2Name), !skipColumn3 && /*#__PURE__*/_react["default"].createElement(_StyledCustomP3, {
-    isBold: true
-  }, col3Name), !skipColumn4 && /*#__PURE__*/_react["default"].createElement(_StyledCustomP4, {
-    isBold: true
+  return /*#__PURE__*/_react["default"].createElement("div", null, !omitTitle && /*#__PURE__*/_react["default"].createElement(_typography.H6, null, title || 'Props'), !omitTitle && /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement(PropsTableRowElement, {
+    css: {
+      "marginBottom": "2rem",
+      "borderBottomWidth": "1px",
+      "--tw-border-opacity": "1",
+      "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))",
+      "paddingBottom": "0.5rem",
+      ":is(.dark &)": {
+        "--tw-border-opacity": "1",
+        "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))"
+      }
+    }
+  }, /*#__PURE__*/_react["default"].createElement(CustomP, {
+    isBold: true,
+    css: {
+      "gridColumn": "span 2 / span 2"
+    }
+  }, col1Name), !skipColumn2 && /*#__PURE__*/_react["default"].createElement(CustomP, {
+    isBold: true,
+    css: {
+      "gridColumn": "span 2 / span 2"
+    }
+  }, col2Name), !skipColumn3 && /*#__PURE__*/_react["default"].createElement(CustomP, {
+    isBold: true,
+    css: {
+      "gridColumn": "span 2 / span 2"
+    }
+  }, col3Name), !skipColumn4 && /*#__PURE__*/_react["default"].createElement(CustomP, {
+    isBold: true,
+    css: {
+      "gridColumn": "span 2 / span 2"
+    }
   }, col4Name), /*#__PURE__*/_react["default"].createElement(LastP, {
     isBold: true,
     variant: lastPVariant
   }, col5Name)), items.map(function (item, index) {
-    return /*#__PURE__*/_react["default"].createElement(_StyledPropsTableRowElement2, {
+    return /*#__PURE__*/_react["default"].createElement(PropsTableRowElement, {
+      css: {
+        "marginBottom": "1rem"
+      },
       key: index
-    }, /*#__PURE__*/_react["default"].createElement(_StyledCustomP5, {
+    }, /*#__PURE__*/_react["default"].createElement(CustomP, {
+      css: {
+        "gridColumn": "span 2 / span 2"
+      },
       isBold: true
-    }, item[param1Name]), !skipColumn2 && /*#__PURE__*/_react["default"].createElement(_StyledCustomP6, null, item[param2Name]), !skipColumn3 && /*#__PURE__*/_react["default"].createElement(_StyledCustomP7, null, item[param3Name]), !skipColumn4 && /*#__PURE__*/_react["default"].createElement(_StyledCustomP8, null, item[param4Name]), /*#__PURE__*/_react["default"].createElement(LastP, {
+    }, item[param1Name]), !skipColumn2 && /*#__PURE__*/_react["default"].createElement(CustomP, {
+      css: {
+        "gridColumn": "span 2 / span 2"
+      }
+    }, item[param2Name]), !skipColumn3 && /*#__PURE__*/_react["default"].createElement(CustomP, {
+      css: {
+        "gridColumn": "span 2 / span 2"
+      }
+    }, item[param3Name]), !skipColumn4 && /*#__PURE__*/_react["default"].createElement(CustomP, {
+      css: {
+        "gridColumn": "span 2 / span 2"
+      }
+    }, item[param4Name]), /*#__PURE__*/_react["default"].createElement(LastP, {
       variant: lastPVariant
     }, item[param5Name]));
   }));

@@ -1,18 +1,13 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-var _typeof = require("@babel/runtime/helpers/typeof");
 exports.__esModule = true;
 exports.Button = void 0;
 var _taggedTemplateLiteralLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteralLoose"));
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
+var _react = require("@emotion/react");
+var _styled2 = _interopRequireDefault(require("@emotion/styled"));
 var _templateObject, _templateObject2;
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-var Button = _styledComponents["default"].button.withConfig({
-  displayName: "buttons__Button",
-  componentId: "sc-a6v1fr-0"
-})(function (_ref) {
+var Button = _styled2["default"].button(function (_ref) {
   var label = _ref.label,
     isSmall = _ref.isSmall,
     isTiny = _ref.isTiny,
@@ -40,7 +35,7 @@ var Button = _styledComponents["default"].button.withConfig({
       "outline": "2px solid transparent",
       "outlineOffset": "2px"
     }
-  }, (0, _styledComponents.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n      font-family: 'Inter';\n      align-items: center;\n      justify-content: center;\n      user-select: none;\n      cursor: pointer;\n      .icon-before {\n        position: relative;\n      }\n      .icon-after {\n        position: relative;\n      }\n      .icon-before * {\n        fill: ", ";\n      }\n      .icon-after * {\n        fill: ", ";\n      }\n    "])), iconColor ? iconColor : 'auto', iconColor ? iconColor : 'auto'), isUppercase && [(0, _styledComponents.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        text-transform: uppercase;\n      "])))], function (_ref2) {
+  }, (0, _react.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n      font-family: 'Inter';\n      align-items: center;\n      justify-content: center;\n      user-select: none;\n      cursor: pointer;\n      .icon-before {\n        position: relative;\n      }\n      .icon-after {\n        position: relative;\n      }\n      .icon-before * {\n        fill: ", ";\n      }\n      .icon-after * {\n        fill: ", ";\n      }\n    "])), iconColor ? iconColor : 'auto', iconColor ? iconColor : 'auto'), isUppercase && [(0, _react.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n        text-transform: uppercase;\n      "])))], function (_ref2) {
     var _ref2$variant = _ref2.variant,
       variant = _ref2$variant === void 0 ? 'default' : _ref2$variant;
     return buttonVariants[variant];
@@ -123,7 +118,7 @@ var successStyle = [{
   }
 }, {
   "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(0 194 206 / var(--tw-bg-opacity))",
+  "backgroundColor": "rgb(50 205 50 / var(--tw-bg-opacity))",
   ":hover": {
     "backgroundColor": "var(--bg-success-hover)"
   },

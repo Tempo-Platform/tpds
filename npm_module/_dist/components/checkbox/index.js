@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 exports.__esModule = true;
 exports["default"] = void 0;
 var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styled2 = _interopRequireDefault(require("@emotion/styled"));
 var _react = _interopRequireDefault(require("react"));
 var _excluded = ["active", "partial", "disabled"];
 function Checkbox(_ref) {
@@ -18,10 +18,7 @@ function Checkbox(_ref) {
     className: active ? 'is-active' : 'is-off'
   }, props), active && !partial && /*#__PURE__*/_react["default"].createElement(CheckIcon, null), active && partial && /*#__PURE__*/_react["default"].createElement(MinusIcon, null));
 }
-var CheckboxRoot = _styledComponents["default"].div.withConfig({
-  displayName: "checkbox__CheckboxRoot",
-  componentId: "sc-10spodz-0"
-})(function (_ref2) {
+var CheckboxRoot = _styled2["default"].div(function (_ref2) {
   var active = _ref2.active,
     disabled = _ref2.disabled;
   return [{
@@ -44,7 +41,7 @@ var CheckboxRoot = _styledComponents["default"].div.withConfig({
     "borderColor": "var(--border-body)",
     ":hover": {
       "--tw-border-opacity": "1",
-      "borderColor": "rgb(0 194 206 / var(--tw-border-opacity))"
+      "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))"
     }
   }, {
     "borderColor": "var(--border-checkbox-unselected-enabled)",
@@ -85,7 +82,16 @@ function CheckIcon(_ref3) {
     height: "6",
     fill: "transparent",
     viewBox: "0 0 8 6"
-  }, /*#__PURE__*/_react["default"].createElement(_StyledPath, {
+  }, /*#__PURE__*/_react["default"].createElement("path", {
+    css: {
+      "fill": "currentColor",
+      "--tw-text-opacity": "1",
+      "color": "rgb(255 255 255 / var(--tw-text-opacity))",
+      ":is(.dark &)": {
+        "--tw-text-opacity": "1",
+        "color": "rgb(0 0 0 / var(--tw-text-opacity))"
+      }
+    },
     d: "M7.25 1.266c.25-.25.25-.641 0-.891a.632.632 0 00-.875 0L2.812 3.938 1.25 2.375a.632.632 0 00-.875 0c-.25.25-.25.64 0 .89l2 2c.11.126.281.188.438.188a.617.617 0 00.437-.187l4-4z"
   }));
 }
@@ -96,33 +102,18 @@ function MinusIcon() {
     height: "2",
     fill: "transparent",
     viewBox: "0 0 10 2"
-  }, /*#__PURE__*/_react["default"].createElement(_StyledPath2, {
+  }, /*#__PURE__*/_react["default"].createElement("path", {
+    css: {
+      "fill": "currentColor",
+      "--tw-text-opacity": "1",
+      "color": "rgb(255 255 255 / var(--tw-text-opacity))",
+      ":is(.dark &)": {
+        "--tw-text-opacity": "1",
+        "color": "rgb(0 0 0 / var(--tw-text-opacity))"
+      }
+    },
     d: "M10 1a.627.627 0 00-.625-.625H.625a.64.64 0 00-.625.64.6.6 0 00.61.61h8.75A.64.64 0 0010 1z"
   }));
 }
 var _default = Checkbox;
 exports["default"] = _default;
-var _StyledPath = (0, _styledComponents["default"])("path").withConfig({
-  displayName: "checkbox___StyledPath",
-  componentId: "sc-10spodz-1"
-})({
-  "fill": "currentColor",
-  "--tw-text-opacity": "1",
-  "color": "rgb(255 255 255 / var(--tw-text-opacity))",
-  ":is(.dark &)": {
-    "--tw-text-opacity": "1",
-    "color": "rgb(0 0 0 / var(--tw-text-opacity))"
-  }
-});
-var _StyledPath2 = (0, _styledComponents["default"])("path").withConfig({
-  displayName: "checkbox___StyledPath2",
-  componentId: "sc-10spodz-2"
-})({
-  "fill": "currentColor",
-  "--tw-text-opacity": "1",
-  "color": "rgb(255 255 255 / var(--tw-text-opacity))",
-  ":is(.dark &)": {
-    "--tw-text-opacity": "1",
-    "color": "rgb(0 0 0 / var(--tw-text-opacity))"
-  }
-});

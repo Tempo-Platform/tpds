@@ -5,7 +5,6 @@ var _typeof = require("@babel/runtime/helpers/typeof");
 exports.__esModule = true;
 exports["default"] = void 0;
 var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _react = _interopRequireWildcard(require("react"));
 var _solid = require("@heroicons/react/solid");
 var _excluded = ["ariaHidden"],
@@ -32,7 +31,19 @@ var IconsDropdown = {
     var _ref2$ariaHidden = _ref2.ariaHidden,
       ariaHidden = _ref2$ariaHidden === void 0 ? true : _ref2$ariaHidden,
       rest = (0, _objectWithoutPropertiesLoose2["default"])(_ref2, _excluded2);
-    return /*#__PURE__*/_react["default"].createElement(_StyledChevronDownIcon, Object.assign({
+    return /*#__PURE__*/_react["default"].createElement(_solid.ChevronDownIcon, Object.assign({
+      css: {
+        "marginRight": "-0.25rem",
+        "marginLeft": "0.5rem",
+        "height": "1.25rem",
+        "width": "1.25rem",
+        "--tw-text-opacity": "1",
+        "color": "rgb(183 138 247 / var(--tw-text-opacity))",
+        ":hover": {
+          "--tw-text-opacity": "1",
+          "color": "rgb(206 176 250 / var(--tw-text-opacity))"
+        }
+      },
       "aria-hidden": ariaHidden
     }, rest));
   },
@@ -40,7 +51,10 @@ var IconsDropdown = {
     var _ref3$ariaHidden = _ref3.ariaHidden,
       ariaHidden = _ref3$ariaHidden === void 0 ? true : _ref3$ariaHidden,
       rest = (0, _objectWithoutPropertiesLoose2["default"])(_ref3, _excluded3);
-    return /*#__PURE__*/_react["default"].createElement(_StyledChevronRightIcon, Object.assign({
+    return /*#__PURE__*/_react["default"].createElement(_solid.ChevronRightIcon, Object.assign({
+      css: {
+        "marginLeft": "0.25rem"
+      },
       "aria-hidden": ariaHidden
     }, rest));
   },
@@ -197,24 +211,3 @@ var IconsSelect = {
 var Icons = Object.assign({}, IconsDropdown, IconsSelect);
 var _default = Icons;
 exports["default"] = _default;
-var _StyledChevronDownIcon = (0, _styledComponents["default"])(_solid.ChevronDownIcon).withConfig({
-  displayName: "HeroIcons___StyledChevronDownIcon",
-  componentId: "sc-7nr2b5-0"
-})({
-  "marginRight": "-0.25rem",
-  "marginLeft": "0.5rem",
-  "height": "1.25rem",
-  "width": "1.25rem",
-  "--tw-text-opacity": "1",
-  "color": "rgb(183 138 247 / var(--tw-text-opacity))",
-  ":hover": {
-    "--tw-text-opacity": "1",
-    "color": "rgb(206 176 250 / var(--tw-text-opacity))"
-  }
-});
-var _StyledChevronRightIcon = (0, _styledComponents["default"])(_solid.ChevronRightIcon).withConfig({
-  displayName: "HeroIcons___StyledChevronRightIcon",
-  componentId: "sc-7nr2b5-1"
-})({
-  "marginLeft": "0.25rem"
-});

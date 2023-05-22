@@ -1,17 +1,15 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-var _typeof = require("@babel/runtime/helpers/typeof");
 exports.__esModule = true;
 exports["default"] = exports.SpinnerBlock = void 0;
 var _taggedTemplateLiteralLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteralLoose"));
 var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
-var _react = _interopRequireDefault(require("react"));
+var _react = require("@emotion/react");
+var _styled2 = _interopRequireDefault(require("@emotion/styled"));
+var _react2 = _interopRequireDefault(require("react"));
 var _templateObject;
 var _excluded = ["color", "radius", "style", "duration", "strokeWidth", "center"];
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function Spinner(_ref) {
   var color = _ref.color,
     radius = _ref.radius,
@@ -26,21 +24,30 @@ function Spinner(_ref) {
     styles.textAlign = 'center';
   }
   var Path = getPathElement(color);
-  return /*#__PURE__*/_react["default"].createElement("span", {
+  return /*#__PURE__*/_react2["default"].createElement("span", {
     style: styles
-  }, /*#__PURE__*/_react["default"].createElement(_StyledSvg, Object.assign({}, props, {
+  }, /*#__PURE__*/_react2["default"].createElement("svg", Object.assign({}, props, {
     viewBox: "0 0 42 42",
+    css: (0, _react.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n          @keyframes rotate {\n            100% {transform: rotate(360deg);}\n          }\n          animation-name: rotate;\n          animation-timing-function: linear;\n          display: inline-block;\n          animation-iteration-count: infinite;\n        "]))),
     style: {
       animationDuration: (duration ? duration : 900) + "ms",
       width: (radius ? radius : 40) + "px",
       height: (radius ? radius : 40) + "px"
-    },
-    $_css2: (0, _styledComponents.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n          @keyframes rotate {\n            100% {transform: rotate(360deg);}\n          }\n          animation-name: rotate;\n          animation-timing-function: linear;\n          display: inline-block;\n          animation-iteration-count: infinite;\n        "])))
-  }), /*#__PURE__*/_react["default"].createElement("g", {
+    }
+  }), /*#__PURE__*/_react2["default"].createElement("g", {
     fill: "none",
     transform: "translate(3 3)",
     strokeWidth: "3"
-  }, /*#__PURE__*/_react["default"].createElement(_StyledCircle, {
+  }, /*#__PURE__*/_react2["default"].createElement("circle", {
+    css: {
+      "stroke": "currentColor",
+      "--tw-text-opacity": "1",
+      "color": "rgb(223 225 226 / var(--tw-text-opacity))",
+      ":is(.dark &)": {
+        "--tw-text-opacity": "1",
+        "color": "rgb(62 67 71 / var(--tw-text-opacity))"
+      }
+    },
     cx: "18",
     cy: "18",
     r: "18"
@@ -48,10 +55,7 @@ function Spinner(_ref) {
 }
 var _default = Spinner;
 exports["default"] = _default;
-var SpinnerBlock = _styledComponents["default"].div.withConfig({
-  displayName: "spinner__SpinnerBlock",
-  componentId: "sc-16n5twj-0"
-})({
+var SpinnerBlock = _styled2["default"].div({
   display: 'flex',
   width: '100%',
   justifyContent: 'center',
@@ -59,35 +63,64 @@ var SpinnerBlock = _styledComponents["default"].div.withConfig({
 });
 exports.SpinnerBlock = SpinnerBlock;
 function DefaultPath() {
-  return /*#__PURE__*/_react["default"].createElement(_StyledPath, {
+  return /*#__PURE__*/_react2["default"].createElement("path", {
+    css: {
+      "stroke": "currentColor",
+      "--tw-text-opacity": "1",
+      "color": "rgb(0 0 0 / var(--tw-text-opacity))",
+      ":is(.dark &)": {
+        "--tw-text-opacity": "1",
+        "color": "rgb(255 255 255 / var(--tw-text-opacity))"
+      }
+    },
     d: "M36 18c0-9.94-8.06-18-18-18",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   });
 }
 function BluePath() {
-  return /*#__PURE__*/_react["default"].createElement(_StyledPath2, {
+  return /*#__PURE__*/_react2["default"].createElement("path", {
+    css: {
+      "stroke": "currentColor",
+      "--tw-text-opacity": "1",
+      "color": "rgb(25 114 245 / var(--tw-text-opacity))"
+    },
     d: "M36 18c0-9.94-8.06-18-18-18",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   });
 }
 function GreenPath() {
-  return /*#__PURE__*/_react["default"].createElement(_StyledPath3, {
+  return /*#__PURE__*/_react2["default"].createElement("path", {
+    css: {
+      "stroke": "currentColor",
+      "--tw-text-opacity": "1",
+      "color": "rgb(50 205 50 / var(--tw-text-opacity))"
+    },
     d: "M36 18c0-9.94-8.06-18-18-18",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   });
 }
 function RedPath() {
-  return /*#__PURE__*/_react["default"].createElement(_StyledPath4, {
+  return /*#__PURE__*/_react2["default"].createElement("path", {
+    css: {
+      "stroke": "currentColor",
+      "--tw-text-opacity": "1",
+      "color": "rgb(235 87 87 / var(--tw-text-opacity))"
+    },
     d: "M36 18c0-9.94-8.06-18-18-18",
     strokeLinecap: "round",
     strokeLinejoin: "round"
   });
 }
 function OrangePath() {
-  return /*#__PURE__*/_react["default"].createElement(_StyledPath5, {
+  return /*#__PURE__*/_react2["default"].createElement("path", {
+    css: {
+      "stroke": "currentColor",
+      "--tw-text-opacity": "1",
+      "color": "rgb(240 135 39 / var(--tw-text-opacity))"
+    },
     d: "M36 18c0-9.94-8.06-18-18-18",
     strokeLinecap: "round",
     strokeLinejoin: "round"
@@ -96,76 +129,14 @@ function OrangePath() {
 var getPathElement = function getPathElement(color) {
   switch (color) {
     case 'green':
-      return /*#__PURE__*/_react["default"].createElement(GreenPath, null);
+      return /*#__PURE__*/_react2["default"].createElement(GreenPath, null);
     case 'blue':
-      return /*#__PURE__*/_react["default"].createElement(BluePath, null);
+      return /*#__PURE__*/_react2["default"].createElement(BluePath, null);
     case 'orange':
-      return /*#__PURE__*/_react["default"].createElement(OrangePath, null);
+      return /*#__PURE__*/_react2["default"].createElement(OrangePath, null);
     case 'red':
-      return /*#__PURE__*/_react["default"].createElement(RedPath, null);
+      return /*#__PURE__*/_react2["default"].createElement(RedPath, null);
     default:
-      return /*#__PURE__*/_react["default"].createElement(DefaultPath, null);
+      return /*#__PURE__*/_react2["default"].createElement(DefaultPath, null);
   }
 };
-var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
-  displayName: "spinner___StyledSvg",
-  componentId: "sc-16n5twj-1"
-})(["", ""], function (p) {
-  return p.$_css2;
-});
-var _StyledCircle = (0, _styledComponents["default"])("circle").withConfig({
-  displayName: "spinner___StyledCircle",
-  componentId: "sc-16n5twj-2"
-})({
-  "stroke": "currentColor",
-  "--tw-text-opacity": "1",
-  "color": "rgb(223 225 226 / var(--tw-text-opacity))",
-  ":is(.dark &)": {
-    "--tw-text-opacity": "1",
-    "color": "rgb(62 67 71 / var(--tw-text-opacity))"
-  }
-});
-var _StyledPath = (0, _styledComponents["default"])("path").withConfig({
-  displayName: "spinner___StyledPath",
-  componentId: "sc-16n5twj-3"
-})({
-  "stroke": "currentColor",
-  "--tw-text-opacity": "1",
-  "color": "rgb(0 0 0 / var(--tw-text-opacity))",
-  ":is(.dark &)": {
-    "--tw-text-opacity": "1",
-    "color": "rgb(255 255 255 / var(--tw-text-opacity))"
-  }
-});
-var _StyledPath2 = (0, _styledComponents["default"])("path").withConfig({
-  displayName: "spinner___StyledPath2",
-  componentId: "sc-16n5twj-4"
-})({
-  "stroke": "currentColor",
-  "--tw-text-opacity": "1",
-  "color": "rgb(25 114 245 / var(--tw-text-opacity))"
-});
-var _StyledPath3 = (0, _styledComponents["default"])("path").withConfig({
-  displayName: "spinner___StyledPath3",
-  componentId: "sc-16n5twj-5"
-})({
-  "stroke": "currentColor",
-  "--tw-text-opacity": "1",
-  "color": "rgb(0 194 206 / var(--tw-text-opacity))"
-});
-var _StyledPath4 = (0, _styledComponents["default"])("path").withConfig({
-  displayName: "spinner___StyledPath4",
-  componentId: "sc-16n5twj-6"
-})({
-  "stroke": "currentColor",
-  "--tw-text-opacity": "1",
-  "color": "rgb(235 87 87 / var(--tw-text-opacity))"
-});
-var _StyledPath5 = (0, _styledComponents["default"])("path").withConfig({
-  displayName: "spinner___StyledPath5",
-  componentId: "sc-16n5twj-7"
-})({
-  "stroke": "currentColor",
-  "--tw-text-opacity": "1",
-  "color": "rgb(240 135 39 / var(--tw-text-opacity))"
-});

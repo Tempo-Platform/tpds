@@ -4,7 +4,6 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 exports.__esModule = true;
 exports["default"] = void 0;
 var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _react = _interopRequireDefault(require("react"));
 var _layout = require("../../elements/layout");
 var _excluded = ["children", "containerVariant"];
@@ -13,36 +12,31 @@ var HeroBlock = function HeroBlock(_ref) {
     _ref$containerVariant = _ref.containerVariant,
     containerVariant = _ref$containerVariant === void 0 ? 'large' : _ref$containerVariant,
     props = (0, _objectWithoutPropertiesLoose2["default"])(_ref, _excluded);
-  return /*#__PURE__*/_react["default"].createElement(_StyledSection, props, /*#__PURE__*/_react["default"].createElement(_StyledContainer, {
-    variant: containerVariant
+  return /*#__PURE__*/_react["default"].createElement(_layout.Section, Object.assign({}, props, {
+    css: {
+      "height": "300px",
+      "@media (min-width: 768px)": {
+        "height": "350px"
+      },
+      "@media (min-width: 1024px)": {
+        "height": "400px"
+      },
+      "@media (min-width: 1280px)": {
+        "height": "450px"
+      },
+      "@media (min-width: 1536px)": {
+        "height": "500px"
+      }
+    }
+  }), /*#__PURE__*/_react["default"].createElement(_layout.Container, {
+    variant: containerVariant,
+    css: {
+      "display": "flex",
+      "height": "100%",
+      "flexDirection": "column",
+      "justifyContent": "center"
+    }
   }, children));
 };
 var _default = HeroBlock;
 exports["default"] = _default;
-var _StyledSection = (0, _styledComponents["default"])(_layout.Section).withConfig({
-  displayName: "Hero___StyledSection",
-  componentId: "sc-ww0j4p-0"
-})({
-  "height": "300px",
-  "@media (min-width: 768px)": {
-    "height": "350px"
-  },
-  "@media (min-width: 1024px)": {
-    "height": "400px"
-  },
-  "@media (min-width: 1280px)": {
-    "height": "450px"
-  },
-  "@media (min-width: 1536px)": {
-    "height": "500px"
-  }
-});
-var _StyledContainer = (0, _styledComponents["default"])(_layout.Container).withConfig({
-  displayName: "Hero___StyledContainer",
-  componentId: "sc-ww0j4p-1"
-})({
-  "display": "flex",
-  "height": "100%",
-  "flexDirection": "column",
-  "justifyContent": "center"
-});

@@ -1,12 +1,14 @@
-import tw from 'twin.macro'
-import { createGlobalStyle } from 'styled-components'
+import React from 'react'
+import { Global, css } from '@emotion/react'
+import tw, { GlobalStyles as BaseStyles } from 'twin.macro'
 import tokens from '../tokens/index.json'
+
 const colors = tokens.colors
 const colorPalettes = colors.color_palettes
 const colorsDarkTheme = colors.dark
 const colorsLightTheme = colors.light
 
-const TPDSColors = createGlobalStyle`
+const customStyles = css`
   .light {
     color-scheme: light;
     --bg-body: ${colorsLightTheme.body_bg};
@@ -72,7 +74,7 @@ const TPDSColors = createGlobalStyle`
     --border-button-danger: ${colorsLightTheme.buttons.danger.border.enabled};
     --border-button-danger-hover: ${colorsLightTheme.buttons.danger.border.hover};
     --border-button-danger-active: ${colorsLightTheme.buttons.danger.border.active};
-    
+
     --bg-input: ${colorsLightTheme.input.bg.enabled};
     --bg-input-focus: ${colorsLightTheme.input.bg.enabled};
     --bg-input-hover: ${colorsLightTheme.input.bg.hover};
@@ -172,7 +174,7 @@ const TPDSColors = createGlobalStyle`
     --border-button-danger: ${colorsDarkTheme.buttons.danger.border.enabled};
     --border-button-danger-hover: ${colorsDarkTheme.buttons.danger.border.hover};
     --border-button-danger-active: ${colorsDarkTheme.buttons.danger.border.active};
-    
+
     --bg-input: ${colorsDarkTheme.input.bg.enabled};
     --bg-input-focus: ${colorsDarkTheme.input.bg.enabled};
     --bg-input-hover: ${colorsDarkTheme.input.bg.hover};
@@ -213,5 +215,11 @@ const TPDSColors = createGlobalStyle`
   }
 `
 
+const TPDSColors = () => (
+  <>
+    <BaseStyles />
+    <Global styles={customStyles} />
+  </>
+)
 
 export default TPDSColors

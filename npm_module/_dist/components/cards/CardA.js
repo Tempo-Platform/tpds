@@ -1,19 +1,17 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-var _typeof = require("@babel/runtime/helpers/typeof");
 exports.__esModule = true;
 exports.CardA = CardA;
 var _taggedTemplateLiteralLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteralLoose"));
 var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
-var _react = _interopRequireDefault(require("react"));
+var _react = require("@emotion/react");
+var _styled2 = _interopRequireDefault(require("@emotion/styled"));
+var _react2 = _interopRequireDefault(require("react"));
 var _typography = require("../../elements/typography");
 var _buttons = require("../buttons");
 var _templateObject;
 var _excluded = ["imgSrc", "imgAlt", "headerText", "descriptionText", "children", "linkURL", "linkClass", "external"];
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function CardA(_ref) {
   var imgSrc = _ref.imgSrc,
     imgAlt = _ref.imgAlt,
@@ -25,39 +23,45 @@ function CardA(_ref) {
     external = _ref.external,
     props = (0, _objectWithoutPropertiesLoose2["default"])(_ref, _excluded);
   if (!linkURL) {
-    return /*#__PURE__*/_react["default"].createElement(HoverlessRoot, props, imgSrc && /*#__PURE__*/_react["default"].createElement(Image, {
+    return /*#__PURE__*/_react2["default"].createElement(HoverlessRoot, props, imgSrc && /*#__PURE__*/_react2["default"].createElement(Image, {
       src: imgSrc,
       alt: imgAlt || headerText || 'image'
-    }), headerText && /*#__PURE__*/_react["default"].createElement(HeaderSection, null, /*#__PURE__*/_react["default"].createElement(Header, {
+    }), headerText && /*#__PURE__*/_react2["default"].createElement(HeaderSection, null, /*#__PURE__*/_react2["default"].createElement(Header, {
       isBold: true
-    }, headerText)), descriptionText && /*#__PURE__*/_react["default"].createElement(Description, null, descriptionText), children && /*#__PURE__*/_react["default"].createElement(_StyledDiv, null, children));
+    }, headerText)), descriptionText && /*#__PURE__*/_react2["default"].createElement(Description, null, descriptionText), children && /*#__PURE__*/_react2["default"].createElement("div", {
+      css: {
+        "marginTop": "1rem"
+      }
+    }, children));
   }
   var LinkElement = ExternalA;
   if (!external) {
     LinkElement = linkClass;
   }
-  return /*#__PURE__*/_react["default"].createElement(LinkElement, {
+  return /*#__PURE__*/_react2["default"].createElement(LinkElement, {
     to: linkURL,
     href: linkURL,
     target: external ? '_blank' : null,
     rel: external ? "noreferrer" : null
-  }, /*#__PURE__*/_react["default"].createElement(Root, props, imgSrc && /*#__PURE__*/_react["default"].createElement(Image, {
+  }, /*#__PURE__*/_react2["default"].createElement(Root, props, imgSrc && /*#__PURE__*/_react2["default"].createElement(Image, {
     src: imgSrc,
     alt: imgAlt || headerText || 'image'
-  }), headerText && /*#__PURE__*/_react["default"].createElement(HeaderSection, null, /*#__PURE__*/_react["default"].createElement(Header, {
+  }), headerText && /*#__PURE__*/_react2["default"].createElement(HeaderSection, null, /*#__PURE__*/_react2["default"].createElement(Header, {
     isBold: true
-  }, headerText), external && /*#__PURE__*/_react["default"].createElement(_StyledExternalLinkIcon, null)), descriptionText && /*#__PURE__*/_react["default"].createElement(Description, null, descriptionText), children && /*#__PURE__*/_react["default"].createElement(_StyledDiv2, null, children)));
+  }, headerText), external && /*#__PURE__*/_react2["default"].createElement(_buttons.ExternalLinkIcon, {
+    css: {
+      "marginLeft": "16px"
+    }
+  })), descriptionText && /*#__PURE__*/_react2["default"].createElement(Description, null, descriptionText), children && /*#__PURE__*/_react2["default"].createElement("div", {
+    css: {
+      "marginTop": "1rem"
+    }
+  }, children)));
 }
-var ExternalA = _styledComponents["default"].a.withConfig({
-  displayName: "CardA__ExternalA",
-  componentId: "sc-cpc00c-0"
-})(function () {
+var ExternalA = _styled2["default"].a(function () {
   return [];
 });
-var Root = _styledComponents["default"].div.withConfig({
-  displayName: "CardA__Root",
-  componentId: "sc-cpc00c-1"
-})(function () {
+var Root = _styled2["default"].div(function () {
   return [{
     "borderRadius": "8px",
     "borderWidth": "1px",
@@ -66,9 +70,9 @@ var Root = _styledComponents["default"].div.withConfig({
     "padding": "8px",
     ":hover": {
       "--tw-border-opacity": "1",
-      "borderColor": "rgb(0 194 206 / var(--tw-border-opacity))",
+      "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))",
       "--tw-text-opacity": "1",
-      "color": "rgb(0 194 206 / var(--tw-text-opacity))"
+      "color": "rgb(50 205 50 / var(--tw-text-opacity))"
     },
     "@media (min-width: 1024px)": {
       "padding": "16px"
@@ -78,10 +82,7 @@ var Root = _styledComponents["default"].div.withConfig({
     }
   }];
 });
-var HoverlessRoot = _styledComponents["default"].div.withConfig({
-  displayName: "CardA__HoverlessRoot",
-  componentId: "sc-cpc00c-2"
-})(function () {
+var HoverlessRoot = _styled2["default"].div(function () {
   return [{
     "borderRadius": "8px",
     "borderWidth": "1px",
@@ -96,20 +97,14 @@ var HoverlessRoot = _styledComponents["default"].div.withConfig({
     }
   }];
 });
-var Image = _styledComponents["default"].img.withConfig({
-  displayName: "CardA__Image",
-  componentId: "sc-cpc00c-3"
-})(function () {
+var Image = _styled2["default"].img(function () {
   return [{
     "width": "100%",
     "borderRadius": "6px",
     "paddingBottom": "24px"
   }];
 });
-var HeaderSection = _styledComponents["default"].div.withConfig({
-  displayName: "CardA__HeaderSection",
-  componentId: "sc-cpc00c-4"
-})(function () {
+var HeaderSection = _styled2["default"].div(function () {
   return [{
     "display": "flex",
     "width": "100%",
@@ -117,38 +112,14 @@ var HeaderSection = _styledComponents["default"].div.withConfig({
     "paddingBottom": "16px"
   }];
 });
-var Header = (0, _styledComponents["default"])(_typography.H6).withConfig({
-  displayName: "CardA__Header",
-  componentId: "sc-cpc00c-5"
-})(function () {
+var Header = (0, _styled2["default"])(_typography.H6)(function () {
   return [{
     "lineHeight": "1"
-  }, (0, _styledComponents.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n    color: inherit;\n  "])))];
+  }, (0, _react.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n    color: inherit;\n  "])))];
 });
-var Description = (0, _styledComponents["default"])(_typography.P).withConfig({
-  displayName: "CardA__Description",
-  componentId: "sc-cpc00c-6"
-})(function () {
+var Description = (0, _styled2["default"])(_typography.P)(function () {
   return [{
     "lineHeight": "1.25",
     "color": "var(--text-secondary)"
   }];
-});
-var _StyledDiv = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "CardA___StyledDiv",
-  componentId: "sc-cpc00c-7"
-})({
-  "marginTop": "1rem"
-});
-var _StyledExternalLinkIcon = (0, _styledComponents["default"])(_buttons.ExternalLinkIcon).withConfig({
-  displayName: "CardA___StyledExternalLinkIcon",
-  componentId: "sc-cpc00c-8"
-})({
-  "marginLeft": "16px"
-});
-var _StyledDiv2 = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "CardA___StyledDiv2",
-  componentId: "sc-cpc00c-9"
-})({
-  "marginTop": "1rem"
 });

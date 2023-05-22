@@ -4,7 +4,6 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 var _typeof = require("@babel/runtime/helpers/typeof");
 exports.__esModule = true;
 exports["default"] = Modal;
-var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _react = _interopRequireWildcard(require("react"));
 var _react2 = require("@headlessui/react");
 var _Transition = _interopRequireDefault(require("../../system/Transition"));
@@ -45,10 +44,57 @@ function Modal(_ref) {
   (0, _react.useEffect)(function () {
     setIsOpen(showOpen);
   }, [showOpen]);
-  return /*#__PURE__*/_react["default"].createElement("div", null, (showOpen || isOpen) && /*#__PURE__*/_react["default"].createElement(_StyledDialog, {
+  return /*#__PURE__*/_react["default"].createElement("div", null, (showOpen || isOpen) && /*#__PURE__*/_react["default"].createElement(_react2.Dialog, {
+    css: {
+      "position": "fixed",
+      "inset": "0px",
+      "zIndex": "10",
+      "overflowY": "auto"
+    },
     onClose: closeModal,
     open: showOpen || isOpen
-  }, /*#__PURE__*/_react["default"].createElement(_StyledDiv, null, /*#__PURE__*/_react["default"].createElement(_StyledDialogOverlay, overlayProps), /*#__PURE__*/_react["default"].createElement(CenterAlignmentHack, null), /*#__PURE__*/_react["default"].createElement(_StyledDiv2, null, /*#__PURE__*/_react["default"].createElement(Content, {
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    css: {
+      "minHeight": "100vh",
+      "paddingLeft": "1rem",
+      "paddingRight": "1rem",
+      "textAlign": "center"
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_react2.Dialog.Overlay, Object.assign({
+    css: {
+      "position": "fixed",
+      "inset": "0px",
+      "--tw-bg-opacity": "1",
+      "backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))",
+      "opacity": "0.5"
+    }
+  }, overlayProps)), /*#__PURE__*/_react["default"].createElement(CenterAlignmentHack, null), /*#__PURE__*/_react["default"].createElement("div", {
+    css: {
+      "marginTop": "2rem",
+      "marginBottom": "2rem",
+      "display": "inline-block",
+      "width": "100%",
+      "maxWidth": "28rem",
+      "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
+      "overflow": "hidden",
+      "borderColor": "var(--border-window)",
+      "backgroundColor": "var(--bg-window)",
+      "paddingLeft": "1.5rem",
+      "paddingRight": "1.5rem",
+      "paddingTop": "1rem",
+      "paddingBottom": "1rem",
+      "textAlign": "left",
+      "verticalAlign": "middle",
+      "--tw-text-opacity": "1",
+      "color": "rgb(117 126 132 / var(--tw-text-opacity))",
+      "--tw-shadow": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+      "--tw-shadow-colored": "0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color)",
+      "boxShadow": "var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)",
+      "transitionProperty": "all",
+      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "transitionDuration": "150ms"
+    }
+  }, /*#__PURE__*/_react["default"].createElement(Content, {
     title: title,
     description: description,
     content: content,
@@ -62,9 +108,12 @@ function Modal(_ref) {
   })))), clickElement &&
   /*#__PURE__*/
   /* eslint-disable-next-line */
-  _react["default"].createElement(_StyledDiv3, {
+  _react["default"].createElement("div", {
     onClick: function onClick() {
       return setIsOpen(!isOpen);
+    },
+    css: {
+      "display": "inline-flex"
     }
   }, clickElement));
 }
@@ -93,9 +142,31 @@ function Content(_ref2) {
   };
   return /*#__PURE__*/_react["default"].createElement(_react.Fragment, null, /*#__PURE__*/_react["default"].createElement(_react2.Dialog.Title, Object.assign({
     as: _typography.H6
-  }, titleProps), title), description && /*#__PURE__*/_react["default"].createElement(_StyledDialogDescription, Object.assign({}, descriptionProps, {
-    as: _typography.P
-  }), description), /*#__PURE__*/_react["default"].createElement(_StyledSeparator, null), /*#__PURE__*/_react["default"].createElement(_StyledDiv4, null, content), /*#__PURE__*/_react["default"].createElement(_StyledDiv5, null, options.map(function (option) {
+  }, titleProps), title), description && /*#__PURE__*/_react["default"].createElement(_react2.Dialog.Description, Object.assign({}, descriptionProps, {
+    as: _typography.P,
+    css: {
+      "lineHeight": "1.25",
+      "color": "var(--text-tertiary)"
+    }
+  }), description), /*#__PURE__*/_react["default"].createElement(_layout.Separator, {
+    css: {
+      "marginTop": "16px",
+      "marginBottom": "16px"
+    }
+  }), /*#__PURE__*/_react["default"].createElement("div", {
+    css: {
+      "fontSize": "0.8125rem",
+      "--tw-text-opacity": "1",
+      "color": "rgb(201 205 207 / var(--tw-text-opacity))"
+    }
+  }, content), /*#__PURE__*/_react["default"].createElement("div", {
+    css: {
+      "marginTop": "2rem",
+      "display": "flex",
+      "justifyContent": "flex-end",
+      "gap": "1rem"
+    }
+  }, options.map(function (option) {
     return /*#__PURE__*/_react["default"].createElement(_buttons.Button, {
       key: option.label,
       onClick: function onClick() {
@@ -108,7 +179,12 @@ function Content(_ref2) {
 
 /* This element is to trick the browser into centering the modal contents. */
 function CenterAlignmentHack() {
-  return /*#__PURE__*/_react["default"].createElement(_StyledSpan, {
+  return /*#__PURE__*/_react["default"].createElement("span", {
+    css: {
+      "display": "inline-block",
+      "height": "100vh",
+      "verticalAlign": "middle"
+    },
     "aria-hidden": "true"
   }, "\u200B");
 }
@@ -168,104 +244,3 @@ var contentTransitionProps = {
     "opacity": "0"
   }
 };
-var _StyledDialog = (0, _styledComponents["default"])(_react2.Dialog).withConfig({
-  displayName: "modal___StyledDialog",
-  componentId: "sc-14wlk1c-0"
-})({
-  "position": "fixed",
-  "inset": "0px",
-  "zIndex": "10",
-  "overflowY": "auto"
-});
-var _StyledDiv = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "modal___StyledDiv",
-  componentId: "sc-14wlk1c-1"
-})({
-  "minHeight": "100vh",
-  "paddingLeft": "1rem",
-  "paddingRight": "1rem",
-  "textAlign": "center"
-});
-var _StyledDialogOverlay = (0, _styledComponents["default"])(_react2.Dialog.Overlay).withConfig({
-  displayName: "modal___StyledDialogOverlay",
-  componentId: "sc-14wlk1c-2"
-})({
-  "position": "fixed",
-  "inset": "0px",
-  "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))",
-  "opacity": "0.5"
-});
-var _StyledDiv2 = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "modal___StyledDiv2",
-  componentId: "sc-14wlk1c-3"
-})({
-  "marginTop": "2rem",
-  "marginBottom": "2rem",
-  "display": "inline-block",
-  "width": "100%",
-  "maxWidth": "28rem",
-  "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
-  "overflow": "hidden",
-  "borderColor": "var(--border-window)",
-  "backgroundColor": "var(--bg-window)",
-  "paddingLeft": "1.5rem",
-  "paddingRight": "1.5rem",
-  "paddingTop": "1rem",
-  "paddingBottom": "1rem",
-  "textAlign": "left",
-  "verticalAlign": "middle",
-  "--tw-text-opacity": "1",
-  "color": "rgb(117 126 132 / var(--tw-text-opacity))",
-  "--tw-shadow": "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
-  "--tw-shadow-colored": "0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color)",
-  "boxShadow": "var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)",
-  "transitionProperty": "all",
-  "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
-  "transitionDuration": "150ms"
-});
-var _StyledDiv3 = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "modal___StyledDiv3",
-  componentId: "sc-14wlk1c-4"
-})({
-  "display": "inline-flex"
-});
-var _StyledDialogDescription = (0, _styledComponents["default"])(_react2.Dialog.Description).withConfig({
-  displayName: "modal___StyledDialogDescription",
-  componentId: "sc-14wlk1c-5"
-})({
-  "lineHeight": "1.25",
-  "color": "var(--text-tertiary)"
-});
-var _StyledSeparator = (0, _styledComponents["default"])(_layout.Separator).withConfig({
-  displayName: "modal___StyledSeparator",
-  componentId: "sc-14wlk1c-6"
-})({
-  "marginTop": "16px",
-  "marginBottom": "16px"
-});
-var _StyledDiv4 = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "modal___StyledDiv4",
-  componentId: "sc-14wlk1c-7"
-})({
-  "fontSize": "0.8125rem",
-  "--tw-text-opacity": "1",
-  "color": "rgb(201 205 207 / var(--tw-text-opacity))"
-});
-var _StyledDiv5 = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "modal___StyledDiv5",
-  componentId: "sc-14wlk1c-8"
-})({
-  "marginTop": "2rem",
-  "display": "flex",
-  "justifyContent": "flex-end",
-  "gap": "1rem"
-});
-var _StyledSpan = (0, _styledComponents["default"])("span").withConfig({
-  displayName: "modal___StyledSpan",
-  componentId: "sc-14wlk1c-9"
-})({
-  "display": "inline-block",
-  "height": "100vh",
-  "verticalAlign": "middle"
-});

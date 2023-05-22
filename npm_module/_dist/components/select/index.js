@@ -5,7 +5,6 @@ var _typeof = require("@babel/runtime/helpers/typeof");
 exports.__esModule = true;
 exports["default"] = Select;
 var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _react = _interopRequireWildcard(require("react"));
 var _react2 = require("@headlessui/react");
 var _HeroIcons = _interopRequireDefault(require("../../assets/svgs/icons/HeroIcons"));
@@ -26,15 +25,50 @@ function Select(_ref) {
     listboxOptionsProps = _ref.listboxOptionsProps;
   // const [selected, setSelected] = useState(items[0])
   if (items.length === 0) return null;
-  return /*#__PURE__*/_react["default"].createElement(_StyledListbox, Object.assign({
+  return /*#__PURE__*/_react["default"].createElement(_react2.Listbox, Object.assign({
     value: selected,
+    css: {
+      "position": "relative",
+      "backgroundColor": "var(--bg-window)",
+      ":focus-within": {
+        "zIndex": "10"
+      }
+    },
     onChange: setSelected
   }, listboxProps), function (_ref2) {
     var open = _ref2.open;
     return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(Label, {
       text: selected === null || selected === void 0 ? void 0 : selected.label,
       open: open
-    }), items.length > 0 && /*#__PURE__*/_react["default"].createElement(_StyledListboxOptions, listboxOptionsProps, items.map(ListboxOption)));
+    }), items.length > 0 && /*#__PURE__*/_react["default"].createElement(_react2.Listbox.Options, Object.assign({
+      css: {
+        "position": "absolute",
+        "marginTop": "0.25rem",
+        "maxHeight": "15rem",
+        "width": "100%",
+        "overflow": "auto",
+        "borderRadius": "0.375rem",
+        "borderColor": "var(--border-window)",
+        "backgroundColor": "var(--bg-window)",
+        "paddingTop": "0.25rem",
+        "paddingBottom": "0.25rem",
+        "fontSize": "0.9375rem",
+        "--tw-shadow": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
+        "--tw-shadow-colored": "0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)",
+        "boxShadow": "var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)",
+        "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+        "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+        "--tw-ring-opacity": "0.05",
+        "--tw-ring-color": "rgb(0 0 0 / var(--tw-ring-opacity))",
+        ":focus": {
+          "outline": "2px solid transparent",
+          "outlineOffset": "2px"
+        },
+        "@media (min-width: 640px)": {
+          "fontSize": "0.8125rem"
+        }
+      }
+    }, listboxOptionsProps), items.map(ListboxOption)));
   });
 }
 function ListboxOption(item, index) {
@@ -54,7 +88,64 @@ function ListboxOption(item, index) {
 }
 function Label(_ref3) {
   var text = _ref3.text;
-  return /*#__PURE__*/_react["default"].createElement(_StyledListboxButton, null, /*#__PURE__*/_react["default"].createElement(_StyledSpan, null, text), /*#__PURE__*/_react["default"].createElement(_StyledSpan2, null, /*#__PURE__*/_react["default"].createElement(_StyledHeroIconsSelectorIcon, {
+  return /*#__PURE__*/_react["default"].createElement(_react2.Listbox.Button, {
+    css: {
+      "position": "relative",
+      "width": "100%",
+      "cursor": "pointer",
+      "borderRadius": "0.5rem",
+      "borderWidth": "1px",
+      "borderColor": "var(--border-window)",
+      "backgroundColor": "var(--bg-window)",
+      "paddingTop": "0.5rem",
+      "paddingBottom": "0.5rem",
+      "paddingLeft": "0.75rem",
+      "paddingRight": "2.5rem",
+      "textAlign": "left",
+      ":focus": {
+        "outline": "2px solid transparent",
+        "outlineOffset": "2px"
+      },
+      ":focus-visible": {
+        "--tw-border-opacity": "1",
+        "borderColor": "rgb(25 114 245 / var(--tw-border-opacity))",
+        "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+        "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+        "boxShadow": "var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)",
+        "--tw-ring-opacity": "0.75",
+        "--tw-ring-color": "rgb(50 205 50 / var(--tw-ring-opacity))",
+        "--tw-ring-offset-width": "2px",
+        "--tw-ring-offset-color": "#84E184"
+      },
+      "@media (min-width: 640px)": {
+        "fontSize": "0.8125rem"
+      }
+    }
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    css: {
+      "display": "block",
+      "overflow": "hidden",
+      "textOverflow": "ellipsis",
+      "whiteSpace": "nowrap"
+    }
+  }, text), /*#__PURE__*/_react["default"].createElement("span", {
+    css: {
+      "pointerEvents": "none",
+      "position": "absolute",
+      "top": "0px",
+      "bottom": "0px",
+      "right": "0px",
+      "display": "flex",
+      "alignItems": "center",
+      "paddingRight": "0.5rem"
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_HeroIcons["default"].SelectorIcon, {
+    css: {
+      "height": "1.25rem",
+      "width": "1.25rem",
+      "--tw-text-opacity": "1",
+      "color": "rgb(223 225 226 / var(--tw-text-opacity))"
+    },
     "aria-hidden": "true"
   })));
 }
@@ -63,8 +154,8 @@ function Option(_ref4) {
     active = _ref4.active,
     selected = _ref4.selected,
     rest = (0, _objectWithoutPropertiesLoose2["default"])(_ref4, _excluded);
-  return /*#__PURE__*/_react["default"].createElement(_StyledDiv, Object.assign({}, rest, {
-    $_css: [{
+  return /*#__PURE__*/_react["default"].createElement("div", Object.assign({
+    css: [{
       "position": "relative",
       "cursor": "pointer",
       "userSelect": "none",
@@ -77,15 +168,15 @@ function Option(_ref4) {
       }
     }, active ? {
       "--tw-bg-opacity": "1",
-      "backgroundColor": "rgb(0 194 206 / var(--tw-bg-opacity))",
+      "backgroundColor": "rgb(50 205 50 / var(--tw-bg-opacity))",
       "fontWeight": "700",
       "--tw-text-opacity": "1",
       "color": "rgb(255 255 255 / var(--tw-text-opacity))"
     } : {
       "color": "var(--text-primary)"
     }]
-  }), /*#__PURE__*/_react["default"].createElement(_StyledSpan3, {
-    $_css2: [{
+  }, rest), /*#__PURE__*/_react["default"].createElement("span", {
+    css: [{
       "display": "block",
       "overflow": "hidden",
       "textOverflow": "ellipsis",
@@ -95,8 +186,8 @@ function Option(_ref4) {
     } : {
       "fontWeight": "400"
     }]
-  }, label), selected && /*#__PURE__*/_react["default"].createElement(_StyledSpan4, {
-    $_css3: [{
+  }, label), selected && /*#__PURE__*/_react["default"].createElement("span", {
+    css: [{
       "position": "absolute",
       "top": "0px",
       "bottom": "0px",
@@ -110,138 +201,11 @@ function Option(_ref4) {
     } : {
       "color": "var(--text-primary)"
     }]
-  }, /*#__PURE__*/_react["default"].createElement(_StyledHeroIconsCheckIcon, {
+  }, /*#__PURE__*/_react["default"].createElement(_HeroIcons["default"].CheckIcon, {
+    css: {
+      "height": "1.25rem",
+      "width": "1.25rem"
+    },
     "aria-hidden": "true"
   })));
 }
-var _StyledListbox = (0, _styledComponents["default"])(_react2.Listbox).withConfig({
-  displayName: "select___StyledListbox",
-  componentId: "sc-1vad6lq-0"
-})({
-  "position": "relative",
-  "backgroundColor": "var(--bg-window)",
-  ":focus-within": {
-    "zIndex": "10"
-  }
-});
-var _StyledListboxOptions = (0, _styledComponents["default"])(_react2.Listbox.Options).withConfig({
-  displayName: "select___StyledListboxOptions",
-  componentId: "sc-1vad6lq-1"
-})({
-  "position": "absolute",
-  "marginTop": "0.25rem",
-  "maxHeight": "15rem",
-  "width": "100%",
-  "overflow": "auto",
-  "borderRadius": "0.375rem",
-  "borderColor": "var(--border-window)",
-  "backgroundColor": "var(--bg-window)",
-  "paddingTop": "0.25rem",
-  "paddingBottom": "0.25rem",
-  "fontSize": "0.9375rem",
-  "--tw-shadow": "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)",
-  "--tw-shadow-colored": "0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color)",
-  "boxShadow": "var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)",
-  "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
-  "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
-  "--tw-ring-opacity": "0.05",
-  "--tw-ring-color": "rgb(0 0 0 / var(--tw-ring-opacity))",
-  ":focus": {
-    "outline": "2px solid transparent",
-    "outlineOffset": "2px"
-  },
-  "@media (min-width: 640px)": {
-    "fontSize": "0.8125rem"
-  }
-});
-var _StyledListboxButton = (0, _styledComponents["default"])(_react2.Listbox.Button).withConfig({
-  displayName: "select___StyledListboxButton",
-  componentId: "sc-1vad6lq-2"
-})({
-  "position": "relative",
-  "width": "100%",
-  "cursor": "pointer",
-  "borderRadius": "0.5rem",
-  "borderWidth": "1px",
-  "borderColor": "var(--border-window)",
-  "backgroundColor": "var(--bg-window)",
-  "paddingTop": "0.5rem",
-  "paddingBottom": "0.5rem",
-  "paddingLeft": "0.75rem",
-  "paddingRight": "2.5rem",
-  "textAlign": "left",
-  ":focus": {
-    "outline": "2px solid transparent",
-    "outlineOffset": "2px"
-  },
-  ":focus-visible": {
-    "--tw-border-opacity": "1",
-    "borderColor": "rgb(25 114 245 / var(--tw-border-opacity))",
-    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
-    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
-    "boxShadow": "var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)",
-    "--tw-ring-opacity": "0.75",
-    "--tw-ring-color": "rgb(0 194 206 / var(--tw-ring-opacity))",
-    "--tw-ring-offset-width": "2px",
-    "--tw-ring-offset-color": "#54D6DE"
-  },
-  "@media (min-width: 640px)": {
-    "fontSize": "0.8125rem"
-  }
-});
-var _StyledSpan = (0, _styledComponents["default"])("span").withConfig({
-  displayName: "select___StyledSpan",
-  componentId: "sc-1vad6lq-3"
-})({
-  "display": "block",
-  "overflow": "hidden",
-  "textOverflow": "ellipsis",
-  "whiteSpace": "nowrap"
-});
-var _StyledSpan2 = (0, _styledComponents["default"])("span").withConfig({
-  displayName: "select___StyledSpan2",
-  componentId: "sc-1vad6lq-4"
-})({
-  "pointerEvents": "none",
-  "position": "absolute",
-  "top": "0px",
-  "bottom": "0px",
-  "right": "0px",
-  "display": "flex",
-  "alignItems": "center",
-  "paddingRight": "0.5rem"
-});
-var _StyledHeroIconsSelectorIcon = (0, _styledComponents["default"])(_HeroIcons["default"].SelectorIcon).withConfig({
-  displayName: "select___StyledHeroIconsSelectorIcon",
-  componentId: "sc-1vad6lq-5"
-})({
-  "height": "1.25rem",
-  "width": "1.25rem",
-  "--tw-text-opacity": "1",
-  "color": "rgb(223 225 226 / var(--tw-text-opacity))"
-});
-var _StyledDiv = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "select___StyledDiv",
-  componentId: "sc-1vad6lq-6"
-})(["", ""], function (p) {
-  return p.$_css;
-});
-var _StyledSpan3 = (0, _styledComponents["default"])("span").withConfig({
-  displayName: "select___StyledSpan3",
-  componentId: "sc-1vad6lq-7"
-})(["", ""], function (p) {
-  return p.$_css2;
-});
-var _StyledSpan4 = (0, _styledComponents["default"])("span").withConfig({
-  displayName: "select___StyledSpan4",
-  componentId: "sc-1vad6lq-8"
-})(["", ""], function (p) {
-  return p.$_css3;
-});
-var _StyledHeroIconsCheckIcon = (0, _styledComponents["default"])(_HeroIcons["default"].CheckIcon).withConfig({
-  displayName: "select___StyledHeroIconsCheckIcon",
-  componentId: "sc-1vad6lq-9"
-})({
-  "height": "1.25rem",
-  "width": "1.25rem"
-});

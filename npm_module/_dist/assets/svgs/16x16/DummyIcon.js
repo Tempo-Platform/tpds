@@ -4,18 +4,21 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 exports.__esModule = true;
 exports["default"] = void 0;
 var _objectDestructuringEmpty2 = _interopRequireDefault(require("@babel/runtime/helpers/objectDestructuringEmpty"));
-var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _react = _interopRequireDefault(require("react"));
 /* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 
 function DummyIcon(_ref) {
   var props = Object.assign({}, ((0, _objectDestructuringEmpty2["default"])(_ref), _ref));
-  return /*#__PURE__*/_react["default"].createElement(_StyledSvg, Object.assign({
+  return /*#__PURE__*/_react["default"].createElement("svg", Object.assign({
     xmlns: "http://www.w3.org/2000/svg",
     width: "16",
     height: "16",
     fill: "none",
-    viewBox: "0 0 16 16"
+    viewBox: "0 0 16 16",
+    css: {
+      "fill": "currentColor",
+      "color": "var(--text-primary)"
+    }
   }, props), /*#__PURE__*/_react["default"].createElement("path", {
     fill: "#cccccc",
     fillRule: "evenodd",
@@ -25,10 +28,3 @@ function DummyIcon(_ref) {
 }
 var _default = DummyIcon;
 exports["default"] = _default;
-var _StyledSvg = (0, _styledComponents["default"])("svg").withConfig({
-  displayName: "DummyIcon___StyledSvg",
-  componentId: "sc-1dr87ar-0"
-})({
-  "fill": "currentColor",
-  "color": "var(--text-primary)"
-});

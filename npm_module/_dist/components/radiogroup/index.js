@@ -4,7 +4,6 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 var _typeof = require("@babel/runtime/helpers/typeof");
 exports.__esModule = true;
 exports["default"] = RadioGroup;
-var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _react = _interopRequireWildcard(require("react"));
 var _react2 = require("@headlessui/react");
 var _HeroIcons = _interopRequireDefault(require("../../assets/svgs/icons/HeroIcons"));
@@ -29,7 +28,27 @@ function RadioGroup(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_react2.RadioGroup, {
     value: selected,
     onChange: setSelected
-  }, /*#__PURE__*/_react["default"].createElement(_StyledHeadlessUiRadioGroupLabel, null, screenReaderLabel), /*#__PURE__*/_react["default"].createElement(_StyledDiv, null, items.map(item)));
+  }, /*#__PURE__*/_react["default"].createElement(_react2.RadioGroup.Label, {
+    css: {
+      "position": "absolute",
+      "width": "1px",
+      "height": "1px",
+      "padding": "0",
+      "margin": "-1px",
+      "overflow": "hidden",
+      "clip": "rect(0, 0, 0, 0)",
+      "whiteSpace": "nowrap",
+      "borderWidth": "0"
+    }
+  }, screenReaderLabel), /*#__PURE__*/_react["default"].createElement("div", {
+    css: {
+      "> :not([hidden]) ~ :not([hidden])": {
+        "--tw-space-y-reverse": "0",
+        "marginTop": "calc(0.5rem * calc(1 - var(--tw-space-y-reverse)))",
+        "marginBottom": "calc(0.5rem * var(--tw-space-y-reverse))"
+      }
+    }
+  }, items.map(item)));
 }
 function item(item) {
   return /*#__PURE__*/_react["default"].createElement(_react2.RadioGroup.Option, {
@@ -38,8 +57,8 @@ function item(item) {
   }, function (_ref2) {
     var active = _ref2.active,
       checked = _ref2.checked;
-    return /*#__PURE__*/_react["default"].createElement(_StyledDiv2, {
-      $_css: [{
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      css: [{
         "position": "relative",
         "display": "flex",
         "width": "100%",
@@ -63,20 +82,29 @@ function item(item) {
         "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
         "boxShadow": "var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)",
         "--tw-ring-opacity": "0.6",
-        "--tw-ring-color": "rgb(0 194 206 / var(--tw-ring-opacity))",
+        "--tw-ring-color": "rgb(50 205 50 / var(--tw-ring-opacity))",
         "--tw-ring-offset-width": "2px",
-        "--tw-ring-offset-color": "#54D6DE"
+        "--tw-ring-offset-color": "#84E184"
       }, checked ? {
         "--tw-bg-opacity": "0.75",
-        "backgroundColor": "rgb(0 81 87 / var(--tw-bg-opacity))",
+        "backgroundColor": "rgb(20 82 20 / var(--tw-bg-opacity))",
         "--tw-text-opacity": "1",
         "color": "rgb(255 255 255 / var(--tw-text-opacity))"
       } : {
         "backgroundColor": "var(--bg-window)"
       }]
-    }, /*#__PURE__*/_react["default"].createElement(_StyledDiv3, null, /*#__PURE__*/_react["default"].createElement(_StyledDiv4, null, /*#__PURE__*/_react["default"].createElement(_StyledHeadlessUiRadioGroupLabel2, {
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      css: {
+        "display": "flex",
+        "alignItems": "center"
+      }
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      css: {
+        "fontSize": "0.8125rem"
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_react2.RadioGroup.Label, {
       as: _typography.P,
-      $_css2: [{
+      css: [{
         "fontWeight": "700"
       }, checked ? {
         "--tw-text-opacity": "1",
@@ -85,90 +113,31 @@ function item(item) {
         "--tw-text-opacity": "1",
         "color": "rgb(117 126 132 / var(--tw-text-opacity))"
       }]
-    }, item.name), /*#__PURE__*/_react["default"].createElement(_StyledHeadlessUiRadioGroupDescription, {
+    }, item.name), /*#__PURE__*/_react["default"].createElement(_react2.RadioGroup.Description, {
       as: _typography.PSmall,
-      $_css3: [{
+      css: [{
         "display": "inline",
         "fontWeight": "500"
       }, checked ? {
         "--tw-text-opacity": "1",
-        "color": "rgb(176 236 240 / var(--tw-text-opacity))"
+        "color": "rgb(193 240 193 / var(--tw-text-opacity))"
       } : {
         "--tw-text-opacity": "1",
         "color": "rgb(201 205 207 / var(--tw-text-opacity))"
       }]
     }, /*#__PURE__*/_react["default"].createElement("span", null, item.ram, "/", item.cpus), ' ', /*#__PURE__*/_react["default"].createElement("span", {
       "aria-hidden": "true"
-    }, "\xB7"), ' ', /*#__PURE__*/_react["default"].createElement("span", null, item.disk)))), checked && /*#__PURE__*/_react["default"].createElement(_StyledDiv5, null, /*#__PURE__*/_react["default"].createElement(_StyledHeroIconsCheckRounded, null)));
+    }, "\xB7"), ' ', /*#__PURE__*/_react["default"].createElement("span", null, item.disk)))), checked && /*#__PURE__*/_react["default"].createElement("div", {
+      css: {
+        "flexShrink": "0",
+        "--tw-text-opacity": "1",
+        "color": "rgb(255 255 255 / var(--tw-text-opacity))"
+      }
+    }, /*#__PURE__*/_react["default"].createElement(_HeroIcons["default"].CheckRounded, {
+      css: {
+        "height": "1.5rem",
+        "width": "1.5rem"
+      }
+    })));
   });
 }
-var _StyledHeadlessUiRadioGroupLabel = (0, _styledComponents["default"])(_react2.RadioGroup.Label).withConfig({
-  displayName: "radiogroup___StyledHeadlessUiRadioGroupLabel",
-  componentId: "sc-1ou4c5e-0"
-})({
-  "position": "absolute",
-  "width": "1px",
-  "height": "1px",
-  "padding": "0",
-  "margin": "-1px",
-  "overflow": "hidden",
-  "clip": "rect(0, 0, 0, 0)",
-  "whiteSpace": "nowrap",
-  "borderWidth": "0"
-});
-var _StyledDiv = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "radiogroup___StyledDiv",
-  componentId: "sc-1ou4c5e-1"
-})({
-  "> :not([hidden]) ~ :not([hidden])": {
-    "--tw-space-y-reverse": "0",
-    "marginTop": "calc(0.5rem * calc(1 - var(--tw-space-y-reverse)))",
-    "marginBottom": "calc(0.5rem * var(--tw-space-y-reverse))"
-  }
-});
-var _StyledDiv2 = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "radiogroup___StyledDiv2",
-  componentId: "sc-1ou4c5e-2"
-})(["", ""], function (p) {
-  return p.$_css;
-});
-var _StyledDiv3 = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "radiogroup___StyledDiv3",
-  componentId: "sc-1ou4c5e-3"
-})({
-  "display": "flex",
-  "alignItems": "center"
-});
-var _StyledDiv4 = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "radiogroup___StyledDiv4",
-  componentId: "sc-1ou4c5e-4"
-})({
-  "fontSize": "0.8125rem"
-});
-var _StyledHeadlessUiRadioGroupLabel2 = (0, _styledComponents["default"])(_react2.RadioGroup.Label).withConfig({
-  displayName: "radiogroup___StyledHeadlessUiRadioGroupLabel2",
-  componentId: "sc-1ou4c5e-5"
-})(["", ""], function (p) {
-  return p.$_css2;
-});
-var _StyledHeadlessUiRadioGroupDescription = (0, _styledComponents["default"])(_react2.RadioGroup.Description).withConfig({
-  displayName: "radiogroup___StyledHeadlessUiRadioGroupDescription",
-  componentId: "sc-1ou4c5e-6"
-})(["", ""], function (p) {
-  return p.$_css3;
-});
-var _StyledDiv5 = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "radiogroup___StyledDiv5",
-  componentId: "sc-1ou4c5e-7"
-})({
-  "flexShrink": "0",
-  "--tw-text-opacity": "1",
-  "color": "rgb(255 255 255 / var(--tw-text-opacity))"
-});
-var _StyledHeroIconsCheckRounded = (0, _styledComponents["default"])(_HeroIcons["default"].CheckRounded).withConfig({
-  displayName: "radiogroup___StyledHeroIconsCheckRounded",
-  componentId: "sc-1ou4c5e-8"
-})({
-  "height": "1.5rem",
-  "width": "1.5rem"
-});

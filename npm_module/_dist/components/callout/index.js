@@ -1,13 +1,13 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-var _typeof = require("@babel/runtime/helpers/typeof");
 exports.__esModule = true;
 exports.CalloutWarning = exports.CalloutTip = exports.CalloutSuccess = exports.CalloutNote = exports.CalloutInfo = exports.CalloutDanger = exports.CalloutBug = exports.Callout = void 0;
 var _taggedTemplateLiteralLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteralLoose"));
 var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
-var _react = _interopRequireDefault(require("react"));
+var _react = require("@emotion/react");
+var _styled2 = _interopRequireDefault(require("@emotion/styled"));
+var _react2 = _interopRequireDefault(require("react"));
 var _CheckIcon = _interopRequireDefault(require("../../assets/svgs/notifications/CheckIcon"));
 var _WarningIcon = _interopRequireDefault(require("../../assets/svgs/notifications/WarningIcon"));
 var _ErrorIcon = _interopRequireDefault(require("../../assets/svgs/notifications/ErrorIcon"));
@@ -24,13 +24,11 @@ var _excluded = ["title", "text"],
   _excluded6 = ["title", "text"],
   _excluded7 = ["title", "text"],
   _excluded8 = ["title", "text"];
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 var Callout = function Callout(_ref) {
   var title = _ref.title,
     text = _ref.text,
     props = (0, _objectWithoutPropertiesLoose2["default"])(_ref, _excluded);
-  return /*#__PURE__*/_react["default"].createElement(RootDefault, props, /*#__PURE__*/_react["default"].createElement(HeaderDefault, null, title), /*#__PURE__*/_react["default"].createElement(Text, {
+  return /*#__PURE__*/_react2["default"].createElement(RootDefault, props, /*#__PURE__*/_react2["default"].createElement(HeaderDefault, null, title), /*#__PURE__*/_react2["default"].createElement(Text, {
     className: "text"
   }, text));
 };
@@ -39,7 +37,7 @@ var CalloutSuccess = function CalloutSuccess(_ref2) {
   var title = _ref2.title,
     text = _ref2.text,
     props = (0, _objectWithoutPropertiesLoose2["default"])(_ref2, _excluded2);
-  return /*#__PURE__*/_react["default"].createElement(RootSuccess, props, /*#__PURE__*/_react["default"].createElement(HeaderSuccess, null, /*#__PURE__*/_react["default"].createElement(_CheckIcon["default"], null), " ", title), /*#__PURE__*/_react["default"].createElement(Text, {
+  return /*#__PURE__*/_react2["default"].createElement(RootSuccess, props, /*#__PURE__*/_react2["default"].createElement(HeaderSuccess, null, /*#__PURE__*/_react2["default"].createElement(_CheckIcon["default"], null), " ", title), /*#__PURE__*/_react2["default"].createElement(Text, {
     className: "text"
   }, text));
 };
@@ -48,7 +46,7 @@ var CalloutInfo = function CalloutInfo(_ref3) {
   var title = _ref3.title,
     text = _ref3.text,
     props = (0, _objectWithoutPropertiesLoose2["default"])(_ref3, _excluded3);
-  return /*#__PURE__*/_react["default"].createElement(RootInfo, props, /*#__PURE__*/_react["default"].createElement(HeaderInfo, null, /*#__PURE__*/_react["default"].createElement(_InfoIcon["default"], null), " ", title), /*#__PURE__*/_react["default"].createElement(Text, {
+  return /*#__PURE__*/_react2["default"].createElement(RootInfo, props, /*#__PURE__*/_react2["default"].createElement(HeaderInfo, null, /*#__PURE__*/_react2["default"].createElement(_InfoIcon["default"], null), " ", title), /*#__PURE__*/_react2["default"].createElement(Text, {
     className: "text"
   }, text));
 };
@@ -57,7 +55,7 @@ var CalloutWarning = function CalloutWarning(_ref4) {
   var title = _ref4.title,
     text = _ref4.text,
     props = (0, _objectWithoutPropertiesLoose2["default"])(_ref4, _excluded4);
-  return /*#__PURE__*/_react["default"].createElement(RootWarning, props, /*#__PURE__*/_react["default"].createElement(HeaderWarning, null, /*#__PURE__*/_react["default"].createElement(_WarningIcon["default"], null), " ", title), /*#__PURE__*/_react["default"].createElement(Text, {
+  return /*#__PURE__*/_react2["default"].createElement(RootWarning, props, /*#__PURE__*/_react2["default"].createElement(HeaderWarning, null, /*#__PURE__*/_react2["default"].createElement(_WarningIcon["default"], null), " ", title), /*#__PURE__*/_react2["default"].createElement(Text, {
     className: "text"
   }, text));
 };
@@ -66,7 +64,7 @@ var CalloutDanger = function CalloutDanger(_ref5) {
   var title = _ref5.title,
     text = _ref5.text,
     props = (0, _objectWithoutPropertiesLoose2["default"])(_ref5, _excluded5);
-  return /*#__PURE__*/_react["default"].createElement(RootDanger, props, /*#__PURE__*/_react["default"].createElement(HeaderDanger, null, /*#__PURE__*/_react["default"].createElement(_ErrorIcon["default"], null), " ", title), /*#__PURE__*/_react["default"].createElement(Text, {
+  return /*#__PURE__*/_react2["default"].createElement(RootDanger, props, /*#__PURE__*/_react2["default"].createElement(HeaderDanger, null, /*#__PURE__*/_react2["default"].createElement(_ErrorIcon["default"], null), " ", title), /*#__PURE__*/_react2["default"].createElement(Text, {
     className: "text"
   }, text));
 };
@@ -75,7 +73,7 @@ var CalloutTip = function CalloutTip(_ref6) {
   var title = _ref6.title,
     text = _ref6.text,
     props = (0, _objectWithoutPropertiesLoose2["default"])(_ref6, _excluded6);
-  return /*#__PURE__*/_react["default"].createElement(RootTip, props, /*#__PURE__*/_react["default"].createElement(HeaderTip, null, /*#__PURE__*/_react["default"].createElement(_TipIcon["default"], null), " ", title), /*#__PURE__*/_react["default"].createElement(Text, {
+  return /*#__PURE__*/_react2["default"].createElement(RootTip, props, /*#__PURE__*/_react2["default"].createElement(HeaderTip, null, /*#__PURE__*/_react2["default"].createElement(_TipIcon["default"], null), " ", title), /*#__PURE__*/_react2["default"].createElement(Text, {
     className: "text"
   }, text));
 };
@@ -84,7 +82,7 @@ var CalloutBug = function CalloutBug(_ref7) {
   var title = _ref7.title,
     text = _ref7.text,
     props = (0, _objectWithoutPropertiesLoose2["default"])(_ref7, _excluded7);
-  return /*#__PURE__*/_react["default"].createElement(RootBug, props, /*#__PURE__*/_react["default"].createElement(HeaderBug, null, /*#__PURE__*/_react["default"].createElement(_BugIcon["default"], null), " ", title), /*#__PURE__*/_react["default"].createElement(Text, {
+  return /*#__PURE__*/_react2["default"].createElement(RootBug, props, /*#__PURE__*/_react2["default"].createElement(HeaderBug, null, /*#__PURE__*/_react2["default"].createElement(_BugIcon["default"], null), " ", title), /*#__PURE__*/_react2["default"].createElement(Text, {
     className: "text"
   }, text));
 };
@@ -93,15 +91,12 @@ var CalloutNote = function CalloutNote(_ref8) {
   var title = _ref8.title,
     text = _ref8.text,
     props = (0, _objectWithoutPropertiesLoose2["default"])(_ref8, _excluded8);
-  return /*#__PURE__*/_react["default"].createElement(RootNote, props, /*#__PURE__*/_react["default"].createElement(HeaderNote, null, /*#__PURE__*/_react["default"].createElement(_NoteIcon["default"], null), " ", title), /*#__PURE__*/_react["default"].createElement(Text, {
+  return /*#__PURE__*/_react2["default"].createElement(RootNote, props, /*#__PURE__*/_react2["default"].createElement(HeaderNote, null, /*#__PURE__*/_react2["default"].createElement(_NoteIcon["default"], null), " ", title), /*#__PURE__*/_react2["default"].createElement(Text, {
     className: "text"
   }, text));
 };
 exports.CalloutNote = CalloutNote;
-var Root = _styledComponents["default"].div.withConfig({
-  displayName: "callout__Root",
-  componentId: "sc-162ocsd-0"
-})(function (_ref9) {
+var Root = _styled2["default"].div(function (_ref9) {
   var type = _ref9.type;
   return [{
     "borderRadius": "0.25rem",
@@ -110,12 +105,9 @@ var Root = _styledComponents["default"].div.withConfig({
     "borderRightWidth": "1px",
     "borderTopWidth": "1px",
     "borderStyle": "solid"
-  }, (0, _styledComponents.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n    svg {\n      margin-right: 10px;\n    }\n  "])))];
+  }, (0, _react.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n    svg {\n      margin-right: 10px;\n    }\n  "])))];
 });
-var RootDefault = (0, _styledComponents["default"])(Root).withConfig({
-  displayName: "callout__RootDefault",
-  componentId: "sc-162ocsd-1"
-})(function () {
+var RootDefault = (0, _styled2["default"])(Root)(function () {
   return [{
     "--tw-border-opacity": "1",
     "borderColor": "rgb(223 225 226 / var(--tw-border-opacity))",
@@ -127,26 +119,20 @@ var RootDefault = (0, _styledComponents["default"])(Root).withConfig({
     }
   }];
 });
-var RootSuccess = (0, _styledComponents["default"])(Root).withConfig({
-  displayName: "callout__RootSuccess",
-  componentId: "sc-162ocsd-2"
-})(function () {
+var RootSuccess = (0, _styled2["default"])(Root)(function () {
   return [{
     "--tw-border-opacity": "1",
-    "borderColor": "rgb(176 236 240 / var(--tw-border-opacity))",
-    "backgroundColor": "rgb(176 236 240 / 0.2)"
+    "borderColor": "rgb(193 240 193 / var(--tw-border-opacity))",
+    "backgroundColor": "rgb(193 240 193 / 0.2)"
   }, {
     ":is(.dark &)": {
       "--tw-border-opacity": "1",
-      "borderColor": "rgb(84 214 222 / var(--tw-border-opacity))",
-      "backgroundColor": "rgb(0 194 206 / 0.1)"
+      "borderColor": "rgb(132 225 132 / var(--tw-border-opacity))",
+      "backgroundColor": "rgb(50 205 50 / 0.1)"
     }
   }];
 });
-var RootInfo = (0, _styledComponents["default"])(Root).withConfig({
-  displayName: "callout__RootInfo",
-  componentId: "sc-162ocsd-3"
-})(function () {
+var RootInfo = (0, _styled2["default"])(Root)(function () {
   return [{
     "--tw-border-opacity": "1",
     "borderColor": "rgb(209 227 253 / var(--tw-border-opacity))",
@@ -159,10 +145,7 @@ var RootInfo = (0, _styledComponents["default"])(Root).withConfig({
     }
   }];
 });
-var RootDanger = (0, _styledComponents["default"])(Root).withConfig({
-  displayName: "callout__RootDanger",
-  componentId: "sc-162ocsd-4"
-})(function () {
+var RootDanger = (0, _styled2["default"])(Root)(function () {
   return [{
     "--tw-border-opacity": "1",
     "borderColor": "rgb(249 203 203 / var(--tw-border-opacity))",
@@ -175,10 +158,7 @@ var RootDanger = (0, _styledComponents["default"])(Root).withConfig({
     }
   }];
 });
-var RootWarning = (0, _styledComponents["default"])(Root).withConfig({
-  displayName: "callout__RootWarning",
-  componentId: "sc-162ocsd-5"
-})(function () {
+var RootWarning = (0, _styled2["default"])(Root)(function () {
   return [{
     "--tw-border-opacity": "1",
     "borderColor": "rgb(250 218 188 / var(--tw-border-opacity))",
@@ -191,10 +171,7 @@ var RootWarning = (0, _styledComponents["default"])(Root).withConfig({
     }
   }];
 });
-var RootTip = (0, _styledComponents["default"])(Root).withConfig({
-  displayName: "callout__RootTip",
-  componentId: "sc-162ocsd-6"
-})(function () {
+var RootTip = (0, _styled2["default"])(Root)(function () {
   return [{
     "--tw-border-opacity": "1",
     "borderColor": "rgb(206 176 250 / var(--tw-border-opacity))",
@@ -207,10 +184,7 @@ var RootTip = (0, _styledComponents["default"])(Root).withConfig({
     }
   }];
 });
-var RootBug = (0, _styledComponents["default"])(Root).withConfig({
-  displayName: "callout__RootBug",
-  componentId: "sc-162ocsd-7"
-})(function () {
+var RootBug = (0, _styled2["default"])(Root)(function () {
   return [{
     "--tw-border-opacity": "1",
     "borderColor": "rgb(250 218 188 / var(--tw-border-opacity))",
@@ -223,10 +197,7 @@ var RootBug = (0, _styledComponents["default"])(Root).withConfig({
     }
   }];
 });
-var RootNote = (0, _styledComponents["default"])(Root).withConfig({
-  displayName: "callout__RootNote",
-  componentId: "sc-162ocsd-8"
-})(function () {
+var RootNote = (0, _styled2["default"])(Root)(function () {
   return [{
     "--tw-border-opacity": "1",
     "borderColor": "rgb(223 225 226 / var(--tw-border-opacity))",
@@ -237,10 +208,7 @@ var RootNote = (0, _styledComponents["default"])(Root).withConfig({
     }
   }];
 });
-var Header = _styledComponents["default"].div.withConfig({
-  displayName: "callout__Header",
-  componentId: "sc-162ocsd-9"
-})(function (_ref10) {
+var Header = _styled2["default"].div(function (_ref10) {
   var type = _ref10.type;
   return [{
     "display": "flex",
@@ -252,10 +220,7 @@ var Header = _styledComponents["default"].div.withConfig({
     "fontWeight": "500"
   }];
 });
-var HeaderDefault = (0, _styledComponents["default"])(Header).withConfig({
-  displayName: "callout__HeaderDefault",
-  componentId: "sc-162ocsd-10"
-})(function (_ref11) {
+var HeaderDefault = (0, _styled2["default"])(Header)(function (_ref11) {
   var type = _ref11.type;
   return [{
     "--tw-text-opacity": "1",
@@ -266,24 +231,18 @@ var HeaderDefault = (0, _styledComponents["default"])(Header).withConfig({
     }
   }];
 });
-var HeaderSuccess = (0, _styledComponents["default"])(Header).withConfig({
-  displayName: "callout__HeaderSuccess",
-  componentId: "sc-162ocsd-11"
-})(function (_ref12) {
+var HeaderSuccess = (0, _styled2["default"])(Header)(function (_ref12) {
   var type = _ref12.type;
   return [{
     "--tw-text-opacity": "1",
-    "color": "rgb(0 194 206 / var(--tw-text-opacity))",
+    "color": "rgb(50 205 50 / var(--tw-text-opacity))",
     ":is(.dark &)": {
       "--tw-text-opacity": "1",
-      "color": "rgb(51 206 216 / var(--tw-text-opacity))"
+      "color": "rgb(91 215 91 / var(--tw-text-opacity))"
     }
   }];
 });
-var HeaderInfo = (0, _styledComponents["default"])(Header).withConfig({
-  displayName: "callout__HeaderInfo",
-  componentId: "sc-162ocsd-12"
-})(function (_ref13) {
+var HeaderInfo = (0, _styled2["default"])(Header)(function (_ref13) {
   var type = _ref13.type;
   return [{
     "--tw-text-opacity": "1",
@@ -294,10 +253,7 @@ var HeaderInfo = (0, _styledComponents["default"])(Header).withConfig({
     }
   }];
 });
-var HeaderDanger = (0, _styledComponents["default"])(Header).withConfig({
-  displayName: "callout__HeaderDanger",
-  componentId: "sc-162ocsd-13"
-})(function (_ref14) {
+var HeaderDanger = (0, _styled2["default"])(Header)(function (_ref14) {
   var type = _ref14.type;
   return [{
     "--tw-text-opacity": "1",
@@ -308,10 +264,7 @@ var HeaderDanger = (0, _styledComponents["default"])(Header).withConfig({
     }
   }];
 });
-var HeaderWarning = (0, _styledComponents["default"])(Header).withConfig({
-  displayName: "callout__HeaderWarning",
-  componentId: "sc-162ocsd-14"
-})(function (_ref15) {
+var HeaderWarning = (0, _styled2["default"])(Header)(function (_ref15) {
   var type = _ref15.type;
   return [{
     "--tw-text-opacity": "1",
@@ -322,10 +275,7 @@ var HeaderWarning = (0, _styledComponents["default"])(Header).withConfig({
     }
   }];
 });
-var HeaderTip = (0, _styledComponents["default"])(Header).withConfig({
-  displayName: "callout__HeaderTip",
-  componentId: "sc-162ocsd-15"
-})(function (_ref16) {
+var HeaderTip = (0, _styled2["default"])(Header)(function (_ref16) {
   var type = _ref16.type;
   return [{
     "--tw-text-opacity": "1",
@@ -336,10 +286,7 @@ var HeaderTip = (0, _styledComponents["default"])(Header).withConfig({
     }
   }];
 });
-var HeaderBug = (0, _styledComponents["default"])(Header).withConfig({
-  displayName: "callout__HeaderBug",
-  componentId: "sc-162ocsd-16"
-})(function (_ref17) {
+var HeaderBug = (0, _styled2["default"])(Header)(function (_ref17) {
   var type = _ref17.type;
   return [{
     "--tw-text-opacity": "1",
@@ -350,10 +297,7 @@ var HeaderBug = (0, _styledComponents["default"])(Header).withConfig({
     }
   }];
 });
-var HeaderNote = (0, _styledComponents["default"])(Header).withConfig({
-  displayName: "callout__HeaderNote",
-  componentId: "sc-162ocsd-17"
-})(function (_ref18) {
+var HeaderNote = (0, _styled2["default"])(Header)(function (_ref18) {
   var type = _ref18.type;
   return [{
     "--tw-text-opacity": "1",
@@ -364,10 +308,7 @@ var HeaderNote = (0, _styledComponents["default"])(Header).withConfig({
     }
   }];
 });
-var Text = _styledComponents["default"].div.withConfig({
-  displayName: "callout__Text",
-  componentId: "sc-162ocsd-18"
-})(function () {
+var Text = _styled2["default"].div(function () {
   return [{
     "paddingLeft": "1rem",
     "paddingRight": "1rem",
@@ -380,5 +321,5 @@ var Text = _styledComponents["default"].div.withConfig({
       "--tw-text-opacity": "1",
       "color": "rgb(255 255 255 / var(--tw-text-opacity))"
     }
-  }, (0, _styledComponents.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n    overflow-wrap: anywhere;\n    a {\n      text-decoration: underline;\n    }\n  "])))];
+  }, (0, _react.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n    overflow-wrap: anywhere;\n    a {\n      text-decoration: underline;\n    }\n  "])))];
 });

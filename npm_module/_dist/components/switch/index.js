@@ -3,7 +3,6 @@
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
 exports["default"] = void 0;
-var _styledComponents = _interopRequireDefault(require("styled-components"));
 var _react = _interopRequireDefault(require("react"));
 var _react2 = require("@headlessui/react");
 /* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
@@ -17,7 +16,7 @@ stylesA[true] = {
   "alignItems": "center",
   "borderRadius": "9999px",
   "--tw-bg-opacity": "1 !important",
-  "backgroundColor": "rgb(0 194 206 / var(--tw-bg-opacity)) !important"
+  "backgroundColor": "rgb(50 205 50 / var(--tw-bg-opacity)) !important"
 };
 stylesA[false] = {
   "position": "relative",
@@ -59,33 +58,21 @@ function SwitchElement(_ref) {
     onChange = _ref$onChange === void 0 ? null : _ref$onChange,
     _ref$disabled = _ref.disabled,
     disabled = _ref$disabled === void 0 ? false : _ref$disabled;
-  return /*#__PURE__*/_react["default"].createElement(_StyledSwitch, {
+  return /*#__PURE__*/_react["default"].createElement(_react2.Switch, {
     checked: active,
     onChange: onChange,
-    style: disabled ? {
-      pointerEvents: 'none',
-      opacity: 0.5
-    } : null,
-    $_css: [{
+    css: [{
       "transitionProperty": "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
       "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
       "transitionDuration": "150ms"
-    }, stylesA[active]]
-  }, /*#__PURE__*/_react["default"].createElement(_StyledSpan, {
-    $_css2: stylesB[active]
+    }, stylesA[active]],
+    style: disabled ? {
+      pointerEvents: 'none',
+      opacity: 0.5
+    } : null
+  }, /*#__PURE__*/_react["default"].createElement("span", {
+    css: stylesB[active]
   }));
 }
 var _default = SwitchElement;
 exports["default"] = _default;
-var _StyledSwitch = (0, _styledComponents["default"])(_react2.Switch).withConfig({
-  displayName: "switch___StyledSwitch",
-  componentId: "sc-1vje293-0"
-})(["", ""], function (p) {
-  return p.$_css;
-});
-var _StyledSpan = (0, _styledComponents["default"])("span").withConfig({
-  displayName: "switch___StyledSpan",
-  componentId: "sc-1vje293-1"
-})(["", ""], function (p) {
-  return p.$_css2;
-});

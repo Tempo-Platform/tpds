@@ -1,19 +1,17 @@
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-var _typeof = require("@babel/runtime/helpers/typeof");
 exports.__esModule = true;
 exports.CardC = CardC;
 var _taggedTemplateLiteralLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteralLoose"));
 var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _styledComponents = _interopRequireWildcard(require("styled-components"));
-var _react = _interopRequireDefault(require("react"));
+var _react = require("@emotion/react");
+var _styled2 = _interopRequireDefault(require("@emotion/styled"));
+var _react2 = _interopRequireDefault(require("react"));
 var _typography = require("../../elements/typography");
 var _buttons = require("../buttons");
 var _templateObject;
 var _excluded = ["iconElement", "headerText", "descriptionText", "children", "linkURL", "external", "linkClass"];
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function CardC(_ref) {
   var iconElement = _ref.iconElement,
     headerText = _ref.headerText,
@@ -24,33 +22,49 @@ function CardC(_ref) {
     linkClass = _ref.linkClass,
     props = (0, _objectWithoutPropertiesLoose2["default"])(_ref, _excluded);
   if (!linkURL) {
-    return /*#__PURE__*/_react["default"].createElement(HoverlessRoot, props, /*#__PURE__*/_react["default"].createElement(HeaderSection, null, iconElement && /*#__PURE__*/_react["default"].createElement(_StyledDiv, null, iconElement), headerText && /*#__PURE__*/_react["default"].createElement(HeaderSection, null, /*#__PURE__*/_react["default"].createElement(Header, {
+    return /*#__PURE__*/_react2["default"].createElement(HoverlessRoot, props, /*#__PURE__*/_react2["default"].createElement(HeaderSection, null, iconElement && /*#__PURE__*/_react2["default"].createElement("div", {
+      css: {
+        "paddingRight": "16px"
+      }
+    }, iconElement), headerText && /*#__PURE__*/_react2["default"].createElement(HeaderSection, null, /*#__PURE__*/_react2["default"].createElement(Header, {
       isBold: true
-    }, headerText))), descriptionText && /*#__PURE__*/_react["default"].createElement(Description, null, descriptionText), children && /*#__PURE__*/_react["default"].createElement(_StyledDiv2, null, children));
+    }, headerText))), descriptionText && /*#__PURE__*/_react2["default"].createElement(Description, null, descriptionText), children && /*#__PURE__*/_react2["default"].createElement("div", {
+      css: {
+        "marginTop": "1rem"
+      }
+    }, children));
   }
   var LinkElement = ExternalA;
   if (!external) {
     LinkElement = linkClass;
   }
-  return /*#__PURE__*/_react["default"].createElement(LinkElement, {
+  return /*#__PURE__*/_react2["default"].createElement(LinkElement, {
     to: linkURL,
     href: linkURL,
     target: external ? '_blank' : null,
     rel: external ? "noreferrer" : null
-  }, /*#__PURE__*/_react["default"].createElement(Root, props, /*#__PURE__*/_react["default"].createElement(HeaderSection, null, iconElement && /*#__PURE__*/_react["default"].createElement(_StyledDiv3, null, iconElement), headerText && /*#__PURE__*/_react["default"].createElement(HeaderSection, null, /*#__PURE__*/_react["default"].createElement(Header, {
+  }, /*#__PURE__*/_react2["default"].createElement(Root, props, /*#__PURE__*/_react2["default"].createElement(HeaderSection, null, iconElement && /*#__PURE__*/_react2["default"].createElement("div", {
+    css: {
+      "paddingRight": "16px"
+    }
+  }, iconElement), headerText && /*#__PURE__*/_react2["default"].createElement(HeaderSection, null, /*#__PURE__*/_react2["default"].createElement(Header, {
     isBold: true
-  }, headerText)), external && /*#__PURE__*/_react["default"].createElement(_StyledExternalLinkIcon, null)), descriptionText && /*#__PURE__*/_react["default"].createElement(Description, null, descriptionText), children && /*#__PURE__*/_react["default"].createElement(_StyledDiv4, null, children)));
+  }, headerText)), external && /*#__PURE__*/_react2["default"].createElement(_buttons.ExternalLinkIcon, {
+    css: {
+      "position": "absolute",
+      "right": "16px",
+      "top": "16px"
+    }
+  })), descriptionText && /*#__PURE__*/_react2["default"].createElement(Description, null, descriptionText), children && /*#__PURE__*/_react2["default"].createElement("div", {
+    css: {
+      "marginTop": "16px"
+    }
+  }, children)));
 }
-var ExternalA = _styledComponents["default"].a.withConfig({
-  displayName: "CardC__ExternalA",
-  componentId: "sc-l8kwp6-0"
-})(function () {
+var ExternalA = _styled2["default"].a(function () {
   return [];
 });
-var Root = _styledComponents["default"].div.withConfig({
-  displayName: "CardC__Root",
-  componentId: "sc-l8kwp6-1"
-})(function () {
+var Root = _styled2["default"].div(function () {
   return [{
     "position": "relative",
     "borderRadius": "8px",
@@ -60,9 +74,9 @@ var Root = _styledComponents["default"].div.withConfig({
     "padding": "8px",
     ":hover": {
       "--tw-border-opacity": "1",
-      "borderColor": "rgb(0 194 206 / var(--tw-border-opacity))",
+      "borderColor": "rgb(50 205 50 / var(--tw-border-opacity))",
       "--tw-text-opacity": "1",
-      "color": "rgb(0 194 206 / var(--tw-text-opacity))"
+      "color": "rgb(50 205 50 / var(--tw-text-opacity))"
     },
     "@media (min-width: 1024px)": {
       "padding": "16px"
@@ -72,10 +86,7 @@ var Root = _styledComponents["default"].div.withConfig({
     }
   }];
 });
-var HoverlessRoot = _styledComponents["default"].div.withConfig({
-  displayName: "CardC__HoverlessRoot",
-  componentId: "sc-l8kwp6-2"
-})(function () {
+var HoverlessRoot = _styled2["default"].div(function () {
   return [{
     "position": "relative",
     "borderRadius": "8px",
@@ -91,63 +102,22 @@ var HoverlessRoot = _styledComponents["default"].div.withConfig({
     }
   }];
 });
-var HeaderSection = _styledComponents["default"].div.withConfig({
-  displayName: "CardC__HeaderSection",
-  componentId: "sc-l8kwp6-3"
-})(function () {
+var HeaderSection = _styled2["default"].div(function () {
   return [{
     "display": "flex",
     "width": "100%",
     "alignItems": "center"
   }];
 });
-var Header = (0, _styledComponents["default"])(_typography.H6).withConfig({
-  displayName: "CardC__Header",
-  componentId: "sc-l8kwp6-4"
-})(function () {
+var Header = (0, _styled2["default"])(_typography.H6)(function () {
   return [{
     "lineHeight": "1"
-  }, (0, _styledComponents.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n    color: inherit;\n  "])))];
+  }, (0, _react.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n    color: inherit;\n  "])))];
 });
-var Description = (0, _styledComponents["default"])(_typography.P).withConfig({
-  displayName: "CardC__Description",
-  componentId: "sc-l8kwp6-5"
-})(function () {
+var Description = (0, _styled2["default"])(_typography.P)(function () {
   return [{
     "marginTop": "8px",
     "lineHeight": "1.25",
     "color": "var(--text-secondary)"
   }];
-});
-var _StyledDiv = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "CardC___StyledDiv",
-  componentId: "sc-l8kwp6-6"
-})({
-  "paddingRight": "16px"
-});
-var _StyledDiv2 = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "CardC___StyledDiv2",
-  componentId: "sc-l8kwp6-7"
-})({
-  "marginTop": "1rem"
-});
-var _StyledDiv3 = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "CardC___StyledDiv3",
-  componentId: "sc-l8kwp6-8"
-})({
-  "paddingRight": "16px"
-});
-var _StyledExternalLinkIcon = (0, _styledComponents["default"])(_buttons.ExternalLinkIcon).withConfig({
-  displayName: "CardC___StyledExternalLinkIcon",
-  componentId: "sc-l8kwp6-9"
-})({
-  "position": "absolute",
-  "right": "16px",
-  "top": "16px"
-});
-var _StyledDiv4 = (0, _styledComponents["default"])("div").withConfig({
-  displayName: "CardC___StyledDiv4",
-  componentId: "sc-l8kwp6-10"
-})({
-  "marginTop": "16px"
 });
