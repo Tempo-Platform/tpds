@@ -5,7 +5,7 @@ import { PSmall } from '../../elements/typography'
 import CheckIcon from '../../assets/svgs/icons/Check'
 
 const StepsRoot = styled.div(() => [
-  tw`w-full flex justify-between items-center gap-x-[3%]`,
+  tw`w-full flex justify-between items-center`,
   css`
     .default {
       ${tw`bg-window border-grey-light-scale-500 dark:(bg-window border-grey-light-scale-800)`},
