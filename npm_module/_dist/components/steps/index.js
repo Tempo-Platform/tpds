@@ -76,8 +76,8 @@ var StepsRoot = _styled2["default"].div(function () {
 var StepCircle = _styled2["default"].div(function () {
   return [{
     "display": "flex",
-    "height": "26px !important",
-    "width": "26px !important",
+    "height": "24px !important",
+    "width": "24px !important",
     "alignItems": "center",
     "justifyContent": "center",
     "borderRadius": "50%",
@@ -85,7 +85,7 @@ var StepCircle = _styled2["default"].div(function () {
   }, (0, _react.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n      p {\n        ", "\n      }\n    }\n  "])), {
     "position": "relative",
     "top": "-1px",
-    "fontSize": "14px !important"
+    "fontSize": "13px !important"
   })];
 });
 var Line = _styled2["default"].div(function () {
@@ -107,7 +107,7 @@ var StepRoot = _styled2["default"].div(function () {
     "columnGap": "0.5rem"
   }];
 });
-var inserLines = function inserLines(array) {
+var insertLines = function insertLines(array) {
   var newArray = [];
   array.forEach(function (item, index) {
     newArray.push(item);
@@ -145,18 +145,19 @@ function StepsComponent(_ref) {
       css: {
         "lineHeight": "1"
       }
-    }, index + 1)), /*#__PURE__*/_react2["default"].createElement(_typography.P, {
+    }, index + 1)), /*#__PURE__*/_react2["default"].createElement(_typography.PSmall, {
       isMedium: true,
       className: "tpds-steps-label",
       css: {
         "position": "relative",
         "top": "-1px",
         "whiteSpace": "nowrap",
-        "lineHeight": "1"
+        "lineHeight": "1",
+        "letterSpacing": "-0.025em"
       }
     }, step.title));
   });
-  var itemsWithLines = inserLines(items);
+  var itemsWithLines = insertLines(items);
   itemsWithLines.pop();
   return /*#__PURE__*/_react2["default"].createElement(StepsRoot, props, itemsWithLines);
 }
