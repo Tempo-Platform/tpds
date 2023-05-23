@@ -1,7 +1,7 @@
 /* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 import React from 'react'
 import tw, { styled, css } from 'twin.macro'
-import { PSmall, P } from '../../elements/typography'
+import { PSmall } from '../../elements/typography'
 import CheckIcon from '../../assets/svgs/icons/Check'
 
 const StepsRoot = styled.div(() => [
@@ -32,10 +32,10 @@ const StepsRoot = styled.div(() => [
 ])
 
 const StepCircle = styled.div(() => [
-  tw`rounded-[50%] w-[26px]! h-[26px]! flex justify-center items-center border-2`,
+  tw`rounded-[50%] w-[24px]! h-[24px]! flex justify-center items-center border-2`,
   css`
       p {
-        ${tw`text-[14px]! relative top-[-1px]`}
+        ${tw`text-[13px]! relative top-[-1px]`}
       }
     }
   `,
@@ -47,7 +47,7 @@ const Line = styled.div(() => [
 
 const StepRoot = styled.div(() => [tw`flex gap-x-2 items-center`])
 
-const inserLines = array => {
+const insertLines = array => {
   const newArray = []
   array.forEach((item, index) => {
     newArray.push(item)
@@ -80,16 +80,16 @@ function StepsComponent({ steps, currentStepIndex = 0, ...props }) {
           </PSmall>
         )}
       </StepCircle>
-      <P
+      <PSmall
         isMedium
         className="tpds-steps-label"
-        tw="leading-none relative top-[-1px] whitespace-nowrap"
+        tw="tracking-tight leading-none relative top-[-1px] whitespace-nowrap"
       >
         {step.title}
-      </P>
+      </PSmall>
     </StepRoot>
   ))
-  const itemsWithLines = inserLines(items)
+  const itemsWithLines = insertLines(items)
   itemsWithLines.pop()
   return <StepsRoot {...props}>{itemsWithLines}</StepsRoot>
 }
