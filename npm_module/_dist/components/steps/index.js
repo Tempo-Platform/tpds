@@ -17,8 +17,7 @@ var StepsRoot = _styled2["default"].div(function () {
     "display": "flex",
     "width": "100%",
     "alignItems": "center",
-    "justifyContent": "space-between",
-    "columnGap": "3%"
+    "justifyContent": "space-between"
   }, (0, _react.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n    .default {\n      ", ",\n      p {\n        ", "\n      }\n    }\n    .completed {\n      ", ",\n      p {\n        ", "\n      }\n      svg * {\n        ", "\n      }\n    }\n    .active {\n      ", ",\n      p {\n        ", "\n      }\n    }\n  "])), {
     "--tw-border-opacity": "1",
     "borderColor": "rgb(201 205 207 / var(--tw-border-opacity))",
