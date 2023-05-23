@@ -10,7 +10,7 @@ var _styled2 = _interopRequireDefault(require("@emotion/styled"));
 var _react2 = _interopRequireDefault(require("react"));
 var _excluded = ["color", "radius", "style", "duration", "strokeWidth", "center"];
 var _templateObject;
-var SVG = _styled2["default"].svg(function () {
+var CustomSVG = _styled2["default"].svg(function () {
   return [(0, _react.css)(_templateObject || (_templateObject = (0, _taggedTemplateLiteralLoose2["default"])(["\n    @keyframes rotate {\n      100% {\n        transform: rotate(360deg);\n      }\n    }\n    animation-name: rotate;\n    animation-timing-function: linear;\n    display: inline-block;\n    animation-iteration-count: infinite;\n  "])))];
 });
 function Spinner(_ref) {
@@ -29,14 +29,14 @@ function Spinner(_ref) {
   var Path = getPathElement(color);
   return /*#__PURE__*/_react2["default"].createElement("span", {
     style: styles
-  }, /*#__PURE__*/_react2["default"].createElement(SVG, Object.assign({}, props, {
+  }, /*#__PURE__*/_react2["default"].createElement(CustomSVG, {
     viewBox: "0 0 42 42",
     style: {
       animationDuration: (duration ? duration : 900) + "ms",
       width: (radius ? radius : 40) + "px",
       height: (radius ? radius : 40) + "px"
     }
-  }), /*#__PURE__*/_react2["default"].createElement("g", {
+  }, /*#__PURE__*/_react2["default"].createElement("g", {
     fill: "none",
     transform: "translate(3 3)",
     strokeWidth: "3"
@@ -68,12 +68,7 @@ function DefaultPath() {
   return /*#__PURE__*/_react2["default"].createElement("path", {
     css: {
       "stroke": "currentColor",
-      "--tw-text-opacity": "1",
-      "color": "rgb(0 0 0 / var(--tw-text-opacity))",
-      ":is(.dark &)": {
-        "--tw-text-opacity": "1",
-        "color": "rgb(255 255 255 / var(--tw-text-opacity))"
-      }
+      "color": "var(--text-primary)"
     },
     d: "M36 18c0-9.94-8.06-18-18-18",
     strokeLinecap: "round",

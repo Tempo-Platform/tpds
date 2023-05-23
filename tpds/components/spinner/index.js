@@ -1,7 +1,8 @@
+/* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 import React from 'react'
 import tw, { styled, css } from 'twin.macro'
 
-const SVG = styled.svg(() => [
+const CustomSVG = styled.svg(() => [
   css`
     @keyframes rotate {
       100% {
@@ -24,8 +25,7 @@ function Spinner({ color, radius, style, duration, strokeWidth, center, ...props
   const Path = getPathElement(color)
   return (
     <span style={styles}>
-      <SVG
-        {...props}
+      <CustomSVG
         viewBox="0 0 42 42"
         style={{
           animationDuration: `${duration ? duration : 900}ms`,
@@ -42,7 +42,7 @@ function Spinner({ color, radius, style, duration, strokeWidth, center, ...props
           />
           {Path}
         </g>
-      </SVG>
+      </CustomSVG>
     </span>
   )
 }
@@ -59,7 +59,7 @@ export const SpinnerBlock = styled.div({
 function DefaultPath() {
   return (
     <path
-      tw="stroke-current text-black dark:text-white"
+      tw="stroke-current text-primary"
       d="M36 18c0-9.94-8.06-18-18-18"
       strokeLinecap="round"
       strokeLinejoin="round"

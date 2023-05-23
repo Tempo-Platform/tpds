@@ -12,6 +12,7 @@
     ]
   ],
   "plugins": [
+    "babel-plugin-twin",
     "babel-plugin-macros",
     "@babel/plugin-syntax-jsx",
     ["@babel/plugin-proposal-private-methods", { "loose": true }],

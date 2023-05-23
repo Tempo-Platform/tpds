@@ -7,7 +7,10 @@ var _react = _interopRequireDefault(require("react"));
 function GlobalSwitcherIcon() {
   return /*#__PURE__*/_react["default"].createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
-    tw: "fill-current text-primary",
+    css: {
+      "fill": "currentColor",
+      "color": "var(--text-primary)"
+    },
     width: "16",
     height: "16",
     viewBox: "0 0 16 16"
