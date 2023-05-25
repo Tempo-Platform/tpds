@@ -151,7 +151,7 @@ function StepsComponent(_ref) {
       css: {
         "position": "relative",
         "top": "-1px",
-        "whiteSpace": "nowrap",
+        "whiteSpace": "nowrap !important",
         "lineHeight": "1",
         "letterSpacing": "-0.025em"
       }

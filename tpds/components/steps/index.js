@@ -83,7 +83,7 @@ function StepsComponent({ steps, currentStepIndex = 0, ...props }) {
       <PSmall
         isMedium
         className="tpds-steps-label"
-        tw="tracking-tight leading-none relative top-[-1px] whitespace-nowrap"
+        tw="tracking-tight leading-none relative top-[-1px] whitespace-nowrap!"
       >
         {step.title}
       </PSmall>
