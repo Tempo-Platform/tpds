@@ -3,7 +3,7 @@ import tw, { styled, css } from 'twin.macro'
 export const Button = styled.button(
   ({ label, isSmall, isTiny, isLarge, isDisabled, isUppercase, iconColor }) => [
     tw`flex transition duration-100`,
-    tw`font-medium! text-[14px]`,
+    tw`font-medium! text-[14px] whitespace-nowrap`,
     tw`px-3 gap-x-2 pt-[5px] pb-[5px] border rounded-sm focus:outline-none`,
     css`
       font-family: 'Inter';
