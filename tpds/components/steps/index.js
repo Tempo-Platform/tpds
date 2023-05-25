@@ -34,10 +34,11 @@ const StepsRoot = styled.div(() => [
 const StepCircle = styled.div(() => [
   tw`rounded-[50%] w-[24px]! h-[24px]! flex justify-center items-center border-2`,
   css`
-      p {
-        ${tw`text-[13px]! relative top-[-1px]`}
-      }
+    p {
+      ${tw`text-[13px]! relative top-[-1px]`}
+      ${tw`tracking-tight leading-none relative top-[-1px] whitespace-nowrap!`}
     }
+  }
   `,
 ])
 
@@ -80,11 +81,7 @@ function StepsComponent({ steps, currentStepIndex = 0, ...props }) {
           </PSmall>
         )}
       </StepCircle>
-      <PSmall
-        isMedium
-        className="tpds-steps-label"
-        tw="tracking-tight leading-none relative top-[-1px] whitespace-nowrap!"
-      >
+      <PSmall isMedium className="tpds-steps-label">
         {step.title}
       </PSmall>
     </StepRoot>

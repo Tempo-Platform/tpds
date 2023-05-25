@@ -82,10 +82,16 @@ var StepCircle = _styled2["default"].div(function () {
     "justifyContent": "center",
     "borderRadius": "50%",
     "borderWidth": "2px"
-  }, (0, _react.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n      p {\n        ", "\n      }\n    }\n  "])), {
+  }, (0, _react.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n    p {\n      ", "\n      ", "\n    }\n  }\n  "])), {
     "position": "relative",
     "top": "-1px",
     "fontSize": "13px !important"
+  }, {
+    "position": "relative",
+    "top": "-1px",
+    "whiteSpace": "nowrap !important",
+    "lineHeight": "1",
+    "letterSpacing": "-0.025em"
   })];
 });
 var Line = _styled2["default"].div(function () {
@@ -147,14 +153,7 @@ function StepsComponent(_ref) {
       }
     }, index + 1)), /*#__PURE__*/_react2["default"].createElement(_typography.PSmall, {
       isMedium: true,
-      className: "tpds-steps-label",
-      css: {
-        "position": "relative",
-        "top": "-1px",
-        "whiteSpace": "nowrap !important",
-        "lineHeight": "1",
-        "letterSpacing": "-0.025em"
-      }
+      className: "tpds-steps-label"
     }, step.title));
   });
   var itemsWithLines = insertLines(items);
