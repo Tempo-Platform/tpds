@@ -33,17 +33,15 @@ const StepsRoot = styled.div(() => [
 
 const StepCircle = styled.div(() => [
   tw`rounded-[50%] w-[24px]! h-[24px]! flex justify-center items-center border-2`,
-  css`
-    p {
-      ${tw`text-[13px]! relative top-[-1px]`}
-      ${tw`tracking-tight leading-none relative top-[-1px] whitespace-nowrap!`}
-    }
-  }
-  `,
 ])
 
 const Line = styled.div(() => [
   tw`w-[10%] h-[2px] bg-grey-light-scale-300 dark:bg-grey-dark-scale-300`,
+])
+
+const PLabel = styled(PSmall)(() => [
+  tw`text-[13px]! relative top-[-1px]`,
+  tw`tracking-tight leading-none relative top-[-1px] whitespace-nowrap!`,
 ])
 
 const StepRoot = styled.div(() => [tw`flex gap-x-2 items-center`])
@@ -81,9 +79,9 @@ function StepsComponent({ steps, currentStepIndex = 0, ...props }) {
           </PSmall>
         )}
       </StepCircle>
-      <PSmall isMedium className="tpds-steps-label">
+      <PLabel isMedium className="tpds-steps-label">
         {step.title}
-      </PSmall>
+      </PLabel>
     </StepRoot>
   ))
   const itemsWithLines = insertLines(items)

@@ -11,7 +11,7 @@ var _react2 = _interopRequireDefault(require("react"));
 var _typography = require("../../elements/typography");
 var _Check = _interopRequireDefault(require("../../assets/svgs/icons/Check"));
 var _excluded = ["steps", "currentStepIndex"];
-var _templateObject, _templateObject2;
+var _templateObject;
 var StepsRoot = _styled2["default"].div(function () {
   return [{
     "display": "flex",
@@ -82,17 +82,7 @@ var StepCircle = _styled2["default"].div(function () {
     "justifyContent": "center",
     "borderRadius": "50%",
     "borderWidth": "2px"
-  }, (0, _react.css)(_templateObject2 || (_templateObject2 = (0, _taggedTemplateLiteralLoose2["default"])(["\n    p {\n      ", "\n      ", "\n    }\n  }\n  "])), {
-    "position": "relative",
-    "top": "-1px",
-    "fontSize": "13px !important"
-  }, {
-    "position": "relative",
-    "top": "-1px",
-    "whiteSpace": "nowrap !important",
-    "lineHeight": "1",
-    "letterSpacing": "-0.025em"
-  })];
+  }];
 });
 var Line = _styled2["default"].div(function () {
   return [{
@@ -104,6 +94,19 @@ var Line = _styled2["default"].div(function () {
       "--tw-bg-opacity": "1",
       "backgroundColor": "rgb(62 67 71 / var(--tw-bg-opacity))"
     }
+  }];
+});
+var PLabel = (0, _styled2["default"])(_typography.PSmall)(function () {
+  return [{
+    "position": "relative",
+    "top": "-1px",
+    "fontSize": "13px !important"
+  }, {
+    "position": "relative",
+    "top": "-1px",
+    "whiteSpace": "nowrap !important",
+    "lineHeight": "1",
+    "letterSpacing": "-0.025em"
   }];
 });
 var StepRoot = _styled2["default"].div(function () {
@@ -151,7 +154,7 @@ function StepsComponent(_ref) {
       css: {
         "lineHeight": "1"
       }
-    }, index + 1)), /*#__PURE__*/_react2["default"].createElement(_typography.PSmall, {
+    }, index + 1)), /*#__PURE__*/_react2["default"].createElement(PLabel, {
       isMedium: true,
       className: "tpds-steps-label"
     }, step.title));
