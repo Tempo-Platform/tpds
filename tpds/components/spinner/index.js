@@ -4,15 +4,18 @@ import tw, { styled, css } from 'twin.macro'
 
 const CustomSVG = styled.svg(() => [
   css`
+    animation-name: rotate;
+    animation-timing-function: linear;
+    display: inline-block;
+    animation-iteration-count: infinite;
+    .spinner-stroke-circle {
+      ${tw`stroke-grey-light-scale-400 dark:stroke-grey-dark-scale-300`};
+    }
     @keyframes rotate {
       100% {
         transform: rotate(360deg);
       }
     }
-    animation-name: rotate;
-    animation-timing-function: linear;
-    display: inline-block;
-    animation-iteration-count: infinite;
   `,
 ])
 
@@ -22,7 +25,6 @@ function Spinner({ color, radius, style, duration, strokeWidth, center, ...props
     styles.display = 'block'
     styles.textAlign = 'center'
   }
-  const Path = getPathElement(color)
   return (
     <span style={styles}>
       <CustomSVG
@@ -34,13 +36,14 @@ function Spinner({ color, radius, style, duration, strokeWidth, center, ...props
         }}
       >
         <g fill="none" transform="translate(3 3)" strokeWidth="3">
-          <circle
-            tw="stroke-current text-grey-light-scale-400 dark:text-grey-dark-scale-300"
-            cx="18"
-            cy="18"
-            r="18"
+          <circle className="spinner-stroke-circle" cx="18" cy="18" r="18" />
+          <path
+            style={{ color: color }}
+            stroke="currentColor"
+            d="M36 18c0-9.94-8.06-18-18-18"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
-          {Path}
         </g>
       </CustomSVG>
     </span>
@@ -55,73 +58,3 @@ export const SpinnerBlock = styled.div({
   justifyContent: 'center',
   height: '20%',
 })
-
-function DefaultPath() {
-  return (
-    <path
-      tw="stroke-current text-primary"
-      d="M36 18c0-9.94-8.06-18-18-18"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  )
-}
-
-function BluePath() {
-  return (
-    <path
-      tw="stroke-current text-blue"
-      d="M36 18c0-9.94-8.06-18-18-18"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  )
-}
-
-function GreenPath() {
-  return (
-    <path
-      tw="stroke-current text-green"
-      d="M36 18c0-9.94-8.06-18-18-18"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  )
-}
-
-function RedPath() {
-  return (
-    <path
-      tw="stroke-current text-red"
-      d="M36 18c0-9.94-8.06-18-18-18"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  )
-}
-
-function OrangePath() {
-  return (
-    <path
-      tw="stroke-current text-orange"
-      d="M36 18c0-9.94-8.06-18-18-18"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  )
-}
-
-const getPathElement = color => {
-  switch (color) {
-    case 'green':
-      return <GreenPath />
-    case 'blue':
-      return <BluePath />
-    case 'orange':
-      return <OrangePath />
-    case 'red':
-      return <RedPath />
-    default:
-      return <DefaultPath />
-  }
-}
