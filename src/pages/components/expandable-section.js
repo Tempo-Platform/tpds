@@ -113,7 +113,7 @@ const ExpandableSectionPage = () => {
 
 export default ExpandableSectionPage
 
-const code = String.raw`import ExpandableSection from '@tempoplatform/tpds/components/mobile/expandable-section'
+const code = String.raw`import ExpandableSection from '@tempoplatform/tpds/components/expandable-section'
 import { P } from '../../../tpds/elements/typography'
 
 <ExpandableSection
