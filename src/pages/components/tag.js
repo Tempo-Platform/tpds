@@ -8,6 +8,7 @@ import { H1, P, PLarge } from '../../../tpds/elements/typography'
 import { Separator } from '../../../tpds/elements/layout'
 import Tag from '../../../tpds/components/tag'
 import Hero from '../../../tpds/components/hero/Hero'
+import PropsTable from '../../../tpds/components/table/PropsTable'
 
 const TagPage = () => (
   <Layout>
@@ -42,9 +43,9 @@ const TagPage = () => (
       <CodeBlock code={codeSuccess} />
       <br />
       <br />
-      <PLarge>Info</PLarge>
+      <PLarge>Info (with optional addHoverEffect)</PLarge>
       <br />
-      <Tag label="Info" variant="info" />
+      <Tag label="Info" variant="info" addHoverEffect={true} />
       <br />
       <br />
       <CodeBlock code={codeInfo} />
@@ -64,6 +65,42 @@ const TagPage = () => (
       <br />
       <br />
       <CodeBlock code={codeDanger} />
+      <br />
+      <br />
+      <PropsTable
+        title="Props"
+        items={[
+          {
+            propName: 'label',
+            type: 'String',
+            default: "' '",
+            required: 'true',
+            description: 'The label to be displayed inside the Tag',
+          },
+          {
+            propName: 'variant',
+            type: 'String',
+            default: 'null',
+            required: 'false',
+            description: "The variant type, eg. 'info', 'success', 'warning', etc.",
+          },
+          {
+            propName: 'isUppercase',
+            type: 'Boolean',
+            default: 'null',
+            required: 'false',
+            description: 'Force uppercase label display',
+          },
+          {
+            propName: 'addHoverEffect',
+            type: 'Boolean',
+            default: 'null',
+            required: 'false',
+            description:
+              'Adds a hover effect to the Tag. Useful when the Tag is used as a button or link',
+          },
+        ]}
+      />
       <br />
       <br />
     </MainContent>
@@ -92,6 +129,7 @@ const codeInfo = String.raw`import Tag from '@tempoplatform/tpds/components/tag'
 <Tag
   label='Info'
   variant='info'
+  addHoverEffect={true}
 />`
 
 const codeSuccess = String.raw`import Tag from '@tempoplatform/tpds/components/tag'
