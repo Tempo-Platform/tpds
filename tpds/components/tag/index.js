@@ -33,17 +33,17 @@ const infoStyleWithHover = [
 ]
 const successStyleWithHover = [
   tw`cursor-pointer border-green text-green`,
-  tw`hover:(bg-blue text-white dark:text-black)`,
+  tw`hover:(bg-green text-white dark:text-black)`,
   css`p { ${tw`text-current`};`,
 ]
 const dangerStyleWithHover = [
   tw`cursor-pointer border-red text-red`,
-  tw`hover:(bg-blue text-white dark:text-black)`,
+  tw`hover:(bg-red text-white dark:text-black)`,
   css`p { ${tw`text-current`};`,
 ]
 const warningStyleWithHover = [
   tw`cursor-pointer border-orange text-orange`,
-  tw`hover:(bg-blue text-white dark:text-black)`,
+  tw`hover:(bg-orange text-white dark:text-black)`,
   css`p { ${tw`text-current`};`,
 ]
 
