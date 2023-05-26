@@ -5,8 +5,6 @@ exports.__esModule = true;
 exports["default"] = void 0;
 var _objectDestructuringEmpty2 = _interopRequireDefault(require("@babel/runtime/helpers/objectDestructuringEmpty"));
 var _react = _interopRequireDefault(require("react"));
-/* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
-
 function MinusIcon(_ref) {
   var props = Object.assign({}, ((0, _objectDestructuringEmpty2["default"])(_ref), _ref));
   return /*#__PURE__*/_react["default"].createElement("svg", Object.assign({
@@ -19,9 +17,11 @@ function MinusIcon(_ref) {
       "color": "var(--text-primary)"
     }
   }, props), /*#__PURE__*/_react["default"].createElement("path", {
+    fill: "currentColor",
     d: "M0 0H44V44H0z",
-    opacity: "0.01"
+    opacity: "0.0001"
   }), /*#__PURE__*/_react["default"].createElement("path", {
+    fill: "currentColor",
     d: "M14 21H30V23H14z"
   }));
 }

@@ -7,9 +7,9 @@ var _taggedTemplateLiteralLoose2 = _interopRequireDefault(require("@babel/runtim
 var _react = require("@emotion/react");
 var _styled2 = _interopRequireDefault(require("@emotion/styled"));
 var _react2 = _interopRequireDefault(require("react"));
-var _typography = require("../../../elements/typography");
-var _MinusIcon = _interopRequireDefault(require("../../../assets/svgs/icons/MinusIcon"));
-var _PlusIcon = _interopRequireDefault(require("../../../assets/svgs/icons/PlusIcon"));
+var _typography = require("../../elements/typography");
+var _MinusIcon = _interopRequireDefault(require("../../assets/svgs/icons/MinusIcon"));
+var _PlusIcon = _interopRequireDefault(require("../../assets/svgs/icons/PlusIcon"));
 var _templateObject, _templateObject2;
 var RootDiv = _styled2["default"].div(function (props) {
   return [{
