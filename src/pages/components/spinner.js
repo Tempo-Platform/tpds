@@ -47,12 +47,6 @@ const SpinnerPage = () => (
       <CodeBlock code={codeSpinnerGreen} />
       <br />
       <br />
-      <PLarge>Custom: blue, centered, 30px radius</PLarge>
-      <br />
-      <Spinner center color="blue" radius={30} />
-      <br />
-      <br />
-      <CodeBlock code={codeSpinnerBlue} />
     </MainContent>
   </Layout>
 )
@@ -77,12 +71,4 @@ const codeSpinnerGreen = String.raw`import Spinner from '@tempoplatform/tpds/com
 <Spinner
   color='green'
   radius={40}
-/>`
-
-const codeSpinnerBlue = String.raw`import Spinner from '@tempoplatform/tpds/components/spinner'
-
-<Spinner
-  center
-  color='blue'
-  radius={30}
 />`
