@@ -5,7 +5,7 @@ import Layout from '../../components/layout'
 import { MainContent } from '../../components/elements/layout'
 import CodeBlock from '../../../tpds/components/code/CodeBlock'
 import { H1, P } from '../../../tpds/elements/typography'
-import ExpandableSection from '../../../tpds/components/mobile/expandable-section'
+import ExpandableSection from '../../../tpds/components/expandable-section'
 import Hero from '../../../tpds/components/hero/Hero'
 import PropsTable from '../../../tpds/components/table/PropsTable'
 

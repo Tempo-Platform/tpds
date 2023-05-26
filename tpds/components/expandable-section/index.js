@@ -1,9 +1,9 @@
 /* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 import React from 'react'
 import tw, { styled, css } from 'twin.macro'
-import { PSmall } from '../../../elements/typography'
-import MinusIcon from '../../../assets/svgs/icons/MinusIcon'
-import PlusIcon from '../../../assets/svgs/icons/PlusIcon'
+import { PSmall } from '../../elements/typography'
+import MinusIcon from '../../assets/svgs/icons/MinusIcon'
+import PlusIcon from '../../assets/svgs/icons/PlusIcon'
 
 const RootDiv = styled.div(props => [
   tw`bg-window border border-window`,

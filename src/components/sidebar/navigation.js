@@ -2,7 +2,6 @@ import navigationComponents from './navigation_components'
 import guidelinesComponents from './navigation_guidelines'
 import navigationElements from './navigation_elements'
 import navigationDesignTokens from './navigation_designtokens.js'
-import navigationMobile from './navigation_mobile.js'
 
 const home = {
   link: '/',
@@ -36,11 +35,6 @@ const components = {
   title: 'Components',
   subItems: navigationComponents,
 }
-const mobile = {
-  link: '/mobile',
-  title: 'Mobile',
-  subItems: navigationMobile,
-}
 // const downloads = {
 //   link: '/downloads',
 //   title: 'Downloads',
@@ -50,7 +44,7 @@ const faq = {
   title: 'FAQ',
 }
 
-const links =  [
+const links = [
   home,
   gettingStarted,
   faq,
@@ -60,7 +54,6 @@ const links =  [
   designTokens,
   elements,
   components,
-  mobile,
 ]
 
 export default links

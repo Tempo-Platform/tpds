@@ -98,6 +98,10 @@ const pagination = {
   link: '/components/pagination',
   title: 'Pagination',
 }
+const expandableSection = {
+  link: '/components/expandable-section',
+  title: 'ExpandableSection',
+}
 
 const links = [
   breadcrumbs,
@@ -109,6 +113,7 @@ const links = [
   select,
   combobox,
   externallinkbutton,
+  expandableSection,
   hero,
   input,
   // logo,
