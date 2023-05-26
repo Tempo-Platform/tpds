@@ -14,13 +14,38 @@ function Tag({ label = '', variant = 'default', ...props }) {
 export default Tag
 
 const defaultStyle = [
-  tw`border-grey-light-scale-600`,
-  css`p { color: ${theme('colors.grey-light-scale.600')};`,
+  tw`text-grey-light-scale-600 border-grey-light-scale-600`,
+  css`p { ${tw`text-current`};`,
 ]
-const infoStyle = [tw`border-blue`, css`p { color: ${theme('colors.blue')};`]
-const successStyle = [tw`border-green`, css`p { color: ${theme('colors.green')};`]
-const dangerStyle = [tw`border-red`, css`p { color: ${theme('colors.red')};`]
-const warningStyle = [tw`border-orange`, css`p { color: ${theme('colors.orange')};`]
+const infoStyle = [tw`border-blue`, css`p { ${tw`text-blue`};`]
+const successStyle = [tw`border-green`, css`p { ${tw`text-green`};`]
+const dangerStyle = [tw`border-red`, css`p { ${tw`text-red`};`]
+const warningStyle = [tw`border-orange`, css`p { ${tw`text-orange`};`]
+
+const defaultStyleWithHover = [
+  tw`text-grey-light-scale-600 border-grey-light-scale-600`,
+  css`p { ${tw`text-current`};`,
+]
+const infoStyleWithHover = [
+  tw`cursor-pointer border-blue text-blue`,
+  tw`hover:(bg-blue text-white dark:text-black)`,
+  css`p { ${tw`text-current`};`,
+]
+const successStyleWithHover = [
+  tw`cursor-pointer border-green text-green`,
+  tw`hover:(bg-blue text-white dark:text-black)`,
+  css`p { ${tw`text-current`};`,
+]
+const dangerStyleWithHover = [
+  tw`cursor-pointer border-red text-red`,
+  tw`hover:(bg-blue text-white dark:text-black)`,
+  css`p { ${tw`text-current`};`,
+]
+const warningStyleWithHover = [
+  tw`cursor-pointer border-orange text-orange`,
+  tw`hover:(bg-blue text-white dark:text-black)`,
+  css`p { ${tw`text-current`};`,
+]
 
 const tagVariants = {
   default: defaultStyle,
@@ -29,8 +54,17 @@ const tagVariants = {
   danger: dangerStyle,
   warning: warningStyle,
 }
-const TagElement = styled.div(({ isUppercase }) => [
+
+const tagVariantsWithHover = {
+  default: defaultStyleWithHover,
+  info: infoStyleWithHover,
+  success: successStyleWithHover,
+  danger: dangerStyleWithHover,
+  warning: warningStyleWithHover,
+}
+const TagElement = styled.div(({ isUppercase, addHoverEffect }) => [
   tw`inline-flex rounded p-1 select-none flex justify-center border`,
-  ({ variant = 'default' }) => tagVariants[variant],
+  ({ variant = 'default' }) =>
+    addHoverEffect ? tagVariantsWithHover[variant] : tagVariants[variant],
   isUppercase && tw`uppercase`,
 ])
