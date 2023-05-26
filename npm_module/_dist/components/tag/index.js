@@ -103,7 +103,7 @@ var successStyleWithHover = [{
 }, {
   ":hover": {
     "--tw-bg-opacity": "1",
-    "backgroundColor": "rgb(25 114 245 / var(--tw-bg-opacity))",
+    "backgroundColor": "rgb(45 185 45 / var(--tw-bg-opacity))",
     "--tw-text-opacity": "1",
     "color": "rgb(255 255 255 / var(--tw-text-opacity))"
   },
@@ -123,7 +123,7 @@ var dangerStyleWithHover = [{
 }, {
   ":hover": {
     "--tw-bg-opacity": "1",
-    "backgroundColor": "rgb(25 114 245 / var(--tw-bg-opacity))",
+    "backgroundColor": "rgb(235 87 87 / var(--tw-bg-opacity))",
     "--tw-text-opacity": "1",
     "color": "rgb(255 255 255 / var(--tw-text-opacity))"
   },
@@ -143,7 +143,7 @@ var warningStyleWithHover = [{
 }, {
   ":hover": {
     "--tw-bg-opacity": "1",
-    "backgroundColor": "rgb(25 114 245 / var(--tw-bg-opacity))",
+    "backgroundColor": "rgb(240 135 39 / var(--tw-bg-opacity))",
     "--tw-text-opacity": "1",
     "color": "rgb(255 255 255 / var(--tw-text-opacity))"
   },
