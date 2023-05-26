@@ -94,7 +94,8 @@ const codeChecked = String.raw`import Checkbox from '@tempoplatform/tpds/compone
 const [state, setState] = useState(true)
 
 <Checkbox
-  <Checkbox active={state} onClick={() => setState(!state)}/>
+  active={state}
+  onClick={() => setState(!state)}
 />`
 
 const codePartial = String.raw`import Checkbox from '@tempoplatform/tpds/components/checkbox'
@@ -102,11 +103,14 @@ const codePartial = String.raw`import Checkbox from '@tempoplatform/tpds/compone
 const [state, setState] = useState(true)
 
 <Checkbox
-  <Checkbox active={state} partial={true} onClick={() => setState(!state)}/>
+  active={state}
+  partial={true}
+  onClick={() => setState(!state)}
 />`
 
 const codeDisabled = String.raw`import Checkbox from '@tempoplatform/tpds/components/checkbox'
 
 <Checkbox
-  <Checkbox active={true} disabled={true} />
+  active={true}
+  disabled={true}
 />`
