@@ -78,7 +78,7 @@ function ExpandableSection({
   const headerRef = React.useRef(null)
   const [isOpen, toggleOpen] = React.useState(false)
   if (children && typeof children === 'string') {
-    children = <PSmall tw="leading-normal!">{children}</PSmall>
+    children = <PSmall style={{ lineHeight: '1.5 !important' }}>{children}</PSmall>
   }
 
   if (shouldClose && isOpen) {
