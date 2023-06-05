@@ -103,7 +103,11 @@ function ExpandableSection(_ref) {
     isOpen = _React$useState[0],
     toggleOpen = _React$useState[1];
   if (children && typeof children === 'string') {
-    children = /*#__PURE__*/_react2["default"].createElement(_typography.PSmall, null, children);
+    children = /*#__PURE__*/_react2["default"].createElement(_typography.PSmall, {
+      css: {
+        "letterSpacing": "0em"
+      }
+    }, children);
   }
   if (shouldClose && isOpen) {
     toggleOpen(false);
