@@ -105,7 +105,7 @@ function ExpandableSection(_ref) {
   if (children && typeof children === 'string') {
     children = /*#__PURE__*/_react2["default"].createElement(_typography.PSmall, {
       css: {
-        "letterSpacing": "0em"
+        "letterSpacing": "0em !important"
       }
     }, children);
   }
