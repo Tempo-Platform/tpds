@@ -104,8 +104,8 @@ function ExpandableSection(_ref) {
     toggleOpen = _React$useState[1];
   if (children && typeof children === 'string') {
     children = /*#__PURE__*/_react2["default"].createElement(_typography.PSmall, {
-      css: {
-        "lineHeight": "1.5 !important"
+      style: {
+        lineHeight: '1.5 !important'
       }
     }, children);
   }
