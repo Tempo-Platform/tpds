@@ -1,19 +1,13 @@
 /* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
-import tw from 'twin.macro'
 import React, { Fragment, useState, useEffect } from 'react'
 import { Dialog } from '@headlessui/react'
-import Transition from '../../system/Transition'
 import { Button } from '../../elements/buttons'
 import { H6, P } from '../../elements/typography'
+import tw from 'twin.macro'
 import { Separator } from '../../elements/layout'
 
-/**
- * HeadlessUI "Dialog (Modal)"
- * https://headlessui.dev/react/dialog
- * Customized for twin.macro
- */
-
-export default function Modal({
+// @ts-ignore
+const Modal = ({
   showOpen, // modal state
   clickElement, // JSX - the element to click to open the Modal
   title, // String
@@ -23,15 +17,12 @@ export default function Modal({
   overlayProps, // any React props
   titleProps, // any React props
   descriptionProps, // any React props
-  dialogOnClose, // dialog onClose callback
-}) {
+  dialogOnClose,
+}) => {
   let [isOpen, setIsOpen] = useState(showOpen)
   function closeModal() {
     setIsOpen(false)
     dialogOnClose?.()
-  }
-  function openModal() {
-    setIsOpen(true)
   }
 
   useEffect(() => {
@@ -42,14 +33,14 @@ export default function Modal({
     <div>
       {(showOpen || isOpen) && (
         <Dialog
-          tw="fixed inset-0 z-10 overflow-y-auto"
+          tw="fixed inset-0 z-30 overflow-y-auto"
           onClose={closeModal}
           open={showOpen || isOpen}
         >
           <div tw="min-h-screen px-4 text-center">
             <Dialog.Overlay tw="fixed inset-0 bg-black opacity-50" {...overlayProps} />
             <CenterAlignmentHack />
-            <div tw="inline-block w-full max-w-md py-4 px-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-window border-window shadow-xl text-grey-light-scale-900">
+            <div tw="inline-block w-full max-w-md rounded-sm py-4 px-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-window border-window shadow-xl text-grey-light-scale-900">
               <Content
                 title={title}
                 description={description}
@@ -135,19 +126,5 @@ function CenterAlignmentHack() {
     </span>
   )
 }
-const overlayTransitionProps = {
-  enter: tw`ease-out duration-300`,
-  enterFrom: tw`opacity-0`,
-  enterTo: tw`opacity-100`,
-  leave: tw`ease-in duration-200`,
-  leaveFrom: tw`opacity-100`,
-  leaveTo: tw`opacity-0`,
-}
-const contentTransitionProps = {
-  enter: tw`ease-out duration-300`,
-  enterFrom: tw`opacity-0 scale-95`,
-  enterTo: tw`opacity-100 scale-100`,
-  leave: tw`ease-in duration-200`,
-  leaveFrom: tw`opacity-100 scale-100`,
-  leaveTo: tw`opacity-0 scale-95`,
-}
+
+export default Modal
