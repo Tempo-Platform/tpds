@@ -1,12 +1,10 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 var _typeof = require("@babel/runtime/helpers/typeof");
 exports.__esModule = true;
-exports["default"] = Modal;
+exports["default"] = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _react2 = require("@headlessui/react");
-var _Transition = _interopRequireDefault(require("../../system/Transition"));
 var _buttons = require("../../elements/buttons");
 var _typography = require("../../elements/typography");
 var _layout = require("../../elements/layout");
@@ -14,13 +12,8 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 /* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 
-/**
- * HeadlessUI "Dialog (Modal)"
- * https://headlessui.dev/react/dialog
- * Customized for twin.macro
- */
-
-function Modal(_ref) {
+// @ts-ignore
+var Modal = function Modal(_ref) {
   var showOpen = _ref.showOpen,
     clickElement = _ref.clickElement,
     title = _ref.title,
@@ -38,9 +31,6 @@ function Modal(_ref) {
     setIsOpen(false);
     dialogOnClose === null || dialogOnClose === void 0 ? void 0 : dialogOnClose();
   }
-  function openModal() {
-    setIsOpen(true);
-  }
   (0, _react.useEffect)(function () {
     setIsOpen(showOpen);
   }, [showOpen]);
@@ -48,7 +38,7 @@ function Modal(_ref) {
     css: {
       "position": "fixed",
       "inset": "0px",
-      "zIndex": "10",
+      "zIndex": "30",
       "overflowY": "auto"
     },
     onClose: closeModal,
@@ -77,6 +67,7 @@ function Modal(_ref) {
       "maxWidth": "28rem",
       "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
       "overflow": "hidden",
+      "borderRadius": "0.125rem",
       "borderColor": "var(--border-window)",
       "backgroundColor": "var(--bg-window)",
       "paddingLeft": "1.5rem",
@@ -116,7 +107,7 @@ function Modal(_ref) {
       "display": "inline-flex"
     }
   }, clickElement));
-}
+};
 function Content(_ref2) {
   var title = _ref2.title,
     description = _ref2.description,
@@ -188,59 +179,5 @@ function CenterAlignmentHack() {
     "aria-hidden": "true"
   }, "\u200B");
 }
-var overlayTransitionProps = {
-  enter: {
-    "transitionDuration": "300ms",
-    "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1)"
-  },
-  enterFrom: {
-    "opacity": "0"
-  },
-  enterTo: {
-    "opacity": "1"
-  },
-  leave: {
-    "transitionDuration": "200ms",
-    "transitionTimingFunction": "cubic-bezier(0.4, 0, 1, 1)"
-  },
-  leaveFrom: {
-    "opacity": "1"
-  },
-  leaveTo: {
-    "opacity": "0"
-  }
-};
-var contentTransitionProps = {
-  enter: {
-    "transitionDuration": "300ms",
-    "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1)"
-  },
-  enterFrom: {
-    "--tw-scale-x": ".95",
-    "--tw-scale-y": ".95",
-    "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
-    "opacity": "0"
-  },
-  enterTo: {
-    "--tw-scale-x": "1",
-    "--tw-scale-y": "1",
-    "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
-    "opacity": "1"
-  },
-  leave: {
-    "transitionDuration": "200ms",
-    "transitionTimingFunction": "cubic-bezier(0.4, 0, 1, 1)"
-  },
-  leaveFrom: {
-    "--tw-scale-x": "1",
-    "--tw-scale-y": "1",
-    "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
-    "opacity": "1"
-  },
-  leaveTo: {
-    "--tw-scale-x": ".95",
-    "--tw-scale-y": ".95",
-    "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
-    "opacity": "0"
-  }
-};
+var _default = Modal;
+exports["default"] = _default;
