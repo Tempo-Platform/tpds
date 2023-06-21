@@ -12,10 +12,7 @@ function MinusIcon(_ref) {
     width: "44",
     height: "44",
     viewBox: "0 0 44 44",
-    css: {
-      "fill": "currentColor",
-      "color": "var(--text-primary)"
-    }
+    fill: "none"
   }, props), /*#__PURE__*/_react["default"].createElement("path", {
     fill: "currentColor",
     d: "M0 0H44V44H0z",
