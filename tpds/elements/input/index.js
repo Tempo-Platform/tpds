@@ -5,7 +5,7 @@ export const TextInput = styled.input(({ isValid, isInvalid, isWarning }) => [
   tw`transition duration-100`,
   tw`px-2.5 py-1 rounded focus:outline-none`,
   tw`font-normal`,
-  tw`bg-input text-primary border-input`,
+  tw`bg-grey-light-scale-200 text-primary border-transparent dark:bg-grey-dark-scale-200`,
   tw`border-2 focus:border-blue`,
   isValid && [tw`border-green focus:border-green`],
   isInvalid && [tw`border-red focus:border-red`],

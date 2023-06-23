@@ -4,7 +4,7 @@ import tw from 'twin.macro'
 import Layout from '../../components/layout'
 import { MainContent } from '../../components/elements/layout'
 import { H1, P, H6 } from '../../../tpds/elements/typography'
-import { Separator } from '../../../tpds/elements/layout'
+import { Separator, Window } from '../../../tpds/elements/layout'
 import CodeBlock from '../../../tpds/components/code/CodeBlock'
 import CodeGridComponent from '../../components/CodeGridComponent'
 import { TextInput } from '../../../tpds/elements/input'
@@ -31,63 +31,65 @@ const TextInputPage = () => {
         <Separator />
         <br />
         <br />
-        <P>Default</P>
-        <br />
-        <CodeGridComponent
-          code={codeDefault}
-          element={
-            <TextInput
-              onChange={e => setInputValue(e.target.value)}
-              value={inputValue}
-              placeholder="Placeholder"
-            />
-          }
-        />
-        <br />
-        <br />
-        <P>Valid</P>
-        <br />
-        <CodeGridComponent
-          code={codeValid}
-          element={
-            <TextInput
-              onChange={e => setInputValue(e.target.value)}
-              isValid
-              value={inputValue}
-              placeholder="Placeholder"
-            />
-          }
-        />
-        <br />
-        <br />
-        <P>Invalid</P>
-        <br />
-        <CodeGridComponent
-          code={codeInvalid}
-          element={
-            <TextInput
-              onChange={e => setInputValue(e.target.value)}
-              isInvalid
-              value={inputValue}
-              placeholder="Placeholder"
-            />
-          }
-        />
-        <br />
-        <br />
-        <P>Warning</P>
-        <br />
-        <CodeGridComponent
-          code={codeWarning}
-          element={
-            <TextInput
-              onChange={e => setInputValue(e.target.value)}
-              isWarning
-              value={inputValue}
-              placeholder="Placeholder"
-            />
-          }
-        />
+        <Window>
+          <P>Default</P>
+          <br />
+          <CodeGridComponent
+            code={codeDefault}
+            element={
+              <TextInput
+                onChange={e => setInputValue(e.target.value)}
+                value={inputValue}
+                placeholder="Placeholder"
+              />
+            }
+          />
+          <br />
+          <br />
+          <P>Valid</P>
+          <br />
+          <CodeGridComponent
+            code={codeValid}
+            element={
+              <TextInput
+                onChange={e => setInputValue(e.target.value)}
+                isValid
+                value={inputValue}
+                placeholder="Placeholder"
+              />
+            }
+          />
+          <br />
+          <br />
+          <P>Invalid</P>
+          <br />
+          <CodeGridComponent
+            code={codeInvalid}
+            element={
+              <TextInput
+                onChange={e => setInputValue(e.target.value)}
+                isInvalid
+                value={inputValue}
+                placeholder="Placeholder"
+              />
+            }
+          />
+          <br />
+          <br />
+          <P>Warning</P>
+          <br />
+          <CodeGridComponent
+            code={codeWarning}
+            element={
+              <TextInput
+                onChange={e => setInputValue(e.target.value)}
+                isWarning
+                value={inputValue}
+                placeholder="Placeholder"
+              />
+            }
+          />
+        </Window>
         <br />
         <br />
       </MainContent>
