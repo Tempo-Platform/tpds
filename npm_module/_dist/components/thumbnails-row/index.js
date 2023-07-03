@@ -13,7 +13,7 @@ var Grid = _styled2["default"].div(function () {
     "height": "auto",
     "width": "100%",
     "borderRadius": "0.5rem",
-    "padding": "1rem"
+    "padding": "0.5rem"
   }, {
     "display": "grid",
     "gridTemplateColumns": "repeat(4, minmax(0, 1fr))",
