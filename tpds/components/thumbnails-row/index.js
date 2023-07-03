@@ -3,7 +3,7 @@ import React from 'react'
 import tw, { styled, css } from 'twin.macro'
 
 const Grid = styled.div(() => [
-  tw`w-full h-auto rounded-lg p-4`,
+  tw`w-full h-auto rounded-lg p-2`,
   tw`grid grid-cols-4 gap-2`,
   tw`bg-grey-dark-scale-600/10`,
 ])
