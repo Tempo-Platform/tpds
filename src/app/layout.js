@@ -1,7 +1,11 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+//import { Inter } from 'next/font/google'
+import { GlobalNav } from '../ui/global-nav'
+import Fonts from '@/tpds/system/Fonts'
+import Colors from '@/tpds/system/Colors'
+//import TPDSGlobalStyles from '@/tpds/system/GlobalStyles'
 
-const inter = Inter({ subsets: ['latin'] })
+//const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -10,8 +14,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    // <html lang="en" className="[color-scheme:dark] bg-body dark">
+    <html lang="en" className="dark">
+      <Colors />
+      <body className="bg-body overflow-y-scroll pb-36">
+        <GlobalNav />
+        <div className="lg:pl-72">
+          <div className="w-full">{children}</div>
+        </div>
+      </body>
     </html>
   )
 }
