@@ -102,6 +102,10 @@ const expandableSection = {
   link: '/components/expandable-section',
   title: 'ExpandableSection',
 }
+const thumbnailsRow = {
+  link: '/components/thumbnails-row',
+  title: 'ThumbnailsRow',
+}
 
 const links = [
   breadcrumbs,
@@ -130,6 +134,7 @@ const links = [
   tabs,
   tag,
   pagination,
+  thumbnailsRow,
 ]
 
 export default links

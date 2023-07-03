@@ -28,9 +28,14 @@ var TextInput = _styled2["default"].input(function (_ref) {
   }, {
     "fontWeight": "400"
   }, {
-    "borderColor": "var(--border-input)",
-    "backgroundColor": "var(--bg-input)",
-    "color": "var(--text-primary)"
+    "borderColor": "transparent",
+    "--tw-bg-opacity": "1",
+    "backgroundColor": "rgb(250 250 250 / var(--tw-bg-opacity))",
+    "color": "var(--text-primary)",
+    ":is(.dark &)": {
+      "--tw-bg-opacity": "1",
+      "backgroundColor": "rgb(72 77 81 / var(--tw-bg-opacity))"
+    }
   }, {
     "borderWidth": "2px",
     ":focus": {
