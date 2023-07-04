@@ -1,33 +1,174 @@
 import React from 'react'
 import Hero from '../../../tpds/components/hero/Hero'
-import { P, H6, H1 } from '../../../tpds/elements/typography'
-import { TextInput } from '../../../tpds/elements/input'
-import { Separator, Container, PaddingBox, Window } from '../../../tpds/elements/layout'
+import { P, H1, PLarge } from '../../../tpds/elements/typography'
+import DummyIcon from '../../../tpds/assets/svgs/16x16/DummyIcon'
+import Play from '../../../tpds/assets/svgs/16x16/Play'
+import { Container, PaddingBox } from '../../../tpds/elements/layout'
+//import MenuDropdown from '../../../tpds/components/menudropdown'
 import CodeBlock from '../../../tpds/components/code/CodeBlock'
+import { Button as ButtonComponent } from '../../../tpds/components/buttons'
+import PropsTable from '../../../tpds/components/table/PropsTable'
+import Link from 'next/link'
 
 export default function Page() {
   return (
     <div>
       <Hero className="bg-window border-b-2 border-body">
-        <H1 isMedium>Headline</H1>
-        <P>Description.</P>
+        <H1 isMedium>Button</H1>
+        <P>Button component - to be used together with icons</P>
       </Hero>
       <Container>
         <PaddingBox>
-          <P>Description</P>
+          <PLarge>Button with loading state</PLarge>
           <br />
-          <CodeBlock code={code} />
+          <ButtonComponent loading={true} variant="secondary" label="Loading..." />
+          <br />
+          <CodeBlock code={codeWithLoading} />
           <br />
           <br />
+          <PLarge>Button with dark-mode ready icon (before)</PLarge>
+          <br />
+          <ButtonComponent
+            variant="secondary"
+            label="Button"
+            iconBefore={<Play tw="fill-current" />}
+          />
+          <br />
+          <CodeBlock code={codeWithIconBefore} />
+          <br />
+          <br />
+          <PLarge>Button with dark-mode ready icon (after)</PLarge>
+          <br />
+          <ButtonComponent
+            variant="secondary"
+            label="Button"
+            iconAfter={<Play tw="fill-current" />}
+          />
+          <br />
+          <CodeBlock code={codeWithIconAfter} />
+          <br />
+          <br />
+          <PLarge>Button with dark-mode ready icon (before and after)</PLarge>
+          <br />
+          <ButtonComponent
+            variant="secondary"
+            label="Button"
+            iconBefore={<Play tw="fill-current" />}
+            //iconAfter={<MenuDropdown linkClass={Link} links={[]} />}
+          />
+          <br />
+          <CodeBlock code={codeWithIconBeforeAndAfter} />
+          <br />
+          <br />
+          <PLarge>Button only with icon (no label)</PLarge>
+          <br />
+          <ButtonComponent variant="secondary" iconBefore={<Play tw="fill-current" />} />
+          <br />
+          <CodeBlock code={codeWithIconBeforeAndAfter} />
+          <br />
+          <br />
+          <PLarge>Button with "success" variant and custom icon color</PLarge>
+          <br />
+          <ButtonComponent
+            variant="success"
+            label="Button"
+            iconBefore={<DummyIcon />}
+            iconColor="white"
+          />
+          <br />
+          <CodeBlock code={codeWithCustomIconColor} />
+          <br />
+          <br />
+          <PropsTable
+            title="Button Props"
+            items={[
+              {
+                propName: 'label',
+                type: 'String',
+                default: "' '",
+                required: 'required',
+                description: 'The label of the button.',
+              },
+              {
+                propName: 'variant',
+                type: 'String',
+                default: 'default',
+                required: 'optional',
+                description:
+                  'The variant identifies the type of the Button (success, info, danger etc.)',
+              },
+              {
+                propName: 'iconBefore',
+                type: 'SVG JSX',
+                default: 'null',
+                required: 'optional',
+                description: 'Optional icon to show before the label',
+              },
+              {
+                propName: 'iconAfter',
+                type: 'SVG JSX',
+                default: 'null',
+                required: 'optional',
+                description: 'Optional icon to show after the label',
+              },
+              {
+                propName: 'iconColor',
+                type: 'HEX String',
+                default: 'null',
+                required: 'optional',
+                description:
+                  "If iconBefore or iconAfter is passed, this color will be applied to it's fill.",
+              },
+            ]}
+          />
         </PaddingBox>
       </Container>
     </div>
   )
 }
 
-const code = String.raw`<TextInput
-  isValid
-  defaultValue=''
-  placeholder='Placeholder'
-  onChange={(e) => setInputValue(e.target.value)}
+const codeWithLoading = String.raw`import { Button } from '@tempoplatform/tpds/components/buttons'
+
+<Button
+  variant='secondary'
+  loading={true}
+  label="Loading..."
+/>`
+
+const codeWithIconBefore = String.raw`import { Button } from '@tempoplatform/tpds/components/buttons'
+import Play from '@tempoplatform/tpds/svgs/16x16/Play'
+
+<Button
+  label="Button"
+  iconBefore={<Play tw='fill-current />}
+/>`
+
+const codeWithIconAfter = String.raw`import { Button } from '@tempoplatform/tpds/components/buttons'
+import Play from '@tempoplatform/tpds/svgs/16x16/Play'
+
+<Button
+  variant='secondary'
+  label="Button"
+  iconAfter={<Play tw='fill-current />}
+/>`
+
+const codeWithIconBeforeAndAfter = String.raw`import { Button } from '@tempoplatform/tpds/components/buttons'
+import Play from '@tempoplatform/tpds/svgs/16x16/Play'
+import MenuDropdown from '@tempoplatform/tpds/components/menudropdown'
+
+<Button
+  variant='secondary'
+  label="Button"
+  iconBefore={<Play tw='fill-current />}
+  iconAfter={<MenuDropdown />}
+/>`
+
+const codeWithCustomIconColor = String.raw`import { Button } from '@tempoplatform/tpds/components/buttons'
+import { DummyIcon } from '@tempoplatform/tpds/svgs/16x16/DummyIcon'
+
+<Button
+  variant='success'
+  label="Button"
+  iconBefore={<DummyIcon />}
+  iconColor="white"
 />`

@@ -1,34 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## TPDSnext
 
-## Getting Started
+This is the upcoming version of TPDS. Work in progress!
 
-First, run the development server:
+## Objective
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+The aims of this transition are:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Make the tech stack simpler and therefore more compatible & easier to integrate into different React and Preact projects without the need to install additional dependencies. This is achieved by removing the usage of `styled-components` and `twin-macro`, and instead using "vanilla" TailwindCSS on React. This way, projects using TPDS will be able to use TailwindCSS via traditional classNames instead of the `tw` prop (from `twin-macro`). This will also play better with TypeScript.
+- Using Next.js (instead of Gatsby.js) as a framework for the docs will make the documentation site more future-proof.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Delivery
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The end goal of this project is to replace the code currently packaged in the [TPDS NPM module](https://www.npmjs.com/package/@tempoplatform/tpds) in order to update existing projects without havign to change the name of the module - only install a new version.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The code of the [existing documentation site](https://tempo-platform-design-system.netlify.app/) will also be replaced and the site should be looking basically the same (if not better).
