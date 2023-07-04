@@ -4,44 +4,49 @@ export const navigationitems = [
     items: [
       {
         name: 'Getting Started',
-        slug: 'getting-started',
+        slug: 'overview/getting-started',
         description: 'Get started using TPDS',
       },
       {
         name: 'Design Guidelines',
-        slug: 'guidelines',
+        slug: 'overview/guidelines',
         description: 'Learn the basic guidelines for using TPDS',
         subItems: [
           {
             name: 'Colors',
-            slug: 'guidelines/colors',
+            slug: 'overview/guidelines/colors',
             description: 'Color guidelines',
           },
           {
             name: 'Dark Mode',
-            slug: 'guidelines/dark-mode',
+            slug: 'overview/guidelines/dark-mode',
             description: 'Dark and light mode guidelines',
           },
           {
             name: 'Typography',
-            slug: 'guidelines/typography',
+            slug: 'overview/guidelines/typography',
             description: 'Typography guidelines',
           },
         ],
       },
       {
         name: 'Design Tokens',
-        slug: 'design-tokens',
+        slug: 'overview/design-tokens',
         description: 'Peek into the TPDS design tokens',
       },
       {
+        name: 'TailwindCSS config',
+        slug: 'overview/tailwindcss-config',
+        description: 'Ready-to-use TailwindCSS configuration',
+      },
+      {
         name: 'Code',
-        slug: 'code',
+        slug: 'overview/code',
         description: 'The code foundations of TPDS',
       },
       {
         name: 'FAQ',
-        slug: 'faq',
+        slug: 'overview/faq',
         description: 'Frequently asked questions',
       },
     ],
@@ -68,6 +73,11 @@ export const navigationitems = [
         name: 'Text Input',
         slug: 'elements/text-input',
         description: 'Basic text input element',
+      },
+      {
+        name: 'Window',
+        slug: 'elements/window',
+        description: 'Standard Window element',
       },
     ],
   },
@@ -98,11 +108,6 @@ export const navigationitems = [
         name: 'TextInput',
         slug: 'components/text-input',
         description: 'A more advanced text input component',
-      },
-      {
-        name: 'Window',
-        slug: 'components/window',
-        description: 'Standardised window component',
       },
       {
         name: 'Spinner',
@@ -160,7 +165,7 @@ export const navigationitems = [
         description: 'Code component with syntax highlighting',
       },
       {
-        name: 'tag',
+        name: 'Tag',
         slug: 'components/tag',
         description: 'Compact tag component',
       },

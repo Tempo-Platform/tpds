@@ -1,6 +1,3 @@
-import Image from 'next/image'
-import { navigationitems } from '../lib/navigation'
-import Link from 'next/link'
 import { Section, Container, PaddingBox } from '@/tpds/elements/layout'
 import Hero from '@/tpds/components/hero/Hero'
 import { H1, H4, P, PLarge } from '@/tpds/elements/typography'

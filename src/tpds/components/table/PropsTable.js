@@ -1,25 +1,12 @@
-/* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 import React from 'react'
-import tw, { styled } from 'twin.macro'
 import { H6, P } from '../../elements/typography'
 
-const PropsTableRowElement = styled.span(() => [tw`grid grid-cols-12 gap-4`])
-
-const defaultStyle = [tw`col-span-4`]
-const skip1ColumnsStyle = [tw`col-span-6`]
-const skip2ColumnsStyle = [tw`col-span-8`]
-const skip3ColumnsStyle = [tw`col-span-10`]
-
 const lastPVariants = {
-  default: defaultStyle,
-  skip1Columns: skip1ColumnsStyle,
-  skip2Columns: skip2ColumnsStyle,
-  skip3Columns: skip3ColumnsStyle,
+  default: 'col-span-4',
+  skip1Columns: 'col-span-6',
+  skip2Columns: 'col-span-8',
+  skip3Columns: 'col-span-10',
 }
-
-const CustomP = styled(P)(() => [tw`whitespace-nowrap text-ellipsis overflow-hidden`])
-
-const LastP = styled(P)(() => [({ variant = 'default' }) => lastPVariants[variant]])
 
 const getLastPVariant = (skipColumn2, skipColumn3, skipColumn4) => {
   let skipColumnsNum = 0
@@ -48,44 +35,58 @@ function PropsTable({
   skipColumn3 = false,
   skipColumn4 = false,
 }) {
-  const lastPVariant = getLastPVariant(skipColumn2, skipColumn3, skipColumn4)
+  const lastPClass = lastPVariants[getLastPVariant(skipColumn2, skipColumn3, skipColumn4)]
+  console.log('lastPClass', lastPClass)
+
   return (
     <div>
       {!omitTitle && <H6>{title || 'Props'}</H6>}
       {!omitTitle && <br />}
-      <PropsTableRowElement tw="pb-2 mb-8 border-b border-grey-light-scale-500 dark:border-grey-light-scale-900">
-        <CustomP isBold tw="col-span-2">
+      <span className="grid grid-cols-12 gap-4 pb-2 mb-8 border-b border-grey-light-scale-500 dark:border-grey-light-scale-900">
+        <P isBold className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
           {col1Name}
-        </CustomP>
+        </P>
         {!skipColumn2 && (
-          <CustomP isBold tw="col-span-2">
+          <P isBold className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
             {col2Name}
-          </CustomP>
+          </P>
         )}
         {!skipColumn3 && (
-          <CustomP isBold tw="col-span-2">
+          <P isBold className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
             {col3Name}
-          </CustomP>
+          </P>
         )}
         {!skipColumn4 && (
-          <CustomP isBold tw="col-span-2">
+          <P isBold className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
             {col4Name}
-          </CustomP>
+          </P>
         )}
-        <LastP isBold variant={lastPVariant}>
+        <P isBold className={lastPClass}>
           {col5Name}
-        </LastP>
-      </PropsTableRowElement>
+        </P>
+      </span>
       {items.map((item, index) => (
-        <PropsTableRowElement tw="mb-4" key={index}>
-          <CustomP tw="col-span-2" isBold>
+        <span className="grid grid-cols-12 gap-4 mb-4" key={index}>
+          <P className="col-span-2" isBold>
             {item[param1Name]}
-          </CustomP>
-          {!skipColumn2 && <CustomP tw="col-span-2">{item[param2Name]}</CustomP>}
-          {!skipColumn3 && <CustomP tw="col-span-2">{item[param3Name]}</CustomP>}
-          {!skipColumn4 && <CustomP tw="col-span-2">{item[param4Name]}</CustomP>}
-          <LastP variant={lastPVariant}>{item[param5Name]}</LastP>
-        </PropsTableRowElement>
+          </P>
+          {!skipColumn2 && (
+            <P className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
+              {item[param2Name]}
+            </P>
+          )}
+          {!skipColumn3 && (
+            <P className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
+              {item[param3Name]}
+            </P>
+          )}
+          {!skipColumn4 && (
+            <P className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
+              {item[param4Name]}
+            </P>
+          )}
+          <P className={lastPClass}>{item[param5Name]}</P>
+        </span>
       ))}
     </div>
   )

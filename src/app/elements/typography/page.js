@@ -1,14 +1,11 @@
-/* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
-//import React from 'react'
-//import { MainContent } from '../../components/elements/layout'
-import Hero from '@/tpds/components/hero/Hero'
+import React from 'react'
+import Hero from '../../../tpds/components/hero/Hero'
 import {
   P,
   PNano,
   PTiny,
   PSmall,
   PLarge,
-  //PrimaryColor,
   H6,
   H5,
   H4,
@@ -19,9 +16,8 @@ import {
   FormLabelNano,
   FormLabelTiny,
   FormLabelSmall,
-} from '@/tpds/elements/typography'
-import { Separator, Container, PaddingBox } from '@/tpds/elements/layout'
-//import CodeBlock from '@/tpds/components/code/CodeBlock'
+} from '../../../tpds/elements/typography'
+import { Separator, Container, PaddingBox } from '../../../tpds/elements/layout'
 
 export default function Page() {
   return (

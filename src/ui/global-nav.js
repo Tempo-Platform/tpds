@@ -1,5 +1,4 @@
 'use client'
-
 import { navigationitems } from '../lib/navigation'
 import Link from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'

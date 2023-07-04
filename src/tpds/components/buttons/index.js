@@ -1,14 +1,14 @@
 import React from 'react'
-import tw, { styled } from 'twin.macro'
+import clsx from 'clsx'
 import { Button as ButtonElement } from '../../elements/buttons'
 import Spinner from '../spinner'
 
 export const Button = ({ label, iconBefore, iconAfter, variant, loading, ...props }) => {
   return (
     <ButtonElement variant={variant} label={label} {...props}>
-      {iconBefore && <span className="icon-before">{iconBefore}</span>}
+      {iconBefore && <span className="absolute icon-before">{iconBefore}</span>}
       {label}
-      {iconAfter && <span className="icon-after">{iconAfter}</span>}
+      {iconAfter && <span className="absolute icon-after">{iconAfter}</span>}
       {loading && <Spinner color="white" tw="block" radius={15} />}
     </ButtonElement>
   )

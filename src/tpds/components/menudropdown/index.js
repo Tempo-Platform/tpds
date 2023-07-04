@@ -1,5 +1,5 @@
 import React from 'react'
-import tw, { styled, css } from 'twin.macro'
+import clsx from 'clsx'
 import { LabelSmall } from '../../elements/typography'
 
 function MenuDropdown({ links, linkClass, side = 'right', type = 'kebab', ...props }) {
@@ -12,7 +12,7 @@ function MenuDropdown({ links, linkClass, side = 'right', type = 'kebab', ...pro
         {links.map(link => {
           return (
             <LinkClass to={link.to} href={link.to} key={link.label} onClick={link.onClick}>
-              <KebabMenuItem>{link.label}</KebabMenuItem>
+              <LabelSmall className={clsx(kebabMenuItemStyles)}>{link.label}</LabelSmall>
             </LinkClass>
           )
         })}
@@ -65,11 +65,11 @@ const KebabControlRoot = styled.div(({ active }) => [
   ],
 ])
 
-const KebabMenuItem = styled(LabelSmall)(({ active }) => [
+const kebabMenuItemStyles = [
   tw`select-none px-3 py-2 text-secondary hover:text-primary cursor-pointer`,
   tw`bg-grey-light-scale-50 dark:bg-grey-dark-scale-500`,
   tw`hover:bg-grey-light-scale-200 hover:dark:bg-grey-dark-scale-600`,
-])
+]
 
 function KebabControl({ active, ...props }) {
   return (

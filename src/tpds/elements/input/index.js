@@ -1,13 +1,17 @@
-import tw, { styled } from 'twin.macro'
+import clsx from 'clsx'
 
-export const TextInput = styled.input(({ isValid, isInvalid, isWarning }) => [
-  tw`flex w-full`,
-  tw`transition duration-100`,
-  tw`px-2.5 py-1 rounded focus:outline-none`,
-  tw`font-normal`,
-  tw`bg-input text-primary border-input`,
-  tw`border-2 focus:border-blue`,
-  isValid && [tw`border-green focus:border-green`],
-  isInvalid && [tw`border-red focus:border-red`],
-  isWarning && [tw`border-orange focus:border-orange`],
-])
+export const TextInput = ({ isValid, isInvalid, isWarning, ...props }) => {
+  const finalClass = clsx(
+    'flex w-full',
+    'transition duration-100',
+    'px-2.5 py-1 rounded focus:outline-none',
+    'font-normal',
+    'bg-input text-primary border-input',
+    'border-2 focus:border-blue',
+    //buttonVariantStyles[variant],
+    isValid && 'border-green focus:border-green',
+    isInvalid && 'border-red focus:border-red',
+    isWarning && 'border-orange focus:border-orange',
+  )
+  return <input type="text" className={finalClass} {...props} />
+}
