@@ -35,7 +35,7 @@ module.exports = {
       '2xl': breakpoints['2xl'],
     },
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
+      sans: ['Inter', 'sans-serif'],
       serif: ['Courier New', 'serif'],
       mono: ['SF Mono', 'mono'],
     },

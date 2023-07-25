@@ -1,4 +1,3 @@
-'use client'
 import tokens from '../tokens/index.json'
 const colors = tokens.colors
 const colorPalettes = colors.color_palettes

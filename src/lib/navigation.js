@@ -4,49 +4,49 @@ export const navigationitems = [
     items: [
       {
         name: 'Getting Started',
-        slug: 'overview/getting-started',
+        slug: 'getting-started',
         description: 'Get started using TPDS',
       },
       {
         name: 'Design Guidelines',
-        slug: 'overview/guidelines',
+        slug: 'design-guidelines',
         description: 'Learn the basic guidelines for using TPDS',
         subItems: [
           {
             name: 'Colors',
-            slug: 'overview/guidelines/colors',
+            slug: 'design-guidelines/colors',
             description: 'Color guidelines',
           },
           {
             name: 'Dark Mode',
-            slug: 'overview/guidelines/dark-mode',
+            slug: 'design-guidelines/dark-mode',
             description: 'Dark and light mode guidelines',
           },
           {
             name: 'Typography',
-            slug: 'overview/guidelines/typography',
+            slug: 'design-guidelines/typography',
             description: 'Typography guidelines',
           },
         ],
       },
       {
         name: 'Design Tokens',
-        slug: 'overview/design-tokens',
+        slug: 'design-tokens',
         description: 'Peek into the TPDS design tokens',
       },
       {
         name: 'TailwindCSS config',
-        slug: 'overview/tailwindcss-config',
+        slug: 'tailwindcss-config',
         description: 'Ready-to-use TailwindCSS configuration',
       },
       {
         name: 'Code',
-        slug: 'overview/code',
+        slug: 'code',
         description: 'The code foundations of TPDS',
       },
       {
         name: 'FAQ',
-        slug: 'overview/faq',
+        slug: 'faq',
         description: 'Frequently asked questions',
       },
     ],
