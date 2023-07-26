@@ -7,7 +7,7 @@ function MinusIcon({ ...props }) {
       width="44"
       height="44"
       viewBox="0 0 44 44"
-      tw="fill-current text-primary"
+      fill="currentColor"
       {...props}
     >
       <path fill="currentColor" d="M0 0H44V44H0z" opacity="0.0001" />

@@ -1,4 +1,3 @@
-/* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 import React from 'react'
 
 function CheckIcon({ ...props }) {

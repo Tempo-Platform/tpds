@@ -1,16 +1,13 @@
-/* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 import React from 'react'
-import tw from 'twin.macro'
 
-function DummyIcon({...props}) {
+function DummyIcon({ ...props }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
-      fill="none"
+      fill="currentColor"
       viewBox="0 0 16 16"
-      tw="fill-current text-primary"
       {...props}
     >
       <path
