@@ -1,37 +1,8 @@
-/* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 import React from 'react'
-import tw, { styled, css } from 'twin.macro'
 import { PSmall } from '../../elements/typography'
 import MinusIcon from '../../assets/svgs/icons/MinusIcon'
 import PlusIcon from '../../assets/svgs/icons/PlusIcon'
-
-const RootDiv = styled.div(props => [
-  tw`bg-window border border-window`,
-  props.removeBorderTop && tw`border-t-0`,
-  props.removeBorderBottom && tw`border-b-0`,
-])
-
-const Header = styled.div(props => [
-  tw`h-[44px] w-full flex justify-between items-center px-[16px] transition-all cursor-pointer`,
-  props.isOpen ? tw`border-b border-window` : tw`border-b border-transparent`,
-])
-
-const Content = styled.div(props => [
-  tw`grid px-[15px]`,
-  props.isOpen ? tw`grid-rows-[1fr]` : tw`grid-rows-[0fr]`,
-  css`
-    transition: grid-template-rows 300ms;
-  `,
-])
-
-const InnerDiv = styled.div(props => [
-  tw`overflow-hidden py-[0]`,
-  css`
-    > * {
-      ${tw`py-4`}
-    }
-  `,
-])
+import clsx from 'clsx'
 
 const elementIsVisibleInViewport = (el, excludeElementId) => {
   const rect = el.getBoundingClientRect()
@@ -85,23 +56,44 @@ function ExpandableSection({
     toggleOpen(false)
   }
 
+  const rootClassName = clsx(
+    `bg-window border border-window`,
+    removeBorderTop && `border-t-0`,
+    removeBorderBottom && `border-b-0`,
+  )
+
+  const headerClassName = clsx(
+    `h-[44px] w-full flex justify-between items-center px-[16px] transition-all cursor-pointer`,
+    isOpen ? `border-b border-window` : `border-b border-transparent`,
+  )
+
+  const contentClassName = clsx(`grid px-[15px]`, isOpen ? `grid-rows-[1fr]` : `grid-rows-[0fr]`)
+
+  const innerDivClassName = clsx('tpds-expandable-section-content', `overflow-hidden py-[0]`)
+
   return (
-    <RootDiv
-      removeBorderBottom={removeBorderBottom}
-      removeBorderTop={removeBorderTop}
-      ref={headerRef}
-    >
-      <Header
-        isOpen={isOpen}
-        onClick={() => handleToggleHeader(isOpen, toggleOpen, headerRef, excludeElementId)}
-      >
-        <PSmall isMedium>{title}</PSmall>
-        {isOpen ? <MinusIcon tw="fill-current" /> : <PlusIcon tw="fill-current" />}
-      </Header>
-      <Content isOpen={isOpen}>
-        <InnerDiv>{children}</InnerDiv>
-      </Content>
-    </RootDiv>
+    <>
+      <style global jsx>
+        {`
+          .tpds-expandable-section-content > * {
+            padding-top: 12px;
+            padding-bottom: 12px;
+          }
+        `}
+      </style>
+      <div className={rootClassName} ref={headerRef}>
+        <div
+          className={headerClassName}
+          onClick={() => handleToggleHeader(isOpen, toggleOpen, headerRef, excludeElementId)}
+        >
+          <PSmall isMedium>{title}</PSmall>
+          {isOpen ? <MinusIcon className="text-primary" /> : <PlusIcon className="text-primary" />}
+        </div>
+        <div className={contentClassName} style={{ transition: 'grid-template-rows 300ms' }}>
+          <div className={innerDivClassName}>{children}</div>
+        </div>
+      </div>
+    </>
   )
 }
 
