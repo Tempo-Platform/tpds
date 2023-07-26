@@ -1,35 +1,32 @@
-import tw, { styled } from 'twin.macro'
 import React from 'react'
+import clsx from 'clsx'
 
 function Checkbox({ active, partial = false, disabled = false, ...props }) {
+  const finalRootClassName = clsx(
+    'tpds-checkbox',
+    active ? 'is-active' : 'is-off',
+    `relative transition duration-150`,
+    `cursor-pointer h-[20px] w-[20px] rounded flex !justify-center !items-center`,
+    `relative border-2 border-body hover:border-blue`,
+    `bg-white dark:bg-grey-dark-scale-100`,
+    `border-grey-light-scale-500 dark:border-grey-dark-scale-50`,
+    `hover:bg-blue/5 hover:border-2 border-blue`,
+    `active:bg-blue/10 active:border-2 active:border-blue/50`,
+    active && [
+      `bg-blue border-blue`,
+      `hover:bg-blue-scale-600 hover:border-blue-scale-600`,
+      `active:bg-blue-scale-700 active:border-blue-scale-700`,
+    ],
+    disabled && [`pointer-events-none opacity-30`],
+  )
+
   return (
-    <CheckboxRoot
-      active={active}
-      disabled={disabled}
-      className={active ? 'is-active' : 'is-off'}
-      {...props}
-    >
-      {active && !partial && <CheckIcon style={{ color: 'white' }} />}
-      {active && partial && <MinusIcon style={{ color: 'white' }} />}
-    </CheckboxRoot>
+    <div className={finalRootClassName} {...props}>
+      {active && !partial && <CheckIcon className="text-primary" />}
+      {active && partial && <MinusIcon className="text-primary" />}
+    </div>
   )
 }
-
-const CheckboxRoot = styled.div(({ active, disabled }) => [
-  tw`relative transition duration-150`,
-  tw`cursor-pointer h-[18px] w-[18px] rounded flex justify-center! items-center!`,
-  tw`relative border-2 border-body hover:border-blue`,
-  tw`bg-white dark:bg-grey-dark-scale-500`,
-  tw`border-grey-light-scale-500 dark:border-grey-dark-scale-500`,
-  tw`hover:(bg-blue/5 border-2 border-blue)`,
-  tw`active:(bg-blue/10 border-2 border-blue/50)`,
-  active && [
-    tw`bg-blue border-blue`,
-    tw`hover:(bg-blue-scale-600 border-blue-scale-600)`,
-    tw`active:(bg-blue-scale-700 border-blue-scale-700)`,
-  ],
-  disabled && [tw`pointer-events-none opacity-30`],
-])
 
 function CheckIcon({ ...props }) {
   return (
@@ -38,7 +35,7 @@ function CheckIcon({ ...props }) {
       xmlns="http://www.w3.org/2000/svg"
       width="10"
       height="8"
-      fill="transparent"
+      fill="currentColor"
       viewBox="0 0 8 6"
     >
       <path
@@ -56,10 +53,10 @@ function MinusIcon({ ...props }) {
       xmlns="http://www.w3.org/2000/svg"
       width="10"
       height="10"
-      fill="red"
+      fill="none"
       viewBox="0 0 10 10"
     >
-      <rect fill="white" y="4" width="10" height="2" />
+      <rect fill="currentColor" y="4" width="10" height="2" />
     </svg>
   )
 }
