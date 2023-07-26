@@ -1,4 +1,3 @@
-import React from 'react'
 import Hero from '../../tpds/components/hero/Hero'
 import { P, H1, PLarge } from '../../tpds/elements/typography'
 import DummyIcon from '../../tpds/assets/svgs/16x16/DummyIcon'
