@@ -204,6 +204,11 @@ export const navigationitems = [
         slug: 'components/expandable-section',
         description: 'An expandable section component',
       },
+      {
+        name: 'ThumbnailsRow',
+        slug: 'components/thumbnails-row',
+        description: 'Island layout for row of rounded thumbnails',
+      },
     ],
   },
 ]
