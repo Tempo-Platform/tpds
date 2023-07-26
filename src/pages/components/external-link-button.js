@@ -1,8 +1,8 @@
 import React from 'react'
 import Hero from '../../tpds/components/hero/Hero'
-import { P, H6, H1 } from '../../tpds/elements/typography'
-import { TextInput } from '../../tpds/elements/input'
-import { Separator, Container, PaddingBox, Window } from '../../tpds/elements/layout'
+import { H1, P } from '../../tpds/elements/typography'
+import { ExternalLinkButton as ExternalLinkButtonComponent } from '../../tpds/components/buttons'
+import { Container, PaddingBox } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code/CodeBlock'
 
 export default function Page() {
@@ -14,9 +14,11 @@ export default function Page() {
       </Hero>
       <Container>
         <PaddingBox>
-          <P>Description</P>
+          <P>A helper component to quickly create a button containing a hyperlink icon.</P>
           <br />
-          <CodeBlock code={code} />
+          <ExternalLinkButtonComponent label="External Link Button" />
+          <br />
+          <CodeBlock code={codeWithIconBefore} />
           <br />
           <br />
         </PaddingBox>
@@ -24,10 +26,8 @@ export default function Page() {
     </div>
   )
 }
+const codeWithIconBefore = String.raw`import { ExternalLinkButton } from '@tempoplatform/tpds/components/buttons'
 
-const code = String.raw`<TextInput
-  isValid
-  defaultValue=''
-  placeholder='Placeholder'
-  onChange={(e) => setInputValue(e.target.value)}
+<ExternalLinkButton
+  label="External Link Button"
 />`
