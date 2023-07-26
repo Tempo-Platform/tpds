@@ -1,6 +1,7 @@
 import Hero from '../tpds/components/hero/Hero'
 import { P, H6, H1 } from '../tpds/elements/typography'
 import { Container, PaddingBox } from '../tpds/elements/layout'
+import Link from 'next/link'
 
 export default function Page() {
   return (
@@ -34,7 +35,7 @@ export default function Page() {
           </P>
           <P>
             If you are a designer, have a look at the <a href="/guidelines">Guidelines</a> and{' '}
-            <a href="/design-tokens">Design tokens</a>.
+            <Link href="/design-tokens">Design tokens</Link>.
           </P>
           <br />
           <H6>Can I contribute?</H6>
