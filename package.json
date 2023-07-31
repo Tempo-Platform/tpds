@@ -1,6 +1,6 @@
 {
   "name": "tpdsnext",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -26,7 +26,7 @@
     "packtokens": "mkdir -p ./npm_module/_dist && mkdir -p ./npm_module/_dist/tokens && cp ./src/tpds/tokens/index.json ./npm_module/_dist/tokens",
     "packassets": "yarn packsvgs && yarn packfonts",
     "packsvgs": "npx babel --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-syntax-jsx ./src/tpds/assets/svgs/**/**/** -d ./npm_module/_dist/assets/svgs && rm ./npm_module/_dist/assets/svgs/*.*",
-    "packfonts": "copyfiles -u 2 ./tpds/assets/fonts/**/**/*.* ./npm_module/_dist/assets/",
+    "packfonts": "copyfiles -u 2 ./src/tpds/assets/fonts/**/**/*.* ./npm_module/_dist/assets/",
     "pull-tokens": "node ./scripts/getFigmaTokens.js"
   },
   "dependencies": {
