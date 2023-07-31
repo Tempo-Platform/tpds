@@ -1,22 +1,21 @@
 import React from 'react'
 import Hero from '../../tpds/components/hero/Hero'
-import { P, H6, H1 } from '../../tpds/elements/typography'
-import { TextInput } from '../../tpds/elements/input'
-import { Separator, Container, PaddingBox, Window } from '../../tpds/elements/layout'
+import { P, H1 } from '../../tpds/elements/typography'
+import { Container, PaddingBox } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code/CodeBlock'
 
 export default function Page() {
   return (
     <div>
       <Hero className="bg-window border-b-2 border-body">
-        <H1 isMedium>Headline</H1>
-        <P>Description.</P>
+        <H1 isMedium>CodeBlock</H1>
+        <P>Show blocks of code with Tempo styled syntax highlighting.</P>
       </Hero>
       <Container>
         <PaddingBox>
-          <P>Description</P>
           <br />
-          <CodeBlock code={code} />
+          <CodeBlock code={codeblockCode} />
+          <br />
           <br />
           <br />
         </PaddingBox>
@@ -25,9 +24,13 @@ export default function Page() {
   )
 }
 
-const code = String.raw`<TextInput
-  isValid
-  defaultValue=''
-  placeholder='Placeholder'
-  onChange={(e) => setInputValue(e.target.value)}
+const codeblockCode = `import CodeBlock from '@tempoplatform/tpds/components/code/CodeBlock'\n
+// declare the code to pass to the component using String.raw:
+const myCodeContent = String.raw\`<CodeBlock
+  code={myCodeContent}
+/>\`
+
+// pass it as a prop to the component:
+<CodeBlock
+  code={myCodeContent}
 />`

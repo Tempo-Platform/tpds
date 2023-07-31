@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+export const navigation = 'temporarily disabled'
+
+//import React, { useState } from 'react'
 // import tw, { css, styled } from 'twin.macro'
 // import { H4, P, PSmall, PLarge, Bold } from '../../elements/typography'
 // import { Button } from '../../elements/buttons'

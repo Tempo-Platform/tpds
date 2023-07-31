@@ -1,17 +1,19 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+export const emoji = 'temporarily disabled'
 
-Emoji.propTypes = {
-  emoji: PropTypes.string,
-  label: PropTypes.string,
-}
+// import React from 'react'
+// import PropTypes from 'prop-types'
 
-function Emoji({ children, label, style }) {
-  return (
-    <span role="img" aria-label={label || 'emoji'} className="tw-mx-0.5" style={{ ...style }}>
-      {children}
-    </span>
-  )
-}
+// Emoji.propTypes = {
+//   emoji: PropTypes.string,
+//   label: PropTypes.string,
+// }
 
-export default Emoji
+// function Emoji({ children, label, style }) {
+//   return (
+//     <span role="img" aria-label={label || 'emoji'} className="tw-mx-0.5" style={{ ...style }}>
+//       {children}
+//     </span>
+//   )
+// }
+
+// export default Emoji

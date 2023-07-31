@@ -2,11 +2,11 @@ export const navigationitems = [
   {
     name: 'Overview',
     items: [
-      {
-        name: 'Getting Started',
-        slug: 'getting-started',
-        description: 'Get started using TPDS',
-      },
+      // {
+      //   name: 'Getting Started',
+      //   slug: 'getting-started',
+      //   description: 'Get started using TPDS',
+      // },
       {
         name: 'Design Guidelines',
         slug: 'design-guidelines',
@@ -65,7 +65,7 @@ export const navigationitems = [
         description: 'Typography funcamental elements',
       },
       {
-        name: 'Buttons',
+        name: 'Button',
         slug: 'elements/buttons',
         description: 'Basic button element',
       },
@@ -99,16 +99,16 @@ export const navigationitems = [
         slug: 'components/hero',
         description: 'A configurable hero component',
       },
-      {
-        name: 'Cards',
-        slug: 'components/cards',
-        description: 'Versatile card components',
-      },
-      {
-        name: 'TextInput',
-        slug: 'components/text-input',
-        description: 'A more advanced text input component',
-      },
+      // {
+      //   name: 'Cards',
+      //   slug: 'components/cards',
+      //   description: 'Versatile card components',
+      // },
+      // {
+      //   name: 'TextInput',
+      //   slug: 'components/text-input',
+      //   description: 'A more advanced text input component',
+      // },
       {
         name: 'Spinner',
         slug: 'components/spinner',
@@ -119,31 +119,31 @@ export const navigationitems = [
         slug: 'components/callout',
         description: 'A component for on-screen information',
       },
-      {
-        name: 'Snackbar',
-        slug: 'components/snackbar',
-        description: 'Snackbar for displaying notifications',
-      },
-      {
-        name: 'Modal',
-        slug: 'components/modal',
-        description: 'A modal component',
-      },
-      {
-        name: 'Navbar',
-        slug: 'components/navbar',
-        description: 'Versatile navigation bar',
-      },
-      {
-        name: 'Breadcrumbs',
-        slug: 'components/breadcrumbs',
-        description: 'Navigation breadcrumbs',
-      },
-      {
-        name: 'Combobox',
-        slug: 'components/combobox',
-        description: 'A combobox component',
-      },
+      // {
+      //   name: 'Snackbar',
+      //   slug: 'components/snackbar',
+      //   description: 'Snackbar for displaying notifications',
+      // },
+      // {
+      //   name: 'Modal',
+      //   slug: 'components/modal',
+      //   description: 'A modal component',
+      // },
+      // {
+      //   name: 'Navbar',
+      //   slug: 'components/navbar',
+      //   description: 'Versatile navigation bar',
+      // },
+      // {
+      //   name: 'Breadcrumbs',
+      //   slug: 'components/breadcrumbs',
+      //   description: 'Navigation breadcrumbs',
+      // },
+      // {
+      //   name: 'Combobox',
+      //   slug: 'components/combobox',
+      //   description: 'A combobox component',
+      // },
       {
         name: 'Checkbox',
         slug: 'components/checkbox',
@@ -154,13 +154,13 @@ export const navigationitems = [
         slug: 'components/switch',
         description: 'Simple switch component',
       },
+      // {
+      //   name: 'Video',
+      //   slug: 'components/video',
+      //   description: 'Versatile video component',
+      // },
       {
-        name: 'Video',
-        slug: 'components/video',
-        description: 'Versatile video component',
-      },
-      {
-        name: 'Code',
+        name: 'CodeBlock',
         slug: 'components/code',
         description: 'Code component with syntax highlighting',
       },
@@ -169,11 +169,11 @@ export const navigationitems = [
         slug: 'components/tag',
         description: 'Compact tag component',
       },
-      {
-        name: 'Select',
-        slug: 'components/select',
-        description: 'Generic select component',
-      },
+      // {
+      //   name: 'Select',
+      //   slug: 'components/select',
+      //   description: 'Generic select component',
+      // },
       {
         name: 'Steps',
         slug: 'components/steps',
@@ -184,21 +184,21 @@ export const navigationitems = [
         slug: 'components/radiogroup',
         description: 'Generic radio group component',
       },
-      {
-        name: 'Tabs',
-        slug: 'components/tabs',
-        description: 'Generic tabs component',
-      },
+      // {
+      //   name: 'Tabs',
+      //   slug: 'components/tabs',
+      //   description: 'Generic tabs component',
+      // },
       {
         name: 'PropsTable',
         slug: 'components/props-table',
         description: 'Table of component props',
       },
-      {
-        name: 'Pagination',
-        slug: 'components/pagination',
-        description: 'Generic pagination component',
-      },
+      // {
+      //   name: 'Pagination',
+      //   slug: 'components/pagination',
+      //   description: 'Generic pagination component',
+      // },
       {
         name: 'ExpandableSection',
         slug: 'components/expandable-section',

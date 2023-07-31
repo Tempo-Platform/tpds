@@ -7,7 +7,6 @@ import { Container, PaddingBox } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code/CodeBlock'
 import { Button as ButtonComponent } from '../../tpds/components/buttons'
 import PropsTable from '../../tpds/components/table/PropsTable'
-import Link from 'next/link'
 
 export default function Page() {
   return (
@@ -30,7 +29,7 @@ export default function Page() {
           <ButtonComponent
             variant="secondary"
             label="Button"
-            iconBefore={<Play tw="fill-current" />}
+            iconBefore={<Play className="fill-current" />}
           />
           <br />
           <CodeBlock code={codeWithIconBefore} />
@@ -41,7 +40,7 @@ export default function Page() {
           <ButtonComponent
             variant="secondary"
             label="Button"
-            iconAfter={<Play tw="fill-current" />}
+            iconAfter={<Play className="fill-current" />}
           />
           <br />
           <CodeBlock code={codeWithIconAfter} />
@@ -52,7 +51,7 @@ export default function Page() {
           <ButtonComponent
             variant="secondary"
             label="Button"
-            iconBefore={<Play tw="fill-current" />}
+            iconBefore={<Play className="fill-current" />}
             //iconAfter={<MenuDropdown linkClass={Link} links={[]} />}
           />
           <br />
@@ -61,21 +60,9 @@ export default function Page() {
           <br />
           <PLarge>Button only with icon (no label)</PLarge>
           <br />
-          <ButtonComponent variant="secondary" iconBefore={<Play tw="fill-current" />} />
+          <ButtonComponent variant="secondary" iconBefore={<Play className="fill-current" />} />
           <br />
           <CodeBlock code={codeWithIconBeforeAndAfter} />
-          <br />
-          <br />
-          <PLarge>Button with "success" variant and custom icon color</PLarge>
-          <br />
-          <ButtonComponent
-            variant="success"
-            label="Button"
-            iconBefore={<DummyIcon />}
-            iconColor="white"
-          />
-          <br />
-          <CodeBlock code={codeWithCustomIconColor} />
           <br />
           <br />
           <PropsTable
@@ -110,14 +97,6 @@ export default function Page() {
                 required: 'optional',
                 description: 'Optional icon to show after the label',
               },
-              {
-                propName: 'iconColor',
-                type: 'HEX String',
-                default: 'null',
-                required: 'optional',
-                description:
-                  "If iconBefore or iconAfter is passed, this color will be applied to it's fill.",
-              },
             ]}
           />
         </PaddingBox>
@@ -139,7 +118,7 @@ import Play from '@tempoplatform/tpds/svgs/16x16/Play'
 
 <Button
   label="Button"
-  iconBefore={<Play tw='fill-current />}
+  iconBefore={<Play className='fill-current />}
 />`
 
 const codeWithIconAfter = String.raw`import { Button } from '@tempoplatform/tpds/components/buttons'
@@ -148,7 +127,7 @@ import Play from '@tempoplatform/tpds/svgs/16x16/Play'
 <Button
   variant='secondary'
   label="Button"
-  iconAfter={<Play tw='fill-current />}
+  iconAfter={<Play className='fill-current />}
 />`
 
 const codeWithIconBeforeAndAfter = String.raw`import { Button } from '@tempoplatform/tpds/components/buttons'
@@ -158,7 +137,7 @@ import MenuDropdown from '@tempoplatform/tpds/components/menudropdown'
 <Button
   variant='secondary'
   label="Button"
-  iconBefore={<Play tw='fill-current />}
+  iconBefore={<Play className='fill-current />}
   iconAfter={<MenuDropdown />}
 />`
 
@@ -169,5 +148,4 @@ import { DummyIcon } from '@tempoplatform/tpds/svgs/16x16/DummyIcon'
   variant='success'
   label="Button"
   iconBefore={<DummyIcon />}
-  iconColor="white"
 />`

@@ -1,11 +1,10 @@
 import clsx from 'clsx'
-const baseStyles = 'text-primary m-0 font-normal'
+const baseStyles = 'text-primary m-0'
 
 const calculateFinalClass = (defaultClass, props) => {
   const finalClass = clsx(
     baseStyles,
     defaultClass,
-    props.className && props.className,
     props.isSmall && '!text-sm',
     props.isUnderline && '!underline',
     props.isUppercase && '!uppercase',
@@ -28,6 +27,7 @@ const calculateFinalClass = (defaultClass, props) => {
     props.isLabel && '!select-none',
     props.isLabel && '!leading-none',
     props.isLabel && '!font-label',
+    props.className && props.className,
   )
   return finalClass
 }

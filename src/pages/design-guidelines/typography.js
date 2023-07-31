@@ -18,7 +18,7 @@ export default function Page() {
         <PaddingBox>
           <br />
           <br />
-          <H5 isBold>Font stacks</H5>
+          <H5 isMedium>Font stacks</H5>
           <Separator />
           <br />
           <br />
@@ -26,9 +26,9 @@ export default function Page() {
           <br />
           <br />
           <br />
-          <PSmall isBold>Font-sans</PSmall>
+          <PSmall isMedium>Font-sans</PSmall>
           <br />
-          <H2 isBold tw="leading-tight">
+          <H2 isBold className="leading-tight">
             Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789
           </H2>
           <br />
@@ -36,58 +36,60 @@ export default function Page() {
           <br />
           <PSmall>Type weights</PSmall>
           <br />
-          <div tw="grid grid-cols-12 gap-4">
-            <div tw="grid col-span-12 md:col-span-6">
-              <H4 tw="py-4 font-light border-solid border-b-2 border-body">Graphik Light</H4>
-              <H4 tw="py-4 font-normal border-solid border-b-2 border-body">Graphik Regular</H4>
-              <H4 tw="py-4 font-medium border-solid border-b-2 border-body">Graphik Medium</H4>
-              <H4 tw="py-4 font-bold border-solid border-b-2 border-body">Graphik Bold</H4>
-              <H4 tw="py-4 font-black border-solid border-b-2 border-body">Graphik Black</H4>
+          <div className="grid grid-cols-12 gap-4">
+            <div className="grid col-span-12 md:col-span-6">
+              <H4 className="py-4 font-light border-solid border-b-2 border-body">Inter Light</H4>
+              <H4 className="py-4 font-normal border-solid border-b-2 border-body">
+                Inter Regular
+              </H4>
+              <H4 className="py-4 font-medium border-solid border-b-2 border-body">Inter Medium</H4>
+              <H4 className="py-4 font-bold border-solid border-b-2 border-body">Inter Bold</H4>
+              <H4 className="py-4 font-black border-solid border-b-2 border-body">Inter Black</H4>
             </div>
-            <div tw="grid col-span-12 md:col-span-6">
-              <H4 tw="py-4 font-light border-solid border-b-2 border-body italic">
-                Graphik Light Italic
+            <div className="grid col-span-12 md:col-span-6">
+              <H4 className="py-4 font-light border-solid border-b-2 border-body italic">
+                Inter Light Italic
               </H4>
-              <H4 tw="py-4 font-normal border-solid border-b-2 border-body italic">
-                Graphik Regular Italic
+              <H4 className="py-4 font-normal border-solid border-b-2 border-body italic">
+                Inter Regular Italic
               </H4>
-              <H4 tw="py-4 font-medium border-solid border-b-2 border-body italic">
-                Graphik Medium Italic
+              <H4 className="py-4 font-medium border-solid border-b-2 border-body italic">
+                Inter Medium Italic
               </H4>
-              <H4 tw="py-4 font-bold border-solid border-b-2 border-body italic">
-                Graphik Bold Italic
+              <H4 className="py-4 font-bold border-solid border-b-2 border-body italic">
+                Inter Bold Italic
               </H4>
-              <H4 tw="py-4 font-black border-solid border-b-2 border-body italic">
-                Graphik Black Italic
+              <H4 className="py-4 font-black border-solid border-b-2 border-body italic">
+                Inter Black Italic
               </H4>
             </div>
           </div>
           <br />
           <br />
           <br />
-          <PSmall isBold>Font-mono</PSmall>
+          <PSmall isMedium>Font-mono</PSmall>
           <br />
-          <H2 isBold tw="leading-tight font-mono">
+          <H2 isBold className="leading-tight font-mono">
             Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789
           </H2>
           <br />
           <br />
           <PSmall>Type weights</PSmall>
           <br />
-          <div tw="grid grid-cols-12 gap-4">
-            <div tw="grid col-span-12 md:col-span-6">
-              <H4 tw="py-4 font-mono font-normal border-solid border-b-2 border-body">
+          <div className="grid grid-cols-12 gap-4">
+            <div className="grid col-span-12 md:col-span-6">
+              <H4 className="py-4 !font-mono border-solid border-b-2 border-body">
                 SF Mono Regular
               </H4>
-              <H4 tw="py-4 font-mono font-bold border-solid border-b-2 border-body">
+              <H4 className="py-4 font-mono font-bold border-solid border-b-2 border-body">
                 SF Mono Bold
               </H4>
             </div>
-            <div tw="grid col-span-12 md:col-span-6">
-              <H4 tw="py-4 font-mono font-normal border-solid border-b-2 border-body italic">
+            <div className="grid col-span-12 md:col-span-6">
+              <H4 className="py-4 font-mono border-solid border-b-2 border-body italic">
                 SF Mono Reg. Italic
               </H4>
-              <H4 tw="py-4 font-mono font-bold border-solid border-b-2 border-body italic">
+              <H4 className="py-4 font-mono font-bold border-solid border-b-2 border-body italic">
                 SF Mono Bold Italic
               </H4>
             </div>
@@ -108,7 +110,7 @@ export default function Page() {
           <br />
           <br />
           <br />
-          <H5 isBold>Font</H5>
+          <H5 isMedium>Font</H5>
           <Separator />
           <br />
           <br />
@@ -116,126 +118,138 @@ export default function Page() {
           <br />
           <br />
           <br />
-          <div tw="grid grid-cols-12 gap-4 bg-window">
-            <div tw="grid col-span-12 md:col-span-4">
-              <PSmall tw="py-2 pl-3 font-medium">Example</PSmall>
+          <div className="grid grid-cols-12 gap-4 bg-window">
+            <div className="grid col-span-12 md:col-span-4">
+              <PSmall className="py-2 pl-3 font-medium">Example</PSmall>
             </div>
-            <div tw="grid col-span-12 md:col-span-4">
-              <PSmall tw="py-2 pl-3 font-medium">Description</PSmall>
+            <div className="grid col-span-12 md:col-span-4">
+              <PSmall className="py-2 pl-3 font-medium">Description</PSmall>
             </div>
-            <div tw="grid col-span-12 md:col-span-4">
-              <PSmall tw="py-2 pl-3 font-medium">Transform</PSmall>
+            <div className="grid col-span-12 md:col-span-4">
+              <PSmall className="py-2 pl-3 font-medium">Transform</PSmall>
             </div>
           </div>
           <br />
-          <div tw="grid grid-cols-12 gap-4">
-            <div tw="grid col-span-12 md:col-span-4">
-              <H4 isLight tw="py-2 pl-3">
+          <div className="grid grid-cols-12 gap-4">
+            <div className="grid col-span-12 md:col-span-4">
+              <H4 isLight className="py-2 pl-3">
                 Aa
               </H4>
-              <PTiny tw="py-2 pl-3 font-medium">
-                Graphik Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
-                sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'
+              <PTiny className="py-2 pl-3 font-medium">
+                Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+                'Apple Color Emoji', 'Segoe UI Emoji'
               </PTiny>
             </div>
-            <div tw="grid col-span-12 md:col-span-4">
-              <PTiny tw="py-2 pl-3 font-medium">Default font-family for Tempo DSM products</PTiny>
+            <div className="grid col-span-12 md:col-span-4">
+              <PTiny className="py-2 pl-3 font-medium">
+                Default font-family for Tempo DSM products
+              </PTiny>
             </div>
-            <div tw="grid col-span-12 md:col-span-4">
-              <PSmall tw="py-2 pl-3 font-medium">{'<H4 isLight>Aa</H4>'}</PSmall>
+            <div className="grid col-span-12 md:col-span-4">
+              <PSmall className="py-2 pl-3 font-medium">{'<H4 isLight>Aa</H4>'}</PSmall>
             </div>
           </div>
           <br />
           <br />
-          <div tw="grid grid-cols-12 gap-4">
-            <div tw="grid col-span-12 md:col-span-4">
-              <H4 tw="py-2 pl-3">Aa</H4>
-              <PTiny tw="py-2 pl-3 font-medium">
-                Graphik Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
-                sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'
+          <div className="grid grid-cols-12 gap-4">
+            <div className="grid col-span-12 md:col-span-4">
+              <H4 className="py-2 pl-3">Aa</H4>
+              <PTiny className="py-2 pl-3 font-medium">
+                Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+                'Apple Color Emoji', 'Segoe UI Emoji'
               </PTiny>
             </div>
-            <div tw="grid col-span-12 md:col-span-4">
-              <PTiny tw="py-2 pl-3 font-medium">Default font-family for Tempo DSM products</PTiny>
+            <div className="grid col-span-12 md:col-span-4">
+              <PTiny className="py-2 pl-3 font-medium">
+                Default font-family for Tempo DSM products
+              </PTiny>
             </div>
-            <div tw="grid col-span-12 md:col-span-4">
-              <PSmall tw="py-2 pl-3 font-medium">None (default)</PSmall>
+            <div className="grid col-span-12 md:col-span-4">
+              <PSmall className="py-2 pl-3 font-medium">None (default)</PSmall>
             </div>
           </div>
           <br />
           <br />
-          <div tw="grid grid-cols-12 gap-4">
-            <div tw="grid col-span-12 md:col-span-4">
-              <H4 isMedium tw="py-2 pl-3">
+          <div className="grid grid-cols-12 gap-4">
+            <div className="grid col-span-12 md:col-span-4">
+              <H4 isMedium className="py-2 pl-3">
                 Aa
               </H4>
-              <PTiny tw="py-2 pl-3 font-medium">
-                Graphik Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
-                sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'
+              <PTiny className="py-2 pl-3 font-medium">
+                Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+                'Apple Color Emoji', 'Segoe UI Emoji'
               </PTiny>
             </div>
-            <div tw="grid col-span-12 md:col-span-4">
-              <PTiny tw="py-2 pl-3 font-medium">Default font-family for Tempo DSM products</PTiny>
+            <div className="grid col-span-12 md:col-span-4">
+              <PTiny className="py-2 pl-3 font-medium">
+                Default font-family for Tempo DSM products
+              </PTiny>
             </div>
-            <div tw="grid col-span-12 md:col-span-4">
-              <PSmall tw="py-2 pl-3 font-medium">{'<H4 isMedium>Aa</H4>'}</PSmall>
+            <div className="grid col-span-12 md:col-span-4">
+              <PSmall className="py-2 pl-3 font-medium">{'<H4 isMedium>Aa</H4>'}</PSmall>
             </div>
           </div>
           <br />
           <br />
-          <div tw="grid grid-cols-12 gap-4">
-            <div tw="grid col-span-12 md:col-span-4">
-              <H4 isBold tw="py-2 pl-3">
+          <div className="grid grid-cols-12 gap-4">
+            <div className="grid col-span-12 md:col-span-4">
+              <H4 isBold className="py-2 pl-3">
                 Aa
               </H4>
-              <PTiny tw="py-2 pl-3 font-medium">
-                Graphik Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
-                sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'
+              <PTiny className="py-2 pl-3 font-medium">
+                Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+                'Apple Color Emoji', 'Segoe UI Emoji'
               </PTiny>
             </div>
-            <div tw="grid col-span-12 md:col-span-4">
-              <PTiny tw="py-2 pl-3 font-medium">Default font-family for Tempo DSM products</PTiny>
+            <div className="grid col-span-12 md:col-span-4">
+              <PTiny className="py-2 pl-3 font-medium">
+                Default font-family for Tempo DSM products
+              </PTiny>
             </div>
-            <div tw="grid col-span-12 md:col-span-4">
-              <PSmall tw="py-2 pl-3 font-medium">{'<H4 isBold>Aa</H4>'}</PSmall>
+            <div className="grid col-span-12 md:col-span-4">
+              <PSmall className="py-2 pl-3 font-medium">{'<H4 isMedium>Aa</H4>'}</PSmall>
             </div>
           </div>
           <br />
           <br />
-          <div tw="grid grid-cols-12 gap-4">
-            <div tw="grid col-span-12 md:col-span-4">
-              <H4 isExtraBold tw="py-2 pl-3">
+          <div className="grid grid-cols-12 gap-4">
+            <div className="grid col-span-12 md:col-span-4">
+              <H4 isExtraBold className="py-2 pl-3">
                 Aa
               </H4>
-              <PTiny tw="py-2 pl-3 font-medium">
-                Graphik Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
-                sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'
+              <PTiny className="py-2 pl-3 font-medium">
+                Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+                'Apple Color Emoji', 'Segoe UI Emoji'
               </PTiny>
             </div>
-            <div tw="grid col-span-12 md:col-span-4">
-              <PTiny tw="py-2 pl-3 font-medium">Default font-family for Tempo DSM products</PTiny>
+            <div className="grid col-span-12 md:col-span-4">
+              <PTiny className="py-2 pl-3 font-medium">
+                Default font-family for Tempo DSM products
+              </PTiny>
             </div>
-            <div tw="grid col-span-12 md:col-span-4">
-              <PSmall tw="py-2 pl-3 font-medium">{'<H4 isExtraBold>Aa</H4>'}</PSmall>
+            <div className="grid col-span-12 md:col-span-4">
+              <PSmall className="py-2 pl-3 font-medium">{'<H4 isExtraBold>Aa</H4>'}</PSmall>
             </div>
           </div>
           <br />
           <br />
-          <div tw="grid grid-cols-12 gap-4">
-            <div tw="grid col-span-12 md:col-span-4">
-              <H4 isHeavy tw="py-2 pl-3">
+          <div className="grid grid-cols-12 gap-4">
+            <div className="grid col-span-12 md:col-span-4">
+              <H4 isHeavy className="py-2 pl-3">
                 Aa
               </H4>
-              <PTiny tw="py-2 pl-3 font-medium">
-                Graphik Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
-                sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'
+              <PTiny className="py-2 pl-3 font-medium">
+                Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+                'Apple Color Emoji', 'Segoe UI Emoji'
               </PTiny>
             </div>
-            <div tw="grid col-span-12 md:col-span-4">
-              <PTiny tw="py-2 pl-3 font-medium">Default font-family for Tempo DSM products</PTiny>
+            <div className="grid col-span-12 md:col-span-4">
+              <PTiny className="py-2 pl-3 font-medium">
+                Default font-family for Tempo DSM products
+              </PTiny>
             </div>
-            <div tw="grid col-span-12 md:col-span-4">
-              <PSmall tw="py-2 pl-3 font-medium">{'<H4 isHeavy>Aa</H4>'}</PSmall>
+            <div className="grid col-span-12 md:col-span-4">
+              <PSmall className="py-2 pl-3 font-medium">{'<H4 isHeavy>Aa</H4>'}</PSmall>
             </div>
           </div>
           <br />

@@ -10,8 +10,8 @@ export default function Page() {
   return (
     <div>
       <Hero className="bg-window border-b-2 border-body">
-        <H1 isMedium>Headline</H1>
-        <P>Description.</P>
+        <H1 isMedium>Spinner</H1>
+        <P>Versatile SVG-based spinner component to use in loading scenarios</P>
       </Hero>
       <Container>
         <PaddingBox>

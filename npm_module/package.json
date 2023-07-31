@@ -1,0 +1,37 @@
+{
+  "name": "@tempoplatform/tpds",
+  "version": "1.0.0",
+  "author": "Tempo Platform Design Team",
+  "main": "./_dist/index.js",
+  "exports": {
+    ".": "./_dist/index.js",
+    "./*": "./_dist/*",
+    "./tailwind.config.js": "./tailwind.config.js"
+  },
+  "engines": {
+    "node": ">=12.20"
+  },
+  "description": "Tempo Platform Design System",
+  "homepage": "https://github.com/Tempo-Platform/tpds#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tempo-Platform/tpds.git"
+  },
+  "keywords": [
+    "tempo",
+    "ui",
+    "library",
+    "design",
+    "system",
+    "react",
+    "tailwind"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tempo-Platform/tpds/issues"
+  },
+  "dependencies": {
+    "react-syntax-highlighter": "^15.5.0",
+    "tailwindcss": "^3.3.2"
+  }
+}

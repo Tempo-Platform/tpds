@@ -12,8 +12,8 @@ export default function Page() {
   return (
     <div>
       <Hero className="bg-window border-b-2 border-body">
-        <H1 isMedium>Headline</H1>
-        <P>Description.</P>
+        <H1 isMedium>Checkbox</H1>
+        <P>Standard checkbox</P>
       </Hero>
       <Container>
         <PaddingBox>

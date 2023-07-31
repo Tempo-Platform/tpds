@@ -1,92 +1,77 @@
-/* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 import React from 'react'
-import tw, { styled, css } from 'twin.macro'
-import { PSmall } from '../../elements/typography'
+import { PSmall, PTiny } from '../../elements/typography'
 import CheckIcon from '../../assets/svgs/icons/Check'
-
-const StepsRoot = styled.div(() => [
-  tw`w-full flex justify-between items-center gap-x-[4px]`,
-  css`
-    .default {
-      ${tw`bg-window border-grey-light-scale-500 dark:(bg-window border-grey-light-scale-800)`},
-      p {
-        ${tw`text-primary dark:text-primary`}
-      }
-    }
-    .completed {
-      ${tw`bg-blue border-blue dark:(bg-blue border-blue)`},
-      p {
-        ${tw`text-white dark:text-black`}
-      }
-      svg * {
-        ${tw`fill-white`}
-      }
-    }
-    .active {
-      ${tw`bg-black border-black dark:(bg-white border-white)`},
-      p {
-        ${tw`text-white dark:text-black`}
-      }
-    }
-  `,
-])
-
-const StepCircle = styled.div(() => [
-  tw`rounded-[50%] w-[24px]! h-[24px]! flex justify-center items-center border-2`,
-])
-
-const Line = styled.div(() => [
-  tw`w-[10%] h-[2px] bg-grey-light-scale-300 dark:bg-grey-dark-scale-300`,
-])
-
-const PLabel = styled(PSmall)(() => [
-  tw`text-[13px]! relative top-[-1px]`,
-  tw`tracking-tight leading-none relative top-[-1px] whitespace-nowrap!`,
-])
-
-const StepRoot = styled.div(() => [tw`flex gap-x-2 items-center`])
+import clsx from 'clsx'
 
 const insertLines = array => {
   const newArray = []
   array.forEach((item, index) => {
     newArray.push(item)
     if (index % 1 === 0) {
-      newArray.push(<Line className="tpds-steps-line" key={`{tpds-steps-line-${index}}`} />)
+      newArray.push(
+        <div
+          className="w-[10%] h-[2px] bg-grey-light-scale-300 dark:bg-grey-dark-scale-300"
+          key={`{tpds-steps-line-${index}}`}
+        />,
+      )
     }
   })
   return newArray
 }
 
-function calculateStepState(index, currentStepIndex) {
+function calculateStepCircleState(index, currentStepIndex) {
   if (index === currentStepIndex) {
-    return 'active'
+    return 'bg-black border-black dark:bg-white dark:border-white'
   }
   if (index < currentStepIndex) {
-    return 'completed'
+    return 'bg-blue border-blue dark:bg-blue dark:border-blue'
   }
-  return 'default'
+  return 'bg-window border-grey-light-scale-500 dark:bg-window dark:border-grey-light-scale-800'
+}
+
+function calculateLabelState(index, currentStepIndex) {
+  if (index === currentStepIndex) {
+    return 'leading-none text-white dark:text-black'
+  }
+  if (index < currentStepIndex) {
+    return 'leading-none text-white dark:text-black'
+  }
+  return 'leading-none text-primary dark:text-primary'
 }
 
 function StepsComponent({ steps, currentStepIndex = 0, ...props }) {
+  const classPLabel = clsx(
+    `!text-[13px] relative top-[-1px]`,
+    `tracking-tight leading-none relative top-[-1px] whitespace-nowrap!`,
+  )
   const items = steps.map((step, index) => (
-    <StepRoot className="tpds-step" key={step.title}>
-      <StepCircle className={calculateStepState(index, currentStepIndex).toString()}>
-        {currentStepIndex > index ? (
-          <CheckIcon />
-        ) : (
-          <PSmall isMedium tw="leading-none">
-            {index + 1}
-          </PSmall>
+    <div className="flex gap-x-2 items-center" key={step.title}>
+      <div
+        className={clsx(
+          calculateStepCircleState(index, currentStepIndex),
+          'rounded-[50%] !w-[24px] !h-[24px] flex justify-center items-center border-2',
         )}
-      </StepCircle>
-      <PLabel isMedium className="tpds-steps-label">
+      >
+        {currentStepIndex > index ? (
+          <CheckIcon className="text-white" />
+        ) : (
+          <PTiny isMedium className={calculateLabelState(index, currentStepIndex)}>
+            {index + 1}
+          </PTiny>
+        )}
+      </div>
+      <PSmall isMedium className={clsx(classPLabel)}>
         {step.title}
-      </PLabel>
-    </StepRoot>
+      </PSmall>
+    </div>
   ))
   const itemsWithLines = insertLines(items)
   itemsWithLines.pop()
-  return <StepsRoot {...props}>{itemsWithLines}</StepsRoot>
+  return (
+    <div className="w-full flex justify-between items-center gap-x-[4px]" {...props}>
+      {itemsWithLines}
+    </div>
+  )
 }
 
 export default StepsComponent

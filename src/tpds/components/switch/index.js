@@ -1,30 +1,38 @@
-/* eslint no-unused-vars: [ "off", { "argsIgnorePattern": "tw" } ] */
 import React from 'react'
-import { Switch } from '@headlessui/react'
-import tw, { css } from 'twin.macro'
+import clsx from 'clsx'
 
-const stylesA = {}
-stylesA[true] = tw`bg-success! relative inline-flex h-6 w-11 items-center rounded-full`
-stylesA[
-  false
-] = tw`bg-grey-light-scale-500 dark:bg-grey-dark-scale-300 relative inline-flex h-6 w-11 items-center rounded-full`
+const bgStyles = {
+  info: 'bg-blue dark:bg-blue',
+  success: 'bg-green dark:bg-green',
+  warning: 'bg-orange dark:bg-orange',
+  danger: 'bg-red dark:bg-red',
+}
 
-const stylesB = {}
-stylesB[true] = tw`translate-x-6 inline-block h-4 w-4 transform rounded-full bg-body`
-stylesB[false] = tw`translate-x-1 inline-block h-4 w-4 transform rounded-full bg-body`
+function Switch({ active = false, onClick = null, variant = 'info', disabled = false }) {
+  const rootStyles = clsx(
+    'h-6 w-11',
+    'transition',
+    'cursor-pointer',
+    'items-center rounded-full',
+    'relative inline-flex',
+    active ? bgStyles[variant] : `bg-grey-light-scale-500 dark:bg-grey-dark-scale-300`,
+  )
 
-function SwitchElement({ active = false, onChange = null, disabled = false }) {
+  const circleStyles = clsx(
+    'transition',
+    'inline-block h-4 w-4 transform rounded-full bg-body',
+    active ? `translate-x-6` : `translate-x-1`,
+  )
+
   return (
-    <Switch
-      checked={active}
-      onChange={onChange}
-      tw="transition"
-      css={stylesA[active]}
-      style={disabled ? { pointerEvents: 'none', opacity: 0.5 } : null}
+    <div
+      onClick={onClick}
+      className={rootStyles}
+      style={disabled ? { pointerEvents: 'none', opacity: 0.2 } : null}
     >
-      <span css={stylesB[active]} />
-    </Switch>
+      <span className={circleStyles} />
+    </div>
   )
 }
 
-export default SwitchElement
+export default Switch

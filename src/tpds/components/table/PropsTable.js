@@ -36,8 +36,6 @@ function PropsTable({
   skipColumn4 = false,
 }) {
   const lastPClass = lastPVariants[getLastPVariant(skipColumn2, skipColumn3, skipColumn4)]
-  console.log('lastPClass', lastPClass)
-
   return (
     <div>
       {!omitTitle && <H6>{title || 'Props'}</H6>}

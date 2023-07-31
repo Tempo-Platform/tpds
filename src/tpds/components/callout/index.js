@@ -60,7 +60,8 @@ const Callout = ({ variant = 'default', title, text, ...props }) => {
   return (
     <div {...props} className={rootStyles[variant]}>
       <div className={clsx(headerBaseStyle, headerVariantStyles[variant])}>
-        <span className="mr-2">{getIcon(variant)}</span> {title}
+        {variant !== 'default' && <span className="mr-2">{getIcon(variant)}</span>}
+        {title}
       </div>
       <div className="font-medium text-grey-dark-scale-200 dark:text-white px-4 pb-4 pt-2">
         {text}

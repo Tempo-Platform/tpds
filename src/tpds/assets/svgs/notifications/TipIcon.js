@@ -1,16 +1,13 @@
 import React from 'react'
+import tokens from '../../../tokens/index.json'
+const colorTokens = tokens.colors
+const colorPalettes = colorTokens.color_palettes
 
 function TipIcon() {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      fill="none"
-      viewBox="0 0 16 16"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
       <path
-        fill="#7153C6"
+        fill={colorPalettes.purple['500']}
         d="M14 0H2a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2z"
       ></path>
       <path
