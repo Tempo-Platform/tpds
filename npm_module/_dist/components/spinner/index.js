@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
+var _react = _interopRequireDefault(require("react"));
 var _index = _interopRequireDefault(require("../../tokens/index.json"));
 var _excluded = ["color", "radius", "duration", "strokeWidth"];
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -40,10 +41,10 @@ function Spinner(_ref) {
     strokeWidth = _ref$strokeWidth === void 0 ? '3' : _ref$strokeWidth,
     props = _objectWithoutProperties(_ref, _excluded);
   color = processColor(color);
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("style", {
     global: true,
     jsx: true
-  }, "\n          @keyframes rotate {\n            100% {\n              transform: rotate(360deg);\n            }\n          }\n          .tpds-spinner {\n            animation-name: rotate;\n            animation-timing-function: linear;\n            display: inline-block;\n            animation-iteration-count: infinite;\n          }\n        "), /*#__PURE__*/React.createElement("svg", _extends({}, props, {
+  }, "\n          @keyframes rotate {\n            100% {\n              transform: rotate(360deg);\n            }\n          }\n          .tpds-spinner {\n            animation-name: rotate;\n            animation-timing-function: linear;\n            display: inline-block;\n            animation-iteration-count: infinite;\n          }\n        "), /*#__PURE__*/_react["default"].createElement("svg", _extends({}, props, {
     className: "tpds-spinner",
     viewBox: "0 0 42 42",
     style: {
@@ -51,16 +52,16 @@ function Spinner(_ref) {
       width: "".concat(radius ? radius : 40, "px"),
       height: "".concat(radius ? radius : 40, "px")
     }
-  }), /*#__PURE__*/React.createElement("g", {
+  }), /*#__PURE__*/_react["default"].createElement("g", {
     fill: "none",
     transform: "translate(3 3)",
     strokeWidth: strokeWidth
-  }, /*#__PURE__*/React.createElement("circle", {
+  }, /*#__PURE__*/_react["default"].createElement("circle", {
     className: "stroke-grey-light-scale-400 dark:stroke-grey-dark-scale-300",
     cx: "18",
     cy: "18",
     r: "18"
-  }), /*#__PURE__*/React.createElement("path", {
+  }), /*#__PURE__*/_react["default"].createElement("path", {
     className: "stroke-current text-primary",
     style: {
       color: color

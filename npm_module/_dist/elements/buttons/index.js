@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Button = void 0;
+var _react = _interopRequireDefault(require("react"));
 var _clsx = _interopRequireDefault(require("clsx"));
 var _excluded = ["children", "variant", "isSmall", "isTiny", "isLarge", "isDisabled", "isUppercase"];
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -21,7 +22,7 @@ var Button = function Button(_ref) {
     isUppercase = _ref.isUppercase,
     props = _objectWithoutProperties(_ref, _excluded);
   var finalClass = (0, _clsx["default"])('flex transition duration-100', '!font-medium text-[14px] whitespace-nowrap', 'px-3 gap-x-2 pt-[5px] pb-[5px] border rounded-sm focus:outline-none', 'items-center justify-center', 'select-none cursor-pointer', buttonVariantStyles[variant], isSmall && '!text-sm', isUppercase && '!uppercase', isUppercase && '!uppercase', isSmall && 'px-2 pt-[2px] pb-[1.5px] text-[13px]', isTiny && 'px-1 pt-0 pb-0 text-[11px]', isLarge && 'px-4 py-1.5 text-[16px]', isDisabled && 'pointer-events-none opacity-30');
-  return /*#__PURE__*/React.createElement("button", _extends({
+  return /*#__PURE__*/_react["default"].createElement("button", _extends({
     className: finalClass
   }, props), children);
 };

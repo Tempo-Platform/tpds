@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Underline = exports.Red = exports.PTiny = exports.PSmall = exports.PNano = exports.PLarge = exports.P = exports.Orange = exports.Medium = exports.H6 = exports.H5 = exports.H4 = exports.H3 = exports.H2 = exports.H1 = exports.Green = exports.FormLabelTiny = exports.FormLabelSmall = exports.FormLabelNano = exports.FormLabel = exports.Code = exports.Bold = exports.Blue = exports.AccentColor = void 0;
+var _react = _interopRequireDefault(require("react"));
 var _clsx = _interopRequireDefault(require("clsx"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var baseStyles = 'text-primary m-0';
@@ -13,7 +14,7 @@ var calculateFinalClass = function calculateFinalClass(defaultClass, props) {
 };
 var PNano = function PNano(props) {
   var finalClass = calculateFinalClass('text-[11px]', props);
-  return /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -21,7 +22,7 @@ var PNano = function PNano(props) {
 exports.PNano = PNano;
 var PTiny = function PTiny(props) {
   var finalClass = calculateFinalClass('text-xs xl:text-sm', props);
-  return /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -29,7 +30,7 @@ var PTiny = function PTiny(props) {
 exports.PTiny = PTiny;
 var PSmall = function PSmall(props) {
   var finalClass = calculateFinalClass('text-sm xl:text-base', props);
-  return /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -37,7 +38,7 @@ var PSmall = function PSmall(props) {
 exports.PSmall = PSmall;
 var P = function P(props) {
   var finalClass = calculateFinalClass('text-base xl:text-lg', props);
-  return /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -45,7 +46,7 @@ var P = function P(props) {
 exports.P = P;
 var PLarge = function PLarge(props) {
   var finalClass = calculateFinalClass('text-lg xl:text-xl', props);
-  return /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -53,7 +54,7 @@ var PLarge = function PLarge(props) {
 exports.PLarge = PLarge;
 var H6 = function H6(props) {
   var finalClass = calculateFinalClass('text-base md:text-lg lg:text-xl xl:text-2xl tracking-normal leading-tight', props);
-  return /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -61,7 +62,7 @@ var H6 = function H6(props) {
 exports.H6 = H6;
 var H5 = function H5(props) {
   var finalClass = calculateFinalClass('text-lg md:text-xl lg:text-2xl xl:text-3xl tracking-normal leading-tight', props);
-  return /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -69,7 +70,7 @@ var H5 = function H5(props) {
 exports.H5 = H5;
 var H4 = function H4(props) {
   var finalClass = calculateFinalClass('text-xl md:text-2xl lg:text-3xl xl:text-4xl tracking-normal leading-tight', props);
-  return /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -77,7 +78,7 @@ var H4 = function H4(props) {
 exports.H4 = H4;
 var H3 = function H3(props) {
   var finalClass = calculateFinalClass('text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-tight leading-tight', props);
-  return /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -85,7 +86,7 @@ var H3 = function H3(props) {
 exports.H3 = H3;
 var H2 = function H2(props) {
   var finalClass = calculateFinalClass('text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight leading-tight', props);
-  return /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -93,7 +94,7 @@ var H2 = function H2(props) {
 exports.H2 = H2;
 var H1 = function H1(props) {
   var finalClass = calculateFinalClass('text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-tight', props);
-  return /*#__PURE__*/React.createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -103,7 +104,7 @@ var H1 = function H1(props) {
 exports.H1 = H1;
 var AccentColor = function AccentColor(props) {
   var finalClass = calculateFinalClass('!text-blue', props);
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/_react["default"].createElement("span", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -111,7 +112,7 @@ var AccentColor = function AccentColor(props) {
 exports.AccentColor = AccentColor;
 var Bold = function Bold(props) {
   var finalClass = calculateFinalClass('!font-bold', props);
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/_react["default"].createElement("span", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -119,7 +120,7 @@ var Bold = function Bold(props) {
 exports.Bold = Bold;
 var Medium = function Medium(props) {
   var finalClass = calculateFinalClass('!font-medium', props);
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/_react["default"].createElement("span", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -127,7 +128,7 @@ var Medium = function Medium(props) {
 exports.Medium = Medium;
 var Underline = function Underline(props) {
   var finalClass = calculateFinalClass('!underline', props);
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/_react["default"].createElement("span", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -135,7 +136,7 @@ var Underline = function Underline(props) {
 exports.Underline = Underline;
 var Red = function Red(props) {
   var finalClass = calculateFinalClass('!text-red', props);
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/_react["default"].createElement("span", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -143,7 +144,7 @@ var Red = function Red(props) {
 exports.Red = Red;
 var Blue = function Blue(props) {
   var finalClass = calculateFinalClass('!text-blue', props);
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/_react["default"].createElement("span", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -151,7 +152,7 @@ var Blue = function Blue(props) {
 exports.Blue = Blue;
 var Green = function Green(props) {
   var finalClass = calculateFinalClass('!text-green', props);
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/_react["default"].createElement("span", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -159,14 +160,14 @@ var Green = function Green(props) {
 exports.Green = Green;
 var Orange = function Orange(props) {
   var finalClass = calculateFinalClass('!text-orange', props);
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/_react["default"].createElement("span", {
     className: finalClass,
     style: props.style
   }, props.children);
 };
 exports.Orange = Orange;
 var Code = function Code(props) {
-  return /*#__PURE__*/React.createElement("span", {
+  return /*#__PURE__*/_react["default"].createElement("span", {
     className: "font-mono font-bold"
   }, props.children);
 };
@@ -174,25 +175,25 @@ var Code = function Code(props) {
 // // form labels
 exports.Code = Code;
 var FormLabelNano = function FormLabelNano(props) {
-  return /*#__PURE__*/React.createElement(PNano, {
+  return /*#__PURE__*/_react["default"].createElement(PNano, {
     className: "font-label text-tertiary font-medium leading-none"
   }, props.children);
 };
 exports.FormLabelNano = FormLabelNano;
 var FormLabelTiny = function FormLabelTiny(props) {
-  return /*#__PURE__*/React.createElement(PTiny, {
+  return /*#__PURE__*/_react["default"].createElement(PTiny, {
     className: "font-label text-tertiary font-medium leading-none"
   }, props.children);
 };
 exports.FormLabelTiny = FormLabelTiny;
 var FormLabelSmall = function FormLabelSmall(props) {
-  return /*#__PURE__*/React.createElement(PSmall, {
+  return /*#__PURE__*/_react["default"].createElement(PSmall, {
     className: "font-label text-tertiary font-medium leading-none"
   }, props.children);
 };
 exports.FormLabelSmall = FormLabelSmall;
 var FormLabel = function FormLabel(props) {
-  return /*#__PURE__*/React.createElement(P, {
+  return /*#__PURE__*/_react["default"].createElement(P, {
     className: "font-label text-tertiary font-medium leading-none"
   }, props.children);
 };

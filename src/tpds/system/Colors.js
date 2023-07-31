@@ -1,7 +1,8 @@
+import React from 'react'
 import tokens from '../tokens/index.json'
 const colors = tokens.colors
-const colorPalettes = colors.color_palettes
 const colorsDarkTheme = colors.dark
+const colorPalettes = colors.color_palettes
 const colorsLightTheme = colors.light
 
 const TPDSColors = () => (

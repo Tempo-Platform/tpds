@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.TextInput = void 0;
+var _react = _interopRequireDefault(require("react"));
 var _clsx = _interopRequireDefault(require("clsx"));
 var _excluded = ["isValid", "isInvalid", "isWarning"];
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -18,7 +19,7 @@ var TextInput = function TextInput(_ref) {
   var finalClass = (0, _clsx["default"])('flex w-full', 'transition duration-100', 'px-2.5 py-1 rounded focus:outline-none', 'font-normal', 'bg-input text-primary border-input', 'border-2 focus:border-blue',
   //buttonVariantStyles[variant],
   isValid && 'border-green focus:border-green', isInvalid && 'border-red focus:border-red', isWarning && 'border-orange focus:border-orange');
-  return /*#__PURE__*/React.createElement("input", _extends({
+  return /*#__PURE__*/_react["default"].createElement("input", _extends({
     type: "text",
     className: finalClass
   }, props));

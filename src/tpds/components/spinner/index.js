@@ -1,3 +1,4 @@
+import React from 'react'
 import tokens from '../../tokens/index.json'
 const colorPalettes = tokens.colors.color_palettes
 
