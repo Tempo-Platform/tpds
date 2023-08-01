@@ -24,9 +24,9 @@ var PageRoot = function PageRoot(props) {
 };
 exports.PageRoot = PageRoot;
 var containerVariants = {
-  "short": 'px-6 sm:px-8 w-full md:(px-0 w-11/12) max-w-[1022px]',
-  large: 'px-6 sm:px-8 w-full md:(px-0 w-[80%]) xl:w-[70%] 2xl:(w-[60%] max-w-[1440px])',
-  full: 'px-6 sm:px-8 w-full md:(px-0 w-11/12) xl:w-10/12 2xl:(w-full px-30px)'
+  "short": 'px-6 sm:px-8 w-full md:px-0 md:w-11/12 max-w-[1022px]',
+  large: 'px-6 sm:px-8 w-full md:px-0 md:w-[80%] xl:w-[70%] 2xl:w-[60%] 2xl:max-w-[1440px]',
+  full: 'px-6 sm:px-8 w-full md:px-0 md:w-11/12 xl:w-10/12 2xl:w-full 2xl:px-30px'
 };
 var Container = function Container(props) {
   var defaultClass = 'self-center mx-auto';
@@ -71,7 +71,7 @@ var SeparatorWindow = function SeparatorWindow(props) {
 };
 exports.SeparatorWindow = SeparatorWindow;
 var Window = function Window(props) {
-  var defaultClass = 'bg-window border border-window rounded-sm py-xs px-xs md:(py-xs px-sm) lg:(py-sm px-md rounded)';
+  var defaultClass = 'bg-window border border-window rounded-sm py-xs px-xs md:py-xs md:px-sm lg:py-sm lg:px-md lg:rounded';
   var finalClass = (0, _clsx["default"])(defaultClass, props.className);
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: finalClass

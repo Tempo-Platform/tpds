@@ -6,6 +6,7 @@ var text = tokens.text;
 var breakpoints = tokens.breakpoints;
 var colorPalettes = colors.color_palettes;
 module.exports = {
+  content: ['./src/**/*.{js,ts,jsx,tsx}', './website/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   future: {
     hoverOnlyWhenSupported: true
