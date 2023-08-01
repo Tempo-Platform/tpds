@@ -14,9 +14,9 @@ export const PageRoot = props => {
 }
 
 const containerVariants = {
-  short: 'px-6 sm:px-8 w-full md:(px-0 w-11/12) max-w-[1022px]',
-  large: 'px-6 sm:px-8 w-full md:(px-0 w-[80%]) xl:w-[70%] 2xl:(w-[60%] max-w-[1440px])',
-  full: 'px-6 sm:px-8 w-full md:(px-0 w-11/12) xl:w-10/12 2xl:(w-full px-30px)',
+  short: 'px-6 sm:px-8 w-full md:px-0 md:w-11/12 max-w-[1022px]',
+  large: 'px-6 sm:px-8 w-full md:px-0 md:w-[80%] xl:w-[70%] 2xl:w-[60%] 2xl:max-w-[1440px]',
+  full: 'px-6 sm:px-8 w-full md:px-0 md:w-11/12 xl:w-10/12 2xl:w-full 2xl:px-30px',
 }
 
 export const Container = props => {
@@ -53,7 +53,7 @@ export const SeparatorWindow = props => {
 
 export const Window = props => {
   const defaultClass =
-    'bg-window border border-window rounded-sm py-xs px-xs md:(py-xs px-sm) lg:(py-sm px-md rounded)'
+    'bg-window border border-window rounded-sm py-xs px-xs md:py-xs md:px-sm lg:py-sm lg:px-md lg:rounded'
   const finalClass = clsx(defaultClass, props.className)
   return <div className={finalClass}>{props.children}</div>
 }
