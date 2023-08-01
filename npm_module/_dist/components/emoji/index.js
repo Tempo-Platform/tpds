@@ -1,10 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.emoji = void 0;
-var emoji = 'temporarily disabled';
+export const emoji = 'temporarily disabled';
 
 // import React from 'react'
 // import PropTypes from 'prop-types'
@@ -23,4 +17,3 @@ var emoji = 'temporarily disabled';
 // }
 
 // export default Emoji
-exports.emoji = emoji;

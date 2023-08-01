@@ -1,6 +1,4 @@
-"use strict";
-
-var shadows = require('../../tokens').boxShadow;
+const shadows = require('../../tokens').boxShadow;
 module.exports = {
   base: shadows.shadow,
   inner: shadows['shadow-inner'],

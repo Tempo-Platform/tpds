@@ -1,10 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.cardB = void 0;
-var cardB = 'temporarily disabled';
+export const cardB = 'temporarily disabled';
 
 // import React from 'react'
 // import tw, { css, styled } from 'twin.macro'
@@ -81,4 +75,3 @@ var cardB = 'temporarily disabled';
 // ])
 
 // const Description = styled(P)(() => [tw`text-secondary leading-tight`])
-exports.cardB = cardB;

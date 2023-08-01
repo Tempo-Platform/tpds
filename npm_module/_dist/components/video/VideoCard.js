@@ -1,10 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.video = void 0;
-var video = 'temporarily disabled';
+export const video = 'temporarily disabled';
 
 // import React from 'react'
 // import { H6, P } from '../../elements/typography'
@@ -49,4 +43,3 @@ var video = 'temporarily disabled';
 // ])
 
 // const Description = styled(P)(() => [tw`text-secondary leading-tight pt-xs`])
-exports.video = video;

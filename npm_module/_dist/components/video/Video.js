@@ -1,10 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.video = void 0;
-var video = 'temporarily disabled';
+export const video = 'temporarily disabled';
 
 // import React from 'react'
 
@@ -25,4 +19,3 @@ var video = 'temporarily disabled';
 // }
 
 // export default Video
-exports.video = video;

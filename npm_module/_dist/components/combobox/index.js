@@ -1,10 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.combobox = void 0;
-var combobox = 'temporarily disabled';
+export const combobox = 'temporarily disabled';
 
 // import React, { useState, useEffect } from 'react'
 // import { Combobox } from '@headlessui/react'
@@ -129,4 +123,3 @@ var combobox = 'temporarily disabled';
 // spanBStyles[
 //   false
 // ] = tw`absolute inset-y-0 left-0 top-0 flex items-center pl-3 text-orange text-current`
-exports.combobox = combobox;

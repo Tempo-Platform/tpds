@@ -1,10 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.pagination = void 0;
-var pagination = 'temporarily disabled';
+export const pagination = 'temporarily disabled';
 
 // import React, { useState } from 'react'
 // import tw, { styled, css } from 'twin.macro'
@@ -209,4 +203,3 @@ var pagination = 'temporarily disabled';
 // }
 
 // export default Pagination
-exports.pagination = pagination;

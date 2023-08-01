@@ -1,10 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.inputComponent = void 0;
-var inputComponent = 'temporarily disabled';
+export const inputComponent = 'temporarily disabled';
 
 // import React, { useState } from 'react'
 // import PropTypes from 'prop-types'
@@ -175,4 +169,3 @@ var inputComponent = 'temporarily disabled';
 //     }
 //   `,
 // ])
-exports.inputComponent = inputComponent;

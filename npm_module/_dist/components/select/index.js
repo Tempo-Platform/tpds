@@ -1,10 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.select = void 0;
-var select = 'temporarily disabled';
+export const select = 'temporarily disabled';
 
 // import React, { Fragment, useState } from 'react'
 // import { Listbox } from '@headlessui/react'
@@ -94,4 +88,3 @@ var select = 'temporarily disabled';
 //     </div>
 //   )
 // }
-exports.select = select;

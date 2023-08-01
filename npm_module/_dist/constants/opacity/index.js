@@ -10,4 +10,3 @@
 //   xxl: opacity.xxl,
 //   xxxl: opacity.xxxl,
 // }
-"use strict";

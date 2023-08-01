@@ -1,10 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.breadcrumbs = void 0;
-var breadcrumbs = 'temporarily disabled';
+export const breadcrumbs = 'temporarily disabled';
 
 // import React from 'react'
 // import tw, { css, styled } from 'twin.macro'
@@ -103,4 +97,3 @@ var breadcrumbs = 'temporarily disabled';
 //     </svg>
 //   )
 // }
-exports.breadcrumbs = breadcrumbs;

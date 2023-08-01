@@ -1,7 +1,5 @@
-"use strict";
-
-var colorTokens = require('../../tokens/index.json').colors;
-var colorPalettes = colorTokens.color_palettes;
+const colorTokens = require('../../tokens/index.json').colors;
+const colorPalettes = colorTokens.color_palettes;
 module.exports = {
   white: colorTokens.white,
   black: colorTokens.black,

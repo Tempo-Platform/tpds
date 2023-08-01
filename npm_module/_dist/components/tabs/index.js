@@ -1,10 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.tabs = void 0;
-var tabs = 'temporarily disabled';
+export const tabs = 'temporarily disabled';
 
 // import React from 'react'
 // import { Fragment } from 'react'
@@ -53,4 +47,3 @@ var tabs = 'temporarily disabled';
 //     </Tab.Group>
 //   )
 // }
-exports.tabs = tabs;

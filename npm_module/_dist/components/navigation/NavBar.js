@@ -1,10 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.navigation = void 0;
-var navigation = 'temporarily disabled';
+export const navigation = 'temporarily disabled';
 
 //import React, { useState } from 'react'
 // import tw, { css, styled } from 'twin.macro'
@@ -391,4 +385,3 @@ var navigation = 'temporarily disabled';
 //     </svg>
 //   )
 // }
-exports.navigation = navigation;

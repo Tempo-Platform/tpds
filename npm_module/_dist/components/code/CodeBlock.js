@@ -1,23 +1,14 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-var _react = _interopRequireDefault(require("react"));
-var _reactSyntaxHighlighter = require("react-syntax-highlighter");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var CodeBlock = function CodeBlock(_ref) {
-  var code = _ref.code;
-  return /*#__PURE__*/_react["default"].createElement(_reactSyntaxHighlighter.Prism, {
-    language: "javascript",
-    style: hummingbotPrismHighlightingStyle,
-    showLineNumbers: true
-  }, code);
+import React from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+const CodeBlock = ({
+  code
+}) => {
+  return <SyntaxHighlighter language="javascript" style={hummingbotPrismHighlightingStyle} showLineNumbers>
+      {code}
+    </SyntaxHighlighter>;
 };
-var _default = CodeBlock;
-exports["default"] = _default;
-var hummingbotPrismHighlightingStyle = {
+export default CodeBlock;
+const hummingbotPrismHighlightingStyle = {
   'code[class*="language-"]': {
     color: '#f8f8f2',
     background: 'none',
@@ -99,7 +90,7 @@ var hummingbotPrismHighlightingStyle = {
     color: '#f8f8f2' //
   },
 
-  "boolean": {
+  boolean: {
     color: '#00e0e0'
   },
   number: {
@@ -114,7 +105,7 @@ var hummingbotPrismHighlightingStyle = {
   string: {
     color: '#a2a2a2'
   },
-  "char": {
+  char: {
     color: '#a2a2a2'
   },
   builtin: {
@@ -148,7 +139,7 @@ var hummingbotPrismHighlightingStyle = {
   'attr-value': {
     color: '#5FFFD7'
   },
-  "function": {
+  function: {
     color: '#5FFFD7'
   },
   keyword: {

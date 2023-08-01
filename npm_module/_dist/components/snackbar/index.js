@@ -1,10 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.snackbar = void 0;
-var snackbar = 'temporarily disabled';
+export const snackbar = 'temporarily disabled';
 
 // import React from 'react'
 // import SuccessIcon from '../../assets/svgs/alerts/SuccessIcon'
@@ -61,4 +55,3 @@ var snackbar = 'temporarily disabled';
 // const Text = styled.div(() => [
 //   tw`flex font-medium text-grey-dark-scale-200 dark:text-white items-center px-4`,
 // ])
-exports.snackbar = snackbar;

@@ -1,10 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.menuComponent = void 0;
-var menuComponent = 'temporarily disabled';
+export const menuComponent = 'temporarily disabled';
 
 // import React from 'react'
 // import clsx from 'clsx'
@@ -117,4 +111,3 @@ var menuComponent = 'temporarily disabled';
 //     </svg>
 //   )
 // }
-exports.menuComponent = menuComponent;

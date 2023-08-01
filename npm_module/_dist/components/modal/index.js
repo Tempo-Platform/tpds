@@ -1,10 +1,4 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.modal = void 0;
-var modal = 'temporarily disabled';
+export const modal = 'temporarily disabled';
 
 // import React, { Fragment, useState, useEffect } from 'react'
 // import { Dialog } from '@headlessui/react'
@@ -134,4 +128,3 @@ var modal = 'temporarily disabled';
 // }
 
 // export default Modal
-exports.modal = modal;
