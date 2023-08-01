@@ -1,10 +1,10 @@
 import React from 'react'
-import Hero from '../../tpds/components/hero/Hero'
+import Hero from '../../tpds/components/hero'
 import { P, H1, H6 } from '../../tpds/elements/typography'
 import { Container, PaddingBox, Window, Separator } from '../../tpds/elements/layout'
-import CodeBlock from '../../tpds/components/code/CodeBlock'
+import CodeBlock from '../../tpds/components/code'
 import Switch from '../../tpds/components/switch'
-import PropsTable from '../../tpds/components/table/PropsTable'
+import PropsTable from '../../tpds/components/table'
 
 export default function Page() {
   const [active, setActive] = React.useState(false)

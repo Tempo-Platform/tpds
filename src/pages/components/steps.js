@@ -1,8 +1,8 @@
 import React from 'react'
-import Hero from '../../tpds/components/hero/Hero'
+import Hero from '../../tpds/components/hero'
 import { P, H1 } from '../../tpds/elements/typography'
 import { Container, PaddingBox } from '../../tpds/elements/layout'
-import CodeBlock from '../../tpds/components/code/CodeBlock'
+import CodeBlock from '../../tpds/components/code'
 import Steps from '../../tpds/components/steps'
 
 const currentStep = 1

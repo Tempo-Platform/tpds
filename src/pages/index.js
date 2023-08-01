@@ -1,5 +1,5 @@
 import { Section, Container, PaddingBox } from '@/tpds/elements/layout'
-import Hero from '@/tpds/components/hero/Hero'
+import Hero from '@/tpds/components/hero'
 import { H1, H4, P, PLarge } from '@/tpds/elements/typography'
 
 export default function Page() {

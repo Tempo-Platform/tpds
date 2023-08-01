@@ -1,4 +1,4 @@
-import Hero from '../tpds/components/hero/Hero'
+import Hero from '../tpds/components/hero'
 import { P, H5, Bold, H1 } from '../tpds/elements/typography'
 import { Separator, Container, PaddingBox } from '../tpds/elements/layout'
 

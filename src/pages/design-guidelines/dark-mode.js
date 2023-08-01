@@ -1,7 +1,7 @@
-import Hero from '../../tpds/components/hero/Hero'
+import Hero from '../../tpds/components/hero'
 import { P, H1, H6, Underline, Code } from '../../tpds/elements/typography'
 import { Section, Container, Window, PaddingBox, Separator } from '../../tpds/elements/layout'
-import CodeBlock from '../../tpds/components/code/CodeBlock'
+import CodeBlock from '../../tpds/components/code'
 import tokens from '../../tpds/tokens/index.json'
 const colorTokens = tokens.colors
 

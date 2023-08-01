@@ -1,7 +1,7 @@
-import Hero from '../../tpds/components/hero/Hero'
+import Hero from '../../tpds/components/hero'
 import { P, H1, Bold } from '../../tpds/elements/typography'
 import { Container, PaddingBox } from '../../tpds/elements/layout'
-import CodeBlock from '../../tpds/components/code/CodeBlock'
+import CodeBlock from '../../tpds/components/code'
 import tokens from '../../tpds/tokens/index.json'
 
 export default function DesignTokens() {

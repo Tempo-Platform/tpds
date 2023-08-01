@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../../tpds/components/hero/Hero'
+import Hero from '../../tpds/components/hero'
 import { P, H1, Bold } from '../../tpds/elements/typography'
 import { Separator, Container, PaddingBox } from '../../tpds/elements/layout'
 import { Button } from '../../tpds/elements/buttons'

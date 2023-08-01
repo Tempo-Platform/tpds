@@ -1,7 +1,7 @@
-import Hero from '../tpds/components/hero/Hero'
+import Hero from '../tpds/components/hero'
 import { P, H1 } from '../tpds/elements/typography'
 import { Container, PaddingBox } from '../tpds/elements/layout'
-import CodeBlock from '../tpds/components/code/CodeBlock'
+import CodeBlock from '../tpds/components/code'
 import configJSON from '../tpds/system/tailwind.config.js'
 
 export default function TailwindCSSConfig() {

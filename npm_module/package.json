@@ -1,6 +1,6 @@
 {
   "name": "@tempoplatform/tpds",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "author": "Tempo Platform Design Team",
   "main": "./_dist/index.js",
   "exports": {
@@ -10,7 +10,27 @@
     "./elements/buttons": "./_dist/elements/buttons/index.js",
     "./elements/input": "./_dist/elements/input/index.js",
     "./elements/layout": "./_dist/elements/layout/index.js",
-    "./tailwind.config.js": "./tailwind.config.js"
+    "./components/buttons": "./_dist/components/buttons/index.js",
+    "./components/callout": "./_dist/components/callout/index.js",
+    "./components/checkbox": "./_dist/components/checkbox/index.js",
+    "./components/code": "./_dist/components/code/index.js",
+    "./components/expandable-section": "./_dist/components/expandable-section/index.js",
+    "./components/hero": "./_dist/components/hero/index.js",
+    "./components/radiogroup": "./_dist/components/radiogroup/index.js",
+    "./components/spinner": "./_dist/components/spinner/index.js",
+    "./components/steps": "./_dist/components/steps/index.js",
+    "./components/switch": "./_dist/components/switch/index.js",
+    "./components/table": "./_dist/components/table/index.js",
+    "./components/tag": "./_dist/components/tag/index.js",
+    "./components/thumbnails-row": "./_dist/components/thumbnails-row/index.js",
+    "./assets/svgs/16x16": "./_dist/assets/svgs/16x16/index.js",
+    "./assets/svgs/alerts": "./_dist/assets/svgs/alerts/index.js",
+    "./assets/svgs/arrows": "./_dist/assets/svgs/arrows/index.js",
+    "./assets/svgs/icons": "./_dist/assets/svgs/icons/index.js",
+    "./assets/svgs/notifications": "./_dist/assets/svgs/notifications/index.js",
+    "./system/Colors.js": "./_dist/system/Colors.js",
+    "./system/Fonts.js": "./_dist/system/Fonts.js",
+    "./tailwind.config.js": "./_dist/system/tailwind.config.js"
   },
   "engines": {
     "node": ">=12.20"

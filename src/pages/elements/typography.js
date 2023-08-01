@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../../tpds/components/hero/Hero'
+import Hero from '../../tpds/components/hero'
 import {
   P,
   PNano,
@@ -19,7 +19,7 @@ import {
 } from '../../tpds/elements/typography'
 import { Separator, Container, Window } from '../../tpds/elements/layout'
 import Tag from '@/tpds/components/tag'
-import CodeBlock from '@/tpds/components/code/CodeBlock'
+import CodeBlock from '@/tpds/components/code'
 
 export default function Typography() {
   return (

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import Hero from '../../tpds/components/hero/Hero'
+import Hero from '../../tpds/components/hero'
 import { H1, P } from '../../tpds/elements/typography'
 import Checkbox from '../../tpds/components/checkbox'
 import { Container, PaddingBox, Window } from '../../tpds/elements/layout'
-import CodeBlock from '../../tpds/components/code/CodeBlock'
-import PropsTable from '../../tpds/components/table/PropsTable'
+import CodeBlock from '../../tpds/components/code'
+import PropsTable from '../../tpds/components/table'
 
 export default function Page() {
   const [stateChecked, setCheckedState] = useState(true)

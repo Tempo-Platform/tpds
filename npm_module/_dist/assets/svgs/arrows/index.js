@@ -1,4 +1,5 @@
 import React from 'react';
+export { TriangleDown } from './TriangleDown';
 export function ArrowLeftIcon({
   ...props
 }) {

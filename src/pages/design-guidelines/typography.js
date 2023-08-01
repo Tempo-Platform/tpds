@@ -1,4 +1,4 @@
-import Hero from '../../tpds/components/hero/Hero'
+import Hero from '../../tpds/components/hero'
 import Link from 'next/link'
 import { P, PSmall, PTiny, H1, H2, H4, H5 } from '../../tpds/elements/typography'
 import { Container, PaddingBox, Separator } from '../../tpds/elements/layout'

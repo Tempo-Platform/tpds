@@ -1,12 +1,12 @@
-import Hero from '../../tpds/components/hero/Hero'
+import Hero from '../../tpds/components/hero'
 import { P, H1, PLarge } from '../../tpds/elements/typography'
 import DummyIcon from '../../tpds/assets/svgs/16x16/DummyIcon'
 import Play from '../../tpds/assets/svgs/16x16/Play'
 import { Container, PaddingBox } from '../../tpds/elements/layout'
 //import MenuDropdown from '../../../tpds/components/menudropdown'
-import CodeBlock from '../../tpds/components/code/CodeBlock'
+import CodeBlock from '../../tpds/components/code'
 import { Button as ButtonComponent } from '../../tpds/components/buttons'
-import PropsTable from '../../tpds/components/table/PropsTable'
+import PropsTable from '../../tpds/components/table'
 
 export default function Page() {
   return (

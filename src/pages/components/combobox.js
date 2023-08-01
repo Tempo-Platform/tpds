@@ -1,9 +1,9 @@
 import React from 'react'
-import Hero from '../../tpds/components/hero/Hero'
+import Hero from '../../tpds/components/hero'
 import { P, H6, H1 } from '../../tpds/elements/typography'
 import { TextInput } from '../../tpds/elements/input'
 import { Separator, Container, PaddingBox, Window } from '../../tpds/elements/layout'
-import CodeBlock from '../../tpds/components/code/CodeBlock'
+import CodeBlock from '../../tpds/components/code'
 
 export default function Page() {
   return (
