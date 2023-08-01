@@ -1,6 +1,6 @@
 {
   "name": "tpdsnext",
-  "version": "1.0.10",
+  "version": "1.0.6",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -18,14 +18,14 @@
     "build_module_and_publish_major": "npm version --no-git-tag-version major && yarn && yarn pull-tokens && rm -rf ./npm_module/_dist && yarn packindex && yarn pack_categories && cd npm_module && npm version --no-git-tag-version major && npm publish",
     "commit": "git add . && git commit -m 'Update NPM module to '$npm_package_version",
     "pack_categories": "yarn packcomponents && yarn packelements && yarn packconstants && yarn packsystem && yarn packtokens && yarn packassets",
-    "packindex": "npx babel --plugins=@babel/plugin-syntax-jsx ./src/tpds/index.js --out-file ./npm_module/_dist/index.js",
-    "packelements": "npx babel --plugins=@babel/plugin-syntax-jsx ./src/tpds/elements/**/**/**/** -d ./npm_module/_dist/elements && rm ./npm_module/_dist/elements/*.*",
-    "packconstants": "npx babel --plugins=@babel/plugin-syntax-jsx ./src/tpds/constants/**/**/**/** -d ./npm_module/_dist/constants && rm ./npm_module/_dist/constants/*.*",
-    "packcomponents": "npx babel --plugins=@babel/plugin-syntax-jsx ./src/tpds/components/**/**/**/** -d ./npm_module/_dist/components && rm ./npm_module/_dist/components/*.*",
-    "packsystem": "npx babel --plugins=@babel/plugin-syntax-jsx ./src/tpds/system/**/**/**/** -d ./npm_module/_dist/system",
+    "packindex": "npx babel --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-syntax-jsx ./src/tpds/index.js --out-file ./npm_module/_dist/index.js",
+    "packelements": "npx babel --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-syntax-jsx ./src/tpds/elements/**/**/**/** -d ./npm_module/_dist/elements && rm ./npm_module/_dist/elements/*.*",
+    "packconstants": "npx babel --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-syntax-jsx ./src/tpds/constants/**/**/**/** -d ./npm_module/_dist/constants && rm ./npm_module/_dist/constants/*.*",
+    "packcomponents": "npx babel --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-syntax-jsx ./src/tpds/components/**/**/**/** -d ./npm_module/_dist/components && rm ./npm_module/_dist/components/*.*",
+    "packsystem": "npx babel --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-syntax-jsx ./src/tpds/system/**/**/**/** -d ./npm_module/_dist/system",
     "packtokens": "mkdir -p ./npm_module/_dist && mkdir -p ./npm_module/_dist/tokens && cp ./src/tpds/tokens/index.json ./npm_module/_dist/tokens",
     "packassets": "yarn packsvgs && yarn packfonts",
-    "packsvgs": "npx babel --plugins=@babel/plugin-syntax-jsx ./src/tpds/assets/svgs/**/**/** -d ./npm_module/_dist/assets/svgs && rm ./npm_module/_dist/assets/svgs/*.*",
+    "packsvgs": "npx babel --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-syntax-jsx ./src/tpds/assets/svgs/**/**/** -d ./npm_module/_dist/assets/svgs && rm ./npm_module/_dist/assets/svgs/*.*",
     "packfonts": "copyfiles -u 3 ./src/tpds/assets/fonts/**/**/*.* ./npm_module/_dist/assets",
     "pull-tokens": "node ./scripts/getFigmaTokens.js"
   },

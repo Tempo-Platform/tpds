@@ -1,8 +1,10 @@
-const tokens = require('../tokens/index.json');
-const colors = tokens.colors;
-const text = tokens.text;
-const breakpoints = tokens.breakpoints;
-const colorPalettes = colors.color_palettes;
+"use strict";
+
+var tokens = require('../tokens/index.json');
+var colors = tokens.colors;
+var text = tokens.text;
+var breakpoints = tokens.breakpoints;
+var colorPalettes = colors.color_palettes;
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}', './website/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
