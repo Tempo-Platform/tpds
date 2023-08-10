@@ -1,6 +1,6 @@
 {
   "name": "tpdsnext",
-  "version": "1.0.7",
+  "version": "2.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -17,7 +17,8 @@
     "build_module_and_publish_minor": "npm version --no-git-tag-version minor && yarn && yarn pull-tokens && rm -rf ./npm_module/_dist && yarn packindex && yarn pack_categories && cd npm_module && npm version --no-git-tag-version minor && npm publish",
     "build_module_and_publish_major": "npm version --no-git-tag-version major && yarn && yarn pull-tokens && rm -rf ./npm_module/_dist && yarn packindex && yarn pack_categories && cd npm_module && npm version --no-git-tag-version major && npm publish",
     "commit": "git add . && git commit -m 'Update NPM module to '$npm_package_version",
-    "pack_categories": "yarn packcomponents && yarn packelements && yarn packconstants && yarn packsystem && yarn packtokens && yarn packassets",
+    "buildcss": "postcss src/lib/globals.css -o npm_module/_dist/system/tpds.css",
+    "pack_categories": "yarn buildcss && yarn packcomponents && yarn packelements && yarn packconstants && yarn packsystem && yarn packtokens && yarn packassets",
     "packindex": "npx babel --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-syntax-jsx ./src/tpds/index.js --out-file ./npm_module/_dist/index.js",
     "packelements": "npx babel --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-syntax-jsx ./src/tpds/elements/**/**/**/** -d ./npm_module/_dist/elements && rm ./npm_module/_dist/elements/*.*",
     "packconstants": "npx babel --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-syntax-jsx ./src/tpds/constants/**/**/**/** -d ./npm_module/_dist/constants && rm ./npm_module/_dist/constants/*.*",
@@ -47,9 +48,10 @@
     "lodash": "^4.17.21",
     "next": "13.4.6",
     "postcss": "8.4.24",
+    "postcss-cli": "^10.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-syntax-highlighter": "^15.5.0",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.3"
   }
 }
