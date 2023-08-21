@@ -1,0 +1,17 @@
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.tpds-spinner {
+  animation-name: rotate;
+  animation-timing-function: linear;
+  display: inline-block;
+  animation-iteration-count: infinite;
+}
+
+.tpds-expandable-section-content > * {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}

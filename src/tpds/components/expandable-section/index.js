@@ -73,14 +73,6 @@ function ExpandableSection({
 
   return (
     <>
-      <style global jsx>
-        {`
-          .tpds-expandable-section-content > * {
-            padding-top: 12px;
-            padding-bottom: 12px;
-          }
-        `}
-      </style>
       <div className={rootClassName} ref={headerRef}>
         <div
           className={headerClassName}

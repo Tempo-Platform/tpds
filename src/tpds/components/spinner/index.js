@@ -28,21 +28,6 @@ function Spinner({ color, radius, duration, strokeWidth = '3', ...props }) {
   color = processColor(color)
   return (
     <>
-      <style global jsx>
-        {`
-          @keyframes rotate {
-            100% {
-              transform: rotate(360deg);
-            }
-          }
-          .tpds-spinner {
-            animation-name: rotate;
-            animation-timing-function: linear;
-            display: inline-block;
-            animation-iteration-count: infinite;
-          }
-        `}
-      </style>
       <svg
         {...props}
         className="tpds-spinner"
