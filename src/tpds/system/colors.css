@@ -1,0 +1,208 @@
+.light {
+  color-scheme: light;
+  --bg-body: #FAFAFA;
+  --border-body: #E9EBEC;
+  --bg-window: #FFFFFF;
+  --border-window: #E9EBEC;
+
+  --text-primary: #151819;
+  --text-secondary: #323639;
+  --text-tertiary: #788187;
+
+  --bg-button: #F1F3F3;
+  --bg-button-hover: #DFE1E2;
+  --bg-button-active: #C9CDCF;
+
+  --bg-button-secondary: #FFFFFF;
+  --bg-button-secondary-hover: #FFFFFF;
+  --bg-button-secondary-active: #FAFAFA;
+
+  --bg-success-hover: #00B1BB;
+  --bg-success-active: #008A92;
+  --bg-info-hover: #2D80E8;
+  --bg-info-active: #2364B5;
+  --bg-warning-hover: #DA7B23;
+  --bg-warning-active: #AA601C;
+  --bg-danger-hover: #D64F4F;
+  --bg-danger-active: #A73E3E;
+
+  --text-button: #323639;
+  --text-button-hover: #1E2224;
+  --text-button-active: #323639;
+  --text-button-secondary: #323639;
+  --text-button-secondary-hover: #1E2224;
+  --text-button-secondary-active: #323639;
+  --text-button-success: #E6F9FA;
+  --text-button-success-hover: #FFFFFF;
+  --text-button-success-active: #B0ECF0;
+  --text-button-info: #EAF4FF;
+  --text-button-info-hover: #FFFFFF;
+  --text-button-info-active: #BFDCFF;
+  --text-button-warning: #FEF3E9;
+  --text-button-warning-hover: #FFFFFF;
+  --text-button-warning-active: #FADABC;
+  --text-button-danger: #FDEEEE;
+  --text-button-danger-hover: #FFFFFF;
+  --text-button-danger-active: #F9CBCB;
+
+  --border-button: #F1F3F3;
+  --border-button-hover: #DFE1E2;
+  --border-button-active: #C9CDCF;
+  --border-button-secondary: #DFE1E2;
+  --border-button-secondary-hover: #C9CDCF;
+  --border-button-secondary-active: #AEB3B6;
+  --border-button-success: #00C2CE;
+  --border-button-success-hover: #00B1BB;
+  --border-button-success-active: #008A92;
+  --border-button-info: #318DFF;
+  --border-button-info-hover: #2D80E8;
+  --border-button-info-active: #2364B5;
+  --border-button-warning: #F08727;
+  --border-button-warning-hover: #DA7B23;
+  --border-button-warning-active: #AA601C;
+  --border-button-danger: #EB5757;
+  --border-button-danger-hover: #D64F4F;
+  --border-button-danger-active: #A73E3E;
+
+  --bg-input: #FAFAFA;
+  --bg-input-focus: #FAFAFA;
+  --bg-input-hover: #FAFAFA;
+
+  --text-input: #788187;
+  --text-input-focus: #282C2F;
+  --text-input-hover: #484D51;
+  --text-input-prefix: #989FA3;
+  --text-input-field_label: #3E4347;
+
+  --border-input: #C9CDCF;
+  --border-input-focus: #282C2F;
+
+  --bg-checkbox-selected-enabled: #00C2CE;
+  --bg-checkbox-selected-hover: #00B1BB;
+  --bg-checkbox-selected-active: #008A92;
+  --bg-checkbox-unselected-enabled: #F1F3F3;
+  --bg-checkbox-unselected-hover: #E6F9FA;
+  --bg-checkbox-unselected-active: #E6F9FA;
+
+  --text-checkbox-selected-enabled: #F1F3F3;
+  --text-checkbox-selected-hover: #E6F9FA;
+  --text-checkbox-selected-active: #E6F9FA;
+  --text-checkbox-unselected-enabled: #323639;
+  --text-checkbox-unselected-hover: #1E2224;
+  --text-checkbox-unselected-active: #323639;
+
+  --border-checkbox-selected-enabled: #00C2CE;
+  --border-checkbox-selected-hover: #00B1BB;
+  --border-checkbox-selected-active: #008A92;
+  --border-checkbox-unselected-enabled: #323639;
+  --border-checkbox-unselected-hover: #00C2CE;
+  --border-checkbox-unselected-active: #00B1BB;
+}
+.dark {
+  color-scheme: dark;
+  --bg-body: #151819;
+  --border-body: #3E4347;
+  --bg-window: #1E2224;
+  --border-window: #323639;
+
+  --text-primary: #F7F7F7;
+  --text-secondary: #AEB3B6;
+  --text-tertiary: #757E84;
+
+  --bg-button: #282C2F;
+  --bg-button-hover: #3E4347;
+  --bg-button-active: #484D51;
+
+  --bg-button-secondary: #1E2224;
+  --bg-button-secondary-hover: #1E2224;
+  --bg-button-secondary-active: #282C2F;
+
+  --bg-success-hover: #54D6DE;
+  --bg-success-active: #00B1BB;
+  --bg-info-hover: #75B3FF;
+  --bg-info-active: #2364B5;
+  --bg-warning-hover: #F5AF6E;
+  --bg-warning-active: #AA601C;
+  --bg-danger-hover: #EF7979;
+  --bg-danger-active: #D64F4F;
+
+  --text-button: #DFE1E2;
+  --text-button-hover: #F1F3F3;
+  --text-button-active: #DFE1E2;
+  --text-button-secondary: #DFE1E2;
+  --text-button-secondary-hover: #F1F3F3;
+  --text-button-secondary-active: #DFE1E2;
+  --text-button-success: #02282B;
+  --text-button-success-hover: #02282B;
+  --text-button-success-active: #005157;
+  --text-button-info: #0D223D;
+  --text-button-info-hover: #0D223D;
+  --text-button-info-active: #153B6B;
+  --text-button-warning: #37210C;
+  --text-button-warning-hover: #37210C;
+  --text-button-warning-active: #653910;
+  --text-button-danger: #3B1515;
+  --text-button-danger-hover: #3B1515;
+  --text-button-danger-active: #632525;
+
+  --border-button: #282C2F;
+  --border-button-hover: #3E4347;
+  --border-button-active: #484D51;
+  --border-button-secondary: #484D51;
+  --border-button-secondary-hover: #989FA4;
+  --border-button-secondary-active: #AEB3B6;
+  --border-button-success: #00C2CE;
+  --border-button-success-hover: #54D6DE;
+  --border-button-success-active: #00B1BB;
+  --border-button-info: #318DFF;
+  --border-button-info-hover: #75B3FF;
+  --border-button-info-active: #2364B5;
+  --border-button-warning: #F08727;
+  --border-button-warning-hover: #F5AF6E;
+  --border-button-warning-active: #AA601C;
+  --border-button-danger: #EB5757;
+  --border-button-danger-hover: #EF7979;
+  --border-button-danger-active: #D64F4F;
+
+  --bg-input: #2C3135;
+  --bg-input-focus: #2C3135;
+  --bg-input-hover: #31373B;
+
+  --text-input: #9DA1A4;
+  --text-input-focus: #FFFFFF;
+  --text-input-hover: #DFE1E2;
+  --text-input-prefix: #788289;
+  --text-input-field_label: #86949F;
+
+  --border-input: #57636B;
+  --border-input-focus: #B9C5CD;
+
+  --bg-checkbox-selected-enabled: #00C2CE;
+  --bg-checkbox-selected-hover: #54D6DE;
+  --bg-checkbox-selected-active: #00B1BB;
+  --bg-checkbox-unselected-enabled: #3E4347;
+  --bg-checkbox-unselected-hover: #155257;
+  --bg-checkbox-unselected-active: #155257;
+
+  --text-checkbox-selected-enabled: #02292C;
+  --text-checkbox-selected-hover: #02292C;
+  --text-checkbox-selected-active: #02292C;
+  --text-checkbox-unselected-enabled: #3E4347;
+  --text-checkbox-unselected-hover: #155257;
+  --text-checkbox-unselected-active: #155257;
+
+  --border-checkbox-selected-enabled: #00C2CE;
+  --border-checkbox-selected-hover: #54D6DE;
+  --border-checkbox-selected-active: #00B1BB;
+  --border-checkbox-unselected-enabled: #60676C;
+  --border-checkbox-unselected-hover: #54D6DE;
+  --border-checkbox-unselected-active: #00C2CE;
+}
+body {
+  -webkit-tap-highlight-color: #FCDB17;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+p a {
+  text-decoration: underline;
+}
