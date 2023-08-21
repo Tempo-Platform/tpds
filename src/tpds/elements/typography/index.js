@@ -32,9 +32,20 @@ const calculateFinalClass = (defaultClass, props) => {
   )
   return finalClass
 }
+const pNanoClass = 'text-xs xl:text-sm'
+const pTinyClass = 'text-sm xl:text-base'
+const pSmallClass = 'text-sm xl:text-base'
+const pClass = 'text-base xl:text-lg'
+const pLargeClass = 'text-lg xl:text-xl'
+const h6Class = 'text-base md:text-lg lg:text-xl xl:text-2xl tracking-normal leading-tight'
+const h5Class = 'text-lg md:text-xl lg:text-2xl xl:text-3xl tracking-normal leading-tight'
+const h4Class = 'text-xl md:text-2xl lg:text-3xl xl:text-4xl tracking-normal leading-tight'
+const h3Class = 'text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-tight leading-tight'
+const h2Class = 'text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight leading-tight'
+const h1Class = 'text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-tight'
 
 export const PNano = props => {
-  const finalClass = calculateFinalClass('text-[11px]', props)
+  const finalClass = calculateFinalClass(pNanoClass, props)
   return (
     <p className={finalClass} style={props.style}>
       {props.children}
@@ -43,7 +54,7 @@ export const PNano = props => {
 }
 
 export const PTiny = props => {
-  const finalClass = calculateFinalClass('text-xs xl:text-sm', props)
+  const finalClass = calculateFinalClass(pTinyClass, props)
   return (
     <p className={finalClass} style={props.style}>
       {props.children}
@@ -52,7 +63,7 @@ export const PTiny = props => {
 }
 
 export const PSmall = props => {
-  const finalClass = calculateFinalClass('text-sm xl:text-base', props)
+  const finalClass = calculateFinalClass(pSmallClass, props)
   return (
     <p className={finalClass} style={props.style}>
       {props.children}
@@ -61,7 +72,7 @@ export const PSmall = props => {
 }
 
 export const P = props => {
-  const finalClass = calculateFinalClass('text-base xl:text-lg', props)
+  const finalClass = calculateFinalClass(pClass, props)
   return (
     <p className={finalClass} style={props.style}>
       {props.children}
@@ -70,7 +81,7 @@ export const P = props => {
 }
 
 export const PLarge = props => {
-  const finalClass = calculateFinalClass('text-lg xl:text-xl', props)
+  const finalClass = calculateFinalClass(pLargeClass, props)
   return (
     <p className={finalClass} style={props.style}>
       {props.children}
@@ -79,10 +90,7 @@ export const PLarge = props => {
 }
 
 export const H6 = props => {
-  const finalClass = calculateFinalClass(
-    'text-base md:text-lg lg:text-xl xl:text-2xl tracking-normal leading-tight',
-    props,
-  )
+  const finalClass = calculateFinalClass(h6Class, props)
   return (
     <h6 className={finalClass} style={props.style}>
       {props.children}
@@ -91,10 +99,7 @@ export const H6 = props => {
 }
 
 export const H5 = props => {
-  const finalClass = calculateFinalClass(
-    'text-lg md:text-xl lg:text-2xl xl:text-3xl tracking-normal leading-tight',
-    props,
-  )
+  const finalClass = calculateFinalClass(h5Class, props)
   return (
     <h5 className={finalClass} style={props.style}>
       {props.children}
@@ -103,10 +108,7 @@ export const H5 = props => {
 }
 
 export const H4 = props => {
-  const finalClass = calculateFinalClass(
-    'text-xl md:text-2xl lg:text-3xl xl:text-4xl tracking-normal leading-tight',
-    props,
-  )
+  const finalClass = calculateFinalClass(h4Class, props)
   return (
     <h4 className={finalClass} style={props.style}>
       {props.children}
@@ -115,10 +117,7 @@ export const H4 = props => {
 }
 
 export const H3 = props => {
-  const finalClass = calculateFinalClass(
-    'text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-tight leading-tight',
-    props,
-  )
+  const finalClass = calculateFinalClass(h3Class, props)
   return (
     <h3 className={finalClass} style={props.style}>
       {props.children}
@@ -127,10 +126,7 @@ export const H3 = props => {
 }
 
 export const H2 = props => {
-  const finalClass = calculateFinalClass(
-    'text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight leading-tight',
-    props,
-  )
+  const finalClass = calculateFinalClass(h2Class, props)
   return (
     <h2 className={finalClass} style={props.style}>
       {props.children}
@@ -139,10 +135,7 @@ export const H2 = props => {
 }
 
 export const H1 = props => {
-  const finalClass = calculateFinalClass(
-    'text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-tight',
-    props,
-  )
+  const finalClass = calculateFinalClass(h1Class, props)
   return (
     <h1 className={finalClass} style={props.style}>
       {props.children}
@@ -232,21 +225,21 @@ export const Code = props => {
 // // form labels
 
 export const FormLabelNano = props => {
-  const finalClass = calculateFinalClass('font-label text-tertiary font-medium leading-none', props)
-  return <PNano className={finalClass}>{props.children}</PNano>
+  const finalClass = clsx(pNanoClass, 'font-label text-tertiary font-medium leading-none', props)
+  return <p className={finalClass}>{props.children}</p>
 }
 
 export const FormLabelTiny = props => {
-  const finalClass = calculateFinalClass('font-label text-tertiary font-medium leading-none', props)
-  return <PTiny className={finalClass}>{props.children}</PTiny>
+  const finalClass = clsx(pTinyClass, 'font-label text-tertiary font-medium leading-none', props)
+  return <p className={finalClass}>{props.children}</p>
 }
 
 export const FormLabelSmall = props => {
-  const finalClass = calculateFinalClass('font-label text-tertiary font-medium leading-none', props)
-  return <PSmall className={finalClass}>{props.children}</PSmall>
+  const finalClass = clsx(pSmallClass, 'font-label text-tertiary font-medium leading-none', props)
+  return <p className={finalClass}>{props.children}</p>
 }
 
 export const FormLabel = props => {
-  const finalClass = calculateFinalClass('font-label text-tertiary font-medium leading-none', props)
-  return <P className={finalClass}>{props.children}</P>
+  const finalClass = clsx(pClass, 'font-label text-tertiary font-medium leading-none', props)
+  return <p className={finalClass}>{props.children}</p>
 }
