@@ -32,8 +32,8 @@ const calculateFinalClass = (defaultClass, props) => {
   )
   return finalClass
 }
-const pNanoClass = 'text-xs xl:text-sm'
-const pTinyClass = 'text-sm xl:text-base'
+const pNanoClass = 'text-xxs xl:text-xs'
+const pTinyClass = 'text-xs xl:text-sm'
 const pSmallClass = 'text-sm xl:text-base'
 const pClass = 'text-base xl:text-lg'
 const pLargeClass = 'text-lg xl:text-xl'
@@ -225,21 +225,37 @@ export const Code = props => {
 // // form labels
 
 export const FormLabelNano = props => {
-  const finalClass = clsx(pNanoClass, 'font-label text-tertiary font-medium leading-none', props)
+  const finalClass = clsx(
+    pNanoClass,
+    'font-label text-tertiary font-medium leading-none',
+    props.className,
+  )
   return <p className={finalClass}>{props.children}</p>
 }
 
 export const FormLabelTiny = props => {
-  const finalClass = clsx(pTinyClass, 'font-label text-tertiary font-medium leading-none', props)
+  const finalClass = clsx(
+    pTinyClass,
+    'font-label text-tertiary font-medium leading-none',
+    props.className,
+  )
   return <p className={finalClass}>{props.children}</p>
 }
 
 export const FormLabelSmall = props => {
-  const finalClass = clsx(pSmallClass, 'font-label text-tertiary font-medium leading-none', props)
+  const finalClass = clsx(
+    pSmallClass,
+    'font-label text-tertiary font-medium leading-none',
+    props.className,
+  )
   return <p className={finalClass}>{props.children}</p>
 }
 
 export const FormLabel = props => {
-  const finalClass = clsx(pClass, 'font-label text-tertiary font-medium leading-none', props)
+  const finalClass = clsx(
+    pClass,
+    'font-label text-tertiary font-medium leading-none',
+    props.className,
+  )
   return <p className={finalClass}>{props.children}</p>
 }

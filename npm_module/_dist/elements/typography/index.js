@@ -12,8 +12,19 @@ var calculateFinalClass = function calculateFinalClass(defaultClass, props) {
   var finalClass = (0, _clsx["default"])(baseStyles, defaultClass, props.className && props.className, props.isSmall && '!text-sm', props.isUnderline && '!underline', props.isUppercase && '!uppercase', props.isItalic && '!italic', props.isLight && '!font-light', props.isMedium && '!font-medium', props.isBold && '!font-bold', props.isExtraBold && '!font-extrabold', props.isHeavy && '!font-black', props.isPulsing && '!animate-pulse', props.isCentered && '!text-center', props.noSelect && '!select-none', props.isWhite && '!text-white', props.isGreen && '!text-green', props.isRed && '!text-red', props.isBlue && '!text-blue', props.isOrange && '!text-orange', props.isYellow && '!text-yellow', props.leadingNone && '!leading-none', props.isLabel && '!select-none', props.isLabel && '!leading-none', props.isLabel && '!font-label');
   return finalClass;
 };
+var pNanoClass = 'text-xs xl:text-sm';
+var pTinyClass = 'text-sm xl:text-base';
+var pSmallClass = 'text-sm xl:text-base';
+var pClass = 'text-base xl:text-lg';
+var pLargeClass = 'text-lg xl:text-xl';
+var h6Class = 'text-base md:text-lg lg:text-xl xl:text-2xl tracking-normal leading-tight';
+var h5Class = 'text-lg md:text-xl lg:text-2xl xl:text-3xl tracking-normal leading-tight';
+var h4Class = 'text-xl md:text-2xl lg:text-3xl xl:text-4xl tracking-normal leading-tight';
+var h3Class = 'text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-tight leading-tight';
+var h2Class = 'text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight leading-tight';
+var h1Class = 'text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-tight';
 var PNano = function PNano(props) {
-  var finalClass = calculateFinalClass('text-[11px]', props);
+  var finalClass = calculateFinalClass(pNanoClass, props);
   return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
     style: props.style
@@ -21,7 +32,7 @@ var PNano = function PNano(props) {
 };
 exports.PNano = PNano;
 var PTiny = function PTiny(props) {
-  var finalClass = calculateFinalClass('text-xs xl:text-sm', props);
+  var finalClass = calculateFinalClass(pTinyClass, props);
   return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
     style: props.style
@@ -29,7 +40,7 @@ var PTiny = function PTiny(props) {
 };
 exports.PTiny = PTiny;
 var PSmall = function PSmall(props) {
-  var finalClass = calculateFinalClass('text-sm xl:text-base', props);
+  var finalClass = calculateFinalClass(pSmallClass, props);
   return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
     style: props.style
@@ -37,7 +48,7 @@ var PSmall = function PSmall(props) {
 };
 exports.PSmall = PSmall;
 var P = function P(props) {
-  var finalClass = calculateFinalClass('text-base xl:text-lg', props);
+  var finalClass = calculateFinalClass(pClass, props);
   return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
     style: props.style
@@ -45,7 +56,7 @@ var P = function P(props) {
 };
 exports.P = P;
 var PLarge = function PLarge(props) {
-  var finalClass = calculateFinalClass('text-lg xl:text-xl', props);
+  var finalClass = calculateFinalClass(pLargeClass, props);
   return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
     style: props.style
@@ -53,7 +64,7 @@ var PLarge = function PLarge(props) {
 };
 exports.PLarge = PLarge;
 var H6 = function H6(props) {
-  var finalClass = calculateFinalClass('text-base md:text-lg lg:text-xl xl:text-2xl tracking-normal leading-tight', props);
+  var finalClass = calculateFinalClass(h6Class, props);
   return /*#__PURE__*/_react["default"].createElement("h6", {
     className: finalClass,
     style: props.style
@@ -61,7 +72,7 @@ var H6 = function H6(props) {
 };
 exports.H6 = H6;
 var H5 = function H5(props) {
-  var finalClass = calculateFinalClass('text-lg md:text-xl lg:text-2xl xl:text-3xl tracking-normal leading-tight', props);
+  var finalClass = calculateFinalClass(h5Class, props);
   return /*#__PURE__*/_react["default"].createElement("h5", {
     className: finalClass,
     style: props.style
@@ -69,7 +80,7 @@ var H5 = function H5(props) {
 };
 exports.H5 = H5;
 var H4 = function H4(props) {
-  var finalClass = calculateFinalClass('text-xl md:text-2xl lg:text-3xl xl:text-4xl tracking-normal leading-tight', props);
+  var finalClass = calculateFinalClass(h4Class, props);
   return /*#__PURE__*/_react["default"].createElement("h4", {
     className: finalClass,
     style: props.style
@@ -77,7 +88,7 @@ var H4 = function H4(props) {
 };
 exports.H4 = H4;
 var H3 = function H3(props) {
-  var finalClass = calculateFinalClass('text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-tight leading-tight', props);
+  var finalClass = calculateFinalClass(h3Class, props);
   return /*#__PURE__*/_react["default"].createElement("h3", {
     className: finalClass,
     style: props.style
@@ -85,7 +96,7 @@ var H3 = function H3(props) {
 };
 exports.H3 = H3;
 var H2 = function H2(props) {
-  var finalClass = calculateFinalClass('text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight leading-tight', props);
+  var finalClass = calculateFinalClass(h2Class, props);
   return /*#__PURE__*/_react["default"].createElement("h2", {
     className: finalClass,
     style: props.style
@@ -93,7 +104,7 @@ var H2 = function H2(props) {
 };
 exports.H2 = H2;
 var H1 = function H1(props) {
-  var finalClass = calculateFinalClass('text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-tight', props);
+  var finalClass = calculateFinalClass(h1Class, props);
   return /*#__PURE__*/_react["default"].createElement("h1", {
     className: finalClass,
     style: props.style
@@ -176,29 +187,29 @@ var Code = function Code(props) {
 // // form labels
 exports.Code = Code;
 var FormLabelNano = function FormLabelNano(props) {
-  var finalClass = calculateFinalClass('font-label text-tertiary font-medium leading-none', props);
-  return /*#__PURE__*/_react["default"].createElement(PNano, {
+  var finalClass = (0, _clsx["default"])(pNanoClass, 'font-label text-tertiary font-medium leading-none', props.className);
+  return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass
   }, props.children);
 };
 exports.FormLabelNano = FormLabelNano;
 var FormLabelTiny = function FormLabelTiny(props) {
-  var finalClass = calculateFinalClass('font-label text-tertiary font-medium leading-none', props);
-  return /*#__PURE__*/_react["default"].createElement(PTiny, {
+  var finalClass = (0, _clsx["default"])(pTinyClass, 'font-label text-tertiary font-medium leading-none', props.className);
+  return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass
   }, props.children);
 };
 exports.FormLabelTiny = FormLabelTiny;
 var FormLabelSmall = function FormLabelSmall(props) {
-  var finalClass = calculateFinalClass('font-label text-tertiary font-medium leading-none', props);
-  return /*#__PURE__*/_react["default"].createElement(PSmall, {
+  var finalClass = (0, _clsx["default"])(pSmallClass, 'font-label text-tertiary font-medium leading-none', props.className);
+  return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass
   }, props.children);
 };
 exports.FormLabelSmall = FormLabelSmall;
 var FormLabel = function FormLabel(props) {
-  var finalClass = calculateFinalClass('font-label text-tertiary font-medium leading-none', props);
-  return /*#__PURE__*/_react["default"].createElement(P, {
+  var finalClass = (0, _clsx["default"])(pClass, 'font-label text-tertiary font-medium leading-none', props.className);
+  return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass
   }, props.children);
 };
