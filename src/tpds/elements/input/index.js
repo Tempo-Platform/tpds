@@ -3,6 +3,7 @@ import clsx from 'clsx'
 
 export const TextInput = ({ isValid, isInvalid, isWarning, ...props }) => {
   const finalClass = clsx(
+    props.className,
     'flex w-full',
     'transition duration-100',
     'px-2.5 py-1 rounded focus:outline-none',

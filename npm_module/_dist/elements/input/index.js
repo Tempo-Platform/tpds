@@ -16,7 +16,7 @@ var TextInput = function TextInput(_ref) {
     isInvalid = _ref.isInvalid,
     isWarning = _ref.isWarning,
     props = _objectWithoutProperties(_ref, _excluded);
-  var finalClass = (0, _clsx["default"])('flex w-full', 'transition duration-100', 'px-2.5 py-1 rounded focus:outline-none', 'font-normal', 'bg-input text-primary border-input', 'border-2 focus:border-blue',
+  var finalClass = (0, _clsx["default"])(props.className, 'flex w-full', 'transition duration-100', 'px-2.5 py-1 rounded focus:outline-none', 'font-normal', 'bg-input text-primary border-input', 'border-2 focus:border-blue',
   //buttonVariantStyles[variant],
   isValid && 'border-green focus:border-green', isInvalid && 'border-red focus:border-red', isWarning && 'border-orange focus:border-orange');
   return /*#__PURE__*/_react["default"].createElement("input", _extends({
