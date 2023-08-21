@@ -69,10 +69,7 @@ function ExpandableSection(_ref) {
   var headerClassName = (0, _clsx["default"])("h-[44px] w-full flex justify-between items-center px-[16px] transition-all cursor-pointer", isOpen ? "border-b border-window" : "border-b border-transparent");
   var contentClassName = (0, _clsx["default"])("grid px-[15px]", isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]");
   var innerDivClassName = (0, _clsx["default"])('tpds-expandable-section-content', "overflow-hidden py-[0]");
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("style", {
-    global: true,
-    jsx: true
-  }, "\n          .tpds-expandable-section-content > * {\n            padding-top: 12px;\n            padding-bottom: 12px;\n          }\n        "), /*#__PURE__*/_react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     className: rootClassName,
     ref: headerRef
   }, /*#__PURE__*/_react["default"].createElement("div", {

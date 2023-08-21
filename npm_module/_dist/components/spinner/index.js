@@ -41,10 +41,7 @@ function Spinner(_ref) {
     strokeWidth = _ref$strokeWidth === void 0 ? '3' : _ref$strokeWidth,
     props = _objectWithoutProperties(_ref, _excluded);
   color = processColor(color);
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("style", {
-    global: true,
-    jsx: true
-  }, "\n          @keyframes rotate {\n            100% {\n              transform: rotate(360deg);\n            }\n          }\n          .tpds-spinner {\n            animation-name: rotate;\n            animation-timing-function: linear;\n            display: inline-block;\n            animation-iteration-count: infinite;\n          }\n        "), /*#__PURE__*/_react["default"].createElement("svg", _extends({}, props, {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("svg", _extends({}, props, {
     className: "tpds-spinner",
     viewBox: "0 0 42 42",
     style: {

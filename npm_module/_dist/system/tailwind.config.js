@@ -1,15 +1,14 @@
-"use strict";
+const tokens = require('../tokens/index.json')
+const colors = tokens.colors
+const text = tokens.text
+const breakpoints = tokens.breakpoints
+const colorPalettes = colors.color_palettes
 
-var tokens = require('../tokens/index.json');
-var colors = tokens.colors;
-var text = tokens.text;
-var breakpoints = tokens.breakpoints;
-var colorPalettes = colors.color_palettes;
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}', './website/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   future: {
-    hoverOnlyWhenSupported: true
+    hoverOnlyWhenSupported: true,
   },
   theme: {
     fontSize: {
@@ -27,19 +26,19 @@ module.exports = {
       '6xl': text.fontSize['text-6xl'],
       '7xl': text.fontSize['text-7xl'],
       '8xl': text.fontSize['text-8xl'],
-      '9xl': text.fontSize['text-9xl']
+      '9xl': text.fontSize['text-9xl'],
     },
     screens: {
       sm: breakpoints.sm,
       md: breakpoints.md,
       lg: breakpoints.lg,
       xl: breakpoints.xl,
-      '2xl': breakpoints['2xl']
+      '2xl': breakpoints['2xl'],
     },
     fontFamily: {
       sans: ['Inter', 'sans-serif'],
       serif: ['Courier New', 'serif'],
-      mono: ['SF Mono', 'mono']
+      mono: ['SF Mono', 'mono'],
     },
     borderRadius: {
       none: '0',
@@ -48,13 +47,15 @@ module.exports = {
       md: '0.375rem',
       lg: '0.5rem',
       full: '9999px',
-      large: '12px'
+      large: '12px',
     },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
+
       black: colors.black,
       white: colors.white,
+
       green: colorPalettes.green['500'],
       red: colorPalettes.red['500'],
       blue: colorPalettes.blue['500'],
@@ -62,18 +63,14 @@ module.exports = {
       purple: colorPalettes.purple['500'],
       magenta: colorPalettes.magenta['500'],
       orange: colorPalettes.orange['500'],
+
       success: colorPalettes.green['500'],
       danger: colorPalettes.red['500'],
       info: colorPalettes.blue['500'],
-      warning: colorPalettes.orange['500']
+      warning: colorPalettes.orange['500'],
     },
     extend: {
-      opacity: {
-        5: '0.05',
-        10: '0.1',
-        20: '0.2',
-        50: '0.5'
-      },
+      opacity: { 5: '0.05', 10: '0.1', 20: '0.2', 50: '0.5' },
       colors: {
         'green-scale': colorPalettes.green,
         'red-scale': colorPalettes.red,
@@ -83,7 +80,7 @@ module.exports = {
         'magenta-scale': colorPalettes.magenta,
         'orange-scale': colorPalettes.orange,
         'grey-light-scale': colorPalettes.grey_light,
-        'grey-dark-scale': colorPalettes.grey_dark
+        'grey-dark-scale': colorPalettes.grey_dark,
       },
       spacing: tokens.spacing,
       backgroundColor: {
@@ -114,7 +111,7 @@ module.exports = {
         'checkbox-selected-active': 'var(--bg-checkbox-selected-active)',
         'checkbox-unselected-enabled': 'var(--bg-checkbox-unselected-enabled)',
         'checkbox-unselected-hover': 'var(--bg-checkbox-unselected-hover)',
-        'checkbox-unselected-active': 'var(--bg-checkbox-unselected-active)'
+        'checkbox-unselected-active': 'var(--bg-checkbox-unselected-active)',
       },
       textColor: {
         primary: 'var(--text-primary)',
@@ -149,7 +146,7 @@ module.exports = {
         'checkbox-selected-active': 'var(--text-checkbox-selected-active)',
         'checkbox-unselected-enabled': 'var(--text-checkbox-unselected-enabled)',
         'checkbox-unselected-hover': 'var(--text-checkbox-unselected-hover)',
-        'checkbox-unselected-active': 'var(--text-checkbox-unselected-active)'
+        'checkbox-unselected-active': 'var(--text-checkbox-unselected-active)',
       },
       borderColor: {
         body: 'var(--border-body)',
@@ -180,9 +177,9 @@ module.exports = {
         'checkbox-selected-active': 'var(--border-checkbox-selected-active)',
         'checkbox-unselected-enabled': 'var(--border-checkbox-unselected-enabled)',
         'checkbox-unselected-hover': 'var(--border-checkbox-unselected-hover)',
-        'checkbox-unselected-active': 'var(--border-checkbox-unselected-active)'
-      }
-    }
+        'checkbox-unselected-active': 'var(--border-checkbox-unselected-active)',
+      },
+    },
   },
-  plugins: [require('@tailwindcss/container-queries')]
-};
+  plugins: [require('@tailwindcss/container-queries')],
+}

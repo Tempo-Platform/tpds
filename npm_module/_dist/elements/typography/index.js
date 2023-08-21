@@ -54,7 +54,7 @@ var PLarge = function PLarge(props) {
 exports.PLarge = PLarge;
 var H6 = function H6(props) {
   var finalClass = calculateFinalClass('text-base md:text-lg lg:text-xl xl:text-2xl tracking-normal leading-tight', props);
-  return /*#__PURE__*/_react["default"].createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("h6", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -62,7 +62,7 @@ var H6 = function H6(props) {
 exports.H6 = H6;
 var H5 = function H5(props) {
   var finalClass = calculateFinalClass('text-lg md:text-xl lg:text-2xl xl:text-3xl tracking-normal leading-tight', props);
-  return /*#__PURE__*/_react["default"].createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("h5", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -70,7 +70,7 @@ var H5 = function H5(props) {
 exports.H5 = H5;
 var H4 = function H4(props) {
   var finalClass = calculateFinalClass('text-xl md:text-2xl lg:text-3xl xl:text-4xl tracking-normal leading-tight', props);
-  return /*#__PURE__*/_react["default"].createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("h4", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -78,7 +78,7 @@ var H4 = function H4(props) {
 exports.H4 = H4;
 var H3 = function H3(props) {
   var finalClass = calculateFinalClass('text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-tight leading-tight', props);
-  return /*#__PURE__*/_react["default"].createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("h3", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -86,7 +86,7 @@ var H3 = function H3(props) {
 exports.H3 = H3;
 var H2 = function H2(props) {
   var finalClass = calculateFinalClass('text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight leading-tight', props);
-  return /*#__PURE__*/_react["default"].createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("h2", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -94,7 +94,7 @@ var H2 = function H2(props) {
 exports.H2 = H2;
 var H1 = function H1(props) {
   var finalClass = calculateFinalClass('text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-tight', props);
-  return /*#__PURE__*/_react["default"].createElement("p", {
+  return /*#__PURE__*/_react["default"].createElement("h1", {
     className: finalClass,
     style: props.style
   }, props.children);
@@ -167,34 +167,39 @@ var Orange = function Orange(props) {
 };
 exports.Orange = Orange;
 var Code = function Code(props) {
+  var finalClass = calculateFinalClass('font-mono font-bold', props);
   return /*#__PURE__*/_react["default"].createElement("span", {
-    className: "font-mono font-bold"
+    className: finalClass
   }, props.children);
 };
 
 // // form labels
 exports.Code = Code;
 var FormLabelNano = function FormLabelNano(props) {
+  var finalClass = calculateFinalClass('font-label text-tertiary font-medium leading-none', props);
   return /*#__PURE__*/_react["default"].createElement(PNano, {
-    className: "font-label text-tertiary font-medium leading-none"
+    className: finalClass
   }, props.children);
 };
 exports.FormLabelNano = FormLabelNano;
 var FormLabelTiny = function FormLabelTiny(props) {
+  var finalClass = calculateFinalClass('font-label text-tertiary font-medium leading-none', props);
   return /*#__PURE__*/_react["default"].createElement(PTiny, {
-    className: "font-label text-tertiary font-medium leading-none"
+    className: finalClass
   }, props.children);
 };
 exports.FormLabelTiny = FormLabelTiny;
 var FormLabelSmall = function FormLabelSmall(props) {
+  var finalClass = calculateFinalClass('font-label text-tertiary font-medium leading-none', props);
   return /*#__PURE__*/_react["default"].createElement(PSmall, {
-    className: "font-label text-tertiary font-medium leading-none"
+    className: finalClass
   }, props.children);
 };
 exports.FormLabelSmall = FormLabelSmall;
 var FormLabel = function FormLabel(props) {
+  var finalClass = calculateFinalClass('font-label text-tertiary font-medium leading-none', props);
   return /*#__PURE__*/_react["default"].createElement(P, {
-    className: "font-label text-tertiary font-medium leading-none"
+    className: finalClass
   }, props.children);
 };
 exports.FormLabel = FormLabel;
