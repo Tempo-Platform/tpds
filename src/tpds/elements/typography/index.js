@@ -84,9 +84,9 @@ export const H6 = props => {
     props,
   )
   return (
-    <p className={finalClass} style={props.style}>
+    <h6 className={finalClass} style={props.style}>
       {props.children}
-    </p>
+    </h6>
   )
 }
 
@@ -96,9 +96,9 @@ export const H5 = props => {
     props,
   )
   return (
-    <p className={finalClass} style={props.style}>
+    <h5 className={finalClass} style={props.style}>
       {props.children}
-    </p>
+    </h5>
   )
 }
 
@@ -108,9 +108,9 @@ export const H4 = props => {
     props,
   )
   return (
-    <p className={finalClass} style={props.style}>
+    <h4 className={finalClass} style={props.style}>
       {props.children}
-    </p>
+    </h4>
   )
 }
 
@@ -120,9 +120,9 @@ export const H3 = props => {
     props,
   )
   return (
-    <p className={finalClass} style={props.style}>
+    <h3 className={finalClass} style={props.style}>
       {props.children}
-    </p>
+    </h3>
   )
 }
 
@@ -132,9 +132,9 @@ export const H2 = props => {
     props,
   )
   return (
-    <p className={finalClass} style={props.style}>
+    <h2 className={finalClass} style={props.style}>
       {props.children}
-    </p>
+    </h2>
   )
 }
 
@@ -144,9 +144,9 @@ export const H1 = props => {
     props,
   )
   return (
-    <p className={finalClass} style={props.style}>
+    <h1 className={finalClass} style={props.style}>
       {props.children}
-    </p>
+    </h1>
   )
 }
 
@@ -225,29 +225,28 @@ export const Orange = props => {
 }
 
 export const Code = props => {
-  return <span className="font-mono font-bold">{props.children}</span>
+  const finalClass = calculateFinalClass('font-mono font-bold', props)
+  return <span className={finalClass}>{props.children}</span>
 }
 
 // // form labels
 
 export const FormLabelNano = props => {
-  return (
-    <PNano className="font-label text-tertiary font-medium leading-none">{props.children}</PNano>
-  )
+  const finalClass = calculateFinalClass('font-label text-tertiary font-medium leading-none', props)
+  return <PNano className={finalClass}>{props.children}</PNano>
 }
 
 export const FormLabelTiny = props => {
-  return (
-    <PTiny className="font-label text-tertiary font-medium leading-none">{props.children}</PTiny>
-  )
+  const finalClass = calculateFinalClass('font-label text-tertiary font-medium leading-none', props)
+  return <PTiny className={finalClass}>{props.children}</PTiny>
 }
 
 export const FormLabelSmall = props => {
-  return (
-    <PSmall className="font-label text-tertiary font-medium leading-none">{props.children}</PSmall>
-  )
+  const finalClass = calculateFinalClass('font-label text-tertiary font-medium leading-none', props)
+  return <PSmall className={finalClass}>{props.children}</PSmall>
 }
 
 export const FormLabel = props => {
-  return <P className="font-label text-tertiary font-medium leading-none">{props.children}</P>
+  const finalClass = calculateFinalClass('font-label text-tertiary font-medium leading-none', props)
+  return <P className={finalClass}>{props.children}</P>
 }
