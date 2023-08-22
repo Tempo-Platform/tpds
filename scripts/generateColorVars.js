@@ -5,7 +5,119 @@ const colorsDarkTheme = colors.dark
 const colorPalettes = colors.color_palettes
 const colorsLightTheme = colors.light
 
-const styleString = `.light {
+const styleString = `--green: ${colorPalettes.green['500']};
+--red: ${colorPalettes.red['500']};
+--blue: ${colorPalettes.blue['500']};
+--yellow: ${colorPalettes.yellow['500']};
+--purple: ${colorPalettes.purple['500']};
+--magenta: ${colorPalettes.magenta['500']};
+--orange: ${colorPalettes.orange['500']};
+
+--success: ${colorPalettes.green['500']};
+--danger: ${colorPalettes.red['500']};
+--info: ${colorPalettes.blue['500']};
+--warning: ${colorPalettes.orange['500']};
+
+--green-50: ${colorPalettes.green['50']};
+--green-100: ${colorPalettes.green['100']};
+--green-200: ${colorPalettes.green['200']};
+--green-300: ${colorPalettes.green['300']};
+--green-400: ${colorPalettes.green['400']};
+--green-500: ${colorPalettes.green['500']};
+--green-600: ${colorPalettes.green['600']};
+--green-700: ${colorPalettes.green['700']};
+--green-800: ${colorPalettes.green['800']};
+--green-900: ${colorPalettes.green['900']};
+
+--red-50: ${colorPalettes.red['50']};
+--red-100: ${colorPalettes.red['100']};
+--red-200: ${colorPalettes.red['200']};
+--red-300: ${colorPalettes.red['300']};
+--red-400: ${colorPalettes.red['400']};
+--red-500: ${colorPalettes.red['500']};
+--red-600: ${colorPalettes.red['600']};
+--red-700: ${colorPalettes.red['700']};
+--red-800: ${colorPalettes.red['800']};
+--red-900: ${colorPalettes.red['900']};
+
+--blue-50: ${colorPalettes.blue['50']};
+--blue-100: ${colorPalettes.blue['100']};
+--blue-200: ${colorPalettes.blue['200']};
+--blue-300: ${colorPalettes.blue['300']};
+--blue-400: ${colorPalettes.blue['400']};
+--blue-500: ${colorPalettes.blue['500']};
+--blue-600: ${colorPalettes.blue['600']};
+--blue-700: ${colorPalettes.blue['700']};
+--blue-800: ${colorPalettes.blue['800']};
+--blue-900: ${colorPalettes.blue['900']};
+
+--yellow-50: ${colorPalettes.yellow['50']};
+--yellow-100: ${colorPalettes.yellow['100']};
+--yellow-200: ${colorPalettes.yellow['200']};
+--yellow-300: ${colorPalettes.yellow['300']};
+--yellow-400: ${colorPalettes.yellow['400']};
+--yellow-500: ${colorPalettes.yellow['500']};
+--yellow-600: ${colorPalettes.yellow['600']};
+--yellow-700: ${colorPalettes.yellow['700']};
+--yellow-800: ${colorPalettes.yellow['800']};
+--yellow-900: ${colorPalettes.yellow['900']};
+
+--purple-50: ${colorPalettes.purple['50']};
+--purple-100: ${colorPalettes.purple['100']};
+--purple-200: ${colorPalettes.purple['200']};
+--purple-300: ${colorPalettes.purple['300']};
+--purple-400: ${colorPalettes.purple['400']};
+--purple-500: ${colorPalettes.purple['500']};
+--purple-600: ${colorPalettes.purple['600']};
+--purple-700: ${colorPalettes.purple['700']};
+--purple-800: ${colorPalettes.purple['800']};
+--purple-900: ${colorPalettes.purple['900']};
+
+--magenta-50: ${colorPalettes.magenta['50']};
+--magenta-100: ${colorPalettes.magenta['100']};
+--magenta-200: ${colorPalettes.magenta['200']};
+--magenta-300: ${colorPalettes.magenta['300']};
+--magenta-400: ${colorPalettes.magenta['400']};
+--magenta-500: ${colorPalettes.magenta['500']};
+--magenta-600: ${colorPalettes.magenta['600']};
+--magenta-700: ${colorPalettes.magenta['700']};
+--magenta-800: ${colorPalettes.magenta['800']};
+--magenta-900: ${colorPalettes.magenta['900']};
+
+--orange-50: ${colorPalettes.orange['50']};
+--orange-100: ${colorPalettes.orange['100']};
+--orange-200: ${colorPalettes.orange['200']};
+--orange-300: ${colorPalettes.orange['300']};
+--orange-400: ${colorPalettes.orange['400']};
+--orange-500: ${colorPalettes.orange['500']};
+--orange-600: ${colorPalettes.orange['600']};
+--orange-700: ${colorPalettes.orange['700']};
+--orange-800: ${colorPalettes.orange['800']};
+--orange-900: ${colorPalettes.orange['900']};
+
+--grey-light-50: ${colorPalettes.grey_light['50']};
+--grey-light-100: ${colorPalettes.grey_light['100']};
+--grey-light-200: ${colorPalettes.grey_light['200']};
+--grey-light-300: ${colorPalettes.grey_light['300']};
+--grey-light-400: ${colorPalettes.grey_light['400']};
+--grey-light-500: ${colorPalettes.grey_light['500']};
+--grey-light-600: ${colorPalettes.grey_light['600']};
+--grey-light-700: ${colorPalettes.grey_light['700']};
+--grey-light-800: ${colorPalettes.grey_light['800']};
+--grey-light-900: ${colorPalettes.grey_light['900']};
+
+--grey-dark-50: ${colorPalettes.grey_dark['50']};
+--grey-dark-100: ${colorPalettes.grey_dark['100']};
+--grey-dark-200: ${colorPalettes.grey_dark['200']};
+--grey-dark-300: ${colorPalettes.grey_dark['300']};
+--grey-dark-400: ${colorPalettes.grey_dark['400']};
+--grey-dark-500: ${colorPalettes.grey_dark['500']};
+--grey-dark-600: ${colorPalettes.grey_dark['600']};
+--grey-dark-700: ${colorPalettes.grey_dark['700']};
+--grey-dark-800: ${colorPalettes.grey_dark['800']};
+--grey-dark-900: ${colorPalettes.grey_dark['900']};
+
+.light {
   color-scheme: light;
   --bg-body: ${colorsLightTheme.body_bg};
   --border-body: ${colorsLightTheme.body_border};
