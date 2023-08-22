@@ -12,8 +12,8 @@ var calculateFinalClass = function calculateFinalClass(defaultClass, props) {
   var finalClass = (0, _clsx["default"])(baseStyles, defaultClass, props.className && props.className, props.isSmall && '!text-sm', props.isUnderline && '!underline', props.isUppercase && '!uppercase', props.isItalic && '!italic', props.isLight && '!font-light', props.isMedium && '!font-medium', props.isBold && '!font-bold', props.isExtraBold && '!font-extrabold', props.isHeavy && '!font-black', props.isPulsing && '!animate-pulse', props.isCentered && '!text-center', props.noSelect && '!select-none', props.isWhite && '!text-white', props.isGreen && '!text-green', props.isRed && '!text-red', props.isBlue && '!text-blue', props.isOrange && '!text-orange', props.isYellow && '!text-yellow', props.leadingNone && '!leading-none', props.isLabel && '!select-none', props.isLabel && '!leading-none', props.isLabel && '!font-label');
   return finalClass;
 };
-var pNanoClass = 'text-xs xl:text-sm';
-var pTinyClass = 'text-sm xl:text-base';
+var pNanoClass = 'text-xxs xl:text-xs';
+var pTinyClass = 'text-xs xl:text-sm';
 var pSmallClass = 'text-sm xl:text-base';
 var pClass = 'text-base xl:text-lg';
 var pLargeClass = 'text-lg xl:text-xl';
