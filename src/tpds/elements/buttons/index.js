@@ -9,6 +9,7 @@ export const Button = ({
   isLarge,
   isDisabled,
   isUppercase,
+  className,
   ...props
 }) => {
   const finalClass = clsx(
@@ -18,6 +19,7 @@ export const Button = ({
     'items-center justify-center',
     'select-none cursor-pointer',
     buttonVariantStyles[variant],
+    className,
     isSmall && '!text-sm',
     isUppercase && '!uppercase',
     isUppercase && '!uppercase',
