@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.Button = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _clsx = _interopRequireDefault(require("clsx"));
-var _excluded = ["children", "variant", "isSmall", "isTiny", "isLarge", "isDisabled", "isUppercase"];
+var _excluded = ["children", "variant", "isSmall", "isTiny", "isLarge", "isDisabled", "isUppercase", "className"];
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -20,8 +20,9 @@ var Button = function Button(_ref) {
     isLarge = _ref.isLarge,
     isDisabled = _ref.isDisabled,
     isUppercase = _ref.isUppercase,
+    className = _ref.className,
     props = _objectWithoutProperties(_ref, _excluded);
-  var finalClass = (0, _clsx["default"])('flex transition duration-100', '!font-medium text-[14px] whitespace-nowrap', 'px-3 gap-x-2 pt-[5px] pb-[5px] border rounded-sm focus:outline-none', 'items-center justify-center', 'select-none cursor-pointer', buttonVariantStyles[variant], isSmall && '!text-sm', isUppercase && '!uppercase', isUppercase && '!uppercase', isSmall && 'px-2 pt-[2px] pb-[1.5px] text-[13px]', isTiny && 'px-1 pt-0 pb-0 text-[11px]', isLarge && 'px-4 py-1.5 text-[16px]', isDisabled && 'pointer-events-none opacity-30');
+  var finalClass = (0, _clsx["default"])('flex transition duration-100', '!font-medium text-[14px] whitespace-nowrap', 'px-3 gap-x-2 pt-[5px] pb-[5px] border rounded-sm focus:outline-none', 'items-center justify-center', 'select-none cursor-pointer', buttonVariantStyles[variant], className, isSmall && '!text-sm', isUppercase && '!uppercase', isUppercase && '!uppercase', isSmall && 'px-2 pt-[2px] pb-[1.5px] text-[13px]', isTiny && 'px-1 pt-0 pb-0 text-[11px]', isLarge && 'px-4 py-1.5 text-[16px]', isDisabled && 'pointer-events-none opacity-30');
   return /*#__PURE__*/_react["default"].createElement("button", _extends({
     className: finalClass
   }, props), children);
