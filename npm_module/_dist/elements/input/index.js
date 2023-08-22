@@ -17,9 +17,7 @@ var TextInput = function TextInput(_ref) {
     isWarning = _ref.isWarning,
     className = _ref.className,
     props = _objectWithoutProperties(_ref, _excluded);
-  var finalClass = (0, _clsx["default"])(className, 'flex w-full', 'transition duration-100', 'px-2.5 py-1 rounded focus:outline-none', 'font-normal', 'bg-input text-primary border-input', 'border-2 focus:border-blue',
-  //buttonVariantStyles[variant],
-  isValid && 'border-green focus:border-green', isInvalid && 'border-red focus:border-red', isWarning && 'border-orange focus:border-orange');
+  var finalClass = (0, _clsx["default"])(className, 'flex w-full', 'transition duration-100', 'px-2.5 py-1 rounded focus:outline-none', 'font-normal', 'bg-grey-light-scale-100 text-primary border-transparent dark:bg-grey-dark-scale-200', 'border-2 focus:border-blue', isValid && 'border-green focus:border-green', isInvalid && 'border-red focus:border-red', isWarning && 'border-orange focus:border-orange');
   return /*#__PURE__*/_react["default"].createElement("input", _extends({
     type: "text",
     className: finalClass
