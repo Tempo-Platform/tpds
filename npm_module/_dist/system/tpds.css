@@ -2084,6 +2084,10 @@ video {
   .xl\:text-xl {
     font-size: 1.25rem;
   }
+
+  .xl\:text-xs {
+    font-size: 0.75rem;
+  }
 }
 @media (min-width: 1536px) {
 

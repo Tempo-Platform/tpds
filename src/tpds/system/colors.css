@@ -1,3 +1,115 @@
+--green: #2DB92D;
+--red: #EB5757;
+--blue: #1972F5;
+--yellow: #FCDB17;
+--purple: #6200EE;
+--magenta: #E549FF;
+--orange: #F08727;
+
+--success: #2DB92D;
+--danger: #EB5757;
+--info: #1972F5;
+--warning: #F08727;
+
+--green-50: #EBFAEB;
+--green-100: #C1F0C1;
+--green-200: #99E699;
+--green-300: #84E184;
+--green-400: #32CD32;
+--green-500: #2DB92D;
+--green-600: #28A428;
+--green-700: #1E7B1E;
+--green-800: #145214;
+--green-900: #0F3E0F;
+
+--red-50: #FDEEEE;
+--red-100: #F9CBCB;
+--red-200: #F6B2B2;
+--red-300: #F28E8E;
+--red-400: #EF7979;
+--red-500: #EB5757;
+--red-600: #D64F4F;
+--red-700: #A73E3E;
+--red-800: #813030;
+--red-900: #632525;
+
+--blue-50: #E8F1FE;
+--blue-100: #D1E3FD;
+--blue-200: #A3C7FB;
+--blue-300: #75AAF9;
+--blue-400: #478EF7;
+--blue-500: #1972F5;
+--blue-600: #1561D0;
+--blue-700: #1250AB;
+--blue-800: #0E3F87;
+--blue-900: #0A2E62;
+
+--yellow-50: #FFFBE8;
+--yellow-100: #FEF4B7;
+--yellow-200: #FEEE94;
+--yellow-300: #FDE764;
+--yellow-400: #FDE245;
+--yellow-500: #FCDB17;
+--yellow-600: #E5C715;
+--yellow-700: #B39B10;
+--yellow-800: #8B780D;
+--yellow-900: #6A5C0A;
+
+--purple-50: #EFE6FD;
+--purple-100: #CEB0FA;
+--purple-200: #B78AF7;
+--purple-300: #9654F4;
+--purple-400: #8133F1;
+--purple-500: #6200EE;
+--purple-600: #5900D9;
+--purple-700: #4600A9;
+--purple-800: #360083;
+--purple-900: #290064;
+
+--magenta-50: #FCEDFF;
+--magenta-100: #F7C7FF;
+--magenta-200: #F3ABFF;
+--magenta-300: #EE85FF;
+--magenta-400: #EA6DFF;
+--magenta-500: #E549FF;
+--magenta-600: #D042E8;
+--magenta-700: #A334B5;
+--magenta-800: #7E288C;
+--magenta-900: #601F6B;
+
+--orange-50: #FEF3E9;
+--orange-100: #FADABC;
+--orange-200: #F8C89C;
+--orange-300: #F5AF6E;
+--orange-400: #F39F52;
+--orange-500: #F08727;
+--orange-600: #DA7B23;
+--orange-700: #AA601C;
+--orange-800: #844A15;
+--orange-900: #653910;
+
+--grey-light-50: #FCFCFC;
+--grey-light-100: #FAFAFA;
+--grey-light-200: #F1F3F3;
+--grey-light-300: #E9EBEC;
+--grey-light-400: #DFE1E2;
+--grey-light-500: #C9CDCF;
+--grey-light-600: #AEB3B6;
+--grey-light-700: #939B9F;
+--grey-light-800: #868E93;
+--grey-light-900: #757E84;
+
+--grey-dark-50: #989FA3;
+--grey-dark-100: #788187;
+--grey-dark-200: #484D51;
+--grey-dark-300: #3E4347;
+--grey-dark-400: #323639;
+--grey-dark-500: #282C2F;
+--grey-dark-600: #1E2224;
+--grey-dark-700: #151819;
+--grey-dark-800: #060708;
+--grey-dark-900: #000000;
+
 .light {
   color-scheme: light;
   --bg-body: #FAFAFA;
