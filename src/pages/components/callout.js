@@ -119,7 +119,7 @@ export default function Page() {
                 type: 'String',
                 default: "' '",
                 required: 'required',
-                description: 'The description of the callout.)',
+                description: 'The description of the callout.',
               },
               {
                 propName: 'variant',
