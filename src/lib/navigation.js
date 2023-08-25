@@ -154,6 +154,16 @@ export const navigationitems = [
         slug: 'components/switch',
         description: 'Simple switch component',
       },
+      {
+        name: 'NumberInput',
+        slug: 'components/number-input',
+        description: 'A text input optimized for numbers',
+      },
+      {
+        name: 'PriceInput',
+        slug: 'components/price-input',
+        description: 'A text input optimized for prices',
+      },
       // {
       //   name: 'Video',
       //   slug: 'components/video',
@@ -183,6 +193,11 @@ export const navigationitems = [
         name: 'RadioGroup',
         slug: 'components/radiogroup',
         description: 'Generic radio group component',
+      },
+      {
+        name: 'RadioTabs',
+        slug: 'components/radio-tabs',
+        description: 'iOS style radio tabs component',
       },
       // {
       //   name: 'Tabs',

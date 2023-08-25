@@ -37,6 +37,7 @@
     "@babel/core": "^7.22.9",
     "@babel/preset-env": "^7.22.9",
     "@babel/preset-react": "^7.22.5",
+    "@headlessui/react": "^1.7.17",
     "@heroicons/react": "v1",
     "@tailwindcss/container-queries": "^0.1.1",
     "autoprefixer": "10.4.14",
