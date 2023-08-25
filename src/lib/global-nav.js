@@ -4,18 +4,19 @@ import Link from 'next/link'
 import { MenuAlt2Icon, XIcon } from '@heroicons/react/solid'
 import clsx from 'clsx'
 import { useState } from 'react'
-import { P, PSmall } from '@/tpds/elements/typography'
+import { PSmall } from '@/tpds/elements/typography'
+import ColorModeControl from './components/ColorModeControl'
 
 function GlobalNav() {
   const [isOpen, setIsOpen] = useState(false)
   const close = () => setIsOpen(false)
-  const keysarray = []
   return (
     <div className="fixed top-0 z-10 flex w-full flex-col border-b border-window bg-window lg:bottom-0 lg:z-auto lg:w-72 lg:border-b-0 lg:border-r lg:border-gray-800">
       <div className="flex h-14 items-center py-4 px-4 lg:h-auto">
         <Link href="/" className="group flex w-full items-center gap-x-2.5" onClick={close}>
           <h3 className="font-semibold tracking-wide text-gray-400 text-primary">TPDS</h3>
         </Link>
+        <ColorModeControl />
       </div>
       <button
         type="button"
