@@ -4,6 +4,7 @@ import { P, H1 } from '../../tpds/elements/typography'
 import { Container, Window } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
 import PriceInput from '../../tpds/components/input/price'
+import PropsTable from '../../tpds/components/table'
 
 export default function Page() {
   const [price, setPrice] = React.useState(10)
@@ -24,6 +25,34 @@ export default function Page() {
           <br />
           <CodeBlock code={code} />
         </Window>
+        <br />
+        <br />
+        <PropsTable
+          title="Props"
+          items={[
+            {
+              propName: 'initialValue',
+              type: 'String | Number',
+              default: 'null',
+              required: 'yes',
+              description: 'The initial value displayed',
+            },
+            {
+              propName: 'currencySymbol',
+              type: 'String',
+              default: '$',
+              required: 'no',
+              description: 'The currency symbol to be displayed',
+            },
+            {
+              propName: 'onChangeCallback',
+              type: 'Function',
+              default: 'null',
+              required: 'yes',
+              description: 'The callout function used to select the clicked index',
+            },
+          ]}
+        />
       </Container>
     </div>
   )

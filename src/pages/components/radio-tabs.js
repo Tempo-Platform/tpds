@@ -4,6 +4,7 @@ import { P, H1 } from '../../tpds/elements/typography'
 import { Container, PaddingBox } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
 import RadioTabs from '../../tpds/components/radiotabs'
+import PropsTable from '../../tpds/components/table'
 
 const items = [
   {
@@ -41,6 +42,32 @@ export default function Page() {
           <CodeBlock code={code} />
           <br />
           <br />
+          <PropsTable
+            title="Props"
+            items={[
+              {
+                propName: 'items',
+                type: 'JSX',
+                default: 'null',
+                required: 'yes',
+                description: 'The items to be displayed',
+              },
+              {
+                propName: 'selectedIndex',
+                type: 'Int',
+                default: 'null',
+                required: 'yes',
+                description: 'The index to show as selected',
+              },
+              {
+                propName: 'callBack',
+                type: 'Function',
+                default: 'null',
+                required: 'yes',
+                description: 'The callout function used to select the clicked index',
+              },
+            ]}
+          />
         </PaddingBox>
       </Container>
     </div>
