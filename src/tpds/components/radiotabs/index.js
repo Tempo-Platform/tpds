@@ -1,37 +1,32 @@
-import React, { Fragment } from 'react'
-import { Tab } from '@headlessui/react'
+import React from 'react'
 import clsx from 'clsx'
 
-const Tabs = ({ items, selectedIndex, callBack }) => {
+const RadioTabs = ({ items, selectedIndex, handleIndexSelection }) => {
   return (
     <div className="w-full">
-      <Tab.Group
-        defaultIndex={selectedIndex || 0}
-        onChange={index => {
-          if (callBack) callBack(index)
-        }}
-      >
-        <Tab.List className="flex space-x-1 rounded-lg p-1 bg-grey-light-scale-300 dark:bg-grey-dark-scale-500">
-          {items.map(item => (
-            <Tab as={Fragment} key={item.value || item.description || item.label || item}>
-              {({ selected }) => (
-                <p
-                  className={clsx(
-                    'text-primary m-0 font-medium',
-                    'text-xs xl:text-sm',
-                    '!outline-none',
-                    `w-full select-none cursor-pointer text-center py-2 rounded-md`,
-                    selected && `bg-grey-light-scale-100 text-black dark:bg-grey-dark-scale-300`,
-                  )}
-                >
-                  {item.value || item.description || item.label || item}
-                </p>
+      <div className="flex space-x-1 rounded-lg p-1 bg-grey-light-scale-300 dark:bg-grey-dark-scale-500">
+        {items.map((item, index) => (
+          <div
+            className="flex-1"
+            key={item.value || item.description || item.label || item}
+            onClick={() => handleIndexSelection(index)}
+          >
+            <p
+              className={clsx(
+                'text-primary m-0 font-medium',
+                'text-xs xl:text-sm',
+                '!outline-none',
+                `w-full select-none cursor-pointer text-center py-2 rounded-md`,
+                index === selectedIndex &&
+                  `bg-grey-light-scale-100 text-black dark:bg-grey-dark-scale-300`,
               )}
-            </Tab>
-          ))}
-        </Tab.List>
-      </Tab.Group>
+            >
+              {item.value || item.description || item.label || item}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
-export default Tabs
+export default RadioTabs

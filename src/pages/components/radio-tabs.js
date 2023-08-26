@@ -36,7 +36,7 @@ export default function Page() {
           <RadioTabs
             items={items}
             selectedIndex={selectedIndex}
-            handleIndexSelection={index => setSelectedIndex(index)}
+            handleIndexSelection={setSelectedIndex}
           />
           <br />
           <CodeBlock code={code} />
@@ -97,5 +97,5 @@ const [selectedIndex, setSelectedIndex] = React.useState(0)
 <RadioTabs
   items={items}
   selectedIndex={selectedIndex}
-  handleIndexSelection={index => setSelectedIndex(index)}
+  handleIndexSelection={setSelectedIndex}
 />`
