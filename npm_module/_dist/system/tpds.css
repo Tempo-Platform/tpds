@@ -683,6 +683,9 @@ video {
 .max-w-\[1022px\] {
   max-width: 1022px;
 }
+.flex-1 {
+  flex: 1 1 0%;
+}
 .translate-x-1 {
   --tw-translate-x: 0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
