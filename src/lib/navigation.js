@@ -185,6 +185,11 @@ export const navigationitems = [
       //   description: 'Generic select component',
       // },
       {
+        name: 'Select',
+        slug: 'components/select',
+        description: 'Process Steps component',
+      },
+      {
         name: 'Steps',
         slug: 'components/steps',
         description: 'Process Steps component',
