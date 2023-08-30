@@ -30,11 +30,6 @@ const Select = ({
   const optionsWithoutExcludedIndexes = options.filter(
     (option, index) => !excludeIndexes.includes(index),
   )
-  //   const initialInputValue = getCurrentInputValue(
-  //     optionsWithoutExcludedIndexes,
-  //     selectedIndex,
-  //     labelProp,
-  //   )
   const [inputValue, setInputValue] = useState('')
   const [isOpen, setIsOpen] = useState(false)
 
