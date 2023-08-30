@@ -33,6 +33,7 @@ export default function Page() {
             selectedIndexes={selectedIndexes}
             labelProp="label"
             idProp="value"
+            tagVariant="primary"
             excludeIndexes={[2]}
             options={[
               { value: '1', label: 'Option 1' },
