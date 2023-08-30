@@ -23,6 +23,7 @@ const Select = ({
   handleIndexSelection,
   idProp,
   excludeIndexes = [],
+  noPermanentSelection = false,
   labelProp = 'value',
   placeholder = 'Select',
 }) => {
@@ -53,6 +54,7 @@ const Select = ({
     options,
     idProp,
     excludeIndexes,
+    noPermanentSelection,
     placeholder,
   ])
 
@@ -63,15 +65,18 @@ const Select = ({
 
   const inputValueToDisplay = isOpen
     ? inputValue
+    : noPermanentSelection
+    ? ''
     : getCurrentInputValue(options, selectedIndex, labelProp)
 
   const isSelected = option => {
+    if (!idProp && !labelProp) return false
     const optionIndex = getOptionIndexFromAllOptions(options, option, idProp)
     return optionIndex === selectedIndex
   }
 
   return (
-    <div className="w-full relative" ref={wrapperRef}>
+    <div className=" flex w-full relative text-left text-start" ref={wrapperRef}>
       <TextInput
         placeholder={placeholder}
         value={inputValueToDisplay}
@@ -82,7 +87,7 @@ const Select = ({
         }}
       />
       {isOpen && (
-        <div className="w-full flex flex-col space-y-1 items-start text-start p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto">
+        <div className="w-full flex flex-col space-y-1 items-start text-left text-start p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto">
           {optionsThatMatchInputValue.map((option, index) => (
             <div
               key={labelProp ? option[labelProp] : option}

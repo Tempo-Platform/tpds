@@ -26,20 +26,29 @@ export default function Page() {
           <PSmall>- Close drawer + clear typed content on click away</PSmall>
           <PSmall>- Automatically apply scroll if content exceeds max height</PSmall>
           <PSmall>- Accepts indexes to exclude from list</PSmall>
+          <PSmall>
+            - "No permanent selection" mode, which skips showing the selected item in the input
+          </PSmall>
           <br />
           <Select
             handleIndexSelection={setSelectedIndex}
-            selectedIndex={selectedIndex}
-            labelProp="label"
+            selectedIndex={null}
+            labelProp={null}
             idProp="value"
             excludeIndexes={[2]}
             allowMultiple={true}
+            noPermanentSelection={true}
             options={[
-              { value: '1', label: 'Option 1' },
-              { value: '2', label: 'Option 2' },
-              { value: '3', label: 'Option 3' },
-              { value: '4', label: 'Option 4' },
-              { value: '5', label: 'Option 5' },
+              'Option 1',
+              'Option 2',
+              'Option 3',
+              'Option 4',
+              'Option 5',
+              // { value: '1', label: 'Option 1' },
+              // { value: '2', label: 'Option 2' },
+              // { value: '3', label: 'Option 3' },
+              // { value: '4', label: 'Option 4' },
+              // { value: '5', label: 'Option 5' },
               // { value: '6', label: 'Option 6' },
               // { value: '7', label: 'Option 7' },
               // { value: '8', label: 'Option 8' },
@@ -81,6 +90,13 @@ export default function Page() {
               default: '[]',
               required: 'no',
               description: 'An array of indexes that will be excluded from the displayed options',
+            },
+            {
+              propName: 'noPermanentSelection',
+              type: 'Boolean',
+              default: 'false',
+              required: 'no',
+              description: 'Wether the input shows the clicked option or not',
             },
             {
               propName: 'labelProp',
