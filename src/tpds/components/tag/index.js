@@ -23,7 +23,9 @@ const Tag = ({
 
   return (
     <div className={finalRootClass} onClick={onClick}>
-      <p className={finalLabelClass}>{label}</p>
+      <p className={finalLabelClass} style={{ lineHeight: 'normal' }}>
+        {label}
+      </p>
       {showCloseIcon && <XIcon className={finalLabelClass} />}
     </div>
   )
