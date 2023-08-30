@@ -39,13 +39,10 @@ const Select = ({
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
-    if (selectedIndexes && selectedIndexes.length && selectedIndexes.length > 0) {
-      const currentlyExpectedInputValue = getCurrentInputValue(options, selectedIndexes, labelProp)
-      const isDifferent =
-        JSON.stringify(currentlyExpectedInputValue) !== JSON.stringify(displayValue)
-      if (isDifferent) {
-        setDisplayValue(currentlyExpectedInputValue)
-      }
+    const currentlyExpectedInputValue = getCurrentInputValue(options, selectedIndexes, labelProp)
+    const isDifferent = JSON.stringify(currentlyExpectedInputValue) !== JSON.stringify(displayValue)
+    if (isDifferent) {
+      setDisplayValue(currentlyExpectedInputValue)
     }
     function handleClickOutside(event) {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
