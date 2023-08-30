@@ -108,7 +108,7 @@ const Select = ({
             >
               <PTiny
                 className={clsx(
-                  'text-primary',
+                  'text-primary text-left',
                   isSelected(option) && `!text-white dark:!text-black`,
                 )}
               >
