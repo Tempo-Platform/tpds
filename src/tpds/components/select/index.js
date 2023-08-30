@@ -86,6 +86,20 @@ const Select = ({
           setIsOpen(true)
         }}
       />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className={clsx(
+          'w-4 h-4 absolute right-2 transform top-[10px] text-primary',
+          isOpen && 'rotate-180',
+        )}
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+      </svg>
+
       {isOpen && (
         <div className="w-full flex flex-col space-y-1 items-start text-left text-start p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto">
           {optionsThatMatchInputValue.map((option, index) => (
