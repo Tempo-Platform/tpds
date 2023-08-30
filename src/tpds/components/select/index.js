@@ -5,14 +5,15 @@ import { PTiny } from '../../elements/typography'
 
 const getCurrentInputValue = (options, selectedIndex, labelProp) => {
   if (!selectedIndex && selectedIndex !== 0) return ''
+  if (!options[selectedIndex]) return ''
   return labelProp ? options[selectedIndex][labelProp] : options[selectedIndex]
 }
 
-const getOptionIndexFromAllOptions = (options, selectedOption, idProp) => {
-  const selectedOptionId = idProp ? selectedOption[idProp] : selectedOption
-  return options.findIndex(option => {
-    const optionIdToCompare = idProp ? option[idProp] : option
-    return optionIdToCompare === selectedOptionId
+const getOptionIndexFromAllOptions = (options, option, idProp) => {
+  const id = idProp ? option[idProp] : option
+  return options.findIndex(o => {
+    const idToCompare = idProp ? o[idProp] : o
+    return idToCompare === id
   })
 }
 
@@ -21,13 +22,20 @@ const Select = ({
   selectedIndex,
   handleIndexSelection,
   idProp,
+  excludeIndexes = [],
   labelProp = 'value',
   placeholder = 'Select',
 }) => {
   const wrapperRef = useRef(null)
-
-  const initialInputValue = getCurrentInputValue(options, selectedIndex, labelProp)
-  const [inputValue, setInputValue] = useState(initialInputValue)
+  const optionsWithoutExcludedIndexes = options.filter(
+    (option, index) => !excludeIndexes.includes(index),
+  )
+  //   const initialInputValue = getCurrentInputValue(
+  //     optionsWithoutExcludedIndexes,
+  //     selectedIndex,
+  //     labelProp,
+  //   )
+  const [inputValue, setInputValue] = useState('')
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
@@ -42,9 +50,18 @@ const Select = ({
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [wrapperRef, selectedIndex, labelProp, options, idProp, placeholder])
+  }, [
+    wrapperRef,
+    selectedIndex,
+    handleIndexSelection,
+    labelProp,
+    options,
+    idProp,
+    excludeIndexes,
+    placeholder,
+  ])
 
-  const optionsThatMatchInputValue = options.filter(option => {
+  const optionsThatMatchInputValue = optionsWithoutExcludedIndexes.filter(option => {
     const optionValue = labelProp ? option[labelProp] : option
     return optionValue.toLowerCase().includes(inputValue.toLowerCase())
   })
@@ -52,6 +69,11 @@ const Select = ({
   const inputValueToDisplay = isOpen
     ? inputValue
     : getCurrentInputValue(options, selectedIndex, labelProp)
+
+  const isSelected = option => {
+    const optionIndex = getOptionIndexFromAllOptions(options, option, idProp)
+    return optionIndex === selectedIndex
+  }
 
   return (
     <div className="w-full relative" ref={wrapperRef}>
@@ -68,7 +90,7 @@ const Select = ({
         <div className="w-full flex flex-col space-y-1 items-start text-start p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto">
           {optionsThatMatchInputValue.map((option, index) => (
             <div
-              key={option.value || option.description || option.label || option}
+              key={labelProp ? option[labelProp] : option}
               onClick={() => {
                 handleIndexSelection(getOptionIndexFromAllOptions(options, option, idProp))
                 setIsOpen(false)
@@ -81,13 +103,13 @@ const Select = ({
                 `w-full select-none cursor-pointer text-center`,
                 `bg-window rounded`,
                 `hover:bg-grey-light-scale-200 dark:hover:bg-grey-dark-scale-300`,
-                index === selectedIndex && `!bg-blue-scale-500`,
+                isSelected(option) && `!bg-blue-scale-500`,
               )}
             >
               <PTiny
                 className={clsx(
                   'text-primary',
-                  index === selectedIndex && `!text-white dark:!text-black`,
+                  isSelected(option) && `!text-white dark:!text-black`,
                 )}
               >
                 {labelProp ? option[labelProp] : option}

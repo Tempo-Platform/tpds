@@ -23,7 +23,7 @@ export default function Page() {
           <PSmall>- Accepts handler function to apply selection by index</PSmall>
           <PSmall>- Search by typing</PSmall>
           <PSmall>- Clear text input on focus (to search freely)</PSmall>
-          <PSmall>- Clear typed content on click away</PSmall>
+          <PSmall>- Close drawer + clear typed content on click away</PSmall>
           <PSmall>- Automatically apply scroll if content exceeds max height</PSmall>
           <br />
           <Select
@@ -31,11 +31,17 @@ export default function Page() {
             selectedIndex={selectedIndex}
             labelProp="label"
             idProp="value"
+            excludeIndexes={[2]}
             options={[
               { value: '1', label: 'Option 1' },
               { value: '2', label: 'Option 2' },
               { value: '3', label: 'Option 3' },
               { value: '4', label: 'Option 4' },
+              { value: '5', label: 'Option 5' },
+              // { value: '6', label: 'Option 6' },
+              // { value: '7', label: 'Option 7' },
+              // { value: '8', label: 'Option 8' },
+              // { value: '9', label: 'Option 9' },
             ]}
           />
         </Window>
@@ -110,10 +116,12 @@ const [selectedIndex, setSelectedIndex] = React.useState(null)
   selectedIndex={selectedIndex}
   labelProp="label"
   idProp="value"
+  excludeIndexes={[2]}
   options={[
     { value: '1', label: 'Option 1' },
     { value: '2', label: 'Option 2' },
     { value: '3', label: 'Option 3' },
     { value: '4', label: 'Option 4' },
+    { value: '5', label: 'Option 5' },
   ]}
 />`
