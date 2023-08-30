@@ -47,7 +47,7 @@ var Select = function Select(_ref) {
     _ref$placeholder = _ref.placeholder,
     placeholder = _ref$placeholder === void 0 ? 'Select' : _ref$placeholder,
     _ref$tagVariant = _ref.tagVariant,
-    tagVariant = _ref$tagVariant === void 0 ? 'secondary' : _ref$tagVariant;
+    tagVariant = _ref$tagVariant === void 0 ? 'primary' : _ref$tagVariant;
   var wrapperRef = (0, _react.useRef)(null);
   var inputRef = (0, _react.useRef)(null);
   var optionsWithoutExcludedIndexes = options.filter(function (option, index) {
@@ -66,8 +66,13 @@ var Select = function Select(_ref) {
     isOpen = _useState6[0],
     setIsOpen = _useState6[1];
   (0, _react.useEffect)(function () {
-    var currentlyExpectedInputValue = getCurrentInputValue(options, selectedIndexes, labelProp);
-    setDisplayValue(currentlyExpectedInputValue);
+    if (selectedIndexes && selectedIndexes.length && selectedIndexes.length > 0) {
+      var currentlyExpectedInputValue = getCurrentInputValue(options, selectedIndexes, labelProp);
+      var isDifferent = JSON.stringify(currentlyExpectedInputValue) !== JSON.stringify(displayValue);
+      if (isDifferent) {
+        setDisplayValue(currentlyExpectedInputValue);
+      }
+    }
     function handleClickOutside(event) {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
         setIsOpen(false);
@@ -77,13 +82,14 @@ var Select = function Select(_ref) {
     return function () {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [wrapperRef, selectedIndexes, handleSelectionUpdate, labelProp, options, idProp, excludeIndexes, placeholder]);
+  }, [wrapperRef, selectedIndexes, handleSelectionUpdate, labelProp, options, idProp, excludeIndexes, placeholder, inputValue, displayValue]);
   var optionsThatMatchInputValue = optionsWithoutExcludedIndexes.filter(function (option) {
     var optionValue = labelProp ? option[labelProp] : option;
     return optionValue.toLowerCase().includes(inputValue.toLowerCase());
   });
   var inputValueToDisplay = isOpen ? inputValue : '';
   var isSelected = function isSelected(option) {
+    if (!selectedIndexes || selectedIndexes.length === 0) return false;
     var optionIndex = getOptionIndexFromAllOptions(options, option, idProp);
     return selectedIndexes.includes(optionIndex);
   };
@@ -162,7 +168,7 @@ var Select = function Select(_ref) {
       },
       className: (0, _clsx["default"])('p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center", "bg-window rounded", "hover:bg-grey-light-scale-200 dark:hover:bg-grey-dark-scale-300", isSelected(option) && "!bg-blue-scale-500")
     }, /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
-      className: (0, _clsx["default"])('text-primary', isSelected(option) && "!text-white dark:!text-black")
+      className: (0, _clsx["default"])('text-primary text-left', isSelected(option) && "!text-white dark:!text-black")
     }, labelProp ? option[labelProp] : option));
   })));
 };

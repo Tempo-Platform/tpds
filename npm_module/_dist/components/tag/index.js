@@ -24,7 +24,7 @@ var Tag = function Tag(_ref) {
     variant = _ref$variant === void 0 ? 'default' : _ref$variant,
     props = _objectWithoutProperties(_ref, _excluded);
   var finalRootClass = (0, _clsx["default"])(props.className ? props.className : '', 'border border-2 inline-flex rounded py-0.5 px-1.5 select-none justify-center align-center gap-1', addHoverEffect && 'cursor-pointer', addHoverEffect ? rootVariantStylesWithHover[variant] : rootVariantStyles[variant]);
-  var finalLabelClass = (0, _clsx["default"])('text-[11px] font-bold whitespace-nowrap !text-inherit', isUppercase && 'uppercase');
+  var finalLabelClass = (0, _clsx["default"])('text-[11px] font-bold whitespace-nowrap !text-inherit m-0', isUppercase && 'uppercase');
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: finalRootClass,
     onClick: onClick
