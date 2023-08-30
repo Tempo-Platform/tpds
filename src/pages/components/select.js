@@ -25,6 +25,7 @@ export default function Page() {
           <PSmall>- Clear text input on focus (to search freely)</PSmall>
           <PSmall>- Close drawer + clear typed content on click away</PSmall>
           <PSmall>- Automatically apply scroll if content exceeds max height</PSmall>
+          <PSmall>- Accepts indexes to exclude from list</PSmall>
           <br />
           <Select
             handleIndexSelection={setSelectedIndex}
@@ -32,6 +33,7 @@ export default function Page() {
             labelProp="label"
             idProp="value"
             excludeIndexes={[2]}
+            allowMultiple={true}
             options={[
               { value: '1', label: 'Option 1' },
               { value: '2', label: 'Option 2' },
@@ -72,6 +74,13 @@ export default function Page() {
               default: 'null',
               required: 'yes',
               description: 'The handler function used to select the clicked index',
+            },
+            {
+              propName: 'excludeIndexes',
+              type: 'Array',
+              default: '[]',
+              required: 'no',
+              description: 'An array of indexes that will be excluded from the displayed options',
             },
             {
               propName: 'labelProp',
