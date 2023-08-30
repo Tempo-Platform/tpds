@@ -17,7 +17,7 @@ const Tag = ({
     addHoverEffect ? rootVariantStylesWithHover[variant] : rootVariantStyles[variant],
   )
   const finalLabelClass = clsx(
-    'text-[11px] font-bold whitespace-nowrap !text-inherit',
+    'text-[11px] font-bold whitespace-nowrap !text-inherit m-0',
     isUppercase && 'uppercase',
   )
 
