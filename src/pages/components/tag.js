@@ -26,6 +26,18 @@ export default function Page() {
           <CodeBlock code={codeDefault} />
           <br />
           <br />
+          <Tag label="With X Icon" variant="default" showCloseIcon={true} />
+          <br />
+          <br />
+          <CodeBlock code={codeWithXIcon} />
+          <br />
+          <br />
+          <Tag label="With hover effect" variant="default" addHoverEffect={true} />
+          <br />
+          <br />
+          <CodeBlock code={codeWithHover} />
+          <br />
+          <br />
           <P>Uppercase</P>
           <br />
           <Tag isUppercase={true} label="UPPERCASE" variant="default" />
@@ -80,21 +92,28 @@ export default function Page() {
                 propName: 'variant',
                 type: 'String',
                 default: 'null',
-                required: 'false',
+                required: 'no',
                 description: "The variant type, eg. 'info', 'success', 'warning', etc.",
+              },
+              {
+                propName: 'showCloseIcon',
+                type: 'Boolean',
+                default: 'false',
+                required: 'no',
+                description: 'Show a small X icon next to the label',
               },
               {
                 propName: 'isUppercase',
                 type: 'Boolean',
                 default: 'null',
-                required: 'false',
+                required: 'no',
                 description: 'Force uppercase label display',
               },
               {
                 propName: 'addHoverEffect',
                 type: 'Boolean',
                 default: 'null',
-                required: 'false',
+                required: 'no',
                 description:
                   'Adds a hover effect to the Tag. Useful when the Tag is used as a button or link',
               },
@@ -113,6 +132,22 @@ const codeDefault = String.raw`import Tag from '@tempoplatform/tpds/components/t
 <Tag
   label='Default'
   variant='default'
+/>`
+
+const codeWithXIcon = String.raw`import Tag from '@tempoplatform/tpds/components/tag'
+
+<Tag
+  label='With X Icon'
+  variant='default'
+  showCloseIcon={true}
+/>`
+
+const codeWithHover = String.raw`import Tag from '@tempoplatform/tpds/components/tag'
+
+<Tag
+  label='With hover effect'
+  variant='default'
+  addHoverEffect={true}
 />`
 
 const codeUppercase = String.raw`import Tag from '@tempoplatform/tpds/components/tag'
