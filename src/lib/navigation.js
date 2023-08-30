@@ -187,7 +187,12 @@ export const navigationitems = [
       {
         name: 'Select',
         slug: 'components/select',
-        description: 'Process Steps component',
+        description: 'Simple select component',
+      },
+      {
+        name: 'MultiSelect',
+        slug: 'components/multi-select',
+        description: 'Multi-select component',
       },
       {
         name: 'Steps',
