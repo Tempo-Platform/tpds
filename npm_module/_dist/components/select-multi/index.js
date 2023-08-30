@@ -7,7 +7,6 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _clsx = _interopRequireDefault(require("clsx"));
-var _input = require("../../elements/input");
 var _typography = require("../../elements/typography");
 var _tag = _interopRequireDefault(require("../tag"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -46,8 +45,11 @@ var Select = function Select(_ref) {
     _ref$labelProp = _ref.labelProp,
     labelProp = _ref$labelProp === void 0 ? 'value' : _ref$labelProp,
     _ref$placeholder = _ref.placeholder,
-    placeholder = _ref$placeholder === void 0 ? 'Select' : _ref$placeholder;
+    placeholder = _ref$placeholder === void 0 ? 'Select' : _ref$placeholder,
+    _ref$tagVariant = _ref.tagVariant,
+    tagVariant = _ref$tagVariant === void 0 ? 'secondary' : _ref$tagVariant;
   var wrapperRef = (0, _react.useRef)(null);
+  var inputRef = (0, _react.useRef)(null);
   var optionsWithoutExcludedIndexes = options.filter(function (option, index) {
     return !excludeIndexes.includes(index);
   });
@@ -103,15 +105,29 @@ var Select = function Select(_ref) {
   });
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: "w-full relative",
-    ref: wrapperRef
-  }, /*#__PURE__*/_react["default"].createElement("div", {
+    ref: wrapperRef,
+    onClick: function onClick() {
+      return inputRef.current.focus();
+    }
+  }, /*#__PURE__*/_react["default"].createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    strokeWidth: 1.5,
+    stroke: "currentColor",
+    className: (0, _clsx["default"])('cursor-pointer', 'w-4 h-4 absolute right-2 transform top-[10px] text-primary', isOpen && 'rotate-180')
+  }, /*#__PURE__*/_react["default"].createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    d: "M19.5 8.25l-7.5 7.5-7.5-7.5"
+  })), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _clsx["default"])('flex flex-row flex-wrap gap-2 items-center justify-between', 'w-full', 'px-2.5 py-1 rounded focus:outline-none', 'font-normal', 'bg-grey-light-scale-200 text-primary border-transparent dark:bg-grey-dark-scale-400', 'border-2 focus:border-blue', 'cursor-pointer', 'select-none', 'transition duration-100', isOpen && 'border-blue')
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex gap-2 flex-wrap"
   }, displayValue && displayValue.map(function (item, index) {
     return /*#__PURE__*/_react["default"].createElement(_tag["default"], {
       className: "inline-flex",
-      variant: "warning",
+      variant: tagVariant,
       key: index,
       label: item[labelProp] || item,
       showCloseIcon: true,
@@ -121,7 +137,8 @@ var Select = function Select(_ref) {
       }
     });
   }), /*#__PURE__*/_react["default"].createElement("input", {
-    className: (0, _clsx["default"])('inline-flex', 'bg-transparent', 'font-normal', 'w-auto', 'p-0', '!outline-none', '!border-none'),
+    ref: inputRef,
+    className: (0, _clsx["default"])('inline-flex', 'bg-transparent', 'font-normal', 'w-auto', 'p-0', 'mr-auto', '!outline-none', '!border-none'),
     type: "text",
     placeholder: placeholder,
     value: inputValueToDisplay,
@@ -137,7 +154,9 @@ var Select = function Select(_ref) {
   }, optionsThatAreStillNotSelected.map(function (option, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       key: labelProp ? option[labelProp] : option,
-      onClick: function onClick() {
+      onClick: function onClick(e) {
+        e.stopPropagation();
+        e.preventDefault();
         addSelectedItem(option);
         setIsOpen(false);
       },

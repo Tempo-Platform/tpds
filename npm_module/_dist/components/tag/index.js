@@ -23,8 +23,8 @@ var Tag = function Tag(_ref) {
     _ref$variant = _ref.variant,
     variant = _ref$variant === void 0 ? 'default' : _ref$variant,
     props = _objectWithoutProperties(_ref, _excluded);
-  var finalRootClass = (0, _clsx["default"])(props.className ? props.className : '', 'border inline-flex rounded py-0.5 px-1.5 select-none justify-center align-center gap-1', addHoverEffect && 'cursor-pointer', addHoverEffect ? tagVariantsWithHover[variant] : tagRootVariantStyles[variant]);
-  var finalLabelClass = (0, _clsx["default"])('text-[11px] font-bold whitespace-nowrap text-inherit', isUppercase && 'uppercase');
+  var finalRootClass = (0, _clsx["default"])(props.className ? props.className : '', 'border border-2 inline-flex rounded py-0.5 px-1.5 select-none justify-center align-center gap-1', addHoverEffect && 'cursor-pointer', addHoverEffect ? rootVariantStylesWithHover[variant] : rootVariantStyles[variant]);
+  var finalLabelClass = (0, _clsx["default"])('text-[11px] font-bold whitespace-nowrap !text-inherit', isUppercase && 'uppercase');
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: finalRootClass,
     onClick: onClick
@@ -37,24 +37,28 @@ var Tag = function Tag(_ref) {
 var _default = Tag;
 exports["default"] = _default;
 var defaultStyle = ['border-grey-light-scale-600 text-grey-light-scale-600'];
+var primaryStyle = ['border-grey-light-scale-600 text-grey-light-scale-600'];
 var infoStyle = ['border-blue text-blue'];
 var successStyle = ['border-green text-green'];
 var dangerStyle = ['border-red text-red'];
 var warningStyle = ['border-orange text-orange'];
-var defaultStyleWithHover = ["border-grey-light-scale-600 hover:bg-grey-light-scale-600 text-grey-light-scale-600 hover:text-white hover:dark:text-black text-grey-light-scale-600"];
-var infoStyleWithHover = ["border-blue hover:bg-blue text-blue hover:text-white hover:dark:text-black"];
-var successStyleWithHover = ["border-green hover:bg-green text-green hover:text-white hover:dark:text-black"];
-var dangerStyleWithHover = ["border-red hover:bg text-red hover:text-white hover:dark:text-black"];
-var warningStyleWithHover = ["border-orange hover:bg-orange text-orange hover:text-white hover:dark:text-black"];
-var tagRootVariantStyles = {
+var primaryStyleWithHover = ["text-primary", "hover:text-white hover:dark:text-black", "border-grey-dark-scale-600 dark:border-grey-light-scale-300", "hover:bg-grey-dark-scale-600 dark:hover:bg-grey-light-scale-300"];
+var defaultStyleWithHover = ["text-grey-light-scale-600", "hover:text-white hover:dark:text-black", "border-grey-light-scale-600 hover:bg-grey-light-scale-600"];
+var infoStyleWithHover = ["text-blue", "hover:text-white hover:dark:text-black", "border-blue hover:bg-blue"];
+var successStyleWithHover = ["text-green", "hover:text-white hover:dark:text-black", "border-green hover:bg-green"];
+var dangerStyleWithHover = ["text-red", "hover:text-white hover:dark:text-black", "border-red hover:bg"];
+var warningStyleWithHover = ["text-orange", "hover:text-white hover:dark:text-black", "border-orange hover:bg-orange"];
+var rootVariantStyles = {
   "default": defaultStyle,
+  primary: primaryStyle,
   info: infoStyle,
   success: successStyle,
   danger: dangerStyle,
   warning: warningStyle
 };
-var tagVariantsWithHover = {
+var rootVariantStylesWithHover = {
   "default": defaultStyleWithHover,
+  primary: primaryStyleWithHover,
   info: infoStyleWithHover,
   success: successStyleWithHover,
   danger: dangerStyleWithHover,

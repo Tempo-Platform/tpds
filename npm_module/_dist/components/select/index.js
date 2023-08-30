@@ -37,6 +37,8 @@ var Select = function Select(_ref) {
     idProp = _ref.idProp,
     _ref$excludeIndexes = _ref.excludeIndexes,
     excludeIndexes = _ref$excludeIndexes === void 0 ? [] : _ref$excludeIndexes,
+    _ref$noPermanentSelec = _ref.noPermanentSelection,
+    noPermanentSelection = _ref$noPermanentSelec === void 0 ? false : _ref$noPermanentSelec,
     _ref$labelProp = _ref.labelProp,
     labelProp = _ref$labelProp === void 0 ? 'value' : _ref$labelProp,
     _ref$placeholder = _ref.placeholder,
@@ -65,18 +67,19 @@ var Select = function Select(_ref) {
     return function () {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [wrapperRef, selectedIndex, handleIndexSelection, labelProp, options, idProp, excludeIndexes, placeholder]);
+  }, [wrapperRef, selectedIndex, handleIndexSelection, labelProp, options, idProp, excludeIndexes, noPermanentSelection, placeholder]);
   var optionsThatMatchInputValue = optionsWithoutExcludedIndexes.filter(function (option) {
     var optionValue = labelProp ? option[labelProp] : option;
     return optionValue.toLowerCase().includes(inputValue.toLowerCase());
   });
-  var inputValueToDisplay = isOpen ? inputValue : getCurrentInputValue(options, selectedIndex, labelProp);
+  var inputValueToDisplay = isOpen ? inputValue : noPermanentSelection ? '' : getCurrentInputValue(options, selectedIndex, labelProp);
   var isSelected = function isSelected(option) {
+    if (!idProp && !labelProp) return false;
     var optionIndex = getOptionIndexFromAllOptions(options, option, idProp);
     return optionIndex === selectedIndex;
   };
   return /*#__PURE__*/_react["default"].createElement("div", {
-    className: "w-full relative",
+    className: " flex w-full relative text-left text-start",
     ref: wrapperRef
   }, /*#__PURE__*/_react["default"].createElement(_input.TextInput, {
     placeholder: placeholder,
@@ -88,8 +91,19 @@ var Select = function Select(_ref) {
       setInputValue('');
       setIsOpen(true);
     }
-  }), isOpen && /*#__PURE__*/_react["default"].createElement("div", {
-    className: "w-full flex flex-col space-y-1 items-start text-start p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto"
+  }), /*#__PURE__*/_react["default"].createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    strokeWidth: 1.5,
+    stroke: "currentColor",
+    className: (0, _clsx["default"])('w-4 h-4 absolute right-2 transform top-[10px] text-primary', isOpen && 'rotate-180')
+  }, /*#__PURE__*/_react["default"].createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    d: "M19.5 8.25l-7.5 7.5-7.5-7.5"
+  })), isOpen && /*#__PURE__*/_react["default"].createElement("div", {
+    className: "w-full flex flex-col space-y-1 items-start text-left text-start p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto"
   }, optionsThatMatchInputValue.map(function (option, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       key: labelProp ? option[labelProp] : option,
@@ -99,7 +113,7 @@ var Select = function Select(_ref) {
       },
       className: (0, _clsx["default"])('p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center", "bg-window rounded", "hover:bg-grey-light-scale-200 dark:hover:bg-grey-dark-scale-300", isSelected(option) && "!bg-blue-scale-500")
     }, /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
-      className: (0, _clsx["default"])('text-primary', isSelected(option) && "!text-white dark:!text-black")
+      className: (0, _clsx["default"])('text-primary text-left', isSelected(option) && "!text-white dark:!text-black")
     }, labelProp ? option[labelProp] : option));
   })));
 };
