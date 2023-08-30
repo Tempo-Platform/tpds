@@ -67,6 +67,7 @@ const Select = ({
 
   const inputValueToDisplay = isOpen ? inputValue : ''
   const isSelected = option => {
+    if (!selectedIndexes || selectedIndexes.length === 0) return false
     const optionIndex = getOptionIndexFromAllOptions(options, option, idProp)
     return selectedIndexes.includes(optionIndex)
   }
