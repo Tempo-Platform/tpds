@@ -23,6 +23,8 @@
     "./components/switch": "./_dist/components/switch/index.js",
     "./components/table": "./_dist/components/table/index.js",
     "./components/tag": "./_dist/components/tag/index.js",
+    "./components/select": "./_dist/components/select/index.js",
+    "./components/select-multi": "./_dist/components/select-multi/index.js",
     "./components/thumbnails-row": "./_dist/components/thumbnails-row/index.js",
     "./components/input/number": "./_dist/components/input/number/index.js",
     "./components/input/price": "./_dist/components/input/price/index.js",
