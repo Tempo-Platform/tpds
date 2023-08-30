@@ -10,6 +10,7 @@ const getCurrentInputValue = (options, selectedIndexes, labelProp) => {
 
 const getOptionIndexFromAllOptions = (options, option, idProp) => {
   const id = idProp ? option[idProp] : option
+
   return options.findIndex(o => {
     const idToCompare = idProp ? o[idProp] : o
     return idToCompare === id
@@ -24,7 +25,7 @@ const Select = ({
   excludeIndexes = [],
   labelProp = 'value',
   placeholder = 'Select',
-  tagVariant = 'secondary',
+  tagVariant = 'primary',
 }) => {
   const wrapperRef = useRef(null)
   const inputRef = useRef(null)
@@ -38,8 +39,14 @@ const Select = ({
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
-    const currentlyExpectedInputValue = getCurrentInputValue(options, selectedIndexes, labelProp)
-    setDisplayValue(currentlyExpectedInputValue)
+    if (selectedIndexes && selectedIndexes.length && selectedIndexes.length > 0) {
+      const currentlyExpectedInputValue = getCurrentInputValue(options, selectedIndexes, labelProp)
+      const isDifferent =
+        JSON.stringify(currentlyExpectedInputValue) !== JSON.stringify(displayValue)
+      if (isDifferent) {
+        setDisplayValue(currentlyExpectedInputValue)
+      }
+    }
     function handleClickOutside(event) {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
         setIsOpen(false)
@@ -58,6 +65,8 @@ const Select = ({
     idProp,
     excludeIndexes,
     placeholder,
+    inputValue,
+    displayValue,
   ])
 
   const optionsThatMatchInputValue = optionsWithoutExcludedIndexes.filter(option => {
@@ -78,7 +87,9 @@ const Select = ({
   }
   const addSelectedItem = item => {
     const itemIndex = getOptionIndexFromAllOptions(options, item, idProp)
+
     const updatedSelectionArray = [...selectedIndexes]
+
     updatedSelectionArray.push(itemIndex)
     handleSelectionUpdate(updatedSelectionArray)
   }
@@ -179,7 +190,7 @@ const Select = ({
             >
               <PTiny
                 className={clsx(
-                  'text-primary',
+                  'text-primary text-left',
                   isSelected(option) && `!text-white dark:!text-black`,
                 )}
               >
