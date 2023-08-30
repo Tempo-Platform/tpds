@@ -76,8 +76,8 @@ function PropsTable(_ref) {
     return /*#__PURE__*/_react["default"].createElement("span", {
       className: "grid grid-cols-12 gap-4 mb-4",
       key: index
-    }, /*#__PURE__*/_react["default"].createElement(_typography.P, {
-      className: "col-span-2",
+    }, /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
+      className: "col-span-2 break-words",
       isBold: true
     }, item[param1Name]), !skipColumn2 && /*#__PURE__*/_react["default"].createElement(_typography.P, {
       className: "whitespace-nowrap text-ellipsis overflow-hidden col-span-2"
