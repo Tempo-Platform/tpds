@@ -134,6 +134,7 @@ const Select = ({
                 key={index}
                 label={item[labelProp] || item}
                 showCloseIcon={true}
+                noBorder={true}
                 addHoverEffect={true}
                 onClick={() => {
                   removeSelectedItem(item)
