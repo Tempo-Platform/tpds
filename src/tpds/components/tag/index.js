@@ -7,14 +7,18 @@ const Tag = ({
   isUppercase = false,
   addHoverEffect = false,
   showCloseIcon = false,
+  noBorder = false,
   variant = 'default',
   ...props
 }) => {
   const finalRootClass = clsx(
     props.className ? props.className : '',
-    'border border-2 inline-flex rounded py-0.5 px-1.5 select-none justify-center align-center gap-1',
+    'border border-2 h-[24px] inline-flex rounded py-0.5 px-1.5 select-none justify-center items-center align-center gap-1',
+    'inline-flex rounded py-0.5 px-1.5 select-none justify-center align-center gap-1',
+    rootVariantStyles[variant],
     addHoverEffect && 'cursor-pointer',
-    addHoverEffect ? rootVariantStylesWithHover[variant] : rootVariantStyles[variant],
+    addHoverEffect && rootVariantStylesWithHover[variant],
+    noBorder && '!border-none',
   )
   const finalLabelClass = clsx(
     'text-[11px] font-bold whitespace-nowrap !text-inherit m-0',
@@ -33,48 +37,23 @@ const Tag = ({
 
 export default Tag
 
-const defaultStyle = ['border-grey-light-scale-600 text-grey-light-scale-600']
-const primaryStyle = ['border-grey-light-scale-600 text-grey-light-scale-600']
+const defaultStyle = ['bg-window text-primary']
 const infoStyle = ['border-blue text-blue']
 const successStyle = ['border-green text-green']
 const dangerStyle = ['border-red text-red']
 const warningStyle = ['border-orange text-orange']
 
-const primaryStyleWithHover = [
-  `text-primary`,
-  `hover:text-white hover:dark:text-black`,
-  `border-grey-dark-scale-600 dark:border-grey-light-scale-300`,
-  `hover:bg-grey-dark-scale-600 dark:hover:bg-grey-light-scale-300`,
-]
 const defaultStyleWithHover = [
-  `text-grey-light-scale-600`,
   `hover:text-white hover:dark:text-black`,
-  `border-grey-light-scale-600 hover:bg-grey-light-scale-600`,
+  `hover:bg-grey-dark-scale-900 dark:hover:bg-grey-light-scale-100`,
 ]
-const infoStyleWithHover = [
-  `text-blue`,
-  `hover:text-white hover:dark:text-black`,
-  `border-blue hover:bg-blue`,
-]
-const successStyleWithHover = [
-  `text-green`,
-  `hover:text-white hover:dark:text-black`,
-  `border-green hover:bg-green`,
-]
-const dangerStyleWithHover = [
-  `text-red`,
-  `hover:text-white hover:dark:text-black`,
-  `border-red hover:bg`,
-]
-const warningStyleWithHover = [
-  `text-orange`,
-  `hover:text-white hover:dark:text-black`,
-  `border-orange hover:bg-orange`,
-]
+const infoStyleWithHover = [`hover:text-white hover:dark:text-black`, `hover:bg-blue`]
+const successStyleWithHover = [`hover:text-white hover:dark:text-black`, `hover:bg-green`]
+const dangerStyleWithHover = [`hover:text-white hover:dark:text-black`, `hover:bg-red`]
+const warningStyleWithHover = [`hover:text-white hover:dark:text-black`, `hover:bg-orange`]
 
 const rootVariantStyles = {
   default: defaultStyle,
-  primary: primaryStyle,
   info: infoStyle,
   success: successStyle,
   danger: dangerStyle,
@@ -83,7 +62,6 @@ const rootVariantStyles = {
 
 const rootVariantStylesWithHover = {
   default: defaultStyleWithHover,
-  primary: primaryStyleWithHover,
   info: infoStyleWithHover,
   success: successStyleWithHover,
   danger: dangerStyleWithHover,
