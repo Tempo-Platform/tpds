@@ -8,7 +8,6 @@ exports["default"] = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _clsx = _interopRequireDefault(require("clsx"));
 var _typography = require("../../elements/typography");
-var _tag = _interopRequireDefault(require("../tag"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -47,7 +46,7 @@ var Select = function Select(_ref) {
     _ref$placeholder = _ref.placeholder,
     placeholder = _ref$placeholder === void 0 ? 'Select' : _ref$placeholder,
     _ref$tagVariant = _ref.tagVariant,
-    tagVariant = _ref$tagVariant === void 0 ? 'primary' : _ref$tagVariant;
+    tagVariant = _ref$tagVariant === void 0 ? 'default' : _ref$tagVariant;
   var wrapperRef = (0, _react.useRef)(null);
   var inputRef = (0, _react.useRef)(null);
   var optionsWithoutExcludedIndexes = options.filter(function (option, index) {
@@ -66,12 +65,10 @@ var Select = function Select(_ref) {
     isOpen = _useState6[0],
     setIsOpen = _useState6[1];
   (0, _react.useEffect)(function () {
-    if (selectedIndexes && selectedIndexes.length && selectedIndexes.length > 0) {
-      var currentlyExpectedInputValue = getCurrentInputValue(options, selectedIndexes, labelProp);
-      var isDifferent = JSON.stringify(currentlyExpectedInputValue) !== JSON.stringify(displayValue);
-      if (isDifferent) {
-        setDisplayValue(currentlyExpectedInputValue);
-      }
+    var currentlyExpectedInputValue = getCurrentInputValue(options, selectedIndexes, labelProp);
+    var isDifferent = JSON.stringify(currentlyExpectedInputValue) !== JSON.stringify(displayValue);
+    if (isDifferent) {
+      setDisplayValue(currentlyExpectedInputValue);
     }
     function handleClickOutside(event) {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
@@ -109,6 +106,8 @@ var Select = function Select(_ref) {
   var optionsThatAreStillNotSelected = optionsThatMatchInputValue.filter(function (option) {
     return !isSelected(option);
   });
+  var tagRootClass = (0, _clsx["default"])('text-grey-dark-scale-200 dark:text-grey-light-scale-400', 'inline-flex shadow bg-white dark:bg-grey-dark-scale-200 rounded py-0.5 px-1.5', 'h-[24px] inline-flex rounded py-0.5 px-1.5 select-none justify-center items-center align-center gap-1', 'inline-flex rounded py-0.5 px-1.5 select-none justify-center align-center gap-1', 'select-none justify-center items-center align-center gap-1', "hover:text-grey-dark-scale-900 dark:hover:text-white", "hover:bg-grey-light-scale-50 dark:hover:bg-grey-dark-scale-300");
+  var tagClass = (0, _clsx["default"])('text-[11px] font-bold whitespace-nowrap !text-inherit m-0');
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: "w-full relative",
     ref: wrapperRef,
@@ -131,17 +130,20 @@ var Select = function Select(_ref) {
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex gap-2 flex-wrap"
   }, displayValue && displayValue.map(function (item, index) {
-    return /*#__PURE__*/_react["default"].createElement(_tag["default"], {
-      className: "inline-flex",
-      variant: tagVariant,
+    return /*#__PURE__*/_react["default"].createElement("div", {
       key: index,
-      label: item[labelProp] || item,
-      showCloseIcon: true,
-      addHoverEffect: true,
+      className: tagRootClass,
       onClick: function onClick() {
         removeSelectedItem(item);
       }
-    });
+    }, /*#__PURE__*/_react["default"].createElement("p", {
+      className: tagClass,
+      style: {
+        lineHeight: 'normal'
+      }
+    }, item[labelProp] || item), /*#__PURE__*/_react["default"].createElement(XIcon, {
+      className: tagClass
+    }));
   }), /*#__PURE__*/_react["default"].createElement("input", {
     ref: inputRef,
     className: (0, _clsx["default"])('inline-flex', 'bg-transparent', 'font-normal', 'w-auto', 'p-0', 'mr-auto', '!outline-none', '!border-none'),
@@ -174,3 +176,16 @@ var Select = function Select(_ref) {
 };
 var _default = Select;
 exports["default"] = _default;
+function XIcon(_ref2) {
+  var className = _ref2.className;
+  return /*#__PURE__*/_react["default"].createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    fill: "currentColor",
+    className: (0, _clsx["default"])('w-[14px] h-[14px]', className),
+    viewBox: "0 0 20 20"
+  }, /*#__PURE__*/_react["default"].createElement("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    d: "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+  }));
+}
