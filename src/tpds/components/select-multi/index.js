@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import clsx from 'clsx'
 import { PTiny } from '../../elements/typography'
-import Tag from '../tag'
 
 const getCurrentInputValue = (options, selectedIndexes, labelProp) => {
   if (!selectedIndexes || selectedIndexes.length === 0) return []
@@ -95,6 +94,17 @@ const Select = ({
     option => !isSelected(option),
   )
 
+  const tagRootClass = clsx(
+    'text-grey-dark-scale-200 dark:text-grey-light-scale-400',
+    'inline-flex shadow bg-white dark:bg-grey-dark-scale-200 rounded py-0.5 px-1.5',
+    'h-[24px] inline-flex rounded py-0.5 px-1.5 select-none justify-center items-center align-center gap-1',
+    'inline-flex rounded py-0.5 px-1.5 select-none justify-center align-center gap-1',
+    'select-none justify-center items-center align-center gap-1',
+    `hover:text-grey-dark-scale-900 dark:hover:text-white`,
+    `hover:bg-grey-light-scale-50 dark:hover:bg-grey-dark-scale-300`,
+  )
+  const tagClass = clsx('text-[11px] font-bold whitespace-nowrap !text-inherit m-0')
+
   return (
     <div className="w-full relative" ref={wrapperRef} onClick={() => inputRef.current.focus()}>
       <svg
@@ -128,18 +138,18 @@ const Select = ({
         <div className="flex gap-2 flex-wrap">
           {displayValue &&
             displayValue.map((item, index) => (
-              <Tag
-                className="inline-flex"
-                variant={tagVariant}
+              <div
                 key={index}
-                label={item[labelProp] || item}
-                showCloseIcon={true}
-                noBorder={true}
-                addHoverEffect={true}
+                className={tagRootClass}
                 onClick={() => {
                   removeSelectedItem(item)
                 }}
-              />
+              >
+                <p className={tagClass} style={{ lineHeight: 'normal' }}>
+                  {item[labelProp] || item}
+                </p>
+                <XIcon className={tagClass} />
+              </div>
             ))}
           <input
             ref={inputRef}
@@ -202,3 +212,20 @@ const Select = ({
   )
 }
 export default Select
+
+function XIcon({ className }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      className={clsx('w-[14px] h-[14px]', className)}
+      viewBox="0 0 20 20"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+      ></path>
+    </svg>
+  )
+}
