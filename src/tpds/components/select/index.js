@@ -76,11 +76,12 @@ const Select = ({
   }
 
   return (
-    <div className=" flex w-full relative text-left text-start" ref={wrapperRef}>
+    <div className=" flex w-full relative text-left" ref={wrapperRef}>
       <TextInput
         placeholder={placeholder}
         value={inputValueToDisplay}
         onChange={e => setInputValue(e.target.value)}
+        className={clsx(!isOpen && 'cursor-pointer')}
         onFocus={() => {
           setInputValue('')
           setIsOpen(true)
@@ -93,7 +94,7 @@ const Select = ({
         strokeWidth={1.5}
         stroke="currentColor"
         className={clsx(
-          'w-4 h-4 absolute right-2 transform top-[10px] text-primary',
+          'w-4 h-4 absolute right-2 transform top-[9px] text-primary pointer-events-none',
           isOpen && 'rotate-180',
         )}
       >
@@ -101,7 +102,7 @@ const Select = ({
       </svg>
 
       {isOpen && (
-        <div className="w-full flex flex-col space-y-1 items-start text-left text-start p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto">
+        <div className="w-full flex flex-col space-y-1 items-start text-left p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto">
           {optionsThatMatchInputValue.map((option, index) => (
             <div
               key={labelProp ? option[labelProp] : option}

@@ -106,7 +106,11 @@ const Select = ({
   const tagClass = clsx('text-[11px] font-bold whitespace-nowrap !text-inherit m-0')
 
   return (
-    <div className="w-full relative" ref={wrapperRef} onClick={() => inputRef.current.focus()}>
+    <div
+      className={clsx('w-full relative', !isOpen && 'cursor-pointer')}
+      ref={wrapperRef}
+      onClick={() => inputRef.current.focus()}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -114,8 +118,8 @@ const Select = ({
         strokeWidth={1.5}
         stroke="currentColor"
         className={clsx(
-          'cursor-pointer',
-          'w-4 h-4 absolute right-2 transform top-[10px] text-primary',
+          'pointer-events-none',
+          'w-4 h-4 absolute right-2 transform top-[9px] text-primary',
           isOpen && 'rotate-180',
         )}
       >
@@ -162,6 +166,7 @@ const Select = ({
               'mr-auto',
               '!outline-none',
               '!border-none',
+              !isOpen && 'cursor-pointer',
             )}
             type="text"
             placeholder={placeholder}
