@@ -79,7 +79,7 @@ var Select = function Select(_ref) {
     return optionIndex === selectedIndex;
   };
   return /*#__PURE__*/_react["default"].createElement("div", {
-    className: " flex w-full relative text-left text-start",
+    className: " flex w-full relative text-left",
     ref: wrapperRef
   }, /*#__PURE__*/_react["default"].createElement(_input.TextInput, {
     placeholder: placeholder,
@@ -87,6 +87,7 @@ var Select = function Select(_ref) {
     onChange: function onChange(e) {
       return setInputValue(e.target.value);
     },
+    className: (0, _clsx["default"])(!isOpen && 'cursor-pointer'),
     onFocus: function onFocus() {
       setInputValue('');
       setIsOpen(true);
@@ -97,13 +98,13 @@ var Select = function Select(_ref) {
     viewBox: "0 0 24 24",
     strokeWidth: 1.5,
     stroke: "currentColor",
-    className: (0, _clsx["default"])('w-4 h-4 absolute right-2 transform top-[10px] text-primary', isOpen && 'rotate-180')
+    className: (0, _clsx["default"])('w-4 h-4 absolute right-2 transform top-[9px] text-primary pointer-events-none', isOpen && 'rotate-180')
   }, /*#__PURE__*/_react["default"].createElement("path", {
     strokeLinecap: "round",
     strokeLinejoin: "round",
     d: "M19.5 8.25l-7.5 7.5-7.5-7.5"
   })), isOpen && /*#__PURE__*/_react["default"].createElement("div", {
-    className: "w-full flex flex-col space-y-1 items-start text-left text-start p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto"
+    className: "w-full flex flex-col space-y-1 items-start text-left p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto"
   }, optionsThatMatchInputValue.map(function (option, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       key: labelProp ? option[labelProp] : option,

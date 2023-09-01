@@ -109,7 +109,7 @@ var Select = function Select(_ref) {
   var tagRootClass = (0, _clsx["default"])('text-grey-dark-scale-200 dark:text-grey-light-scale-400', 'inline-flex shadow bg-white dark:bg-grey-dark-scale-200 rounded py-0.5 px-1.5', 'h-[24px] inline-flex rounded py-0.5 px-1.5 select-none justify-center items-center align-center gap-1', 'inline-flex rounded py-0.5 px-1.5 select-none justify-center align-center gap-1', 'select-none justify-center items-center align-center gap-1', "hover:text-grey-dark-scale-900 dark:hover:text-white", "hover:bg-grey-light-scale-50 dark:hover:bg-grey-dark-scale-300");
   var tagClass = (0, _clsx["default"])('text-[11px] font-bold whitespace-nowrap !text-inherit m-0');
   return /*#__PURE__*/_react["default"].createElement("div", {
-    className: "w-full relative",
+    className: (0, _clsx["default"])('w-full relative', !isOpen && 'cursor-pointer'),
     ref: wrapperRef,
     onClick: function onClick() {
       return inputRef.current.focus();
@@ -120,7 +120,7 @@ var Select = function Select(_ref) {
     viewBox: "0 0 24 24",
     strokeWidth: 1.5,
     stroke: "currentColor",
-    className: (0, _clsx["default"])('cursor-pointer', 'w-4 h-4 absolute right-2 transform top-[10px] text-primary', isOpen && 'rotate-180')
+    className: (0, _clsx["default"])('pointer-events-none', 'w-4 h-4 absolute right-2 transform top-[9px] text-primary', isOpen && 'rotate-180')
   }, /*#__PURE__*/_react["default"].createElement("path", {
     strokeLinecap: "round",
     strokeLinejoin: "round",
@@ -146,7 +146,7 @@ var Select = function Select(_ref) {
     }));
   }), /*#__PURE__*/_react["default"].createElement("input", {
     ref: inputRef,
-    className: (0, _clsx["default"])('inline-flex', 'bg-transparent', 'font-normal', 'w-auto', 'p-0', 'mr-auto', '!outline-none', '!border-none'),
+    className: (0, _clsx["default"])('inline-flex', 'bg-transparent', 'font-normal', 'w-auto', 'p-0', 'mr-auto', '!outline-none', '!border-none', !isOpen && 'cursor-pointer'),
     type: "text",
     placeholder: placeholder,
     value: inputValueToDisplay,
