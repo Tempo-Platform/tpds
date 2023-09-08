@@ -215,6 +215,11 @@ export const navigationitems = [
       //   description: 'Generic tabs component',
       // },
       {
+        name: 'Table',
+        slug: 'components/table',
+        description: 'Standard Table component',
+      },
+      {
         name: 'PropsTable',
         slug: 'components/props-table',
         description: 'Table of component props',

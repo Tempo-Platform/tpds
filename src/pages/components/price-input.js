@@ -4,7 +4,7 @@ import { P, H1 } from '../../tpds/elements/typography'
 import { Container, Window } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
 import PriceInput from '../../tpds/components/input/price'
-import PropsTable from '../../tpds/components/table'
+import PropsTable from '../../tpds/components/props-table'
 
 export default function Page() {
   const [price, setPrice] = React.useState(10)

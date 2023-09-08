@@ -1,93 +1,83 @@
+'use client'
+
 import React from 'react'
-import { H6, P, PTiny } from '../../elements/typography'
+import { PTiny } from '../../elements/typography'
+import clsx from 'clsx'
 
-const lastPVariants = {
-  default: 'col-span-4',
-  skip1Columns: 'col-span-6',
-  skip2Columns: 'col-span-8',
-  skip3Columns: 'col-span-10',
+const getColumnAlign = alignType => {
+  switch (alignType) {
+    case 'center':
+      return 'center'
+    case 'right':
+      return 'end'
+    default:
+      return 'start'
+  }
 }
 
-const getLastPVariant = (skipColumn2, skipColumn3, skipColumn4) => {
-  let skipColumnsNum = 0
-  if (skipColumn2) skipColumnsNum++
-  if (skipColumn3) skipColumnsNum++
-  if (skipColumn4) skipColumnsNum++
-  if (skipColumnsNum === 0) return 'default'
-
-  return `skip${skipColumnsNum}Columns`
+const columnVariants = {
+  1: 'grid-cols-1',
+  2: 'grid-cols-2',
+  3: 'grid-cols-3',
+  4: 'grid-cols-4',
+  5: 'grid-cols-5',
+  6: 'grid-cols-6',
+  7: 'grid-cols-7',
+  8: 'grid-cols-8',
+  9: 'grid-cols-9',
+  10: 'grid-cols-10',
 }
-function PropsTable({
-  title = 'Props',
-  items = null,
-  omitTitle = false,
-  col1Name = 'Prop Name',
-  col2Name = 'Type',
-  col3Name = 'Default',
-  col4Name = 'Required',
-  col5Name = 'Description',
-  param1Name = 'propName',
-  param2Name = 'type',
-  param3Name = 'default',
-  param4Name = 'required',
-  param5Name = 'description',
-  skipColumn2 = false,
-  skipColumn3 = false,
-  skipColumn4 = false,
-}) {
-  const lastPClass = lastPVariants[getLastPVariant(skipColumn2, skipColumn3, skipColumn4)]
+
+const renderItem = (item, column, itemIndex, columnIndex, rowKey) => {
+  return (
+    <div
+      key={rowKey ? `${item[rowKey]}-${columnIndex}` : `${itemIndex}-${columnIndex}`}
+      className={clsx(`flex items-center`)}
+      style={{ justifyContent: getColumnAlign(column.align) }}
+    >
+      {column.render ? (
+        column.render(item, rowKey ? item[rowKey] : itemIndex)
+      ) : (
+        <PTiny className="whitespace-nowrap text-ellipsis overflow-hidden">
+          {item[column.key]}
+        </PTiny>
+      )}
+    </div>
+  )
+}
+
+function Table({ columns, data, pagination = true, rowsPerPage = 30, rowKey = null, page = 1 }) {
+  const headerClass = clsx('grid gap-2', columnVariants[columns.length], 'mb-1', 'px-4 py-1.5')
+  const rowClass = clsx(
+    'grid gap-4 mb-2',
+    columnVariants[columns.length],
+    'border border-window bg-window',
+    'px-4 py-2',
+  )
+
   return (
     <div>
-      {!omitTitle && <H6>{title || 'Props'}</H6>}
-      {!omitTitle && <br />}
-      <span className="grid grid-cols-12 gap-4 pb-2 mb-8 border-b border-grey-light-scale-500 dark:border-grey-light-scale-900">
-        <P isBold className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
-          {col1Name}
-        </P>
-        {!skipColumn2 && (
-          <P isBold className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
-            {col2Name}
-          </P>
-        )}
-        {!skipColumn3 && (
-          <P isBold className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
-            {col3Name}
-          </P>
-        )}
-        {!skipColumn4 && (
-          <P isBold className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
-            {col4Name}
-          </P>
-        )}
-        <P isBold className={lastPClass}>
-          {col5Name}
-        </P>
-      </span>
-      {items.map((item, index) => (
-        <span className="grid grid-cols-12 gap-4 mb-4" key={index}>
-          <PTiny className="col-span-2 break-words" isBold>
-            {item[param1Name]}
+      <div className={headerClass}>
+        {columns.map(column => (
+          <PTiny
+            isBold
+            key={column.key}
+            className="whitespace-nowrap text-ellipsis overflow-hidden"
+            style={{ textAlign: getColumnAlign(column.align) }}
+          >
+            {column.label}
           </PTiny>
-          {!skipColumn2 && (
-            <P className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
-              {item[param2Name]}
-            </P>
-          )}
-          {!skipColumn3 && (
-            <P className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
-              {item[param3Name]}
-            </P>
-          )}
-          {!skipColumn4 && (
-            <P className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
-              {item[param4Name]}
-            </P>
-          )}
-          <P className={lastPClass}>{item[param5Name]}</P>
-        </span>
+        ))}
+      </div>
+      {data.map((item, itemIndex) => (
+        <div key={rowKey === null ? itemIndex : item[rowKey]} className={clsx(rowClass)}>
+          {columns.map((column, columnIndex) => {
+            return renderItem(item, column, itemIndex, columnIndex, rowKey)
+          })}
+        </div>
       ))}
     </div>
   )
 }
 
-export default PropsTable
+export default Table

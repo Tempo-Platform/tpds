@@ -47,7 +47,7 @@ const h1Class = 'text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight lea
 export const PNano = props => {
   const finalClass = calculateFinalClass(pNanoClass, props)
   return (
-    <p className={finalClass} style={props.style}>
+    <p className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -56,7 +56,7 @@ export const PNano = props => {
 export const PTiny = props => {
   const finalClass = calculateFinalClass(pTinyClass, props)
   return (
-    <p className={finalClass} style={props.style}>
+    <p className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -65,7 +65,7 @@ export const PTiny = props => {
 export const PSmall = props => {
   const finalClass = calculateFinalClass(pSmallClass, props)
   return (
-    <p className={finalClass} style={props.style}>
+    <p className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -74,7 +74,7 @@ export const PSmall = props => {
 export const P = props => {
   const finalClass = calculateFinalClass(pClass, props)
   return (
-    <p className={finalClass} style={props.style}>
+    <p className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -83,7 +83,7 @@ export const P = props => {
 export const PLarge = props => {
   const finalClass = calculateFinalClass(pLargeClass, props)
   return (
-    <p className={finalClass} style={props.style}>
+    <p className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -92,7 +92,7 @@ export const PLarge = props => {
 export const H6 = props => {
   const finalClass = calculateFinalClass(h6Class, props)
   return (
-    <h6 className={finalClass} style={props.style}>
+    <h6 className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </h6>
   )
@@ -101,7 +101,7 @@ export const H6 = props => {
 export const H5 = props => {
   const finalClass = calculateFinalClass(h5Class, props)
   return (
-    <h5 className={finalClass} style={props.style}>
+    <h5 className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </h5>
   )
@@ -110,7 +110,7 @@ export const H5 = props => {
 export const H4 = props => {
   const finalClass = calculateFinalClass(h4Class, props)
   return (
-    <h4 className={finalClass} style={props.style}>
+    <h4 className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </h4>
   )
@@ -119,7 +119,7 @@ export const H4 = props => {
 export const H3 = props => {
   const finalClass = calculateFinalClass(h3Class, props)
   return (
-    <h3 className={finalClass} style={props.style}>
+    <h3 className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </h3>
   )
@@ -128,7 +128,7 @@ export const H3 = props => {
 export const H2 = props => {
   const finalClass = calculateFinalClass(h2Class, props)
   return (
-    <h2 className={finalClass} style={props.style}>
+    <h2 className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </h2>
   )
@@ -137,7 +137,7 @@ export const H2 = props => {
 export const H1 = props => {
   const finalClass = calculateFinalClass(h1Class, props)
   return (
-    <h1 className={finalClass} style={props.style}>
+    <h1 className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </h1>
   )

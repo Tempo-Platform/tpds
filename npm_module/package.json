@@ -22,6 +22,7 @@
     "./components/steps": "./_dist/components/steps/index.js",
     "./components/switch": "./_dist/components/switch/index.js",
     "./components/table": "./_dist/components/table/index.js",
+    "./components/props-table": "./_dist/components/props-table/index.js",
     "./components/tag": "./_dist/components/tag/index.js",
     "./components/select": "./_dist/components/select/index.js",
     "./components/select-multi": "./_dist/components/select-multi/index.js",

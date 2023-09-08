@@ -3,7 +3,7 @@ import Hero from '../../tpds/components/hero'
 import { P, H1 } from '../../tpds/elements/typography'
 import { Container, PaddingBox, Window } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
-import PropsTable from '../../tpds/components/table'
+import PropsTable from '../../tpds/components/props-table'
 import Tag from '../../tpds/components/tag'
 
 export default function Page() {

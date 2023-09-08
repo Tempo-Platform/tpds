@@ -4,7 +4,7 @@ import { P, H1 } from '../../tpds/elements/typography'
 import { Container, PaddingBox } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
 import Callout from '../../tpds/components/callout'
-import PropsTable from '../../tpds/components/table'
+import PropsTable from '../../tpds/components/props-table'
 
 export default function Page() {
   return (

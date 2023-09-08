@@ -4,7 +4,7 @@ import { P, H1 } from '../../tpds/elements/typography'
 import { Container, Window } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
 import NumberInput from '../../tpds/components/input/number'
-import PropsTable from '../../tpds/components/table'
+import PropsTable from '../../tpds/components/props-table'
 
 export default function Page() {
   const [number, setNumber] = React.useState(10)

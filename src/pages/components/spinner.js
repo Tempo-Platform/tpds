@@ -4,7 +4,7 @@ import { P, H1 } from '../../tpds/elements/typography'
 import { Separator, Container, PaddingBox } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
 import Spinner from '../../tpds/components/spinner'
-import PropsTable from '../../tpds/components/table'
+import PropsTable from '../../tpds/components/props-table'
 
 export default function Page() {
   return (

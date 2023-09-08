@@ -4,7 +4,7 @@ import { P, H1, H6 } from '../../tpds/elements/typography'
 import { Container, PaddingBox, Window, Separator } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
 import Switch from '../../tpds/components/switch'
-import PropsTable from '../../tpds/components/table'
+import PropsTable from '../../tpds/components/props-table'
 
 export default function Page() {
   const [active, setActive] = React.useState(false)

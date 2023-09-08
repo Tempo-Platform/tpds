@@ -6,7 +6,7 @@ import { Container, PaddingBox } from '../../tpds/elements/layout'
 //import MenuDropdown from '../../../tpds/components/menudropdown'
 import CodeBlock from '../../tpds/components/code'
 import { Button as ButtonComponent } from '../../tpds/components/buttons'
-import PropsTable from '../../tpds/components/table'
+import PropsTable from '../../tpds/components/props-table'
 
 export default function Page() {
   return (
