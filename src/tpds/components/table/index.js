@@ -33,13 +33,15 @@ const renderItem = (item, column, itemIndex, columnIndex, rowKey) => {
   return (
     <div
       key={rowKey ? `${item[rowKey]}-${columnIndex}` : `${itemIndex}-${columnIndex}`}
-      className={clsx(`flex items-center`)}
-      style={{ justifyContent: getColumnAlign(column.align) }}
+      className="flex items-center"
+      style={{
+        justifyContent: getColumnAlign(column.align),
+      }}
     >
       {column.render ? (
         column.render(item, rowKey ? item[rowKey] : itemIndex)
       ) : (
-        <PTiny className="whitespace-nowrap text-ellipsis overflow-hidden">
+        <PTiny className={clsx('whitespace-nowrap text-ellipsis overflow-hidden', column.addClass)}>
           {item[column.key]}
         </PTiny>
       )}
@@ -47,13 +49,23 @@ const renderItem = (item, column, itemIndex, columnIndex, rowKey) => {
   )
 }
 
-function Table({ columns, data, pagination = true, rowsPerPage = 10, rowKey = null, page = 1 }) {
+function Table({
+  columns,
+  data,
+  pagination = true,
+  rowsPerPage = 10,
+  page = 1,
+  rowClick = null,
+  rowKey = null,
+}) {
   const [currentPage, setCurrentPage] = React.useState(page)
   const headerClass = clsx('grid gap-2', columnVariants[columns.length], 'mb-1', 'px-4 py-1.5')
   const rowClass = clsx(
-    'grid gap-4 mb-2',
+    'grid gap-4 mb-2 rounded-[3px]',
     columnVariants[columns.length],
     'border border-window bg-window',
+    rowClick &&
+      'cursor-pointer hover:border-grey-light-scale-500 dark:hover:border-grey-dark-scale-100',
     'px-4 py-2',
   )
 
@@ -66,6 +78,7 @@ function Table({ columns, data, pagination = true, rowsPerPage = 10, rowKey = nu
     const endIndex = startIndex + rowsPerPage
     data = data.slice(startIndex, endIndex)
   }
+  console.log('data', data)
 
   return (
     <div>
@@ -74,17 +87,23 @@ function Table({ columns, data, pagination = true, rowsPerPage = 10, rowKey = nu
           <PTiny
             isBold
             key={column.key}
-            className="whitespace-nowrap text-ellipsis overflow-hidden"
-            style={{ textAlign: getColumnAlign(column.align) }}
+            className={clsx('whitespace-nowrap text-ellipsis overflow-hidden')}
+            style={{
+              textAlign: getColumnAlign(column.align),
+            }}
           >
             {column.label}
           </PTiny>
         ))}
       </div>
       {data.map((item, itemIndex) => (
-        <div key={rowKey === null ? itemIndex : item[rowKey]} className={clsx(rowClass)}>
+        <div
+          key={rowKey === null ? itemIndex : item[rowKey]}
+          className={clsx(rowClass)}
+          onClick={rowClick ? () => rowClick(item, rowKey ? item[rowKey] : itemIndex) : null}
+        >
           {columns.map((column, columnIndex) => {
-            return renderItem(item, column, itemIndex, columnIndex, rowKey)
+            return renderItem(item, column, itemIndex, columnIndex, rowKey, rowClick)
           })}
         </div>
       ))}
