@@ -1,5 +1,5 @@
 import React from 'react'
-import { H6, P, PTiny } from '../../elements/typography'
+import { H6, P, PSmall } from '../../elements/typography'
 
 const lastPVariants = {
   default: 'col-span-4',
@@ -65,25 +65,25 @@ function PropsTable({
       </span>
       {items.map((item, index) => (
         <span className="grid grid-cols-12 gap-4 mb-4" key={index}>
-          <PTiny className="col-span-2 break-words" isBold>
+          <PSmall className="col-span-2 break-words" isBold>
             {item[param1Name]}
-          </PTiny>
+          </PSmall>
           {!skipColumn2 && (
-            <P className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
+            <PSmall className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
               {item[param2Name]}
-            </P>
+            </PSmall>
           )}
           {!skipColumn3 && (
-            <P className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
+            <PSmall className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
               {item[param3Name]}
-            </P>
+            </PSmall>
           )}
           {!skipColumn4 && (
-            <P className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
+            <PSmall className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
               {item[param4Name]}
-            </P>
+            </PSmall>
           )}
-          <P className={lastPClass}>{item[param5Name]}</P>
+          <PSmall className={lastPClass}>{item[param5Name]}</PSmall>
         </span>
       ))}
     </div>
