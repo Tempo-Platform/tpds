@@ -113,6 +113,118 @@ const data = [
     start_date: Date.now(),
     end_date: Date.now(),
   },
+  {
+    id: '884asd6f546',
+    name: 'Ejstralo',
+    state: 'UPCOMING',
+    start_date: Date.now(),
+    end_date: Date.now(),
+  },
+  {
+    id: '8846sdff546',
+    name: 'Ejstralo',
+    state: 'UPCOMING',
+    start_date: Date.now(),
+    end_date: Date.now(),
+  },
+  {
+    id: '8846f5fgh46',
+    name: 'Ejstralo',
+    state: 'UPCOMING',
+    start_date: Date.now(),
+    end_date: Date.now(),
+  },
+  {
+    id: '8846hjkf546',
+    name: 'Ejstralo',
+    state: 'UPCOMING',
+    start_date: Date.now(),
+    end_date: Date.now(),
+  },
+  {
+    id: '884eete6f546',
+    name: 'Ejstralo',
+    state: 'UPCOMING',
+    start_date: Date.now(),
+    end_date: Date.now(),
+  },
+  {
+    id: '884345345f546',
+    name: 'Ejstralo',
+    state: 'UPCOMING',
+    start_date: Date.now(),
+    end_date: Date.now(),
+  },
+  {
+    id: '8846uwuqewuf546',
+    name: 'Ejstralo',
+    state: 'UPCOMING',
+    start_date: Date.now(),
+    end_date: Date.now(),
+  },
+  {
+    id: '8846tqrqyqf546',
+    name: 'Ejstralo',
+    state: 'UPCOMING',
+    start_date: Date.now(),
+    end_date: Date.now(),
+  },
+  {
+    id: '8846fertueru546',
+    name: 'Ejstralo',
+    state: 'UPCOMING',
+    start_date: Date.now(),
+    end_date: Date.now(),
+  },
+  {
+    id: '88400006ferdyjgtueru546',
+    name: 'Ejstralo',
+    state: 'UPCOMING',
+    start_date: Date.now(),
+    end_date: Date.now(),
+  },
+  {
+    id: '8846fer88888dyjgtueru546',
+    name: 'Ejstralo',
+    state: 'UPCOMING',
+    start_date: Date.now(),
+    end_date: Date.now(),
+  },
+  {
+    id: '8846fe77777rdyjgtueru546',
+    name: 'Ejstralo',
+    state: 'UPCOMING',
+    start_date: Date.now(),
+    end_date: Date.now(),
+  },
+  {
+    id: '8846f66666erdyjgtueru546',
+    name: 'Ejstralo',
+    state: 'UPCOMING',
+    start_date: Date.now(),
+    end_date: Date.now(),
+  },
+  {
+    id: '88465555ferdyjgtueru546',
+    name: 'Ejstralo',
+    state: 'UPCOMING',
+    start_date: Date.now(),
+    end_date: Date.now(),
+  },
+  {
+    id: '8846f44444erdyjgtueru546',
+    name: 'Ejstralo',
+    state: 'UPCOMING',
+    start_date: Date.now(),
+    end_date: Date.now(),
+  },
+  {
+    id: '884633333ferdyjgtueru546',
+    name: 'Ejstralo',
+    state: 'UPCOMING',
+    start_date: Date.now(),
+    end_date: Date.now(),
+  },
 ]
 
 export default function Page() {
@@ -152,8 +264,9 @@ export default function Page() {
             columns={tableColumns}
             data={data}
             pagination={true}
-            rowsPerPage={30}
+            rowsPerPage={5}
             rowKey="id"
+            page={2}
           />
           {/* <CodeBlock code={codeCustomExample} /> */}
           {/* <br />
