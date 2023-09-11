@@ -247,10 +247,11 @@ export default function Page() {
           <PSmall>- ✅ Each cell can be optionall aligned to left, center or right</PSmall>
           <PSmall>- ✅ Dark / Light mode ready</PSmall>
           <PSmall>
-            - Pagination can be enabled / disabled, in the latter case all items will be displayed
+            - ✅ Pagination can be enabled / disabled, in the latter case all items will be
+            displayed
           </PSmall>
           <PSmall>
-            - <Code>Current page</Code> and <Code>items per page</Code> can be passed on
+            - <Code>✅ Current page</Code> and <Code>items per page</Code> can be passed on
             instantiation (when pagination is enabled)
           </PSmall>
           <PSmall>
