@@ -1,3 +1,5 @@
+![HBUI](https://repository-images.githubusercontent.com/661860948/16741704-6b1e-4b6d-a79c-c037a6e242c7)
+
 ## TPDS - The Tempo Platform Design System
 
 This repository holds the source code and documentation of the Tempo Platform Design System.
@@ -21,7 +23,7 @@ Finally, this project exports a [NPM module](https://www.npmjs.com/package/@temp
 
 ### Instructions to run this project
 
-The documentation site is a NExt.js app. If you wish to run it in your machine, clone and run this project:
+The documentation site is a Next.js app. If you wish to run it in your machine, clone and run this project:
 
 ```bash
 // Clone the project
