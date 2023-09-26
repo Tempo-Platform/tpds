@@ -123,11 +123,6 @@ export default function Page() {
               TailwindCSS
             </a>
           </P>
-          <P>
-            <a href="https://github.com/ben-rogerson/twin.macro" target="_blank" rel="noreferrer">
-              twin.macro
-            </a>
-          </P>
         </PaddingBox>
       </Container>
     </Section>

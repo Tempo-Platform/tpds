@@ -277,7 +277,6 @@ const lightModeWindowStyles = {
 }
 
 const codeImport = String.raw`import { P } from '@tempoplatform/tpds/elements/typography' // use TPDS's "P" to enable responsive type
-import tw  from 'twin.macro' // required for the tw property to work
 
 // the body element
 <div className='bg-body p-8'>
@@ -293,7 +292,6 @@ import tw  from 'twin.macro' // required for the tw property to work
 
 const codeTPDSImport = String.raw`import { Section, Container, Window } from '@tempoplatform/tpds/elements/layout'
 import { P } from '@tempoplatform/tpds/elements/typography'
-import tw  from 'twin.macro' // required for the tw property to work
 
 <Section> // the "body" element
   <Container>
@@ -308,19 +306,13 @@ import tw  from 'twin.macro' // required for the tw property to work
 </Section>`
 
 const codeDifferentP = String.raw`import { P } from '@tempoplatform/tpds/elements/typography'
-import tw  from 'twin.macro'
 
 <P className='text-magenta dark:text-blue'>This text will be magenta on light mode, and blue on dark mode.</P>`
 
-const codeDifferentDiv = String.raw`import tw  from 'twin.macro'
-
-<div className='bg-magenta dark:bg-blue h-28 w-28'/>`
+const codeDifferentDiv = String.raw`<div className='bg-magenta dark:bg-blue h-28 w-28'/>`
 
 const codeCustomP = String.raw`import { P } from '@tempoplatform/tpds/elements/typography'
-import tw  from 'twin.macro'
 
 <P className='text-[#ff0000] dark:text-[#00ff00]'>This text will be red on light mode, and gren on dark mode.</P>`
 
-const codeCustomDiv = String.raw`import tw  from 'twin.macro'
-
-<div className='bg-[#ff0000] dark:bg-[#00ff00] h-28 w-28'/>`
+const codeCustomDiv = String.raw`<div className='bg-[#ff0000] dark:bg-[#00ff00] h-28 w-28'/>`

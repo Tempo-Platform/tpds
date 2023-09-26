@@ -63,14 +63,8 @@ export default function Page() {
           <br />
           <br />
           <PLarge>You should be familiar with the following libraries:</PLarge>
-          <a href="https://github.com/ben-rogerson/twin.macro" target="_blank" rel="noreferrer">
-            <P isUnderline>twin.macro</P>
-          </a>
           <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
             <P isUnderline>TailwindCSS</P>
-          </a>
-          <a href="https://styled-components.com/" target="_blank" rel="noreferrer">
-            <P isUnderline>styled-components</P>
           </a> */}
           <br />
           <br />
