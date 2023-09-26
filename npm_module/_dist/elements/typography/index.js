@@ -27,7 +27,8 @@ var PNano = function PNano(props) {
   var finalClass = calculateFinalClass(pNanoClass, props);
   return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
-    style: props.style
+    style: props.style,
+    onClick: props.onClick
   }, props.children);
 };
 exports.PNano = PNano;
@@ -35,7 +36,8 @@ var PTiny = function PTiny(props) {
   var finalClass = calculateFinalClass(pTinyClass, props);
   return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
-    style: props.style
+    style: props.style,
+    onClick: props.onClick
   }, props.children);
 };
 exports.PTiny = PTiny;
@@ -43,7 +45,8 @@ var PSmall = function PSmall(props) {
   var finalClass = calculateFinalClass(pSmallClass, props);
   return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
-    style: props.style
+    style: props.style,
+    onClick: props.onClick
   }, props.children);
 };
 exports.PSmall = PSmall;
@@ -51,7 +54,8 @@ var P = function P(props) {
   var finalClass = calculateFinalClass(pClass, props);
   return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
-    style: props.style
+    style: props.style,
+    onClick: props.onClick
   }, props.children);
 };
 exports.P = P;
@@ -59,7 +63,8 @@ var PLarge = function PLarge(props) {
   var finalClass = calculateFinalClass(pLargeClass, props);
   return /*#__PURE__*/_react["default"].createElement("p", {
     className: finalClass,
-    style: props.style
+    style: props.style,
+    onClick: props.onClick
   }, props.children);
 };
 exports.PLarge = PLarge;
@@ -67,7 +72,8 @@ var H6 = function H6(props) {
   var finalClass = calculateFinalClass(h6Class, props);
   return /*#__PURE__*/_react["default"].createElement("h6", {
     className: finalClass,
-    style: props.style
+    style: props.style,
+    onClick: props.onClick
   }, props.children);
 };
 exports.H6 = H6;
@@ -75,7 +81,8 @@ var H5 = function H5(props) {
   var finalClass = calculateFinalClass(h5Class, props);
   return /*#__PURE__*/_react["default"].createElement("h5", {
     className: finalClass,
-    style: props.style
+    style: props.style,
+    onClick: props.onClick
   }, props.children);
 };
 exports.H5 = H5;
@@ -83,7 +90,8 @@ var H4 = function H4(props) {
   var finalClass = calculateFinalClass(h4Class, props);
   return /*#__PURE__*/_react["default"].createElement("h4", {
     className: finalClass,
-    style: props.style
+    style: props.style,
+    onClick: props.onClick
   }, props.children);
 };
 exports.H4 = H4;
@@ -91,7 +99,8 @@ var H3 = function H3(props) {
   var finalClass = calculateFinalClass(h3Class, props);
   return /*#__PURE__*/_react["default"].createElement("h3", {
     className: finalClass,
-    style: props.style
+    style: props.style,
+    onClick: props.onClick
   }, props.children);
 };
 exports.H3 = H3;
@@ -99,7 +108,8 @@ var H2 = function H2(props) {
   var finalClass = calculateFinalClass(h2Class, props);
   return /*#__PURE__*/_react["default"].createElement("h2", {
     className: finalClass,
-    style: props.style
+    style: props.style,
+    onClick: props.onClick
   }, props.children);
 };
 exports.H2 = H2;
@@ -107,7 +117,8 @@ var H1 = function H1(props) {
   var finalClass = calculateFinalClass(h1Class, props);
   return /*#__PURE__*/_react["default"].createElement("h1", {
     className: finalClass,
-    style: props.style
+    style: props.style,
+    onClick: props.onClick
   }, props.children);
 };
 
