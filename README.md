@@ -7,7 +7,7 @@ Stack:
 - React
 - TailwindCSS
 
-[Visit the documentation site](https://github.com/Tempo-Platform/tpds)
+[Visit the documentation site](https://tempods.netlify.app/)
 
 ### The flow
 
