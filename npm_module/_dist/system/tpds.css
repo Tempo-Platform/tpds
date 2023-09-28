@@ -584,6 +584,9 @@ video {
 .mr-2 {
   margin-right: 0.5rem;
 }
+.mr-8 {
+  margin-right: 2rem;
+}
 .mr-auto {
   margin-right: auto;
 }
@@ -706,6 +709,9 @@ video {
 }
 .w-\[20px\] {
   width: 20px;
+}
+.w-\[28px\] {
+  width: 28px;
 }
 .w-\[50\%\] {
   width: 50%;
@@ -1120,6 +1126,9 @@ video {
 }
 .p-2 {
   padding: 0.5rem;
+}
+.p-4 {
+  padding: 1rem;
 }
 .p-8 {
   padding: 2rem;
@@ -2125,6 +2134,10 @@ video {
 
   .lg\:z-auto {
     z-index: auto;
+  }
+
+  .lg\:mr-2 {
+    margin-right: 0.5rem;
   }
 
   .lg\:block {

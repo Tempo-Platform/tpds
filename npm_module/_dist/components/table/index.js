@@ -75,7 +75,6 @@ function Table(_ref) {
     var endIndex = startIndex + rowsPerPage;
     data = data.slice(startIndex, endIndex);
   }
-  console.log('data', data);
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
     className: headerClass
   }, columns.map(function (column) {

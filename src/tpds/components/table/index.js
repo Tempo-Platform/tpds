@@ -78,7 +78,6 @@ function Table({
     const endIndex = startIndex + rowsPerPage
     data = data.slice(startIndex, endIndex)
   }
-  console.log('data', data)
 
   return (
     <div>
