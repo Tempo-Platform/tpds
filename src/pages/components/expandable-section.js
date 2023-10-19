@@ -31,7 +31,7 @@ export default function Page() {
           </P>
           <br />
           <br />
-          <ExpandableSection title="Box title">
+          <ExpandableSection title="Box title" addBorderBottomIfOpen={true}>
             <div>
               <P>
                 Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et
@@ -91,11 +91,11 @@ export default function Page() {
                 description: "Pass 'true' to remove the top border of the box.",
               },
               {
-                propName: 'removeBorderBottom',
+                propName: 'addBorderBottomIfOpen',
                 type: 'Boolean',
                 default: 'false',
                 required: 'optional',
-                description: "Pass 'true' to remove the bottom border of the box.",
+                description: "Pass 'true' to add a border at the bottom when open.",
               },
             ]}
           />

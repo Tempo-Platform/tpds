@@ -44,7 +44,7 @@ function ExpandableSection({
   shouldClose,
   excludeElementId,
   removeBorderTop,
-  removeBorderBottom,
+  addBorderBottomIfOpen,
 }) {
   const headerRef = React.useRef(null)
   const [isOpen, toggleOpen] = React.useState(false)
@@ -56,14 +56,11 @@ function ExpandableSection({
     toggleOpen(false)
   }
 
-  const rootClassName = clsx(
-    `bg-window border border-window`,
-    removeBorderTop && `border-t-0`,
-    removeBorderBottom && `border-b-0`,
-  )
+  const rootClassName = clsx(isOpen && addBorderBottomIfOpen ? `border-b border-window` : '')
 
   const headerClassName = clsx(
-    `h-[44px] w-full flex justify-between items-center px-[16px] transition-all cursor-pointer`,
+    `h-[44px] border-t border-b border-window w-full flex justify-between items-center px-[16px] transition-all cursor-pointer`,
+    removeBorderTop && `!border-t-0`,
     isOpen ? `border-b border-window` : `border-b border-transparent`,
   )
 

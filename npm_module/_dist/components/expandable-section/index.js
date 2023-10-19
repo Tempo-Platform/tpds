@@ -49,7 +49,7 @@ function ExpandableSection(_ref) {
     shouldClose = _ref.shouldClose,
     excludeElementId = _ref.excludeElementId,
     removeBorderTop = _ref.removeBorderTop,
-    removeBorderBottom = _ref.removeBorderBottom;
+    addBorderBottomIfOpen = _ref.addBorderBottomIfOpen;
   var headerRef = _react["default"].useRef(null);
   var _React$useState = _react["default"].useState(false),
     _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -65,8 +65,8 @@ function ExpandableSection(_ref) {
   if (shouldClose && isOpen) {
     toggleOpen(false);
   }
-  var rootClassName = (0, _clsx["default"])("bg-window border border-window", removeBorderTop && "border-t-0", removeBorderBottom && "border-b-0");
-  var headerClassName = (0, _clsx["default"])("h-[44px] w-full flex justify-between items-center px-[16px] transition-all cursor-pointer", isOpen ? "border-b border-window" : "border-b border-transparent");
+  var rootClassName = (0, _clsx["default"])(isOpen && addBorderBottomIfOpen ? "border-b border-window" : '');
+  var headerClassName = (0, _clsx["default"])("h-[44px] border-t border-b border-window w-full flex justify-between items-center px-[16px] transition-all cursor-pointer", removeBorderTop && "!border-t-0", isOpen ? "border-b border-window" : "border-b border-transparent");
   var contentClassName = (0, _clsx["default"])("grid px-[15px]", isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]");
   var innerDivClassName = (0, _clsx["default"])('tpds-expandable-section-content', "overflow-hidden py-[0]");
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
