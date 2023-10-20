@@ -1106,6 +1106,12 @@ video {
 .bg-window {
   background-color: var(--bg-window);
 }
+.fill-\[\#EFB23D\] {
+  fill: #EFB23D;
+}
+.fill-\[\#ddd\] {
+  fill: #ddd;
+}
 .fill-current {
   fill: currentColor;
 }
@@ -1556,6 +1562,9 @@ video {
 .duration-300 {
   transition-duration: 300ms;
 }
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 @media (hover: hover) and (pointer: fine) {
 
   .hover\:border-2:hover {
@@ -1904,6 +1913,9 @@ video {
 }
 :is(.dark .dark\:bg-window) {
   background-color: var(--bg-window);
+}
+:is(.dark .dark\:fill-\[\#777\]) {
+  fill: #777;
 }
 :is(.dark .dark\:stroke-grey-dark-scale-300) {
   stroke: #3E4347;
