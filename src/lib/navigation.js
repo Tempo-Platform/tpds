@@ -224,6 +224,11 @@ export const navigationitems = [
         slug: 'components/props-table',
         description: 'Table of component props',
       },
+      {
+        name: 'StarsRating',
+        slug: 'components/stars-rating',
+        description: 'A 5-stars row rating component',
+      },
       // {
       //   name: 'Pagination',
       //   slug: 'components/pagination',
