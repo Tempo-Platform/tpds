@@ -66,7 +66,7 @@ function ExpandableSection(_ref) {
     toggleOpen(false);
   }
   var rootClassName = (0, _clsx["default"])(isOpen && addBorderBottomIfOpen ? "border-b border-window" : '');
-  var headerClassName = (0, _clsx["default"])("h-[44px] border-t border-b border-window w-full flex justify-between items-center px-[16px] transition-all cursor-pointer", removeBorderTop && "!border-t-0", isOpen ? "border-b border-window" : "border-b border-transparent");
+  var headerClassName = (0, _clsx["default"])("h-[44px] border-t border-b border-window w-full flex justify-between items-center px-[16px] transition-all cursor-pointer", removeBorderTop && "!border-t-0");
   var contentClassName = (0, _clsx["default"])("grid px-[15px]", isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]");
   var innerDivClassName = (0, _clsx["default"])('tpds-expandable-section-content', "overflow-hidden py-[0]");
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
