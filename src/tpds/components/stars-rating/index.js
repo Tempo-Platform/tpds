@@ -5,12 +5,12 @@ const convertToPercent = rating => {
   return percent
 }
 
-function StarsRatings({ rating, width = 100, ...props }) {
+function StarsRatings({ rating, width = 100, lightOnly = false, ...props }) {
   const calculatedHeight = width / 5.5 // calculate height in proportion to width
   return (
     <div className="relative" style={{ width: width, height: calculatedHeight }} {...props}>
       <FiveStars
-        className="fill-[#ddd] dark:fill-[#777]"
+        className={lightOnly ? 'fill-[#ddd]' : 'fill-[#ddd] dark:fill-[#777]'}
         style={{ width: width, height: calculatedHeight }}
       />
       <FiveStars

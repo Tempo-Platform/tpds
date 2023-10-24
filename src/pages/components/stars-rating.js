@@ -53,6 +53,13 @@ export default function Page() {
                 required: 'no',
                 description: 'The width of the rendered component in pixels',
               },
+              {
+                propName: 'lightOnly',
+                type: 'Boolean',
+                default: 'false',
+                required: 'no',
+                description: 'Wether to force the component to render in light mode',
+              },
             ]}
           />
         </Window>
