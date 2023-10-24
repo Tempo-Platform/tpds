@@ -61,7 +61,6 @@ function ExpandableSection({
   const headerClassName = clsx(
     `h-[44px] border-t border-b border-window w-full flex justify-between items-center px-[16px] transition-all cursor-pointer`,
     removeBorderTop && `!border-t-0`,
-    isOpen ? `border-b border-window` : `border-b border-transparent`,
   )
 
   const contentClassName = clsx(`grid px-[15px]`, isOpen ? `grid-rows-[1fr]` : `grid-rows-[0fr]`)
