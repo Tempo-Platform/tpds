@@ -4,7 +4,7 @@ import clsx from 'clsx'
 const RadioTabs = ({ items, selectedIndex, handleIndexSelection }) => {
   return (
     <div className="w-full">
-      <div className="flex space-x-1 rounded-lg p-1 bg-grey-light-scale-200 dark:bg-grey-dark-scale-300">
+      <div className="flex space-x-1 rounded-lg p-1 bg-grey-light-scale-200 dark:bg-grey-dark-scale-400">
         {items.map((item, index) => (
           <div
             className="flex-1"
@@ -13,7 +13,8 @@ const RadioTabs = ({ items, selectedIndex, handleIndexSelection }) => {
           >
             <p
               className={clsx(
-                'text-primary m-0 font-medium',
+                index === selectedIndex ? 'text-primary' : 'text-tertiary',
+                'm-0 font-medium',
                 'text-xs xl:text-sm',
                 '!outline-none',
                 `w-full select-none cursor-pointer text-center py-2 rounded-md`,
