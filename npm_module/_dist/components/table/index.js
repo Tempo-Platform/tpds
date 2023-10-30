@@ -10,12 +10,6 @@ var _typography = require("../../elements/typography");
 var _buttons = require("../../elements/buttons");
 var _clsx = _interopRequireDefault(require("clsx"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
-function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var getColumnAlign = function getColumnAlign(alignType) {
   switch (alignType) {
     case 'center':
@@ -58,23 +52,36 @@ function Table(_ref) {
     rowsPerPage = _ref$rowsPerPage === void 0 ? 10 : _ref$rowsPerPage,
     _ref$page = _ref.page,
     page = _ref$page === void 0 ? 1 : _ref$page,
+    _ref$router = _ref.router,
+    router = _ref$router === void 0 ? null : _ref$router,
     _ref$rowClick = _ref.rowClick,
     rowClick = _ref$rowClick === void 0 ? null : _ref$rowClick,
     _ref$rowKey = _ref.rowKey,
     rowKey = _ref$rowKey === void 0 ? null : _ref$rowKey;
-  var _React$useState = _react["default"].useState(page),
-    _React$useState2 = _slicedToArray(_React$useState, 2),
-    currentPage = _React$useState2[0],
-    setCurrentPage = _React$useState2[1];
   var headerClass = (0, _clsx["default"])('grid gap-2', columnVariants[columns.length], 'mb-1', 'px-4 py-1.5');
   var rowClass = (0, _clsx["default"])('grid gap-4 mb-2 rounded-[3px]', columnVariants[columns.length], 'border border-window bg-window', rowClick && 'cursor-pointer hover:border-grey-light-scale-500 dark:hover:border-grey-dark-scale-100', 'px-4 py-2');
   var numPages = Math.ceil(data.length / rowsPerPage);
+  if (pagination && !router) {
+    throw new Error('TPDS: Table component requires router prop when pagination is enabled, to "push" new page to router.');
+  }
   var showPagination = pagination && data.length > rowsPerPage;
   if (showPagination) {
-    var startIndex = (currentPage - 1) * rowsPerPage;
+    var startIndex = (page - 1) * rowsPerPage;
     var endIndex = startIndex + rowsPerPage;
     data = data.slice(startIndex, endIndex);
   }
+  var handleBackToFirstPage = function handleBackToFirstPage() {
+    router.push(window.location.pathname);
+  };
+  var handleGoToLastPage = function handleGoToLastPage() {
+    router.push("".concat(window.location.pathname, "?page=").concat(numPages));
+  };
+  var handleClickToNextPage = function handleClickToNextPage() {
+    router.push("".concat(window.location.pathname, "?page=").concat(page + 1));
+  };
+  var handleClickToPreviousPage = function handleClickToPreviousPage() {
+    router.push("".concat(window.location.pathname, "?page=").concat(page - 1));
+  };
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
     className: headerClass
   }, columns.map(function (column) {
@@ -101,42 +108,34 @@ function Table(_ref) {
   }, /*#__PURE__*/_react["default"].createElement(_buttons.Button, {
     className: "!p-1 text-primary",
     variant: "secondary",
-    isDisabled: currentPage === 1,
+    isDisabled: page === 1,
     size: "small",
-    onClick: function onClick() {
-      return setCurrentPage(1);
-    }
+    onClick: handleBackToFirstPage
   }, /*#__PURE__*/_react["default"].createElement(BeginningIcon, null)), /*#__PURE__*/_react["default"].createElement(_buttons.Button, {
     className: "!p-1 text-primary",
     variant: "secondary",
-    isDisabled: currentPage === 1,
+    isDisabled: page === 1,
     size: "small",
-    onClick: function onClick() {
-      return setCurrentPage(currentPage - 1);
-    }
+    onClick: handleClickToPreviousPage
   }, /*#__PURE__*/_react["default"].createElement(FirstIcon, null)), /*#__PURE__*/_react["default"].createElement("div", {
     className: "border p-2 bg-white border-grey-light-scale-400 dark:bg-grey-dark-scale-500 dark:border-grey-dark-scale-200"
   }, /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
     isMedium: true,
-    className: "uppercase whitespace-nowrap text-ellipsis overflow-hidden leading-none"
-  }, currentPage, " ", /*#__PURE__*/_react["default"].createElement("span", {
+    className: "uppercase whitespace-nowrap text-ellipsis overflow-hidden leading-none select-none"
+  }, page, " ", /*#__PURE__*/_react["default"].createElement("span", {
     className: "opacity-50"
   }, "/ ", numPages))), /*#__PURE__*/_react["default"].createElement(_buttons.Button, {
     className: "!p-1 text-primary",
     variant: "secondary",
-    isDisabled: currentPage === numPages,
+    isDisabled: page === numPages,
     size: "small",
-    onClick: function onClick() {
-      return setCurrentPage(currentPage + 1);
-    }
+    onClick: handleClickToNextPage
   }, /*#__PURE__*/_react["default"].createElement(NextIcon, null)), /*#__PURE__*/_react["default"].createElement(_buttons.Button, {
     className: "!p-1 text-primary",
     variant: "secondary",
-    isDisabled: currentPage === numPages,
+    isDisabled: page === numPages,
     size: "small",
-    onClick: function onClick() {
-      return setCurrentPage(numPages);
-    }
+    onClick: handleGoToLastPage
   }, /*#__PURE__*/_react["default"].createElement(LastIcon, null))));
 }
 var _default = Table;

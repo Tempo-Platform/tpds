@@ -217,7 +217,7 @@ export const navigationitems = [
       {
         name: 'Table',
         slug: 'components/table',
-        description: 'Standard Table component',
+        description: 'Table component with optional pagination4',
       },
       {
         name: 'PropsTable',

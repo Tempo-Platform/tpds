@@ -8,6 +8,8 @@ import CodeBlock from '../../tpds/components/code'
 import Table from '../../tpds/components/table'
 import Tag from '../../tpds/components/tag'
 import PropsTable from '../../tpds/components/props-table'
+import { useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 const getTagVariant = campaignState => {
   switch (campaignState) {
@@ -204,16 +206,26 @@ const data = [
 ]
 
 export default function Page() {
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  let page = searchParams.get('page')
+  if (page) {
+    page = parseInt(page)
+  } else {
+    page = 1
+  }
+
   return (
     <div>
       <Hero className="bg-window border-b-2 border-body">
         <H1 isMedium>Table</H1>
-        <P>Standard table component with conditional pagination</P>
+        <P>Table component with optional pagination</P>
       </Hero>
       <Container>
         <PaddingBox>
           <P>Features:</P>
           <br />
+          <PSmall>- Uses URL params to navigate between pages / set current page</PSmall>
           <PSmall>- Accepts array to configure columns</PSmall>
           <PSmall>- Cells can be displayed by a custom render function</PSmall>
           <PSmall>- Each cell can be optionall aligned to left, center or right</PSmall>
@@ -241,10 +253,11 @@ export default function Page() {
             columns={tableColumns}
             data={data}
             pagination={true}
+            router={router}
             rowsPerPage={5}
             rowKey="id"
             rowClick={(item, index) => alert('clicked item with id: ' + item.id)}
-            page={2}
+            page={page}
           />
           <br />
           <br />
@@ -275,6 +288,14 @@ export default function Page() {
                 required: 'no',
                 description:
                   'If true, pagination will be enabled. If false, all items will be displayed.',
+              },
+              {
+                propName: 'router',
+                type: 'Component',
+                default: 'null',
+                required: 'no',
+                description:
+                  'Only required when pagination is active. Used to navigate between pages.',
               },
               {
                 propName: 'rowsPerPage',
@@ -317,15 +338,28 @@ export default function Page() {
 }
 
 const codeExample = String.raw`import { Table } from '@tempoplatform/tpds/components/table/Table'
+import { useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
+
+
+const searchParams = useSearchParams()
+const router = useRouter()
+let page = searchParams.get('page')
+if (page) {
+  page = parseInt(page)
+} else {
+  page = 1
+}
 
 <Table
   columns={tableColumns}
   data={data}
   pagination={true}
   rowsPerPage={5}
+  router={router}
   rowKey="id"
   rowClick={(item, index) => alert('clicked item with id: ' + item.id)}
-  page={2}
+  page={page}
 />
 
 const tableColumns = [

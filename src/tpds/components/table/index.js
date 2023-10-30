@@ -55,10 +55,10 @@ function Table({
   pagination = true,
   rowsPerPage = 10,
   page = 1,
+  router = null,
   rowClick = null,
   rowKey = null,
 }) {
-  const [currentPage, setCurrentPage] = React.useState(page)
   const headerClass = clsx('grid gap-2', columnVariants[columns.length], 'mb-1', 'px-4 py-1.5')
   const rowClass = clsx(
     'grid gap-4 mb-2 rounded-[3px]',
@@ -71,12 +71,34 @@ function Table({
 
   const numPages = Math.ceil(data.length / rowsPerPage)
 
+  if (pagination && !router) {
+    throw new Error(
+      'TPDS: Table component requires router prop when pagination is enabled, to "push" new page to router.',
+    )
+  }
+
   let showPagination = pagination && data.length > rowsPerPage
 
   if (showPagination) {
-    const startIndex = (currentPage - 1) * rowsPerPage
+    const startIndex = (page - 1) * rowsPerPage
     const endIndex = startIndex + rowsPerPage
     data = data.slice(startIndex, endIndex)
+  }
+
+  const handleBackToFirstPage = () => {
+    router.push(window.location.pathname)
+  }
+
+  const handleGoToLastPage = () => {
+    router.push(`${window.location.pathname}?page=${numPages}`)
+  }
+
+  const handleClickToNextPage = () => {
+    router.push(`${window.location.pathname}?page=${page + 1}`)
+  }
+
+  const handleClickToPreviousPage = () => {
+    router.push(`${window.location.pathname}?page=${page - 1}`)
   }
 
   return (
@@ -111,44 +133,44 @@ function Table({
           <Button
             className="!p-1 text-primary"
             variant="secondary"
-            isDisabled={currentPage === 1}
+            isDisabled={page === 1}
             size="small"
-            onClick={() => setCurrentPage(1)}
+            onClick={handleBackToFirstPage}
           >
             <BeginningIcon />
           </Button>
           <Button
             className="!p-1 text-primary"
             variant="secondary"
-            isDisabled={currentPage === 1}
+            isDisabled={page === 1}
             size="small"
-            onClick={() => setCurrentPage(currentPage - 1)}
+            onClick={handleClickToPreviousPage}
           >
             <FirstIcon />
           </Button>
           <div className="border p-2 bg-white border-grey-light-scale-400 dark:bg-grey-dark-scale-500 dark:border-grey-dark-scale-200">
             <PTiny
               isMedium
-              className="uppercase whitespace-nowrap text-ellipsis overflow-hidden leading-none"
+              className="uppercase whitespace-nowrap text-ellipsis overflow-hidden leading-none select-none"
             >
-              {currentPage} <span className="opacity-50">/ {numPages}</span>
+              {page} <span className="opacity-50">/ {numPages}</span>
             </PTiny>
           </div>
           <Button
             className="!p-1 text-primary"
             variant="secondary"
-            isDisabled={currentPage === numPages}
+            isDisabled={page === numPages}
             size="small"
-            onClick={() => setCurrentPage(currentPage + 1)}
+            onClick={handleClickToNextPage}
           >
             <NextIcon />
           </Button>
           <Button
             className="!p-1 text-primary"
             variant="secondary"
-            isDisabled={currentPage === numPages}
+            isDisabled={page === numPages}
             size="small"
-            onClick={() => setCurrentPage(numPages)}
+            onClick={handleGoToLastPage}
           >
             <LastIcon />
           </Button>
