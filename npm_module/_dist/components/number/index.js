@@ -46,40 +46,27 @@ function InputNumber(_ref) {
     return value.replace(/[^0-9.]/g, '');
   };
   var handleKeyDown = function handleKeyDown(e) {
-    console.log('maxLength', maxLength);
-    console.log('1', 1);
-
     // always allow delete
     if (deleteKeyCodes.indexOf(e.keyCode) === -1) {
       // prevent 2 full stops
-      console.log('2', 2);
       if (e.keyCode === 190 && e.target.value.indexOf('.') !== -1) {
         return e.preventDefault();
       }
-      console.log('3', 3);
-
       // enforce max length
       if (maxLength && e.target.value.length >= maxLength) {
         return e.preventDefault();
       }
-      console.log('4', 4);
-
       // get current numeric value
       var currentValueFloat = parseFloat(e.target.value);
       // if current value is already equal to max value, prevent further input
       if (maxValue && currentValueFloat === maxValue) {
         return e.preventDefault();
       }
-      console.log('5', 5);
-      console.log('maxValue', maxValue);
-
       // enforce max value
       var futureValueFloat = parseFloat(e.target.value + e.key);
-      console.log('futureValueFloat', futureValueFloat);
       if (maxValue && futureValueFloat > maxValue) {
         return e.preventDefault();
       }
-      console.log('6', 6);
       var stringFloatValue = String(futureValueFloat);
       if (allowFloats && stringFloatValue.indexOf('.') !== -1 && stringFloatValue.split('.')[1].length > floatPrecision) {
         return e.preventDefault();
