@@ -23,32 +23,32 @@ module.exports = {
   magenta_scale: colorPalettes.magenta,
   dark: {
     text: {
-      primary: colorTokens.dark['text-primary'],
-      secondary: colorTokens.dark['text-secondary'],
-      tertiary: colorTokens.dark['text-tertiary']
+      primary: colorTokens.dark.text_primary,
+      secondary: colorTokens.dark.text_secondary,
+      tertiary: colorTokens.dark.text_tertiary
     },
     bg: {
-      body: colorTokens.dark['bg-body'],
-      window: colorTokens.dark['bg-window']
+      body: colorTokens.dark.bg_body,
+      window: colorTokens.dark.bg_window
     },
     border: {
-      body: colorTokens.dark['border-body'],
-      window: colorTokens.dark['border-window']
+      body: colorTokens.dark.border_body,
+      window: colorTokens.dark.border_window
     }
   },
   light: {
     text: {
-      primary: colorTokens.light['text-primary'],
-      secondary: colorTokens.light['text-secondary'],
-      tertiary: colorTokens.light['text-tertiary']
+      primary: colorTokens.light.text_primary,
+      secondary: colorTokens.light.text_secondary,
+      tertiary: colorTokens.light.text_tertiary
     },
     bg: {
-      body: colorTokens.light['bg-body'],
-      window: colorTokens.light['bg-window']
+      body: colorTokens.light.bg_body,
+      window: colorTokens.light.bg_window
     },
     border: {
-      body: colorTokens.light['border-body'],
-      window: colorTokens.light['border-window']
+      body: colorTokens.light.border_body,
+      window: colorTokens.light.border_window
     }
   }
 };
