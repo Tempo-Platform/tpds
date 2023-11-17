@@ -13,8 +13,8 @@ module.exports = {
   purple: colorPalettes.purple['500'],
   magenta: colorPalettes.magenta['500'],
 
-  grey_light: colorPalettes['grey-light'],
-  grey_dark: colorPalettes['grey-dark'],
+  grey_light: colorPalettes['grey_light'],
+  grey_dark: colorPalettes['grey_dark'],
 
   green_scale: colorPalettes.green,
   blue_scale: colorPalettes.blue,
