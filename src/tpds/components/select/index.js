@@ -81,7 +81,7 @@ const Select = ({
         placeholder={placeholder}
         value={inputValueToDisplay}
         onChange={e => setInputValue(e.target.value)}
-        className={clsx(!isOpen && 'cursor-pointer', 'pr-8 text-ellipsis')}
+        className={clsx(!isOpen && 'cursor-pointer', 'pr-8 text-ellipsis !text-secondary')}
         onFocus={() => {
           setInputValue('')
           setIsOpen(true)

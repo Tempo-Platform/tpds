@@ -166,6 +166,7 @@ const Select = ({
               'mr-auto',
               '!outline-none',
               '!border-none',
+              '!text-secondary',
               !isOpen && 'cursor-pointer',
             )}
             type="text"
