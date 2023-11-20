@@ -146,7 +146,7 @@ var Select = function Select(_ref) {
     }));
   }), /*#__PURE__*/_react["default"].createElement("input", {
     ref: inputRef,
-    className: (0, _clsx["default"])('inline-flex', 'bg-transparent', 'font-normal', 'w-auto', 'p-0', 'mr-auto', '!outline-none', '!border-none', !isOpen && 'cursor-pointer'),
+    className: (0, _clsx["default"])('inline-flex', 'bg-transparent', 'font-normal', 'w-auto', 'p-0', 'mr-auto', '!outline-none', '!border-none', '!text-secondary', !isOpen && 'cursor-pointer'),
     type: "text",
     placeholder: placeholder,
     value: inputValueToDisplay,

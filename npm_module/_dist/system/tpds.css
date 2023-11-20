@@ -1491,6 +1491,9 @@ video {
   --tw-text-opacity: 1 !important;
   color: rgb(235 87 87 / var(--tw-text-opacity)) !important;
 }
+.\!text-secondary {
+  color: var(--text-secondary) !important;
+}
 .\!text-white {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
