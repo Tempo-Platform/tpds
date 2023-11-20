@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import clsx from 'clsx'
 import { TextInput } from '../../elements/input'
-import { PTiny } from '../../elements/typography'
+import { PTiny, PNano } from '../../elements/typography'
 
 const getCurrentInputValue = (options, selectedIndex, labelProp) => {
   if (!selectedIndex && selectedIndex !== 0) return ''
@@ -81,7 +81,7 @@ const Select = ({
         placeholder={placeholder}
         value={inputValueToDisplay}
         onChange={e => setInputValue(e.target.value)}
-        className={clsx(!isOpen && 'cursor-pointer')}
+        className={clsx(!isOpen && 'cursor-pointer', 'pr-8 text-ellipsis')}
         onFocus={() => {
           setInputValue('')
           setIsOpen(true)
@@ -94,7 +94,7 @@ const Select = ({
         strokeWidth={1.5}
         stroke="currentColor"
         className={clsx(
-          'w-4 h-4 absolute right-2 transform top-[9px] text-primary pointer-events-none',
+          'w-4 h-4 absolute right-3 transform top-[10px] text-primary pointer-events-none',
           isOpen && 'rotate-180',
         )}
       >
@@ -117,7 +117,7 @@ const Select = ({
                 '!outline-none',
                 `w-full select-none cursor-pointer text-center`,
                 `bg-window rounded`,
-                `hover:bg-grey-light-scale-200 dark:hover:bg-grey-dark-scale-300`,
+                `hover:bg-input-hover`,
                 isSelected(option) && `!bg-blue-scale-500`,
               )}
             >
@@ -129,6 +129,16 @@ const Select = ({
               >
                 {labelProp ? option[labelProp] : option}
               </PTiny>
+              {option.subLabel && (
+                <PNano
+                  className={clsx(
+                    'mt-1 text-tertiary text-left',
+                    isSelected(option) && `!text-white dark:!text-black`,
+                  )}
+                >
+                  {option.subLabel}
+                </PNano>
+              )}
             </div>
           ))}
         </div>
