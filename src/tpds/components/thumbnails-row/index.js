@@ -1,7 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 
-function ThumbnailsRow({ images, props }) {
+function ThumbnailsRow({ images, objectFit = 'contain', ...props }) {
   const gridClassName = clsx(
     `w-full h-auto rounded-lg p-2`,
     `grid grid-cols-4 gap-2`,
@@ -22,7 +22,7 @@ function ThumbnailsRow({ images, props }) {
           onClick={image.callBack ? image.callBack : null}
           style={{
             background: `url(${image.url}) no-repeat center center`,
-            backgroundSize: 'contain',
+            backgroundSize: objectFit,
           }}
         />
       ))}
