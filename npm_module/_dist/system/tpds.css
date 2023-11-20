@@ -1130,9 +1130,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(134 142 147 / var(--tw-bg-opacity));
 }
-.bg-input {
-  background-color: var(--bg-input);
-}
 .bg-magenta {
   --tw-bg-opacity: 1;
   background-color: rgb(229 73 255 / var(--tw-bg-opacity));
@@ -1974,6 +1971,9 @@ video {
 }
 :is(.dark .dark\:bg-grey-light-scale-100\/5) {
   background-color: rgb(250 250 250 / 0.05);
+}
+:is(.dark .dark\:bg-input) {
+  background-color: var(--bg-input);
 }
 :is(.dark .dark\:bg-orange) {
   --tw-bg-opacity: 1;
