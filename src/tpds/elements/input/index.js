@@ -6,7 +6,7 @@ export const baseInputStyles = [
   'transition duration-100',
   'px-2.5 py-1 rounded focus:outline-none',
   'font-normal',
-  'bg-grey-light-scale-200 text-primary border-transparent dark:bg-grey-dark-scale-300',
+  'bg-input text-primary border-transparent',
   'border-2 focus:border-blue',
 ]
 
