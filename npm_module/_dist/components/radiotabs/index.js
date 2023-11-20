@@ -14,7 +14,7 @@ var RadioTabs = function RadioTabs(_ref) {
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: "w-full"
   }, /*#__PURE__*/_react["default"].createElement("div", {
-    className: "flex space-x-1 rounded-lg p-1 bg-grey-light-scale-200 dark:bg-grey-dark-scale-400"
+    className: "flex space-x-1 rounded-[8px] p-1 bg-grey-light-scale-200 dark:bg-grey-dark-scale-500"
   }, items.map(function (item, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       className: "flex-1",
@@ -23,7 +23,7 @@ var RadioTabs = function RadioTabs(_ref) {
         return handleIndexSelection(index);
       }
     }, /*#__PURE__*/_react["default"].createElement("p", {
-      className: (0, _clsx["default"])(index === selectedIndex ? 'text-primary' : 'text-tertiary', 'm-0 font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center py-2 rounded-md", index === selectedIndex && "bg-white text-black dark:bg-grey-dark-scale-200")
+      className: (0, _clsx["default"])(index === selectedIndex ? 'text-primary' : 'text-tertiary', 'm-0 font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center py-2 rounded-[5px]", index === selectedIndex && "bg-white text-black dark:bg-grey-dark-scale-300")
     }, item.value || item.description || item.label || item));
   })));
 };

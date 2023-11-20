@@ -87,7 +87,7 @@ var Select = function Select(_ref) {
     onChange: function onChange(e) {
       return setInputValue(e.target.value);
     },
-    className: (0, _clsx["default"])(!isOpen && 'cursor-pointer'),
+    className: (0, _clsx["default"])(!isOpen && 'cursor-pointer', 'pr-8 text-ellipsis'),
     onFocus: function onFocus() {
       setInputValue('');
       setIsOpen(true);
@@ -98,7 +98,7 @@ var Select = function Select(_ref) {
     viewBox: "0 0 24 24",
     strokeWidth: 1.5,
     stroke: "currentColor",
-    className: (0, _clsx["default"])('w-4 h-4 absolute right-2 transform top-[9px] text-primary pointer-events-none', isOpen && 'rotate-180')
+    className: (0, _clsx["default"])('w-4 h-4 absolute right-3 transform top-[10px] text-primary pointer-events-none', isOpen && 'rotate-180')
   }, /*#__PURE__*/_react["default"].createElement("path", {
     strokeLinecap: "round",
     strokeLinejoin: "round",
@@ -112,10 +112,12 @@ var Select = function Select(_ref) {
         handleIndexSelection(getOptionIndexFromAllOptions(options, option, idProp));
         setIsOpen(false);
       },
-      className: (0, _clsx["default"])('p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center", "bg-window rounded", "hover:bg-grey-light-scale-200 dark:hover:bg-grey-dark-scale-300", isSelected(option) && "!bg-blue-scale-500")
+      className: (0, _clsx["default"])('p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center", "bg-window rounded", "hover:bg-input-hover", isSelected(option) && "!bg-blue-scale-500")
     }, /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
       className: (0, _clsx["default"])('text-primary text-left', isSelected(option) && "!text-white dark:!text-black")
-    }, labelProp ? option[labelProp] : option));
+    }, labelProp ? option[labelProp] : option), option.subLabel && /*#__PURE__*/_react["default"].createElement(_typography.PNano, {
+      className: (0, _clsx["default"])('mt-1 text-tertiary text-left', isSelected(option) && "!text-white dark:!text-black")
+    }, option.subLabel));
   })));
 };
 var _default = Select;
