@@ -1,9 +1,9 @@
 'use client'
 
 import React from 'react'
-import Hero from '../../tpds/components/hero'
-import { P, PSmall, H1 } from '../../tpds/elements/typography'
-import { Separator, Container, PaddingBox } from '../../tpds/elements/layout'
+import PageHeader from '../../lib/components/PageHeader'
+import { P, PSmall } from '../../tpds/elements/typography'
+import { Separator, Container } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
 import Table from '../../tpds/components/table'
 import Tag from '../../tpds/components/tag'
@@ -217,121 +217,116 @@ export default function Page() {
 
   return (
     <div>
-      <Hero className="bg-window border-b-2 border-body">
-        <H1 isMedium>Table</H1>
-        <P>Table component with optional pagination</P>
-      </Hero>
       <Container>
-        <PaddingBox>
-          <P>Features:</P>
-          <br />
-          <PSmall>- Uses URL params to navigate between pages / set current page</PSmall>
-          <PSmall>- Accepts array to configure columns</PSmall>
-          <PSmall>- Cells can be displayed by a custom render function</PSmall>
-          <PSmall>- Each cell can be optionall aligned to left, center or right</PSmall>
-          <PSmall>
-            - Every cell of a specific column can take additional classes, for styling or other
-            purposes
-          </PSmall>
-          <PSmall>- Dark / Light mode ready</PSmall>
-          <PSmall>
-            - Pagination can be enabled / disabled, in the latter case all items will be displayed
-          </PSmall>
-          <PSmall>
-            - Current page and items per page can be passed on instantiation (when pagination is
-            enabled)
-          </PSmall>
-          <PSmall>
-            - Optional click entire row, or pass a custom render function to provide a specific
-            click element
-          </PSmall>
-          <PSmall>- Ellipsis (...) are applied when text doesn't fit in a cell</PSmall>
-          <br />
-          <Separator />
-          <br />
-          <Table
-            columns={tableColumns}
-            data={data}
-            pagination={true}
-            router={router}
-            rowsPerPage={5}
-            rowKey="id"
-            rowClick={(item, index) => alert('clicked item with id: ' + item.id)}
-            page={page}
-          />
-          <br />
-          <br />
-          <CodeBlock code={codeExample} />
-          <br />
-          <br />
-          <PropsTable
-            title="Props"
-            items={[
-              {
-                propName: 'columns',
-                type: 'Array',
-                default: 'null',
-                required: 'yes',
-                description: 'An array defining the columns of the table.',
-              },
-              {
-                propName: 'data',
-                type: 'Array',
-                default: 'null',
-                required: 'yes',
-                description: 'The items to be displayed in the table.',
-              },
-              {
-                propName: 'pagination',
-                type: 'Boolean',
-                default: 'true',
-                required: 'no',
-                description:
-                  'If true, pagination will be enabled. If false, all items will be displayed.',
-              },
-              {
-                propName: 'router',
-                type: 'Component',
-                default: 'null',
-                required: 'no',
-                description:
-                  'Only required when pagination is active. Used to navigate between pages.',
-              },
-              {
-                propName: 'rowsPerPage',
-                type: 'Number',
-                default: '10',
-                required: 'no',
-                description:
-                  'The number of items to be displayed per page. Only used when pagination is enabled.',
-              },
-              {
-                propName: 'rowClick',
-                type: 'Boolean',
-                default: 'null',
-                required: 'no',
-                description:
-                  'If true, the entire row will be clickable. An hover effect will be added.',
-              },
-              {
-                propName: 'page',
-                type: 'Number',
-                default: '1',
-                required: 'no',
-                description: 'The current page. Only used when pagination is enabled.',
-              },
-              {
-                propName: 'rowKey',
-                type: 'String',
-                default: 'null',
-                required: 'yes',
-                description: 'The key to be used as unique identifier for each row.',
-              },
-            ]}
-          />
-          <br />
-          <br />
-        </PaddingBox>
+        <PageHeader title="Table" subTitle="Table component with optional pagination" />
+        <P>Features:</P>
+        <br />
+        <PSmall>- Uses URL params to navigate between pages / set current page</PSmall>
+        <PSmall>- Accepts array to configure columns</PSmall>
+        <PSmall>- Cells can be displayed by a custom render function</PSmall>
+        <PSmall>- Each cell can be optionall aligned to left, center or right</PSmall>
+        <PSmall>
+          - Every cell of a specific column can take additional classes, for styling or other
+          purposes
+        </PSmall>
+        <PSmall>- Dark / Light mode ready</PSmall>
+        <PSmall>
+          - Pagination can be enabled / disabled, in the latter case all items will be displayed
+        </PSmall>
+        <PSmall>
+          - Current page and items per page can be passed on instantiation (when pagination is
+          enabled)
+        </PSmall>
+        <PSmall>
+          - Optional click entire row, or pass a custom render function to provide a specific click
+          element
+        </PSmall>
+        <PSmall>- Ellipsis (...) are applied when text doesn't fit in a cell</PSmall>
+        <br />
+        <Separator />
+        <br />
+        <Table
+          columns={tableColumns}
+          data={data}
+          pagination={true}
+          router={router}
+          rowsPerPage={5}
+          rowKey="id"
+          rowClick={(item, index) => alert('clicked item with id: ' + item.id)}
+          page={page}
+        />
+        <br />
+        <br />
+        <CodeBlock code={codeExample} />
+        <br />
+        <br />
+        <PropsTable
+          title="Props"
+          items={[
+            {
+              propName: 'columns',
+              type: 'Array',
+              default: 'null',
+              required: 'yes',
+              description: 'An array defining the columns of the table.',
+            },
+            {
+              propName: 'data',
+              type: 'Array',
+              default: 'null',
+              required: 'yes',
+              description: 'The items to be displayed in the table.',
+            },
+            {
+              propName: 'pagination',
+              type: 'Boolean',
+              default: 'true',
+              required: 'no',
+              description:
+                'If true, pagination will be enabled. If false, all items will be displayed.',
+            },
+            {
+              propName: 'router',
+              type: 'Component',
+              default: 'null',
+              required: 'no',
+              description:
+                'Only required when pagination is active. Used to navigate between pages.',
+            },
+            {
+              propName: 'rowsPerPage',
+              type: 'Number',
+              default: '10',
+              required: 'no',
+              description:
+                'The number of items to be displayed per page. Only used when pagination is enabled.',
+            },
+            {
+              propName: 'rowClick',
+              type: 'Boolean',
+              default: 'null',
+              required: 'no',
+              description:
+                'If true, the entire row will be clickable. An hover effect will be added.',
+            },
+            {
+              propName: 'page',
+              type: 'Number',
+              default: '1',
+              required: 'no',
+              description: 'The current page. Only used when pagination is enabled.',
+            },
+            {
+              propName: 'rowKey',
+              type: 'String',
+              default: 'null',
+              required: 'yes',
+              description: 'The key to be used as unique identifier for each row.',
+            },
+          ]}
+        />
+        <br />
+        <br />
       </Container>
     </div>
   )

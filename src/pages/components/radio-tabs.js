@@ -1,7 +1,6 @@
 import React from 'react'
-import Hero from '../../tpds/components/hero'
-import { P, H1 } from '../../tpds/elements/typography'
-import { Container, PaddingBox } from '../../tpds/elements/layout'
+import PageHeader from '../../lib/components/PageHeader'
+import { Container, Window } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
 import RadioTabs from '../../tpds/components/radiotabs'
 import PropsTable from '../../tpds/components/props-table'
@@ -26,22 +25,21 @@ export default function Page() {
 
   return (
     <div>
-      <Hero className="bg-window border-b-2 border-body">
-        <H1 isMedium>RadioTabs</H1>
-        <P>Radio selection component in row layout.</P>
-      </Hero>
       <Container>
-        <PaddingBox>
-          <br />
+        <PageHeader title="RadioTabs" subTitle="Radio selection component in row layout." />
+        <Window>
           <RadioTabs
             items={items}
             selectedIndex={selectedIndex}
             handleIndexSelection={setSelectedIndex}
           />
-          <br />
-          <CodeBlock code={code} />
-          <br />
-          <br />
+        </Window>
+        <br />
+        <br />
+        <CodeBlock code={code} />
+        <br />
+        <br />
+        <Window>
           <PropsTable
             title="Props"
             items={[
@@ -68,7 +66,9 @@ export default function Page() {
               },
             ]}
           />
-        </PaddingBox>
+        </Window>
+        <br />
+        <br />
       </Container>
     </div>
   )

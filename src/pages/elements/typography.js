@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../../tpds/components/hero'
+import PageHeader from '../../lib/components/PageHeader'
 import {
   P,
   PNano,
@@ -24,17 +24,12 @@ import CodeBlock from '@/tpds/components/code'
 export default function Typography() {
   return (
     <div>
-      <Hero className="bg-window border-b-2 border-body">
-        <H1 isMedium>Typography</H1>
-        <P>
-          Use the typography elements directly. They are all responsive by default and will ensure
-          typographic consistency.
-        </P>
-      </Hero>
       <Container>
-        <br />
-        <br />
-        <br />
+        <PageHeader
+          title="Typography"
+          subTitle="Use the typography elements directly. They are all responsive by default and will ensure
+          typographic consistency."
+        />
         <Window>
           <H4>Paragraphs</H4>
           <Separator />
@@ -110,8 +105,6 @@ export default function Typography() {
           <br />
           <CodeBlock code={codeLabel} />
         </Window>
-        <br />
-        <br />
         <br />
         <br />
       </Container>

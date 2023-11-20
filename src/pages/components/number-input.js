@@ -1,6 +1,5 @@
 import React from 'react'
-import Hero from '../../tpds/components/hero'
-import { P, H1 } from '../../tpds/elements/typography'
+import PageHeader from '../../lib/components/PageHeader'
 import { Container, Window } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
 import NumberInput from '../../tpds/components/input/number'
@@ -11,20 +10,18 @@ export default function Page() {
 
   return (
     <div>
-      <Hero className="bg-window border-b-2 border-body">
-        <H1 isMedium>Number Input</H1>
-        <P>A text input optimized for numbers</P>
-      </Hero>
       <Container>
+        <PageHeader title="Number Input" subTitle="A text input optimized for numbers" />
         <Window className="mt-8">
           <NumberInput
             initialValue={number}
             maxValue={1000}
             onChangeCallback={value => setNumber(value)}
           />
-          <br />
-          <CodeBlock code={code} />
         </Window>
+        <br />
+        <br />
+        <CodeBlock code={code} />
         <br />
         <br />
         <PropsTable

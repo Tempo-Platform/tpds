@@ -1,6 +1,6 @@
 import React from 'react'
-import Hero from '../../tpds/components/hero'
-import { P, H1, PSmall } from '../../tpds/elements/typography'
+import PageHeader from '../../lib/components/PageHeader'
+import { P, PSmall } from '../../tpds/elements/typography'
 import { Container, Window } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
 import Select from '../../tpds/components/select'
@@ -10,26 +10,9 @@ export default function Page() {
   const [selectedIndex, setSelectedIndex] = React.useState(null)
   return (
     <div>
-      <Hero className="bg-window border-b-2 border-body">
-        <H1 isMedium>Select</H1>
-        <P>Simple select component</P>
-      </Hero>
       <Container>
-        <br />
-        <br />
+        <PageHeader title="Select" subTitle="Simple select component" />
         <Window>
-          <P>Features:</P>
-          <br />
-          <PSmall>- Accepts handler function to apply selection by index</PSmall>
-          <PSmall>- Search by typing</PSmall>
-          <PSmall>- Clear text input on focus (to search freely)</PSmall>
-          <PSmall>- Close drawer + clear typed content on click away</PSmall>
-          <PSmall>- Automatically apply scroll if content exceeds max height</PSmall>
-          <PSmall>- Accepts indexes to exclude from list</PSmall>
-          <PSmall>
-            - "No permanent selection" mode, which skips showing the selected item in the input
-          </PSmall>
-          <br />
           <Select
             handleIndexSelection={setSelectedIndex}
             selectedIndex={selectedIndex}
@@ -38,14 +21,32 @@ export default function Page() {
             excludeIndexes={[2]}
             allowMultiple={true}
             options={[
-              { value: '1', label: 'Option 1' },
+              {
+                value: '1',
+                label: 'Option 1',
+                subLabel: 'Additional information about this item',
+              },
               { value: '2', label: 'Option 2' },
               { value: '3', label: 'Option 3' },
-              { value: '4', label: 'Option 4' },
+              { value: '4', label: 'Option 4', subLabel: 'Additional information about this item' },
               { value: '5', label: 'Option 5' },
             ]}
           />
         </Window>
+        <br />
+        <P>Features:</P>
+        <br />
+        <PSmall>- Accepts handler function to apply selection by index</PSmall>
+        <PSmall>- Search by typing</PSmall>
+        <PSmall>- Clear text input on focus (to search freely)</PSmall>
+        <PSmall>- Close drawer + clear typed content on click away</PSmall>
+        <PSmall>- Automatically apply scroll if content exceeds max height</PSmall>
+        <PSmall>- Accepts indexes to exclude from list</PSmall>
+        <PSmall>- Accepts "sublabel" to display additional information under main label</PSmall>
+        <PSmall>
+          - "No permanent selection" mode, which skips showing the selected item in the input
+        </PSmall>
+        <br />
         <br />
         <CodeBlock code={code} />
         <br />
@@ -133,10 +134,14 @@ const [selectedIndex, setSelectedIndex] = React.useState(null)
   idProp="value"
   excludeIndexes={[2]}
   options={[
-    { value: '1', label: 'Option 1' },
+    {
+      value: '1',
+      label: 'Option 1',
+      subLabel: 'Additional information about this item',
+    },
     { value: '2', label: 'Option 2' },
     { value: '3', label: 'Option 3' },
-    { value: '4', label: 'Option 4' },
+    { value: '4', label: 'Option 4', subLabel: 'Additional information about this item' },
     { value: '5', label: 'Option 5' },
   ]}
 />`

@@ -1,6 +1,6 @@
 import React from 'react'
-import Hero from '../../tpds/components/hero'
-import { P, H1, PSmall } from '../../tpds/elements/typography'
+import PageHeader from '../../lib/components/PageHeader'
+import { P, PSmall } from '../../tpds/elements/typography'
 import { Container, Window } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
 import SelectMulti from '../../tpds/components/select-multi'
@@ -10,24 +10,19 @@ export default function Page() {
   const [selectedIndexes, setSelectedIndexes] = React.useState([0, 1])
   return (
     <div>
-      <Hero className="bg-window border-b-2 border-body">
-        <H1 isMedium>MultiSelect</H1>
-        <P>Multiple-item selection component</P>
-      </Hero>
       <Container>
+        <PageHeader title="MultiSelect" subTitle="Multiple-item selection component" />
+        <P>Features:</P>
         <br />
+        <PSmall>- Accepts handler function to update array selection of indexes</PSmall>
+        <PSmall>- Search by typing</PSmall>
+        <PSmall>- Clear text input on focus (to search freely)</PSmall>
+        <PSmall>- Close drawer + clear typed content on click away</PSmall>
+        <PSmall>- Automatically apply scroll if content exceeds max height</PSmall>
+        <PSmall>- Accepts indexes to exclude</PSmall>
+        <PSmall>- Show only items that are not yet selected in drawer</PSmall>
         <br />
         <Window>
-          <P>Features:</P>
-          <br />
-          <PSmall>- Accepts handler function to update array selection of indexes</PSmall>
-          <PSmall>- Search by typing</PSmall>
-          <PSmall>- Clear text input on focus (to search freely)</PSmall>
-          <PSmall>- Close drawer + clear typed content on click away</PSmall>
-          <PSmall>- Automatically apply scroll if content exceeds max height</PSmall>
-          <PSmall>- Accepts indexes to exclude</PSmall>
-          <PSmall>- Show only items that are not yet selected in drawer</PSmall>
-          <br />
           <SelectMulti
             handleSelectionUpdate={setSelectedIndexes}
             selectedIndexes={selectedIndexes}
@@ -48,6 +43,7 @@ export default function Page() {
             ]}
           />
         </Window>
+        <br />
         <br />
         <CodeBlock code={code} />
         <br />

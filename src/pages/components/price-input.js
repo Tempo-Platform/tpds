@@ -1,6 +1,5 @@
 import React from 'react'
-import Hero from '../../tpds/components/hero'
-import { P, H1 } from '../../tpds/elements/typography'
+import PageHeader from '../../lib/components/PageHeader'
 import { Container, Window } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
 import PriceInput from '../../tpds/components/input/price'
@@ -11,20 +10,18 @@ export default function Page() {
 
   return (
     <div>
-      <Hero className="bg-window border-b-2 border-body">
-        <H1 isMedium>Price Input</H1>
-        <P>A text input optimized for prices.</P>
-      </Hero>
       <Container>
+        <PageHeader title="Price Input" subTitle="A text input optimized for prices." />
         <Window className="mt-8">
           <PriceInput
             initialValue={price}
             currencySymbol="$"
             onChangeCallback={value => setPrice(value)}
           />
-          <br />
-          <CodeBlock code={code} />
         </Window>
+        <br />
+        <br />
+        <CodeBlock code={code} />
         <br />
         <br />
         <PropsTable
@@ -53,6 +50,8 @@ export default function Page() {
             },
           ]}
         />
+        <br />
+        <br />
       </Container>
     </div>
   )

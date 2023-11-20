@@ -1,75 +1,69 @@
-import Hero from '../../tpds/components/hero'
-import { P, H6, H1 } from '../../tpds/elements/typography'
-import { Container, PaddingBox } from '../../tpds/elements/layout'
+import PageHeader from '../../lib/components/PageHeader'
+import { P, H6 } from '../../tpds/elements/typography'
+import { Container } from '../../tpds/elements/layout'
 import tokens from '../../tpds/tokens/index.json'
 const colorTokens = tokens.colors
 
 export default function Page() {
   return (
     <div>
-      <Hero className="bg-window border-b-2 border-body">
-        <H1 isMedium>Colors</H1>
-        <P>
-          Use the typography elements directly. They are all responsive by default and will ensure
-          typographic consistency.
-        </P>
-      </Hero>
       <Container>
-        <PaddingBox>
-          <H6 isBold id="primary-colors">
-            Main Colors
-          </H6>
-          <br />
-          <P>Each "main color" corresponds to the level "500" of the respective color.</P>
-          <br />
-          <br />
-          <MainColorsRow>
-            <SwatchItem>
-              <SwatchInfo label="Green" hex={colorTokens.color_palettes.green['500']} />
-              <ColorSwatch style={{ backgroundColor: colorTokens.color_palettes.green['500'] }} />
-            </SwatchItem>
-            <SwatchItem>
-              <SwatchInfo label="Blue" hex={colorTokens.color_palettes.blue['500']} />
-              <ColorSwatch style={{ backgroundColor: colorTokens.color_palettes.blue['500'] }} />
-            </SwatchItem>
-            <SwatchItem>
-              <SwatchInfo label="Purple" hex={colorTokens.color_palettes.purple['500']} />
-              <ColorSwatch style={{ backgroundColor: colorTokens.color_palettes.purple['500'] }} />
-            </SwatchItem>
-            <SwatchItem>
-              <SwatchInfo label="Magenta" hex={colorTokens.color_palettes.magenta['500']} />
-              <ColorSwatch style={{ backgroundColor: colorTokens.color_palettes.magenta['500'] }} />
-            </SwatchItem>
-            <SwatchItem>
-              <SwatchInfo label="Red" hex={colorTokens.color_palettes.red['500']} />
-              <ColorSwatch style={{ backgroundColor: colorTokens.color_palettes.red['500'] }} />
-            </SwatchItem>
-            <SwatchItem>
-              <SwatchInfo label="Orange" hex={colorTokens.color_palettes.orange['500']} />
-              <ColorSwatch style={{ backgroundColor: colorTokens.color_palettes.orange['500'] }} />
-            </SwatchItem>
-            <SwatchItem>
-              <SwatchInfo label="Yellow" hex={colorTokens.color_palettes.yellow['500']} />
-              <ColorSwatch style={{ backgroundColor: colorTokens.color_palettes.yellow['500'] }} />
-            </SwatchItem>
-          </MainColorsRow>
-          <br />
-          <br />
-          <br />
-          <H6 isBold id="primary-colors">
-            Color Levels
-          </H6>
-          <br />
-          <Palette colorName="Green" colors={colorTokens.color_palettes.green} />
-          <Palette colorName="Blue" colors={colorTokens.color_palettes.blue} />
-          <Palette colorName="Purple" colors={colorTokens.color_palettes.purple} />
-          <Palette colorName="Magenta" colors={colorTokens.color_palettes.magenta} />
-          <Palette colorName="Red" colors={colorTokens.color_palettes.red} />
-          <Palette colorName="Orange" colors={colorTokens.color_palettes.orange} />
-          <Palette colorName="Yellow" colors={colorTokens.color_palettes.yellow} />
-          <Palette colorName="Grey Light" colors={colorTokens.color_palettes.grey_light} />
-          <Palette colorName="Grey Dark" colors={colorTokens.color_palettes.grey_dark} />
-        </PaddingBox>
+        <PageHeader title="Colors" subtitle="sdfsdfsdf" />
+        <H6 isBold id="primary-colors">
+          Main Colors
+        </H6>
+        <br />
+        <P>Each "main color" corresponds to the level "500" of the respective color pallete.</P>
+        <br />
+        <br />
+        <MainColorsRow>
+          <SwatchItem>
+            <SwatchInfo label="Green" hex={colorTokens.color_palettes.green['500']} />
+            <ColorSwatch style={{ backgroundColor: colorTokens.color_palettes.green['500'] }} />
+          </SwatchItem>
+          <SwatchItem>
+            <SwatchInfo label="Blue" hex={colorTokens.color_palettes.blue['500']} />
+            <ColorSwatch style={{ backgroundColor: colorTokens.color_palettes.blue['500'] }} />
+          </SwatchItem>
+          <SwatchItem>
+            <SwatchInfo label="Purple" hex={colorTokens.color_palettes.purple['500']} />
+            <ColorSwatch style={{ backgroundColor: colorTokens.color_palettes.purple['500'] }} />
+          </SwatchItem>
+          <SwatchItem>
+            <SwatchInfo label="Magenta" hex={colorTokens.color_palettes.magenta['500']} />
+            <ColorSwatch style={{ backgroundColor: colorTokens.color_palettes.magenta['500'] }} />
+          </SwatchItem>
+          <SwatchItem>
+            <SwatchInfo label="Red" hex={colorTokens.color_palettes.red['500']} />
+            <ColorSwatch style={{ backgroundColor: colorTokens.color_palettes.red['500'] }} />
+          </SwatchItem>
+          <SwatchItem>
+            <SwatchInfo label="Orange" hex={colorTokens.color_palettes.orange['500']} />
+            <ColorSwatch style={{ backgroundColor: colorTokens.color_palettes.orange['500'] }} />
+          </SwatchItem>
+          <SwatchItem>
+            <SwatchInfo label="Yellow" hex={colorTokens.color_palettes.yellow['500']} />
+            <ColorSwatch style={{ backgroundColor: colorTokens.color_palettes.yellow['500'] }} />
+          </SwatchItem>
+        </MainColorsRow>
+        <br />
+        <br />
+        <br />
+        <H6 isBold id="primary-colors">
+          Color Levels
+        </H6>
+        <br />
+        <Palette colorName="Green" colors={colorTokens.color_palettes.green} />
+        <Palette colorName="Blue" colors={colorTokens.color_palettes.blue} />
+        <Palette colorName="Purple" colors={colorTokens.color_palettes.purple} />
+        <Palette colorName="Magenta" colors={colorTokens.color_palettes.magenta} />
+        <Palette colorName="Red" colors={colorTokens.color_palettes.red} />
+        <Palette colorName="Orange" colors={colorTokens.color_palettes.orange} />
+        <Palette colorName="Yellow" colors={colorTokens.color_palettes.yellow} />
+        <Palette colorName="Grey Light" colors={colorTokens.color_palettes.grey_light} />
+        <Palette colorName="Grey Dark" colors={colorTokens.color_palettes.grey_dark} />
+        <br />
+        <br />
       </Container>
     </div>
   )

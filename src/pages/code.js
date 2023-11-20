@@ -1,49 +1,36 @@
-import Hero from '../tpds/components/hero'
+import PageHeader from '../lib/components/PageHeader'
 import { P, H5, Bold, H1 } from '../tpds/elements/typography'
 import { Separator, Container, PaddingBox } from '../tpds/elements/layout'
 
 export default function Page() {
   return (
     <div>
-      <Hero className="bg-window border-b-2 border-body">
-        <H1 isMedium>Code</H1>
-        <P>
-          Use the typography elements directly. They are all responsive by default and will ensure
-          typographic consistency.
-        </P>
-      </Hero>
       <Container>
-        <PaddingBox>
-          <H5>Overview</H5>
-          <br />
-          <P>
-            The Tempo Platform Design System provides a ready-to-use set of elements and components
-            to make UI development quick and consistent.
-          </P>
-          <br />
-          <P>
-            To make integration with projects simple, it is built on a plain React + TailwindCSS
-            implementation. No CSS-in-JS.
-          </P>
-          <br />
-          <br />
-          <Separator />
-          <br />
-          <br />
-          <TailwindLogo />
-          <br />
-          <P>
-            <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
-              <Bold>Tailwind CSS</Bold>
-            </a>{' '}
-            is a utility-first framework which generates a set of utility classes based on design
-            tokens from our Design System created in Figma. This provides a reliable set of
-            standards to ensure consistency across all Tempo Platform projects with the added
-            benefit of a large active community as well as a great documentation site.
-          </P>
-          <br />
-          <br />
-        </PaddingBox>
+        <PageHeader title="Code" />
+        <P>
+          The Tempo Platform Design System provides a ready-to-use set of elements and components to
+          make UI development quick and consistent.
+        </P>
+        <br />
+        <P>To make integration with projects simple, it is built on plain React + TailwindCSS.</P>
+        <br />
+        <br />
+        <Separator />
+        <br />
+        <br />
+        <TailwindLogo />
+        <br />
+        <P>
+          <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
+            <Bold>Tailwind CSS</Bold>
+          </a>{' '}
+          is a utility-first framework which generates a set of utility classes based on design
+          tokens from our Design System created in Figma. This provides a reliable set of standards
+          to ensure consistency across all Tempo Platform projects with the added benefit of a large
+          active community as well as a great documentation site.
+        </P>
+        <br />
+        <br />
       </Container>
     </div>
   )
