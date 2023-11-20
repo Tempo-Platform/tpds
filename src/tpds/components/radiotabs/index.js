@@ -4,7 +4,7 @@ import clsx from 'clsx'
 const RadioTabs = ({ items, selectedIndex, handleIndexSelection }) => {
   return (
     <div className="w-full">
-      <div className="flex space-x-1 rounded-lg p-1 bg-grey-light-scale-200 dark:bg-grey-dark-scale-400">
+      <div className="flex space-x-1 rounded-[8px] p-1 bg-grey-light-scale-200 dark:bg-grey-dark-scale-500">
         {items.map((item, index) => (
           <div
             className="flex-1"
@@ -17,8 +17,8 @@ const RadioTabs = ({ items, selectedIndex, handleIndexSelection }) => {
                 'm-0 font-medium',
                 'text-xs xl:text-sm',
                 '!outline-none',
-                `w-full select-none cursor-pointer text-center py-2 rounded-md`,
-                index === selectedIndex && `bg-white text-black dark:bg-grey-dark-scale-200`,
+                `w-full select-none cursor-pointer text-center py-2 rounded-[5px]`,
+                index === selectedIndex && `bg-white text-black dark:bg-grey-dark-scale-300`,
               )}
             >
               {item.value || item.description || item.label || item}
