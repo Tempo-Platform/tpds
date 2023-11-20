@@ -15,3 +15,8 @@
   padding-top: 12px;
   padding-bottom: 12px;
 }
+
+pre {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
