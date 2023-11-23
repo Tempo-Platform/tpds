@@ -126,7 +126,7 @@ var Select = function Select(_ref) {
     strokeLinejoin: "round",
     d: "M19.5 8.25l-7.5 7.5-7.5-7.5"
   })), /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _clsx["default"])('flex flex-row flex-wrap gap-2 items-center justify-between', 'w-full', 'px-2.5 py-1 rounded focus:outline-none', 'font-normal', 'bg-transparent text-primary border-transparent', 'border-2 !border-input focus:!border-blue', 'cursor-pointer', 'select-none', 'transition duration-100', isOpen && '!border-blue')
+    className: (0, _clsx["default"])('flex flex-row flex-wrap gap-2 items-center justify-between', 'w-full', 'px-2.5 py-1 rounded focus:outline-none', 'font-normal', 'bg-transparent text-primary border-transparent', 'border-2 !border-[#ededed] dark:!border-[#384147] focus:!border-blue', 'cursor-pointer', 'select-none', 'transition duration-100', isOpen && '!border-blue')
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex gap-2 flex-wrap"
   }, displayValue && displayValue.map(function (item, index) {
