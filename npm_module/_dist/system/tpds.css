@@ -983,6 +983,25 @@ video {
   --tw-border-opacity: 1 !important;
   border-color: rgb(233 235 236 / var(--tw-border-opacity)) !important;
 }
+.\!border-blue {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(25 114 245 / var(--tw-border-opacity)) !important;
+}
+.\!border-green {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(45 185 45 / var(--tw-border-opacity)) !important;
+}
+.\!border-input {
+  border-color: var(--border-input) !important;
+}
+.\!border-orange {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(240 135 39 / var(--tw-border-opacity)) !important;
+}
+.\!border-red {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(235 87 87 / var(--tw-border-opacity)) !important;
+}
 .\!border-transparent {
   border-color: transparent !important;
 }
@@ -1024,9 +1043,6 @@ video {
 .border-grey-light-scale-500 {
   --tw-border-opacity: 1;
   border-color: rgb(201 205 207 / var(--tw-border-opacity));
-}
-.border-input {
-  border-color: var(--border-input);
 }
 .border-orange {
   --tw-border-opacity: 1;
@@ -1785,21 +1801,25 @@ video {
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }
+.focus\:\!border-blue:focus {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(25 114 245 / var(--tw-border-opacity)) !important;
+}
+.focus\:\!border-green:focus {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(45 185 45 / var(--tw-border-opacity)) !important;
+}
+.focus\:\!border-orange:focus {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(240 135 39 / var(--tw-border-opacity)) !important;
+}
+.focus\:\!border-red:focus {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(235 87 87 / var(--tw-border-opacity)) !important;
+}
 .focus\:border-blue:focus {
   --tw-border-opacity: 1;
   border-color: rgb(25 114 245 / var(--tw-border-opacity));
-}
-.focus\:border-green:focus {
-  --tw-border-opacity: 1;
-  border-color: rgb(45 185 45 / var(--tw-border-opacity));
-}
-.focus\:border-orange:focus {
-  --tw-border-opacity: 1;
-  border-color: rgb(240 135 39 / var(--tw-border-opacity));
-}
-.focus\:border-red:focus {
-  --tw-border-opacity: 1;
-  border-color: rgb(235 87 87 / var(--tw-border-opacity));
 }
 .focus\:outline-none:focus {
   outline: 2px solid transparent;

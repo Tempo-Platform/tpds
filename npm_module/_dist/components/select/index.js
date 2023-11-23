@@ -87,7 +87,7 @@ var Select = function Select(_ref) {
     onChange: function onChange(e) {
       return setInputValue(e.target.value);
     },
-    className: (0, _clsx["default"])(!isOpen && 'cursor-pointer', 'pr-8 text-ellipsis !text-secondary !bg-transparent border-input'),
+    className: (0, _clsx["default"])('pr-8 text-ellipsis !text-secondary !bg-transparent !border-input', !isOpen && 'cursor-pointer', isOpen && '!border-blue'),
     onFocus: function onFocus() {
       setInputValue('');
       setIsOpen(true);

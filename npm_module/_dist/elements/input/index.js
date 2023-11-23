@@ -19,7 +19,7 @@ var TextInput = function TextInput(_ref) {
     isWarning = _ref.isWarning,
     className = _ref.className,
     props = _objectWithoutProperties(_ref, _excluded);
-  var finalClass = _clsx["default"].apply(void 0, baseInputStyles.concat([className, isValid && 'border-green focus:border-green', isInvalid && 'border-red focus:border-red', isWarning && 'border-orange focus:border-orange']));
+  var finalClass = _clsx["default"].apply(void 0, baseInputStyles.concat([className, isValid && '!border-green focus:!border-green', isInvalid && '!border-red focus:!border-red', isWarning && '!border-orange focus:!border-orange']));
   return /*#__PURE__*/_react["default"].createElement("input", _extends({
     type: "text",
     className: finalClass
