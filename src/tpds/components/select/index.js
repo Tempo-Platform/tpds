@@ -82,7 +82,7 @@ const Select = ({
         value={inputValueToDisplay}
         onChange={e => setInputValue(e.target.value)}
         className={clsx(
-          'pr-8 text-ellipsis !text-secondary !bg-transparent !border-input',
+          'pr-8 text-ellipsis !text-secondary !bg-transparent !border-[#ededed] dark:!border-[#384147]',
           !isOpen && 'cursor-pointer',
           isOpen && '!border-blue',
         )}

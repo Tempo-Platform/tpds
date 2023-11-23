@@ -132,7 +132,7 @@ const Select = ({
           'px-2.5 py-1 rounded focus:outline-none',
           'font-normal',
           'bg-transparent text-primary border-transparent',
-          'border-2 !border-input focus:!border-blue',
+          'border-2 !border-[#ededed] dark:!border-[#384147] focus:!border-blue',
           'cursor-pointer',
           'select-none',
           'transition duration-100',
