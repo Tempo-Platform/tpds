@@ -12,8 +12,8 @@ export const baseInputStyles = [
 
 export const TextInput = ({ isValid, isInvalid, isWarning, className, ...props }) => {
   const finalClass = clsx(
-    className,
     ...baseInputStyles,
+    className,
     isValid && 'border-green focus:border-green',
     isInvalid && 'border-red focus:border-red',
     isWarning && 'border-orange focus:border-orange',
