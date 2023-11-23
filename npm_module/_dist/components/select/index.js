@@ -87,7 +87,7 @@ var Select = function Select(_ref) {
     onChange: function onChange(e) {
       return setInputValue(e.target.value);
     },
-    className: (0, _clsx["default"])(!isOpen && 'cursor-pointer', 'pr-8 text-ellipsis !text-secondary'),
+    className: (0, _clsx["default"])(!isOpen && 'cursor-pointer', 'pr-8 text-ellipsis !text-secondary !bg-transparent border-input'),
     onFocus: function onFocus() {
       setInputValue('');
       setIsOpen(true);
@@ -98,7 +98,7 @@ var Select = function Select(_ref) {
     viewBox: "0 0 24 24",
     strokeWidth: 1.5,
     stroke: "currentColor",
-    className: (0, _clsx["default"])('w-4 h-4 absolute right-3 transform top-[10px] text-primary pointer-events-none', isOpen && 'rotate-180')
+    className: (0, _clsx["default"])('w-4 h-4 absolute right-3 transform top-[10px] pointer-events-none text-[#7e909c]', isOpen && 'rotate-180')
   }, /*#__PURE__*/_react["default"].createElement("path", {
     strokeLinecap: "round",
     strokeLinejoin: "round",
@@ -118,7 +118,9 @@ var Select = function Select(_ref) {
     }, labelProp ? option[labelProp] : option), option.subLabel && /*#__PURE__*/_react["default"].createElement(_typography.PNano, {
       className: (0, _clsx["default"])('mt-1 text-tertiary text-left', isSelected(option) && "!text-white dark:!text-black")
     }, option.subLabel));
-  })));
+  }), optionsThatMatchInputValue.length === 0 && /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
+    className: (0, _clsx["default"])('text-secondary text-left select-none')
+  }, "No matches")));
 };
 var _default = Select;
 exports["default"] = _default;
