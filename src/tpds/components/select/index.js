@@ -81,7 +81,10 @@ const Select = ({
         placeholder={placeholder}
         value={inputValueToDisplay}
         onChange={e => setInputValue(e.target.value)}
-        className={clsx(!isOpen && 'cursor-pointer', 'pr-8 text-ellipsis !text-secondary')}
+        className={clsx(
+          !isOpen && 'cursor-pointer',
+          'pr-8 text-ellipsis !text-secondary !bg-transparent border-input',
+        )}
         onFocus={() => {
           setInputValue('')
           setIsOpen(true)
@@ -94,7 +97,7 @@ const Select = ({
         strokeWidth={1.5}
         stroke="currentColor"
         className={clsx(
-          'w-4 h-4 absolute right-3 transform top-[10px] text-primary pointer-events-none',
+          'w-4 h-4 absolute right-3 transform top-[10px] pointer-events-none text-[#7e909c]',
           isOpen && 'rotate-180',
         )}
       >
@@ -141,6 +144,9 @@ const Select = ({
               )}
             </div>
           ))}
+          {optionsThatMatchInputValue.length === 0 && (
+            <PTiny className={clsx('text-secondary text-left select-none')}>No matches</PTiny>
+          )}
         </div>
       )}
     </div>

@@ -119,7 +119,7 @@ const Select = ({
         stroke="currentColor"
         className={clsx(
           'pointer-events-none',
-          'w-4 h-4 absolute right-2 transform top-[9px] text-primary',
+          'w-4 h-4 absolute right-2 transform top-[9px] text-[#7e909c]',
           isOpen && 'rotate-180',
         )}
       >
@@ -131,8 +131,8 @@ const Select = ({
           'w-full',
           'px-2.5 py-1 rounded focus:outline-none',
           'font-normal',
-          'bg-grey-light-scale-200 text-primary border-transparent dark:bg-grey-dark-scale-400',
-          'border-2 focus:border-blue',
+          'bg-transparent text-primary border-transparent',
+          'border-2 border-input focus:border-blue',
           'cursor-pointer',
           'select-none',
           'transition duration-100',
