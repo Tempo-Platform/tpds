@@ -38,11 +38,14 @@ export default function Page() {
         <br />
         <PSmall>- Accepts handler function to apply selection by index</PSmall>
         <PSmall>- Search by typing</PSmall>
-        <PSmall>- Clear text input on focus (to search freely)</PSmall>
+        <PSmall>- Display "no matches" when input doesn't match any options</PSmall>
+        <PSmall>- Clear text input on focus (favouring quick interaction)</PSmall>
         <PSmall>- Close drawer + clear typed content on click away</PSmall>
         <PSmall>- Automatically apply scroll if content exceeds max height</PSmall>
         <PSmall>- Accepts indexes to exclude from list</PSmall>
-        <PSmall>- Accepts "sublabel" to display additional information under main label</PSmall>
+        <PSmall>
+          - Accepts "sublabel" to display additional information under label of each option
+        </PSmall>
         <PSmall>
           - "No permanent selection" mode, which skips showing the selected item in the input
         </PSmall>
