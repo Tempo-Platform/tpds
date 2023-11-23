@@ -120,7 +120,7 @@ const Select = ({
         className={clsx(
           'pointer-events-none',
           'w-4 h-4 absolute right-2 transform top-[9px] text-[#7e909c]',
-          isOpen && 'rotate-180',
+          isOpen && 'rotate-180 text-blue',
         )}
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -132,11 +132,11 @@ const Select = ({
           'px-2.5 py-1 rounded focus:outline-none',
           'font-normal',
           'bg-transparent text-primary border-transparent',
-          'border-2 border-input focus:border-blue',
+          'border-2 !border-input focus:!border-blue',
           'cursor-pointer',
           'select-none',
           'transition duration-100',
-          isOpen && 'border-blue',
+          isOpen && '!border-blue',
         )}
       >
         <div className="flex gap-2 flex-wrap">

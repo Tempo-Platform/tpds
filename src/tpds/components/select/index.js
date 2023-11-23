@@ -82,8 +82,9 @@ const Select = ({
         value={inputValueToDisplay}
         onChange={e => setInputValue(e.target.value)}
         className={clsx(
+          'pr-8 text-ellipsis !text-secondary !bg-transparent !border-input',
           !isOpen && 'cursor-pointer',
-          'pr-8 text-ellipsis !text-secondary !bg-transparent border-input',
+          isOpen && '!border-blue',
         )}
         onFocus={() => {
           setInputValue('')
