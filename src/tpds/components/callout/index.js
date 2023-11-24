@@ -7,7 +7,7 @@ import InfoIcon from '../../assets/svgs/notifications/InfoIcon'
 import TipIcon from '../../assets/svgs/notifications/TipIcon'
 import BugIcon from '../../assets/svgs/notifications/BugIcon'
 import NoteIcon from '../../assets/svgs/notifications/NoteIcon'
-import { P, PSmall } from '@/tpds/elements/typography'
+import { P, PSmall } from '../../elements/typography'
 
 const rootStyles = {
   default:
