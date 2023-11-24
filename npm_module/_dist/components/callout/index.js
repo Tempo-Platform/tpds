@@ -13,7 +13,7 @@ var _InfoIcon = _interopRequireDefault(require("../../assets/svgs/notifications/
 var _TipIcon = _interopRequireDefault(require("../../assets/svgs/notifications/TipIcon"));
 var _BugIcon = _interopRequireDefault(require("../../assets/svgs/notifications/BugIcon"));
 var _NoteIcon = _interopRequireDefault(require("../../assets/svgs/notifications/NoteIcon"));
-var _typography = require("@/tpds/elements/typography");
+var _typography = require("../../elements/typography");
 var _excluded = ["variant", "title", "text", "children"];
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
