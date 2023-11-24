@@ -1018,9 +1018,8 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(25 114 245 / var(--tw-border-opacity));
 }
-.border-blue-scale-100 {
-  --tw-border-opacity: 1;
-  border-color: rgb(209 227 253 / var(--tw-border-opacity));
+.border-blue\/50 {
+  border-color: rgb(25 114 245 / 0.5);
 }
 .border-body {
   border-color: var(--border-body);
@@ -1029,9 +1028,8 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(45 185 45 / var(--tw-border-opacity));
 }
-.border-green-scale-100 {
-  --tw-border-opacity: 1;
-  border-color: rgb(193 240 193 / var(--tw-border-opacity));
+.border-green\/50 {
+  border-color: rgb(45 185 45 / 0.5);
 }
 .border-grey-light-scale-300 {
   --tw-border-opacity: 1;
@@ -1049,13 +1047,11 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(240 135 39 / var(--tw-border-opacity));
 }
-.border-orange-scale-100 {
-  --tw-border-opacity: 1;
-  border-color: rgb(250 218 188 / var(--tw-border-opacity));
+.border-orange\/50 {
+  border-color: rgb(240 135 39 / 0.5);
 }
-.border-purple-scale-100 {
-  --tw-border-opacity: 1;
-  border-color: rgb(206 176 250 / var(--tw-border-opacity));
+.border-purple\/50 {
+  border-color: rgb(98 0 238 / 0.5);
 }
 .border-red {
   --tw-border-opacity: 1;
@@ -1136,9 +1132,6 @@ video {
 .bg-grey-light-scale-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(223 225 226 / var(--tw-bg-opacity));
-}
-.bg-grey-light-scale-400\/20 {
-  background-color: rgb(223 225 226 / 0.2);
 }
 .bg-grey-light-scale-500 {
   --tw-bg-opacity: 1;
@@ -1903,14 +1896,6 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(25 114 245 / var(--tw-border-opacity));
 }
-:is(.dark .dark\:border-blue-scale-300) {
-  --tw-border-opacity: 1;
-  border-color: rgb(117 170 249 / var(--tw-border-opacity));
-}
-:is(.dark .dark\:border-green-scale-300) {
-  --tw-border-opacity: 1;
-  border-color: rgb(132 225 132 / var(--tw-border-opacity));
-}
 :is(.dark .dark\:border-green-scale-400) {
   --tw-border-opacity: 1;
   border-color: rgb(50 205 50 / var(--tw-border-opacity));
@@ -1938,14 +1923,6 @@ video {
 :is(.dark .dark\:border-grey-light-scale-900) {
   --tw-border-opacity: 1;
   border-color: rgb(117 126 132 / var(--tw-border-opacity));
-}
-:is(.dark .dark\:border-orange-scale-300) {
-  --tw-border-opacity: 1;
-  border-color: rgb(245 175 110 / var(--tw-border-opacity));
-}
-:is(.dark .dark\:border-purple-scale-300) {
-  --tw-border-opacity: 1;
-  border-color: rgb(150 84 244 / var(--tw-border-opacity));
 }
 :is(.dark .dark\:border-red-scale-300) {
   --tw-border-opacity: 1;

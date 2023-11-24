@@ -13,20 +13,20 @@ var _InfoIcon = _interopRequireDefault(require("../../assets/svgs/notifications/
 var _TipIcon = _interopRequireDefault(require("../../assets/svgs/notifications/TipIcon"));
 var _BugIcon = _interopRequireDefault(require("../../assets/svgs/notifications/BugIcon"));
 var _NoteIcon = _interopRequireDefault(require("../../assets/svgs/notifications/NoteIcon"));
-var _excluded = ["variant", "title", "text"];
+var _excluded = ["variant", "title", "text", "children"];
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 var rootStyles = {
-  "default": 'border-grey-light-scale-400 bg-grey-light-scale-200 dark:bg-grey-light-scale-100/5',
-  success: 'border-green-scale-100 bg-green-scale-100/20 dark:border-green-scale-300 dark:bg-green-scale-500/10',
-  info: 'border-blue-scale-100 bg-blue-scale-100/20 dark:border-blue-scale-300 dark:bg-blue-scale-300/10',
+  "default": 'border-grey-light-scale-400 dark:border-grey-dark-scale-200 bg-grey-light-scale-200 dark:bg-grey-light-scale-100/5',
+  success: 'border-green/50 bg-green-scale-100/20 dark:bg-green-scale-500/10',
+  info: 'border-blue/50 bg-blue-scale-100/20 dark:bg-blue-scale-300/10',
   danger: 'border-red-scale-100 bg-red-scale-100/20 dark:border-red-scale-300 dark:bg-red-scale-300/10',
-  warning: 'border-orange-scale-100 bg-orange-scale-100/20 dark:border-orange-scale-300 dark:bg-orange-scale-300/10',
-  tip: 'border-purple-scale-100 bg-purple-scale-100/20 dark:border-purple-scale-300 dark:bg-purple-scale-300/10',
-  bug: 'border-orange-scale-100 bg-orange-scale-100/20 dark:border-orange-scale-300 dark:bg-orange-scale-300/10',
-  note: 'border-grey-light-scale-400 bg-grey-light-scale-400/20 dark:bg-grey-light-scale-100/5'
+  warning: 'border-orange/50 bg-orange-scale-100/20 dark:bg-orange-scale-300/10',
+  tip: 'border-purple/50 bg-purple-scale-100/20 dark:bg-purple-scale-300/10',
+  bug: 'border-orange/50 bg-orange-scale-100/20 dark:bg-orange-scale-300/10',
+  note: 'border-grey-light-scale-400 dark:border-grey-dark-scale-200 dark:bg-grey-light-scale-100/5'
 };
 var headerBaseStyle = 'flex items-center font-medium text-lg pt-4 px-4';
 var headerVariantStyles = {
@@ -64,16 +64,17 @@ var Callout = function Callout(_ref) {
     variant = _ref$variant === void 0 ? 'default' : _ref$variant,
     title = _ref.title,
     text = _ref.text,
+    children = _ref.children,
     props = _objectWithoutProperties(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement("div", _extends({}, props, {
-    className: rootStyles[variant]
+    className: (0, _clsx["default"])('border rounded-lg', rootStyles[variant])
   }), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _clsx["default"])(headerBaseStyle, headerVariantStyles[variant])
   }, variant !== 'default' && /*#__PURE__*/_react["default"].createElement("span", {
     className: "mr-2"
   }, getIcon(variant)), title), /*#__PURE__*/_react["default"].createElement("div", {
     className: "font-medium text-grey-dark-scale-200 dark:text-white px-4 pb-4 pt-2"
-  }, text));
+  }, text, children));
 };
 var _default = Callout;
 exports["default"] = _default;
