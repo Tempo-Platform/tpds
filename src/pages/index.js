@@ -12,7 +12,7 @@ export default function Page() {
         <br />
 
         <P isBold>Source</P>
-        <P>
+        <P className="text-secondary">
           The original source of this design system is a{' '}
           <a
             href="https://www.figma.com/file/HLmNcoB2XSKbv5dKJd2JpK/Tempo-Platform-Design-System"
@@ -26,14 +26,14 @@ export default function Page() {
 
         <br />
         <P isBold>Design Tokens</P>
-        <P>
+        <P className="text-secondary">
           2. The styles are downloaded and parsed via a local script, which stores the{' '}
           <Link href="/design-tokens">design tokens</Link> in a local file.
         </P>
 
         <br />
-        <P isBold>tailwindCSS configuration</P>
-        <P>
+        <P isBold>TailwindCSS configuration</P>
+        <P className="text-secondary">
           3. These design tokens are then used to create a custom{' '}
           <Link href="/tailwindcss-config">TailwindCSS configuration</Link> file that reflects the
           Tempo Platform design language.
@@ -41,7 +41,7 @@ export default function Page() {
 
         <br />
         <P isBold>NPM Module</P>
-        <P>
+        <P className="text-secondary">
           4. An{' '}
           <a
             href="https://www.npmjs.com/package/@tempoplatform/tpds"
@@ -56,13 +56,13 @@ export default function Page() {
 
         <br />
         <P isBold>Aim</P>
-        <P>
+        <P className="text-secondary">
           To achieve consistency and standardisation the Tempo visual language across all Tempo
           projects, as well as accelerating frontend development time.
         </P>
         <br />
         <P isBold>License</P>
-        <P>
+        <P className="text-secondary">
           6. This project is open-source and free to use for everyone. Contributions are encouraged.
         </P>
         <br />

@@ -116,6 +116,14 @@ export default function Page() {
               description: 'The description of the callout.',
             },
             {
+              propName: 'children',
+              type: 'JSX',
+              default: 'null',
+              required: 'no',
+              description:
+                'Optional JSX to render inside the callout. Useful if you need to render buttons or links inside the callout.',
+            },
+            {
               propName: 'variant',
               type: 'String',
               default: 'default',

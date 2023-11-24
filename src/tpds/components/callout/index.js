@@ -9,17 +9,16 @@ import BugIcon from '../../assets/svgs/notifications/BugIcon'
 import NoteIcon from '../../assets/svgs/notifications/NoteIcon'
 
 const rootStyles = {
-  default: 'border-grey-light-scale-400 bg-grey-light-scale-200 dark:bg-grey-light-scale-100/5',
-  success:
-    'border-green-scale-100 bg-green-scale-100/20 dark:border-green-scale-300 dark:bg-green-scale-500/10',
-  info: 'border-blue-scale-100 bg-blue-scale-100/20 dark:border-blue-scale-300 dark:bg-blue-scale-300/10',
+  default:
+    'border-grey-light-scale-400 dark:border-grey-dark-scale-200 bg-grey-light-scale-200 dark:bg-grey-light-scale-100/5',
+  success: 'border-green/50 bg-green-scale-100/20 dark:bg-green-scale-500/10',
+  info: 'border-blue/50 bg-blue-scale-100/20 dark:bg-blue-scale-300/10',
   danger:
     'border-red-scale-100 bg-red-scale-100/20 dark:border-red-scale-300 dark:bg-red-scale-300/10',
-  warning:
-    'border-orange-scale-100 bg-orange-scale-100/20 dark:border-orange-scale-300 dark:bg-orange-scale-300/10',
-  tip: 'border-purple-scale-100 bg-purple-scale-100/20 dark:border-purple-scale-300 dark:bg-purple-scale-300/10',
-  bug: 'border-orange-scale-100 bg-orange-scale-100/20 dark:border-orange-scale-300 dark:bg-orange-scale-300/10',
-  note: 'border-grey-light-scale-400 bg-grey-light-scale-400/20 dark:bg-grey-light-scale-100/5',
+  warning: 'border-orange/50 bg-orange-scale-100/20 dark:bg-orange-scale-300/10',
+  tip: 'border-purple/50 bg-purple-scale-100/20 dark:bg-purple-scale-300/10',
+  bug: 'border-orange/50 bg-orange-scale-100/20 dark:bg-orange-scale-300/10',
+  note: 'border-grey-light-scale-400 dark:border-grey-dark-scale-200 dark:bg-grey-light-scale-100/5',
 }
 
 const headerBaseStyle = 'flex items-center font-medium text-lg pt-4 px-4'
@@ -56,15 +55,16 @@ const getIcon = variant => {
   }
 }
 
-const Callout = ({ variant = 'default', title, text, ...props }) => {
+const Callout = ({ variant = 'default', title, text, children, ...props }) => {
   return (
-    <div {...props} className={rootStyles[variant]}>
+    <div {...props} className={clsx('border rounded-lg', rootStyles[variant])}>
       <div className={clsx(headerBaseStyle, headerVariantStyles[variant])}>
         {variant !== 'default' && <span className="mr-2">{getIcon(variant)}</span>}
         {title}
       </div>
       <div className="font-medium text-grey-dark-scale-200 dark:text-white px-4 pb-4 pt-2">
         {text}
+        {children}
       </div>
     </div>
   )

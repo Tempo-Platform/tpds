@@ -8,7 +8,7 @@ const PageHeader = ({ title, subTitle }) => {
   return (
     <div className="mt-20 mb-10 lg:mt-20 lg:mb-12">
       <H4 isBold>{title}</H4>
-      {subTitle && <P className="my-0">{subTitle}</P>}
+      {subTitle && <P className="my-0 text-tertiary">{subTitle}</P>}
       <Separator className="mt-10" />
     </div>
   )
