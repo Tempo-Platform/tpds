@@ -14,7 +14,7 @@ var _TipIcon = _interopRequireDefault(require("../../assets/svgs/notifications/T
 var _BugIcon = _interopRequireDefault(require("../../assets/svgs/notifications/BugIcon"));
 var _NoteIcon = _interopRequireDefault(require("../../assets/svgs/notifications/NoteIcon"));
 var _typography = require("../../elements/typography");
-var _excluded = ["variant", "title", "text", "children"];
+var _excluded = ["variant", "title", "text", "omitIcon", "customIcon", "children"];
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -65,15 +65,20 @@ var Callout = function Callout(_ref) {
     variant = _ref$variant === void 0 ? 'default' : _ref$variant,
     title = _ref.title,
     text = _ref.text,
+    _ref$omitIcon = _ref.omitIcon,
+    omitIcon = _ref$omitIcon === void 0 ? false : _ref$omitIcon,
+    customIcon = _ref.customIcon,
     children = _ref.children,
     props = _objectWithoutProperties(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement("div", _extends({}, props, {
     className: (0, _clsx["default"])('border rounded-lg', rootStyles[variant])
   }), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _clsx["default"])(headerBaseStyle)
-  }, variant !== 'default' && /*#__PURE__*/_react["default"].createElement("span", {
+  }, !customIcon && !omitIcon && variant !== 'default' && /*#__PURE__*/_react["default"].createElement("span", {
     className: "mr-2"
-  }, getIcon(variant)), title && /*#__PURE__*/_react["default"].createElement(_typography.P, {
+  }, getIcon(variant)), customIcon && !omitIcon && /*#__PURE__*/_react["default"].createElement("span", {
+    className: "mr-2"
+  }, customIcon), title && /*#__PURE__*/_react["default"].createElement(_typography.P, {
     isMedium: true,
     className: (0, _clsx["default"])(headerVariantStyles[variant])
   }, title)), /*#__PURE__*/_react["default"].createElement("div", {
