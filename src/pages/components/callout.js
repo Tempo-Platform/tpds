@@ -116,6 +116,21 @@ export default function Page() {
               description: 'The description of the callout.',
             },
             {
+              propName: 'omitIcon',
+              type: 'Boolean',
+              default: 'false',
+              required: 'no',
+              description: 'Optionally hide the default icon',
+            },
+            {
+              propName: 'customIcon',
+              type: 'JSX',
+              default: 'null',
+              required: 'no',
+              description:
+                'Optional custom icon to display. Will not be displayed if omitIcon is false.',
+            },
+            {
               propName: 'children',
               type: 'JSX',
               default: 'null',

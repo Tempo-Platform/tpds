@@ -55,11 +55,22 @@ const getIcon = variant => {
   }
 }
 
-const Callout = ({ variant = 'default', title, text, children, ...props }) => {
+const Callout = ({
+  variant = 'default',
+  title,
+  text,
+  omitIcon = false,
+  customIcon,
+  children,
+  ...props
+}) => {
   return (
     <div {...props} className={clsx('border rounded-lg', rootStyles[variant])}>
       <div className={clsx(headerBaseStyle)}>
-        {variant !== 'default' && <span className="mr-2">{getIcon(variant)}</span>}
+        {!customIcon && !omitIcon && variant !== 'default' && (
+          <span className="mr-2">{getIcon(variant)}</span>
+        )}
+        {customIcon && !omitIcon && <span className="mr-2">{customIcon}</span>}
         {title && (
           <P isMedium className={clsx(headerVariantStyles[variant])}>
             {title}
