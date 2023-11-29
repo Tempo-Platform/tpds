@@ -179,11 +179,11 @@ export const navigationitems = [
         slug: 'components/tag',
         description: 'Compact tag component',
       },
-      // {
-      //   name: 'Select',
-      //   slug: 'components/select',
-      //   description: 'Generic select component',
-      // },
+      {
+        name: 'Modal',
+        slug: 'components/modal',
+        description: 'Modal dialog component',
+      },
       {
         name: 'Select',
         slug: 'components/select',

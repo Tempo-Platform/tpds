@@ -19,6 +19,7 @@
     "./components/radiogroup": "./_dist/components/radiogroup/index.js",
     "./components/radiotabs": "./_dist/components/radiotabs/index.js",
     "./components/spinner": "./_dist/components/spinner/index.js",
+    "./components/modal": "./_dist/components/modal/index.js",
     "./components/steps": "./_dist/components/steps/index.js",
     "./components/switch": "./_dist/components/switch/index.js",
     "./components/table": "./_dist/components/table/index.js",
