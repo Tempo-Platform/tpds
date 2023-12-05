@@ -26,6 +26,7 @@ const Select = ({
   noPermanentSelection = false,
   labelProp = 'value',
   placeholder = 'Select',
+  isInvalid = false,
 }) => {
   const wrapperRef = useRef(null)
   const optionsWithoutExcludedIndexes = options.filter(
@@ -82,7 +83,8 @@ const Select = ({
         value={inputValueToDisplay}
         onChange={e => setInputValue(e.target.value)}
         className={clsx(
-          'pr-8 text-ellipsis !text-secondary !bg-transparent !border-[#ededed] dark:!border-[#384147]',
+          'pr-8 text-ellipsis !text-secondary !bg-transparent',
+          isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]',
           !isOpen && 'cursor-pointer',
           isOpen && '!border-blue',
         )}
