@@ -42,7 +42,9 @@ var Select = function Select(_ref) {
     _ref$labelProp = _ref.labelProp,
     labelProp = _ref$labelProp === void 0 ? 'value' : _ref$labelProp,
     _ref$placeholder = _ref.placeholder,
-    placeholder = _ref$placeholder === void 0 ? 'Select' : _ref$placeholder;
+    placeholder = _ref$placeholder === void 0 ? 'Select' : _ref$placeholder,
+    _ref$isInvalid = _ref.isInvalid,
+    isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid;
   var wrapperRef = (0, _react.useRef)(null);
   var optionsWithoutExcludedIndexes = options.filter(function (option, index) {
     return !excludeIndexes.includes(index);
@@ -87,7 +89,7 @@ var Select = function Select(_ref) {
     onChange: function onChange(e) {
       return setInputValue(e.target.value);
     },
-    className: (0, _clsx["default"])('pr-8 text-ellipsis !text-secondary !bg-transparent !border-[#ededed] dark:!border-[#384147]', !isOpen && 'cursor-pointer', isOpen && '!border-blue'),
+    className: (0, _clsx["default"])('pr-8 text-ellipsis !text-secondary !bg-transparent', isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]', !isOpen && 'cursor-pointer', isOpen && '!border-blue'),
     onFocus: function onFocus() {
       setInputValue('');
       setIsOpen(true);
