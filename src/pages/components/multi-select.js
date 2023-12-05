@@ -102,6 +102,13 @@ export default function Page() {
               required: 'no',
               description: 'The placeholder text that will be displayed when no option is selected',
             },
+            {
+              propName: 'isInvalid',
+              type: 'Boolean',
+              default: 'false',
+              required: 'no',
+              description: 'Wether the input is invalid or not',
+            },
           ]}
         />
         <br />
