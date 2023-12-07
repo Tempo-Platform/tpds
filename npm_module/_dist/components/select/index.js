@@ -106,7 +106,7 @@ var Select = function Select(_ref) {
     strokeLinejoin: "round",
     d: "M19.5 8.25l-7.5 7.5-7.5-7.5"
   })), isOpen && /*#__PURE__*/_react["default"].createElement("div", {
-    className: "w-full flex flex-col space-y-1 items-start text-left p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto"
+    className: "w-full flex flex-col space-y-1 items-start text-left p-1 lg:p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto"
   }, optionsThatMatchInputValue.map(function (option, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       key: labelProp ? option[labelProp] : option,
@@ -116,9 +116,9 @@ var Select = function Select(_ref) {
       },
       className: (0, _clsx["default"])('p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center", "bg-window rounded", "hover:bg-input-hover", isSelected(option) && "!bg-blue-scale-500")
     }, /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
-      className: (0, _clsx["default"])('text-primary text-left', isSelected(option) && "!text-white dark:!text-black")
+      className: (0, _clsx["default"])('text-primary text-left !text-[14px] !leading-tight', isSelected(option) && "!text-white dark:!text-black")
     }, labelProp ? option[labelProp] : option), option.subLabel && /*#__PURE__*/_react["default"].createElement(_typography.PNano, {
-      className: (0, _clsx["default"])('mt-1 text-tertiary text-left', isSelected(option) && "!text-white dark:!text-black")
+      className: (0, _clsx["default"])('mt-1 text-tertiary text-left !text-[13px] !leading-tight', isSelected(option) && "!text-white dark:!text-black")
     }, option.subLabel));
   }), optionsThatMatchInputValue.length === 0 && /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
     className: (0, _clsx["default"])('text-secondary text-left select-none')

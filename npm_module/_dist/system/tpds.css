@@ -1390,6 +1390,9 @@ video {
 .\!text-\[13px\] {
   font-size: 13px !important;
 }
+.\!text-\[14px\] {
+  font-size: 14px !important;
+}
 .\!text-sm {
   font-size: 0.875rem !important;
 }
@@ -1497,6 +1500,9 @@ video {
 }
 .\!leading-none {
   line-height: 1 !important;
+}
+.\!leading-tight {
+  line-height: 1.25 !important;
 }
 .leading-none {
   line-height: 1;
@@ -2308,6 +2314,10 @@ video {
 
   .lg\:border-r {
     border-right-width: 1px;
+  }
+
+  .lg\:p-2 {
+    padding: 0.5rem;
   }
 
   .lg\:px-md {
