@@ -108,7 +108,7 @@ const Select = ({
       </svg>
 
       {isOpen && (
-        <div className="w-full flex flex-col space-y-1 items-start text-left p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto">
+        <div className="w-full flex flex-col space-y-1 items-start text-left p-1 lg:p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto">
           {optionsThatMatchInputValue.map((option, index) => (
             <div
               key={labelProp ? option[labelProp] : option}
@@ -129,7 +129,7 @@ const Select = ({
             >
               <PTiny
                 className={clsx(
-                  'text-primary text-left',
+                  'text-primary text-left !text-[14px] !leading-tight',
                   isSelected(option) && `!text-white dark:!text-black`,
                 )}
               >
@@ -138,7 +138,7 @@ const Select = ({
               {option.subLabel && (
                 <PNano
                   className={clsx(
-                    'mt-1 text-tertiary text-left',
+                    'mt-1 text-tertiary text-left !text-[13px] !leading-tight',
                     isSelected(option) && `!text-white dark:!text-black`,
                   )}
                 >
