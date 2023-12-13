@@ -44,7 +44,9 @@ var Select = function Select(_ref) {
     _ref$placeholder = _ref.placeholder,
     placeholder = _ref$placeholder === void 0 ? 'Select' : _ref$placeholder,
     _ref$isInvalid = _ref.isInvalid,
-    isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid;
+    isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid,
+    _ref$useKeyboard = _ref.useKeyboard,
+    useKeyboard = _ref$useKeyboard === void 0 ? false : _ref$useKeyboard;
   var wrapperRef = (0, _react.useRef)(null);
   var optionsWithoutExcludedIndexes = options.filter(function (option, index) {
     return !excludeIndexes.includes(index);
@@ -83,18 +85,24 @@ var Select = function Select(_ref) {
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: " flex w-full relative text-left",
     ref: wrapperRef
-  }, /*#__PURE__*/_react["default"].createElement(_input.TextInput, {
+  }, useKeyboard ? /*#__PURE__*/_react["default"].createElement(_input.TextInput, {
     placeholder: placeholder,
     value: inputValueToDisplay,
     onChange: function onChange(e) {
       return setInputValue(e.target.value);
     },
-    className: (0, _clsx["default"])('pr-8 text-ellipsis !text-secondary !bg-transparent', isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]', !isOpen && 'cursor-pointer', isOpen && '!border-blue'),
+    className: (0, _clsx["default"])('text-[16px] pr-8 text-ellipsis !text-secondary !bg-transparent', isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]', !isOpen && 'cursor-pointer', isOpen && '!border-blue'),
     onFocus: function onFocus() {
       setInputValue('');
       setIsOpen(true);
     }
-  }), /*#__PURE__*/_react["default"].createElement("svg", {
+  }) : /*#__PURE__*/_react["default"].createElement("div", {
+    className: (0, _clsx["default"])(_input.baseInputStyles, 'text-[16px] pr-8 text-ellipsis !text-secondary !bg-transparent', isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]', !isOpen && 'cursor-pointer', isOpen && '!border-blue'),
+    onClick: function onClick() {
+      setInputValue('');
+      setIsOpen(true);
+    }
+  }, inputValueToDisplay || placeholder), /*#__PURE__*/_react["default"].createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     fill: "none",
     viewBox: "0 0 24 24",
