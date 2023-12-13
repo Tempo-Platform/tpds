@@ -20,6 +20,7 @@ export default function Page() {
             idProp="value"
             excludeIndexes={[2]}
             allowMultiple={true}
+            useKeyboard={true}
             options={[
               {
                 value: '1',
@@ -37,9 +38,13 @@ export default function Page() {
         <P>Features:</P>
         <br />
         <PSmall>- Accepts handler function to apply selection by index</PSmall>
-        <PSmall>- Search by typing</PSmall>
-        <PSmall>- Display "no matches" when input doesn't match any options</PSmall>
-        <PSmall>- Clear text input on focus (favouring quick interaction)</PSmall>
+        <PSmall>- Option to search by typing</PSmall>
+        <PSmall>
+          - Display "no matches" when input doesn't match any options (if using search by typing)
+        </PSmall>
+        <PSmall>
+          - Clear text input on focus (favouring quick interaction) (if using search by typing)
+        </PSmall>
         <PSmall>- Close drawer + clear typed content on click away</PSmall>
         <PSmall>- Automatically apply scroll if content exceeds max height</PSmall>
         <PSmall>- Accepts indexes to exclude from list</PSmall>
@@ -122,6 +127,13 @@ export default function Page() {
               required: 'no',
               description: 'Wether the input is invalid or not',
             },
+            {
+              propName: 'useKeyboard',
+              type: 'Boolean',
+              default: 'false',
+              required: 'no',
+              description: 'Pass true to allow searching by keyboard',
+            },
           ]}
         />
         <br />
@@ -143,6 +155,7 @@ const [selectedIndex, setSelectedIndex] = React.useState(null)
   labelProp="label"
   idProp="value"
   excludeIndexes={[2]}
+  useKeyboard={true}
   options={[
     {
       value: '1',

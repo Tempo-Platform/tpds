@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import clsx from 'clsx'
-import { TextInput } from '../../elements/input'
+import { TextInput, baseInputStyles } from '../../elements/input'
 import { PTiny, PNano } from '../../elements/typography'
 
 const getCurrentInputValue = (options, selectedIndex, labelProp) => {
@@ -27,6 +27,7 @@ const Select = ({
   labelProp = 'value',
   placeholder = 'Select',
   isInvalid = false,
+  useKeyboard = false,
 }) => {
   const wrapperRef = useRef(null)
   const optionsWithoutExcludedIndexes = options.filter(
@@ -78,21 +79,39 @@ const Select = ({
 
   return (
     <div className=" flex w-full relative text-left" ref={wrapperRef}>
-      <TextInput
-        placeholder={placeholder}
-        value={inputValueToDisplay}
-        onChange={e => setInputValue(e.target.value)}
-        className={clsx(
-          'pr-8 text-ellipsis !text-secondary !bg-transparent',
-          isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]',
-          !isOpen && 'cursor-pointer',
-          isOpen && '!border-blue',
-        )}
-        onFocus={() => {
-          setInputValue('')
-          setIsOpen(true)
-        }}
-      />
+      {useKeyboard ? (
+        <TextInput
+          placeholder={placeholder}
+          value={inputValueToDisplay}
+          onChange={e => setInputValue(e.target.value)}
+          className={clsx(
+            'text-[16px] pr-8 text-ellipsis !text-secondary !bg-transparent',
+            isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]',
+            !isOpen && 'cursor-pointer',
+            isOpen && '!border-blue',
+          )}
+          onFocus={() => {
+            setInputValue('')
+            setIsOpen(true)
+          }}
+        />
+      ) : (
+        <div
+          className={clsx(
+            baseInputStyles,
+            'text-[16px] pr-8 text-ellipsis !text-secondary !bg-transparent',
+            isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]',
+            !isOpen && 'cursor-pointer',
+            isOpen && '!border-blue',
+          )}
+          onClick={() => {
+            setInputValue('')
+            setIsOpen(true)
+          }}
+        >
+          {inputValueToDisplay || placeholder}
+        </div>
+      )}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
