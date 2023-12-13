@@ -14,6 +14,6 @@ import { Button } from '@tempoplatform/tpds/elements/buttons'
 </Button>
 ```
 
-Learn more at the documentation website: https://tpds.netlify.app/
+Learn more at the documentation website: https://tempods.netlify.app/
 
 HBUI main repository: https://github.com/Tempo-Platform/tpds
