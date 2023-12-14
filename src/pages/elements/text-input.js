@@ -40,6 +40,21 @@ export default function TextInputPage() {
           />
           <br />
           <br />
+          <P>Default (outline style)</P>
+          <br />
+          <CodeGridComponent
+            code={codeDefaultOutline}
+            element={
+              <TextInput
+                onChange={e => setInputValue(e.target.value)}
+                value={inputValue}
+                outlineStyle={true}
+                placeholder="Placeholder"
+              />
+            }
+          />
+          <br />
+          <br />
           <P>Valid</P>
           <br />
           <CodeGridComponent
@@ -97,6 +112,13 @@ const [inputValue, setInputValue] = React.useState('')`
 
 const codeDefault = String.raw`<TextInput
   defaultValue=''
+  placeholder='Placeholder'
+  onChange={(e) => setInputValue(e.target.value)}
+/>`
+
+const codeDefaultOutline = String.raw`<TextInput
+  defaultValue=''
+  outlineStyle={true}
   placeholder='Placeholder'
   onChange={(e) => setInputValue(e.target.value)}
 />`
