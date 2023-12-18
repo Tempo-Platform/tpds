@@ -1,4 +1,5 @@
 export { Check } from './Check'
+export { Calendar } from './Calendar'
 export { Home } from './Home'
 export { InfoCircle } from './InfoCircle'
 export { MinusIcon } from './MinusIcon'

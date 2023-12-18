@@ -150,6 +150,11 @@ export const navigationitems = [
         description: 'Simple checkbox component',
       },
       {
+        name: 'Date Picker',
+        slug: 'components/date-picker',
+        description: 'A simple date picker component',
+      },
+      {
         name: 'Switch',
         slug: 'components/switch',
         description: 'Simple switch component',
