@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "Calendar", {
+  enumerable: true,
+  get: function get() {
+    return _Calendar.Calendar;
+  }
+});
 Object.defineProperty(exports, "Check", {
   enumerable: true,
   get: function get() {
@@ -34,6 +40,7 @@ Object.defineProperty(exports, "PlusIcon", {
   }
 });
 var _Check = require("./Check");
+var _Calendar = require("./Calendar");
 var _Home = require("./Home");
 var _InfoCircle = require("./InfoCircle");
 var _MinusIcon = require("./MinusIcon");
