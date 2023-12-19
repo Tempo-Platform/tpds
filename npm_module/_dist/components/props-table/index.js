@@ -22,12 +22,8 @@ var getLastPVariant = function getLastPVariant(skipColumn2, skipColumn3, skipCol
   return "skip".concat(skipColumnsNum, "Columns");
 };
 function PropsTable(_ref) {
-  var _ref$title = _ref.title,
-    title = _ref$title === void 0 ? 'Props' : _ref$title,
-    _ref$items = _ref.items,
+  var _ref$items = _ref.items,
     items = _ref$items === void 0 ? null : _ref$items,
-    _ref$omitTitle = _ref.omitTitle,
-    omitTitle = _ref$omitTitle === void 0 ? false : _ref$omitTitle,
     _ref$col1Name = _ref.col1Name,
     col1Name = _ref$col1Name === void 0 ? 'Prop Name' : _ref$col1Name,
     _ref$col2Name = _ref.col2Name,
@@ -55,7 +51,7 @@ function PropsTable(_ref) {
     _ref$skipColumn3 = _ref.skipColumn4,
     skipColumn4 = _ref$skipColumn3 === void 0 ? false : _ref$skipColumn3;
   var lastPClass = lastPVariants[getLastPVariant(skipColumn2, skipColumn3, skipColumn4)];
-  return /*#__PURE__*/_react["default"].createElement("div", null, !omitTitle && /*#__PURE__*/_react["default"].createElement(_typography.H6, null, title || 'Props'), !omitTitle && /*#__PURE__*/_react["default"].createElement("br", null), /*#__PURE__*/_react["default"].createElement("span", {
+  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("span", {
     className: "grid grid-cols-12 gap-4 pb-2 mb-8 border-b border-grey-light-scale-500 dark:border-grey-light-scale-900"
   }, /*#__PURE__*/_react["default"].createElement(_typography.P, {
     isBold: true,

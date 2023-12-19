@@ -31,6 +31,10 @@ function DatePicker(_ref) {
     omitDay = _ref$omitDay === void 0 ? false : _ref$omitDay,
     _ref$allowPast = _ref.allowPast,
     allowPast = _ref$allowPast === void 0 ? true : _ref$allowPast,
+    _ref$divider = _ref.divider,
+    divider = _ref$divider === void 0 ? '-' : _ref$divider,
+    _ref$divisorExtraClas = _ref.divisorExtraClass,
+    divisorExtraClass = _ref$divisorExtraClas === void 0 ? '' : _ref$divisorExtraClas,
     _ref$maxYearsToPast = _ref.maxYearsToPast,
     maxYearsToPast = _ref$maxYearsToPast === void 0 ? 10 : _ref$maxYearsToPast,
     _ref$minYearsToFuture = _ref.minYearsToFuture,
@@ -43,12 +47,12 @@ function DatePicker(_ref) {
   if (omitYear && omitMonth && omitDay) {
     throw new Error('TPDS DatePicker: Cannot omit all year, month, and day');
   }
-  var rootClassName = _clsx["default"].apply(void 0, _toConsumableArray(_input.baseInputStyles).concat(_toConsumableArray(_input.outlineStyles), ['!h-[38px] border flex items-center']));
+  var rootClassName = _clsx["default"].apply(void 0, _toConsumableArray(_input.baseInputStyles).concat(_toConsumableArray(_input.outlineStyles), ['!h-[38px] border !inline-flex items-center !w-auto gap-x-0.5']));
   var cellStyle = (0, _clsx["default"])('cursor-pointer relative');
-  var yearCellStyle = (0, _clsx["default"])(cellStyle, 'w-[49px] h-full');
-  var dayMonthCellStyle = (0, _clsx["default"])(cellStyle, 'w-[30px] h-full');
+  var yearCellStyle = (0, _clsx["default"])(cellStyle, 'h-full');
+  var dayMonthCellStyle = (0, _clsx["default"])(cellStyle, 'h-full');
   var selectLayer = (0, _clsx["default"])('absolute w-full opacity-0');
-  var displayLayer = (0, _clsx["default"])('absolute pointer-events-none top-[1px]', 'text-[16px] text-ellipsis font-medium !text-primary', 'flex items-center gap-x-1 w-full');
+  var displayLayer = (0, _clsx["default"])('relative pointer-events-none top-[2px]', 'text-[15px] text-ellipsis font-medium !text-primary', 'flex items-center w-full');
   var displayLayerLeft = (0, _clsx["default"])(displayLayer, 'justify-start');
   var displayLayerCenter = (0, _clsx["default"])(displayLayer, 'justify-center');
   var numDaysInMonth = new Date(year, month + 1, 0).getDate();
@@ -72,15 +76,24 @@ function DatePicker(_ref) {
       value: i
     }, i + 1);
   });
-  var width = 170;
+  var width = 154;
+  var numOmissions = 0;
   if (omitYear) {
-    width -= 52;
+    width -= 42;
+    numOmissions++;
   }
   if (omitMonth) {
-    width -= 34;
+    width -= 22;
+    numOmissions++;
   }
   if (omitDay) {
-    width -= 34;
+    width -= 22;
+    numOmissions++;
+  }
+  if (numOmissions === 1) {
+    width -= 14;
+  } else if (numOmissions === 2) {
+    width -= 18;
   }
   var pickers = [];
   if (!omitYear) {
@@ -142,21 +155,15 @@ function DatePicker(_ref) {
     renderItems.push(pickers[i]);
     if (i !== pickers.length - 1) {
       renderItems.push( /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
-        key: 'division' + i
-      }, ":"));
+        key: 'division' + i,
+        className: (0, _clsx["default"])('relative top-[-1px]', divisorExtraClass)
+      }, divider));
     }
   }
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
-    className: rootClassName,
-    style: {
-      width: "".concat(width, "px")
-    }
+    className: rootClassName
   }, renderItems, /*#__PURE__*/_react["default"].createElement(_Calendar["default"], {
-    className: "text-tertiary opacity-80",
-    style: {
-      marginLeft: '6px',
-      marginRight: '0px'
-    }
+    className: "text-tertiary opacity-70 ml-2"
   })));
 }
 var _default = DatePicker;
