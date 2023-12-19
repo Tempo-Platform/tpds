@@ -162,24 +162,17 @@ export default function Page() {
             },
             {
               propName: 'maxYearsToPast',
-              type: 'Boolean',
-              default: 'false',
+              type: 'Number',
+              default: '10',
               required: 'No',
               description: 'How many years in the past to show in the list.',
             },
             {
-              propName: 'minYearsToFuture',
-              type: 'Boolean',
-              default: 'false',
+              propName: 'maxYearsToFuture',
+              type: 'Number',
+              default: '10',
               required: 'No',
               description: 'How many years in the future to show in the list.',
-            },
-            {
-              propName: 'divider',
-              type: 'String',
-              default: '"-"',
-              required: 'No',
-              description: 'Character displayed between the time elements in the picker.',
             },
           ]}
         />

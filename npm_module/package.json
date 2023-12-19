@@ -15,6 +15,7 @@
     "./components/checkbox": "./_dist/components/checkbox/index.js",
     "./components/code": "./_dist/components/code/index.js",
     "./components/date-picker": "./_dist/components/date-picker/index.js",
+    "./components/date-range-picker": "./_dist/components/date-range-picker/index.js",
     "./components/expandable-section": "./_dist/components/expandable-section/index.js",
     "./components/hero": "./_dist/components/hero/index.js",
     "./components/radiogroup": "./_dist/components/radiogroup/index.js",

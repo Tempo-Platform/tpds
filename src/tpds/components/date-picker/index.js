@@ -12,10 +12,10 @@ function DatePicker({
   omitMonth = false,
   omitDay = false,
   allowPast = true,
-  divider = '-',
-  divisorExtraClass = '',
+  omitBorders = false,
+  omitCalendarIcon = false,
   maxYearsToPast = 10,
-  minYearsToFuture = 10,
+  maxYearsToFuture = 10,
   onChange = () => {},
 }) {
   if (!onChange) {
@@ -28,13 +28,14 @@ function DatePicker({
   const rootClassName = clsx(
     ...baseInputStyles,
     ...outlineStyles,
-    '!h-[38px] border !inline-flex items-center !w-auto gap-x-0.5',
+    '!h-[38px] border !inline-flex items-center !w-auto gap-x-[3px] relative',
+    omitBorders && '!border-0',
   )
 
   const cellStyle = clsx('cursor-pointer relative')
 
-  const yearCellStyle = clsx(cellStyle, 'h-full')
-  const dayMonthCellStyle = clsx(cellStyle, 'h-full')
+  const yearCellStyle = clsx(cellStyle, '')
+  const dayMonthCellStyle = clsx(cellStyle, '')
   const selectLayer = clsx('absolute w-full opacity-0')
   const displayLayer = clsx(
     'relative pointer-events-none top-[2px]',
@@ -47,7 +48,7 @@ function DatePicker({
   const numDaysInMonth = new Date(year, month + 1, 0).getDate()
 
   const furtherstPastYear = allowPast ? year - maxYearsToPast : year
-  const furtherstFutureYear = year + minYearsToFuture
+  const furtherstFutureYear = year + maxYearsToFuture
 
   const yearOptions = [...Array(furtherstFutureYear - furtherstPastYear + 1).keys()].map(i => (
     <option key={i} value={furtherstPastYear + i}>
@@ -64,27 +65,6 @@ function DatePicker({
       {i + 1}
     </option>
   ))
-
-  let width = 154
-  let numOmissions = 0
-  if (omitYear) {
-    width -= 42
-    numOmissions++
-  }
-  if (omitMonth) {
-    width -= 22
-    numOmissions++
-  }
-  if (omitDay) {
-    width -= 22
-    numOmissions++
-  }
-
-  if (numOmissions === 1) {
-    width -= 14
-  } else if (numOmissions === 2) {
-    width -= 18
-  }
 
   let pickers = []
 
@@ -163,9 +143,10 @@ function DatePicker({
     renderItems.push(pickers[i])
     if (i !== pickers.length - 1) {
       renderItems.push(
-        <PTiny key={'division' + i} className={clsx('relative top-[-1px]', divisorExtraClass)}>
-          {divider}
-        </PTiny>,
+        <div
+          key={'division' + i}
+          className="w-[4px] h-[2px] bg-black dark:bg-white relative opacity-30 top-[1px]"
+        />,
       )
     }
   }
@@ -173,7 +154,7 @@ function DatePicker({
     <>
       <div className={rootClassName}>
         {renderItems}
-        <CalendarIcon className="text-tertiary opacity-70 ml-2" />
+        {!omitCalendarIcon && <CalendarIcon className="text-tertiary opacity-70 ml-2" />}
       </div>
     </>
   )

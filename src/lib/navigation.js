@@ -155,6 +155,11 @@ export const navigationitems = [
         description: 'A simple date picker component',
       },
       {
+        name: 'Date Range Picker',
+        slug: 'components/date-range-picker',
+        description: 'A date range picker component',
+      },
+      {
         name: 'Switch',
         slug: 'components/switch',
         description: 'Simple switch component',

@@ -3,108 +3,59 @@ import PageHeader from '../../lib/components/PageHeader'
 import { P, PSmall, PNano, H6 } from '../../tpds/elements/typography'
 import { Container } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
-import DatePicker from '../../tpds/components/date-picker'
+import DateRangePicker from '../../tpds/components/date-range-picker'
 import PropsTable from '../../tpds/components/props-table'
 
+const getYesterdayDate = () => {
+  const yesterday = new Date()
+  yesterday.setDate(yesterday.getDate() - 1)
+  return yesterday
+}
+
 export default function Page() {
-  const [currenDate, setCurrentDate] = React.useState(new Date())
+  const [startDate, setStartDate] = React.useState(new Date())
+  const [endDate, setEndDate] = React.useState(new Date())
+  const [startDateB, setStartDateB] = React.useState(new Date())
+  const [endDateB, setEndDateB] = React.useState(getYesterdayDate())
+
   return (
     <div>
       <Container>
-        <PageHeader title="Date Picker" subTitle="A simple date picker component" />
-        <P>Use this date picker to implement selection of a single date.</P>
-        <br />
+        <PageHeader title="Date Range Picker" subTitle="Minimalistic date range picker component" />
         <P>
-          You can combine two of these to get a date range, but you can use the Date Range Picker
-          instead.
+          The default date range picker component will automatically adjust start time if an earlier
+          end time is selected, and vice-versa.
         </P>
         <br />
-        <PNano isUppercase isBold className="text-tertiary mb-1 opacity-80">
-          Full picker
-        </PNano>
-        <DatePicker
-          year={currenDate.getFullYear()}
-          month={currenDate.getMonth()}
-          day={currenDate.getDate()}
-          onChange={date => setCurrentDate(date)}
+        <DateRangePicker
+          startDate={startDate}
+          endDate={endDate}
+          onChangeStartDate={date => setStartDate(date)}
+          onChangeEndDate={date => setEndDate(date)}
         />
         <br />
-        <br />
-        <PSmall isBold className="mb-1">
-          Current Selection:
-        </PSmall>
-        <P>Year: {currenDate.getFullYear()}</P>
-        <P>Month: {currenDate.getMonth() + 1}</P>
-        <P>Day: {currenDate.getDate()}</P>
         <br />
         <CodeBlock code={code} />
         <br />
         <br />
-        <H6 isBold className="mb-1">
-          Other variants:
-        </H6>
+        <P>
+          Setting the option "preventWrongTiming" to false allows a "free mode", allowing the
+          component to freely select ranges, including an end date before start date.
+        </P>
         <br />
-        <PNano isUppercase isBold className="text-tertiary mb-1 opacity-80">
-          Just month and day
-        </PNano>
-        <DatePicker
-          year={currenDate.getFullYear()}
-          month={currenDate.getMonth()}
-          day={currenDate.getDate()}
-          onChange={date => setCurrentDate(date)}
-          omitYear={true}
+        <P>
+          An additional option "wrongTimeWarning" can be used to display a warning when the end date
+          is before the start date.
+        </P>
+        <br />
+        <DateRangePicker
+          startDate={startDateB}
+          endDate={endDateB}
+          onChangeStartDate={date => setStartDateB(date)}
+          onChangeEndDate={date => setEndDateB(date)}
+          preventWrongTiming={false}
+          wrongTimeWarning={true}
         />
-        <br />
-        <br />
-        <CodeBlock code={codeJustMonthAndDay} />
-        <br />
-        <br />
-        <PNano isUppercase isBold className="text-tertiary mb-1 opacity-80">
-          Just year and month
-        </PNano>
-        <DatePicker
-          year={currenDate.getFullYear()}
-          month={currenDate.getMonth()}
-          day={currenDate.getDate()}
-          onChange={date => setCurrentDate(date)}
-          omitDay={true}
-        />
-        <br />
-        <br />
-        <CodeBlock code={codeJustYearAndMonth} />
-        <br />
-        <br />
-        <PNano isUppercase isBold className="text-tertiary mb-1 opacity-80">
-          Just year
-        </PNano>
-        <DatePicker
-          year={currenDate.getFullYear()}
-          month={currenDate.getMonth()}
-          day={currenDate.getDate()}
-          onChange={date => setCurrentDate(date)}
-          omitMonth={true}
-          omitDay={true}
-        />
-        <br />
-        <br />
-        <CodeBlock code={codeJustYear} />
-        <br />
-        <br />
-        <PNano isUppercase isBold className="text-tertiary mb-1 opacity-80">
-          Just day
-        </PNano>
-        <DatePicker
-          year={currenDate.getFullYear()}
-          month={currenDate.getMonth()}
-          day={currenDate.getDate()}
-          onChange={date => setCurrentDate(date)}
-          omitMonth={true}
-          omitYear={true}
-        />
-        <br />
-        <br />
-        <CodeBlock code={codeJustDay} />
-        <br />
         <br />
         <br />
         <br />
@@ -112,25 +63,26 @@ export default function Page() {
         <PropsTable
           items={[
             {
-              propName: 'year',
-              type: 'Number',
-              default: 'Current year',
+              propName: 'preventWrongTiming',
+              type: 'Boolean',
+              default: 'true',
               required: 'No',
-              description: 'The year to display',
+              description:
+                'Wether to correct the end date if it is before the start date and vice-versa.',
             },
             {
-              propName: 'month',
-              type: 'Number',
-              default: 'Current month',
+              propName: 'startDate',
+              type: 'Date',
+              default: 'Now',
               required: 'No',
-              description: 'The month to display.',
+              description: 'The start date to display',
             },
             {
-              propName: 'day',
-              type: 'Number',
-              default: 'Today',
+              propName: 'endDate',
+              type: 'Date',
+              default: 'Now',
               required: 'No',
-              description: 'The day to display.',
+              description: 'The end date to display',
             },
             {
               propName: 'omitYear',
@@ -162,24 +114,17 @@ export default function Page() {
             },
             {
               propName: 'maxYearsToPast',
-              type: 'Boolean',
-              default: 'false',
+              type: 'Number',
+              default: '10',
               required: 'No',
               description: 'How many years in the past to show in the list.',
             },
             {
-              propName: 'minYearsToFuture',
-              type: 'Boolean',
-              default: 'false',
+              propName: 'maxYearsToFuture',
+              type: 'Number',
+              default: '10',
               required: 'No',
               description: 'How many years in the future to show in the list.',
-            },
-            {
-              propName: 'divider',
-              type: 'String',
-              default: '"-"',
-              required: 'No',
-              description: 'Character displayed between the time elements in the picker.',
             },
           ]}
         />
@@ -190,46 +135,12 @@ export default function Page() {
   )
 }
 
-const code = String.raw`import DatePicker from '@tempoplatform/tpds/components/date-picker'
-const [currenDate, setCurrentDate] = React.useState(new Date())
+const code = String.raw`const [startDate, setStartDate] = React.useState(new Date())
+const [endDate, setEndDate] = React.useState(new Date())
 
-<DatePicker
-  year={currenDate.getFullYear()}
-  month={currenDate.getMonth()}
-  day={currenDate.getDate()}
-  onChange={date => setCurrentDate(date)}
-/>`
-
-const codeJustMonthAndDay = String.raw`<DatePicker
-  year={currenDate.getFullYear()}
-  month={currenDate.getMonth()}
-  day={currenDate.getDate()}
-  onChange={date => setCurrentDate(date)}
-  omitYear={true}
-/>`
-
-const codeJustYearAndMonth = String.raw`<DatePicker
-  year={currenDate.getFullYear()}
-  month={currenDate.getMonth()}
-  day={currenDate.getDate()}
-  onChange={date => setCurrentDate(date)}
-  omitDay={true}
-/>`
-
-const codeJustYear = String.raw`<DatePicker
-  year={currenDate.getFullYear()}
-  month={currenDate.getMonth()}
-  day={currenDate.getDate()}
-  onChange={date => setCurrentDate(date)}
-  omitMonth={true}
-  omitDay={true}
-/>`
-
-const codeJustDay = String.raw`<DatePicker
-  year={currenDate.getFullYear()}
-  month={currenDate.getMonth()}
-  day={currenDate.getDate()}
-  onChange={date => setCurrentDate(date)}
-  omitMonth={true}
-  omitYear={true}
+<DateRangePicker
+  startDate={startDate}
+  endDate={endDate}
+  onChangeStartDate={date => setStartDate(date)}
+  onChangeEndDate={date => setEndDate(date)}
 />`

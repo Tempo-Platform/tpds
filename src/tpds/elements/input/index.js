@@ -8,7 +8,7 @@ export const baseInputStyles = [
   'font-normal',
   'bg-input',
   'border-transparent',
-  'text-primary border-transparent',
+  'text-primary',
   'border-2 focus:border-blue',
 ]
 
