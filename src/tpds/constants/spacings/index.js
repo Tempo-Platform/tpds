@@ -1,4 +1,4 @@
-const spacings = require('../../tokens').spacings
+const spacings = require('../../tokens').spacing
 
 module.exports = {
   xxs: spacings.xxs,
