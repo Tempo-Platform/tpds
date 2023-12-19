@@ -7,14 +7,7 @@ exports.ArrowDownIcon = ArrowDownIcon;
 exports.ArrowLeftIcon = ArrowLeftIcon;
 exports.ArrowRightIcon = ArrowRightIcon;
 exports.ArrowUpIcon = ArrowUpIcon;
-Object.defineProperty(exports, "TriangleDown", {
-  enumerable: true,
-  get: function get() {
-    return _TriangleDown.TriangleDown;
-  }
-});
 var _react = _interopRequireDefault(require("react"));
-var _TriangleDown = require("./TriangleDown");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure " + obj); }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }

@@ -1,6 +1,6 @@
 "use strict";
 
-var spacings = require('../../tokens').spacings;
+var spacings = require('../../tokens').spacing;
 module.exports = {
   xxs: spacings.xxs,
   xs: spacings.xs,

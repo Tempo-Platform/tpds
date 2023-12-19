@@ -1,6 +1,6 @@
 {
   "name": "tpdsnext",
-  "version": "1.2.64",
+  "version": "1.2.65",
   "private": true,
   "scripts": {
     "dev": "yarn build_colorscss && next dev",

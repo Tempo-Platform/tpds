@@ -31,14 +31,14 @@ function DatePicker(_ref) {
     omitDay = _ref$omitDay === void 0 ? false : _ref$omitDay,
     _ref$allowPast = _ref.allowPast,
     allowPast = _ref$allowPast === void 0 ? true : _ref$allowPast,
-    _ref$divider = _ref.divider,
-    divider = _ref$divider === void 0 ? '-' : _ref$divider,
-    _ref$divisorExtraClas = _ref.divisorExtraClass,
-    divisorExtraClass = _ref$divisorExtraClas === void 0 ? '' : _ref$divisorExtraClas,
+    _ref$omitBorders = _ref.omitBorders,
+    omitBorders = _ref$omitBorders === void 0 ? false : _ref$omitBorders,
+    _ref$omitCalendarIcon = _ref.omitCalendarIcon,
+    omitCalendarIcon = _ref$omitCalendarIcon === void 0 ? false : _ref$omitCalendarIcon,
     _ref$maxYearsToPast = _ref.maxYearsToPast,
     maxYearsToPast = _ref$maxYearsToPast === void 0 ? 10 : _ref$maxYearsToPast,
-    _ref$minYearsToFuture = _ref.minYearsToFuture,
-    minYearsToFuture = _ref$minYearsToFuture === void 0 ? 10 : _ref$minYearsToFuture,
+    _ref$maxYearsToFuture = _ref.maxYearsToFuture,
+    maxYearsToFuture = _ref$maxYearsToFuture === void 0 ? 10 : _ref$maxYearsToFuture,
     _ref$onChange = _ref.onChange,
     _onChange = _ref$onChange === void 0 ? function () {} : _ref$onChange;
   if (!_onChange) {
@@ -47,17 +47,17 @@ function DatePicker(_ref) {
   if (omitYear && omitMonth && omitDay) {
     throw new Error('TPDS DatePicker: Cannot omit all year, month, and day');
   }
-  var rootClassName = _clsx["default"].apply(void 0, _toConsumableArray(_input.baseInputStyles).concat(_toConsumableArray(_input.outlineStyles), ['!h-[38px] border !inline-flex items-center !w-auto gap-x-0.5']));
+  var rootClassName = _clsx["default"].apply(void 0, _toConsumableArray(_input.baseInputStyles).concat(_toConsumableArray(_input.outlineStyles), ['!h-[38px] border !inline-flex items-center !w-auto gap-x-[3px] relative', omitBorders && '!border-0']));
   var cellStyle = (0, _clsx["default"])('cursor-pointer relative');
-  var yearCellStyle = (0, _clsx["default"])(cellStyle, 'h-full');
-  var dayMonthCellStyle = (0, _clsx["default"])(cellStyle, 'h-full');
+  var yearCellStyle = (0, _clsx["default"])(cellStyle, '');
+  var dayMonthCellStyle = (0, _clsx["default"])(cellStyle, '');
   var selectLayer = (0, _clsx["default"])('absolute w-full opacity-0');
   var displayLayer = (0, _clsx["default"])('relative pointer-events-none top-[2px]', 'text-[15px] text-ellipsis font-medium !text-primary', 'flex items-center w-full');
   var displayLayerLeft = (0, _clsx["default"])(displayLayer, 'justify-start');
   var displayLayerCenter = (0, _clsx["default"])(displayLayer, 'justify-center');
   var numDaysInMonth = new Date(year, month + 1, 0).getDate();
   var furtherstPastYear = allowPast ? year - maxYearsToPast : year;
-  var furtherstFutureYear = year + minYearsToFuture;
+  var furtherstFutureYear = year + maxYearsToFuture;
   var yearOptions = _toConsumableArray(Array(furtherstFutureYear - furtherstPastYear + 1).keys()).map(function (i) {
     return /*#__PURE__*/_react["default"].createElement("option", {
       key: i,
@@ -76,25 +76,6 @@ function DatePicker(_ref) {
       value: i
     }, i + 1);
   });
-  var width = 154;
-  var numOmissions = 0;
-  if (omitYear) {
-    width -= 42;
-    numOmissions++;
-  }
-  if (omitMonth) {
-    width -= 22;
-    numOmissions++;
-  }
-  if (omitDay) {
-    width -= 22;
-    numOmissions++;
-  }
-  if (numOmissions === 1) {
-    width -= 14;
-  } else if (numOmissions === 2) {
-    width -= 18;
-  }
   var pickers = [];
   if (!omitYear) {
     pickers.push( /*#__PURE__*/_react["default"].createElement("div", {
@@ -154,15 +135,15 @@ function DatePicker(_ref) {
   for (var i = 0; i < pickers.length; i++) {
     renderItems.push(pickers[i]);
     if (i !== pickers.length - 1) {
-      renderItems.push( /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
+      renderItems.push( /*#__PURE__*/_react["default"].createElement("div", {
         key: 'division' + i,
-        className: (0, _clsx["default"])('relative top-[-1px]', divisorExtraClass)
-      }, divider));
+        className: "w-[4px] h-[2px] bg-black dark:bg-white relative opacity-30 top-[1px]"
+      }));
     }
   }
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     className: rootClassName
-  }, renderItems, /*#__PURE__*/_react["default"].createElement(_Calendar["default"], {
+  }, renderItems, !omitCalendarIcon && /*#__PURE__*/_react["default"].createElement(_Calendar["default"], {
     className: "text-tertiary opacity-70 ml-2"
   })));
 }
