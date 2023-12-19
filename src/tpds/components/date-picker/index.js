@@ -12,6 +12,8 @@ function DatePicker({
   omitMonth = false,
   omitDay = false,
   allowPast = true,
+  divider = '-',
+  divisorExtraClass = '',
   maxYearsToPast = 10,
   minYearsToFuture = 10,
   onChange = () => {},
@@ -26,18 +28,18 @@ function DatePicker({
   const rootClassName = clsx(
     ...baseInputStyles,
     ...outlineStyles,
-    '!h-[38px] border flex items-center',
+    '!h-[38px] border !inline-flex items-center !w-auto gap-x-0.5',
   )
 
   const cellStyle = clsx('cursor-pointer relative')
 
-  const yearCellStyle = clsx(cellStyle, 'w-[49px] h-full')
-  const dayMonthCellStyle = clsx(cellStyle, 'w-[30px] h-full')
+  const yearCellStyle = clsx(cellStyle, 'h-full')
+  const dayMonthCellStyle = clsx(cellStyle, 'h-full')
   const selectLayer = clsx('absolute w-full opacity-0')
   const displayLayer = clsx(
-    'absolute pointer-events-none top-[1px]',
-    'text-[16px] text-ellipsis font-medium !text-primary',
-    'flex items-center gap-x-1 w-full',
+    'relative pointer-events-none top-[2px]',
+    'text-[15px] text-ellipsis font-medium !text-primary',
+    'flex items-center w-full',
   )
   const displayLayerLeft = clsx(displayLayer, 'justify-start')
   const displayLayerCenter = clsx(displayLayer, 'justify-center')
@@ -63,15 +65,25 @@ function DatePicker({
     </option>
   ))
 
-  let width = 170
+  let width = 154
+  let numOmissions = 0
   if (omitYear) {
-    width -= 52
+    width -= 42
+    numOmissions++
   }
   if (omitMonth) {
-    width -= 34
+    width -= 22
+    numOmissions++
   }
   if (omitDay) {
-    width -= 34
+    width -= 22
+    numOmissions++
+  }
+
+  if (numOmissions === 1) {
+    width -= 14
+  } else if (numOmissions === 2) {
+    width -= 18
   }
 
   let pickers = []
@@ -150,17 +162,18 @@ function DatePicker({
   for (let i = 0; i < pickers.length; i++) {
     renderItems.push(pickers[i])
     if (i !== pickers.length - 1) {
-      renderItems.push(<PTiny key={'division' + i}>:</PTiny>)
+      renderItems.push(
+        <PTiny key={'division' + i} className={clsx('relative top-[-1px]', divisorExtraClass)}>
+          {divider}
+        </PTiny>,
+      )
     }
   }
   return (
     <>
-      <div className={rootClassName} style={{ width: `${width}px` }}>
+      <div className={rootClassName}>
         {renderItems}
-        <CalendarIcon
-          className="text-tertiary opacity-80"
-          style={{ marginLeft: '6px', marginRight: '0px' }}
-        />
+        <CalendarIcon className="text-tertiary opacity-70 ml-2" />
       </div>
     </>
   )

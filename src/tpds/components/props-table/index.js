@@ -1,5 +1,5 @@
 import React from 'react'
-import { H6, P, PSmall } from '../../elements/typography'
+import { P, PSmall } from '../../elements/typography'
 
 const lastPVariants = {
   default: 'col-span-4',
@@ -18,9 +18,7 @@ const getLastPVariant = (skipColumn2, skipColumn3, skipColumn4) => {
   return `skip${skipColumnsNum}Columns`
 }
 function PropsTable({
-  title = 'Props',
   items = null,
-  omitTitle = false,
   col1Name = 'Prop Name',
   col2Name = 'Type',
   col3Name = 'Default',
@@ -38,8 +36,6 @@ function PropsTable({
   const lastPClass = lastPVariants[getLastPVariant(skipColumn2, skipColumn3, skipColumn4)]
   return (
     <div>
-      {!omitTitle && <H6>{title || 'Props'}</H6>}
-      {!omitTitle && <br />}
       <span className="grid grid-cols-12 gap-4 pb-2 mb-8 border-b border-grey-light-scale-500 dark:border-grey-light-scale-900">
         <P isBold className="whitespace-nowrap text-ellipsis overflow-hidden col-span-2">
           {col1Name}

@@ -1,6 +1,6 @@
 import React from 'react'
 import PageHeader from '../../lib/components/PageHeader'
-import { P, PSmall, PNano } from '../../tpds/elements/typography'
+import { P, PSmall, PNano, H6 } from '../../tpds/elements/typography'
 import { Container } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
 import DatePicker from '../../tpds/components/date-picker'
@@ -29,6 +29,7 @@ export default function Page() {
           onChange={date => setCurrentDate(date)}
         />
         <br />
+        <br />
         <PSmall isBold className="mb-1">
           Current Selection:
         </PSmall>
@@ -39,9 +40,9 @@ export default function Page() {
         <CodeBlock code={code} />
         <br />
         <br />
-        <PSmall isBold className="mb-1">
+        <H6 isBold className="mb-1">
           Other variants:
-        </PSmall>
+        </H6>
         <br />
         <PNano isUppercase isBold className="text-tertiary mb-1 opacity-80">
           Just month and day
@@ -54,6 +55,10 @@ export default function Page() {
           omitYear={true}
         />
         <br />
+        <br />
+        <CodeBlock code={codeJustMonthAndDay} />
+        <br />
+        <br />
         <PNano isUppercase isBold className="text-tertiary mb-1 opacity-80">
           Just year and month
         </PNano>
@@ -64,6 +69,10 @@ export default function Page() {
           onChange={date => setCurrentDate(date)}
           omitDay={true}
         />
+        <br />
+        <br />
+        <CodeBlock code={codeJustYearAndMonth} />
+        <br />
         <br />
         <PNano isUppercase isBold className="text-tertiary mb-1 opacity-80">
           Just year
@@ -77,6 +86,10 @@ export default function Page() {
           omitDay={true}
         />
         <br />
+        <br />
+        <CodeBlock code={codeJustYear} />
+        <br />
+        <br />
         <PNano isUppercase isBold className="text-tertiary mb-1 opacity-80">
           Just day
         </PNano>
@@ -88,6 +101,12 @@ export default function Page() {
           omitMonth={true}
           omitYear={true}
         />
+        <br />
+        <br />
+        <CodeBlock code={codeJustDay} />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <PropsTable
@@ -155,6 +174,13 @@ export default function Page() {
               required: 'No',
               description: 'How many years in the future to show in the list.',
             },
+            {
+              propName: 'divider',
+              type: 'String',
+              default: '"-"',
+              required: 'No',
+              description: 'Character displayed between the time elements in the picker.',
+            },
           ]}
         />
         <br />
@@ -172,4 +198,38 @@ const [currenDate, setCurrentDate] = React.useState(new Date())
   month={currenDate.getMonth()}
   day={currenDate.getDate()}
   onChange={date => setCurrentDate(date)}
+/>`
+
+const codeJustMonthAndDay = String.raw`<DatePicker
+  year={currenDate.getFullYear()}
+  month={currenDate.getMonth()}
+  day={currenDate.getDate()}
+  onChange={date => setCurrentDate(date)}
+  omitYear={true}
+/>`
+
+const codeJustYearAndMonth = String.raw`<DatePicker
+  year={currenDate.getFullYear()}
+  month={currenDate.getMonth()}
+  day={currenDate.getDate()}
+  onChange={date => setCurrentDate(date)}
+  omitDay={true}
+/>`
+
+const codeJustYear = String.raw`<DatePicker
+  year={currenDate.getFullYear()}
+  month={currenDate.getMonth()}
+  day={currenDate.getDate()}
+  onChange={date => setCurrentDate(date)}
+  omitMonth={true}
+  omitDay={true}
+/>`
+
+const codeJustDay = String.raw`<DatePicker
+  year={currenDate.getFullYear()}
+  month={currenDate.getMonth()}
+  day={currenDate.getDate()}
+  onChange={date => setCurrentDate(date)}
+  omitMonth={true}
+  omitYear={true}
 />`
