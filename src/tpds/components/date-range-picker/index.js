@@ -48,42 +48,46 @@ function DateRangePicker({
   return (
     <div>
       <div className={rootClassName}>
-        <DatePicker
-          year={startDate.getFullYear()}
-          month={startDate.getMonth()}
-          day={startDate.getDate()}
-          onChange={date => {
-            if (preventWrongTiming) {
-              if (date.getTime() > endDate.getTime()) {
-                onChangeEndDate(date)
+        <div className="relative top-[-1px]">
+          <DatePicker
+            year={startDate.getFullYear()}
+            month={startDate.getMonth()}
+            day={startDate.getDate()}
+            onChange={date => {
+              if (preventWrongTiming) {
+                if (date.getTime() > endDate.getTime()) {
+                  onChangeEndDate(date)
+                }
               }
-            }
-            onChangeStartDate(date)
-          }}
-          maxYearsToPast={maxYearsToPast}
-          maxYearsToFuture={0}
-          allowPast={allowPast}
-          omitBorders={true}
-          omitCalendarIcon={true}
-        />
+              onChangeStartDate(date)
+            }}
+            maxYearsToPast={maxYearsToPast}
+            maxYearsToFuture={0}
+            allowPast={allowPast}
+            omitBorders={true}
+            omitCalendarIcon={true}
+          />
+        </div>
         <ArrowRightIcon className="h-[12px] text-black dark:text-white opacity-30" />
-        <DatePicker
-          year={endDate.getFullYear()}
-          month={endDate.getMonth()}
-          day={endDate.getDate()}
-          onChange={date => {
-            if (preventWrongTiming) {
-              if (date.getTime() < startDate.getTime()) {
-                onChangeStartDate(date)
+        <div className="relative top-[-1px]">
+          <DatePicker
+            year={endDate.getFullYear()}
+            month={endDate.getMonth()}
+            day={endDate.getDate()}
+            onChange={date => {
+              if (preventWrongTiming) {
+                if (date.getTime() < startDate.getTime()) {
+                  onChangeStartDate(date)
+                }
               }
-            }
-            onChangeEndDate(date)
-          }}
-          maxYearsToPast={endDate.getFullYear() - startDate.getFullYear()}
-          maxYearsToFuture={maxYearsToFuture}
-          allowPast={allowPast}
-          omitBorders={true}
-        />
+              onChangeEndDate(date)
+            }}
+            maxYearsToPast={endDate.getFullYear() - startDate.getFullYear()}
+            maxYearsToFuture={maxYearsToFuture}
+            allowPast={allowPast}
+            omitBorders={true}
+          />
+        </div>
       </div>
       {wrongTimeWarning && endDateBeforeStartDate && (
         <PNano isMedium className="mt-1 !text-orange">
