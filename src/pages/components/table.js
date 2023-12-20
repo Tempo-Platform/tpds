@@ -35,11 +35,14 @@ const tableColumns = [
     propName: 'name',
     key: 'name',
     addClass: 'font-bold',
+    enableSort: true,
+    sortFunction: null,
   },
   {
     label: 'State',
     propName: 'state',
     key: 'state',
+    enableSort: true,
     render: (item, index) => {
       return (
         <Tag
@@ -55,6 +58,7 @@ const tableColumns = [
     label: 'Quantity',
     propName: 'quantity',
     key: 'quantity',
+    enableSort: true,
   },
   // {
   //   label: 'Actions',
@@ -252,6 +256,8 @@ export default function Page() {
           router={router}
           rowsPerPage={5}
           rowKey="id"
+          density="medium"
+          rowSpacing="low"
           rowClick={(item, index) => alert('clicked item with id: ' + item.id)}
           page={page}
         />
@@ -260,8 +266,10 @@ export default function Page() {
         <CodeBlock code={codeExample} />
         <br />
         <br />
+        <br />
+        <PSmall>Table general props</PSmall>
+        <br />
         <PropsTable
-          title="Props"
           items={[
             {
               propName: 'columns',
@@ -323,6 +331,74 @@ export default function Page() {
               required: 'yes',
               description: 'The key to be used as unique identifier for each row.',
             },
+            {
+              propName: 'density',
+              type: 'String',
+              default: 'low',
+              required: 'no',
+              description:
+                "The density of the table. Can be 'low', 'medium' or 'high'. Defines vertical padding inside rows",
+            },
+            {
+              propName: 'rowSpacing',
+              type: 'String',
+              default: 'low',
+              required: 'no',
+              description:
+                "The spacing between rows. Can be 'none', 'low', 'medium' or 'high'. Defines vertical margin between rows",
+            },
+          ]}
+        />
+        <br />
+        <br />
+        <br />
+        <PSmall>Table data items props</PSmall>
+        <br />
+        <PropsTable
+          items={[
+            {
+              propName: 'label',
+              type: 'String',
+              default: 'null',
+              required: 'yes',
+              description: 'The label to be displayed in the table header.',
+            },
+            {
+              propName: 'name',
+              type: 'String',
+              default: 'null',
+              required: 'yes',
+              description: 'The property name to get the value to display in the cell.',
+            },
+            {
+              propName: 'key',
+              type: 'String',
+              default: '""',
+              required: 'yes',
+              description: 'The key to be used as unique identifier for each cell.',
+            },
+            {
+              propName: 'addClass',
+              type: 'String',
+              default: '""',
+              required: 'no',
+              description: 'Additional classes to be added to every cell of this column.',
+            },
+            {
+              propName: 'enableSort',
+              type: 'Boolean',
+              default: 'false',
+              required: 'no',
+              description: 'If true, the column will be sortable.',
+            },
+            {
+              propName: 'sortFunction',
+              type: 'Function',
+              default: 'null',
+              required: 'no',
+              description:
+                'A custom sort function to be used when sorting this column. Otherwise falls to automatic sorting.',
+            },
           ]}
         />
         <br />
@@ -353,6 +429,8 @@ if (page) {
   rowsPerPage={5}
   router={router}
   rowKey="id"
+  density="medium"
+  rowSpacing="low"
   rowClick={(item, index) => alert('clicked item with id: ' + item.id)}
   page={page}
 />
@@ -368,11 +446,13 @@ const tableColumns = [
     propName: 'name',
     key: 'name',
     addClass: 'font-bold',
+    enableSort: true,
   },
   {
     label: 'State',
     propName: 'state',
     key: 'state',
+    enableSort: true,
     render: (item, index) => {
       return (
         <Tag
@@ -388,6 +468,7 @@ const tableColumns = [
     label: 'Quantity',
     propName: 'quantity',
     key: 'quantity',
+    enableSort: true,
   },
   {
     label: 'Actions',

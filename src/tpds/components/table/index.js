@@ -4,6 +4,7 @@ import React from 'react'
 import { PTiny } from '../../elements/typography'
 import { Button } from '../../elements/buttons'
 import clsx from 'clsx'
+import TriangleDown from '../../assets/svgs/arrows/TriangleDown'
 
 const getColumnAlign = alignType => {
   switch (alignType) {
@@ -49,6 +50,22 @@ const renderItem = (item, column, itemIndex, columnIndex, rowKey) => {
   )
 }
 
+const runSort = (array, column, sortDirection) => {
+  const compare = column.sortFunction
+    ? column.sortFunction
+    : (a, b) => {
+        if (a[column.propName] < b[column.propName]) {
+          return -1
+        }
+        if (a[column.propName] > b[column.propName]) {
+          return 1
+        }
+        return 0
+      }
+  sortDirection === 1 ? array.sort(compare) : array.sort(compare).reverse()
+  return array
+}
+
 function Table({
   columns,
   data,
@@ -58,15 +75,30 @@ function Table({
   router = null,
   rowClick = null,
   rowKey = null,
+  density = 'high', // 'low', 'medium', 'high'
+  rowSpacing = 'low', // 'none', 'low', 'medium', 'high'
 }) {
+  const [sortByColumn, setSortByColumn] = React.useState(null)
+  const [sortDirection, setSortDirection] = React.useState(1)
   const headerClass = clsx('grid gap-2', columnVariants[columns.length], 'mb-1', 'px-4 py-1.5')
   const rowClass = clsx(
-    'grid gap-4 mb-2 rounded-[3px]',
+    'grid gap-4 rounded-[3px]',
     columnVariants[columns.length],
     'border border-window bg-window',
+    'px-4',
+    rowSpacing === 'none' && 'border-b-0 last:!border-b',
+    density === 'high' && 'py-2',
+    density === 'medium' && 'py-3',
+    density === 'low' && 'py-4',
     rowClick &&
       'cursor-pointer hover:border-grey-light-scale-500 dark:hover:border-grey-dark-scale-100',
-    'px-4 py-2',
+  )
+  const rowsContainerClass = clsx(
+    'flex flex-col mb-4',
+    rowSpacing === 'none' && 'gap-y-0',
+    rowSpacing === 'low' && 'gap-y-1',
+    rowSpacing === 'medium' && 'gap-y-2',
+    rowSpacing === 'high' && 'gap-y-3',
   )
 
   const numPages = Math.ceil(data.length / rowsPerPage)
@@ -101,6 +133,10 @@ function Table({
     router.push(`${window.location.pathname}?page=${page - 1}`)
   }
 
+  if (sortByColumn) {
+    data = runSort(data, sortByColumn, sortDirection)
+  }
+
   return (
     <div>
       <div className={headerClass}>
@@ -108,26 +144,60 @@ function Table({
           <PTiny
             isBold
             key={column.key}
-            className={clsx('whitespace-nowrap text-ellipsis overflow-hidden')}
+            className={clsx(
+              'whitespace-nowrap text-ellipsis overflow-hidden flex gap-x-2 items-center',
+              column.enableSort && 'cursor-pointer',
+            )}
             style={{
               textAlign: getColumnAlign(column.align),
             }}
+            onClick={
+              column.enableSort
+                ? () => {
+                    if (!sortByColumn) {
+                      setSortDirection(1)
+                      setSortByColumn(column)
+                    } else {
+                      if (sortByColumn.propName === column.propName && sortDirection === 1) {
+                        setSortDirection(-1)
+                      } else if (
+                        sortByColumn.propName === column.propName &&
+                        sortDirection === -1
+                      ) {
+                        setSortDirection(1)
+                        setSortByColumn(null)
+                      } else {
+                        setSortDirection(1)
+                        setSortByColumn(column)
+                      }
+                    }
+                  }
+                : null
+            }
           >
-            {column.label}
+            {column.label}{' '}
+            {sortByColumn && sortByColumn.propName === column.propName && (
+              <TriangleDown
+                className="inline-block ml-1"
+                style={{ transform: sortDirection === 1 ? '' : 'rotate(180deg)' }}
+              />
+            )}
           </PTiny>
         ))}
       </div>
-      {data.map((item, itemIndex) => (
-        <div
-          key={rowKey === null ? itemIndex : item[rowKey]}
-          className={clsx(rowClass)}
-          onClick={rowClick ? () => rowClick(item, rowKey ? item[rowKey] : itemIndex) : null}
-        >
-          {columns.map((column, columnIndex) => {
-            return renderItem(item, column, itemIndex, columnIndex, rowKey, rowClick)
-          })}
-        </div>
-      ))}
+      <div className={rowsContainerClass}>
+        {data.map((item, itemIndex) => (
+          <div
+            key={rowKey === null ? itemIndex : item[rowKey]}
+            className={rowClass}
+            onClick={rowClick ? () => rowClick(item, rowKey ? item[rowKey] : itemIndex) : null}
+          >
+            {columns.map((column, columnIndex) => {
+              return renderItem(item, column, itemIndex, columnIndex, rowKey, rowClick)
+            })}
+          </div>
+        ))}
+      </div>
       {showPagination && (
         <div className="flex justify-end gap-1">
           <Button
