@@ -615,6 +615,9 @@ video {
 .mb-\[2px\] {
   margin-bottom: 2px;
 }
+.ml-1 {
+  margin-left: 0.25rem;
+}
 .ml-2 {
   margin-left: 0.5rem;
 }
@@ -940,11 +943,17 @@ video {
   -moz-column-gap: 4px;
        column-gap: 4px;
 }
+.gap-y-0 {
+  row-gap: 0px;
+}
 .gap-y-1 {
   row-gap: 0.25rem;
 }
 .gap-y-2 {
   row-gap: 0.5rem;
+}
+.gap-y-3 {
+  row-gap: 0.75rem;
 }
 .gap-y-4 {
   row-gap: 1rem;
@@ -1029,6 +1038,9 @@ video {
 }
 .border-b {
   border-bottom-width: 1px;
+}
+.border-b-0 {
+  border-bottom-width: 0px;
 }
 .border-b-2 {
   border-bottom-width: 2px;
@@ -1345,6 +1357,10 @@ video {
 .py-2\.5 {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
+}
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 .py-4 {
   padding-top: 1rem;
@@ -1749,6 +1765,9 @@ video {
 }
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.last\:\!border-b:last-child {
+  border-bottom-width: 1px !important;
 }
 @media (hover: hover) and (pointer: fine) {
 

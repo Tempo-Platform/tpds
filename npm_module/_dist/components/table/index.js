@@ -9,7 +9,14 @@ var _react = _interopRequireDefault(require("react"));
 var _typography = require("../../elements/typography");
 var _buttons = require("../../elements/buttons");
 var _clsx = _interopRequireDefault(require("clsx"));
+var _TriangleDown = _interopRequireDefault(require("../../assets/svgs/arrows/TriangleDown"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var getColumnAlign = function getColumnAlign(alignType) {
   switch (alignType) {
     case 'center':
@@ -43,6 +50,19 @@ var renderItem = function renderItem(item, column, itemIndex, columnIndex, rowKe
     className: (0, _clsx["default"])('whitespace-nowrap text-ellipsis overflow-hidden', column.addClass)
   }, item[column.key]));
 };
+var runSort = function runSort(array, column, sortDirection) {
+  var compare = column.sortFunction ? column.sortFunction : function (a, b) {
+    if (a[column.propName] < b[column.propName]) {
+      return -1;
+    }
+    if (a[column.propName] > b[column.propName]) {
+      return 1;
+    }
+    return 0;
+  };
+  sortDirection === 1 ? array.sort(compare) : array.sort(compare).reverse();
+  return array;
+};
 function Table(_ref) {
   var columns = _ref.columns,
     data = _ref.data,
@@ -57,9 +77,22 @@ function Table(_ref) {
     _ref$rowClick = _ref.rowClick,
     rowClick = _ref$rowClick === void 0 ? null : _ref$rowClick,
     _ref$rowKey = _ref.rowKey,
-    rowKey = _ref$rowKey === void 0 ? null : _ref$rowKey;
+    rowKey = _ref$rowKey === void 0 ? null : _ref$rowKey,
+    _ref$density = _ref.density,
+    density = _ref$density === void 0 ? 'high' : _ref$density,
+    _ref$rowSpacing = _ref.rowSpacing,
+    rowSpacing = _ref$rowSpacing === void 0 ? 'low' : _ref$rowSpacing;
+  var _React$useState = _react["default"].useState(null),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    sortByColumn = _React$useState2[0],
+    setSortByColumn = _React$useState2[1];
+  var _React$useState3 = _react["default"].useState(1),
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    sortDirection = _React$useState4[0],
+    setSortDirection = _React$useState4[1];
   var headerClass = (0, _clsx["default"])('grid gap-2', columnVariants[columns.length], 'mb-1', 'px-4 py-1.5');
-  var rowClass = (0, _clsx["default"])('grid gap-4 mb-2 rounded-[3px]', columnVariants[columns.length], 'border border-window bg-window', rowClick && 'cursor-pointer hover:border-grey-light-scale-500 dark:hover:border-grey-dark-scale-100', 'px-4 py-2');
+  var rowClass = (0, _clsx["default"])('grid gap-4 rounded-[3px]', columnVariants[columns.length], 'border border-window bg-window', 'px-4', rowSpacing === 'none' && 'border-b-0 last:!border-b', density === 'high' && 'py-2', density === 'medium' && 'py-3', density === 'low' && 'py-4', rowClick && 'cursor-pointer hover:border-grey-light-scale-500 dark:hover:border-grey-dark-scale-100');
+  var rowsContainerClass = (0, _clsx["default"])('flex flex-col mb-4', rowSpacing === 'none' && 'gap-y-0', rowSpacing === 'low' && 'gap-y-1', rowSpacing === 'medium' && 'gap-y-2', rowSpacing === 'high' && 'gap-y-3');
   var numPages = Math.ceil(data.length / rowsPerPage);
   if (pagination && !router) {
     throw new Error('TPDS: Table component requires router prop when pagination is enabled, to "push" new page to router.');
@@ -82,28 +115,54 @@ function Table(_ref) {
   var handleClickToPreviousPage = function handleClickToPreviousPage() {
     router.push("".concat(window.location.pathname, "?page=").concat(page - 1));
   };
+  if (sortByColumn) {
+    data = runSort(data, sortByColumn, sortDirection);
+  }
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
     className: headerClass
   }, columns.map(function (column) {
     return /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
       isBold: true,
       key: column.key,
-      className: (0, _clsx["default"])('whitespace-nowrap text-ellipsis overflow-hidden'),
+      className: (0, _clsx["default"])('whitespace-nowrap text-ellipsis overflow-hidden flex gap-x-2 items-center', column.enableSort && 'cursor-pointer'),
       style: {
         textAlign: getColumnAlign(column.align)
+      },
+      onClick: column.enableSort ? function () {
+        if (!sortByColumn) {
+          setSortDirection(1);
+          setSortByColumn(column);
+        } else {
+          if (sortByColumn.propName === column.propName && sortDirection === 1) {
+            setSortDirection(-1);
+          } else if (sortByColumn.propName === column.propName && sortDirection === -1) {
+            setSortDirection(1);
+            setSortByColumn(null);
+          } else {
+            setSortDirection(1);
+            setSortByColumn(column);
+          }
+        }
+      } : null
+    }, column.label, ' ', sortByColumn && sortByColumn.propName === column.propName && /*#__PURE__*/_react["default"].createElement(_TriangleDown["default"], {
+      className: "inline-block ml-1",
+      style: {
+        transform: sortDirection === 1 ? '' : 'rotate(180deg)'
       }
-    }, column.label);
-  })), data.map(function (item, itemIndex) {
+    }));
+  })), /*#__PURE__*/_react["default"].createElement("div", {
+    className: rowsContainerClass
+  }, data.map(function (item, itemIndex) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       key: rowKey === null ? itemIndex : item[rowKey],
-      className: (0, _clsx["default"])(rowClass),
+      className: rowClass,
       onClick: rowClick ? function () {
         return rowClick(item, rowKey ? item[rowKey] : itemIndex);
       } : null
     }, columns.map(function (column, columnIndex) {
       return renderItem(item, column, itemIndex, columnIndex, rowKey, rowClick);
     }));
-  }), showPagination && /*#__PURE__*/_react["default"].createElement("div", {
+  })), showPagination && /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex justify-end gap-1"
   }, /*#__PURE__*/_react["default"].createElement(_buttons.Button, {
     className: "!p-1 text-primary",
