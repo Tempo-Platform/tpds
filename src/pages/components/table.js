@@ -246,6 +246,9 @@ export default function Page() {
           element
         </PSmall>
         <PSmall>- Ellipsis (...) are applied when text doesn't fit in a cell</PSmall>
+        <PSmall>- Option to sort rows, automatically or pass a custom sort function</PSmall>
+        <PSmall>- Define density (rows internal vertical padding)</PSmall>
+        <PSmall>- Define row spacing</PSmall>
         <br />
         <Separator />
         <br />
