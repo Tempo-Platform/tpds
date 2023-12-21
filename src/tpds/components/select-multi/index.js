@@ -159,7 +159,7 @@ const SelectMulti = ({
       <div
         className={clsx(
           'flex flex-row flex-wrap gap-2 items-center justify-between',
-          'w-full',
+          'w-full !h-[36px]',
           'px-2.5 py-1 rounded focus:outline-none',
           'font-normal',
           'bg-transparent text-primary border-transparent',
