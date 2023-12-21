@@ -111,6 +111,21 @@ export default function Page() {
               required: 'no',
               description: 'Wether the input is invalid or not',
             },
+            {
+              propName: 'omitSelectedInDropdown',
+              type: 'Boolean',
+              default: 'true',
+              required: 'no',
+              description: 'Wether to show selected items in the dropdown or not',
+            },
+            {
+              propName: 'truncateAfterNumItems',
+              type: 'Number',
+              default: '-1',
+              required: 'no',
+              description:
+                'If set to a positive number, the input will only show that number os selected items and will truncate the rest with a +X label',
+            },
           ]}
         />
         <br />
