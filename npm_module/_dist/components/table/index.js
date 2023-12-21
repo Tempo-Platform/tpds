@@ -89,8 +89,8 @@ function Table(_ref) {
     sortDirection = _React$useState4[0],
     setSortDirection = _React$useState4[1];
   var headerClass = (0, _clsx["default"])('grid gap-2', columnVariants[columns.length], 'mb-1', 'px-4 py-1.5');
-  var rowClass = (0, _clsx["default"])('grid gap-4 rounded-[3px]', columnVariants[columns.length], 'border border-window bg-window', 'px-4', rowSpacing === 'none' && 'border-b-0 last:!border-b', density === 'high' && 'py-2', density === 'medium' && 'py-3', density === 'low' && 'py-4', rowClick && 'cursor-pointer hover:border-grey-light-scale-500 dark:hover:border-grey-dark-scale-100');
-  var rowsContainerClass = (0, _clsx["default"])('flex flex-col mb-4', rowSpacing === 'none' && 'gap-y-0', rowSpacing === 'low' && 'gap-y-1', rowSpacing === 'medium' && 'gap-y-2', rowSpacing === 'high' && 'gap-y-3');
+  var rowClass = (0, _clsx["default"])('grid gap-4 rounded-[3px]', columnVariants[columns.length], 'border border-window bg-window', 'px-4', density === 'high' && 'py-2', density === 'medium' && 'py-3', density === 'low' && 'py-4', rowClick && 'cursor-pointer hover:border-grey-light-scale-500 dark:hover:border-grey-dark-scale-100', rowSpacing === 'none' && '!border-b-0 last:!border-b');
+  var rowsContainerClass = (0, _clsx["default"])('flex flex-col mb-4', rowSpacing === 'low' && 'gap-y-1', rowSpacing === 'medium' && 'gap-y-2', rowSpacing === 'high' && 'gap-y-3', rowSpacing === 'none' && 'gap-y-0');
   var numPages = Math.ceil(data.length / rowsPerPage);
   if (pagination && !router) {
     throw new Error('TPDS: Table component requires router prop when pagination is enabled, to "push" new page to router.');
