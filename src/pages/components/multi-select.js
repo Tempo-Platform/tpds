@@ -20,7 +20,10 @@ export default function Page() {
         <PSmall>- Close drawer + clear typed content on click away</PSmall>
         <PSmall>- Automatically apply scroll if content exceeds max height</PSmall>
         <PSmall>- Accepts indexes to exclude</PSmall>
-        <PSmall>- Show only items that are not yet selected in drawer</PSmall>
+        <PSmall>- Optionally show only items that are not yet selected in drawer</PSmall>
+        <PSmall>
+          - Option to "truncate" number of items shows in the input and resume the rest with "+(n)"
+        </PSmall>
         <br />
         <Window>
           <SelectMulti
