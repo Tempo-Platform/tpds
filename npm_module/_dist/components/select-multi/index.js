@@ -8,6 +8,7 @@ exports["default"] = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _clsx = _interopRequireDefault(require("clsx"));
 var _typography = require("../../elements/typography");
+var _Cross = _interopRequireDefault(require("../../assets/svgs/16x16/Cross"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -34,7 +35,7 @@ var getOptionIndexFromAllOptions = function getOptionIndexFromAllOptions(options
     return idToCompare === id;
   });
 };
-var Select = function Select(_ref) {
+var SelectMulti = function SelectMulti(_ref) {
   var options = _ref.options,
     selectedIndexes = _ref.selectedIndexes,
     handleSelectionUpdate = _ref.handleSelectionUpdate,
@@ -47,8 +48,12 @@ var Select = function Select(_ref) {
     labelProp = _ref$labelProp === void 0 ? 'value' : _ref$labelProp,
     _ref$placeholder = _ref.placeholder,
     placeholder = _ref$placeholder === void 0 ? 'Select' : _ref$placeholder,
-    _ref$tagVariant = _ref.tagVariant,
-    tagVariant = _ref$tagVariant === void 0 ? 'default' : _ref$tagVariant;
+    _ref$omitSelectedInDr = _ref.omitSelectedInDropdown,
+    omitSelectedInDropdown = _ref$omitSelectedInDr === void 0 ? true : _ref$omitSelectedInDr,
+    _ref$truncateAfterNum = _ref.truncateAfterNumItems,
+    truncateAfterNumItems = _ref$truncateAfterNum === void 0 ? -1 : _ref$truncateAfterNum,
+    _ref$className = _ref.className,
+    className = _ref$className === void 0 ? '' : _ref$className;
   var wrapperRef = (0, _react.useRef)(null);
   var inputRef = (0, _react.useRef)(null);
   var optionsWithoutExcludedIndexes = options.filter(function (option, index) {
@@ -108,10 +113,16 @@ var Select = function Select(_ref) {
   var optionsThatAreStillNotSelected = optionsThatMatchInputValue.filter(function (option) {
     return !isSelected(option);
   });
-  var tagRootClass = (0, _clsx["default"])('text-grey-dark-scale-200 dark:text-grey-light-scale-400', 'inline-flex shadow bg-white dark:bg-grey-dark-scale-200 rounded py-0.5 px-1.5', 'h-[24px] inline-flex rounded py-0.5 px-1.5 select-none justify-center items-center align-center gap-1', 'inline-flex rounded py-0.5 px-1.5 select-none justify-center align-center gap-1', 'select-none justify-center items-center align-center gap-1', "hover:text-grey-dark-scale-900 dark:hover:text-white", "hover:bg-grey-light-scale-50 dark:hover:bg-grey-dark-scale-300");
+  var optionsToShow = omitSelectedInDropdown ? optionsThatAreStillNotSelected : optionsThatMatchInputValue;
+  var tagRootClass = (0, _clsx["default"])('text-grey-dark-scale-200 dark:text-grey-light-scale-400', 'inline-flex shadow bg-white dark:bg-grey-dark-scale-200 rounded py-0.5 px-1.5', 'h-[24px] inline-flex rounded py-0.5 px-1.5 select-none justify-center items-center align-center gap-1', 'inline-flex rounded py-0.5 px-1.5 select-none justify-center align-center gap-1', 'select-none justify-center items-center align-center gap-1', 'hover:text-grey-dark-scale-900 dark:hover:text-white', 'hover:bg-grey-light-scale-50 dark:hover:bg-grey-dark-scale-300');
+  var tagRootClassInverted = (0, _clsx["default"])(tagRootClass, '!bg-blue !text-white');
   var tagClass = (0, _clsx["default"])('text-[11px] font-bold whitespace-nowrap !text-inherit m-0');
+  var selectedTagsToDisplay = displayValue;
+  if (truncateAfterNumItems !== -1 && displayValue.length > truncateAfterNumItems) {
+    selectedTagsToDisplay = displayValue.slice(0, truncateAfterNumItems);
+  }
   return /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _clsx["default"])('w-full relative', !isOpen && 'cursor-pointer'),
+    className: (0, _clsx["default"])('w-full relative', !isOpen && 'cursor-pointer', className),
     ref: wrapperRef,
     onClick: function onClick() {
       return inputRef.current.focus();
@@ -119,19 +130,33 @@ var Select = function Select(_ref) {
   }, /*#__PURE__*/_react["default"].createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     fill: "none",
-    viewBox: "0 0 24 24",
+    viewBox: "0 0 20 20",
     strokeWidth: 1.5,
     stroke: "currentColor",
-    className: (0, _clsx["default"])('pointer-events-none', 'w-4 h-4 absolute right-2 transform top-[9px] text-[#7e909c]', isOpen && 'rotate-180 text-blue')
+    onClick: function onClick(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      setIsOpen(!isOpen);
+    },
+    className: (0, _clsx["default"])('pointer-events-none', 'w-4 h-4 absolute right-[12px] top-[9px] text-[#7e909c]', isOpen && 'rotate-180 text-blue top-[11px] !right-[9px]')
   }, /*#__PURE__*/_react["default"].createElement("path", {
     strokeLinecap: "round",
     strokeLinejoin: "round",
     d: "M19.5 8.25l-7.5 7.5-7.5-7.5"
+  })), displayValue.length > 0 && /*#__PURE__*/_react["default"].createElement("div", {
+    className: "absolute right-[34px] top-[10px]"
+  }, /*#__PURE__*/_react["default"].createElement(_Cross["default"], {
+    className: "text-tertiary cursor-pointer",
+    onClick: function onClick(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      handleSelectionUpdate([]);
+    }
   })), /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _clsx["default"])('flex flex-row flex-wrap gap-2 items-center justify-between', 'w-full', 'px-2.5 py-1 rounded focus:outline-none', 'font-normal', 'bg-transparent text-primary border-transparent', 'border-2', isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147] focus:!border-blue', 'cursor-pointer', 'select-none', 'transition duration-100', isOpen && '!border-blue')
+    className: (0, _clsx["default"])('flex flex-row flex-wrap gap-2 items-center justify-between', 'w-full', 'px-2.5 py-1 rounded focus:outline-none', 'font-normal', 'bg-transparent text-primary border-transparent', 'border-2', isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147] focus:!border-blue', 'cursor-pointer', 'select-none', 'transition duration-100', isOpen && '!border-blue dark:!border-blue')
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex gap-2 flex-wrap"
-  }, displayValue && displayValue.map(function (item, index) {
+  }, selectedTagsToDisplay && selectedTagsToDisplay.map(function (item, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       key: index,
       className: tagRootClass,
@@ -146,7 +171,14 @@ var Select = function Select(_ref) {
     }, item[labelProp] || item), /*#__PURE__*/_react["default"].createElement(XIcon, {
       className: tagClass
     }));
-  }), /*#__PURE__*/_react["default"].createElement("input", {
+  }), truncateAfterNumItems && displayValue.length > truncateAfterNumItems && /*#__PURE__*/_react["default"].createElement("div", {
+    className: tagRootClassInverted
+  }, /*#__PURE__*/_react["default"].createElement("p", {
+    className: tagClass,
+    style: {
+      lineHeight: 'normal'
+    }
+  }, "+", displayValue.length - truncateAfterNumItems)), /*#__PURE__*/_react["default"].createElement("input", {
     ref: inputRef,
     className: (0, _clsx["default"])('inline-flex', 'bg-transparent', 'font-normal', 'w-auto', 'p-0', 'mr-auto', '!outline-none', '!border-none', '!text-secondary', !isOpen && 'cursor-pointer'),
     type: "text",
@@ -161,22 +193,23 @@ var Select = function Select(_ref) {
     }
   }))), isOpen && /*#__PURE__*/_react["default"].createElement("div", {
     className: "w-full flex flex-col space-y-1 items-start text-start p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto"
-  }, optionsThatAreStillNotSelected.map(function (option, index) {
+  }, optionsToShow.map(function (option, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       key: labelProp ? option[labelProp] : option,
       onClick: function onClick(e) {
         e.stopPropagation();
         e.preventDefault();
-        addSelectedItem(option);
-        setIsOpen(false);
+        isSelected(option) ? removeSelectedItem(option) : addSelectedItem(option);
+        //setIsOpen(false)
       },
+
       className: (0, _clsx["default"])('p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center", "bg-window rounded", "hover:bg-grey-light-scale-200 dark:hover:bg-grey-dark-scale-300", isSelected(option) && "!bg-blue-scale-500")
     }, /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
       className: (0, _clsx["default"])('text-primary text-left', isSelected(option) && "!text-white dark:!text-black")
     }, labelProp ? option[labelProp] : option));
   })));
 };
-var _default = Select;
+var _default = SelectMulti;
 exports["default"] = _default;
 function XIcon(_ref2) {
   var className = _ref2.className;
