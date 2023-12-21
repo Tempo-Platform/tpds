@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import clsx from 'clsx'
 import { PTiny } from '../../elements/typography'
+import Cross from '../../assets/svgs/16x16/Cross'
 
 const getCurrentInputValue = (options, selectedIndexes, labelProp) => {
   if (!selectedIndexes || selectedIndexes.length === 0) return []
@@ -16,7 +17,7 @@ const getOptionIndexFromAllOptions = (options, option, idProp) => {
   })
 }
 
-const Select = ({
+const SelectMulti = ({
   options,
   selectedIndexes,
   handleSelectionUpdate,
@@ -25,7 +26,9 @@ const Select = ({
   isInvalid = false,
   labelProp = 'value',
   placeholder = 'Select',
-  tagVariant = 'default',
+  omitSelectedInDropdown = true,
+  truncateAfterNumItems = -1,
+  className = '',
 }) => {
   const wrapperRef = useRef(null)
   const inputRef = useRef(null)
@@ -95,37 +98,64 @@ const Select = ({
     option => !isSelected(option),
   )
 
+  const optionsToShow = omitSelectedInDropdown
+    ? optionsThatAreStillNotSelected
+    : optionsThatMatchInputValue
+
   const tagRootClass = clsx(
     'text-grey-dark-scale-200 dark:text-grey-light-scale-400',
     'inline-flex shadow bg-white dark:bg-grey-dark-scale-200 rounded py-0.5 px-1.5',
     'h-[24px] inline-flex rounded py-0.5 px-1.5 select-none justify-center items-center align-center gap-1',
     'inline-flex rounded py-0.5 px-1.5 select-none justify-center align-center gap-1',
     'select-none justify-center items-center align-center gap-1',
-    `hover:text-grey-dark-scale-900 dark:hover:text-white`,
-    `hover:bg-grey-light-scale-50 dark:hover:bg-grey-dark-scale-300`,
+    'hover:text-grey-dark-scale-900 dark:hover:text-white',
+    'hover:bg-grey-light-scale-50 dark:hover:bg-grey-dark-scale-300',
   )
+  const tagRootClassInverted = clsx(tagRootClass, '!bg-blue !text-white')
   const tagClass = clsx('text-[11px] font-bold whitespace-nowrap !text-inherit m-0')
+
+  let selectedTagsToDisplay = displayValue
+  if (truncateAfterNumItems !== -1 && displayValue.length > truncateAfterNumItems) {
+    selectedTagsToDisplay = displayValue.slice(0, truncateAfterNumItems)
+  }
 
   return (
     <div
-      className={clsx('w-full relative', !isOpen && 'cursor-pointer')}
+      className={clsx('w-full relative', !isOpen && 'cursor-pointer', className)}
       ref={wrapperRef}
       onClick={() => inputRef.current.focus()}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
-        viewBox="0 0 24 24"
+        viewBox="0 0 20 20"
         strokeWidth={1.5}
         stroke="currentColor"
+        onClick={e => {
+          e.stopPropagation()
+          e.preventDefault()
+          setIsOpen(!isOpen)
+        }}
         className={clsx(
           'pointer-events-none',
-          'w-4 h-4 absolute right-2 transform top-[9px] text-[#7e909c]',
-          isOpen && 'rotate-180 text-blue',
+          'w-4 h-4 absolute right-[12px] top-[9px] text-[#7e909c]',
+          isOpen && 'rotate-180 text-blue top-[11px] !right-[9px]',
         )}
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
       </svg>
+      {displayValue.length > 0 && (
+        <div className="absolute right-[34px] top-[10px]">
+          <Cross
+            className="text-tertiary cursor-pointer"
+            onClick={e => {
+              e.stopPropagation()
+              e.preventDefault()
+              handleSelectionUpdate([])
+            }}
+          />
+        </div>
+      )}
       <div
         className={clsx(
           'flex flex-row flex-wrap gap-2 items-center justify-between',
@@ -138,12 +168,12 @@ const Select = ({
           'cursor-pointer',
           'select-none',
           'transition duration-100',
-          isOpen && '!border-blue',
+          isOpen && '!border-blue dark:!border-blue',
         )}
       >
         <div className="flex gap-2 flex-wrap">
-          {displayValue &&
-            displayValue.map((item, index) => (
+          {selectedTagsToDisplay &&
+            selectedTagsToDisplay.map((item, index) => (
               <div
                 key={index}
                 className={tagRootClass}
@@ -157,6 +187,13 @@ const Select = ({
                 <XIcon className={tagClass} />
               </div>
             ))}
+          {truncateAfterNumItems && displayValue.length > truncateAfterNumItems && (
+            <div className={tagRootClassInverted}>
+              <p className={tagClass} style={{ lineHeight: 'normal' }}>
+                +{displayValue.length - truncateAfterNumItems}
+              </p>
+            </div>
+          )}
           <input
             ref={inputRef}
             className={clsx(
@@ -184,14 +221,14 @@ const Select = ({
       </div>
       {isOpen && (
         <div className="w-full flex flex-col space-y-1 items-start text-start p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto">
-          {optionsThatAreStillNotSelected.map((option, index) => (
+          {optionsToShow.map((option, index) => (
             <div
               key={labelProp ? option[labelProp] : option}
               onClick={e => {
                 e.stopPropagation()
                 e.preventDefault()
-                addSelectedItem(option)
-                setIsOpen(false)
+                isSelected(option) ? removeSelectedItem(option) : addSelectedItem(option)
+                //setIsOpen(false)
               }}
               className={clsx(
                 'p-2 m-0',
@@ -219,7 +256,7 @@ const Select = ({
     </div>
   )
 }
-export default Select
+export default SelectMulti
 
 function XIcon({ className }) {
   return (

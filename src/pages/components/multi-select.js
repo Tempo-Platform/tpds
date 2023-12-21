@@ -26,6 +26,8 @@ export default function Page() {
           <SelectMulti
             handleSelectionUpdate={setSelectedIndexes}
             selectedIndexes={selectedIndexes}
+            omitSelectedInDropdown={false}
+            truncateAfterNumItems={2}
             labelProp="label"
             idProp="value"
             tagVariant="default"
