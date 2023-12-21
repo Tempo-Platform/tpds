@@ -39,16 +39,16 @@ var columnVariants = {
   9: 'grid-cols-9',
   10: 'grid-cols-10'
 };
-var renderItem = function renderItem(item, column, itemIndex, columnIndex, rowKey) {
+var renderElement = function renderElement(item, column, rowIndex, elementIndex) {
   return /*#__PURE__*/_react["default"].createElement("div", {
-    key: rowKey ? "".concat(item[rowKey], "-").concat(columnIndex) : "".concat(itemIndex, "-").concat(columnIndex),
+    key: "row-".concat(rowIndex, "-element-").concat(elementIndex),
     className: "flex items-center",
     style: {
       justifyContent: getColumnAlign(column.align)
     }
-  }, column.render ? column.render(item, rowKey ? item[rowKey] : itemIndex) : /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
+  }, column.render ? column.render(item) : /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
     className: (0, _clsx["default"])('whitespace-nowrap text-ellipsis overflow-hidden', column.addClass)
-  }, item[column.key]));
+  }, item[column.propName]));
 };
 var runSort = function runSort(array, column, sortDirection) {
   var compare = column.sortFunction ? column.sortFunction : function (a, b) {
@@ -76,8 +76,6 @@ function Table(_ref) {
     router = _ref$router === void 0 ? null : _ref$router,
     _ref$rowClick = _ref.rowClick,
     rowClick = _ref$rowClick === void 0 ? null : _ref$rowClick,
-    _ref$rowKey = _ref.rowKey,
-    rowKey = _ref$rowKey === void 0 ? null : _ref$rowKey,
     _ref$density = _ref.density,
     density = _ref$density === void 0 ? 'high' : _ref$density,
     _ref$rowSpacing = _ref.rowSpacing,
@@ -120,11 +118,11 @@ function Table(_ref) {
   }
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
     className: headerClass
-  }, columns.map(function (column) {
+  }, columns.map(function (column, columnIndex) {
     return /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
       isBold: true,
-      key: column.key,
-      className: (0, _clsx["default"])('whitespace-nowrap text-ellipsis overflow-hidden flex gap-x-2 items-center', column.enableSort && 'cursor-pointer'),
+      key: "column-".concat(columnIndex),
+      className: (0, _clsx["default"])('select-none whitespace-nowrap text-ellipsis overflow-hidden flex gap-x-2 items-center', column.enableSort && 'cursor-pointer'),
       style: {
         textAlign: getColumnAlign(column.align)
       },
@@ -152,15 +150,15 @@ function Table(_ref) {
     }));
   })), /*#__PURE__*/_react["default"].createElement("div", {
     className: rowsContainerClass
-  }, data.map(function (item, itemIndex) {
+  }, data.map(function (item, rowIndex) {
     return /*#__PURE__*/_react["default"].createElement("div", {
-      key: rowKey === null ? itemIndex : item[rowKey],
+      key: "row-".concat(rowIndex),
       className: rowClass,
       onClick: rowClick ? function () {
-        return rowClick(item, rowKey ? item[rowKey] : itemIndex);
+        return rowClick(item);
       } : null
-    }, columns.map(function (column, columnIndex) {
-      return renderItem(item, column, itemIndex, columnIndex, rowKey, rowClick);
+    }, columns.map(function (column, elementIndex) {
+      return renderElement(item, column, rowIndex, elementIndex);
     }));
   })), showPagination && /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex justify-end gap-1"
