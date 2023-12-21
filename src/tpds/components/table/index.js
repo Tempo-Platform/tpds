@@ -85,19 +85,19 @@ function Table({
     columnVariants[columns.length],
     'border border-window bg-window',
     'px-4',
-    rowSpacing === 'none' && 'border-b-0 last:!border-b',
     density === 'high' && 'py-2',
     density === 'medium' && 'py-3',
     density === 'low' && 'py-4',
     rowClick &&
       'cursor-pointer hover:border-grey-light-scale-500 dark:hover:border-grey-dark-scale-100',
+    rowSpacing === 'none' && '!border-b-0 last:!border-b',
   )
   const rowsContainerClass = clsx(
     'flex flex-col mb-4',
-    rowSpacing === 'none' && 'gap-y-0',
     rowSpacing === 'low' && 'gap-y-1',
     rowSpacing === 'medium' && 'gap-y-2',
     rowSpacing === 'high' && 'gap-y-3',
+    rowSpacing === 'none' && 'gap-y-0',
   )
 
   const numPages = Math.ceil(data.length / rowsPerPage)

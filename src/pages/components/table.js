@@ -257,9 +257,8 @@ export default function Page() {
           pagination={true}
           router={router}
           rowsPerPage={5}
-          rowKey="id"
           density="medium"
-          rowSpacing="low"
+          rowSpacing="none"
           rowClick={(item, index) => alert('clicked item with id: ' + item.id)}
           page={page}
         />
