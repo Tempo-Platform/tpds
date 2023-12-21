@@ -30,20 +30,20 @@ const columnVariants = {
   10: 'grid-cols-10',
 }
 
-const renderItem = (item, column, itemIndex, columnIndex, rowKey) => {
+const renderElement = (item, column, rowIndex, elementIndex) => {
   return (
     <div
-      key={rowKey ? `${item[rowKey]}-${columnIndex}` : `${itemIndex}-${columnIndex}`}
+      key={`row-${rowIndex}-element-${elementIndex}`}
       className="flex items-center"
       style={{
         justifyContent: getColumnAlign(column.align),
       }}
     >
       {column.render ? (
-        column.render(item, rowKey ? item[rowKey] : itemIndex)
+        column.render(item)
       ) : (
         <PTiny className={clsx('whitespace-nowrap text-ellipsis overflow-hidden', column.addClass)}>
-          {item[column.key]}
+          {item[column.propName]}
         </PTiny>
       )}
     </div>
@@ -74,7 +74,6 @@ function Table({
   page = 1,
   router = null,
   rowClick = null,
-  rowKey = null,
   density = 'high', // 'low', 'medium', 'high'
   rowSpacing = 'low', // 'none', 'low', 'medium', 'high'
 }) {
@@ -140,12 +139,12 @@ function Table({
   return (
     <div>
       <div className={headerClass}>
-        {columns.map(column => (
+        {columns.map((column, columnIndex) => (
           <PTiny
             isBold
-            key={column.key}
+            key={`column-${columnIndex}`}
             className={clsx(
-              'whitespace-nowrap text-ellipsis overflow-hidden flex gap-x-2 items-center',
+              'select-none whitespace-nowrap text-ellipsis overflow-hidden flex gap-x-2 items-center',
               column.enableSort && 'cursor-pointer',
             )}
             style={{
@@ -186,14 +185,14 @@ function Table({
         ))}
       </div>
       <div className={rowsContainerClass}>
-        {data.map((item, itemIndex) => (
+        {data.map((item, rowIndex) => (
           <div
-            key={rowKey === null ? itemIndex : item[rowKey]}
+            key={`row-${rowIndex}`}
             className={rowClass}
-            onClick={rowClick ? () => rowClick(item, rowKey ? item[rowKey] : itemIndex) : null}
+            onClick={rowClick ? () => rowClick(item) : null}
           >
-            {columns.map((column, columnIndex) => {
-              return renderItem(item, column, itemIndex, columnIndex, rowKey, rowClick)
+            {columns.map((column, elementIndex) => {
+              return renderElement(item, column, rowIndex, elementIndex)
             })}
           </div>
         ))}

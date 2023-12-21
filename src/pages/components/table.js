@@ -28,12 +28,12 @@ const tableColumns = [
   {
     label: 'Id',
     propName: 'id',
-    key: 'id',
+    //key: 'id',
   },
   {
     label: 'Name',
     propName: 'name',
-    key: 'name',
+    //key: 'name',
     addClass: 'font-bold',
     enableSort: true,
     sortFunction: null,
@@ -41,12 +41,11 @@ const tableColumns = [
   {
     label: 'State',
     propName: 'state',
-    key: 'state',
+    //key: 'state',
     enableSort: true,
-    render: (item, index) => {
+    render: item => {
       return (
         <Tag
-          key={index}
           label={item.name}
           variant={getTagVariant(item.state)}
           className="inline-flex self-start"
@@ -57,7 +56,7 @@ const tableColumns = [
   {
     label: 'Quantity',
     propName: 'quantity',
-    key: 'quantity',
+    //key: 'quantity',
     enableSort: true,
   },
   // {
@@ -374,13 +373,6 @@ export default function Page() {
               description: 'The property name to get the value to display in the cell.',
             },
             {
-              propName: 'key',
-              type: 'String',
-              default: '""',
-              required: 'yes',
-              description: 'The key to be used as unique identifier for each cell.',
-            },
-            {
               propName: 'addClass',
               type: 'String',
               default: '""',
@@ -431,7 +423,6 @@ if (page) {
   pagination={true}
   rowsPerPage={5}
   router={router}
-  rowKey="id"
   density="medium"
   rowSpacing="low"
   rowClick={(item, index) => alert('clicked item with id: ' + item.id)}
@@ -442,19 +433,16 @@ const tableColumns = [
   {
     label: 'Id',
     propName: 'id',
-    key: 'id',
   },
   {
     label: 'Name',
     propName: 'name',
-    key: 'name',
     addClass: 'font-bold',
     enableSort: true,
   },
   {
     label: 'State',
     propName: 'state',
-    key: 'state',
     enableSort: true,
     render: (item, index) => {
       return (
@@ -470,13 +458,11 @@ const tableColumns = [
   {
     label: 'Quantity',
     propName: 'quantity',
-    key: 'quantity',
     enableSort: true,
   },
   {
     label: 'Actions',
     propName: null,
-    key: 'actions',
     align: 'right',
     render: (item, index) => (
       <svg
