@@ -16,7 +16,279 @@
   padding-bottom: 12px;
 }
 
-pre {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+.prismjs * {
+  text-shadow: none;
+  background: transparent;
+}
+.dark .prismjs * {
+  color: var(--text-primary);
+}
+.light .prismjs * {
+  color: var(--text-primary);
+}
+
+.dark .prismjs {
+  background: #1e2224;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+.dark .prismjs :not(pre) > code[class*='language-'] {
+  background: #212627;
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+.dark .prismjs .tag {
+  color: #f8f8f2;
+}
+.dark .prismjs .linenumber {
+  color: #444 !important;
+}
+.dark .prismjs .comment {
+  color: #777;
+}
+.dark .prismjs .prolog {
+  color: #aeb3b6;
+}
+.dark .prismjs .doctype {
+  color: #aeb3b6;
+}
+.dark .prismjs .cdata {
+  color: #aeb3b6;
+}
+.dark .prismjs .punctuation {
+  color: #75aaf9;
+}
+.dark .prismjs .property {
+  color: #f8f8f2;
+}
+.dark .prismjs .constant {
+  color: #f8f8f2;
+}
+.dark .prismjs .symbol {
+  color: #f8f8f2;
+}
+.dark .prismjs .deleted {
+  color: #f8f8f2;
+}
+.dark .prismjs .boolean {
+  color: #75aaf9;
+}
+.dark .prismjs .number {
+  color: #ef7979;
+}
+.dark .prismjs .selector {
+  color: #a2a2a2;
+}
+.dark .prismjs .attr-hljs-name {
+  color: #a2a2a2;
+}
+.dark .prismjs .string {
+  color: #ee85ff;
+}
+.dark .prismjs .class-name {
+  color: #478ef7;
+}
+.dark .prismjs .char {
+  color: #a2a2a2;
+}
+.dark .prismjs .builtin {
+  color: #a2a2a2;
+}
+.dark .prismjs .inserted {
+  color: #a2a2a2;
+}
+.dark .prismjs .operator {
+  color: #75aaf9;
+}
+.dark .prismjs .entity {
+  color: #75aaf9;
+  cursor: 'help';
+}
+.dark .prismjs .url {
+  color: #75aaf9;
+}
+.dark .prismjs .language-css .token.string {
+  color: #ee85ff;
+}
+.dark .prismjs .style .token.string {
+  color: #ee85ff;
+}
+.dark .prismjs .variable {
+  color: #75aaf9;
+}
+.dark .prismjs .atrule {
+  color: #a3c7fb;
+}
+.dark .prismjs .attr-hljs-value {
+  color: #a3c7fb;
+}
+.dark .prismjs .function {
+  color: #a3c7fb;
+}
+.dark .prismjs .keyword {
+  color: #75aaf9;
+}
+.dark .prismjs .regex {
+  color: #f08727;
+}
+.dark .prismjs .important {
+  color: #eb5757;
+  font-weight: 'bold';
+}
+.dark .prismjs .bold {
+  font-weight: 'bold';
+}
+.dark .prismjs .italic {
+  font-style: 'italic';
+}
+
+.light .prismjs {
+  background: white;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+.light .prismjs :not(pre) > code[class*='language-'] {
+  background: #212627;
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+.light .prismjs .tag {
+  color: #323639;
+}
+.light .prismjs .linenumber {
+  color: #ddd;
+}
+.light .prismjs .comment {
+  color: #aeb3b6;
+}
+.light .prismjs .prolog {
+  color: #aeb3b6;
+}
+.light .prismjs .doctype {
+  color: #aeb3b6;
+}
+.light .prismjs .cdata {
+  color: #aeb3b6;
+}
+.light .prismjs .property {
+  color: #323639;
+}
+.light .prismjs .punctuation {
+  color: #75aaf9;
+}
+.light .prismjs .constant {
+  color: #323639;
+}
+.light .prismjs .symbol {
+  color: #323639;
+}
+.light .prismjs .deleted {
+  color: #323639;
+}
+.light .prismjs .boolean {
+  color: #1561d0;
+}
+.light .prismjs .number {
+  color: #eb5757;
+}
+.light .prismjs .selector {
+  color: #a2a2a2;
+}
+.light .prism .attr-hljs-name {
+  color: #a2a2a2;
+}
+.light .prismjs .string {
+  color: #d042e8;
+}
+.light .prismjs .class-name {
+  color: #1561d0;
+}
+.light .prismjs .char {
+  color: #a2a2a2;
+}
+.light .prismjs .builtin {
+  color: #a2a2a2;
+}
+.light .prismjs .inserted {
+  color: #a2a2a2;
+}
+.light .prismjs .operator {
+  color: #1561d0;
+}
+.light .prismjs .entity {
+  color: #1561d0;
+  cursor: 'help';
+}
+.light .prismjs .url {
+  color: #1561d0;
+}
+.light .prismjs .language-css .token.string {
+  color: #d042e8;
+}
+.light .prismjs .style .token.string {
+  color: #d042e8;
+}
+.light .prismjs .variable {
+  color: #1561d0;
+}
+.light .prismjs .atrule {
+  color: #1561d0;
+}
+.light .prism .attr-hljs-value {
+  color: #1561d0;
+}
+.light .prismjs .function {
+  color: #1561d0;
+}
+.light .prismjs .keyword {
+  color: #1561d0;
+}
+.light .prismjs .regex {
+  color: #f08727;
+}
+.light .prismjs .important {
+  color: #eb5757;
+  font-weight: 'bold';
+}
+.light .prismjs .bold {
+  font-weight: 'bold';
+}
+.light .prismjs .italic {
+  font-style: 'italic';
 }
