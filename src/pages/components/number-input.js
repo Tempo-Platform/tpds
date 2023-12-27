@@ -44,16 +44,16 @@ export default function Page() {
             {
               propName: 'maxValue',
               type: 'Number',
-              default: '999999999',
+              default: 'null',
               required: 'no',
-              description: 'the maiumum number the input will accept',
+              description: 'The maximum number the input will accept',
             },
             {
               propName: 'maxLength',
               type: 'Number',
               default: '100',
               required: 'no',
-              description: 'The maxiumum number of characters the input will accept',
+              description: 'The maximum number of characters the input will accept',
             },
             {
               propName: 'allowFloats',
