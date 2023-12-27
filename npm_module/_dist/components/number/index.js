@@ -28,7 +28,7 @@ function InputNumber(_ref) {
   var initialValue = _ref.initialValue,
     onChangeCallback = _ref.onChangeCallback,
     _ref$maxValue = _ref.maxValue,
-    maxValue = _ref$maxValue === void 0 ? 999999999 : _ref$maxValue,
+    maxValue = _ref$maxValue === void 0 ? null : _ref$maxValue,
     _ref$maxLength = _ref.maxLength,
     maxLength = _ref$maxLength === void 0 ? 100 : _ref$maxLength,
     _ref$allowFloats = _ref.allowFloats,
