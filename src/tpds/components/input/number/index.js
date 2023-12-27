@@ -10,7 +10,7 @@ const round = (value, precision) => {
 function InputNumber({
   initialValue,
   onChangeCallback,
-  maxValue = 999999999,
+  maxValue = null,
   maxLength = 100,
   allowFloats = true,
   floatPrecision = 2,
