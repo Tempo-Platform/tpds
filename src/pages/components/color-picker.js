@@ -27,18 +27,18 @@ export default function Page() {
         <PropsTable
           items={[
             {
-              propName: 'year',
-              type: 'Number',
-              default: 'Current year',
-              required: 'No',
-              description: 'The year to display',
+              propName: 'selectedColor',
+              type: 'string',
+              default: 'null',
+              required: 'Yes',
+              description: 'The selected color to display, hexadecimal format',
             },
             {
-              propName: 'month',
-              type: 'Number',
-              default: 'Current month',
-              required: 'No',
-              description: 'The month to display.',
+              propName: 'onChangeHandler',
+              type: 'Function',
+              default: 'null',
+              required: 'Yes',
+              description: 'Handler function to pass updates to the host component.',
             },
           ]}
         />
