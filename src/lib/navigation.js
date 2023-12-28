@@ -150,6 +150,11 @@ export const navigationitems = [
         description: 'Simple checkbox component',
       },
       {
+        name: 'Color Picker',
+        slug: 'components/color-picker',
+        description: 'A color picker + input combined component',
+      },
+      {
         name: 'Date Picker',
         slug: 'components/date-picker',
         description: 'A simple date picker component',
