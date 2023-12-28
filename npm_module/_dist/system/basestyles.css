@@ -16,9 +16,16 @@
   padding-bottom: 12px;
 }
 
+.prismjs {
+  border: 1px solid var(--border-window);
+  text-shadow: none;
+  background: transparent;
+  font-size: 13px !important;
+}
 .prismjs * {
   text-shadow: none;
   background: transparent;
+  font-size: 13px !important;
 }
 .dark .prismjs * {
   color: var(--text-primary);
@@ -28,7 +35,7 @@
 }
 
 .dark .prismjs {
-  background: #1e2224;
+  background: var(--grey-dark-800) !important;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   text-align: left;
   white-space: pre;
@@ -44,7 +51,7 @@
   -ms-hyphens: none;
   hyphens: none;
   padding: 1em;
-  margin: 0.5em 0;
+  margin: 0;
   overflow: auto;
   border-radius: 0.3em;
 }
@@ -177,7 +184,7 @@
   -ms-hyphens: none;
   hyphens: none;
   padding: 1em;
-  margin: 0.5em 0;
+  margin: 0;
   overflow: auto;
   border-radius: 0.3em;
 }
@@ -291,4 +298,42 @@
 }
 .light .prismjs .italic {
   font-style: 'italic';
+}
+
+.tpds-color-picker .react-colorful {
+  width: 200px;
+  height: auto;
+}
+.tpds-color-picker .react-colorful__hue {
+  height: 12px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.tpds-color-picker .react-colorful__saturation {
+  height: 40px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: 0;
+}
+.tpds-color-picker .react-colorful__alpha {
+  height: 12px;
+}
+.tpds-color-picker .react-colorful__alpha-pointer {
+  width: 10px !important;
+  height: 10px !important;
+}
+.tpds-color-picker .react-colorful__saturation-pointer {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+}
+.tpds-color-picker .react-colorful__hue-pointer,
+.tpds-color-picker .react-colorful__alpha-pointer {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 3px;
 }
