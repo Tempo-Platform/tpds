@@ -1,6 +1,7 @@
 import '../lib/globals.css'
 import '../tpds/system/basestyles.css'
 import '../tpds/system/colors.css'
+import 'rc-slider/assets/index.css'
 import Layout from '../lib/layout'
 import Fonts from '@/tpds/system/Fonts'
 

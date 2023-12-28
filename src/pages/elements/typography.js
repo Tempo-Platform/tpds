@@ -50,9 +50,10 @@ export default function Typography() {
           <PLarge>The quick brown fox jumps over the lazy dog</PLarge>
           <br />
           <Separator />
-          <br />
-          <CodeBlock code={codeParagraphs} />
         </Window>
+        <br />
+        <PSmall className="text-secondary mb-2">Code for the examples above:</PSmall>
+        <CodeBlock code={codeParagraphs} />
         <br />
         <br />
         <Window>
@@ -78,9 +79,10 @@ export default function Typography() {
           <H1>The quick brown fox jumps over the lazy dog</H1>
           <br />
           <Separator />
-          <br />
-          <CodeBlock code={codeHeadlines} />
         </Window>
+        <br />
+        <PSmall className="text-secondary mb-2">Code for the examples above:</PSmall>
+        <CodeBlock code={codeHeadlines} />
         <br />
         <br />
         <Window>
@@ -102,9 +104,10 @@ export default function Typography() {
           <FormLabel>The quick brown fox jumps over the lazy dog</FormLabel>
           <br />
           <Separator />
-          <br />
-          <CodeBlock code={codeLabel} />
         </Window>
+        <br />
+        <PSmall className="text-secondary mb-2">Code for the examples above:</PSmall>
+        <CodeBlock code={codeLabel} />
         <br />
         <br />
       </Container>
