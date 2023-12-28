@@ -14,6 +14,7 @@
     "./components/callout": "./_dist/components/callout/index.js",
     "./components/checkbox": "./_dist/components/checkbox/index.js",
     "./components/code": "./_dist/components/code/index.js",
+    "./components/color-picker": "./_dist/components/color-picker/index.js",
     "./components/date-picker": "./_dist/components/date-picker/index.js",
     "./components/date-range-picker": "./_dist/components/date-range-picker/index.js",
     "./components/expandable-section": "./_dist/components/expandable-section/index.js",
@@ -64,6 +65,7 @@
     "url": "https://github.com/Tempo-Platform/tpds/issues"
   },
   "dependencies": {
+    "react-colorful": "^5.6.1",
     "react-syntax-highlighter": "^15.5.0",
     "tailwindcss": "^3.3.2"
   }
