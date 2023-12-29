@@ -121,7 +121,7 @@ export default function Page() {
     }
   }
 
-  const codeString = String.raw`import ThumbnailsIsland from '@tempoplatform/tpds/components/thumbsnails-row'
+  const codeString = String.raw`import ThumbnailsIsland from '@tempoplatform/tpds/components/thumbnails-island'
   
 <ThumbnailsIsland
   backgroundColor='${backgroundColor}'
