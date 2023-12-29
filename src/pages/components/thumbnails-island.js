@@ -142,8 +142,8 @@ export default function Page() {
   return (
     <div>
       <Container>
-        <PageHeader title="Thumbnails Row" subTitle="Island layout with clickable thumbnails" />
-        <P>Configurable row of clickable thumbnails in "island" style. Accepts up to 6 items.</P>
+        <PageHeader title="Thumbnails Island" subTitle="Island layout with clickable thumbnails" />
+        <P>Configurable set of clickable thumbnails in "island" style. Accepts up to 6 items.</P>
         <Separator />
         <br />
         <P>
