@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <div>
       <Container>
-        <PageHeader title="MultiSelect" subTitle="Multiple-item selection component" />
+        <PageHeader title="SelectMulti" subTitle="Multiple selection component" />
         <P>Features:</P>
         <br />
         <PSmall>- Accepts handler function to update array selection of indexes</PSmall>
@@ -140,11 +140,11 @@ export default function Page() {
   )
 }
 
-const code = String.raw`import Select from '@tempoplatform/tpds/components/select'
+const code = String.raw`import SelectMulti from '@tempoplatform/tpds/components/select-multi'
 
 const [selectedIndexes, setSelectedIndexes] = React.useState([0, 1])
 
-<Select
+<SelectMulti
   handleSelectionUpdate={setSelectedIndexes}
   selectedIndexes={selectedIndexes}
   labelProp="label"

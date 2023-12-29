@@ -1,7 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 
-function ThumbnailsRow({
+function ThumbnailsIsland({
   items = null,
   backgroundColor = 'rgba(156, 163, 175, 0.2)',
   thumbnailsBackgroundColor = 'white',
@@ -13,7 +13,7 @@ function ThumbnailsRow({
   rootClassName,
 }) {
   if (!items) {
-    console.error('ThumbnailsRow: items prop is required')
+    console.error('ThumbnailsIsland: items prop is required')
     return null
   }
   const styles1Items = 'grid-cols-1 gap-3 p-2'
@@ -21,7 +21,7 @@ function ThumbnailsRow({
   const styles3Items = 'grid-cols-3 gap-1.5 p-2'
   const styles4Items = 'grid-cols-4 gap-2 p-2'
   const styles5Items = 'grid-cols-5 gap-2 p-2'
-  const styles6Items = 'grid-cols-6 gap-1.5 p-2'
+  const styles6Items = 'grid-cols-6 gap-1 p-1'
 
   const gridClassName = clsx(
     `grid w-full h-auto rounded-lg`,
@@ -90,4 +90,4 @@ function ThumbnailsRow({
   )
 }
 
-export default ThumbnailsRow
+export default ThumbnailsIsland

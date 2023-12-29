@@ -90,6 +90,36 @@ export const navigationitems = [
         description: 'A more advanced button component with icon support',
       },
       {
+        name: 'Callout',
+        slug: 'components/callout',
+        description: 'A component for on-screen information',
+      },
+      {
+        name: 'Checkbox',
+        slug: 'components/checkbox',
+        description: 'Simple checkbox component',
+      },
+      {
+        name: 'Color Picker',
+        slug: 'components/color-picker',
+        description: 'A color picker + input combined component',
+      },
+      {
+        name: 'Date Picker',
+        slug: 'components/date-picker',
+        description: 'A simple date picker component',
+      },
+      {
+        name: 'Date Range Picker',
+        slug: 'components/date-range-picker',
+        description: 'A date range picker component',
+      },
+      {
+        name: 'ExpandableSection',
+        slug: 'components/expandable-section',
+        description: 'An expandable section component',
+      },
+      {
         name: 'ExternalLinkButton',
         slug: 'components/external-link-button',
         description: 'A button component for external links',
@@ -109,16 +139,6 @@ export const navigationitems = [
       //   slug: 'components/text-input',
       //   description: 'A more advanced text input component',
       // },
-      {
-        name: 'Spinner',
-        slug: 'components/spinner',
-        description: 'A component for loading states',
-      },
-      {
-        name: 'Callout',
-        slug: 'components/callout',
-        description: 'A component for on-screen information',
-      },
       // {
       //   name: 'Snackbar',
       //   slug: 'components/snackbar',
@@ -145,39 +165,9 @@ export const navigationitems = [
       //   description: 'A combobox component',
       // },
       {
-        name: 'Checkbox',
-        slug: 'components/checkbox',
-        description: 'Simple checkbox component',
-      },
-      {
-        name: 'Color Picker',
-        slug: 'components/color-picker',
-        description: 'A color picker + input combined component',
-      },
-      {
-        name: 'Date Picker',
-        slug: 'components/date-picker',
-        description: 'A simple date picker component',
-      },
-      {
-        name: 'Date Range Picker',
-        slug: 'components/date-range-picker',
-        description: 'A date range picker component',
-      },
-      {
-        name: 'Switch',
-        slug: 'components/switch',
-        description: 'Simple switch component',
-      },
-      {
         name: 'NumberInput',
         slug: 'components/number-input',
         description: 'A text input optimized for numbers',
-      },
-      {
-        name: 'PriceInput',
-        slug: 'components/price-input',
-        description: 'A text input optimized for prices',
       },
       // {
       //   name: 'Video',
@@ -190,29 +180,9 @@ export const navigationitems = [
         description: 'Code component with syntax highlighting',
       },
       {
-        name: 'Tag',
-        slug: 'components/tag',
-        description: 'Compact tag component',
-      },
-      {
         name: 'Modal',
         slug: 'components/modal',
         description: 'Modal dialog component',
-      },
-      {
-        name: 'Select',
-        slug: 'components/select',
-        description: 'Simple select component',
-      },
-      {
-        name: 'MultiSelect',
-        slug: 'components/multi-select',
-        description: 'Multi-select component',
-      },
-      {
-        name: 'Steps',
-        slug: 'components/steps',
-        description: 'Process Steps component',
       },
       {
         name: 'RadioGroup',
@@ -224,15 +194,10 @@ export const navigationitems = [
         slug: 'components/radio-tabs',
         description: 'iOS style radio tabs component',
       },
-      // {
-      //   name: 'Tabs',
-      //   slug: 'components/tabs',
-      //   description: 'Generic tabs component',
-      // },
       {
-        name: 'Table',
-        slug: 'components/table',
-        description: 'Table component with optional pagination4',
+        name: 'PriceInput',
+        slug: 'components/price-input',
+        description: 'A text input optimized for prices',
       },
       {
         name: 'PropsTable',
@@ -240,9 +205,34 @@ export const navigationitems = [
         description: 'Table of component props',
       },
       {
+        name: 'Select',
+        slug: 'components/select',
+        description: 'Single selection component',
+      },
+      {
+        name: 'SelectMulti',
+        slug: 'components/select-multi',
+        description: 'Multiple selection component',
+      },
+      {
+        name: 'Spinner',
+        slug: 'components/spinner',
+        description: 'A component for loading states',
+      },
+      {
         name: 'StarsRating',
         slug: 'components/stars-rating',
         description: 'A 5-stars row rating component',
+      },
+      {
+        name: 'Steps',
+        slug: 'components/steps',
+        description: 'Process Steps component',
+      },
+      {
+        name: 'Switch',
+        slug: 'components/switch',
+        description: 'Simple switch component',
       },
       // {
       //   name: 'Pagination',
@@ -250,14 +240,19 @@ export const navigationitems = [
       //   description: 'Generic pagination component',
       // },
       {
-        name: 'ExpandableSection',
-        slug: 'components/expandable-section',
-        description: 'An expandable section component',
+        name: 'Table',
+        slug: 'components/table',
+        description: 'Table component with optional pagination4',
       },
       {
-        name: 'ThumbnailsRow',
-        slug: 'components/thumbnails-row',
-        description: 'Island layout for row of rounded thumbnails',
+        name: 'Tag',
+        slug: 'components/tag',
+        description: 'Compact tag component',
+      },
+      {
+        name: 'ThumbnailsIsland',
+        slug: 'components/thumbnails-island',
+        description: 'Island layout with clickable thumbnails',
       },
     ],
   },
