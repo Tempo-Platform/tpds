@@ -3,8 +3,8 @@ import clsx from 'clsx'
 
 function ThumbnailsIsland({
   items = null,
-  backgroundColor = 'rgba(156, 163, 175, 0.2)',
-  thumbnailsBackgroundColor = 'white',
+  backgroundColor = '#96969621',
+  thumbnailsBackgroundColor = '#ffffff21',
   removeEnclosingIsland = false,
   thumbnailsPadding = 0,
   thumbnailsBorderRadius = 6,

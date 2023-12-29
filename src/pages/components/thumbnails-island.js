@@ -2,7 +2,7 @@ import React from 'react'
 import PageHeader from '../../lib/components/PageHeader'
 import { Container, Separator, Window } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
-import ThumbnailsRow from '../../tpds/components/thumbnails-island'
+import ThumbnailsIsland from '../../tpds/components/thumbnails-island'
 import Switch from '../../tpds/components/switch'
 import PropsTable from '../../tpds/components/props-table'
 import { P, PSmall } from '../../tpds/elements/typography'
@@ -121,9 +121,9 @@ export default function Page() {
     }
   }
 
-  const codeString = String.raw`import ThumbnailsRow from '@tempoplatform/tpds/components/thumbsnails-row'
+  const codeString = String.raw`import ThumbnailsIsland from '@tempoplatform/tpds/components/thumbsnails-row'
   
-<ThumbnailsRow
+<ThumbnailsIsland
   backgroundColor='${backgroundColor}'
   thumbnailsBackgroundColor='${thumbnailsBackgroundColor}'
   thumbnailsBorderRadius={${thumbsBorderRadius}}
@@ -142,7 +142,7 @@ export default function Page() {
   return (
     <div>
       <Container>
-        <PageHeader title="Thumbnails Row" subTitle="Island layout for row of rounded thumbnails" />
+        <PageHeader title="Thumbnails Row" subTitle="Island layout with clickable thumbnails" />
         <P>Configurable row of clickable thumbnails in "island" style. Accepts up to 6 items.</P>
         <Separator />
         <br />
@@ -172,7 +172,7 @@ export default function Page() {
               backgroundPosition: 'center',
             }}
           >
-            <ThumbnailsRow
+            <ThumbnailsIsland
               backgroundColor={backgroundColor}
               thumbnailsBackgroundColor={thumbnailsBackgroundColor}
               thumbnailsBorderRadius={thumbsBorderRadius}
