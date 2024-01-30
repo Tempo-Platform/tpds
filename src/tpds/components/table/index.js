@@ -76,6 +76,7 @@ function Table({
   rowClick = null,
   density = 'high', // 'low', 'medium', 'high'
   rowSpacing = 'low', // 'none', 'low', 'medium', 'high'
+  customRowClass,
 }) {
   const [sortByColumn, setSortByColumn] = React.useState(null)
   const [sortDirection, setSortDirection] = React.useState(1)
@@ -91,6 +92,7 @@ function Table({
     rowClick &&
       'cursor-pointer hover:border-grey-light-scale-500 dark:hover:border-grey-dark-scale-100',
     rowSpacing === 'none' && '!border-b-0 last:!border-b',
+    customRowClass,
   )
   const rowsContainerClass = clsx(
     'flex flex-col mb-4',
