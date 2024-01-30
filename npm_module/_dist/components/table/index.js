@@ -79,7 +79,8 @@ function Table(_ref) {
     _ref$density = _ref.density,
     density = _ref$density === void 0 ? 'high' : _ref$density,
     _ref$rowSpacing = _ref.rowSpacing,
-    rowSpacing = _ref$rowSpacing === void 0 ? 'low' : _ref$rowSpacing;
+    rowSpacing = _ref$rowSpacing === void 0 ? 'low' : _ref$rowSpacing,
+    customRowClass = _ref.customRowClass;
   var _React$useState = _react["default"].useState(null),
     _React$useState2 = _slicedToArray(_React$useState, 2),
     sortByColumn = _React$useState2[0],
@@ -89,7 +90,7 @@ function Table(_ref) {
     sortDirection = _React$useState4[0],
     setSortDirection = _React$useState4[1];
   var headerClass = (0, _clsx["default"])('grid gap-2', columnVariants[columns.length], 'mb-1', 'px-4 py-1.5');
-  var rowClass = (0, _clsx["default"])('grid gap-4 rounded-[3px]', columnVariants[columns.length], 'border border-window bg-window', 'px-4', density === 'high' && 'py-2', density === 'medium' && 'py-3', density === 'low' && 'py-4', rowClick && 'cursor-pointer hover:border-grey-light-scale-500 dark:hover:border-grey-dark-scale-100', rowSpacing === 'none' && '!border-b-0 last:!border-b');
+  var rowClass = (0, _clsx["default"])('grid gap-4 rounded-[3px]', columnVariants[columns.length], 'border border-window bg-window', 'px-4', density === 'high' && 'py-2', density === 'medium' && 'py-3', density === 'low' && 'py-4', rowClick && 'cursor-pointer hover:border-grey-light-scale-500 dark:hover:border-grey-dark-scale-100', rowSpacing === 'none' && '!border-b-0 last:!border-b', customRowClass);
   var rowsContainerClass = (0, _clsx["default"])('flex flex-col mb-4', rowSpacing === 'low' && 'gap-y-1', rowSpacing === 'medium' && 'gap-y-2', rowSpacing === 'high' && 'gap-y-3', rowSpacing === 'none' && 'gap-y-0');
   var numPages = Math.ceil(data.length / rowsPerPage);
   if (pagination && !router) {
