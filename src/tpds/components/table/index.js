@@ -77,6 +77,7 @@ function Table({
   density = 'high', // 'low', 'medium', 'high'
   rowSpacing = 'low', // 'none', 'low', 'medium', 'high'
   customRowClass,
+  customHeaderClass,
 }) {
   const [sortByColumn, setSortByColumn] = React.useState(null)
   const [sortDirection, setSortDirection] = React.useState(1)
@@ -143,11 +144,12 @@ function Table({
       <div className={headerClass}>
         {columns.map((column, columnIndex) => (
           <PTiny
-            isBold
+            isMedium
             key={`column-${columnIndex}`}
             className={clsx(
               'select-none whitespace-nowrap text-ellipsis overflow-hidden flex gap-x-2 items-center',
               column.enableSort && 'cursor-pointer',
+              customHeaderClass,
             )}
             style={{
               textAlign: getColumnAlign(column.align),
