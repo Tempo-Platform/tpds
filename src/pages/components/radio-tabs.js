@@ -104,6 +104,7 @@ const [selectedIndex, setSelectedIndex] = React.useState(0)
 
 <RadioTabs
   items={items}
+  outlineStyle={true}
   selectedIndex={selectedIndex}
   handleIndexSelection={setSelectedIndex}
 />`

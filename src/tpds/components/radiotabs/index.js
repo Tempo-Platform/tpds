@@ -22,6 +22,7 @@ const RadioTabs = ({ items, selectedIndex, handleIndexSelection, outlineStyle })
               className={clsx(
                 index === selectedIndex ? 'text-primary' : 'text-secondary',
                 'm-0 font-medium',
+                'px-4',
                 'text-xs xl:text-sm',
                 '!outline-none',
                 `w-full select-none cursor-pointer text-center py-2 rounded-[5px]`,
