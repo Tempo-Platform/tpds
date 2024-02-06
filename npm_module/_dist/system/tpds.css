@@ -1255,6 +1255,10 @@ video {
 .bg-green-scale-100\/20 {
   background-color: rgb(193 240 193 / 0.2);
 }
+.bg-grey-dark-scale-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(40 44 47 / var(--tw-bg-opacity));
+}
 .bg-grey-light-scale-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(241 243 243 / var(--tw-bg-opacity));

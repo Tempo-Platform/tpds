@@ -30,6 +30,7 @@ export default function Page() {
         <Window>
           <RadioTabs
             items={items}
+            outlineStyle={true}
             selectedIndex={selectedIndex}
             handleIndexSelection={setSelectedIndex}
           />
@@ -63,6 +64,13 @@ export default function Page() {
                 default: 'null',
                 required: 'yes',
                 description: 'The callout function used to select the clicked index',
+              },
+              {
+                propName: 'outlineStyle',
+                type: 'Boolean',
+                default: 'false',
+                required: 'no',
+                description: 'Wether to display the component in outline or filled style',
               },
             ]}
           />

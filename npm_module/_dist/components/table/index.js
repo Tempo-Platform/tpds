@@ -80,7 +80,8 @@ function Table(_ref) {
     density = _ref$density === void 0 ? 'high' : _ref$density,
     _ref$rowSpacing = _ref.rowSpacing,
     rowSpacing = _ref$rowSpacing === void 0 ? 'low' : _ref$rowSpacing,
-    customRowClass = _ref.customRowClass;
+    customRowClass = _ref.customRowClass,
+    customHeaderClass = _ref.customHeaderClass;
   var _React$useState = _react["default"].useState(null),
     _React$useState2 = _slicedToArray(_React$useState, 2),
     sortByColumn = _React$useState2[0],
@@ -121,9 +122,9 @@ function Table(_ref) {
     className: headerClass
   }, columns.map(function (column, columnIndex) {
     return /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
-      isBold: true,
+      isMedium: true,
       key: "column-".concat(columnIndex),
-      className: (0, _clsx["default"])('select-none whitespace-nowrap text-ellipsis overflow-hidden flex gap-x-2 items-center', column.enableSort && 'cursor-pointer'),
+      className: (0, _clsx["default"])('select-none whitespace-nowrap text-ellipsis overflow-hidden flex gap-x-2 items-center', column.enableSort && 'cursor-pointer', customHeaderClass),
       style: {
         textAlign: getColumnAlign(column.align)
       },
