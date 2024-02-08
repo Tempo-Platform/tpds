@@ -20,16 +20,16 @@ var RadioTabs = function RadioTabs(_ref) {
       style: style
     }
   }, /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _clsx["default"])('flex gap-x-[2px] rounded-[8px] p-[2px] h-[36px]', outlineStyle ? 'bg-transparent border !border-[#ededed] dark:!border-[#384147]' : 'bg-grey-light-scale-200 dark:bg-grey-dark-scale-500')
+    className: (0, _clsx["default"])('flex gap-x-[2px] rounded-[4px] p-[2px] h-[36px]', outlineStyle ? 'bg-transparent border-2 !border-[#ededed] dark:!border-[#384147]' : 'bg-grey-light-scale-200 dark:bg-grey-dark-scale-500')
   }, items.map(function (item, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
-      className: (0, _clsx["default"])('flex-1 overflow-hidden', '!px-[7px] py-[4px]', 'flex justify-center', 'select-none !outline-none', index === selectedIndex && 'bg-black dark:text-black rounded-[5px]'),
+      className: (0, _clsx["default"])('flex-1 overflow-hidden cursor-pointer', '!px-[7px] py-[4px]', 'flex justify-center', 'select-none !outline-none rounded-[3px]', index === selectedIndex && 'bg-black dark:text-black'),
       key: item.value || item.description || item.label || item,
       onClick: function onClick() {
         return handleIndexSelection(index);
       }
     }, /*#__PURE__*/_react["default"].createElement("p", {
-      className: (0, _clsx["default"])(index === selectedIndex ? 'text-primary' : 'text-secondary', 'font-medium', 'text-[14px]', '!outline-none', 'overflow-hidden whitespace-nowrap text-ellipsis', index === selectedIndex && 'text-white dark:bg-white')
+      className: (0, _clsx["default"])(index === selectedIndex ? 'text-primary' : 'text-secondary', 'font-semibold', 'text-[13px]', '!outline-none', 'overflow-hidden whitespace-nowrap text-ellipsis', '!m-0 self-center', 'relative top-0', index === selectedIndex && 'text-white dark:bg-white')
     }, item.value || item.description || item.label || item));
   })));
 };
