@@ -26,7 +26,7 @@ const RadioTabs = ({
               '!px-[7px] py-[4px]',
               'flex justify-center',
               'select-none !outline-none rounded-[3px]',
-              index === selectedIndex && 'bg-black dark:text-black',
+              index === selectedIndex && 'bg-black dark:bg-white',
             )}
             key={item.value || item.description || item.label || item}
             onClick={() => handleIndexSelection(index)}
@@ -40,7 +40,7 @@ const RadioTabs = ({
                 'overflow-hidden whitespace-nowrap text-ellipsis',
                 '!m-0 self-center',
                 'relative top-0',
-                index === selectedIndex && 'text-white dark:bg-white',
+                index === selectedIndex && 'text-white dark:text-black',
               )}
             >
               {item.value || item.description || item.label || item}
