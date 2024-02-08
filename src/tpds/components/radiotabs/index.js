@@ -22,7 +22,7 @@ const RadioTabs = ({
         {items.map((item, index) => (
           <div
             className={clsx(
-              'flex-1 overflow-hidden',
+              'flex-1 overflow-hidden cursor-pointer',
               '!px-[7px] py-[4px]',
               'flex justify-center',
               'select-none !outline-none',
@@ -38,6 +38,8 @@ const RadioTabs = ({
                 'text-[14px]',
                 '!outline-none',
                 'overflow-hidden whitespace-nowrap text-ellipsis',
+                '!m-0 self-center',
+                'relative top-[-1px]',
                 index === selectedIndex && 'text-white dark:bg-white',
               )}
             >
