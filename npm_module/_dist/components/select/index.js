@@ -83,7 +83,7 @@ var Select = function Select(_ref) {
     return optionIndex === selectedIndex;
   };
   return /*#__PURE__*/_react["default"].createElement("div", {
-    className: " flex w-full relative text-left",
+    className: "flex w-full relative text-left",
     ref: wrapperRef
   }, useKeyboard ? /*#__PURE__*/_react["default"].createElement(_input.TextInput, {
     placeholder: placeholder,
@@ -91,13 +91,13 @@ var Select = function Select(_ref) {
     onChange: function onChange(e) {
       return setInputValue(e.target.value);
     },
-    className: (0, _clsx["default"])('text-[16px] pr-8 text-ellipsis !text-secondary !bg-transparent', isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]', !isOpen && 'cursor-pointer', isOpen && '!border-blue'),
+    className: (0, _clsx["default"])('text-[16px] pr-8 text-ellipsis !text-secondary !bg-transparent', isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]', !isOpen && 'cursor-pointer', isOpen && '!border-black dark:!border-white'),
     onFocus: function onFocus() {
       setInputValue('');
       setIsOpen(true);
     }
   }) : /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _clsx["default"])(_input.baseInputStyles, 'text-[16px] pr-8 text-ellipsis !text-secondary !bg-transparent', isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]', !isOpen && 'cursor-pointer', isOpen && '!border-blue'),
+    className: (0, _clsx["default"])(_input.baseInputStyles, 'text-[16px] pr-8 text-ellipsis !text-secondary !bg-transparent', isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]', !isOpen && 'cursor-pointer', isOpen && '!border-black dark:!border-white'),
     onClick: function onClick() {
       setInputValue('');
       setIsOpen(true);
@@ -122,7 +122,7 @@ var Select = function Select(_ref) {
         handleIndexSelection(getOptionIndexFromAllOptions(options, option, idProp));
         setIsOpen(false);
       },
-      className: (0, _clsx["default"])('p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center", "bg-window rounded", "hover:bg-input-hover", isSelected(option) && "!bg-blue-scale-500")
+      className: (0, _clsx["default"])('p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center", "bg-window rounded", "hover:bg-grey-light-scale-300 hover:dark:bg-grey-dark-scale-400", isSelected(option) && "!bg-black dark:!bg-white")
     }, /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
       className: (0, _clsx["default"])('text-primary text-left !text-[14px] !leading-tight', isSelected(option) && "!text-white dark:!text-black")
     }, labelProp ? option[labelProp] : option), option.subLabel && /*#__PURE__*/_react["default"].createElement(_typography.PNano, {

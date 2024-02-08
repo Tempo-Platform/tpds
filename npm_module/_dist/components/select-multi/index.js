@@ -104,6 +104,11 @@ var SelectMulti = function SelectMulti(_ref) {
     });
     handleSelectionUpdate(updatedSelection);
   };
+  var clickTruncatedItems = function clickTruncatedItems() {
+    var newMaxIndex = truncateAfterNumItems;
+    var updatedSelection = selectedIndexes.slice(0, newMaxIndex);
+    handleSelectionUpdate(updatedSelection);
+  };
   var addSelectedItem = function addSelectedItem(item) {
     var itemIndex = getOptionIndexFromAllOptions(options, item, idProp);
     var updatedSelectionArray = _toConsumableArray(selectedIndexes);
@@ -114,9 +119,13 @@ var SelectMulti = function SelectMulti(_ref) {
     return !isSelected(option);
   });
   var optionsToShow = omitSelectedInDropdown ? optionsThatAreStillNotSelected : optionsThatMatchInputValue;
-  var tagRootClass = (0, _clsx["default"])('text-grey-dark-scale-200 dark:text-grey-light-scale-400', 'inline-flex shadow bg-white dark:bg-grey-dark-scale-200 rounded py-0.5 px-1.5', 'h-[24px] inline-flex rounded py-0.5 px-1.5 select-none justify-center items-center align-center gap-1', 'inline-flex rounded py-0.5 px-1.5 select-none justify-center align-center gap-1', 'select-none justify-center items-center align-center gap-1', 'hover:text-grey-dark-scale-900 dark:hover:text-white', 'hover:bg-grey-light-scale-50 dark:hover:bg-grey-dark-scale-300');
-  var tagRootClassInverted = (0, _clsx["default"])(tagRootClass, '!bg-blue !text-white');
-  var tagClass = (0, _clsx["default"])('text-[11px] font-bold whitespace-nowrap !text-inherit m-0');
+  var tagRootClass = (0, _clsx["default"])('text-grey-dark-scale-200 dark:text-grey-light-scale-400', 'inline-flex shadow bg-black dark:bg-white rounded py-0.5 px-1.5', 'h-[24px] inline-flex rounded py-0.5 px-1.5 select-none justify-center items-center align-center gap-1', 'inline-flex rounded py-0.5 px-1.5 select-none justify-center align-center gap-1', 'select-none justify-center items-center align-center gap-1'
+  // 'hover:text-grey-dark-scale-900 dark:hover:text-white',
+  // 'hover:bg-grey-light-scale-50 dark:hover:bg-grey-dark-scale-300',
+  );
+
+  var tagRootClassInverted = (0, _clsx["default"])(tagRootClass, '!bg-black dark:!bg-white !text-white');
+  var tagClass = (0, _clsx["default"])('text-[11px] font-bold whitespace-nowrap !text-white dark:!text-black m-0');
   var selectedTagsToDisplay = displayValue;
   if (truncateAfterNumItems !== -1 && displayValue.length > truncateAfterNumItems) {
     selectedTagsToDisplay = displayValue.slice(0, truncateAfterNumItems);
@@ -138,7 +147,9 @@ var SelectMulti = function SelectMulti(_ref) {
       e.preventDefault();
       setIsOpen(!isOpen);
     },
-    className: (0, _clsx["default"])('pointer-events-none', 'w-4 h-4 absolute right-[12px] top-[9px] text-[#7e909c]', isOpen && 'rotate-180 text-blue top-[11px] !right-[9px]')
+    className: (0, _clsx["default"])('pointer-events-none', 'w-4 h-4 absolute right-[12px] top-[9px]', 'text-tertiary',
+    //'!hover:text-black !hover:dark:text-white',
+    isOpen && 'rotate-180 text-black dark:text-white !top-[11px] !right-[9px]')
   }, /*#__PURE__*/_react["default"].createElement("path", {
     strokeLinecap: "round",
     strokeLinejoin: "round",
@@ -146,16 +157,16 @@ var SelectMulti = function SelectMulti(_ref) {
   })), displayValue.length > 0 && /*#__PURE__*/_react["default"].createElement("div", {
     className: "absolute right-[34px] top-[10px]"
   }, /*#__PURE__*/_react["default"].createElement(_Cross["default"], {
-    className: "text-tertiary cursor-pointer",
+    className: "text-tertiary hover:text-black hover:dark:text-white cursor-pointer",
     onClick: function onClick(e) {
       e.stopPropagation();
       e.preventDefault();
       handleSelectionUpdate([]);
     }
   })), /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _clsx["default"])('flex flex-row flex-wrap gap-2 items-center justify-between', 'w-full !h-[36px]', 'px-2.5 py-1 rounded focus:outline-none', 'font-normal', 'bg-transparent text-primary border-transparent', 'border-2', isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147] focus:!border-blue', 'cursor-pointer', 'select-none', 'transition duration-100', isOpen && '!border-blue dark:!border-blue')
+    className: (0, _clsx["default"])('flex flex-row flex-wrap gap-2 items-center justify-between', 'w-full !h-[36px]', 'px-1.5 py-1 rounded focus:outline-none', 'font-normal', 'bg-transparent text-primary border-transparent', 'border-2', isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147] focus:!border-black dark:focus:!border-white', 'cursor-pointer', 'select-none', 'transition duration-100', isOpen && '!border-black dark:!border-white')
   }, /*#__PURE__*/_react["default"].createElement("div", {
-    className: "flex gap-2 flex-wrap"
+    className: "flex gap-1 flex-wrap"
   }, selectedTagsToDisplay && selectedTagsToDisplay.map(function (item, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       key: index,
@@ -172,7 +183,8 @@ var SelectMulti = function SelectMulti(_ref) {
       className: tagClass
     }));
   }), truncateAfterNumItems && displayValue.length > truncateAfterNumItems && /*#__PURE__*/_react["default"].createElement("div", {
-    className: tagRootClassInverted
+    className: tagRootClassInverted,
+    onClick: clickTruncatedItems
   }, /*#__PURE__*/_react["default"].createElement("p", {
     className: tagClass,
     style: {
@@ -180,7 +192,7 @@ var SelectMulti = function SelectMulti(_ref) {
     }
   }, "+", displayValue.length - truncateAfterNumItems)), /*#__PURE__*/_react["default"].createElement("input", {
     ref: inputRef,
-    className: (0, _clsx["default"])('inline-flex', 'bg-transparent', 'font-normal', 'w-auto', 'p-0', 'mr-auto', '!outline-none', '!border-none', '!text-secondary', !isOpen && 'cursor-pointer'),
+    className: (0, _clsx["default"])('inline-flex', 'bg-transparent', 'font-normal', 'w-auto', 'p-0', 'ml-1.5 mr-auto', '!outline-none', '!border-none', '!text-secondary', !isOpen && 'cursor-pointer'),
     type: "text",
     placeholder: placeholder,
     value: inputValueToDisplay,
@@ -203,9 +215,9 @@ var SelectMulti = function SelectMulti(_ref) {
         //setIsOpen(false)
       },
 
-      className: (0, _clsx["default"])('p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center", "bg-window rounded", "hover:bg-grey-light-scale-200 dark:hover:bg-grey-dark-scale-300", isSelected(option) && "!bg-blue-scale-500")
+      className: (0, _clsx["default"])('!px-3 !p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center", "bg-window rounded", "hover:bg-grey-light-scale-200 dark:hover:bg-grey-dark-scale-300", isSelected(option) && "!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-400")
     }, /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
-      className: (0, _clsx["default"])('text-primary text-left', isSelected(option) && "!text-white dark:!text-black")
+      className: (0, _clsx["default"])('text-primary text-left', isSelected(option) && "!text-black dark:!text-white")
     }, labelProp ? option[labelProp] : option));
   })));
 };

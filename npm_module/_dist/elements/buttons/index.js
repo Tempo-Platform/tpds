@@ -22,14 +22,14 @@ var Button = function Button(_ref) {
     isUppercase = _ref.isUppercase,
     className = _ref.className,
     props = _objectWithoutProperties(_ref, _excluded);
-  var finalClass = (0, _clsx["default"])('flex transition duration-100', '!font-medium text-[14px] whitespace-nowrap', 'px-3 gap-x-2 pt-[5px] pb-[5px] border rounded-sm focus:outline-none', 'items-center justify-center', 'select-none cursor-pointer', buttonVariantStyles[variant], className, isSmall && '!text-sm', isUppercase && '!uppercase', isUppercase && '!uppercase', isSmall && 'px-2 pt-[2px] pb-[1.5px] text-[13px]', isTiny && 'px-1 pt-0 pb-0 text-[11px]', isLarge && 'px-4 py-1.5 text-[16px]', isDisabled && 'pointer-events-none opacity-30');
+  var finalClass = (0, _clsx["default"])('flex transition duration-100', '!font-medium text-[14px] whitespace-nowrap', 'px-3 gap-x-2 border rounded-[4px] focus:outline-none', 'min-w-[100px] h-[36px]', 'justify-center items-center leading-[100%]', 'select-none cursor-pointer', buttonVariantStyles[variant], className, isSmall && '!text-sm', isUppercase && '!uppercase', isUppercase && '!uppercase', isSmall && 'px-2 pt-[2px] pb-[1.5px] text-[13px]', isTiny && 'px-1 pt-0 pb-0 text-[11px]', isLarge && 'px-4 py-1.5 text-[16px]', isDisabled && 'pointer-events-none opacity-30');
   return /*#__PURE__*/_react["default"].createElement("button", _extends({
     className: finalClass
   }, props), children);
 };
 exports.Button = Button;
 var buttonVariantStyles = {
-  "default": ['text-grey-dark-scale-200 dark:text-grey-light-scale-300', 'bg-grey-light-scale-400 border-grey-light-scale-400 dark:bg-grey-dark-scale-500 dark:border-grey-dark-scale-500', 'hover:bg-grey-light-scale-500 hover:border-grey-light-scale-500 dark:hover:bg-grey-dark-scale-400 dark:hover:border-grey-dark-scale-400', 'active:bg-grey-light-scale-300 active:border-grey-light-scale-300 dark:active:bg-grey-dark-scale-600 dark:active:border-grey-dark-scale-600'],
+  "default": ['text-white dark:text-black', 'bg-black border-black dark:bg-white dark:border-white', 'hover:bg-grey-dark-scale-400 hover:border-grey-dark-scale-400 dark:hover:bg-grey-light-scale-200 dark:hover:border-grey-light-scale-200', 'active:bg-grey-dark-scale-800 active:border-grey-dark-scale-800 dark:active:bg-grey-light-scale-50 dark:active:border-grey-light-scale-50'],
   secondary: ['text-grey-dark-scale-200 dark:text-grey-light-scale-300', 'bg-white border-grey-light-scale-400 dark:bg-grey-dark-scale-500 dark:border-grey-dark-scale-200', 'hover:bg-white hover:border-grey-light-scale-500 dark:hover:bg-grey-dark-scale-500 dark:hover:border-grey-dark-scale-100', 'active:bg-white active:border-grey-light-scale-700 dark:active:bg-grey-dark-scale-500 dark:active:border-grey-light-scale-600'],
   success: ['text-white dark:text-black', 'bg-green border-green dark:bg-green-scale-400 dark:border-green-scale-400', 'hover:bg-green-scale-400 hover:border-green-scale-400', 'active:bg-green-scale-600 active:border-green-scale-600'],
   info: ['text-white dark:text-black', 'bg-blue border-blue', 'hover:bg-blue-scale-400 hover:border-blue-scale-400', 'active:bg-blue-scale-600 active:border-blue-scale-600'],

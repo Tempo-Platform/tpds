@@ -27,7 +27,6 @@ var Button = function Button(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_buttons.Button, _extends({
     variant: variant
   }, props), iconBefore && iconBefore, label, iconAfter && iconAfter, loading && /*#__PURE__*/_react["default"].createElement(_spinner["default"], {
-    color: "white",
     className: "block",
     radius: 15
   }));
@@ -37,7 +36,7 @@ function ExternalLinkIcon(_ref2) {
   var props = _extends({}, (_objectDestructuringEmpty(_ref2), _ref2));
   return /*#__PURE__*/_react["default"].createElement("svg", _extends({}, props, {
     xmlns: "http://www.w3.org/2000/svg",
-    width: "13",
+    width: "14",
     height: "14",
     viewBox: "0 0 13 14"
   }), /*#__PURE__*/_react["default"].createElement("path", {
