@@ -6,14 +6,15 @@ export const baseInputStyles = [
   'transition duration-100',
   'px-2.5 py-1 rounded focus:outline-none',
   'font-normal',
+  '!h-[36px]',
   'bg-input',
   'border-transparent',
   'text-primary',
-  'border-2 focus:border-blue',
+  'border-2 focus:border-black dark:focus:border-white',
 ]
 
 export const outlineStyles = [
-  'bg-transparent !border-[#ededed] focus:!border-blue dark:!border-[#384147] dark:focus:!border-blue',
+  'bg-transparent !border-[#ededed] focus:!border-black dark:focus:!border-white dark:!border-[#384147] dark:focus:!border-blue',
 ]
 
 export const TextInput = ({ isValid, isInvalid, isWarning, outlineStyle, className, ...props }) => {
