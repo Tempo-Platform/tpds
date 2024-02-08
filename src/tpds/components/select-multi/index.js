@@ -85,11 +85,14 @@ const SelectMulti = ({
     const updatedSelection = selectedIndexes.filter(item => item !== itemIndex)
     handleSelectionUpdate(updatedSelection)
   }
+  const clickTruncatedItems = () => {
+    const newMaxIndex = truncateAfterNumItems
+    const updatedSelection = selectedIndexes.slice(0, newMaxIndex)
+    handleSelectionUpdate(updatedSelection)
+  }
   const addSelectedItem = item => {
     const itemIndex = getOptionIndexFromAllOptions(options, item, idProp)
-
     const updatedSelectionArray = [...selectedIndexes]
-
     updatedSelectionArray.push(itemIndex)
     handleSelectionUpdate(updatedSelectionArray)
   }
@@ -104,15 +107,15 @@ const SelectMulti = ({
 
   const tagRootClass = clsx(
     'text-grey-dark-scale-200 dark:text-grey-light-scale-400',
-    'inline-flex shadow bg-white dark:bg-grey-dark-scale-200 rounded py-0.5 px-1.5',
+    'inline-flex shadow bg-black dark:bg-white rounded py-0.5 px-1.5',
     'h-[24px] inline-flex rounded py-0.5 px-1.5 select-none justify-center items-center align-center gap-1',
     'inline-flex rounded py-0.5 px-1.5 select-none justify-center align-center gap-1',
     'select-none justify-center items-center align-center gap-1',
-    'hover:text-grey-dark-scale-900 dark:hover:text-white',
-    'hover:bg-grey-light-scale-50 dark:hover:bg-grey-dark-scale-300',
+    // 'hover:text-grey-dark-scale-900 dark:hover:text-white',
+    // 'hover:bg-grey-light-scale-50 dark:hover:bg-grey-dark-scale-300',
   )
-  const tagRootClassInverted = clsx(tagRootClass, '!bg-blue !text-white')
-  const tagClass = clsx('text-[11px] font-bold whitespace-nowrap !text-inherit m-0')
+  const tagRootClassInverted = clsx(tagRootClass, '!bg-black dark:!bg-white !text-white')
+  const tagClass = clsx('text-[11px] font-bold whitespace-nowrap !text-white dark:!text-black m-0')
 
   let selectedTagsToDisplay = displayValue
   if (truncateAfterNumItems !== -1 && displayValue.length > truncateAfterNumItems) {
@@ -138,8 +141,10 @@ const SelectMulti = ({
         }}
         className={clsx(
           'pointer-events-none',
-          'w-4 h-4 absolute right-[12px] top-[9px] text-[#7e909c]',
-          isOpen && 'rotate-180 text-blue top-[11px] !right-[9px]',
+          'w-4 h-4 absolute right-[12px] top-[9px]',
+          'text-tertiary',
+          //'!hover:text-black !hover:dark:text-white',
+          isOpen && 'rotate-180 text-black dark:text-white !top-[11px] !right-[9px]',
         )}
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -147,7 +152,7 @@ const SelectMulti = ({
       {displayValue.length > 0 && (
         <div className="absolute right-[34px] top-[10px]">
           <Cross
-            className="text-tertiary cursor-pointer"
+            className="text-tertiary hover:text-black hover:dark:text-white cursor-pointer"
             onClick={e => {
               e.stopPropagation()
               e.preventDefault()
@@ -160,18 +165,20 @@ const SelectMulti = ({
         className={clsx(
           'flex flex-row flex-wrap gap-2 items-center justify-between',
           'w-full !h-[36px]',
-          'px-2.5 py-1 rounded focus:outline-none',
+          'px-1.5 py-1 rounded focus:outline-none',
           'font-normal',
           'bg-transparent text-primary border-transparent',
           'border-2',
-          isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147] focus:!border-blue',
+          isInvalid
+            ? '!border-red'
+            : '!border-[#ededed] dark:!border-[#384147] focus:!border-black dark:focus:!border-white',
           'cursor-pointer',
           'select-none',
           'transition duration-100',
-          isOpen && '!border-blue dark:!border-blue',
+          isOpen && '!border-black dark:!border-white',
         )}
       >
-        <div className="flex gap-2 flex-wrap">
+        <div className="flex gap-1 flex-wrap">
           {selectedTagsToDisplay &&
             selectedTagsToDisplay.map((item, index) => (
               <div
@@ -188,7 +195,7 @@ const SelectMulti = ({
               </div>
             ))}
           {truncateAfterNumItems && displayValue.length > truncateAfterNumItems && (
-            <div className={tagRootClassInverted}>
+            <div className={tagRootClassInverted} onClick={clickTruncatedItems}>
               <p className={tagClass} style={{ lineHeight: 'normal' }}>
                 +{displayValue.length - truncateAfterNumItems}
               </p>
@@ -202,7 +209,7 @@ const SelectMulti = ({
               'font-normal',
               'w-auto',
               'p-0',
-              'mr-auto',
+              'ml-1.5 mr-auto',
               '!outline-none',
               '!border-none',
               '!text-secondary',
@@ -231,20 +238,20 @@ const SelectMulti = ({
                 //setIsOpen(false)
               }}
               className={clsx(
-                'p-2 m-0',
+                '!px-3 !p-2 m-0',
                 'text-start font-medium',
                 'text-xs xl:text-sm',
                 '!outline-none',
                 `w-full select-none cursor-pointer text-center`,
                 `bg-window rounded`,
                 `hover:bg-grey-light-scale-200 dark:hover:bg-grey-dark-scale-300`,
-                isSelected(option) && `!bg-blue-scale-500`,
+                isSelected(option) && `!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-400`,
               )}
             >
               <PTiny
                 className={clsx(
                   'text-primary text-left',
-                  isSelected(option) && `!text-white dark:!text-black`,
+                  isSelected(option) && `!text-black dark:!text-white`,
                 )}
               >
                 {labelProp ? option[labelProp] : option}
