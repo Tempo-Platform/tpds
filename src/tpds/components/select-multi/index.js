@@ -115,7 +115,10 @@ const SelectMulti = ({
     // 'hover:bg-grey-light-scale-50 dark:hover:bg-grey-dark-scale-300',
   )
   const tagRootClassInverted = clsx(tagRootClass, '!bg-black dark:!bg-white !text-white')
-  const tagClass = clsx('text-[11px] font-bold whitespace-nowrap !text-white dark:!text-black m-0')
+  const tagClass = clsx(
+    'text-[11px] font-bold whitespace-nowrap !text-white dark:!text-black m-0',
+    'relative top-[-1px]',
+  )
 
   let selectedTagsToDisplay = displayValue
   if (truncateAfterNumItems !== -1 && displayValue.length > truncateAfterNumItems) {
