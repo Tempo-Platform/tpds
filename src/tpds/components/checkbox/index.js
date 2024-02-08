@@ -5,19 +5,15 @@ function Checkbox({ active, partial = false, disabled = false, ...props }) {
   const finalRootClassName = clsx(
     'tpds-checkbox',
     active ? 'is-active' : 'is-off',
-    `relative transition duration-150`,
-    `cursor-pointer h-[20px] w-[20px] rounded flex !justify-center !items-center`,
-    `relative border-2 border-body hover:border-blue`,
-    `bg-white dark:bg-grey-dark-scale-100`,
-    `border-grey-light-scale-500 dark:border-grey-dark-scale-50`,
-    `hover:bg-blue/5 hover:border-2 border-blue`,
-    `active:bg-blue/10 active:border-2 active:border-blue/50`,
-    active && [
-      `bg-blue border-blue`,
-      `hover:bg-blue-scale-600 hover:border-blue-scale-600`,
-      `active:bg-blue-scale-700 active:border-blue-scale-700`,
-    ],
-    disabled && [`pointer-events-none opacity-30`],
+    'relative transition duration-150',
+    'cursor-pointer h-[20px] w-[20px] rounded flex !justify-center !items-center',
+    'relative border-2 border-body hover:border-black dark:hover:border-white',
+    '!bg-transparent',
+    'border-grey-light-scale-500 dark:border-grey-dark-scale-100',
+    'hover:border-2 hover:border-black dark:hover:border-black',
+    'active:border-black dark:active:border-white',
+    active && ['!border-black dark:!border-white'],
+    disabled && ['pointer-events-none opacity-30'],
   )
 
   return (
