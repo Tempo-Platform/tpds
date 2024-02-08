@@ -13,9 +13,9 @@ const RadioTabs = ({
     <div className={clsx('w-full', className)} style={{ style }}>
       <div
         className={clsx(
-          'flex gap-x-[2px] rounded-[8px] p-[2px] h-[36px]',
+          'flex gap-x-[2px] rounded-[4px] p-[2px] h-[36px]',
           outlineStyle
-            ? 'bg-transparent border !border-[#ededed] dark:!border-[#384147]'
+            ? 'bg-transparent border-2 !border-[#ededed] dark:!border-[#384147]'
             : 'bg-grey-light-scale-200 dark:bg-grey-dark-scale-500',
         )}
       >
@@ -25,8 +25,8 @@ const RadioTabs = ({
               'flex-1 overflow-hidden cursor-pointer',
               '!px-[7px] py-[4px]',
               'flex justify-center',
-              'select-none !outline-none',
-              index === selectedIndex && 'bg-black dark:text-black rounded-[5px]',
+              'select-none !outline-none rounded-[3px]',
+              index === selectedIndex && 'bg-black dark:text-black',
             )}
             key={item.value || item.description || item.label || item}
             onClick={() => handleIndexSelection(index)}
@@ -34,12 +34,12 @@ const RadioTabs = ({
             <p
               className={clsx(
                 index === selectedIndex ? 'text-primary' : 'text-secondary',
-                'font-medium',
-                'text-[14px]',
+                'font-semibold',
+                'text-[13px]',
                 '!outline-none',
                 'overflow-hidden whitespace-nowrap text-ellipsis',
                 '!m-0 self-center',
-                'relative top-[-1px]',
+                'relative top-0',
                 index === selectedIndex && 'text-white dark:bg-white',
               )}
             >
