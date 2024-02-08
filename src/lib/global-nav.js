@@ -7,9 +7,12 @@ import { useState } from 'react'
 import { PSmall, PTiny } from '@/tpds/elements/typography'
 import ColorModeControl from './components/ColorModeControl'
 import packageJson from '../../package.json'
+import { usePathname } from 'next/navigation'
 
 function GlobalNav() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathName = usePathname()
+
   const close = () => setIsOpen(false)
   return (
     <div className="fixed top-0 z-10 flex w-full flex-col border-b border-window bg-window lg:bottom-0 lg:z-auto lg:w-72 lg:border-b-0 lg:border-r lg:border-gray-800">
@@ -61,13 +64,14 @@ function GlobalNav() {
                   {section.items.map((item, indexitem) => {
                     return (
                       <div key={item.slug + indexitem}>
-                        <GlobalNavItem item={item} close={close} />
+                        <GlobalNavItem item={item} close={close} pathName={pathName} />
                         {item.subItems &&
                           item.subItems.map((subItem, indexsubitem) => (
                             <GlobalNavSubitem
                               key={'subitem' + subItem.slug + indexsubitem}
                               item={subItem}
                               close={close}
+                              pathName={pathName}
                             />
                           ))}
                       </div>
@@ -85,43 +89,64 @@ function GlobalNav() {
 
 export default GlobalNav
 
-function GlobalNavItem({ item, close }) {
+function GlobalNavItem({ item, close, pathName }) {
   // const segment = useSelectedLayoutSegment()
   // const isActive = item.slug === segment
-  const isActive = false
+  const itemLink = `/${item.slug}`
+  const isActive = itemLink === pathName
 
   return (
     <Link
       onClick={close}
-      href={`/${item.slug}`}
-      className={clsx('block rounded-md px-3 text-sm font-medium hover:text-grey-light-scale-300', {
-        'text-grey-light-scale-400 hover:bg-grey-light-scale-800': !isActive,
-        'text-white': isActive,
-      })}
+      href={itemLink}
+      className={clsx(
+        'block rounded-[4px] pl-4 pr-3 text-sm font-medium',
+        'text-black dark:text-white',
+        'hover:bg-black dark:hover:bg-white',
+        // isActive
+        //   ? 'text-white dark:text-black'
+        //   : 'text-black dark:text-white hover:bg-black dark:hover:bg-white',
+      )}
     >
-      <PSmall>{item.name}</PSmall>
+      <PSmall
+        className={clsx(
+          'w-full font-medium',
+          'text-black dark:text-white',
+          'hover:!text-white dark:hover:!text-black',
+          isActive && '!font-bold',
+        )}
+      >
+        {item.name}
+      </PSmall>
     </Link>
   )
 }
 
-function GlobalNavSubitem({ item, close }) {
+function GlobalNavSubitem({ item, close, pathName }) {
   // const segment = useSelectedLayoutSegment()
   // const isActive = item.slug === segment
-  const isActive = false
+  const itemLink = `/${item.slug}`
+  const isActive = itemLink === pathName
 
   return (
     <Link
       onClick={close}
-      href={`/${item.slug}`}
+      href={itemLink}
       className={clsx(
-        'block rounded-md pl-4 pr-3 text-sm font-medium hover:text-grey-light-scale-300',
-        {
-          'text-grey-light-scale-400 hover:bg-grey-light-scale-800': !isActive,
-          'text-white': isActive,
-        },
+        'block rounded-[4px] pl-4 pr-3 text-sm',
+        'hover:bg-black dark:hover:bg-white',
       )}
     >
-      <PSmall>- {item.name}</PSmall>
+      <PSmall
+        className={clsx(
+          'w-full font-medium',
+          'text-black dark:text-white',
+          'hover:!text-white dark:hover:!text-black',
+          isActive && '!font-bold',
+        )}
+      >
+        - {item.name}
+      </PSmall>
     </Link>
   )
 }
