@@ -15,8 +15,9 @@ export const Button = ({
   const finalClass = clsx(
     'flex transition duration-100',
     '!font-medium text-[14px] whitespace-nowrap',
-    'px-3 gap-x-2 pt-[5px] pb-[5px] border rounded-sm focus:outline-none',
-    'items-center justify-center',
+    'px-3 gap-x-2 border rounded-[4px] focus:outline-none',
+    'min-w-[100px] h-[36px]',
+    'justify-center items-center leading-[100%]',
     'select-none cursor-pointer',
     buttonVariantStyles[variant],
     className,
@@ -37,10 +38,10 @@ export const Button = ({
 
 const buttonVariantStyles = {
   default: [
-    'text-grey-dark-scale-200 dark:text-grey-light-scale-300',
-    'bg-grey-light-scale-400 border-grey-light-scale-400 dark:bg-grey-dark-scale-500 dark:border-grey-dark-scale-500',
-    'hover:bg-grey-light-scale-500 hover:border-grey-light-scale-500 dark:hover:bg-grey-dark-scale-400 dark:hover:border-grey-dark-scale-400',
-    'active:bg-grey-light-scale-300 active:border-grey-light-scale-300 dark:active:bg-grey-dark-scale-600 dark:active:border-grey-dark-scale-600',
+    'text-white dark:text-black',
+    'bg-black border-black dark:bg-white dark:border-white',
+    'hover:bg-grey-dark-scale-400 hover:border-grey-dark-scale-400 dark:hover:bg-grey-light-scale-200 dark:hover:border-grey-light-scale-200',
+    'active:bg-grey-dark-scale-800 active:border-grey-dark-scale-800 dark:active:bg-grey-light-scale-50 dark:active:border-grey-light-scale-50',
   ],
   secondary: [
     'text-grey-dark-scale-200 dark:text-grey-light-scale-300',
