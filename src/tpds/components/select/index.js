@@ -78,7 +78,7 @@ const Select = ({
   }
 
   return (
-    <div className=" flex w-full relative text-left" ref={wrapperRef}>
+    <div className="flex w-full relative text-left" ref={wrapperRef}>
       {useKeyboard ? (
         <TextInput
           placeholder={placeholder}
@@ -88,7 +88,7 @@ const Select = ({
             'text-[16px] pr-8 text-ellipsis !text-secondary !bg-transparent',
             isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]',
             !isOpen && 'cursor-pointer',
-            isOpen && '!border-blue',
+            isOpen && '!border-black dark:!border-white',
           )}
           onFocus={() => {
             setInputValue('')
@@ -102,7 +102,7 @@ const Select = ({
             'text-[16px] pr-8 text-ellipsis !text-secondary !bg-transparent',
             isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]',
             !isOpen && 'cursor-pointer',
-            isOpen && '!border-blue',
+            isOpen && '!border-black dark:!border-white',
           )}
           onClick={() => {
             setInputValue('')
@@ -142,8 +142,8 @@ const Select = ({
                 '!outline-none',
                 `w-full select-none cursor-pointer text-center`,
                 `bg-window rounded`,
-                `hover:bg-input-hover`,
-                isSelected(option) && `!bg-blue-scale-500`,
+                `hover:bg-grey-light-scale-300 hover:dark:bg-grey-dark-scale-400`,
+                isSelected(option) && `!bg-black dark:!bg-white`,
               )}
             >
               <PTiny
