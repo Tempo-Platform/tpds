@@ -119,6 +119,7 @@ const SelectMulti = ({
     'text-[11px] font-bold whitespace-nowrap !text-white dark:!text-black m-0',
     'relative top-[-1px]',
   )
+  const xClass = clsx('text-[11px] font-bold whitespace-nowrap !text-white dark:!text-black m-0')
 
   let selectedTagsToDisplay = displayValue
   if (truncateAfterNumItems !== -1 && displayValue.length > truncateAfterNumItems) {
@@ -194,7 +195,7 @@ const SelectMulti = ({
                 <p className={tagClass} style={{ lineHeight: 'normal' }}>
                   {item[labelProp] || item}
                 </p>
-                <XIcon className={tagClass} />
+                <XIcon className={xClass} />
               </div>
             ))}
           {truncateAfterNumItems && displayValue.length > truncateAfterNumItems && (
