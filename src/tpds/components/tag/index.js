@@ -26,6 +26,7 @@ const Tag = ({
   )
   const finalLabelClass = clsx(
     'text-[11px] font-medium whitespace-nowrap !text-inherit m-0',
+    'relative top-[-1px]',
     isUppercase && 'uppercase',
     labelClassName,
   )
