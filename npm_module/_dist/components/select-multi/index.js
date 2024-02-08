@@ -125,7 +125,7 @@ var SelectMulti = function SelectMulti(_ref) {
   );
 
   var tagRootClassInverted = (0, _clsx["default"])(tagRootClass, '!bg-black dark:!bg-white !text-white');
-  var tagClass = (0, _clsx["default"])('text-[11px] font-bold whitespace-nowrap !text-white dark:!text-black m-0');
+  var tagClass = (0, _clsx["default"])('text-[11px] font-bold whitespace-nowrap !text-white dark:!text-black m-0', 'relative top-[-1px]');
   var selectedTagsToDisplay = displayValue;
   if (truncateAfterNumItems !== -1 && displayValue.length > truncateAfterNumItems) {
     selectedTagsToDisplay = displayValue.slice(0, truncateAfterNumItems);
