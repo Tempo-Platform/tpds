@@ -110,6 +110,20 @@ export default function Page() {
               description:
                 'Adds a hover effect to the Tag. Useful when the Tag is used as a button or link',
             },
+            {
+              propName: 'rootClassName',
+              type: 'String',
+              default: '',
+              required: 'no',
+              description: 'Optional classNames for tag root element',
+            },
+            {
+              propName: 'labelClassName',
+              type: 'String',
+              default: '',
+              required: 'no',
+              description: 'Optional classNames for tag label element',
+            },
           ]}
         />
         <br />
