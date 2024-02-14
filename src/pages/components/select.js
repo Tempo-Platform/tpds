@@ -19,12 +19,11 @@ export default function Page() {
             labelProp={'label'}
             idProp="value"
             excludeIndexes={[2]}
-            allowMultiple={true}
             useKeyboard={true}
             options={[
               {
                 value: '1',
-                label: 'Option 1',
+                label: 'Option 1 lkasfhd jshdfs',
                 subLabel: 'Additional information about this item',
               },
               { value: '2', label: 'Option 2' },

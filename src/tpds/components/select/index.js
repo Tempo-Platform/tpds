@@ -40,7 +40,9 @@ const Select = ({
     function handleClickOutside(event) {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
         const currentlyExpectedInputValue = getCurrentInputValue(options, selectedIndex, labelProp)
-        setInputValue(currentlyExpectedInputValue)
+        if (useKeyboard) {
+          setInputValue(currentlyExpectedInputValue)
+        }
         setIsOpen(false)
       }
     }
@@ -79,39 +81,29 @@ const Select = ({
 
   return (
     <div className="flex w-full relative text-left" ref={wrapperRef}>
-      {useKeyboard ? (
+      <div
+        className="w-full"
+        onClick={e => {
+          setIsOpen(true)
+        }}
+      >
         <TextInput
           placeholder={placeholder}
           value={inputValueToDisplay}
           onChange={e => setInputValue(e.target.value)}
           className={clsx(
+            'w-full',
             'text-[16px] pr-8 text-ellipsis !text-secondary !bg-transparent',
             isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]',
             !isOpen && 'cursor-pointer',
             isOpen && '!border-black dark:!border-white',
+            !useKeyboard && 'pointer-events-none',
           )}
           onFocus={() => {
             setInputValue('')
-            setIsOpen(true)
           }}
         />
-      ) : (
-        <div
-          className={clsx(
-            baseInputStyles,
-            'text-[16px] pr-8 text-ellipsis !text-secondary !bg-transparent',
-            isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]',
-            !isOpen && 'cursor-pointer',
-            isOpen && '!border-black dark:!border-white',
-          )}
-          onClick={() => {
-            setInputValue('')
-            setIsOpen(true)
-          }}
-        >
-          {inputValueToDisplay || placeholder}
-        </div>
-      )}
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
