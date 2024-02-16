@@ -1609,6 +1609,9 @@ video {
 .\!font-medium {
   font-weight: 500 !important;
 }
+.font-\[600\] {
+  font-weight: 600;
+}
 .font-black {
   font-weight: 900;
 }
