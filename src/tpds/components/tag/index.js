@@ -15,7 +15,7 @@ const Tag = ({
 }) => {
   const finalRootClass = clsx(
     props.className ? props.className : '',
-    'border border-2 h-[24px] inline-flex !rounded-[6px] py-0.5 px-1.5',
+    'border border-2 h-[26px] inline-flex !rounded-[6px] py-1 px-2',
     'select-none justify-center items-center align-center gap-1',
     'inline-flex py-0.5 px-1.5 select-none justify-center align-center gap-1',
     rootVariantStyles[variant],
@@ -25,7 +25,7 @@ const Tag = ({
     rootClassName,
   )
   const finalLabelClass = clsx(
-    'text-[11px] font-medium whitespace-nowrap !text-inherit m-0',
+    'text-[12px] font-medium whitespace-nowrap !text-inherit m-0',
     isUppercase && 'uppercase',
     labelClassName,
   )
