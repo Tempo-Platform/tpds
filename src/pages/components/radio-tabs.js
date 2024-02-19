@@ -30,8 +30,8 @@ export default function Page() {
         <Window>
           <RadioTabs
             items={items}
-            outlineStyle={true}
             selectedIndex={selectedIndex}
+            stackAtBreakpoint="sm"
             handleIndexSelection={setSelectedIndex}
           />
         </Window>
@@ -66,11 +66,12 @@ export default function Page() {
                 description: 'The callout function used to select the clicked index',
               },
               {
-                propName: 'outlineStyle',
-                type: 'Boolean',
-                default: 'false',
+                propName: 'stackAtBreakpoint',
+                type: 'String',
+                default: '""',
                 required: 'no',
-                description: 'Wether to display the component in outline or filled style',
+                description:
+                  'Option breakpoint at whit to stack the items. Valid values are "sm", "md", "lg", "xl", "2xl"',
               },
             ]}
           />
