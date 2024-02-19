@@ -30,7 +30,7 @@ export default function Page() {
             handleSelectionUpdate={setSelectedIndexes}
             selectedIndexes={selectedIndexes}
             omitSelectedInDropdown={false}
-            truncateAfterNumItems={2}
+            truncateAfterNumItems={3}
             labelProp="label"
             idProp="value"
             tagVariant="default"

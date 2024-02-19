@@ -198,13 +198,15 @@ const SelectMulti = ({
                 <XIcon className={xClass} />
               </div>
             ))}
-          {truncateAfterNumItems && displayValue.length > truncateAfterNumItems && (
-            <div className={tagRootClassInverted} onClick={clickTruncatedItems}>
-              <p className={tagClass} style={{ lineHeight: 'normal' }}>
-                +{displayValue.length - truncateAfterNumItems}
-              </p>
-            </div>
-          )}
+          {truncateAfterNumItems !== -1 &&
+            truncateAfterNumItems &&
+            displayValue.length > truncateAfterNumItems && (
+              <div className={tagRootClassInverted} onClick={clickTruncatedItems}>
+                <p className={tagClass} style={{ lineHeight: 'normal' }}>
+                  +{displayValue.length - truncateAfterNumItems}
+                </p>
+              </div>
+            )}
           <input
             ref={inputRef}
             className={clsx(
