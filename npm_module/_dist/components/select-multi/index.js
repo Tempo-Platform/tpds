@@ -183,7 +183,7 @@ var SelectMulti = function SelectMulti(_ref) {
     }, item[labelProp] || item), /*#__PURE__*/_react["default"].createElement(XIcon, {
       className: xClass
     }));
-  }), truncateAfterNumItems && displayValue.length > truncateAfterNumItems && /*#__PURE__*/_react["default"].createElement("div", {
+  }), truncateAfterNumItems !== -1 && truncateAfterNumItems && displayValue.length > truncateAfterNumItems && /*#__PURE__*/_react["default"].createElement("div", {
     className: tagRootClassInverted,
     onClick: clickTruncatedItems
   }, /*#__PURE__*/_react["default"].createElement("p", {
