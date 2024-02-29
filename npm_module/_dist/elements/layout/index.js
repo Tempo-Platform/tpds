@@ -26,6 +26,7 @@ var PageRoot = function PageRoot(props) {
 };
 exports.PageRoot = PageRoot;
 var containerVariants = {
+  shortest: 'px-6 sm:px-8 w-full md:px-0 md:w-11/12 max-w-[768px]',
   "short": 'px-6 sm:px-8 w-full md:px-0 md:w-11/12 max-w-[1022px]',
   large: 'px-6 sm:px-8 w-full md:px-0 md:w-[80%] xl:w-[70%] 2xl:w-[60%] 2xl:max-w-[1440px]',
   full: 'px-6 sm:px-8 w-full md:px-0 md:w-11/12 xl:w-10/12 2xl:w-full 2xl:px-30px'
