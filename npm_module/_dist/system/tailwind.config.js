@@ -81,8 +81,6 @@ module.exports = {
         'orange-scale': colorPalettes.orange,
         'grey-light-scale': colorPalettes.grey_light,
         'grey-dark-scale': colorPalettes.grey_dark,
-        'greyblue-light-scale': colorPalettes.greyblue_light,
-        'greyblue-dark-scale': colorPalettes.greyblue_dark,
       },
       spacing: tokens.spacing,
       backgroundColor: {
