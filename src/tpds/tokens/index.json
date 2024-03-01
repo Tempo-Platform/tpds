@@ -257,13 +257,12 @@
         },
         "bg": "#FAFAFA"
       },
-      "window_border": "#E9EBEC",
       "window_bg": "#FFFFFF",
-      "body_border": "#E9EBEC",
       "text_primary": "#151819",
-      "body_bg": "#FAFAFA",
       "text_tertiary": "#B1BDC5",
-      "text_secondary": "#7F888E"
+      "text_secondary": "#7F888E",
+      "body_bg": "#9DA6AE",
+      "window_border": "#FFFFFF"
     },
     "dark": {
       "radio_group": {
@@ -454,13 +453,12 @@
         },
         "bg": "#151819"
       },
-      "window_border": "#323639",
       "text_secondary": "#AEB3B6",
       "text_tertiary": "#757E84",
-      "body_bg": "#151819",
-      "body_border": "#3E4347",
       "text_primary": "#F7F7F7",
-      "window_bg": "#121415"
+      "window_bg": "#1D1E20",
+      "window_border": "#2D3033",
+      "body_bg": "#17181A"
     },
     "color_palettes": {
       "red": {

@@ -1,9 +1,8 @@
 .light {
   color-scheme: light;
-  --bg-body: #FAFAFA;
-  --border-body: #E9EBEC;
+  --bg-body: #9DA6AE;
   --bg-window: #FFFFFF;
-  --border-window: #E9EBEC;
+  --border-window: #FFFFFF;
 
   --text-primary: #151819;
   --text-secondary: #7F888E;
@@ -100,10 +99,9 @@
 }
 .dark {
   color-scheme: dark;
-  --bg-body: #151819;
-  --border-body: #3E4347;
-  --bg-window: #121415;
-  --border-window: #323639;
+  --bg-body: #17181A;
+  --bg-window: #1D1E20;
+  --border-window: #2D3033;
 
   --text-primary: #F7F7F7;
   --text-secondary: #AEB3B6;

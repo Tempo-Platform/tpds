@@ -11,7 +11,6 @@ const TPDSColors = () => (
       .light {
         color-scheme: light;
         --bg-body: ${colorsLightTheme.body_bg};
-        --border-body: ${colorsLightTheme.body_border};
         --bg-window: ${colorsLightTheme.window_bg};
         --border-window: ${colorsLightTheme.window_border};
 
@@ -112,7 +111,6 @@ const TPDSColors = () => (
       .dark {
         color-scheme: dark;
         --bg-body: ${colorsDarkTheme.body_bg};
-        --border-body: ${colorsDarkTheme.body_border};
         --bg-window: ${colorsDarkTheme.window_bg};
         --border-window: ${colorsDarkTheme.window_border};
 

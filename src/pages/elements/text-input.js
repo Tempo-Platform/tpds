@@ -40,33 +40,11 @@ export default function TextInputPage() {
           />
           <br />
           <br />
-          <P>Default (outline style)</P>
-          <br />
-          <CodeGridComponent
-            code={codeDefaultOutline}
-            element={
-              <TextInput
-                onChange={e => setInputValue(e.target.value)}
-                value={inputValue}
-                outlineStyle={true}
-                placeholder="Placeholder"
-              />
-            }
-          />
-          <br />
-          <br />
           <P>Valid</P>
           <br />
           <CodeGridComponent
             code={codeValid}
-            element={
-              <TextInput
-                onChange={e => setInputValue(e.target.value)}
-                isValid
-                value={inputValue}
-                placeholder="Placeholder"
-              />
-            }
+            element={<TextInput isValid defaultValue="Text" placeholder="Placeholder" />}
           />
           <br />
           <br />
@@ -74,14 +52,7 @@ export default function TextInputPage() {
           <br />
           <CodeGridComponent
             code={codeInvalid}
-            element={
-              <TextInput
-                onChange={e => setInputValue(e.target.value)}
-                isInvalid
-                value={inputValue}
-                placeholder="Placeholder"
-              />
-            }
+            element={<TextInput isInvalid defaultValue="Text" placeholder="Placeholder" />}
           />
           <br />
           <br />
@@ -89,14 +60,7 @@ export default function TextInputPage() {
           <br />
           <CodeGridComponent
             code={codeWarning}
-            element={
-              <TextInput
-                onChange={e => setInputValue(e.target.value)}
-                isWarning
-                value={inputValue}
-                placeholder="Placeholder"
-              />
-            }
+            element={<TextInput isWarning defaultValue="Text" placeholder="Placeholder" />}
           />
         </Window>
         <br />
@@ -111,35 +75,28 @@ const codeImport = String.raw`import { TextInput } from '@tempoplatform/tpds/ele
 const [inputValue, setInputValue] = React.useState('')`
 
 const codeDefault = String.raw`<TextInput
-  defaultValue=''
-  placeholder='Placeholder'
-  onChange={(e) => setInputValue(e.target.value)}
-/>`
-
-const codeDefaultOutline = String.raw`<TextInput
-  defaultValue=''
-  outlineStyle={true}
+  value={inputValue}
   placeholder='Placeholder'
   onChange={(e) => setInputValue(e.target.value)}
 />`
 
 const codeValid = String.raw`<TextInput
   isValid
-  defaultValue=''
+  value={inputValue}
   placeholder='Placeholder'
   onChange={(e) => setInputValue(e.target.value)}
 />`
 
 const codeInvalid = String.raw`<TextInput
   isInvalid
-  defaultValue=''
+  value={inputValue}
   placeholder='Placeholder'
   onChange={(e) => setInputValue(e.target.value)}
 />`
 
 const codeWarning = String.raw`<TextInput
   isWarning
-  defaultValue=''
+  value={inputValue}
   placeholder='Placeholder'
   onChange={(e) => setInputValue(e.target.value)}
 />`

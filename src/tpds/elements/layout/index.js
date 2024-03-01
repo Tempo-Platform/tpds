@@ -81,9 +81,14 @@ export const SeparatorWindow = props => {
 }
 
 export const Window = props => {
-  const defaultClass =
-    'bg-window border border-window rounded-sm py-xs px-xs md:py-xs md:px-sm lg:py-sm lg:px-md lg:rounded'
-  const finalClass = clsx(defaultClass, props.className)
+  const finalClass = clsx(
+    'bg-window border border-window',
+    'border-none dark:border',
+    'shadow dark:shadow-none',
+    'rounded-sm lg:rounded',
+    'py-xs px-xs md:py-xs md:px-sm lg:py-sm lg:px-md',
+    props.className,
+  )
   return (
     <div className={finalClass} style={props.style}>
       {props.children}
