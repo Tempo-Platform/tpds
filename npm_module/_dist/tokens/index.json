@@ -261,8 +261,8 @@
       "text_primary": "#151819",
       "text_tertiary": "#B1BDC5",
       "text_secondary": "#7F888E",
-      "body_bg": "#9DA6AE",
-      "window_border": "#FFFFFF"
+      "window_border": "#FFFFFF",
+      "body_bg": "#D7DEE5"
     },
     "dark": {
       "radio_group": {
