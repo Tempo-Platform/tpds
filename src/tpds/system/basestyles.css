@@ -56,12 +56,14 @@
   border-radius: 0.3em;
 }
 
-.dark .prismjs :not(pre) > code[class*='language-'] {
-  background: #212627;
+.prismjs {
+  background: var(--bg-window) !important;
+  border: 2px solid var(--border-window) !important;
+  border-radius: 8px;
   padding: 0.1em;
-  border-radius: 0.3em;
   white-space: normal;
 }
+
 .dark .prismjs .tag {
   color: #f8f8f2;
 }
@@ -186,14 +188,6 @@
   padding: 1em;
   margin: 0;
   overflow: auto;
-  border-radius: 0.3em;
-}
-
-.light .prismjs :not(pre) > code[class*='language-'] {
-  background: #212627;
-  padding: 0.1em;
-  border-radius: 0.3em;
-  white-space: normal;
 }
 .light .prismjs .tag {
   color: #323639;

@@ -79,7 +79,7 @@ var SeparatorWindow = function SeparatorWindow(props) {
 };
 exports.SeparatorWindow = SeparatorWindow;
 var Window = function Window(props) {
-  var finalClass = (0, _clsx["default"])('bg-window border border-window', 'border-none dark:border', 'shadow dark:shadow-none', 'rounded-sm lg:rounded', 'py-xs px-xs md:py-xs md:px-sm lg:py-sm lg:px-md', props.className);
+  var finalClass = (0, _clsx["default"])('bg-window border border-window', '!border-0 dark:!border-2', 'shadow-lg dark:shadow-none', 'rounded-sm lg:rounded-[8px]', 'py-xs px-xs md:py-xs md:px-sm lg:py-sm lg:px-md', props.className);
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: finalClass,
     style: props.style

@@ -83,9 +83,9 @@ export const SeparatorWindow = props => {
 export const Window = props => {
   const finalClass = clsx(
     'bg-window border border-window',
-    'border-none dark:border',
-    'shadow dark:shadow-none',
-    'rounded-sm lg:rounded',
+    '!border-0 dark:!border-2',
+    'shadow-lg dark:shadow-none',
+    'rounded-sm lg:rounded-[8px]',
     'py-xs px-xs md:py-xs md:px-sm lg:py-sm lg:px-md',
     props.className,
   )
