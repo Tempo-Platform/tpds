@@ -25,29 +25,27 @@ export default function Page() {
           - Option to "truncate" number of items shows in the input and resume the rest with "+(n)"
         </PSmall>
         <br />
-        <Window>
-          <SelectMulti
-            handleSelectionUpdate={setSelectedIndexes}
-            selectedIndexes={selectedIndexes}
-            omitSelectedInDropdown={false}
-            truncateAfterNumItems={3}
-            labelProp="label"
-            idProp="value"
-            tagVariant="default"
-            excludeIndexes={[2]}
-            options={[
-              { value: '1', label: 'Option 1' },
-              { value: '2', label: 'Option 2' },
-              { value: '3', label: 'Option 3' },
-              { value: '4', label: 'Option 4' },
-              { value: '5', label: 'Option 5' },
-              { value: '6', label: 'Option 6' },
-              { value: '7', label: 'Option 7' },
-              { value: '8', label: 'Option 8' },
-              { value: '9', label: 'Option 9' },
-            ]}
-          />
-        </Window>
+        <SelectMulti
+          handleSelectionUpdate={setSelectedIndexes}
+          selectedIndexes={selectedIndexes}
+          omitSelectedInDropdown={false}
+          truncateAfterNumItems={3}
+          labelProp="label"
+          idProp="value"
+          tagVariant="default"
+          excludeIndexes={[2]}
+          options={[
+            { value: '1', label: 'Option 1' },
+            { value: '2', label: 'Option 2' },
+            { value: '3', label: 'Option 3' },
+            { value: '4', label: 'Option 4' },
+            { value: '5', label: 'Option 5' },
+            { value: '6', label: 'Option 6' },
+            { value: '7', label: 'Option 7' },
+            { value: '8', label: 'Option 8' },
+            { value: '9', label: 'Option 9' },
+          ]}
+        />
         <br />
         <br />
         <CodeBlock code={code} />

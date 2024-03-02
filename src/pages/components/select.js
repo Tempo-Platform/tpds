@@ -12,27 +12,25 @@ export default function Page() {
     <div>
       <Container>
         <PageHeader title="Select" subTitle="Simple select component" />
-        <Window>
-          <Select
-            handleIndexSelection={setSelectedIndex}
-            selectedIndex={selectedIndex}
-            labelProp={'label'}
-            idProp="value"
-            excludeIndexes={[2]}
-            useKeyboard={true}
-            options={[
-              {
-                value: '1',
-                label: 'Option 1 lkasfhd jshdfs',
-                subLabel: 'Additional information about this item',
-              },
-              { value: '2', label: 'Option 2' },
-              { value: '3', label: 'Option 3' },
-              { value: '4', label: 'Option 4', subLabel: 'Additional information about this item' },
-              { value: '5', label: 'Option 5' },
-            ]}
-          />
-        </Window>
+        <Select
+          handleIndexSelection={setSelectedIndex}
+          selectedIndex={selectedIndex}
+          labelProp={'label'}
+          idProp="value"
+          excludeIndexes={[2]}
+          useKeyboard={true}
+          options={[
+            {
+              value: '1',
+              label: 'Option 1 lkasfhd jshdfs',
+              subLabel: 'Additional information about this item',
+            },
+            { value: '2', label: 'Option 2' },
+            { value: '3', label: 'Option 3' },
+            { value: '4', label: 'Option 4', subLabel: 'Additional information about this item' },
+            { value: '5', label: 'Option 5' },
+          ]}
+        />
         <br />
         <P>Features:</P>
         <br />

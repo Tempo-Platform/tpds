@@ -27,55 +27,51 @@ export default function Page() {
     <div>
       <Container>
         <PageHeader title="RadioTabs" subTitle="Radio selection component in row layout." />
-        <Window>
-          <RadioTabs
-            items={items}
-            selectedIndex={selectedIndex}
-            stackAtBreakpoint="sm"
-            handleIndexSelection={setSelectedIndex}
-          />
-        </Window>
+        <RadioTabs
+          items={items}
+          selectedIndex={selectedIndex}
+          stackAtBreakpoint="sm"
+          handleIndexSelection={setSelectedIndex}
+        />
         <br />
         <br />
         <CodeBlock code={code} />
         <br />
         <br />
-        <Window>
-          <PropsTable
-            title="Props"
-            items={[
-              {
-                propName: 'items',
-                type: 'JSX',
-                default: 'null',
-                required: 'yes',
-                description: 'The items to be displayed',
-              },
-              {
-                propName: 'selectedIndex',
-                type: 'Int',
-                default: 'null',
-                required: 'yes',
-                description: 'The index to show as selected',
-              },
-              {
-                propName: 'callBack',
-                type: 'Function',
-                default: 'null',
-                required: 'yes',
-                description: 'The callout function used to select the clicked index',
-              },
-              {
-                propName: 'stackAtBreakpoint',
-                type: 'String',
-                default: '""',
-                required: 'no',
-                description:
-                  'Option breakpoint at whit to stack the items. Valid values are "sm", "md", "lg", "xl", "2xl"',
-              },
-            ]}
-          />
-        </Window>
+        <PropsTable
+          title="Props"
+          items={[
+            {
+              propName: 'items',
+              type: 'JSX',
+              default: 'null',
+              required: 'yes',
+              description: 'The items to be displayed',
+            },
+            {
+              propName: 'selectedIndex',
+              type: 'Int',
+              default: 'null',
+              required: 'yes',
+              description: 'The index to show as selected',
+            },
+            {
+              propName: 'callBack',
+              type: 'Function',
+              default: 'null',
+              required: 'yes',
+              description: 'The callout function used to select the clicked index',
+            },
+            {
+              propName: 'stackAtBreakpoint',
+              type: 'String',
+              default: '""',
+              required: 'no',
+              description:
+                'Option breakpoint at whit to stack the items. Valid values are "sm", "md", "lg", "xl", "2xl"',
+            },
+          ]}
+        />
         <br />
         <br />
       </Container>

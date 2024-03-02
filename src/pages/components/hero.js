@@ -8,7 +8,7 @@ import CodeBlock from '../../tpds/components/code'
 export default function Page() {
   return (
     <div>
-      <Hero className="bg-window border-b-2 border-body">
+      <Hero className="bg-grey-light-scale-500 dark:bg-grey-dark-scale-500">
         <H1 isMedium>Hero Title</H1>
         <P>Hero subtitle</P>
       </Hero>
@@ -30,7 +30,7 @@ export default function Page() {
 const code = String.raw`import Hero from '@tempoplatform/tpds/components/hero/Hero'
 import { P, H1 } from '../../tpds/elements/typography'
 
-<Hero className="bg-window border-b-2 border-body">
+<Hero className="bg-grey-light-scale-500 dark:bg-grey-dark-scale-500">
   <H1 isMedium>Headline</H1>
   <P>Description.</P>
 </Hero>`

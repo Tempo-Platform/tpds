@@ -9,28 +9,12 @@ export default function Page() {
   return (
     <div>
       <Container>
-        <PageHeader
-          title="PropsTable"
-          subTitle="Table components designed to display props for a component"
-        />
-        <P>Allows customization for different purposes:</P>
-        <br />
-        <P>- Header titles can be customised</P>
-        <P>- Items' property names can be customised</P>
-        <br />
-        <Separator />
-        <br />
+        <PageHeader title="PropsTable" subTitle="Table components designed to display props" />
+        <P>Example:</P>
         <br />
         <PropsTable
           title="Standard Props Table Example"
           items={[
-            {
-              propName: 'title',
-              type: 'String',
-              default: '"Props"',
-              required: 'optional',
-              description: 'The title of the component, shown as a header.',
-            },
             {
               propName: 'description',
               type: 'String',
@@ -142,13 +126,6 @@ export default function Page() {
         <PropsTable
           title="PropsTable Props"
           items={[
-            {
-              propName: 'title',
-              type: 'String',
-              default: 'Props',
-              required: 'optional',
-              description: "The table's title header",
-            },
             {
               propName: 'items',
               type: 'Array',
@@ -268,20 +245,6 @@ const codeExample = String.raw`import { PropsTable } from '@tempoplatform/tpds/c
 <PropsTable
   title='Standard Props Table Example'
   items={[
-    {
-      propName: "title",
-      type: 'String',
-      default: '"Props"',
-      required: 'optional',
-      description: 'The title of the component, shown as a header.'
-    },
-    {
-      propName: 'description',
-      type: 'String',
-      default: "' '",
-      required: 'optional',
-      description: 'card description'
-    },
     {
       propName: 'children',
       type: 'JSX',

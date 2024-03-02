@@ -16,9 +16,11 @@ export default function TextInputPage() {
           subTitle="The TextInput element is used by the TextInput component. Use the TextInput element
           directly for custom scenarios."
         />
-        <P>Import input element</P>
-        <br />
-        <CodeBlock code={codeImport} />
+        <Window>
+          <P>Import input element</P>
+          <br />
+          <CodeBlock code={codeImport} />
+        </Window>
         <br />
         <br />
         <H6>States</H6>

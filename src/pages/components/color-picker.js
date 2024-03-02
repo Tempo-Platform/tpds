@@ -11,7 +11,7 @@ export default function Page() {
   return (
     <div>
       <Container>
-        <PageHeader title="Date Picker" subTitle="A color picker + input combo component" />
+        <PageHeader title="Color Picker" subTitle="A color picker + input combo component" />
         <P>
           You can click the swatch to pick a color or type a hexadecimal value in the text input.
         </P>

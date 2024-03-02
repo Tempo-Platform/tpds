@@ -1,5 +1,6 @@
 import React from 'react'
 import PageHeader from '../../lib/components/PageHeader'
+import { Separator } from '../../tpds/elements/layout'
 import { P } from '../../tpds/elements/typography'
 import { Container, Window } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
@@ -14,21 +15,16 @@ export default function Page() {
         <P>
           The StarsRating component accepts a rating (number) from 0 to 5, and an optional width.
         </P>
+        <Separator className="!my-12" />
+        <P>Basic implementation with the value of 4.5:</P>
         <br />
-        <Window>
-          <P>Basic implementation with the value of 4.5:</P>
-          <br />
-          <StarsRating rating={4.5} />
-        </Window>
+        <StarsRating rating={4.5} />
         <br />
         <CodeBlock code={code} />
+        <Separator className="!my-12" />
+        <P>Implementation with a custom width, and value of 2.5:</P>
         <br />
-        <br />
-        <Window>
-          <P>Implementation with a custom width, and value of 2.5:</P>
-          <br />
-          <StarsRating rating={2.5} width={80} />
-        </Window>
+        <StarsRating rating={2.5} width={80} />
         <br />
         <CodeBlock code={code2} />
         <br />

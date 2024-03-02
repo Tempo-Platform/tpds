@@ -12,13 +12,11 @@ export default function Page() {
     <div>
       <Container>
         <PageHeader title="Price Input" subTitle="A text input optimized for prices." />
-        <Window className="mt-8">
-          <PriceInput
-            initialValue={price}
-            currencySymbol="$"
-            onChangeCallback={value => setPrice(value)}
-          />
-        </Window>
+        <PriceInput
+          initialValue={price}
+          currencySymbol="$"
+          onChangeCallback={value => setPrice(value)}
+        />
         <br />
         <br />
         <CodeBlock code={code} />
