@@ -61,7 +61,8 @@ export const PaddingBox = props => {
 }
 
 export const Separator = props => {
-  const defaultClass = 'h-[1px] w-full mt-[20px] border-b border-body'
+  const defaultClass =
+    'h-[1px] w-full mt-[20px] border-b border-grey-light-scale-400 dark:border-grey-dark-scale-500'
   const finalClass = clsx(defaultClass, props.className)
   return (
     <div className={finalClass} style={props.style}>
@@ -84,7 +85,7 @@ export const Window = props => {
   const finalClass = clsx(
     'bg-window border border-window',
     '!border-0 dark:!border-2',
-    'shadow-lg dark:shadow-none',
+    'shadow-sm dark:shadow-none',
     'rounded-sm lg:rounded-[8px]',
     'py-xs px-xs md:py-xs md:px-sm lg:py-sm lg:px-md',
     props.className,
