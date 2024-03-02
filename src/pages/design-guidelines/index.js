@@ -1,10 +1,10 @@
 import PageHeader from '../../lib/components/PageHeader'
 import { PSmall, H6, H5 } from '../../tpds/elements/typography'
-import { Container } from '../../tpds/elements/layout'
+import { PageRoot, Container } from '../../tpds/elements/layout'
 
 export default function Page() {
   return (
-    <div>
+    <PageRoot>
       <Container>
         <PageHeader title="Design guidelines" />
         <PSmall>
@@ -81,6 +81,6 @@ export default function Page() {
         <br />
         <br />
       </Container>
-    </div>
+    </PageRoot>
   )
 }

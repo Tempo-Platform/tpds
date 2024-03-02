@@ -1,13 +1,13 @@
 import PageHeader from '../../lib/components/PageHeader'
 import { P, H6, Underline, Code } from '../../tpds/elements/typography'
-import { Section, Container, Window, Separator } from '../../tpds/elements/layout'
+import { PageRoot, Section, Container, Window, Separator } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
 import tokens from '../../tpds/tokens/index.json'
 const colorTokens = tokens.colors
 
 export default function Page() {
   return (
-    <div>
+    <PageRoot>
       <Container>
         <PageHeader title="Dark/Light Mode" subtitle="Color guide for dark and light modes" />
         <P>
@@ -31,14 +31,14 @@ export default function Page() {
         <br />
         <div style={darkModeBgStyles} className="p-8">
           <P style={{ color: colorTokens.white }}>Body bg: {colorTokens.dark.body_bg}</P>
-          <P style={{ color: colorTokens.white }}>Body border: {colorTokens.dark.body_border}</P>
+          {/* <P style={{ color: colorTokens.white }}>Body border: {colorTokens.dark.body_border}</P> */}
           <div style={darkModeWindowStyles} className="w-[50%] p-8 my-10 mx-auto">
             <P style={{ color: colorTokens.white }}>Window bg: {colorTokens.dark.window_bg}</P>
             <P style={{ color: colorTokens.white }}>
               Window border: {colorTokens.dark.window_border}
             </P>
             <br />
-            <P style={{ color: colorTokens.dark.text_primar }}>
+            <P style={{ color: colorTokens.dark.text_primary }}>
               Text Primary: {colorTokens.dark.text_primary}
             </P>
             <br />
@@ -63,7 +63,7 @@ export default function Page() {
             Body bg: {colorTokens.light.body_bg}
           </P>
           <P style={{ color: colorTokens.light.text_primary }}>
-            Body border: {colorTokens.light.body_border}
+            {/* Body border: {colorTokens.light.body_border} */}
           </P>
           <div style={lightModeWindowStyles} className="w-[50%] p-8 my-10 mx-auto">
             <P style={{ color: colorTokens.light.text_primary }} className="font-medium">
@@ -242,14 +242,14 @@ export default function Page() {
         <br />
         <br />
       </Container>
-    </div>
+    </PageRoot>
   )
 }
 
 const darkModeBgStyles = {
   backgroundColor: colorTokens.dark.body_bg,
   borderRadius: '3px',
-  border: `1px solid ${colorTokens.dark.body_border}`,
+  // border: `1px solid ${colorTokens.dark.body_border}`,
 }
 
 const darkModeWindowStyles = {
@@ -261,7 +261,7 @@ const darkModeWindowStyles = {
 const lightModeBgStyle = {
   backgroundColor: colorTokens.light.body_bg,
   borderRadius: '3px',
-  border: `1px solid ${colorTokens.light.body_border}`,
+  // border: `1px solid ${colorTokens.light.body_border}`,
 }
 
 const lightModeWindowStyles = {

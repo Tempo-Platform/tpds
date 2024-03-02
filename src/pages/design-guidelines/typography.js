@@ -25,26 +25,28 @@ export default function Page() {
         <br />
         <div className="grid grid-cols-12 gap-4">
           <div className="grid col-span-12 md:col-span-6">
-            <H4 className="py-4 font-light border-solid border-b-2 border-body">Inter Light</H4>
-            <H4 className="py-4 font-normal border-solid border-b-2 border-body">Inter Regular</H4>
-            <H4 className="py-4 font-medium border-solid border-b-2 border-body">Inter Medium</H4>
-            <H4 className="py-4 font-bold border-solid border-b-2 border-body">Inter Bold</H4>
-            <H4 className="py-4 font-black border-solid border-b-2 border-body">Inter Black</H4>
+            <H4 className="py-4 font-light border-solid border-b-2 border-window">Inter Light</H4>
+            <H4 className="py-4 font-normal border-solid border-b-2 border-window">
+              Inter Regular
+            </H4>
+            <H4 className="py-4 font-medium border-solid border-b-2 border-window">Inter Medium</H4>
+            <H4 className="py-4 font-bold border-solid border-b-2 border-window">Inter Bold</H4>
+            <H4 className="py-4 font-black border-solid border-b-2 border-window">Inter Black</H4>
           </div>
           <div className="grid col-span-12 md:col-span-6">
-            <H4 className="py-4 font-light border-solid border-b-2 border-body italic">
+            <H4 className="py-4 font-light border-solid border-b-2 border-window italic">
               Inter Light Italic
             </H4>
-            <H4 className="py-4 font-normal border-solid border-b-2 border-body italic">
+            <H4 className="py-4 font-normal border-solid border-b-2 border-window italic">
               Inter Regular Italic
             </H4>
-            <H4 className="py-4 font-medium border-solid border-b-2 border-body italic">
+            <H4 className="py-4 font-medium border-solid border-b-2 border-window italic">
               Inter Medium Italic
             </H4>
-            <H4 className="py-4 font-bold border-solid border-b-2 border-body italic">
+            <H4 className="py-4 font-bold border-solid border-b-2 border-window italic">
               Inter Bold Italic
             </H4>
-            <H4 className="py-4 font-black border-solid border-b-2 border-body italic">
+            <H4 className="py-4 font-black border-solid border-b-2 border-window italic">
               Inter Black Italic
             </H4>
           </div>
@@ -63,16 +65,18 @@ export default function Page() {
         <br />
         <div className="grid grid-cols-12 gap-4">
           <div className="grid col-span-12 md:col-span-6">
-            <H4 className="py-4 !font-mono border-solid border-b-2 border-body">SF Mono Regular</H4>
-            <H4 className="py-4 font-mono font-bold border-solid border-b-2 border-body">
+            <H4 className="py-4 !font-mono border-solid border-b-2 border-window">
+              SF Mono Regular
+            </H4>
+            <H4 className="py-4 font-mono font-bold border-solid border-b-2 border-window">
               SF Mono Bold
             </H4>
           </div>
           <div className="grid col-span-12 md:col-span-6">
-            <H4 className="py-4 font-mono border-solid border-b-2 border-body italic">
+            <H4 className="py-4 font-mono border-solid border-b-2 border-window italic">
               SF Mono Reg. Italic
             </H4>
-            <H4 className="py-4 font-mono font-bold border-solid border-b-2 border-body italic">
+            <H4 className="py-4 font-mono font-bold border-solid border-b-2 border-window italic">
               SF Mono Bold Italic
             </H4>
           </div>

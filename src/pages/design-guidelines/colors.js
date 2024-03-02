@@ -70,7 +70,7 @@ export default function Page() {
 }
 
 const MainColorsRow = props => {
-  return <div className="block sm:grid sm:grid-cols-8 sm:gap-2">{props.children}</div>
+  return <div className="w-full gap-2 flex flex-col sm:grid sm:grid-cols-7">{props.children}</div>
 }
 const ColorsRow = props => {
   return <div className="block sm:grid sm:grid-cols-10 sm:gap-2">{props.children}</div>
@@ -138,7 +138,11 @@ function Palette({ colorName, colors }) {
 }
 
 const ColorLabel = props => {
-  return <div className="mb-[2px]">{props.children}</div>
+  return (
+    <div className="mb-[2px] text-secondary text-[12px] font-medium uppercase">
+      {props.children}
+    </div>
+  )
 }
 
 function SwatchInfo({ label, hex, highlight }) {
