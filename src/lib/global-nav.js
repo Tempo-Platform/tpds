@@ -15,7 +15,7 @@ function GlobalNav() {
 
   const close = () => setIsOpen(false)
   return (
-    <div className="fixed top-0 z-10 flex w-full flex-col border-b border-window bg-window lg:bottom-0 lg:z-auto lg:w-72 lg:border-b-0 lg:border-r lg:border-gray-800">
+    <div className="fixed top-0 z-10 flex w-full flex-col bg-window border border-grey-light-scale-300 dark:border-window lg:bottom-0 lg:z-auto lg:w-72">
       <div className="flex items-center p-4 lg:h-auto">
         <Link href="/" className="group flex w-full items-center gap-x-2.5" onClick={close}>
           <TempoLogo />
@@ -45,7 +45,7 @@ function GlobalNav() {
         })}
       >
         <div className="p-4">
-          <PTiny isMedium className="text-tertiary">
+          <PTiny isMedium className="text-secondary">
             v{packageJson.version}
           </PTiny>
         </div>
@@ -56,7 +56,7 @@ function GlobalNav() {
           {navigationitems.map((section, index) => {
             return (
               <div key={section.name + index}>
-                <div className="mb-2 px-3 text-xs font-medium uppercase tracking-wider text-tertiary">
+                <div className="mb-2 px-3 text-xs font-medium uppercase tracking-wider text-secondary">
                   <div>{section.name}</div>
                 </div>
 
@@ -100,24 +100,19 @@ function GlobalNavItem({ item, close, pathName }) {
       onClick={close}
       href={itemLink}
       className={clsx(
-        'block rounded-[4px] pl-4 pr-3 text-sm font-medium',
-        'text-black dark:text-white',
-        'hover:bg-black dark:hover:bg-white',
+        'block rounded-[4px] pl-4 pr-3 py-0.5 text-sm font-medium',
+        'hover:bg-grey-light-scale-400/50 dark:hover:bg-grey-dark-scale-400/50',
+        'text-primary text-[14px]',
+        //'text-black dark:text-white',
+        //'hover:text-white dark:hover:text-black',
         // isActive
         //   ? 'text-white dark:text-black'
         //   : 'text-black dark:text-white hover:bg-black dark:hover:bg-white',
       )}
     >
-      <PSmall
-        className={clsx(
-          'w-full font-medium',
-          'text-black dark:text-white',
-          'hover:!text-white dark:hover:!text-black',
-          isActive && '!font-bold',
-        )}
-      >
+      <p className={clsx('w-full font-medium', '!text-inherit', isActive && '!font-bold')}>
         {item.name}
-      </PSmall>
+      </p>
     </Link>
   )
 }
@@ -133,20 +128,14 @@ function GlobalNavSubitem({ item, close, pathName }) {
       onClick={close}
       href={itemLink}
       className={clsx(
-        'block rounded-[4px] pl-4 pr-3 text-sm',
-        'hover:bg-black dark:hover:bg-white',
+        'block rounded-[4px] pl-4 pr-3 py-0.5 text-sm font-medium',
+        'hover:bg-grey-light-scale-400/50 dark:hover:bg-grey-dark-scale-400/50',
+        'text-primary text-[14px]',
       )}
     >
-      <PSmall
-        className={clsx(
-          'w-full font-medium',
-          'text-black dark:text-white',
-          'hover:!text-white dark:hover:!text-black',
-          isActive && '!font-bold',
-        )}
-      >
+      <p className={clsx('w-full font-medium', '!text-inherit', isActive && '!font-bold')}>
         - {item.name}
-      </PSmall>
+      </p>
     </Link>
   )
 }
