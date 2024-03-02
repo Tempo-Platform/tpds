@@ -9,11 +9,7 @@ export default function ButtonsPage() {
   return (
     <div>
       <Container>
-        <PageHeader
-          title="Buttons"
-          subTitle="Use the typography elements directly. They are all responsive by default and will ensure
-          typographic consistency."
-        />
+        <PageHeader title="Buttons" subTitle="Button elements in various variants." />
         <P>
           The button element has <Bold>7 variants</Bold>.
         </P>
@@ -22,12 +18,6 @@ export default function ButtonsPage() {
         <br />
         <br />
         <CodeGridComponent code={codeDefault} element={<Button>Default</Button>} />
-        <br />
-        <br />
-        <CodeGridComponent
-          code={codeSecondary}
-          element={<Button variant="secondary">Secondary</Button>}
-        />
         <br />
         <br />
         <CodeGridComponent
@@ -48,6 +38,24 @@ export default function ButtonsPage() {
         <CodeGridComponent code={codeDanger} element={<Button variant="danger">Danger</Button>} />
         <br />
         <br />
+        <CodeGridComponent
+          code={codeSpecial}
+          element={<Button variant="special">Special</Button>}
+        />
+        <br />
+        <br />
+        <CodeGridComponent
+          code={codeContrast}
+          element={<Button variant="contrast">Contrast</Button>}
+        />
+        <br />
+        <br />
+        <CodeGridComponent
+          code={codeContrastGhost}
+          element={<Button variant="contrastghost">Contrast Ghost</Button>}
+        />
+        <br />
+        <br />
         <br />
         <br />
         <Separator />
@@ -63,32 +71,6 @@ export default function ButtonsPage() {
         <br />
         <br />
         <CodeGridComponent
-          code={codeDefaultDisabled}
-          element={<Button isDisabled>Regular (disabled)</Button>}
-        />
-        <br />
-        <br />
-        <CodeGridComponent
-          code={codeSecondaryDisabled}
-          element={
-            <Button variant="secondary" isDisabled>
-              Secondary (disabled)
-            </Button>
-          }
-        />
-        <br />
-        <br />
-        <CodeGridComponent
-          code={codeSuccessDisabled}
-          element={
-            <Button variant="success" isDisabled>
-              Success (disabled)
-            </Button>
-          }
-        />
-        <br />
-        <br />
-        <CodeGridComponent
           code={codeInfoDisabled}
           element={
             <Button variant="info" isDisabled>
@@ -98,42 +80,33 @@ export default function ButtonsPage() {
         />
         <br />
         <br />
-        <CodeGridComponent
-          code={codeWarningDisabled}
-          element={
-            <Button variant="warning" isDisabled>
-              Warning (disabled)
-            </Button>
-          }
-        />
-        <br />
-        <br />
-        <CodeGridComponent
-          code={codeDangerDisabled}
-          element={
-            <Button variant="danger" isDisabled>
-              Danger (disabled)
-            </Button>
-          }
-        />
-        <br />
-        <br />
-        <br />
-        <br />
         <Separator />
         <br />
         <br />
         <P>
-          The <Bold>small</Bold> and <Bold>large</Bold> are options available in all variants.
+          The sizes <Bold>tiny</Bold>, <Bold>small</Bold>, <Bold>large</Bold> and{' '}
+          <Bold>extra large</Bold> are available in all variants.
         </P>
         <br />
         <Separator />
         <br />
         <br />
-        <CodeGridComponent code={codeSmallSizes} element={<Button isSmall>Text label</Button>} />
+        <CodeGridComponent code={codeTiny} element={<Button isTiny>Button</Button>} />
         <br />
         <br />
-        <CodeGridComponent code={codeLargeSizes} element={<Button isLarge>Text label</Button>} />
+        <CodeGridComponent code={codeSmall} element={<Button isSmall>Button</Button>} />
+        <br />
+        <br />
+        <CodeGridComponent code={codeLarge} element={<Button isLarge>Button</Button>} />
+        <br />
+        <br />
+        <CodeGridComponent code={codeExtraLarge} element={<Button isExtraLarge>Button</Button>} />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <br />
         <br />
       </Container>
@@ -145,12 +118,6 @@ const codeDefault = String.raw`import { Button } from '@tempoplatform/tpds/eleme
 
 <Button>
   Default
-</Button>`
-
-const codeSecondary = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
-
-<Button variant='secondary'>
-  Secondary
 </Button>`
 
 const codeSuccess = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
@@ -177,23 +144,23 @@ const codeDanger = String.raw`import { Button } from '@tempoplatform/tpds/elemen
   Danger
 </Button>`
 
-const codeDefaultDisabled = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
+const codeSpecial = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
 
-<Button isDisabled>
-  Regular (disabled)
+<Button variant='special'>
+  Special
 </Button>`
 
-const codeSecondaryDisabled = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
+const codeContrast = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
 
-<Button variant='secondary' isDisabled>
-  Secondary (disabled)
-</ButtonSecondary>`
+<Button variant='contrast'>
+  Contrast
+</Button>`
 
-const codeSuccessDisabled = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
+const codeContrastGhost = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
 
-<Button variant='success' isDisabled>
-  Success (disabled)
-</ButtonSuccess>`
+<Button variant='contrastghost'>
+  Contrast Ghost
+</Button>`
 
 const codeInfoDisabled = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
 
@@ -201,26 +168,26 @@ const codeInfoDisabled = String.raw`import { Button } from '@tempoplatform/tpds/
   Info (disabled)
 </ButtonInfo>`
 
-const codeWarningDisabled = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
+const codeTiny = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
 
-<Button variant='warning' isDisabled>
-  Warning (disabled)
-</ButtonWarning>`
-
-const codeDangerDisabled = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
-
-<Button variant='danger' isDisabled>
-  Danger (disabled)
-</ButtonDanger>`
-
-const codeLargeSizes = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
-
-<Button isLarge>
-  Text label
+<Button isTiny>
+  Button
 </Button>`
 
-const codeSmallSizes = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
+const codeSmall = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
 
 <Button isSmall>
-  Text label
+  Button
+</Button>`
+
+const codeLarge = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
+
+<Button isLarge>
+  Button
+</Button>`
+
+const codeExtraLarge = String.raw`import { Button } from '@tempoplatform/tpds/elements/buttons'
+
+<Button isExtraLarge>
+  Button
 </Button>`
