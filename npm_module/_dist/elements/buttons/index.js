@@ -5,8 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Button = void 0;
 var _react = _interopRequireDefault(require("react"));
+var _tailwindMerge = require("tailwind-merge");
 var _clsx = _interopRequireDefault(require("clsx"));
-var _excluded = ["children", "variant", "isSmall", "isTiny", "isLarge", "isDisabled", "isUppercase", "className"];
+var _excluded = ["children", "variant", "isSmall", "isTiny", "isLarge", "isExtraLarge", "isDisabled", "isUppercase", "className"];
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -18,41 +19,87 @@ var Button = function Button(_ref) {
     isSmall = _ref.isSmall,
     isTiny = _ref.isTiny,
     isLarge = _ref.isLarge,
+    isExtraLarge = _ref.isExtraLarge,
     isDisabled = _ref.isDisabled,
     isUppercase = _ref.isUppercase,
     className = _ref.className,
     props = _objectWithoutProperties(_ref, _excluded);
-  var finalClass = (0, _clsx["default"])('flex transition duration-100', '!font-medium text-[14px] whitespace-nowrap', 'px-3 gap-x-2 border rounded-[4px] focus:outline-none', 'min-w-[100px] h-[36px]', 'justify-center items-center leading-[100%]', 'select-none cursor-pointer', buttonVariantStyles[variant], className, isSmall && '!text-sm', isUppercase && '!uppercase', isUppercase && '!uppercase', isSmall && 'px-2 pt-[2px] pb-[1.5px] text-[13px]', isTiny && 'px-1 pt-0 pb-0 text-[11px]', isLarge && 'px-4 py-1.5 text-[16px]', isDisabled && 'pointer-events-none opacity-30');
+  if (variant === 'secondary') {
+    console.log("The 'secondary' variant is deprecated. You can still use it, but it will be removed in the future.");
+  }
+  var finalClass = (0, _tailwindMerge.twMerge)((0, _clsx["default"])('flex justify-center items-center gap-x-2', 'px-3', 'h-[40px]', '!font-medium text-[14px] leading-[100%] whitespace-nowrap', 'border-2 rounded-[4px] focus:outline-none', 'transition duration-400', 'select-none cursor-pointer', buttonVariantStyles[variant], className, isSmall && '!text-sm', isUppercase && '!uppercase', isUppercase && '!uppercase', isTiny && 'h-[30px] px-2 py-0 text-[11px]', isSmall && 'h-[34px] px-3 py-0 text-[13px]', isLarge && 'h-[44px] px-6 py-0 text-[16px]', isExtraLarge && 'h-[52px] px-10 py-0 text-[18px]', isDisabled && 'pointer-events-none opacity-30'));
   return /*#__PURE__*/_react["default"].createElement("button", _extends({
     className: finalClass
   }, props), children);
 };
 exports.Button = Button;
-var buttonVariantStyles = {
-  "default": ['text-white dark:text-black', 'bg-black border-black dark:bg-white dark:border-white', 'hover:bg-grey-dark-scale-400 hover:border-grey-dark-scale-400 dark:hover:bg-grey-light-scale-200 dark:hover:border-grey-light-scale-200', 'active:bg-grey-dark-scale-800 active:border-grey-dark-scale-800 dark:active:bg-grey-light-scale-50 dark:active:border-grey-light-scale-50'],
-  secondary: ['text-grey-dark-scale-200 dark:text-grey-light-scale-300', 'bg-white border-grey-light-scale-400 dark:bg-grey-dark-scale-500 dark:border-grey-dark-scale-200', 'hover:bg-white hover:border-grey-light-scale-500 dark:hover:bg-grey-dark-scale-500 dark:hover:border-grey-dark-scale-100', 'active:bg-white active:border-grey-light-scale-700 dark:active:bg-grey-dark-scale-500 dark:active:border-grey-light-scale-600'],
-  success: ['text-white dark:text-black', 'bg-green border-green dark:bg-green-scale-400 dark:border-green-scale-400', 'hover:bg-green-scale-400 hover:border-green-scale-400', 'active:bg-green-scale-600 active:border-green-scale-600'],
-  info: ['text-white dark:text-black', 'bg-blue border-blue', 'hover:bg-blue-scale-400 hover:border-blue-scale-400', 'active:bg-blue-scale-600 active:border-blue-scale-600'],
-  warning: ['text-white dark:text-black', 'bg-orange border-orange', 'hover:bg-orange-scale-400 hover:border-orange-scale-400', 'active:bg-orange-scale-600 active:border-orange-scale-600'],
-  danger: ['text-white dark:text-black', 'bg-red border-red', 'hover:bg-red-scale-400 hover:border-red-scale-400', 'active:bg-red-scale-600 active:border-red-scale-600']
-};
+var defaultStyles = [
+// text
+'text-grey-dark-scale-600 dark:text-grey-light-scale-300', 'hover:text-black hover:dark:text-white', 'active:text-grey-light-scale-50 active:dark:text-grey-dark-scale-900',
+// bg
+'bg-white dark:bg-grey-dark-scale-800', 'active:bg-grey-dark-scale-800 active:dark:bg-grey-light-scale-50',
+// border
+'border-grey-light-scale-400 dark:border-grey-dark-scale-400', 'hover:border-grey-light-scale-800 dark:hover:border-grey-light-scale-800', 'active:border-grey-dark-scale-800 active:dark:border-grey-light-scale-50'];
+var successStyles = [
+// text
+'text-white dark:text-white', 'active:text-green-scale-500 active:dark:text-white',
+// bg
+'bg-green-scale-500 dark:bg-green-scale-900', 'hover:bg-green-scale-600 hover:dark:bg-green-scale-800', 'active:bg-green-scale-100 active:dark:bg-green-scale-700',
+// border
+'border-green dark:border-green-scale-400', 'hover:border-green-scale-200 dark:dark:border-green-scale-400', 'active:border-green-scale-300 dark:active:border-green-scale-300'];
+var infoStyles = [
+// text
+'text-white dark:text-white', 'active:text-blue-scale-500 active:dark:text-white',
+// bg
+'bg-blue-scale-500 dark:bg-blue-scale-900', 'hover:bg-blue-scale-600 hover:dark:bg-blue-scale-800', 'active:bg-blue-scale-100 active:dark:bg-blue-scale-700',
+// border
+'border-blue dark:border-blue-scale-400', 'hover:border-blue-scale-200 dark:dark:border-blue-scale-400', 'active:border-blue-scale-300 dark:active:border-blue-scale-300'];
+var warningStyles = [
+// text
+'text-white dark:text-white', 'active:text-orange-scale-500 active:dark:text-white',
+// bg
+'bg-orange-scale-500 dark:bg-orange-scale-900', 'hover:bg-orange-scale-600 hover:dark:bg-orange-scale-800', 'active:bg-orange-scale-100 active:dark:bg-orange-scale-700',
+// border
+'border-orange dark:border-orange-scale-400', 'hover:border-orange-scale-200 dark:dark:border-orange-scale-400', 'active:border-orange-scale-300 dark:active:border-orange-scale-300'];
+var dangerStyles = [
+// text
+'text-white dark:text-white', 'active:text-red-scale-500 active:dark:text-white',
+// bg
+'bg-red-scale-500 dark:bg-red-scale-900', 'hover:bg-red-scale-600 hover:dark:bg-red-scale-800', 'active:bg-red-scale-100 active:dark:bg-red-scale-700',
+// border
+'border-red dark:border-red-scale-400', 'hover:border-red-scale-200 dark:dark:border-red-scale-400', 'active:border-red-scale-300 dark:active:border-red-scale-300'];
 
-// export const Butdton = styled.button(
-//   ({ label, isSmall, isTiny, isLarge, isDisabled, isUppercase, iconColor }) => [
-//     css`
-//       font-family: 'Inter';
-//       .icon-before {
-//         position: relative;
-//       }
-//       .icon-after {
-//         position: relative;
-//       }
-//       .icon-before * {
-//         fill: ${iconColor ? iconColor : 'auto'};
-//       }
-//       .icon-after * {
-//         fill: ${iconColor ? iconColor : 'auto'};
-//       }
-//     `,
-//   ],
-// )
+// special styles using purple
+
+var specialStyles = [
+// text
+'text-white dark:text-white', 'active:text-purple-scale-500 active:dark:text-white',
+// bg
+'bg-purple-scale-500 dark:bg-purple-scale-900', 'hover:bg-purple-scale-600 hover:dark:bg-purple-scale-800', 'active:bg-purple-scale-100 active:dark:bg-purple-scale-700',
+// border
+'border-purple dark:border-purple-scale-400', 'hover:border-purple-scale-200 dark:dark:border-purple-scale-400', 'active:border-purple-scale-300 dark:active:border-purple-scale-300'];
+var contrastStyles = [
+// text
+'text-grey-light-scale-50 dark:text-grey-dark-scale-800', 'hover:text-grey-dark-scale-800 hover:dark:text-grey-light-scale-100', 'active:text-grey-dark-scale-200 active:dark:text-grey-light-scale-600',
+// bg
+'bg-grey-dark-scale-500 dark:bg-grey-light-scale-300', 'hover:bg-grey-light-scale-50 hover:dark:bg-transparent', 'active:bg-grey-light-scale-200 active:dark:bg-transparent',
+// border
+'border-grey-dark-scale-500 dark:border-grey-light-scale-300', 'hover:border-grey-dark-scale-400 hover:dark:border-grey-light-scale-200', 'active:border-grey-light-scale-400 active:dark:border-grey-light-scale-900'];
+var contrastghostStyles = [
+// text
+'text-grey-dark-scale-600 dark:text-grey-light-scale-50', 'hover:text-grey-light-scale-50 hover:dark:text-grey-dark-scale-600', 'active:text-grey-dark-scale-200 active:dark:text-grey-light-scale-600',
+// bg
+'bg-transparent dark:bg-transparent', 'hover:bg-grey-dark-scale-500 hover:dark:bg-grey-light-scale-300', 'active:bg-grey-light-scale-50 active:dark:bg-grey-dark-scale-800',
+// border
+'border-grey-dark-scale-500 dark:border-grey-light-scale-300', 'hover:border-grey-dark-scale-400 hover:dark:border-grey-light-scale-200', 'active:border-grey-light-scale-500 active:dark:border-grey-light-scale-900'];
+var buttonVariantStyles = {
+  "default": defaultStyles,
+  secondary: defaultStyles,
+  success: successStyles,
+  info: infoStyles,
+  warning: warningStyles,
+  danger: dangerStyles,
+  special: specialStyles,
+  contrastghost: contrastghostStyles,
+  contrast: contrastStyles
+};
