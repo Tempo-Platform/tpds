@@ -45,12 +45,12 @@ var Tag = function Tag(_ref) {
 };
 var _default = Tag;
 exports["default"] = _default;
-var defaultStyle = ['bg-black text-white dark:bg-white dark:text-black'];
+var defaultStyle = ['transition duration-400', 'bg-grey-light-scale-50 text-grey-dark-scale-700', 'dark:bg-grey-dark-scale-700 dark:text-grey-light-scale-200', 'border border-grey-light-scale-400 dark:border-grey-dark-scale-400', 'shadow-md dark:shadow-none'];
 var infoStyle = ['bg-blue text-white dark:text-black'];
 var successStyle = ['bg-green text-white dark:text-black'];
 var dangerStyle = ['bg-red text-white dark:text-black'];
 var warningStyle = ['bg-orange text-white dark:text-black'];
-var defaultStyleWithHover = ['hover:bg-grey-dark-scale-400 dark:hover:bg-grey-light-scale-200'];
+var defaultStyleWithHover = ['hover:bg-grey-dark-scale-400 hover:!text-white dark:hover:bg-grey-light-scale-200 hover:dark:!text-black'];
 var infoStyleWithHover = ['hover:bg-blue/80'];
 var successStyleWithHover = ['hover:bg-green/80'];
 var dangerStyleWithHover = ['hover:bg-red/80'];

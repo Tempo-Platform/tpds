@@ -91,7 +91,7 @@ function Table(_ref) {
     sortDirection = _React$useState4[0],
     setSortDirection = _React$useState4[1];
   var headerClass = (0, _clsx["default"])('grid gap-2', columnVariants[columns.length], 'mb-1', 'px-4 py-1.5');
-  var rowClass = (0, _clsx["default"])('grid gap-4 rounded-[3px]', columnVariants[columns.length], 'border border-window bg-window', 'px-4', density === 'high' && 'py-2', density === 'medium' && 'py-3', density === 'low' && 'py-4', rowClick && 'cursor-pointer hover:border-grey-light-scale-500 dark:hover:border-grey-dark-scale-100', rowSpacing === 'none' && '!border-b-0 last:!border-b', customRowClass);
+  var rowClass = (0, _clsx["default"])('grid gap-4 rounded-[3px]', columnVariants[columns.length], 'bg-grey-light-scale-50 dark:bg-grey-dark-scale-900 border border-grey-light-scale-300 dark:border-grey-dark-scale-700 dark:shadow-none', 'px-4', density === 'high' && 'py-2', density === 'medium' && 'py-3', density === 'low' && 'py-4', rowClick && 'cursor-pointer hover:border-grey-light-scale-500 dark:hover:border-grey-dark-scale-100', rowSpacing === 'none' && '!border-b-0 last:!border-b', customRowClass);
   var rowsContainerClass = (0, _clsx["default"])('flex flex-col mb-4', rowSpacing === 'low' && 'gap-y-1', rowSpacing === 'medium' && 'gap-y-2', rowSpacing === 'high' && 'gap-y-3', rowSpacing === 'none' && 'gap-y-0');
   var numPages = Math.ceil(data.length / rowsPerPage);
   if (pagination && !router) {
@@ -165,32 +165,33 @@ function Table(_ref) {
   })), showPagination && /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex justify-end gap-1"
   }, /*#__PURE__*/_react["default"].createElement(_buttons.Button, {
-    className: "!p-1 text-primary",
+    className: "!p-2 min-w-0 text-primary",
     variant: "secondary",
     isDisabled: page === 1,
     size: "small",
     onClick: handleBackToFirstPage
   }, /*#__PURE__*/_react["default"].createElement(BeginningIcon, null)), /*#__PURE__*/_react["default"].createElement(_buttons.Button, {
-    className: "!p-1 text-primary",
+    className: "!p-2 min-w-0 text-primary",
     variant: "secondary",
     isDisabled: page === 1,
     size: "small",
     onClick: handleClickToPreviousPage
-  }, /*#__PURE__*/_react["default"].createElement(FirstIcon, null)), /*#__PURE__*/_react["default"].createElement("div", {
-    className: "border p-2 bg-white border-grey-light-scale-400 dark:bg-grey-dark-scale-500 dark:border-grey-dark-scale-200"
-  }, /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
-    isMedium: true,
-    className: "uppercase whitespace-nowrap text-ellipsis overflow-hidden leading-none select-none"
+  }, /*#__PURE__*/_react["default"].createElement(FirstIcon, null)), /*#__PURE__*/_react["default"].createElement(_buttons.Button, {
+    className: "!p-2 min-w-0 pointer-events-none",
+    variant: "secondary",
+    isDisabled: page === numPages,
+    size: "small",
+    onClick: handleClickToNextPage
   }, page, " ", /*#__PURE__*/_react["default"].createElement("span", {
     className: "opacity-50"
-  }, "/ ", numPages))), /*#__PURE__*/_react["default"].createElement(_buttons.Button, {
-    className: "!p-1 text-primary",
+  }, "/ ", numPages)), /*#__PURE__*/_react["default"].createElement(_buttons.Button, {
+    className: "!p-2 min-w-0 text-primary",
     variant: "secondary",
     isDisabled: page === numPages,
     size: "small",
     onClick: handleClickToNextPage
   }, /*#__PURE__*/_react["default"].createElement(NextIcon, null)), /*#__PURE__*/_react["default"].createElement(_buttons.Button, {
-    className: "!p-1 text-primary",
+    className: "!p-2 min-w-0 text-primary",
     variant: "secondary",
     isDisabled: page === numPages,
     size: "small",

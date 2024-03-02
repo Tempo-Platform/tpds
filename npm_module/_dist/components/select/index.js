@@ -9,6 +9,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _clsx = _interopRequireDefault(require("clsx"));
 var _input = require("../../elements/input");
 var _typography = require("../../elements/typography");
+var _Cross = _interopRequireDefault(require("../../assets/svgs/16x16/Cross"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -98,7 +99,7 @@ var Select = function Select(_ref) {
     onChange: function onChange(e) {
       return setInputValue(e.target.value);
     },
-    className: (0, _clsx["default"])('w-full', 'text-[16px] pr-8 text-ellipsis !text-secondary !bg-transparent', isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]', !isOpen && 'cursor-pointer', isOpen && '!border-black dark:!border-white', !useKeyboard && 'pointer-events-none'),
+    className: (0, _clsx["default"])('w-full', _input.baseInputStyles, isInvalid && '!border-grey-light-scale-600 dark:!border-grey-dark-scale-300', !isOpen && 'cursor-pointer', isOpen && '!border-blue', !useKeyboard && 'pointer-events-none'),
     onFocus: function onFocus() {
       setInputValue('');
     }
@@ -108,13 +109,18 @@ var Select = function Select(_ref) {
     viewBox: "0 0 24 24",
     strokeWidth: 1.5,
     stroke: "currentColor",
-    className: (0, _clsx["default"])('w-4 h-4 absolute right-3 transform top-[10px] pointer-events-none text-[#7e909c]', isOpen && 'rotate-180')
+    className: (0, _clsx["default"])('w-5 h-5 absolute right-3 transform top-[10px] pointer-events-none text-[#7e909c]', isOpen && 'rotate-180')
   }, /*#__PURE__*/_react["default"].createElement("path", {
     strokeLinecap: "round",
     strokeLinejoin: "round",
     d: "M19.5 8.25l-7.5 7.5-7.5-7.5"
-  })), isOpen && /*#__PURE__*/_react["default"].createElement("div", {
-    className: "w-full flex flex-col space-y-1 items-start text-left p-1 lg:p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto"
+  })), selectedIndex >= 0 && /*#__PURE__*/_react["default"].createElement(_Cross["default"], {
+    onClick: function onClick() {
+      return handleIndexSelection(-1);
+    },
+    className: (0, _clsx["default"])('absolute transform top-[12px] right-[40px] cursor-pointer text-[#7e909c]')
+  }), isOpen && /*#__PURE__*/_react["default"].createElement("div", {
+    className: "w-full flex flex-col space-y-1 items-start text-left p-1 lg:p-2 rounded bg-window border-2 border-window shadow-md dark:shadow-none z-50 absolute top-[100%] left-0 max-h-40 overflow-auto"
   }, optionsThatMatchInputValue.map(function (option, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       key: labelProp ? option[labelProp] : option,
@@ -122,11 +128,11 @@ var Select = function Select(_ref) {
         handleIndexSelection(getOptionIndexFromAllOptions(options, option, idProp));
         setIsOpen(false);
       },
-      className: (0, _clsx["default"])('p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center", "bg-window rounded", "hover:bg-grey-light-scale-300 hover:dark:bg-grey-dark-scale-400", isSelected(option) && "!bg-black dark:!bg-white")
+      className: (0, _clsx["default"])('p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center", "bg-window rounded", "hover:bg-grey-light-scale-300 hover:dark:bg-grey-dark-scale-600", isSelected(option) && "!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-500")
     }, /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
-      className: (0, _clsx["default"])('text-primary text-left !text-[14px] !leading-tight', isSelected(option) && "!text-white dark:!text-black")
+      className: (0, _clsx["default"])('text-primary text-left !text-[14px] !leading-tight', isSelected(option) && "!text-black dark:!text-white")
     }, labelProp ? option[labelProp] : option), option.subLabel && /*#__PURE__*/_react["default"].createElement(_typography.PNano, {
-      className: (0, _clsx["default"])('mt-1 text-tertiary text-left !text-[13px] !leading-tight', isSelected(option) && "!text-white dark:!text-black")
+      className: (0, _clsx["default"])('mt-1 text-tertiary text-left !text-[13px] !leading-tight', isSelected(option) && "!text-grey-light-scale-800 dark:!text-grey-light-scale-600")
     }, option.subLabel));
   }), optionsThatMatchInputValue.length === 0 && /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
     className: (0, _clsx["default"])('text-secondary text-left select-none')

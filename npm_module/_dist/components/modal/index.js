@@ -73,7 +73,7 @@ var Modal = function Modal(_ref) {
     style: {
       maxWidth: maxWidth
     },
-    className: "mx-2 inline-flex flex-col w-full rounded-lg my-8 overflow-hidden text-left align-middle transition-all transform bg-window border-window shadow-xl"
+    className: "mx-2 inline-flex flex-col w-full rounded-lg my-8 overflow-hidden text-left align-middle transition-all transform bg-window dark:border-2 dark:border-window shadow-xl"
   }, /*#__PURE__*/_react["default"].createElement(Content, {
     title: title,
     description: description,
@@ -123,13 +123,13 @@ function Content(_ref2) {
   }, /*#__PURE__*/_react["default"].createElement(_typography.H6, _extends({
     isBold: true
   }, titleProps), title), description && /*#__PURE__*/_react["default"].createElement(_typography.P, _extends({}, descriptionProps, {
-    className: "text-tertiary leading-tight mt-1"
+    className: "text-secondary leading-tight mt-1"
   }), description), !isEmpty(content.props) && /*#__PURE__*/_react["default"].createElement(_layout.Separator, {
     className: "my-xs"
   }), !isEmpty(content.props) && /*#__PURE__*/_react["default"].createElement("div", {
     className: "text-sm text-grey-light-scale-500"
   }, content)), /*#__PURE__*/_react["default"].createElement("div", {
-    className: "px-sm py-6 bg-grey-light-scale-200 dark:bg-grey-dark-scale-500 border-t border-grey-light-scale-400 dark:border-grey-dark-scale-300"
+    className: "px-sm py-6 bg-grey-light-scale-200 dark:bg-grey-dark-scale-700 border-t border-grey-light-scale-400 dark:border-grey-dark-scale-300"
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex gap-4 justify-end"
   }, options.map(function (option) {

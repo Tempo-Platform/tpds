@@ -61,7 +61,7 @@ var PaddingBox = function PaddingBox(props) {
 };
 exports.PaddingBox = PaddingBox;
 var Separator = function Separator(props) {
-  var defaultClass = 'h-[1px] w-full mt-[20px] border-b border-body';
+  var defaultClass = 'h-[1px] w-full mt-[20px] border-b border-grey-light-scale-400 dark:border-grey-dark-scale-500';
   var finalClass = (0, _clsx["default"])(defaultClass, props.className);
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: finalClass,
@@ -79,7 +79,7 @@ var SeparatorWindow = function SeparatorWindow(props) {
 };
 exports.SeparatorWindow = SeparatorWindow;
 var Window = function Window(props) {
-  var finalClass = (0, _clsx["default"])('bg-window border border-window', '!border-0 dark:!border-2', 'shadow-lg dark:shadow-none', 'rounded-sm lg:rounded-[8px]', 'py-xs px-xs md:py-xs md:px-sm lg:py-sm lg:px-md', props.className);
+  var finalClass = (0, _clsx["default"])('bg-window border border-window', '!border-0 dark:!border-2', 'shadow-sm dark:shadow-none', 'rounded-sm lg:rounded-[8px]', 'py-xs px-xs md:py-xs md:px-sm lg:py-sm lg:px-md', props.className);
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: finalClass,
     style: props.style

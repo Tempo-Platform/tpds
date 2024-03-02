@@ -9,6 +9,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _clsx = _interopRequireDefault(require("clsx"));
 var _typography = require("../../elements/typography");
 var _Cross = _interopRequireDefault(require("../../assets/svgs/16x16/Cross"));
+var _input = require("../../elements/input");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -148,15 +149,15 @@ var SelectMulti = function SelectMulti(_ref) {
       e.preventDefault();
       setIsOpen(!isOpen);
     },
-    className: (0, _clsx["default"])('pointer-events-none', 'w-4 h-4 absolute right-[12px] top-[9px]', 'text-tertiary',
+    className: (0, _clsx["default"])('pointer-events-none', 'w-4 h-4 absolute right-[12px] top-[11px]', 'text-tertiary',
     //'!hover:text-black !hover:dark:text-white',
-    isOpen && 'rotate-180 text-black dark:text-white !top-[11px] !right-[9px]')
+    isOpen && 'rotate-180 !top-[12px] !right-[9px]')
   }, /*#__PURE__*/_react["default"].createElement("path", {
     strokeLinecap: "round",
     strokeLinejoin: "round",
     d: "M19.5 8.25l-7.5 7.5-7.5-7.5"
   })), displayValue.length > 0 && /*#__PURE__*/_react["default"].createElement("div", {
-    className: "absolute right-[34px] top-[10px]"
+    className: "absolute right-[34px] top-[12px]"
   }, /*#__PURE__*/_react["default"].createElement(_Cross["default"], {
     className: "text-tertiary hover:text-black hover:dark:text-white cursor-pointer",
     onClick: function onClick(e) {
@@ -165,7 +166,7 @@ var SelectMulti = function SelectMulti(_ref) {
       handleSelectionUpdate([]);
     }
   })), /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _clsx["default"])('flex flex-row flex-wrap gap-2 items-center justify-between', 'w-full !h-[36px]', 'px-1.5 py-1 rounded focus:outline-none', 'font-normal', 'bg-transparent text-primary border-transparent', 'border-2', isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147] focus:!border-black dark:focus:!border-white', 'cursor-pointer', 'select-none', 'transition duration-100', isOpen && '!border-black dark:!border-white')
+    className: (0, _clsx["default"])(_input.baseInputStyles, 'flex flex-row flex-wrap gap-2 items-center justify-between', 'font-normal', 'border-2', isInvalid && '!border-red', 'cursor-pointer', 'select-none', isOpen && '!border-blue')
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex gap-1 flex-wrap"
   }, selectedTagsToDisplay && selectedTagsToDisplay.map(function (item, index) {
@@ -205,7 +206,7 @@ var SelectMulti = function SelectMulti(_ref) {
       setIsOpen(true);
     }
   }))), isOpen && /*#__PURE__*/_react["default"].createElement("div", {
-    className: "w-full flex flex-col space-y-1 items-start text-start p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto"
+    className: "w-full flex flex-col space-y-1 items-start text-left p-1 lg:p-2 rounded bg-window border-2 border-window shadow-md dark:shadow-none z-50 absolute top-[100%] left-0 max-h-40 overflow-auto"
   }, optionsToShow.map(function (option, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       key: labelProp ? option[labelProp] : option,
@@ -216,7 +217,7 @@ var SelectMulti = function SelectMulti(_ref) {
         //setIsOpen(false)
       },
 
-      className: (0, _clsx["default"])('!px-3 !p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center", "bg-window rounded", "hover:bg-grey-light-scale-200 dark:hover:bg-grey-dark-scale-300", isSelected(option) && "!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-400")
+      className: (0, _clsx["default"])('p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center", "bg-window rounded", "hover:bg-grey-light-scale-100 hover:dark:bg-grey-dark-scale-600", isSelected(option) && "!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-500")
     }, /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
       className: (0, _clsx["default"])('text-primary text-left', isSelected(option) && "!text-black dark:!text-white")
     }, labelProp ? option[labelProp] : option));

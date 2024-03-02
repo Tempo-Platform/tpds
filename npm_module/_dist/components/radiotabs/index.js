@@ -51,7 +51,7 @@ var RadioTabs = function RadioTabs(_ref) {
         return handleIndexSelection(index);
       }
     }, /*#__PURE__*/_react["default"].createElement("p", {
-      className: (0, _clsx["default"])(itemLabelStyles, index === selectedIndex ? 'text-grey-dark-scale-200 dark:text-grey-light-scale-400' : 'text-grey-light-scale-600 dark:text-grey-light-scale-900')
+      className: (0, _clsx["default"])(itemLabelStyles, index === selectedIndex ? 'text-grey-dark-scale-200 dark:text-grey-light-scale-300' : 'text-grey-light-scale-600 dark:text-grey-light-scale-900')
     }, item.value || item.description || item.label || item));
   })));
 };

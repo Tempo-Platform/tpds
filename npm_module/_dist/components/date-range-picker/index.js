@@ -51,12 +51,10 @@ function DateRangePicker(_ref) {
   var endTime = endDate.getTime();
   var endDateBeforeStartDate = startTime > endTime;
   var endDateEqualStartDate = startTime === endTime;
-  var rootClassName = (0, _clsx["default"])('!h-[38px] rounded', 'gap-x-0.5', '!inline-flex items-center !w-auto', 'inline-flex w-full', 'border-2', 'bg-transparent border-[#ededed] dark:border-[#384147]', wrongTimeWarning && endDateBeforeStartDate && '!border-orange');
+  var rootClassName = (0, _clsx["default"])('!h-[40px] rounded', 'gap-x-0.5', '!inline-flex items-center !w-auto', 'inline-flex w-full', 'border-2', 'bg-transparent border-[#ededed] dark:border-[#384147]', wrongTimeWarning && endDateBeforeStartDate && '!border-orange');
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
     className: rootClassName
-  }, /*#__PURE__*/_react["default"].createElement("div", {
-    className: "relative top-[-1px]"
-  }, /*#__PURE__*/_react["default"].createElement(_datePicker["default"], {
+  }, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_datePicker["default"], {
     year: startDate.getFullYear(),
     month: startDate.getMonth(),
     day: startDate.getDate(),
@@ -72,7 +70,10 @@ function DateRangePicker(_ref) {
     maxYearsToFuture: 0,
     allowPast: allowPast,
     omitBorders: true,
-    omitCalendarIcon: true
+    omitCalendarIcon: true,
+    styleOverrides: {
+      height: '30px !important'
+    }
   })), /*#__PURE__*/_react["default"].createElement(_arrows.ArrowRightIcon, {
     className: "h-[12px] text-black dark:text-white opacity-30"
   }), /*#__PURE__*/_react["default"].createElement("div", {
@@ -92,7 +93,10 @@ function DateRangePicker(_ref) {
     maxYearsToPast: endDate.getFullYear() - startDate.getFullYear(),
     maxYearsToFuture: maxYearsToFuture,
     allowPast: allowPast,
-    omitBorders: true
+    omitBorders: true,
+    styleOverrides: {
+      height: '30px !important'
+    }
   }))), wrongTimeWarning && endDateBeforeStartDate && /*#__PURE__*/_react["default"].createElement(_typography.PNano, {
     isMedium: true,
     className: "mt-1 !text-orange"

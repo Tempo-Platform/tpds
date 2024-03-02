@@ -31,7 +31,7 @@ var RadioGroup = function RadioGroup(_ref) {
       className: (0, _clsx["default"])('capitalize leading-none', lightOnly && '!text-[#151819]'),
       forceLight: lightOnly
     }, option.title), /*#__PURE__*/_react["default"].createElement(_typography.PSmall, {
-      className: (0, _clsx["default"])('text-tertiary leading-tight', lightOnly && '!text-[#788187]')
+      className: (0, _clsx["default"])('text-secondary leading-tight', lightOnly && '!text-[#788187]')
     }, option.description)), /*#__PURE__*/_react["default"].createElement("div", {
       className: (0, _clsx["default"])("!w-[26px] !h-[26px] rounded-[50%] border-2 flex justify-center items-center", "transition-all duration-300", !lightOnly && "bg-transparent border-grey-light-scale-300 dark:border-grey-dark-scale-300", lightOnly && "bg-transparent border-grey-light-scale-300", isActive && '!border-transparent', isActive && lightOnly && '!bg-black', isActive && !lightOnly && '!bg-black dark:!bg-white')
     }, isActive && /*#__PURE__*/_react["default"].createElement(_Check["default"], {

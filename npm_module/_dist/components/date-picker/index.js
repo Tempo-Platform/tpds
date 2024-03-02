@@ -5,7 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _react = _interopRequireDefault(require("react"));
-var _typography = require("../../elements/typography");
 var _Calendar = _interopRequireDefault(require("../../assets/svgs/icons/Calendar"));
 var _input = require("../../elements/input");
 var _clsx = _interopRequireDefault(require("clsx"));
@@ -39,6 +38,10 @@ function DatePicker(_ref) {
     maxYearsToPast = _ref$maxYearsToPast === void 0 ? 10 : _ref$maxYearsToPast,
     _ref$maxYearsToFuture = _ref.maxYearsToFuture,
     maxYearsToFuture = _ref$maxYearsToFuture === void 0 ? 10 : _ref$maxYearsToFuture,
+    _ref$className = _ref.className,
+    className = _ref$className === void 0 ? '' : _ref$className,
+    _ref$styleOverrides = _ref.styleOverrides,
+    styleOverrides = _ref$styleOverrides === void 0 ? {} : _ref$styleOverrides,
     _ref$onChange = _ref.onChange,
     _onChange = _ref$onChange === void 0 ? function () {} : _ref$onChange;
   if (!_onChange) {
@@ -47,12 +50,12 @@ function DatePicker(_ref) {
   if (omitYear && omitMonth && omitDay) {
     throw new Error('TPDS DatePicker: Cannot omit all year, month, and day');
   }
-  var rootClassName = _clsx["default"].apply(void 0, _toConsumableArray(_input.baseInputStyles).concat(_toConsumableArray(_input.outlineStyles), ['!h-[38px] border !inline-flex items-center !w-auto gap-x-[3px] relative', omitBorders && '!border-0']));
+  var rootClassName = _clsx["default"].apply(void 0, _toConsumableArray(_input.baseInputStyles).concat(['border !inline-flex items-center !w-auto gap-x-[5px] relative', omitBorders && '!border-0', className]));
   var cellStyle = (0, _clsx["default"])('cursor-pointer relative');
   var yearCellStyle = (0, _clsx["default"])(cellStyle, '');
   var dayMonthCellStyle = (0, _clsx["default"])(cellStyle, '');
   var selectLayer = (0, _clsx["default"])('absolute w-full opacity-0');
-  var displayLayer = (0, _clsx["default"])('relative pointer-events-none top-[2px]', 'text-[15px] text-ellipsis font-medium !text-primary', 'flex items-center w-full');
+  var displayLayer = (0, _clsx["default"])('relative pointer-events-none top-[0px]', 'text-[15px] text-ellipsis font-medium !text-primary', 'flex items-center w-full');
   var displayLayerLeft = (0, _clsx["default"])(displayLayer, 'justify-start');
   var displayLayerCenter = (0, _clsx["default"])(displayLayer, 'justify-center');
   var numDaysInMonth = new Date(year, month + 1, 0).getDate();
@@ -141,11 +144,12 @@ function DatePicker(_ref) {
       }));
     }
   }
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
-    className: rootClassName
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    className: rootClassName,
+    style: styleOverrides
   }, renderItems, !omitCalendarIcon && /*#__PURE__*/_react["default"].createElement(_Calendar["default"], {
     className: "text-tertiary opacity-70 ml-2"
-  })));
+  }));
 }
 var _default = DatePicker;
 exports["default"] = _default;
