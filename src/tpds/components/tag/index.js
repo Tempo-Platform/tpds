@@ -42,13 +42,21 @@ const Tag = ({
 
 export default Tag
 
-const defaultStyle = ['bg-black text-white dark:bg-white dark:text-black']
+const defaultStyle = [
+  'transition duration-400',
+  'bg-grey-light-scale-50 text-grey-dark-scale-700',
+  'dark:bg-grey-dark-scale-700 dark:text-grey-light-scale-200',
+  'border border-grey-light-scale-400 dark:border-grey-dark-scale-400',
+  'shadow-md dark:shadow-none',
+]
 const infoStyle = ['bg-blue text-white dark:text-black']
 const successStyle = ['bg-green text-white dark:text-black']
 const dangerStyle = ['bg-red text-white dark:text-black']
 const warningStyle = ['bg-orange text-white dark:text-black']
 
-const defaultStyleWithHover = ['hover:bg-grey-dark-scale-400 dark:hover:bg-grey-light-scale-200']
+const defaultStyleWithHover = [
+  'hover:bg-grey-dark-scale-400 hover:!text-white dark:hover:bg-grey-light-scale-200 hover:dark:!text-black',
+]
 const infoStyleWithHover = ['hover:bg-blue/80']
 const successStyleWithHover = ['hover:bg-green/80']
 const dangerStyleWithHover = ['hover:bg-red/80']

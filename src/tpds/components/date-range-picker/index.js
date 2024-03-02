@@ -36,7 +36,7 @@ function DateRangePicker({
   const endDateEqualStartDate = startTime === endTime
 
   const rootClassName = clsx(
-    '!h-[38px] rounded',
+    '!h-[40px] rounded',
     'gap-x-0.5',
     '!inline-flex items-center !w-auto',
     'inline-flex w-full',
@@ -48,7 +48,7 @@ function DateRangePicker({
   return (
     <div>
       <div className={rootClassName}>
-        <div className="relative top-[-1px]">
+        <div>
           <DatePicker
             year={startDate.getFullYear()}
             month={startDate.getMonth()}
@@ -66,6 +66,7 @@ function DateRangePicker({
             allowPast={allowPast}
             omitBorders={true}
             omitCalendarIcon={true}
+            styleOverrides={{ height: '30px !important' }}
           />
         </div>
         <ArrowRightIcon className="h-[12px] text-black dark:text-white opacity-30" />
@@ -86,6 +87,7 @@ function DateRangePicker({
             maxYearsToFuture={maxYearsToFuture}
             allowPast={allowPast}
             omitBorders={true}
+            styleOverrides={{ height: '30px !important' }}
           />
         </div>
       </div>

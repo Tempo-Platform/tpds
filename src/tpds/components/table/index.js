@@ -85,7 +85,7 @@ function Table({
   const rowClass = clsx(
     'grid gap-4 rounded-[3px]',
     columnVariants[columns.length],
-    'border border-window bg-window',
+    'bg-grey-light-scale-50 dark:bg-grey-dark-scale-900 border border-grey-light-scale-300 dark:border-grey-dark-scale-700 dark:shadow-none',
     'px-4',
     density === 'high' && 'py-2',
     density === 'medium' && 'py-3',
@@ -204,7 +204,7 @@ function Table({
       {showPagination && (
         <div className="flex justify-end gap-1">
           <Button
-            className="!p-1 text-primary"
+            className="!p-2 min-w-0 text-primary"
             variant="secondary"
             isDisabled={page === 1}
             size="small"
@@ -213,7 +213,7 @@ function Table({
             <BeginningIcon />
           </Button>
           <Button
-            className="!p-1 text-primary"
+            className="!p-2 min-w-0 text-primary"
             variant="secondary"
             isDisabled={page === 1}
             size="small"
@@ -221,16 +221,18 @@ function Table({
           >
             <FirstIcon />
           </Button>
-          <div className="border p-2 bg-white border-grey-light-scale-400 dark:bg-grey-dark-scale-500 dark:border-grey-dark-scale-200">
-            <PTiny
-              isMedium
-              className="uppercase whitespace-nowrap text-ellipsis overflow-hidden leading-none select-none"
-            >
-              {page} <span className="opacity-50">/ {numPages}</span>
-            </PTiny>
-          </div>
+
           <Button
-            className="!p-1 text-primary"
+            className="!p-2 min-w-0 pointer-events-none"
+            variant="secondary"
+            isDisabled={page === numPages}
+            size="small"
+            onClick={handleClickToNextPage}
+          >
+            {page} <span className="opacity-50">/ {numPages}</span>
+          </Button>
+          <Button
+            className="!p-2 min-w-0 text-primary"
             variant="secondary"
             isDisabled={page === numPages}
             size="small"
@@ -239,7 +241,7 @@ function Table({
             <NextIcon />
           </Button>
           <Button
-            className="!p-1 text-primary"
+            className="!p-2 min-w-0 text-primary"
             variant="secondary"
             isDisabled={page === numPages}
             size="small"

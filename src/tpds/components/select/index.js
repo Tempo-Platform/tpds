@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import clsx from 'clsx'
 import { TextInput, baseInputStyles } from '../../elements/input'
 import { PTiny, PNano } from '../../elements/typography'
+import Cross from '../../assets/svgs/16x16/Cross'
 
 const getCurrentInputValue = (options, selectedIndex, labelProp) => {
   if (!selectedIndex && selectedIndex !== 0) return ''
@@ -93,10 +94,10 @@ const Select = ({
           onChange={e => setInputValue(e.target.value)}
           className={clsx(
             'w-full',
-            'text-[16px] pr-8 text-ellipsis !text-secondary !bg-transparent',
-            isInvalid ? '!border-red' : '!border-[#ededed] dark:!border-[#384147]',
+            baseInputStyles,
+            isInvalid && '!border-grey-light-scale-600 dark:!border-grey-dark-scale-300',
             !isOpen && 'cursor-pointer',
-            isOpen && '!border-black dark:!border-white',
+            isOpen && '!border-blue',
             !useKeyboard && 'pointer-events-none',
           )}
           onFocus={() => {
@@ -111,15 +112,23 @@ const Select = ({
         strokeWidth={1.5}
         stroke="currentColor"
         className={clsx(
-          'w-4 h-4 absolute right-3 transform top-[10px] pointer-events-none text-[#7e909c]',
+          'w-5 h-5 absolute right-3 transform top-[10px] pointer-events-none text-[#7e909c]',
           isOpen && 'rotate-180',
         )}
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
       </svg>
+      {selectedIndex >= 0 && (
+        <Cross
+          onClick={() => handleIndexSelection(-1)}
+          className={clsx(
+            'absolute transform top-[12px] right-[40px] cursor-pointer text-[#7e909c]',
+          )}
+        />
+      )}
 
       {isOpen && (
-        <div className="w-full flex flex-col space-y-1 items-start text-left p-1 lg:p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto">
+        <div className="w-full flex flex-col space-y-1 items-start text-left p-1 lg:p-2 rounded bg-window border-2 border-window shadow-md dark:shadow-none z-50 absolute top-[100%] left-0 max-h-40 overflow-auto">
           {optionsThatMatchInputValue.map((option, index) => (
             <div
               key={labelProp ? option[labelProp] : option}
@@ -134,14 +143,14 @@ const Select = ({
                 '!outline-none',
                 `w-full select-none cursor-pointer text-center`,
                 `bg-window rounded`,
-                `hover:bg-grey-light-scale-300 hover:dark:bg-grey-dark-scale-400`,
-                isSelected(option) && `!bg-black dark:!bg-white`,
+                `hover:bg-grey-light-scale-300 hover:dark:bg-grey-dark-scale-600`,
+                isSelected(option) && `!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-500`,
               )}
             >
               <PTiny
                 className={clsx(
                   'text-primary text-left !text-[14px] !leading-tight',
-                  isSelected(option) && `!text-white dark:!text-black`,
+                  isSelected(option) && `!text-black dark:!text-white`,
                 )}
               >
                 {labelProp ? option[labelProp] : option}
@@ -150,7 +159,8 @@ const Select = ({
                 <PNano
                   className={clsx(
                     'mt-1 text-tertiary text-left !text-[13px] !leading-tight',
-                    isSelected(option) && `!text-white dark:!text-black`,
+                    isSelected(option) &&
+                      `!text-grey-light-scale-800 dark:!text-grey-light-scale-600`,
                   )}
                 >
                   {option.subLabel}

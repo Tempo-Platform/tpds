@@ -33,7 +33,7 @@ const RadioGroup = ({ options, handleIndexSelection, selectedIndex, lightOnly })
                 {option.title}
               </PSmall>
               <PSmall
-                className={clsx('text-tertiary leading-tight', lightOnly && '!text-[#788187]')}
+                className={clsx('text-secondary leading-tight', lightOnly && '!text-[#788187]')}
               >
                 {option.description}
               </PSmall>

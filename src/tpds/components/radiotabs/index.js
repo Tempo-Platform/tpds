@@ -63,7 +63,7 @@ const RadioTabs = ({
               className={clsx(
                 itemLabelStyles,
                 index === selectedIndex
-                  ? 'text-grey-dark-scale-200 dark:text-grey-light-scale-400'
+                  ? 'text-grey-dark-scale-200 dark:text-grey-light-scale-300'
                   : 'text-grey-light-scale-600 dark:text-grey-light-scale-900',
               )}
             >

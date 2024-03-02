@@ -53,7 +53,7 @@ const Modal = ({
             />
             <div
               style={{ maxWidth: maxWidth }}
-              className="mx-2 inline-flex flex-col w-full rounded-lg my-8 overflow-hidden text-left align-middle transition-all transform bg-window border-window shadow-xl"
+              className="mx-2 inline-flex flex-col w-full rounded-lg my-8 overflow-hidden text-left align-middle transition-all transform bg-window dark:border-2 dark:border-window shadow-xl"
             >
               <Content
                 title={title}
@@ -113,7 +113,7 @@ function Content({
           {title}
         </H6>
         {description && (
-          <P {...descriptionProps} className="text-tertiary leading-tight mt-1">
+          <P {...descriptionProps} className="text-secondary leading-tight mt-1">
             {description}
           </P>
         )}
@@ -123,7 +123,7 @@ function Content({
         )}
       </div>
 
-      <div className="px-sm py-6 bg-grey-light-scale-200 dark:bg-grey-dark-scale-500 border-t border-grey-light-scale-400 dark:border-grey-dark-scale-300">
+      <div className="px-sm py-6 bg-grey-light-scale-200 dark:bg-grey-dark-scale-700 border-t border-grey-light-scale-400 dark:border-grey-dark-scale-300">
         <div className="flex gap-4 justify-end">
           {options.map(option => (
             <Button

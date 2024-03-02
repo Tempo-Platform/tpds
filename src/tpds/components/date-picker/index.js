@@ -1,7 +1,6 @@
 import React from 'react'
-import { PTiny } from '../../elements/typography'
 import CalendarIcon from '../../assets/svgs/icons/Calendar'
-import { baseInputStyles, outlineStyles } from '../../elements/input'
+import { baseInputStyles } from '../../elements/input'
 import clsx from 'clsx'
 
 function DatePicker({
@@ -16,6 +15,8 @@ function DatePicker({
   omitCalendarIcon = false,
   maxYearsToPast = 10,
   maxYearsToFuture = 10,
+  className = '',
+  styleOverrides = {},
   onChange = () => {},
 }) {
   if (!onChange) {
@@ -27,9 +28,9 @@ function DatePicker({
 
   const rootClassName = clsx(
     ...baseInputStyles,
-    ...outlineStyles,
-    '!h-[38px] border !inline-flex items-center !w-auto gap-x-[3px] relative',
+    'border !inline-flex items-center !w-auto gap-x-[5px] relative',
     omitBorders && '!border-0',
+    className,
   )
 
   const cellStyle = clsx('cursor-pointer relative')
@@ -38,7 +39,7 @@ function DatePicker({
   const dayMonthCellStyle = clsx(cellStyle, '')
   const selectLayer = clsx('absolute w-full opacity-0')
   const displayLayer = clsx(
-    'relative pointer-events-none top-[2px]',
+    'relative pointer-events-none top-[0px]',
     'text-[15px] text-ellipsis font-medium !text-primary',
     'flex items-center w-full',
   )
@@ -150,13 +151,12 @@ function DatePicker({
       )
     }
   }
+
   return (
-    <>
-      <div className={rootClassName}>
-        {renderItems}
-        {!omitCalendarIcon && <CalendarIcon className="text-tertiary opacity-70 ml-2" />}
-      </div>
-    </>
+    <div className={rootClassName} style={styleOverrides}>
+      {renderItems}
+      {!omitCalendarIcon && <CalendarIcon className="text-tertiary opacity-70 ml-2" />}
+    </div>
   )
 }
 

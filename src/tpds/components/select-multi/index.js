@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import clsx from 'clsx'
 import { PTiny } from '../../elements/typography'
 import Cross from '../../assets/svgs/16x16/Cross'
+import { baseInputStyles } from '../../elements/input'
 
 const getCurrentInputValue = (options, selectedIndexes, labelProp) => {
   if (!selectedIndexes || selectedIndexes.length === 0) return []
@@ -145,16 +146,16 @@ const SelectMulti = ({
         }}
         className={clsx(
           'pointer-events-none',
-          'w-4 h-4 absolute right-[12px] top-[9px]',
+          'w-4 h-4 absolute right-[12px] top-[11px]',
           'text-tertiary',
           //'!hover:text-black !hover:dark:text-white',
-          isOpen && 'rotate-180 text-black dark:text-white !top-[11px] !right-[9px]',
+          isOpen && 'rotate-180 !top-[12px] !right-[9px]',
         )}
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
       </svg>
       {displayValue.length > 0 && (
-        <div className="absolute right-[34px] top-[10px]">
+        <div className="absolute right-[34px] top-[12px]">
           <Cross
             className="text-tertiary hover:text-black hover:dark:text-white cursor-pointer"
             onClick={e => {
@@ -167,19 +168,14 @@ const SelectMulti = ({
       )}
       <div
         className={clsx(
+          baseInputStyles,
           'flex flex-row flex-wrap gap-2 items-center justify-between',
-          'w-full !h-[36px]',
-          'px-1.5 py-1 rounded focus:outline-none',
           'font-normal',
-          'bg-transparent text-primary border-transparent',
           'border-2',
-          isInvalid
-            ? '!border-red'
-            : '!border-[#ededed] dark:!border-[#384147] focus:!border-black dark:focus:!border-white',
+          isInvalid && '!border-red',
           'cursor-pointer',
           'select-none',
-          'transition duration-100',
-          isOpen && '!border-black dark:!border-white',
+          isOpen && '!border-blue',
         )}
       >
         <div className="flex gap-1 flex-wrap">
@@ -233,7 +229,7 @@ const SelectMulti = ({
         </div>
       </div>
       {isOpen && (
-        <div className="w-full flex flex-col space-y-1 items-start text-start p-2 rounded bg-window border-2 border-window z-50 absolute top-[100%] left-0 max-h-40 overflow-auto">
+        <div className="w-full flex flex-col space-y-1 items-start text-left p-1 lg:p-2 rounded bg-window border-2 border-window shadow-md dark:shadow-none z-50 absolute top-[100%] left-0 max-h-40 overflow-auto">
           {optionsToShow.map((option, index) => (
             <div
               key={labelProp ? option[labelProp] : option}
@@ -244,14 +240,14 @@ const SelectMulti = ({
                 //setIsOpen(false)
               }}
               className={clsx(
-                '!px-3 !p-2 m-0',
+                'p-2 m-0',
                 'text-start font-medium',
                 'text-xs xl:text-sm',
                 '!outline-none',
                 `w-full select-none cursor-pointer text-center`,
                 `bg-window rounded`,
-                `hover:bg-grey-light-scale-200 dark:hover:bg-grey-dark-scale-300`,
-                isSelected(option) && `!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-400`,
+                `hover:bg-grey-light-scale-100 hover:dark:bg-grey-dark-scale-600`,
+                isSelected(option) && `!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-500`,
               )}
             >
               <PTiny

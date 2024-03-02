@@ -3,7 +3,12 @@ import { TextInput } from '../../elements/input'
 import { HexAlphaColorPicker } from 'react-colorful'
 import clsx from 'clsx'
 
-const classColorSquare = clsx(`w-[40px] h-[33px] rounded`, `border-2 border-input`)
+const classColorSquare = clsx(
+  'cursor-pointer',
+  'w-full max-w-[40px] h-[40px] rounded-[6px] relative',
+  'bg-grey-light-scale-400 dark:bg-grey-dark-scale-400',
+)
+const classColorInnerSquare = clsx('w-[30px] h-[30px] rounded-[3px] absolute top-[5px] left-[5px]')
 
 const ColorPickerInput = props => {
   const { onChangeHandler, hexColor } = props
@@ -31,13 +36,11 @@ const ColorPickerInput = props => {
   }, [wrapperRef])
 
   return (
-    <div className="tpds-color-picker flex w-[100%] items-center gap-x-1 relative" ref={wrapperRef}>
-      <div
-        className={classColorSquare}
-        style={{ backgroundColor: hexColor }}
-        onClick={() => setColorPickerActive(!colorPickerActive)}
-      />
-      <TextInput outlineStyle placeholder="Hex" value={hexColor} onChange={onInputChangeHandler} />
+    <div className="tpds-color-picker inline-flex gap-x-1 w-full relative" ref={wrapperRef}>
+      <div className={classColorSquare} onClick={() => setColorPickerActive(!colorPickerActive)}>
+        <div className={classColorInnerSquare} style={{ backgroundColor: hexColor }} />
+      </div>
+      <TextInput placeholder="Hex" value={hexColor} onChange={onInputChangeHandler} />
       {colorPickerActive && (
         <div className="absolute top-[35px] left-0 z-10">
           <HexAlphaColorPicker color={hexColor} onChange={handlePickerColorChange} />
