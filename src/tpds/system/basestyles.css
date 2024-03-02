@@ -34,8 +34,12 @@
   color: var(--text-primary);
 }
 
-.dark .prismjs {
-  background: var(--grey-dark-800) !important;
+.prismjs {
+  background: transparent !important;
+  border: none !important;
+  overflow: hidden;
+  padding: 0.1em;
+  white-space: normal;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   text-align: left;
   white-space: pre;
@@ -53,15 +57,6 @@
   padding: 1em;
   margin: 0;
   overflow: auto;
-  border-radius: 0.3em;
-}
-
-.prismjs {
-  background: var(--bg-window) !important;
-  border: 2px solid var(--border-window) !important;
-  border-radius: 8px;
-  padding: 0.1em;
-  white-space: normal;
 }
 
 .dark .prismjs .tag {
