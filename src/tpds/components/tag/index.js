@@ -47,7 +47,6 @@ const defaultStyle = [
   'bg-grey-light-scale-50 text-grey-dark-scale-700',
   'dark:bg-grey-dark-scale-700 dark:text-grey-light-scale-200',
   'border border-grey-light-scale-400 dark:border-grey-dark-scale-400',
-  'shadow-md dark:shadow-none',
 ]
 const infoStyle = ['bg-blue text-white dark:text-black']
 const successStyle = ['bg-green text-white dark:text-black']

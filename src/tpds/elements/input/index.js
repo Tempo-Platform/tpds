@@ -9,10 +9,8 @@ export const baseInputStyles = [
   'border-2',
   'font-medium text-primary',
   'placeholder:text-blue leading-none',
-  'placeholder-shown:bg-white dark:placeholder-shown:bg-grey-dark-scale-900',
-  'bg-grey-light-scale-50 dark:bg-grey-dark-scale-700',
-  'placeholder-shown:border-grey-light-scale-400 dark:placeholder-shown:border-grey-dark-scale-400',
-  'border-grey-light-scale-600 dark:border-grey-dark-scale-300',
+  'bg-grey-light-scale-50 dark:bg-grey-dark-scale-900',
+  'border-grey-light-scale-400 dark:border-grey-dark-scale-400',
   'focus:border-blue dark:focus:border-blue',
 ]
 

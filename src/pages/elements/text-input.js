@@ -16,55 +16,51 @@ export default function TextInputPage() {
           subTitle="The TextInput element is used by the TextInput component. Use the TextInput element
           directly for custom scenarios."
         />
-        <Window>
-          <P>Import input element</P>
-          <br />
-          <CodeBlock code={codeImport} />
-        </Window>
+        <P>Import input element</P>
+        <br />
+        <CodeBlock code={codeImport} />
         <br />
         <br />
         <H6>States</H6>
         <Separator />
         <br />
         <br />
-        <Window>
-          <P>Default</P>
-          <br />
-          <CodeGridComponent
-            code={codeDefault}
-            element={
-              <TextInput
-                onChange={e => setInputValue(e.target.value)}
-                value={inputValue}
-                placeholder="Placeholder"
-              />
-            }
-          />
-          <br />
-          <br />
-          <P>Valid</P>
-          <br />
-          <CodeGridComponent
-            code={codeValid}
-            element={<TextInput isValid defaultValue="Text" placeholder="Placeholder" />}
-          />
-          <br />
-          <br />
-          <P>Invalid</P>
-          <br />
-          <CodeGridComponent
-            code={codeInvalid}
-            element={<TextInput isInvalid defaultValue="Text" placeholder="Placeholder" />}
-          />
-          <br />
-          <br />
-          <P>Warning</P>
-          <br />
-          <CodeGridComponent
-            code={codeWarning}
-            element={<TextInput isWarning defaultValue="Text" placeholder="Placeholder" />}
-          />
-        </Window>
+        <P>Default</P>
+        <br />
+        <CodeGridComponent
+          code={codeDefault}
+          element={
+            <TextInput
+              onChange={e => setInputValue(e.target.value)}
+              value={inputValue}
+              placeholder="Placeholder"
+            />
+          }
+        />
+        <br />
+        <br />
+        <P>Valid</P>
+        <br />
+        <CodeGridComponent
+          code={codeValid}
+          element={<TextInput isValid defaultValue="Text" placeholder="Placeholder" />}
+        />
+        <br />
+        <br />
+        <P>Invalid</P>
+        <br />
+        <CodeGridComponent
+          code={codeInvalid}
+          element={<TextInput isInvalid defaultValue="Text" placeholder="Placeholder" />}
+        />
+        <br />
+        <br />
+        <P>Warning</P>
+        <br />
+        <CodeGridComponent
+          code={codeWarning}
+          element={<TextInput isWarning defaultValue="Text" placeholder="Placeholder" />}
+        />
         <br />
         <br />
       </Container>
