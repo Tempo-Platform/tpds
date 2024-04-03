@@ -20,9 +20,9 @@ const getOptionIndexFromAllOptions = (options, option, idProp) => {
 
 const Select = ({
   options,
-  selectedIndex,
   handleIndexSelection,
   idProp,
+  selectedIndex = -1,
   excludeIndexes = [],
   noPermanentSelection = false,
   labelProp = 'value',
@@ -118,14 +118,14 @@ const Select = ({
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
       </svg>
-      {selectedIndex >= 0 && (
+      {selectedIndex && selectedIndex >= 0 ? (
         <Cross
           onClick={() => handleIndexSelection(-1)}
           className={clsx(
             'absolute transform top-[12px] right-[40px] cursor-pointer text-[#7e909c]',
           )}
         />
-      )}
+      ) : null}
 
       {isOpen && (
         <div className="w-full flex flex-col space-y-1 items-start text-left p-1 lg:p-2 rounded bg-window border-2 border-window shadow-md dark:shadow-none z-50 absolute top-[100%] left-0 max-h-40 overflow-auto">

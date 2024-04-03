@@ -1,7 +1,7 @@
 import React from 'react'
 import PageHeader from '../../lib/components/PageHeader'
 import { P, PSmall } from '../../tpds/elements/typography'
-import { Container, Window } from '../../tpds/elements/layout'
+import { Container } from '../../tpds/elements/layout'
 import CodeBlock from '../../tpds/components/code'
 import Select from '../../tpds/components/select'
 import PropsTable from '../../tpds/components/props-table'
