@@ -45,7 +45,7 @@ var Tag = function Tag(_ref) {
 };
 var _default = Tag;
 exports["default"] = _default;
-var defaultStyle = ['transition duration-400', 'bg-grey-light-scale-50 text-grey-dark-scale-700', 'dark:bg-grey-dark-scale-700 dark:text-grey-light-scale-200', 'border border-grey-light-scale-400 dark:border-grey-dark-scale-400', 'shadow-md dark:shadow-none'];
+var defaultStyle = ['transition duration-400', 'bg-grey-light-scale-50 text-grey-dark-scale-700', 'dark:bg-grey-dark-scale-700 dark:text-grey-light-scale-200', 'border border-grey-light-scale-400 dark:border-grey-dark-scale-400'];
 var infoStyle = ['bg-blue text-white dark:text-black'];
 var successStyle = ['bg-green text-white dark:text-black'];
 var dangerStyle = ['bg-red text-white dark:text-black'];
