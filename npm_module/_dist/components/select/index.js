@@ -33,9 +33,10 @@ var getOptionIndexFromAllOptions = function getOptionIndexFromAllOptions(options
 };
 var Select = function Select(_ref) {
   var options = _ref.options,
-    selectedIndex = _ref.selectedIndex,
     handleIndexSelection = _ref.handleIndexSelection,
     idProp = _ref.idProp,
+    _ref$selectedIndex = _ref.selectedIndex,
+    selectedIndex = _ref$selectedIndex === void 0 ? -1 : _ref$selectedIndex,
     _ref$excludeIndexes = _ref.excludeIndexes,
     excludeIndexes = _ref$excludeIndexes === void 0 ? [] : _ref$excludeIndexes,
     _ref$noPermanentSelec = _ref.noPermanentSelection,
@@ -114,12 +115,12 @@ var Select = function Select(_ref) {
     strokeLinecap: "round",
     strokeLinejoin: "round",
     d: "M19.5 8.25l-7.5 7.5-7.5-7.5"
-  })), selectedIndex >= 0 && /*#__PURE__*/_react["default"].createElement(_Cross["default"], {
+  })), selectedIndex && selectedIndex >= 0 ? /*#__PURE__*/_react["default"].createElement(_Cross["default"], {
     onClick: function onClick() {
       return handleIndexSelection(-1);
     },
     className: (0, _clsx["default"])('absolute transform top-[12px] right-[40px] cursor-pointer text-[#7e909c]')
-  }), isOpen && /*#__PURE__*/_react["default"].createElement("div", {
+  }) : null, isOpen && /*#__PURE__*/_react["default"].createElement("div", {
     className: "w-full flex flex-col space-y-1 items-start text-left p-1 lg:p-2 rounded bg-window border-2 border-window shadow-md dark:shadow-none z-50 absolute top-[100%] left-0 max-h-40 overflow-auto"
   }, optionsThatMatchInputValue.map(function (option, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
