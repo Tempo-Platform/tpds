@@ -29,6 +29,7 @@ const calculateFinalClass = (defaultClass, props) => {
     props.isLabel && '!select-none',
     props.isLabel && '!leading-none',
     props.isLabel && '!font-label',
+    props.forceLightMode && '!text-black',
   )
   return finalClass
 }

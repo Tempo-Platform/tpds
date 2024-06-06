@@ -41,6 +41,8 @@ var Select = function Select(_ref) {
     excludeIndexes = _ref$excludeIndexes === void 0 ? [] : _ref$excludeIndexes,
     _ref$noPermanentSelec = _ref.noPermanentSelection,
     noPermanentSelection = _ref$noPermanentSelec === void 0 ? false : _ref$noPermanentSelec,
+    _ref$enableClear = _ref.enableClear,
+    enableClear = _ref$enableClear === void 0 ? false : _ref$enableClear,
     _ref$labelProp = _ref.labelProp,
     labelProp = _ref$labelProp === void 0 ? 'value' : _ref$labelProp,
     _ref$placeholder = _ref.placeholder,
@@ -115,7 +117,7 @@ var Select = function Select(_ref) {
     strokeLinecap: "round",
     strokeLinejoin: "round",
     d: "M19.5 8.25l-7.5 7.5-7.5-7.5"
-  })), selectedIndex && selectedIndex >= 0 ? /*#__PURE__*/_react["default"].createElement(_Cross["default"], {
+  })), enableClear && selectedIndex && selectedIndex >= 0 ? /*#__PURE__*/_react["default"].createElement(_Cross["default"], {
     onClick: function onClick() {
       return handleIndexSelection(-1);
     },

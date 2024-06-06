@@ -25,9 +25,11 @@ const Select = ({
   selectedIndex = -1,
   excludeIndexes = [],
   noPermanentSelection = false,
+  enableClear = false,
   labelProp = 'value',
   placeholder = 'Select',
   isInvalid = false,
+  forceLightMode = false,
   useKeyboard = false,
 }) => {
   const wrapperRef = useRef(null)
@@ -89,13 +91,15 @@ const Select = ({
         }}
       >
         <TextInput
+          forceLightMode={forceLightMode}
           placeholder={placeholder}
           value={inputValueToDisplay}
           onChange={e => setInputValue(e.target.value)}
           className={clsx(
             'w-full',
             baseInputStyles,
-            isInvalid && '!border-grey-light-scale-600 dark:!border-grey-dark-scale-300',
+            isInvalid && forceLightMode && '!border-grey-light-scale-600',
+            isInvalid && !forceLightMode && '!border-grey-light-scale-600 dark:!border-grey-dark-scale-300',
             !isOpen && 'cursor-pointer',
             isOpen && '!border-blue',
             !useKeyboard && 'pointer-events-none',
@@ -118,7 +122,8 @@ const Select = ({
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
       </svg>
-      {selectedIndex && selectedIndex >= 0 ? (
+      
+      {enableClear && selectedIndex && selectedIndex >= 0 ? (
         <Cross
           onClick={() => handleIndexSelection(-1)}
           className={clsx(
@@ -141,26 +146,31 @@ const Select = ({
                 'text-start font-medium',
                 'text-xs xl:text-sm',
                 '!outline-none',
-                `w-full select-none cursor-pointer text-center`,
-                `bg-window rounded`,
-                `hover:bg-grey-light-scale-300 hover:dark:bg-grey-dark-scale-600`,
-                isSelected(option) && `!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-500`,
+                'w-full select-none cursor-pointer text-center',
+                'bg-window rounded',
+                forceLightMode && 'hover:bg-grey-light-scale-300',
+                !forceLightMode && 'hover:bg-grey-light-scale-300 hover:dark:bg-grey-dark-scale-600',
+                isSelected(option) && forceLightMode && '!bg-grey-light-scale-300',
+                isSelected(option) && !forceLightMode && '!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-500',
               )}
             >
               <PTiny
+                forceLightMode={forceLightMode}
                 className={clsx(
                   'text-primary text-left !text-[14px] !leading-tight',
-                  isSelected(option) && `!text-black dark:!text-white`,
+                  isSelected(option) && forceLightMode && '!text-black',
+                  isSelected(option) && !forceLightMode && '!text-black dark:!text-white',
                 )}
               >
                 {labelProp ? option[labelProp] : option}
               </PTiny>
               {option.subLabel && (
                 <PNano
+                  forceLightMode={forceLightMode}
                   className={clsx(
                     'mt-1 text-tertiary text-left !text-[13px] !leading-tight',
-                    isSelected(option) &&
-                      `!text-grey-light-scale-800 dark:!text-grey-light-scale-600`,
+                    isSelected(option) && forceLightMode && '!text-grey-light-scale-800',
+                    isSelected(option) && !forceLightMode && '!text-grey-light-scale-800 dark:!text-grey-light-scale-600',
                   )}
                 >
                   {option.subLabel}
@@ -169,7 +179,7 @@ const Select = ({
             </div>
           ))}
           {optionsThatMatchInputValue.length === 0 && (
-            <PTiny className={clsx('text-secondary text-left select-none')}>No matches</PTiny>
+            <PTiny forceLightMode={forceLightMode} className={clsx('text-secondary text-left select-none')}>No matches</PTiny>
           )}
         </div>
       )}

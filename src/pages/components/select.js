@@ -17,6 +17,7 @@ export default function Page() {
           selectedIndex={selectedIndex}
           labelProp={'label'}
           idProp="value"
+          enableClear={true}
           excludeIndexes={[2]}
           useKeyboard={true}
           options={[
@@ -72,6 +73,13 @@ export default function Page() {
               default: 'null',
               required: 'yes',
               description: 'The index to show as selected',
+            },
+            {
+              propName: 'enableClear',
+              type: 'Boolean',
+              default: 'false',
+              required: 'no',
+              description: 'Wether to show an "X" to clear the selected option',
             },
             {
               propName: 'handleIndexSelection',
