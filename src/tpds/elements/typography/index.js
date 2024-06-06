@@ -1,9 +1,11 @@
 import React from 'react'
 import clsx from 'clsx'
+import twMerge from 'tailwind-merge'
+
 const baseStyles = 'text-primary m-0'
 
 const calculateFinalClass = (defaultClass, props) => {
-  const finalClass = clsx(
+  const finalClass = twMerge(clsx(
     baseStyles,
     defaultClass,
     props.className && props.className,
@@ -30,7 +32,7 @@ const calculateFinalClass = (defaultClass, props) => {
     props.isLabel && '!leading-none',
     props.isLabel && '!font-label',
     props.forceLightMode && '!text-black',
-  )
+  ))
   return finalClass
 }
 const pNanoClass = 'text-xxs xl:text-xs'

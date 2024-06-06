@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import { TextInput, baseInputStyles } from '../../elements/input'
 import { PTiny, PNano } from '../../elements/typography'
 import Cross from '../../assets/svgs/16x16/Cross'
+import twMerge from 'tailwind-merge'
 
 const getCurrentInputValue = (options, selectedIndex, labelProp) => {
   if (!selectedIndex && selectedIndex !== 0) return ''
@@ -141,7 +142,7 @@ const Select = ({
                 handleIndexSelection(getOptionIndexFromAllOptions(options, option, idProp))
                 setIsOpen(false)
               }}
-              className={clsx(
+              className={twMerge(clsx(
                 'p-2 m-0',
                 'text-start font-medium',
                 'text-xs xl:text-sm',
@@ -152,7 +153,7 @@ const Select = ({
                 !forceLightMode && 'hover:bg-grey-light-scale-300 hover:dark:bg-grey-dark-scale-600',
                 isSelected(option) && forceLightMode && '!bg-grey-light-scale-300',
                 isSelected(option) && !forceLightMode && '!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-500',
-              )}
+              ))}
             >
               <PTiny
                 forceLightMode={forceLightMode}

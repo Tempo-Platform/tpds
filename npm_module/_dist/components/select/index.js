@@ -49,6 +49,8 @@ var Select = function Select(_ref) {
     placeholder = _ref$placeholder === void 0 ? 'Select' : _ref$placeholder,
     _ref$isInvalid = _ref.isInvalid,
     isInvalid = _ref$isInvalid === void 0 ? false : _ref$isInvalid,
+    _ref$forceLightMode = _ref.forceLightMode,
+    forceLightMode = _ref$forceLightMode === void 0 ? false : _ref$forceLightMode,
     _ref$useKeyboard = _ref.useKeyboard,
     useKeyboard = _ref$useKeyboard === void 0 ? false : _ref$useKeyboard;
   var wrapperRef = (0, _react.useRef)(null);
@@ -97,12 +99,13 @@ var Select = function Select(_ref) {
       setIsOpen(true);
     }
   }, /*#__PURE__*/_react["default"].createElement(_input.TextInput, {
+    forceLightMode: forceLightMode,
     placeholder: placeholder,
     value: inputValueToDisplay,
     onChange: function onChange(e) {
       return setInputValue(e.target.value);
     },
-    className: (0, _clsx["default"])('w-full', _input.baseInputStyles, isInvalid && '!border-grey-light-scale-600 dark:!border-grey-dark-scale-300', !isOpen && 'cursor-pointer', isOpen && '!border-blue', !useKeyboard && 'pointer-events-none'),
+    className: (0, _clsx["default"])('w-full', _input.baseInputStyles, isInvalid && forceLightMode && '!border-grey-light-scale-600', isInvalid && !forceLightMode && '!border-grey-light-scale-600 dark:!border-grey-dark-scale-300', !isOpen && 'cursor-pointer', isOpen && '!border-blue', !useKeyboard && 'pointer-events-none'),
     onFocus: function onFocus() {
       setInputValue('');
     }
@@ -131,13 +134,16 @@ var Select = function Select(_ref) {
         handleIndexSelection(getOptionIndexFromAllOptions(options, option, idProp));
         setIsOpen(false);
       },
-      className: (0, _clsx["default"])('p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', "w-full select-none cursor-pointer text-center", "bg-window rounded", "hover:bg-grey-light-scale-300 hover:dark:bg-grey-dark-scale-600", isSelected(option) && "!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-500")
+      className: (0, _clsx["default"])('p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', 'w-full select-none cursor-pointer text-center', 'bg-window rounded', forceLightMode && 'hover:bg-grey-light-scale-300', !forceLightMode && 'hover:bg-grey-light-scale-300 hover:dark:bg-grey-dark-scale-600', isSelected(option) && forceLightMode && '!bg-grey-light-scale-300', isSelected(option) && !forceLightMode && '!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-500')
     }, /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
-      className: (0, _clsx["default"])('text-primary text-left !text-[14px] !leading-tight', isSelected(option) && "!text-black dark:!text-white")
+      forceLightMode: forceLightMode,
+      className: (0, _clsx["default"])('text-primary text-left !text-[14px] !leading-tight', isSelected(option) && forceLightMode && '!text-black', isSelected(option) && !forceLightMode && '!text-black dark:!text-white')
     }, labelProp ? option[labelProp] : option), option.subLabel && /*#__PURE__*/_react["default"].createElement(_typography.PNano, {
-      className: (0, _clsx["default"])('mt-1 text-tertiary text-left !text-[13px] !leading-tight', isSelected(option) && "!text-grey-light-scale-800 dark:!text-grey-light-scale-600")
+      forceLightMode: forceLightMode,
+      className: (0, _clsx["default"])('mt-1 text-tertiary text-left !text-[13px] !leading-tight', isSelected(option) && forceLightMode && '!text-grey-light-scale-800', isSelected(option) && !forceLightMode && '!text-grey-light-scale-800 dark:!text-grey-light-scale-600')
     }, option.subLabel));
   }), optionsThatMatchInputValue.length === 0 && /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
+    forceLightMode: forceLightMode,
     className: (0, _clsx["default"])('text-secondary text-left select-none')
   }, "No matches")));
 };
