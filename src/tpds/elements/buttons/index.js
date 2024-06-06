@@ -9,6 +9,7 @@ export const Button = ({
   isTiny,
   isLarge,
   isExtraLarge,
+  forceLightMode,
   isDisabled,
   isUppercase,
   className,
@@ -29,7 +30,9 @@ export const Button = ({
       'border-2 rounded-[4px] focus:outline-none',
       'transition duration-400',
       'select-none cursor-pointer',
-      buttonVariantStyles[variant],
+      forceLightMode
+        ? buttonVariantStylesLightOnly[variant]
+        : buttonVariantStyles[variant],
       className,
       isSmall && '!text-sm',
       isUppercase && '!uppercase',
@@ -73,7 +76,7 @@ const successStyles = [
   'active:bg-green-scale-100 active:dark:bg-green-scale-700',
   // border
   'border-green dark:border-green-scale-400',
-  'hover:border-green-scale-200 dark:dark:border-green-scale-400',
+  'hover:border-green-scale-200 dark:border-green-scale-400',
   'active:border-green-scale-300 dark:active:border-green-scale-300',
 ]
 
@@ -87,7 +90,7 @@ const infoStyles = [
   'active:bg-blue-scale-100 active:dark:bg-blue-scale-700',
   // border
   'border-blue dark:border-blue-scale-400',
-  'hover:border-blue-scale-200 dark:dark:border-blue-scale-400',
+  'hover:border-blue-scale-200 dark:border-blue-scale-400',
   'active:border-blue-scale-300 dark:active:border-blue-scale-300',
 ]
 
@@ -101,7 +104,7 @@ const warningStyles = [
   'active:bg-orange-scale-100 active:dark:bg-orange-scale-700',
   // border
   'border-orange dark:border-orange-scale-400',
-  'hover:border-orange-scale-200 dark:dark:border-orange-scale-400',
+  'hover:border-orange-scale-200 dark:border-orange-scale-400',
   'active:border-orange-scale-300 dark:active:border-orange-scale-300',
 ]
 
@@ -115,7 +118,7 @@ const dangerStyles = [
   'active:bg-red-scale-100 active:dark:bg-red-scale-700',
   // border
   'border-red dark:border-red-scale-400',
-  'hover:border-red-scale-200 dark:dark:border-red-scale-400',
+  'hover:border-red-scale-200 dark:border-red-scale-400',
   'active:border-red-scale-300 dark:active:border-red-scale-300',
 ]
 
@@ -131,7 +134,7 @@ const specialStyles = [
   'active:bg-purple-scale-100 active:dark:bg-purple-scale-700',
   // border
   'border-purple dark:border-purple-scale-400',
-  'hover:border-purple-scale-200 dark:dark:border-purple-scale-400',
+  'hover:border-purple-scale-200 dark:border-purple-scale-400',
   'active:border-purple-scale-300 dark:active:border-purple-scale-300',
 ]
 
@@ -175,4 +178,132 @@ const buttonVariantStyles = {
   special: specialStyles,
   contrastghost: contrastghostStyles,
   contrast: contrastStyles,
+}
+
+const defaultStylesLightOnly = [
+  // text
+  'text-grey-dark-scale-600',
+  'hover:text-black hover',
+  'active:text-grey-light-scale-50',
+  // bg
+  'bg-white',
+  'active:bg-grey-dark-scale-800',
+  // border
+  'border-grey-light-scale-400',
+  'hover:border-grey-light-scale-800',
+  'active:border-grey-dark-scale-800',
+]
+
+const successStylesLightOnly = [
+  // text
+  'text-white',
+  'active:text-green-scale-500',
+  // bg
+  'bg-green-scale-500',
+  'hover:bg-green-scale-600',
+  'active:bg-green-scale-100',
+  // border
+  'border-green',
+  'hover:border-green-scale-200',
+  'active:border-green-scale-300',
+]
+
+const infoStylesLightOnly = [
+  // text
+  'text-white',
+  'active:text-blue-scale-500',
+  // bg
+  'bg-blue-scale-500',
+  'hover:bg-blue-scale-600',
+  'active:bg-blue-scale-100',
+  // border
+  'border-blue',
+  'hover:border-blue-scale-200',
+  'active:border-blue-scale-300',
+]
+
+const warningStylesLightOnly = [
+  // text
+  'text-white',
+  'active:text-orange-scale-500',
+  // bg
+  'bg-orange-scale-500',
+  'hover:bg-orange-scale-600',
+  'active:bg-orange-scale-100',
+  // border
+  'border-orange',
+  'hover:border-orange-scale-200',
+  'active:border-orange-scale-300',
+]
+
+const dangerStylesLightOnly = [
+  // text
+  'text-white',
+  'active:text-red-scale-500',
+  // bg
+  'bg-red-scale-500',
+  'hover:bg-red-scale-600',
+  'active:bg-red-scale-100',
+  // border
+  'border-red',
+  'hover:border-red-scale-200',
+  'active:border-red-scale-300',
+]
+
+// special styles using purple
+
+const specialStylesLightOnly = [
+  // text
+  'text-white',
+  'active:text-purple-scale-500',
+  // bg
+  'bg-purple-scale-500',
+  'hover:bg-purple-scale-600',
+  'active:bg-purple-scale-100',
+  // border
+  'border-purple',
+  'hover:border-purple-scale-200',
+  'active:border-purple-scale-300',
+]
+
+const contrastStylesLightOnly = [
+  // text
+  'text-grey-light-scale-50',
+  'hover:text-grey-dark-scale-800',
+  'active:text-grey-dark-scale-200',
+  // bg
+  'bg-grey-dark-scale-500',
+  'hover:bg-grey-light-scale-50',
+  'active:bg-grey-light-scale-200',
+  // border
+  'border-grey-dark-scale-500',
+  'hover:border-grey-dark-scale-400',
+  'active:border-grey-light-scale-400',
+]
+
+const contrastghostStylesLightOnly = [
+  // text
+  'text-grey-dark-scale-600',
+  'hover:text-grey-light-scale-50',
+  'active:text-grey-dark-scale-200',
+  // bg
+  'bg-transparent',
+  'hover:bg-grey-dark-scale-500',
+  'active:bg-grey-light-scale-50',
+  // border
+  'border-grey-dark-scale-500',
+  'hover:border-grey-dark-scale-400',
+  'active:border-grey-light-scale-500',
+]
+
+const buttonVariantStylesLightOnly = {
+  default: defaultStylesLightOnly,
+  secondary: defaultStylesLightOnly,
+  success: successStylesLightOnly,
+  info: infoStylesLightOnly,
+  warning: warningStylesLightOnly,
+  danger: dangerStylesLightOnly,
+  special: specialStylesLightOnly,
+  contrastghost: contrastghostStylesLightOnly,
+  contrast: contrastStylesLightOnly,
 }

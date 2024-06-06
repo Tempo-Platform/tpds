@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import twMerge from 'tailwind-merge'
+import { twMerge } from 'tailwind-merge'
 
 const baseStyles = 'text-primary m-0'
 

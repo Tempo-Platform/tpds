@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import { TextInput, baseInputStyles } from '../../elements/input'
 import { PTiny, PNano } from '../../elements/typography'
 import Cross from '../../assets/svgs/16x16/Cross'
-import twMerge from 'tailwind-merge'
+import { twMerge } from 'tailwind-merge'
 
 const getCurrentInputValue = (options, selectedIndex, labelProp) => {
   if (!selectedIndex && selectedIndex !== 0) return ''

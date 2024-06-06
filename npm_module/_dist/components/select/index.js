@@ -10,6 +10,7 @@ var _clsx = _interopRequireDefault(require("clsx"));
 var _input = require("../../elements/input");
 var _typography = require("../../elements/typography");
 var _Cross = _interopRequireDefault(require("../../assets/svgs/16x16/Cross"));
+var _tailwindMerge = require("tailwind-merge");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -134,7 +135,7 @@ var Select = function Select(_ref) {
         handleIndexSelection(getOptionIndexFromAllOptions(options, option, idProp));
         setIsOpen(false);
       },
-      className: (0, _clsx["default"])('p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', 'w-full select-none cursor-pointer text-center', 'bg-window rounded', forceLightMode && 'hover:bg-grey-light-scale-300', !forceLightMode && 'hover:bg-grey-light-scale-300 hover:dark:bg-grey-dark-scale-600', isSelected(option) && forceLightMode && '!bg-grey-light-scale-300', isSelected(option) && !forceLightMode && '!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-500')
+      className: (0, _tailwindMerge.twMerge)((0, _clsx["default"])('p-2 m-0', 'text-start font-medium', 'text-xs xl:text-sm', '!outline-none', 'w-full select-none cursor-pointer text-center', 'bg-window rounded', forceLightMode && 'hover:bg-grey-light-scale-300', !forceLightMode && 'hover:bg-grey-light-scale-300 hover:dark:bg-grey-dark-scale-600', isSelected(option) && forceLightMode && '!bg-grey-light-scale-300', isSelected(option) && !forceLightMode && '!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-500'))
     }, /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
       forceLightMode: forceLightMode,
       className: (0, _clsx["default"])('text-primary text-left !text-[14px] !leading-tight', isSelected(option) && forceLightMode && '!text-black', isSelected(option) && !forceLightMode && '!text-black dark:!text-white')
