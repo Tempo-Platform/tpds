@@ -74,14 +74,21 @@ const Select = ({
   const inputValueToDisplay = isOpen
     ? inputValue
     : noPermanentSelection
-    ? ''
-    : getCurrentInputValue(options, selectedIndex, labelProp)
+      ? ''
+      : getCurrentInputValue(options, selectedIndex, labelProp)
 
   const isSelected = option => {
     if (!idProp && !labelProp) return false
     const optionIndex = getOptionIndexFromAllOptions(options, option, idProp)
     return optionIndex === selectedIndex
   }
+
+  const drawerStyles = clsx(
+    'w-full flex flex-col space-y-1 items-start text-left',
+    'p-1 lg:p-2 rounded bg-window border-2 border-window shadow-md',
+    'z-50 absolute top-[100%] left-0 max-h-40 overflow-auto',
+    !forceLightMode && 'dark:shadow-none',
+  )
 
   return (
     <div className="flex w-full relative text-left" ref={wrapperRef}>
@@ -100,7 +107,9 @@ const Select = ({
             'w-full',
             baseInputStyles,
             isInvalid && forceLightMode && '!border-grey-light-scale-600',
-            isInvalid && !forceLightMode && '!border-grey-light-scale-600 dark:!border-grey-dark-scale-300',
+            isInvalid &&
+              !forceLightMode &&
+              '!border-grey-light-scale-600 dark:!border-grey-dark-scale-300',
             !isOpen && 'cursor-pointer',
             isOpen && '!border-blue',
             !useKeyboard && 'pointer-events-none',
@@ -123,7 +132,7 @@ const Select = ({
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
       </svg>
-      
+
       {enableClear && selectedIndex && selectedIndex >= 0 ? (
         <Cross
           onClick={() => handleIndexSelection(-1)}
@@ -134,7 +143,7 @@ const Select = ({
       ) : null}
 
       {isOpen && (
-        <div className="w-full flex flex-col space-y-1 items-start text-left p-1 lg:p-2 rounded bg-window border-2 border-window shadow-md dark:shadow-none z-50 absolute top-[100%] left-0 max-h-40 overflow-auto">
+        <div className={drawerStyles}>
           {optionsThatMatchInputValue.map((option, index) => (
             <div
               key={labelProp ? option[labelProp] : option}
@@ -142,18 +151,23 @@ const Select = ({
                 handleIndexSelection(getOptionIndexFromAllOptions(options, option, idProp))
                 setIsOpen(false)
               }}
-              className={twMerge(clsx(
-                'p-2 m-0',
-                'text-start font-medium',
-                'text-xs xl:text-sm',
-                '!outline-none',
-                'w-full select-none cursor-pointer text-center',
-                'bg-window rounded',
-                forceLightMode && 'hover:bg-grey-light-scale-300',
-                !forceLightMode && 'hover:bg-grey-light-scale-300 hover:dark:bg-grey-dark-scale-600',
-                isSelected(option) && forceLightMode && '!bg-grey-light-scale-300',
-                isSelected(option) && !forceLightMode && '!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-500',
-              ))}
+              className={twMerge(
+                clsx(
+                  'p-2 m-0',
+                  'text-start font-medium',
+                  'text-xs xl:text-sm',
+                  '!outline-none',
+                  'w-full select-none cursor-pointer text-center',
+                  'bg-window rounded',
+                  forceLightMode && 'hover:bg-grey-light-scale-300',
+                  !forceLightMode &&
+                    'hover:bg-grey-light-scale-300 hover:dark:bg-grey-dark-scale-600',
+                  isSelected(option) && forceLightMode && '!bg-grey-light-scale-300',
+                  isSelected(option) &&
+                    !forceLightMode &&
+                    '!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-500',
+                ),
+              )}
             >
               <PTiny
                 forceLightMode={forceLightMode}
@@ -171,7 +185,9 @@ const Select = ({
                   className={clsx(
                     'mt-1 text-tertiary text-left !text-[13px] !leading-tight',
                     isSelected(option) && forceLightMode && '!text-grey-light-scale-800',
-                    isSelected(option) && !forceLightMode && '!text-grey-light-scale-800 dark:!text-grey-light-scale-600',
+                    isSelected(option) &&
+                      !forceLightMode &&
+                      '!text-grey-light-scale-800 dark:!text-grey-light-scale-600',
                   )}
                 >
                   {option.subLabel}
@@ -180,7 +196,12 @@ const Select = ({
             </div>
           ))}
           {optionsThatMatchInputValue.length === 0 && (
-            <PTiny forceLightMode={forceLightMode} className={clsx('text-secondary text-left select-none')}>No matches</PTiny>
+            <PTiny
+              forceLightMode={forceLightMode}
+              className={clsx('text-secondary text-left select-none')}
+            >
+              No matches
+            </PTiny>
           )}
         </div>
       )}
