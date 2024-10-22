@@ -91,6 +91,7 @@ var Select = function Select(_ref) {
     var optionIndex = getOptionIndexFromAllOptions(options, option, idProp);
     return optionIndex === selectedIndex;
   };
+  var drawerStyles = (0, _clsx["default"])('w-full flex flex-col space-y-1 items-start text-left', 'p-1 lg:p-2 rounded bg-window border-2 border-window shadow-md', 'z-50 absolute top-[100%] left-0 max-h-40 overflow-auto', !forceLightMode && 'dark:shadow-none');
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex w-full relative text-left",
     ref: wrapperRef
@@ -127,7 +128,7 @@ var Select = function Select(_ref) {
     },
     className: (0, _clsx["default"])('absolute transform top-[12px] right-[40px] cursor-pointer text-[#7e909c]')
   }) : null, isOpen && /*#__PURE__*/_react["default"].createElement("div", {
-    className: "w-full flex flex-col space-y-1 items-start text-left p-1 lg:p-2 rounded bg-window border-2 border-window shadow-md dark:shadow-none z-50 absolute top-[100%] left-0 max-h-40 overflow-auto"
+    className: drawerStyles
   }, optionsThatMatchInputValue.map(function (option, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       key: labelProp ? option[labelProp] : option,
