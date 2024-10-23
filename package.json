@@ -1,6 +1,6 @@
 {
   "name": "tpdsnext",
-  "version": "1.2.113",
+  "version": "1.2.116",
   "private": true,
   "scripts": {
     "dev": "yarn build_colorscss && next dev",
@@ -19,7 +19,7 @@
     "commit": "git add . && git commit -m 'Update NPM module to '$npm_package_version",
     "build_basecss": "postcss src/lib/globals.css -o npm_module/_dist/system/tpds.css",
     "build_colorscss": "node ./scripts/generateColorVars.js",
-    "pack_colorscss": "copyfiles -u 3 ./src/tpds/system/*.* ./npm_module/_dist/system",
+    "pack_colorscss": "copyfiles -u 3 ./src/tpds/system/*.css ./npm_module/_dist/system",
     "pack_categories": "yarn packcomponents && yarn packelements && yarn packconstants && yarn packsystem && yarn packtokens && yarn packassets && yarn build_basecss && yarn build_colorscss && yarn pack_colorscss",
     "packindex": "npx babel --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-syntax-jsx ./src/tpds/index.js --out-file ./npm_module/_dist/index.js",
     "packelements": "npx babel --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-syntax-jsx ./src/tpds/elements/**/**/**/** -d ./npm_module/_dist/elements && rm ./npm_module/_dist/elements/*.*",
