@@ -1,2 +1,4 @@
-import '../assets/fonts/inter/inter.css'
-import '../assets/fonts/sfmono/sfmono.css'
+"use strict";
+
+require("../assets/fonts/inter/inter.css");
+require("../assets/fonts/sfmono/sfmono.css");
