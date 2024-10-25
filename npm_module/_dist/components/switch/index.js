@@ -22,8 +22,8 @@ function Switch(_ref) {
     variant = _ref$variant === void 0 ? 'info' : _ref$variant,
     _ref$disabled = _ref.disabled,
     disabled = _ref$disabled === void 0 ? false : _ref$disabled;
-  var rootStyles = (0, _clsx["default"])('h-6 w-11', 'transition', 'cursor-pointer', 'items-center rounded-full', 'relative inline-flex', active ? bgStyles[variant] : "bg-grey-light-scale-500 dark:bg-grey-dark-scale-300");
-  var circleStyles = (0, _clsx["default"])('transition', 'inline-block h-4 w-4 transform rounded-full bg-body', active ? "translate-x-6" : "translate-x-1");
+  var rootStyles = (0, _clsx["default"])('h-[22px] w-[40px]', 'transition', 'cursor-pointer', 'items-center rounded-full', 'relative inline-flex', active ? bgStyles[variant] : "bg-grey-light-scale-500 dark:bg-grey-dark-scale-300");
+  var circleStyles = (0, _clsx["default"])('transition', 'inline-block h-[16px] w-[16px] transform rounded-full bg-white', active ? "translate-x-[21px]" : "translate-x-[3px]");
   return /*#__PURE__*/_react["default"].createElement("div", {
     onClick: onClick,
     className: rootStyles,
