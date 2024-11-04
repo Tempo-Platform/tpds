@@ -15,7 +15,7 @@ const Tag = ({
 }) => {
   const finalRootClass = clsx(
     props.className ? props.className : '',
-    'border border-2 h-[26px] inline-flex !rounded-[6px] py-1 px-2',
+    'h-[26px] inline-flex !rounded-[6px] py-1 px-2',
     'select-none justify-center items-center align-center gap-1',
     'inline-flex py-0.5 px-1.5 select-none justify-center align-center gap-1',
     rootVariantStyles[variant],
@@ -25,7 +25,7 @@ const Tag = ({
     rootClassName,
   )
   const finalLabelClass = clsx(
-    'text-[12px] font-[600] whitespace-nowrap !text-inherit m-0',
+    'text-[12px] font-[600] whitespace-nowrap !text-inherit m-0 !leading-none',
     isUppercase && 'uppercase',
     labelClassName,
   )
@@ -44,14 +44,13 @@ export default Tag
 
 const defaultStyle = [
   'transition duration-400',
-  'bg-grey-light-scale-50 text-grey-dark-scale-700',
-  'dark:bg-grey-dark-scale-700 dark:text-grey-light-scale-200',
-  'border border-grey-light-scale-400 dark:border-grey-dark-scale-400',
+  'bg-black/10 text-black',
+  'dark:bg-white/10 dark:text-white',
 ]
-const infoStyle = ['bg-blue text-white dark:text-black']
-const successStyle = ['bg-green text-white dark:text-black']
-const dangerStyle = ['bg-red text-white dark:text-black']
-const warningStyle = ['bg-orange text-white dark:text-black']
+const infoStyle = ['bg-blue/20 dark:bg-blue/30 text-blue-scale-500 dark:text-blue-scale-300']
+const successStyle = ['bg-green/20 dark:bg-green/30 text-green-scale-500 dark:text-green-scale-300']
+const dangerStyle = ['bg-red/20 dark:bg-red/30 text-red-scale-500 dark:text-red-scale-300']
+const warningStyle = ['bg-orange/20 dark:bg-orange/30 text-orange-scale-500 dark:text-orange-scale-300']
 
 const defaultStyleWithHover = [
   'hover:bg-grey-dark-scale-400 hover:!text-white dark:hover:bg-grey-light-scale-200 hover:dark:!text-black',
