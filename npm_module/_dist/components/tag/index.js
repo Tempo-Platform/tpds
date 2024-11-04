@@ -29,8 +29,8 @@ var Tag = function Tag(_ref) {
     _ref$labelClassName = _ref.labelClassName,
     labelClassName = _ref$labelClassName === void 0 ? '' : _ref$labelClassName,
     props = _objectWithoutProperties(_ref, _excluded);
-  var finalRootClass = (0, _clsx["default"])(props.className ? props.className : '', 'border border-2 h-[26px] inline-flex !rounded-[6px] py-1 px-2', 'select-none justify-center items-center align-center gap-1', 'inline-flex py-0.5 px-1.5 select-none justify-center align-center gap-1', rootVariantStyles[variant], addHoverEffect && 'cursor-pointer', addHoverEffect && rootVariantStylesWithHover[variant], noBorder && '!border-none', rootClassName);
-  var finalLabelClass = (0, _clsx["default"])('text-[12px] font-[600] whitespace-nowrap !text-inherit m-0', isUppercase && 'uppercase', labelClassName);
+  var finalRootClass = (0, _clsx["default"])(props.className ? props.className : '', 'h-[26px] inline-flex !rounded-[6px] py-1 px-2', 'select-none justify-center items-center align-center gap-1', 'inline-flex py-0.5 px-1.5 select-none justify-center align-center gap-1', rootVariantStyles[variant], addHoverEffect && 'cursor-pointer', addHoverEffect && rootVariantStylesWithHover[variant], noBorder && '!border-none', rootClassName);
+  var finalLabelClass = (0, _clsx["default"])('text-[12px] font-[600] whitespace-nowrap !text-inherit m-0 !leading-none', isUppercase && 'uppercase', labelClassName);
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: finalRootClass,
     onClick: onClick
@@ -45,11 +45,11 @@ var Tag = function Tag(_ref) {
 };
 var _default = Tag;
 exports["default"] = _default;
-var defaultStyle = ['transition duration-400', 'bg-grey-light-scale-50 text-grey-dark-scale-700', 'dark:bg-grey-dark-scale-700 dark:text-grey-light-scale-200', 'border border-grey-light-scale-400 dark:border-grey-dark-scale-400'];
-var infoStyle = ['bg-blue text-white dark:text-black'];
-var successStyle = ['bg-green text-white dark:text-black'];
-var dangerStyle = ['bg-red text-white dark:text-black'];
-var warningStyle = ['bg-orange text-white dark:text-black'];
+var defaultStyle = ['transition duration-400', 'bg-black/10 text-black', 'dark:bg-white/10 dark:text-white'];
+var infoStyle = ['bg-blue/20 dark:bg-blue/30 text-blue-scale-500 dark:text-blue-scale-300'];
+var successStyle = ['bg-green/20 dark:bg-green/30 text-green-scale-500 dark:text-green-scale-300'];
+var dangerStyle = ['bg-red/20 dark:bg-red/30 text-red-scale-500 dark:text-red-scale-300'];
+var warningStyle = ['bg-orange/20 dark:bg-orange/30 text-orange-scale-500 dark:text-orange-scale-300'];
 var defaultStyleWithHover = ['hover:bg-grey-dark-scale-400 hover:!text-white dark:hover:bg-grey-light-scale-200 hover:dark:!text-black'];
 var infoStyleWithHover = ['hover:bg-blue/80'];
 var successStyleWithHover = ['hover:bg-green/80'];

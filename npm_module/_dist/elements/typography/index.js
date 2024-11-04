@@ -13,11 +13,11 @@ var calculateFinalClass = function calculateFinalClass(defaultClass, props) {
   var finalClass = (0, _tailwindMerge.twMerge)((0, _clsx["default"])(baseStyles, defaultClass, props.className && props.className, props.isSmall && '!text-sm', props.isUnderline && '!underline', props.isUppercase && '!uppercase', props.isItalic && '!italic', props.isLight && '!font-light', props.isMedium && '!font-medium', props.isBold && '!font-bold', props.isExtraBold && '!font-extrabold', props.isHeavy && '!font-black', props.isPulsing && '!animate-pulse', props.isCentered && '!text-center', props.noSelect && '!select-none', props.isWhite && '!text-white', props.isGreen && '!text-green', props.isRed && '!text-red', props.isBlue && '!text-blue', props.isOrange && '!text-orange', props.isYellow && '!text-yellow', props.leadingNone && '!leading-none', props.isLabel && '!select-none', props.isLabel && '!leading-none', props.isLabel && '!font-label', props.forceLightMode && '!text-black'));
   return finalClass;
 };
-var pNanoClass = 'text-xxs xl:text-xs';
-var pTinyClass = 'text-xs xl:text-sm';
-var pSmallClass = 'text-sm xl:text-base';
-var pClass = 'text-base xl:text-lg';
-var pLargeClass = 'text-lg xl:text-xl';
+var pNanoClass = 'text-xxs md:text-xs';
+var pTinyClass = 'text-xs md:text-sm';
+var pSmallClass = 'text-sm md:text-base';
+var pClass = 'text-base md:text-lg';
+var pLargeClass = 'text-lg md:text-xl';
 var h6Class = 'text-base md:text-lg lg:text-xl xl:text-2xl tracking-normal leading-tight';
 var h5Class = 'text-lg md:text-xl lg:text-2xl xl:text-3xl tracking-normal leading-tight';
 var h4Class = 'text-xl md:text-2xl lg:text-3xl xl:text-4xl tracking-normal leading-tight';
