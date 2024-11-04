@@ -35,11 +35,11 @@ const calculateFinalClass = (defaultClass, props) => {
   ))
   return finalClass
 }
-const pNanoClass = 'text-xxs xl:text-xs'
-const pTinyClass = 'text-xs xl:text-sm'
-const pSmallClass = 'text-sm xl:text-base'
-const pClass = 'text-base xl:text-lg'
-const pLargeClass = 'text-lg xl:text-xl'
+const pNanoClass = 'text-xxs md:text-xs'
+const pTinyClass = 'text-xs md:text-sm'
+const pSmallClass = 'text-sm md:text-base'
+const pClass = 'text-base md:text-lg'
+const pLargeClass = 'text-lg md:text-xl'
 const h6Class = 'text-base md:text-lg lg:text-xl xl:text-2xl tracking-normal leading-tight'
 const h5Class = 'text-lg md:text-xl lg:text-2xl xl:text-3xl tracking-normal leading-tight'
 const h4Class = 'text-xl md:text-2xl lg:text-3xl xl:text-4xl tracking-normal leading-tight'
