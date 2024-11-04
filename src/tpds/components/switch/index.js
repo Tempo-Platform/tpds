@@ -10,7 +10,7 @@ const bgStyles = {
 
 function Switch({ active = false, onClick = null, variant = 'info', disabled = false }) {
   const rootStyles = clsx(
-    'h-6 w-11',
+    'h-[22px] w-[40px]',
     'transition',
     'cursor-pointer',
     'items-center rounded-full',
@@ -20,8 +20,8 @@ function Switch({ active = false, onClick = null, variant = 'info', disabled = f
 
   const circleStyles = clsx(
     'transition',
-    'inline-block h-4 w-4 transform rounded-full bg-body',
-    active ? `translate-x-6` : `translate-x-1`,
+    'inline-block h-[16px] w-[16px] transform rounded-full bg-white',
+    active ? `translate-x-[21px]` : `translate-x-[3px]`,
   )
 
   return (

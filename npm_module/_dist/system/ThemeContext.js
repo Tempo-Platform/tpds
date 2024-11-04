@@ -1,49 +1,57 @@
-import React from 'react'
+"use strict";
 
-const getInitialTheme = () => {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ThemeProvider = exports.ThemeContext = void 0;
+var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+var getInitialTheme = function getInitialTheme() {
   if (typeof window !== 'undefined' && window.localStorage) {
-    const storedPrefs = window.localStorage.getItem('color-theme')
+    var storedPrefs = window.localStorage.getItem('color-theme');
     if (typeof storedPrefs === 'string') {
-      return storedPrefs
+      return storedPrefs;
     }
-
-    const userMedia = window.matchMedia('(prefers-color-scheme: dark)')
+    var userMedia = window.matchMedia('(prefers-color-scheme: dark)');
     if (userMedia.matches) {
-      return 'dark'
+      return 'dark';
     }
   }
-
-  return 'dark'
-}
-
-const ThemeContext = React.createContext()
-
-const ThemeProvider = ({ initialTheme, children }) => {
-  const [theme, setTheme] = React.useState(getInitialTheme)
-
-  const rawSetTheme = theme => {
-    const root = window.document.documentElement
-    const isDark = theme === 'dark'
-
-    root.classList.remove(isDark ? 'light' : 'dark')
-    root.classList.add(theme)
-
-    localStorage.setItem('color-theme', theme)
-  }
-
+  return 'dark';
+};
+var ThemeContext = /*#__PURE__*/_react["default"].createContext();
+exports.ThemeContext = ThemeContext;
+var ThemeProvider = function ThemeProvider(_ref) {
+  var initialTheme = _ref.initialTheme,
+    children = _ref.children;
+  var _React$useState = _react["default"].useState(getInitialTheme),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    theme = _React$useState2[0],
+    setTheme = _React$useState2[1];
+  var rawSetTheme = function rawSetTheme(theme) {
+    var root = window.document.documentElement;
+    var isDark = theme === 'dark';
+    root.classList.remove(isDark ? 'light' : 'dark');
+    root.classList.add(theme);
+    localStorage.setItem('color-theme', theme);
+  };
   if (initialTheme) {
-    rawSetTheme(initialTheme)
+    rawSetTheme(initialTheme);
   }
-
-  React.useEffect(() => {
-    rawSetTheme(theme)
-  }, [theme])
-
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  )
-}
-
-export { ThemeContext, ThemeProvider }
+  _react["default"].useEffect(function () {
+    rawSetTheme(theme);
+  }, [theme]);
+  return /*#__PURE__*/_react["default"].createElement(ThemeContext.Provider, {
+    value: {
+      theme: theme,
+      setTheme: setTheme
+    }
+  }, children);
+};
+exports.ThemeProvider = ThemeProvider;

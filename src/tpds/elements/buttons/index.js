@@ -25,9 +25,10 @@ export const Button = ({
     clsx(
       'flex justify-center items-center gap-x-2',
       'px-3',
-      'h-[40px]',
-      '!font-medium text-[14px] leading-[100%] whitespace-nowrap',
-      'border-2 rounded-[4px] focus:outline-none',
+      'h-[36px]',
+      '!font-[600] text-[14px] leading-[100%] whitespace-nowrap',
+      'rounded-[4px] focus:outline-none',
+      // 'border-2',
       'transition duration-400',
       'select-none cursor-pointer',
       forceLightMode
@@ -55,71 +56,72 @@ export const Button = ({
 const defaultStyles = [
   // text
   'text-grey-dark-scale-600 dark:text-grey-light-scale-300',
-  'hover:text-black hover:dark:text-white',
-  'active:text-grey-light-scale-50 active:dark:text-grey-dark-scale-900',
+  'hover:text-grey-dark-scale-800 hover:dark:text-white',
+  'active:text-grey-dark-scale-900 active:dark:text-grey-light-scale-100',
   // bg
-  'bg-white dark:bg-grey-dark-scale-800',
-  'active:bg-grey-dark-scale-800 active:dark:bg-grey-light-scale-50',
+  'bg-grey-light-scale-300 dark:bg-grey-dark-scale-400',
+  'hover:bg-grey-light-scale-400 hover:dark:bg-grey-dark-scale-500',
+  'active:bg-grey-light-scale-500 active:dark:bg-grey-dark-scale-600',
   // border
-  'border-grey-light-scale-400 dark:border-grey-dark-scale-400',
-  'hover:border-grey-light-scale-800 dark:hover:border-grey-light-scale-800',
-  'active:border-grey-dark-scale-800 active:dark:border-grey-light-scale-50',
+  // 'border-grey-light-scale-400 dark:border-grey-dark-scale-400',
+  // 'hover:border-grey-light-scale-800 dark:hover:border-grey-light-scale-800',
+  // 'active:border-grey-dark-scale-800 active:dark:border-grey-light-scale-50',
 ]
 
 const successStyles = [
   // text
   'text-white dark:text-white',
-  'active:text-green-scale-500 active:dark:text-white',
+  'active:text-white active:dark:text-white',
   // bg
-  'bg-green-scale-500 dark:bg-green-scale-900',
-  'hover:bg-green-scale-600 hover:dark:bg-green-scale-800',
-  'active:bg-green-scale-100 active:dark:bg-green-scale-700',
+  'bg-green-scale-500 dark:bg-green-scale-600',
+  'hover:bg-green-scale-600 hover:dark:bg-green-scale-500',
+  'active:bg-green-scale-700 active:dark:bg-green-scale-700',
   // border
-  'border-green dark:border-green-scale-400',
-  'hover:border-green-scale-200 dark:border-green-scale-400',
-  'active:border-green-scale-300 dark:active:border-green-scale-300',
+  // 'border-green dark:border-green-scale-400',
+  // 'hover:border-green-scale-200 dark:border-green-scale-400',
+  // 'active:border-green-scale-300 dark:active:border-green-scale-300',
 ]
 
 const infoStyles = [
   // text
   'text-white dark:text-white',
-  'active:text-blue-scale-500 active:dark:text-white',
+  'active:text-white active:dark:text-white',
   // bg
-  'bg-blue-scale-500 dark:bg-blue-scale-900',
-  'hover:bg-blue-scale-600 hover:dark:bg-blue-scale-800',
-  'active:bg-blue-scale-100 active:dark:bg-blue-scale-700',
+  'bg-blue-scale-500 dark:bg-blue-scale-600',
+  'hover:bg-blue-scale-600 hover:dark:bg-blue-scale-500',
+  'active:bg-blue-scale-700 active:dark:bg-blue-scale-700',
   // border
-  'border-blue dark:border-blue-scale-400',
-  'hover:border-blue-scale-200 dark:border-blue-scale-400',
-  'active:border-blue-scale-300 dark:active:border-blue-scale-300',
+  // 'border-blue dark:border-blue-scale-400',
+  // 'hover:border-blue-scale-200 dark:border-blue-scale-400',
+  // 'active:border-blue-scale-300 dark:active:border-blue-scale-300',
 ]
 
 const warningStyles = [
   // text
   'text-white dark:text-white',
-  'active:text-orange-scale-500 active:dark:text-white',
+  'active:text-white active:dark:text-white',
   // bg
-  'bg-orange-scale-500 dark:bg-orange-scale-900',
-  'hover:bg-orange-scale-600 hover:dark:bg-orange-scale-800',
-  'active:bg-orange-scale-100 active:dark:bg-orange-scale-700',
+  'bg-orange-scale-500 dark:bg-orange-scale-600',
+  'hover:bg-orange-scale-600 hover:dark:bg-orange-scale-500',
+  'active:bg-orange-scale-700 active:dark:bg-orange-scale-700',
   // border
-  'border-orange dark:border-orange-scale-400',
-  'hover:border-orange-scale-200 dark:border-orange-scale-400',
-  'active:border-orange-scale-300 dark:active:border-orange-scale-300',
+  // 'border-orange dark:border-orange-scale-400',
+  // 'hover:border-orange-scale-200 dark:border-orange-scale-400',
+  // 'active:border-orange-scale-300 dark:active:border-orange-scale-300',
 ]
 
 const dangerStyles = [
   // text
   'text-white dark:text-white',
-  'active:text-red-scale-500 active:dark:text-white',
+  'active:text-white active:dark:text-white',
   // bg
-  'bg-red-scale-500 dark:bg-red-scale-900',
-  'hover:bg-red-scale-600 hover:dark:bg-red-scale-800',
-  'active:bg-red-scale-100 active:dark:bg-red-scale-700',
+  'bg-red-scale-500 dark:bg-red-scale-600',
+  'hover:bg-red-scale-600 hover:dark:bg-red-scale-500',
+  'active:bg-red-scale-700 active:dark:bg-red-scale-700',
   // border
-  'border-red dark:border-red-scale-400',
-  'hover:border-red-scale-200 dark:border-red-scale-400',
-  'active:border-red-scale-300 dark:active:border-red-scale-300',
+  // 'border-red dark:border-red-scale-400',
+  // 'hover:border-red-scale-200 dark:border-red-scale-400',
+  // 'active:border-red-scale-300 dark:active:border-red-scale-300',
 ]
 
 // special styles using purple
@@ -127,30 +129,30 @@ const dangerStyles = [
 const specialStyles = [
   // text
   'text-white dark:text-white',
-  'active:text-purple-scale-500 active:dark:text-white',
+  'active:text-white active:dark:text-white',
   // bg
-  'bg-purple-scale-500 dark:bg-purple-scale-900',
-  'hover:bg-purple-scale-600 hover:dark:bg-purple-scale-800',
-  'active:bg-purple-scale-100 active:dark:bg-purple-scale-700',
+  'bg-purple-scale-500 dark:bg-purple-scale-600',
+  'hover:bg-purple-scale-600 hover:dark:bg-purple-scale-500',
+  'active:bg-purple-scale-700 active:dark:bg-purple-scale-700',
   // border
-  'border-purple dark:border-purple-scale-400',
-  'hover:border-purple-scale-200 dark:border-purple-scale-400',
-  'active:border-purple-scale-300 dark:active:border-purple-scale-300',
+  // 'border-purple dark:border-purple-scale-400',
+  // 'hover:border-purple-scale-200 dark:border-purple-scale-400',
+  // 'active:border-purple-scale-300 dark:active:border-purple-scale-300',
 ]
 
 const contrastStyles = [
   // text
   'text-grey-light-scale-50 dark:text-grey-dark-scale-800',
-  'hover:text-grey-dark-scale-800 hover:dark:text-grey-light-scale-100',
-  'active:text-grey-dark-scale-200 active:dark:text-grey-light-scale-600',
+  'hover:text-grey-light-scale-50 hover:dark:text-grey-dark-scale-900',
+  'active:text-grey-light-scale-500 active:dark:text-grey-dark-scale-100',
   // bg
-  'bg-grey-dark-scale-500 dark:bg-grey-light-scale-300',
-  'hover:bg-grey-light-scale-50 hover:dark:bg-transparent',
-  'active:bg-grey-light-scale-200 active:dark:bg-transparent',
+  'bg-grey-dark-scale-600 dark:bg-grey-light-scale-300',
+  'hover:bg-grey-dark-scale-900 hover:dark:bg-grey-light-scale-200',
+  'active:bg-grey-dark-scale-700 active:dark:bg-white',
   // border
-  'border-grey-dark-scale-500 dark:border-grey-light-scale-300',
-  'hover:border-grey-dark-scale-400 hover:dark:border-grey-light-scale-200',
-  'active:border-grey-light-scale-400 active:dark:border-grey-light-scale-900',
+  // 'border-grey-dark-scale-500 dark:border-grey-light-scale-300',
+  // 'hover:border-grey-dark-scale-400 hover:dark:border-grey-light-scale-200',
+  // 'active:border-grey-light-scale-400 active:dark:border-grey-light-scale-900',
 ]
 
 const contrastghostStyles = [
@@ -163,7 +165,7 @@ const contrastghostStyles = [
   'hover:bg-grey-dark-scale-500 hover:dark:bg-grey-light-scale-300',
   'active:bg-grey-light-scale-50 active:dark:bg-grey-dark-scale-800',
   // border
-  'border-grey-dark-scale-500 dark:border-grey-light-scale-300',
+  'border-2 border-grey-dark-scale-500 dark:border-grey-light-scale-300',
   'hover:border-grey-dark-scale-400 hover:dark:border-grey-light-scale-200',
   'active:border-grey-light-scale-500 active:dark:border-grey-light-scale-900',
 ]
