@@ -43,5 +43,8 @@ export const TextInput = ({
         '!border-orange focus:!border-orange dark:!border-orange dark:focus:!border-orange',
     ),
   )
+  if(props.type){
+    return <input type={props.type} className={finalClass} {...props} />
+  }
   return <input type="text" className={finalClass} {...props} />
 }

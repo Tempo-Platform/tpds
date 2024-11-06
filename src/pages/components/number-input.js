@@ -15,7 +15,12 @@ export default function Page() {
         <Window className="mt-8">
           <NumberInput
             initialValue={number}
-            maxValue={1000}
+            step={0.1}
+            minValue={-100}
+            maxValue={100}
+            maxLength={100}
+            allowFloats={true}
+            floatPrecision={3}
             onChangeCallback={value => setNumber(value)}
           />
         </Window>
@@ -35,11 +40,18 @@ export default function Page() {
               description: 'The initial value displayed',
             },
             {
-              propName: 'onChangeCallback',
-              type: 'Function',
+              propName: 'step',
+              type: 'Number',
+              default: '1',
+              required: 'no',
+              description: 'The amount to increase/decrease on arrow key input',
+            },
+            {
+              propName: 'minValue',
+              type: 'Number',
               default: 'null',
-              required: 'yes',
-              description: 'The used to update the value',
+              required: 'no',
+              description: 'The minimum number the input will accept',
             },
             {
               propName: 'maxValue',
@@ -70,6 +82,13 @@ export default function Page() {
               required: 'no',
               description: 'How many decimal places to allow if floats are allowed',
             },
+            {
+              propName: 'onChangeCallback',
+              type: 'Function',
+              default: 'null',
+              required: 'yes',
+              description: 'The used to update the value',
+            },
           ]}
         />
       </Container>
@@ -84,6 +103,11 @@ const [number, setNumber] = React.useState(10)
 
 <NumberInput
   initialValue={number}
-  maxValue={1000}
+  step={0.1}
+  minValue={-100}
+  maxValue={100}
+  maxLength={100}
+  allowFloats={true}
+  floatPrecision={3}
   onChangeCallback={value => setNumber(value)}
 />`
