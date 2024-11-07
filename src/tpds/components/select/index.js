@@ -146,7 +146,7 @@ const Select = ({
         <div className={drawerStyles}>
           {optionsThatMatchInputValue.map((option, index) => (
             <div
-              key={labelProp ? option[labelProp] : option}
+              key={index}
               onClick={() => {
                 handleIndexSelection(getOptionIndexFromAllOptions(options, option, idProp))
                 setIsOpen(false)
