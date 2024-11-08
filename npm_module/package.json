@@ -1,6 +1,6 @@
 {
   "name": "@tempoplatform/tpds",
-  "version": "1.2.122",
+  "version": "1.2.123",
   "author": "Tempo Platform Design Team",
   "main": "./_dist/index.js",
   "exports": {

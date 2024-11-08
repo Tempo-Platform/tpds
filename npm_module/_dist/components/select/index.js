@@ -131,7 +131,7 @@ var Select = function Select(_ref) {
     className: drawerStyles
   }, optionsThatMatchInputValue.map(function (option, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
-      key: labelProp ? option[labelProp] : option,
+      key: index,
       onClick: function onClick() {
         handleIndexSelection(getOptionIndexFromAllOptions(options, option, idProp));
         setIsOpen(false);

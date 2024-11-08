@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _input = require("../../../elements/input");
-var _excluded = ["initialValue", "onChangeCallback", "maxValue", "maxLength", "allowFloats", "floatPrecision"];
+var _excluded = ["initialValue", "onChangeCallback", "step", "minValue", "maxValue", "maxLength", "allowFloats", "floatPrecision"];
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -20,13 +20,13 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 var deleteKeyCodes = [8, 46];
-var round = function round(value, precision) {
-  var multiplier = Math.pow(10, precision || 0);
-  return Math.round(value * multiplier) / multiplier;
-};
 function InputNumber(_ref) {
   var initialValue = _ref.initialValue,
     onChangeCallback = _ref.onChangeCallback,
+    _ref$step = _ref.step,
+    step = _ref$step === void 0 ? 1 : _ref$step,
+    _ref$minValue = _ref.minValue,
+    minValue = _ref$minValue === void 0 ? null : _ref$minValue,
     _ref$maxValue = _ref.maxValue,
     maxValue = _ref$maxValue === void 0 ? null : _ref$maxValue,
     _ref$maxLength = _ref.maxLength,
@@ -36,68 +36,56 @@ function InputNumber(_ref) {
     _ref$floatPrecision = _ref.floatPrecision,
     floatPrecision = _ref$floatPrecision === void 0 ? 2 : _ref$floatPrecision,
     props = _objectWithoutProperties(_ref, _excluded);
-  if (!initialValue) {
+  if (initialValue === undefined || initialValue === null) {
     initialValue = '';
   }
-  var limitCharacters = function limitCharacters(value) {
-    if (!allowFloats) {
-      return value.replace(/[^0-9]/g, '');
-    }
-    return value.replace(/[^0-9.]/g, '');
-  };
-  var handleKeyDown = function handleKeyDown(e) {
-    // always allow delete
-    if (deleteKeyCodes.indexOf(e.keyCode) === -1) {
-      // prevent 2 full stops
-      if (e.keyCode === 190 && e.target.value.indexOf('.') !== -1) {
-        return e.preventDefault();
-      }
-      // enforce max length
-      if (maxLength && e.target.value.length >= maxLength) {
-        return e.preventDefault();
-      }
-      // get current numeric value
-      var currentValueFloat = parseFloat(e.target.value);
-      // if current value is already equal to max value, prevent further input
-      if (maxValue && currentValueFloat === maxValue) {
-        return e.preventDefault();
-      }
-      // enforce max value
-      var futureValueFloat = parseFloat(e.target.value + e.key);
-      if (maxValue && futureValueFloat > maxValue) {
-        return e.preventDefault();
-      }
-      var stringFloatValue = String(futureValueFloat);
-      if (allowFloats && stringFloatValue.indexOf('.') !== -1 && stringFloatValue.split('.')[1].length > floatPrecision) {
-        return e.preventDefault();
-      }
-    }
-  };
-  var formatValue = function formatValue(value) {
-    var newValue = limitCharacters(value);
-    return newValue;
-  };
-  var initialStateValue = formatValue(initialValue ? initialValue.toString() : '');
+  var initialStateValue = initialValue ? initialValue.toString() : '';
   var _useState = (0, _react.useState)(initialStateValue),
     _useState2 = _slicedToArray(_useState, 2),
     value = _useState2[0],
     setValue = _useState2[1];
-  var handleChange = function handleChange(event) {
-    setValue(formatValue(event.target.value));
-    if (onChangeCallback) {
-      var _value = limitCharacters(event.target.value);
-      _value = parseFloat(_value);
-      if (allowFloats) {
-        _value = round(_value, floatPrecision);
-      }
-      onChangeCallback(_value);
+  var validateInput = function validateInput(input) {
+    var currentValueFloat = parseFloat(input);
+    if (allowFloats) {
+      currentValueFloat = currentValueFloat.toFixed(floatPrecision);
+    } else {
+      currentValueFloat = parseInt(Math.round(input));
     }
+    if (maxLength) {
+      var stringFloatValue = String(currentValueFloat);
+      currentValueFloat = parseFloat(stringFloatValue.slice(0, maxLength));
+    }
+    if (maxValue) {
+      currentValueFloat = Math.min(currentValueFloat, maxValue);
+    }
+    if (minValue) {
+      currentValueFloat = Math.max(currentValueFloat, minValue);
+    }
+    return currentValueFloat;
+  };
+  var handleInput = function handleInput(event) {
+    setValue(event.target.value);
+  };
+  var handleChange = function handleChange(event) {
+    var value = event.target.value;
+    if (value) {
+      value = validateInput(value);
+    }
+    setValue(value);
+  };
+  var handleBlur = function handleBlur(event) {
+    var value = validateInput(event.target.value);
+    setValue(value);
   };
   return /*#__PURE__*/_react["default"].createElement(_input.TextInput, _extends({
-    type: "text",
-    onKeyDown: handleKeyDown,
+    type: "number",
+    step: step,
+    min: minValue,
+    max: maxValue,
+    onInput: handleInput,
     value: value,
-    onChange: handleChange
+    onChange: handleChange,
+    onBlur: handleBlur
   }, props));
 }
 var _default = InputNumber;

@@ -30,6 +30,12 @@ var TextInput = function TextInput(_ref) {
   var finalClass = (0, _tailwindMerge.twMerge)(_clsx["default"].apply(void 0, baseInputStyles.concat(colorStylesToUse, [
   //outlineStyle && outlineStyles,
   className, forceLightMode && '!text-black', isValid && '!border-green focus:!border-green dark:!border-green dark:focus:!border-green', isInvalid && '!border-red focus:!border-red dark:!border-red dark:focus:!border-red', isWarning && '!border-orange focus:!border-orange dark:!border-orange dark:focus:!border-orange'])));
+  if (props.type) {
+    return /*#__PURE__*/_react["default"].createElement("input", _extends({
+      type: props.type,
+      className: finalClass
+    }, props));
+  }
   return /*#__PURE__*/_react["default"].createElement("input", _extends({
     type: "text",
     className: finalClass
