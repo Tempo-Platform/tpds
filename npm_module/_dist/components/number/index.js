@@ -72,10 +72,12 @@ function InputNumber(_ref) {
       value = validateInput(value);
     }
     setValue(value);
+    onChangeCallback(value);
   };
   var handleBlur = function handleBlur(event) {
     var value = validateInput(event.target.value);
     setValue(value);
+    onChangeCallback(value);
   };
   return /*#__PURE__*/_react["default"].createElement(_input.TextInput, _extends({
     type: "number",
