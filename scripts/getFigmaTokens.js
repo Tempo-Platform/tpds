@@ -1,10 +1,10 @@
-const fs = require('fs')
-const axios = require('axios')
-const Color = require('color')
-const _ = require('lodash')
+import fs from 'fs'
+import axios from 'axios'
+import Color from 'color'
+import _ from 'lodash'
 
 // get values from env
-const { config } = require('dotenv')
+import { config } from 'dotenv'
 config()
 const FIGMA_API_TOKEN = process.env.FIGMA_API_TOKEN
 const fileId = process.env.FIGMA_FILE_ID
@@ -25,7 +25,7 @@ const getFormattedObjectValue = function (obj, valueProperty) {
   return resultObject
 }
 
-async function getDesignTokens(url = '', data = {}) {
+export async function getDesignTokens(url = '', data = {}) {
   console.log('TPDS ::: Fetching Figma document...')
 
   const res = await axios.get(`https://api.figma.com/v1/files/${fileId}/styles`, {
@@ -209,8 +209,9 @@ async function getDesignTokens(url = '', data = {}) {
   }
 
   fs.writeFileSync('./src/tpds/tokens/index.json', JSON.stringify(finalDataObject, null, 2))
+  return
 }
 
-getDesignTokens().then(() => {
-  console.log('TPDS ::: Design tokens saved.')
-})
+// getDesignTokens().then(() => {
+//   console.log('TPDS ::: Design tokens saved.')
+// })

@@ -30,6 +30,8 @@
     "packassets": "yarn packsvgs && yarn packfonts",
     "packsvgs": "npx babel --presets=@babel/preset-env,@babel/preset-react --plugins=@babel/plugin-syntax-jsx ./src/tpds/assets/svgs/**/**/** -d ./npm_module/_dist/assets/svgs && rm ./npm_module/_dist/assets/svgs/*.*",
     "packfonts": "copyfiles -u 3 ./src/tpds/assets/fonts/**/**/*.* ./npm_module/_dist/assets",
+    "publish_module": "cd npm_module && npm version --no-git-tag-version patch && npm publish",
+    "publish_tpds_patch": "node ./publishTPDS.js",
     "pull-tokens": "node ./scripts/getFigmaTokens.js"
   },
   "dependencies": {
@@ -45,6 +47,7 @@
     "clsx": "^1.2.1",
     "color": "^4.2.3",
     "copyfiles": "^2.4.1",
+    "del": "^8.0.0",
     "dotenv": "^16.3.1",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.6",
