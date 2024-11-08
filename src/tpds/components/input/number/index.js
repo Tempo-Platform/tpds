@@ -52,11 +52,13 @@ function InputNumber({
         value = validateInput(value)
       }
       setValue(value)
+      onChangeCallback(value)
   }
 
   const handleBlur = event => {
       let value = validateInput(event.target.value)
       setValue(value)
+      onChangeCallback(value)
   }
 
   return (
