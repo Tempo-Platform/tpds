@@ -10,7 +10,7 @@ const insertLines = array => {
     if (index % 1 === 0) {
       newArray.push(
         <div
-          className="w-[10%] h-[2px] bg-grey-light-scale-300 dark:bg-grey-dark-scale-300"
+          className="w-full h-[2px] bg-grey-light-scale-300 dark:bg-grey-dark-scale-300 shrink @[400px]:mx-2"
           key={`{tpds-steps-line-${index}}`}
         />,
       )
@@ -45,11 +45,11 @@ function StepsComponent({ steps, currentStepIndex = 0, ...props }) {
     `tracking-tight leading-none relative top-[-1px] whitespace-nowrap!`,
   )
   const items = steps.map((step, index) => (
-    <div className="flex gap-x-2 items-center" key={step.title}>
+    <div className="shrink-0 flex gap-x-2 items-center" key={step.title}>
       <div
         className={clsx(
           calculateStepCircleState(index, currentStepIndex),
-          'rounded-[50%] !w-[24px] !h-[24px] flex justify-center items-center border-2',
+          'shrink-0 rounded-[50%] !w-[24px] !h-[24px] flex justify-center items-center border-2',
         )}
       >
         {currentStepIndex > index ? (
@@ -68,7 +68,7 @@ function StepsComponent({ steps, currentStepIndex = 0, ...props }) {
   const itemsWithLines = insertLines(items)
   itemsWithLines.pop()
   return (
-    <div className="w-full flex justify-between items-center gap-x-[4px]" {...props}>
+    <div className="w-full flex justify-between items-center gap-x-[4px]  @container" {...props}>
       {itemsWithLines}
     </div>
   )
