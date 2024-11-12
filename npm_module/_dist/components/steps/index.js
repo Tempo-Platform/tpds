@@ -19,7 +19,7 @@ var insertLines = function insertLines(array) {
     newArray.push(item);
     if (index % 1 === 0) {
       newArray.push( /*#__PURE__*/_react["default"].createElement("div", {
-        className: "w-[10%] h-[2px] bg-grey-light-scale-300 dark:bg-grey-dark-scale-300",
+        className: "w-full h-[2px] bg-grey-light-scale-300 dark:bg-grey-dark-scale-300 shrink @[400px]:mx-2",
         key: "{tpds-steps-line-".concat(index, "}")
       }));
     }
@@ -52,10 +52,10 @@ function StepsComponent(_ref) {
   var classPLabel = (0, _clsx["default"])("!text-[13px] relative top-[-1px]", "tracking-tight leading-none relative top-[-1px] whitespace-nowrap!");
   var items = steps.map(function (step, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
-      className: "flex gap-x-2 items-center",
+      className: "shrink-0 flex gap-x-2 items-center",
       key: step.title
     }, /*#__PURE__*/_react["default"].createElement("div", {
-      className: (0, _clsx["default"])(calculateStepCircleState(index, currentStepIndex), 'rounded-[50%] !w-[24px] !h-[24px] flex justify-center items-center border-2')
+      className: (0, _clsx["default"])(calculateStepCircleState(index, currentStepIndex), 'shrink-0 rounded-[50%] !w-[24px] !h-[24px] flex justify-center items-center border-2')
     }, currentStepIndex > index ? /*#__PURE__*/_react["default"].createElement(_Check["default"], {
       className: "text-white"
     }) : /*#__PURE__*/_react["default"].createElement(_typography.PTiny, {
@@ -69,7 +69,7 @@ function StepsComponent(_ref) {
   var itemsWithLines = insertLines(items);
   itemsWithLines.pop();
   return /*#__PURE__*/_react["default"].createElement("div", _extends({
-    className: "w-full flex justify-between items-center gap-x-[4px]"
+    className: "w-full flex justify-between items-center gap-x-[4px]  @container"
   }, props), itemsWithLines);
 }
 var _default = StepsComponent;
