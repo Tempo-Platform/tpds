@@ -87,7 +87,7 @@ function DateRangePicker({
             maxYearsToFuture={maxYearsToFuture}
             allowPast={allowPast}
             omitBorders={true}
-            styleOverrides={{ height: '30px !important' }}
+            styleOverrides={{ background: 'transparent' }}
           />
         </div>
       </div>
