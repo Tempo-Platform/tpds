@@ -95,7 +95,7 @@ function DateRangePicker(_ref) {
     allowPast: allowPast,
     omitBorders: true,
     styleOverrides: {
-      height: '30px !important'
+      background: 'transparent'
     }
   }))), wrongTimeWarning && endDateBeforeStartDate && /*#__PURE__*/_react["default"].createElement(_typography.PNano, {
     isMedium: true,
