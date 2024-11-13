@@ -5,34 +5,36 @@ import { twMerge } from 'tailwind-merge'
 const baseStyles = 'text-primary m-0'
 
 const calculateFinalClass = (defaultClass, props) => {
-  const finalClass = twMerge(clsx(
-    baseStyles,
-    defaultClass,
-    props.className && props.className,
-    props.isSmall && '!text-sm',
-    props.isUnderline && '!underline',
-    props.isUppercase && '!uppercase',
-    props.isItalic && '!italic',
-    props.isLight && '!font-light',
-    props.isMedium && '!font-medium',
-    props.isBold && '!font-bold',
-    props.isExtraBold && '!font-extrabold',
-    props.isHeavy && '!font-black',
-    props.isPulsing && '!animate-pulse',
-    props.isCentered && '!text-center',
-    props.noSelect && '!select-none',
-    props.isWhite && '!text-white',
-    props.isGreen && '!text-green',
-    props.isRed && '!text-red',
-    props.isBlue && '!text-blue',
-    props.isOrange && '!text-orange',
-    props.isYellow && '!text-yellow',
-    props.leadingNone && '!leading-none',
-    props.isLabel && '!select-none',
-    props.isLabel && '!leading-none',
-    props.isLabel && '!font-label',
-    props.forceLightMode && '!text-black',
-  ))
+  const finalClass = twMerge(
+    clsx(
+      baseStyles,
+      defaultClass,
+      props.className && props.className,
+      props.isSmall && '!text-sm',
+      props.isUnderline && '!underline',
+      props.isUppercase && '!uppercase',
+      props.isItalic && '!italic',
+      props.isLight && '!font-light',
+      props.isMedium && '!font-medium',
+      props.isBold && '!font-bold',
+      props.isExtraBold && '!font-extrabold',
+      props.isHeavy && '!font-black',
+      props.isPulsing && '!animate-pulse',
+      props.isCentered && '!text-center',
+      props.noSelect && '!select-none',
+      props.isWhite && '!text-white',
+      props.isGreen && '!text-green',
+      props.isRed && '!text-red',
+      props.isBlue && '!text-blue',
+      props.isOrange && '!text-orange',
+      props.isYellow && '!text-yellow',
+      props.leadingNone && '!leading-none',
+      props.isLabel && '!select-none',
+      props.isLabel && '!leading-none',
+      props.isLabel && '!font-label',
+      props.forceLightMode && '!text-black',
+    ),
+  )
   return finalClass
 }
 const pNanoClass = 'text-xxs md:text-xs'
@@ -50,7 +52,7 @@ const h1Class = 'text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight lea
 export const PNano = props => {
   const finalClass = calculateFinalClass(pNanoClass, props)
   return (
-    <p className={finalClass} style={props.style} onClick={props.onClick}>
+    <p {...props} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -59,7 +61,7 @@ export const PNano = props => {
 export const PTiny = props => {
   const finalClass = calculateFinalClass(pTinyClass, props)
   return (
-    <p className={finalClass} style={props.style} onClick={props.onClick}>
+    <p {...props} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -68,7 +70,7 @@ export const PTiny = props => {
 export const PSmall = props => {
   const finalClass = calculateFinalClass(pSmallClass, props)
   return (
-    <p className={finalClass} style={props.style} onClick={props.onClick}>
+    <p {...props} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -77,7 +79,7 @@ export const PSmall = props => {
 export const P = props => {
   const finalClass = calculateFinalClass(pClass, props)
   return (
-    <p className={finalClass} style={props.style} onClick={props.onClick}>
+    <p {...props} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -86,7 +88,7 @@ export const P = props => {
 export const PLarge = props => {
   const finalClass = calculateFinalClass(pLargeClass, props)
   return (
-    <p className={finalClass} style={props.style} onClick={props.onClick}>
+    <p {...props} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -95,7 +97,7 @@ export const PLarge = props => {
 export const H6 = props => {
   const finalClass = calculateFinalClass(h6Class, props)
   return (
-    <h6 className={finalClass} style={props.style} onClick={props.onClick}>
+    <h6 {...props} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </h6>
   )
@@ -104,7 +106,7 @@ export const H6 = props => {
 export const H5 = props => {
   const finalClass = calculateFinalClass(h5Class, props)
   return (
-    <h5 className={finalClass} style={props.style} onClick={props.onClick}>
+    <h5 {...props} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </h5>
   )
@@ -113,7 +115,7 @@ export const H5 = props => {
 export const H4 = props => {
   const finalClass = calculateFinalClass(h4Class, props)
   return (
-    <h4 className={finalClass} style={props.style} onClick={props.onClick}>
+    <h4 {...props} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </h4>
   )
@@ -122,7 +124,7 @@ export const H4 = props => {
 export const H3 = props => {
   const finalClass = calculateFinalClass(h3Class, props)
   return (
-    <h3 className={finalClass} style={props.style} onClick={props.onClick}>
+    <h3 {...props} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </h3>
   )
@@ -131,7 +133,7 @@ export const H3 = props => {
 export const H2 = props => {
   const finalClass = calculateFinalClass(h2Class, props)
   return (
-    <h2 className={finalClass} style={props.style} onClick={props.onClick}>
+    <h2 {...props} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </h2>
   )
@@ -151,7 +153,7 @@ export const H1 = props => {
 export const AccentColor = props => {
   const finalClass = calculateFinalClass('!text-blue', props)
   return (
-    <span className={finalClass} style={props.style}>
+    <span {...props} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -160,7 +162,7 @@ export const AccentColor = props => {
 export const Bold = props => {
   const finalClass = calculateFinalClass('!font-bold', props)
   return (
-    <span className={finalClass} style={props.style}>
+    <span {...props} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -169,7 +171,7 @@ export const Bold = props => {
 export const Medium = props => {
   const finalClass = calculateFinalClass('!font-medium', props)
   return (
-    <span className={finalClass} style={props.style}>
+    <span {...props} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -178,7 +180,7 @@ export const Medium = props => {
 export const Underline = props => {
   const finalClass = calculateFinalClass('!underline', props)
   return (
-    <span className={finalClass} style={props.style}>
+    <span {...props} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -187,7 +189,7 @@ export const Underline = props => {
 export const Red = props => {
   const finalClass = calculateFinalClass('!text-red', props)
   return (
-    <span className={finalClass} style={props.style}>
+    <span {...props} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -196,7 +198,7 @@ export const Red = props => {
 export const Blue = props => {
   const finalClass = calculateFinalClass('!text-blue', props)
   return (
-    <span className={finalClass} style={props.style}>
+    <span {...props} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -205,7 +207,7 @@ export const Blue = props => {
 export const Green = props => {
   const finalClass = calculateFinalClass('!text-green', props)
   return (
-    <span className={finalClass} style={props.style}>
+    <span {...props} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -214,7 +216,7 @@ export const Green = props => {
 export const Orange = props => {
   const finalClass = calculateFinalClass('!text-orange', props)
   return (
-    <span className={finalClass} style={props.style}>
+    <span {...props} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -222,7 +224,11 @@ export const Orange = props => {
 
 export const Code = props => {
   const finalClass = calculateFinalClass('font-mono font-bold', props)
-  return <span className={finalClass}>{props.children}</span>
+  return (
+    <span {...props} className={finalClass} style={props.style}>
+      {props.children}
+    </span>
+  )
 }
 
 // // form labels
@@ -233,7 +239,11 @@ export const FormLabelNano = props => {
     'font-label text-tertiary font-medium leading-none',
     props.className,
   )
-  return <p className={finalClass}>{props.children}</p>
+  return (
+    <p {...props} className={finalClass} style={props.style}>
+      {props.children}
+    </p>
+  )
 }
 
 export const FormLabelTiny = props => {
@@ -242,7 +252,11 @@ export const FormLabelTiny = props => {
     'font-label text-tertiary font-medium leading-none',
     props.className,
   )
-  return <p className={finalClass}>{props.children}</p>
+  return (
+    <p {...props} className={finalClass} style={props.style}>
+      {props.children}
+    </p>
+  )
 }
 
 export const FormLabelSmall = props => {
@@ -251,7 +265,11 @@ export const FormLabelSmall = props => {
     'font-label text-tertiary font-medium leading-none',
     props.className,
   )
-  return <p className={finalClass}>{props.children}</p>
+  return (
+    <p {...props} className={finalClass} style={props.style}>
+      {props.children}
+    </p>
+  )
 }
 
 export const FormLabel = props => {
@@ -260,5 +278,9 @@ export const FormLabel = props => {
     'font-label text-tertiary font-medium leading-none',
     props.className,
   )
-  return <p className={finalClass}>{props.children}</p>
+  return (
+    <p {...props} className={finalClass} style={props.style}>
+      {props.children}
+    </p>
+  )
 }
