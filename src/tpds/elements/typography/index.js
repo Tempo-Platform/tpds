@@ -51,8 +51,10 @@ const h1Class = 'text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight lea
 
 export const PNano = props => {
   const finalClass = calculateFinalClass(pNanoClass, props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <p {...props} className={finalClass} style={props.style} onClick={props.onClick}>
+    <p {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -60,8 +62,10 @@ export const PNano = props => {
 
 export const PTiny = props => {
   const finalClass = calculateFinalClass(pTinyClass, props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <p {...props} className={finalClass} style={props.style} onClick={props.onClick}>
+    <p {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -69,8 +73,10 @@ export const PTiny = props => {
 
 export const PSmall = props => {
   const finalClass = calculateFinalClass(pSmallClass, props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <p {...props} className={finalClass} style={props.style} onClick={props.onClick}>
+    <p {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -78,8 +84,10 @@ export const PSmall = props => {
 
 export const P = props => {
   const finalClass = calculateFinalClass(pClass, props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <p {...props} className={finalClass} style={props.style} onClick={props.onClick}>
+    <p {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -87,8 +95,10 @@ export const P = props => {
 
 export const PLarge = props => {
   const finalClass = calculateFinalClass(pLargeClass, props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <p {...props} className={finalClass} style={props.style} onClick={props.onClick}>
+    <p {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -96,8 +106,10 @@ export const PLarge = props => {
 
 export const H6 = props => {
   const finalClass = calculateFinalClass(h6Class, props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <h6 {...props} className={finalClass} style={props.style} onClick={props.onClick}>
+    <h6 {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </h6>
   )
@@ -105,8 +117,10 @@ export const H6 = props => {
 
 export const H5 = props => {
   const finalClass = calculateFinalClass(h5Class, props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <h5 {...props} className={finalClass} style={props.style} onClick={props.onClick}>
+    <h5 {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </h5>
   )
@@ -114,8 +128,10 @@ export const H5 = props => {
 
 export const H4 = props => {
   const finalClass = calculateFinalClass(h4Class, props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <h4 {...props} className={finalClass} style={props.style} onClick={props.onClick}>
+    <h4 {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </h4>
   )
@@ -123,8 +139,10 @@ export const H4 = props => {
 
 export const H3 = props => {
   const finalClass = calculateFinalClass(h3Class, props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <h3 {...props} className={finalClass} style={props.style} onClick={props.onClick}>
+    <h3 {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </h3>
   )
@@ -132,8 +150,10 @@ export const H3 = props => {
 
 export const H2 = props => {
   const finalClass = calculateFinalClass(h2Class, props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <h2 {...props} className={finalClass} style={props.style} onClick={props.onClick}>
+    <h2 {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
       {props.children}
     </h2>
   )
@@ -152,8 +172,10 @@ export const H1 = props => {
 
 export const AccentColor = props => {
   const finalClass = calculateFinalClass('!text-blue', props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <span {...props} className={finalClass} style={props.style}>
+    <span {...xprops} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -161,8 +183,10 @@ export const AccentColor = props => {
 
 export const Bold = props => {
   const finalClass = calculateFinalClass('!font-bold', props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <span {...props} className={finalClass} style={props.style}>
+    <span {...xprops} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -170,8 +194,10 @@ export const Bold = props => {
 
 export const Medium = props => {
   const finalClass = calculateFinalClass('!font-medium', props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <span {...props} className={finalClass} style={props.style}>
+    <span {...xprops} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -179,8 +205,10 @@ export const Medium = props => {
 
 export const Underline = props => {
   const finalClass = calculateFinalClass('!underline', props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <span {...props} className={finalClass} style={props.style}>
+    <span {...xprops} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -188,8 +216,10 @@ export const Underline = props => {
 
 export const Red = props => {
   const finalClass = calculateFinalClass('!text-red', props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <span {...props} className={finalClass} style={props.style}>
+    <span {...xprops} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -197,8 +227,10 @@ export const Red = props => {
 
 export const Blue = props => {
   const finalClass = calculateFinalClass('!text-blue', props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <span {...props} className={finalClass} style={props.style}>
+    <span {...xprops} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -206,8 +238,10 @@ export const Blue = props => {
 
 export const Green = props => {
   const finalClass = calculateFinalClass('!text-green', props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <span {...props} className={finalClass} style={props.style}>
+    <span {...xprops} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -215,8 +249,10 @@ export const Green = props => {
 
 export const Orange = props => {
   const finalClass = calculateFinalClass('!text-orange', props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <span {...props} className={finalClass} style={props.style}>
+    <span {...xprops} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -224,8 +260,10 @@ export const Orange = props => {
 
 export const Code = props => {
   const finalClass = calculateFinalClass('font-mono font-bold', props)
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <span {...props} className={finalClass} style={props.style}>
+    <span {...xprops} className={finalClass} style={props.style}>
       {props.children}
     </span>
   )
@@ -239,8 +277,10 @@ export const FormLabelNano = props => {
     'font-label text-tertiary font-medium leading-none',
     props.className,
   )
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <p {...props} className={finalClass} style={props.style}>
+    <p {...xprops} className={finalClass} style={props.style}>
       {props.children}
     </p>
   )
@@ -252,8 +292,10 @@ export const FormLabelTiny = props => {
     'font-label text-tertiary font-medium leading-none',
     props.className,
   )
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <p {...props} className={finalClass} style={props.style}>
+    <p {...xprops} className={finalClass} style={props.style}>
       {props.children}
     </p>
   )
@@ -265,8 +307,10 @@ export const FormLabelSmall = props => {
     'font-label text-tertiary font-medium leading-none',
     props.className,
   )
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <p {...props} className={finalClass} style={props.style}>
+    <p {...xprops} className={finalClass} style={props.style}>
       {props.children}
     </p>
   )
@@ -278,8 +322,10 @@ export const FormLabel = props => {
     'font-label text-tertiary font-medium leading-none',
     props.className,
   )
+  const xprops = {}
+  if(props.id) { xprops.id = props.id}
   return (
-    <p {...props} className={finalClass} style={props.style}>
+    <p {...xprops} className={finalClass} style={props.style}>
       {props.children}
     </p>
   )
