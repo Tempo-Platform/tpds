@@ -7,7 +7,7 @@ import clsx from 'clsx'
 import { useState } from 'react'
 import { PTiny } from '@tpds/elements/typography'
 import ColorModeControl from '@/lib/components/ColorModeControl'
-import packageJson from '../../../package.json'
+import packageJson from '../../../npm_module/package.json'
 import { usePathname } from 'next/navigation'
 
 function GlobalNav() {
