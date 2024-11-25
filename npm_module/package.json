@@ -1,46 +1,158 @@
 {
   "name": "@tempoplatform/tpds",
-  "version": "1.2.133",
+  "version": "2.0.15",
   "author": "Tempo Platform Design Team",
-  "main": "./_dist/index.js",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "node ./build_tpds.js",
+    "generate_color_vars": "node ./scripts/generateColorVars.js",
+    "update_tokens": "node ./scripts/callGetTokens.js"
+  },
   "exports": {
-    ".": "./_dist/index.js",
-    "./*": "./_dist/*",
-    "./elements/typography": "./_dist/elements/typography/index.js",
-    "./elements/buttons": "./_dist/elements/buttons/index.js",
-    "./elements/input": "./_dist/elements/input/index.js",
-    "./elements/layout": "./_dist/elements/layout/index.js",
-    "./components/buttons": "./_dist/components/buttons/index.js",
-    "./components/callout": "./_dist/components/callout/index.js",
-    "./components/checkbox": "./_dist/components/checkbox/index.js",
-    "./components/code": "./_dist/components/code/index.js",
-    "./components/color-picker": "./_dist/components/color-picker/index.js",
-    "./components/date-picker": "./_dist/components/date-picker/index.js",
-    "./components/date-range-picker": "./_dist/components/date-range-picker/index.js",
-    "./components/expandable-section": "./_dist/components/expandable-section/index.js",
-    "./components/hero": "./_dist/components/hero/index.js",
-    "./components/radiogroup": "./_dist/components/radiogroup/index.js",
-    "./components/radiotabs": "./_dist/components/radiotabs/index.js",
-    "./components/spinner": "./_dist/components/spinner/index.js",
-    "./components/modal": "./_dist/components/modal/index.js",
-    "./components/steps": "./_dist/components/steps/index.js",
-    "./components/switch": "./_dist/components/switch/index.js",
-    "./components/table": "./_dist/components/table/index.js",
-    "./components/props-table": "./_dist/components/props-table/index.js",
-    "./components/tag": "./_dist/components/tag/index.js",
-    "./components/select": "./_dist/components/select/index.js",
-    "./components/select-multi": "./_dist/components/select-multi/index.js",
-    "./components/thumbnails-island": "./_dist/components/thumbnails-island/index.js",
-    "./components/input/number": "./_dist/components/input/number/index.js",
-    "./components/input/price": "./_dist/components/input/price/index.js",
-    "./assets/svgs/16x16": "./_dist/assets/svgs/16x16/index.js",
-    "./assets/svgs/alerts": "./_dist/assets/svgs/alerts/index.js",
-    "./assets/svgs/arrows": "./_dist/assets/svgs/arrows/index.js",
-    "./assets/svgs/icons": "./_dist/assets/svgs/icons/index.js",
-    "./assets/svgs/notifications": "./_dist/assets/svgs/notifications/index.js",
-    "./system/Colors.js": "./_dist/system/Colors.js",
-    "./system/Fonts.js": "./_dist/system/Fonts.js",
-    "./tailwind.config.js": "./_dist/system/tailwind.config.js"
+    "./elements/typography": {
+      "types": "./dist/elements/typography/index.d.ts",
+      "default": "./dist/elements/typography/index.js"
+    },
+    "./elements/buttons": {
+      "types": "./dist/elements/buttons/index.d.ts",
+      "default": "./dist/elements/buttons/index.js"
+    },
+    "./elements/input": {
+      "types": "./dist/elements/input/index.d.ts",
+      "default": "./dist/elements/input/index.js"
+    },
+    "./elements/layout": {
+      "types": "./dist/elements/layout/index.d.ts",
+      "default": "./dist/elements/layout/index.js"
+    },
+    "./components/buttons": {
+      "types": "./dist/components/buttons/index.d.ts",
+      "default": "./dist/components/buttons/index.js"
+    },
+    "./components/callout": {
+      "types": "./dist/components/callout/index.d.ts",
+      "default": "./dist/components/callout/index.js"
+    },
+    "./components/checkbox": {
+      "types": "./dist/components/checkbox/index.d.ts",
+      "default": "./dist/components/checkbox/index.js"
+    },
+    "./components/code": {
+      "types": "./dist/components/code/index.d.ts",
+      "default": "./dist/components/code/index.js"
+    },
+    "./components/color-picker": {
+      "types": "./dist/components/color-picker/index.d.ts",
+      "default": "./dist/components/color-picker/index.js"
+    },
+    "./components/date-picker": {
+      "types": "./dist/components/date-picker/index.d.ts",
+      "default": "./dist/components/date-picker/index.js"
+    },
+    "./components/date-range-picker": {
+      "types": "./dist/components/date-range-picker/index.d.ts",
+      "default": "./dist/components/date-range-picker/index.js"
+    },
+    "./components/expandable-section": {
+      "types": "./dist/components/expandable-section/index.d.ts",
+      "default": "./dist/components/expandable-section/index.js"
+    },
+    "./components/hero": {
+      "types": "./dist/components/hero/index.d.ts",
+      "default": "./dist/components/hero/index.js"
+    },
+    "./components/light-mode-toggle": {
+      "types": "./dist/components/light-mode-toggle/index.d.ts",
+      "default": "./dist/components/light-mode-toggle/index.js"
+    },
+    "./components/radiogroup": {
+      "types": "./dist/components/radiogroup/index.d.ts",
+      "default": "./dist/components/radiogroup/index.js"
+    },
+    "./components/radiotabs": {
+      "types": "./dist/components/radiotabs/index.d.ts",
+      "default": "./dist/components/radiotabs/index.js"
+    },
+    "./components/spinner": {
+      "types": "./dist/components/spinner/index.d.ts",
+      "default": "./dist/components/spinner/index.js"
+    },
+    "./components/modal": {
+      "types": "./dist/components/modal/index.d.ts",
+      "default": "./dist/components/modal/index.js"
+    },
+    "./components/steps": {
+      "types": "./dist/components/steps/index.d.ts",
+      "default": "./dist/components/steps/index.js"
+    },
+    "./components/switch": {
+      "types": "./dist/components/switch/index.d.ts",
+      "default": "./dist/components/switch/index.js"
+    },
+    "./components/table": {
+      "types": "./dist/components/table/index.d.ts",
+      "default": "./dist/components/table/index.js"
+    },
+    "./components/props-table": {
+      "types": "./dist/components/props-table/index.d.ts",
+      "default": "./dist/components/props-table/index.js"
+    },
+    "./components/tag": {
+      "types": "./dist/components/tag/index.d.ts",
+      "default": "./dist/components/tag/index.js"
+    },
+    "./components/select": {
+      "types": "./dist/components/select/index.d.ts",
+      "default": "./dist/components/select/index.js"
+    },
+    "./components/select-multi": {
+      "types": "./dist/components/select-multi/index.d.ts",
+      "default": "./dist/components/select-multi/index.js"
+    },
+    "./components/thumbnails-island": {
+      "types": "./dist/components/thumbnails-island/index.d.ts",
+      "default": "./dist/components/thumbnails-island/index.js"
+    },
+    "./components/input/number": {
+      "types": "./dist/components/input/number/index.d.ts",
+      "default": "./dist/components/input/number/index.js"
+    },
+    "./components/input/price": {
+      "types": "./dist/components/input/price/index.d.ts",
+      "default": "./dist/components/input/price/index.js"
+    },
+    "./constants/enums": {
+      "types": "./dist/constants/enums/index.d.ts",
+      "default": "./dist/constants/enums/index.js"
+    },
+    "./constants/spacings": "./dist/constants/spacings/index.js",
+    "./constants/colors": "./dist/constants/colors/index.js",
+    "./assets/svgs/tiny": {
+      "types": "./dist/assets/svgs/tiny/index.d.ts",
+      "default": "./dist/assets/svgs/tiny/index.js"
+    },
+    "./assets/svgs/alerts": {
+      "types": "./dist/assets/svgs/alerts/index.d.ts",
+      "default": "./dist/assets/svgs/alerts/index.js"
+    },
+    "./assets/svgs/arrows": {
+      "types": "./dist/assets/svgs/arrows/index.d.ts",
+      "default": "./dist/assets/svgs/arrows/index.js"
+    },
+    "./assets/svgs/icons": {
+      "types": "./dist/assets/svgs/icons/index.d.ts",
+      "default": "./dist/assets/svgs/icons/index.js"
+    },
+    "./assets/svgs/notifications": {
+      "types": "./dist/assets/svgs/notifications/index.d.ts",
+      "default": "./dist/assets/svgs/notifications/index.js"
+    },
+    "./css": "./dist/css/tpds.css",
+    "./tailwindcss": {
+      "types": "./dist/tailwindcss/index.d.ts",
+      "default": "./dist/tailwindcss/index.js"
+    },
+    "./tokens": "./dist/tokens/index.js"
   },
   "engines": {
     "node": ">=12.20"
@@ -65,9 +177,33 @@
     "url": "https://github.com/Tempo-Platform/tpds/issues"
   },
   "dependencies": {
+    "@headlessui/react": "1.7.17",
+    "@heroicons/react": "v1",
+    "@tailwindcss/container-queries": "0.1.1",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "react-colorful": "^5.6.1",
     "react-syntax-highlighter": "^15.5.0",
+    "rollup-plugin-css-only": "^4.5.2",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "3.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-typescript": "^12.1.1",
+    "autoprefixer": "10.4.14",
+    "axios": "1.4.0",
+    "clsx": "1.2.1",
+    "color": "4.2.3",
+    "copyfiles": "2.4.1",
+    "del": "8.0.0",
+    "dotenv": "16.3.1",
+    "glob": "^11.0.0",
+    "lodash": "^4.17.21",
+    "postcss-cli": "^11.0.0",
+    "rollup": "^4.27.4"
   }
 }

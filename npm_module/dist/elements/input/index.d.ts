@@ -1,0 +1,21 @@
+import React from 'react';
+export declare const baseInputStyles: string[];
+export declare const colorInputStyles: string[];
+export declare const lightInputStyles: string[];
+export declare const TextInput: ({ value, defaultValue, isValid, isInvalid, isWarning, outlineStyle, className, forceLightMode, onChange, onInput, onBlur, onKeyDown, onFocus, placeholder, type, ...props }: {
+    value?: string;
+    defaultValue?: string;
+    isValid?: boolean;
+    isInvalid?: boolean;
+    isWarning?: boolean;
+    outlineStyle?: string;
+    className?: string;
+    type?: string;
+    forceLightMode?: boolean;
+    placeholder?: string;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onInput?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+    onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+    onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+}) => React.JSX.Element;

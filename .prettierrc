@@ -2,9 +2,11 @@
   "arrowParens": "avoid",
   "bracketSpacing": true,
   "jsxBracketSameLine": false,
-  "printWidth": 100,
+  "printWidth": 120,
   "semi": false,
   "singleQuote": true,
+  "jsxSingleQuote": true,
+  "tsxSingleQuote": true,
   "tabWidth": 2,
   "trailingComma": "all",
   "useTabs": false

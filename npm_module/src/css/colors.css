@@ -1,0 +1,318 @@
+.light {
+  color-scheme: light;
+  --bg-body: #FDFDFD;
+  --bg-window: #FFFFFF;
+  --border-window: #EEF0F1;
+
+  --text-primary: #151819;
+  --text-secondary: #7F888E;
+  --text-tertiary: #B1BDC5;
+
+  --bg-button: #F1F3F3;
+  --bg-button-hover: #DFE1E2;
+  --bg-button-active: #C9CDCF;
+
+  --bg-button-secondary: #FFFFFF;
+  --bg-button-secondary-hover: #FFFFFF;
+  --bg-button-secondary-active: #FAFAFA;
+
+  --bg-success-hover: #00B1BB;
+  --bg-success-active: #008A92;
+  --bg-info-hover: #2D80E8;
+  --bg-info-active: #2364B5;
+  --bg-warning-hover: #DA7B23;
+  --bg-warning-active: #AA601C;
+  --bg-danger-hover: #D64F4F;
+  --bg-danger-active: #A73E3E;
+
+  --text-button: #323639;
+  --text-button-hover: #1E2224;
+  --text-button-active: #323639;
+  --text-button-secondary: #323639;
+  --text-button-secondary-hover: #1E2224;
+  --text-button-secondary-active: #323639;
+  --text-button-success: #E6F9FA;
+  --text-button-success-hover: #FFFFFF;
+  --text-button-success-active: #B0ECF0;
+  --text-button-info: #EAF4FF;
+  --text-button-info-hover: #FFFFFF;
+  --text-button-info-active: #BFDCFF;
+  --text-button-warning: #FEF3E9;
+  --text-button-warning-hover: #FFFFFF;
+  --text-button-warning-active: #FADABC;
+  --text-button-danger: #FDEEEE;
+  --text-button-danger-hover: #FFFFFF;
+  --text-button-danger-active: #F9CBCB;
+
+  --border-button: #F1F3F3;
+  --border-button-hover: #DFE1E2;
+  --border-button-active: #C9CDCF;
+  --border-button-secondary: #DFE1E2;
+  --border-button-secondary-hover: #C9CDCF;
+  --border-button-secondary-active: #AEB3B6;
+  --border-button-success: #00C2CE;
+  --border-button-success-hover: #00B1BB;
+  --border-button-success-active: #008A92;
+  --border-button-info: #318DFF;
+  --border-button-info-hover: #2D80E8;
+  --border-button-info-active: #2364B5;
+  --border-button-warning: #F08727;
+  --border-button-warning-hover: #DA7B23;
+  --border-button-warning-active: #AA601C;
+  --border-button-danger: #EB5757;
+  --border-button-danger-hover: #D64F4F;
+  --border-button-danger-active: #A73E3E;
+
+  --bg-input: #FAFAFA;
+  --bg-input-focus: #FAFAFA;
+  --bg-input-hover: #FAFAFA;
+
+  --text-input: #788187;
+  --text-input-focus: #282C2F;
+  --text-input-hover: #484D51;
+  --text-input-prefix: #989FA3;
+  --text-input-field_label: #3E4347;
+
+  --border-input: #C9CDCF;
+  --border-input-focus: #282C2F;
+
+  --bg-checkbox-selected-enabled: #00C2CE;
+  --bg-checkbox-selected-hover: #00B1BB;
+  --bg-checkbox-selected-active: #008A92;
+  --bg-checkbox-unselected-enabled: #F1F3F3;
+  --bg-checkbox-unselected-hover: #E6F9FA;
+  --bg-checkbox-unselected-active: #E6F9FA;
+
+  --text-checkbox-selected-enabled: #F1F3F3;
+  --text-checkbox-selected-hover: #E6F9FA;
+  --text-checkbox-selected-active: #E6F9FA;
+  --text-checkbox-unselected-enabled: #323639;
+  --text-checkbox-unselected-hover: #1E2224;
+  --text-checkbox-unselected-active: #323639;
+
+  --border-checkbox-selected-enabled: #00C2CE;
+  --border-checkbox-selected-hover: #00B1BB;
+  --border-checkbox-selected-active: #008A92;
+  --border-checkbox-unselected-enabled: #323639;
+  --border-checkbox-unselected-hover: #00C2CE;
+  --border-checkbox-unselected-active: #00B1BB;
+}
+.dark {
+  color-scheme: dark;
+  --bg-body: #17181A;
+  --bg-window: #1D1E20;
+  --border-window: #2D3033;
+
+  --text-primary: #F7F7F7;
+  --text-secondary: #AEB3B6;
+  --text-tertiary: #757E84;
+
+  --bg-button: #282C2F;
+  --bg-button-hover: #3E4347;
+  --bg-button-active: #484D51;
+
+  --bg-button-secondary: #1E2224;
+  --bg-button-secondary-hover: #1E2224;
+  --bg-button-secondary-active: #282C2F;
+
+  --bg-success-hover: #54D6DE;
+  --bg-success-active: #00B1BB;
+  --bg-info-hover: #75B3FF;
+  --bg-info-active: #2364B5;
+  --bg-warning-hover: #F5AF6E;
+  --bg-warning-active: #AA601C;
+  --bg-danger-hover: #EF7979;
+  --bg-danger-active: #D64F4F;
+
+  --text-button: #DFE1E2;
+  --text-button-hover: #F1F3F3;
+  --text-button-active: #DFE1E2;
+  --text-button-secondary: #DFE1E2;
+  --text-button-secondary-hover: #F1F3F3;
+  --text-button-secondary-active: #DFE1E2;
+  --text-button-success: #02282B;
+  --text-button-success-hover: #02282B;
+  --text-button-success-active: #005157;
+  --text-button-info: #0D223D;
+  --text-button-info-hover: #0D223D;
+  --text-button-info-active: #153B6B;
+  --text-button-warning: #37210C;
+  --text-button-warning-hover: #37210C;
+  --text-button-warning-active: #653910;
+  --text-button-danger: #3B1515;
+  --text-button-danger-hover: #3B1515;
+  --text-button-danger-active: #632525;
+
+  --border-button: #282C2F;
+  --border-button-hover: #3E4347;
+  --border-button-active: #484D51;
+  --border-button-secondary: #484D51;
+  --border-button-secondary-hover: #989FA4;
+  --border-button-secondary-active: #AEB3B6;
+  --border-button-success: #00C2CE;
+  --border-button-success-hover: #54D6DE;
+  --border-button-success-active: #00B1BB;
+  --border-button-info: #318DFF;
+  --border-button-info-hover: #75B3FF;
+  --border-button-info-active: #2364B5;
+  --border-button-warning: #F08727;
+  --border-button-warning-hover: #F5AF6E;
+  --border-button-warning-active: #AA601C;
+  --border-button-danger: #EB5757;
+  --border-button-danger-hover: #EF7979;
+  --border-button-danger-active: #D64F4F;
+
+  --bg-input: #2C3135;
+  --bg-input-focus: #2C3135;
+  --bg-input-hover: #31373B;
+
+  --text-input: #9DA1A4;
+  --text-input-focus: #FFFFFF;
+  --text-input-hover: #DFE1E2;
+  --text-input-prefix: #788289;
+  --text-input-field_label: #86949F;
+
+  --border-input: #57636B;
+  --border-input-focus: #B9C5CD;
+
+  --bg-checkbox-selected-enabled: #00C2CE;
+  --bg-checkbox-selected-hover: #54D6DE;
+  --bg-checkbox-selected-active: #00B1BB;
+  --bg-checkbox-unselected-enabled: #3E4347;
+  --bg-checkbox-unselected-hover: #155257;
+  --bg-checkbox-unselected-active: #155257;
+
+  --text-checkbox-selected-enabled: #02292C;
+  --text-checkbox-selected-hover: #02292C;
+  --text-checkbox-selected-active: #02292C;
+  --text-checkbox-unselected-enabled: #3E4347;
+  --text-checkbox-unselected-hover: #155257;
+  --text-checkbox-unselected-active: #155257;
+
+  --border-checkbox-selected-enabled: #00C2CE;
+  --border-checkbox-selected-hover: #54D6DE;
+  --border-checkbox-selected-active: #00B1BB;
+  --border-checkbox-unselected-enabled: #60676C;
+  --border-checkbox-unselected-hover: #54D6DE;
+  --border-checkbox-unselected-active: #00C2CE;
+}
+body {
+  -webkit-tap-highlight-color: #FCDB17;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --green: #2DB92D;
+  --red: #EB5757;
+  --blue: #1972F5;
+  --yellow: #FCDB17;
+  --purple: #6200EE;
+  --magenta: #E549FF;
+  --orange: #F08727;
+
+  --success: #2DB92D;
+  --danger: #EB5757;
+  --info: #1972F5;
+  --warning: #F08727;
+
+  --green-50: #EBFAEB;
+  --green-100: #C1F0C1;
+  --green-200: #99E699;
+  --green-300: #84E184;
+  --green-400: #32CD32;
+  --green-500: #2DB92D;
+  --green-600: #28A428;
+  --green-700: #1E7B1E;
+  --green-800: #145214;
+  --green-900: #0F3E0F;
+
+  --red-50: #FDEEEE;
+  --red-100: #F9CBCB;
+  --red-200: #F6B2B2;
+  --red-300: #F28E8E;
+  --red-400: #EF7979;
+  --red-500: #EB5757;
+  --red-600: #D64F4F;
+  --red-700: #A73E3E;
+  --red-800: #813030;
+  --red-900: #632525;
+
+  --blue-50: #E8F1FE;
+  --blue-100: #D1E3FD;
+  --blue-200: #A3C7FB;
+  --blue-300: #75AAF9;
+  --blue-400: #478EF7;
+  --blue-500: #1972F5;
+  --blue-600: #1561D0;
+  --blue-700: #1250AB;
+  --blue-800: #0E3F87;
+  --blue-900: #0A2E62;
+
+  --yellow-50: #FFFBE8;
+  --yellow-100: #FEF4B7;
+  --yellow-200: #FEEE94;
+  --yellow-300: #FDE764;
+  --yellow-400: #FDE245;
+  --yellow-500: #FCDB17;
+  --yellow-600: #E5C715;
+  --yellow-700: #B39B10;
+  --yellow-800: #8B780D;
+  --yellow-900: #6A5C0A;
+
+  --purple-50: #EFE6FD;
+  --purple-100: #CEB0FA;
+  --purple-200: #B78AF7;
+  --purple-300: #9654F4;
+  --purple-400: #8133F1;
+  --purple-500: #6200EE;
+  --purple-600: #5900D9;
+  --purple-700: #4600A9;
+  --purple-800: #360083;
+  --purple-900: #290064;
+
+  --magenta-50: #FCEDFF;
+  --magenta-100: #F7C7FF;
+  --magenta-200: #F3ABFF;
+  --magenta-300: #EE85FF;
+  --magenta-400: #EA6DFF;
+  --magenta-500: #E549FF;
+  --magenta-600: #D042E8;
+  --magenta-700: #A334B5;
+  --magenta-800: #7E288C;
+  --magenta-900: #601F6B;
+
+  --orange-50: #FEF3E9;
+  --orange-100: #FADABC;
+  --orange-200: #F8C89C;
+  --orange-300: #F5AF6E;
+  --orange-400: #F39F52;
+  --orange-500: #F08727;
+  --orange-600: #DA7B23;
+  --orange-700: #AA601C;
+  --orange-800: #844A15;
+  --orange-900: #653910;
+
+  --grey-light-50: #FDFDFD;
+  --grey-light-100: #F9F9FA;
+  --grey-light-200: #F6F7F7;
+  --grey-light-300: #EEEFF1;
+  --grey-light-400: #D7DEE5;
+  --grey-light-500: #C6D0D9;
+  --grey-light-600: #AEB9C4;
+  --grey-light-700: #9DA6AE;
+  --grey-light-800: #88929A;
+  --grey-light-900: #717980;
+
+  --grey-dark-50: #717980;
+  --grey-dark-100: #666D73;
+  --grey-dark-200: #5A6166;
+  --grey-dark-300: #4F555A;
+  --grey-dark-400: #44494D;
+  --grey-dark-500: #393D40;
+  --grey-dark-600: #2D3033;
+  --grey-dark-700: #222426;
+  --grey-dark-800: #1D1E20;
+  --grey-dark-900: #17181A;
+}
+p a {
+  text-decoration: underline;
+}
