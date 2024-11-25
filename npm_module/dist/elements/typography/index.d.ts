@@ -26,6 +26,9 @@ type TypographElementProps = {
     leadingNone?: boolean;
     isLabel?: boolean;
     forceLightMode?: boolean;
+    dangerouslySetInnerHTML?: {
+        __html: string;
+    };
 };
 export declare const PNano: (props: TypographElementProps) => React.JSX.Element;
 export declare const PTiny: (props: TypographElementProps) => React.JSX.Element;

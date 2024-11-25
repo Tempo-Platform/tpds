@@ -34,6 +34,7 @@ type TypographElementProps = {
   leadingNone?: boolean
   isLabel?: boolean
   forceLightMode?: boolean
+  dangerouslySetInnerHTML?: { __html: string }
 }
 
 const calculateFinalClass = (defaultClass: string, props: TypographElementProps) => {
