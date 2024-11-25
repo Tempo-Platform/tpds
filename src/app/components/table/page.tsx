@@ -203,14 +203,15 @@ const data = [
 ]
 
 export default function Page() {
-  const searchParams = useSearchParams()
+  // const searchParams = useSearchParams()
   const router = useRouter()
-  let page: string | null = searchParams.get('page')
-  if (page) {
-    page = parseInt(page).toString()
-  } else {
-    page = '1'
-  }
+  // let page: string | null = searchParams.get('page')
+  let page: string | null = '1'
+  // if (page) {
+  //   page = parseInt(page).toString()
+  // } else {
+  //   page = '1'
+  // }
 
   return (
     <div>

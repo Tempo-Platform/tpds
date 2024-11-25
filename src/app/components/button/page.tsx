@@ -1,6 +1,6 @@
 import PageHeader from '@/lib/components/PageHeader'
 import { PLarge } from '@tpds/elements/typography'
-import Play from '@tpds/assets/svgs/tiny/Play'
+import { Play } from '@tpds/assets/svgs/tiny'
 import { Container } from '@tpds/elements/layout'
 //import MenuDropdown from '../../../tpds/components/menudropdown'
 import CodeBlock from '@tpds/components/code'
