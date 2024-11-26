@@ -4,7 +4,7 @@ var React = require('react');
 var clsx = require('clsx');
 var elements_typography_index = require('../../elements/typography/index.js');
 var elements_buttons_index = require('../../elements/buttons/index.js');
-var index = require('../../index-B9CzeFbW.js');
+var assets_svgs_arrows_index = require('../../assets/svgs/arrows/index.js');
 require('../../tslib.es6-VGxyZ2Ib.js');
 require('tailwind-merge');
 
@@ -62,12 +62,6 @@ customRowClass, customHeaderClass, }) {
     if (pagination && !router) {
         throw new Error('TPDS: Table component requires router prop when pagination is enabled, to "push" new page to router.');
     }
-    let showPagination = pagination && data.length > rowsPerPage;
-    if (showPagination) {
-        const startIndex = (page - 1) * rowsPerPage;
-        const endIndex = startIndex + rowsPerPage;
-        data = data.slice(startIndex, endIndex);
-    }
     const handleBackToFirstPage = () => {
         router.push(window.location.pathname);
     };
@@ -82,6 +76,12 @@ customRowClass, customHeaderClass, }) {
     };
     if (sortByColumn) {
         data = runSort(data, sortByColumn, sortDirection);
+    }
+    let showPagination = pagination && data.length > rowsPerPage;
+    if (showPagination) {
+        const startIndex = (page - 1) * rowsPerPage;
+        const endIndex = startIndex + rowsPerPage;
+        data = data.slice(startIndex, endIndex);
     }
     return (/*#__PURE__*/React.createElement("div", null, "\n      ", /*#__PURE__*/React.createElement("div", { className: headerClass }, "\n        ", columns.map((column, columnIndex) => (/*#__PURE__*/React.createElement(elements_typography_index.PTiny, { isMedium: true, key: `column-${columnIndex}`, className: clsx('select-none whitespace-nowrap text-ellipsis overflow-hidden flex gap-x-2 items-center', column.enableSort && 'cursor-pointer', customHeaderClass), style: {
                 textAlign: getColumnAlign(column.align),
@@ -105,7 +105,7 @@ customRowClass, customHeaderClass, }) {
                         }
                     }
                 }
-                : undefined }, "\n            ", column.label, ' ', "\n            ", sortByColumn && sortByColumn.propName === column.propName && (/*#__PURE__*/React.createElement(index.TriangleDown, { className: 'inline-block ml-1', style: { transform: sortDirection === 1 ? '' : 'rotate(180deg)' } })), "\n          "))), "\n      "), "\n      ", /*#__PURE__*/React.createElement("div", { className: rowsContainerClass }, "\n        ", data.map((item, rowIndex) => (/*#__PURE__*/React.createElement("div", { key: `row-${rowIndex}`, className: rowClass, onClick: rowClick ? () => rowClick(item) : undefined }, "\n            ", columns.map((column, elementIndex) => {
+                : undefined }, "\n            ", column.label, ' ', "\n            ", sortByColumn && sortByColumn.propName === column.propName && (/*#__PURE__*/React.createElement(assets_svgs_arrows_index.TriangleDown, { className: 'inline-block ml-1', style: { transform: sortDirection === 1 ? '' : 'rotate(180deg)' } })), "\n          "))), "\n      "), "\n      ", /*#__PURE__*/React.createElement("div", { className: rowsContainerClass }, "\n        ", data.map((item, rowIndex) => (/*#__PURE__*/React.createElement("div", { key: `row-${rowIndex}`, className: rowClass, onClick: rowClick ? () => rowClick(item) : undefined }, "\n            ", columns.map((column, elementIndex) => {
                 return renderElement(item, column, rowIndex, elementIndex);
             }), "\n          "))), "\n      "), "\n      ", showPagination && (/*#__PURE__*/React.createElement("div", { className: 'flex justify-end gap-1' }, "\n          ", /*#__PURE__*/React.createElement(elements_buttons_index.Button, { className: '!p-2 min-w-0 text-primary', variant: 'secondary', isDisabled: page === 1, isSmall: true, onClick: handleBackToFirstPage }, "\n            ", /*#__PURE__*/React.createElement(BeginningIcon, null), "\n          "), "\n          ", /*#__PURE__*/React.createElement(elements_buttons_index.Button, { className: '!p-2 min-w-0 text-primary', variant: 'secondary', isDisabled: page === 1, isSmall: true, onClick: handleClickToPreviousPage }, "\n            ", /*#__PURE__*/React.createElement(FirstIcon, null), "\n          "), "\n\n          ", /*#__PURE__*/React.createElement(elements_buttons_index.Button, { className: '!p-2 min-w-0 pointer-events-none', variant: 'secondary', isDisabled: page === numPages, isSmall: true, onClick: handleClickToNextPage }, "\n            ", page, " ", /*#__PURE__*/React.createElement("span", { className: 'opacity-50' }, "/ ", numPages), "\n          "), "\n          ", /*#__PURE__*/React.createElement(elements_buttons_index.Button, { className: '!p-2 min-w-0 text-primary', variant: 'secondary', isDisabled: page === numPages, isSmall: true, onClick: handleClickToNextPage }, "\n            ", /*#__PURE__*/React.createElement(NextIcon, null), "\n          "), "\n          ", /*#__PURE__*/React.createElement(elements_buttons_index.Button, { className: '!p-2 min-w-0 text-primary', variant: 'secondary', isDisabled: page === numPages, isSmall: true, onClick: handleGoToLastPage }, "\n            ", /*#__PURE__*/React.createElement(LastIcon, null), "\n          "), "\n        ")), "\n    "));
 }

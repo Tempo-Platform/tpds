@@ -14,6 +14,7 @@ export const Button = ({
   isDisabled,
   isUppercase,
   className,
+  style,
   ...props
 }: {
   onClick?: () => void
@@ -27,6 +28,7 @@ export const Button = ({
   isDisabled?: boolean
   isUppercase?: boolean
   className?: string
+  style?: React.CSSProperties
 }) => {
   if (variant === 'secondary') {
     console.log(
@@ -60,7 +62,7 @@ export const Button = ({
   )
 
   return (
-    <button className={finalClass} onClick={onClick} {...props}>
+    <button className={finalClass} onClick={onClick} style={style} {...props}>
       {children}
     </button>
   )

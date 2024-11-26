@@ -35,6 +35,7 @@ export const TextInput = ({
   onKeyDown,
   onFocus,
   placeholder,
+  style,
   type,
   ...props
 }: {
@@ -46,6 +47,7 @@ export const TextInput = ({
   outlineStyle?: string
   className?: string
   type?: string
+  style?: React.CSSProperties
   forceLightMode?: boolean
   placeholder?: string
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
@@ -71,6 +73,7 @@ export const TextInput = ({
     <input
       type={type || 'text'}
       className={finalClass}
+      style={style}
       placeholder={placeholder}
       value={value}
       defaultValue={defaultValue}

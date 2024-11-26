@@ -1,5 +1,5 @@
 import React from 'react';
-export declare const Button: ({ onClick, children, variant, isSmall, isTiny, isLarge, isExtraLarge, forceLightMode, isDisabled, isUppercase, className, ...props }: {
+export declare const Button: ({ onClick, children, variant, isSmall, isTiny, isLarge, isExtraLarge, forceLightMode, isDisabled, isUppercase, className, style, ...props }: {
     onClick?: () => void;
     children: React.ReactNode;
     variant?: string;
@@ -11,4 +11,5 @@ export declare const Button: ({ onClick, children, variant, isSmall, isTiny, isL
     isDisabled?: boolean;
     isUppercase?: boolean;
     className?: string;
+    style?: React.CSSProperties;
 }) => React.JSX.Element;

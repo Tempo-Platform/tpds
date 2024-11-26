@@ -1,6 +1,6 @@
 {
   "name": "@tempoplatform/tpds",
-  "version": "2.0.16",
+  "version": "2.0.24",
   "author": "Tempo Platform Design Team",
   "main": "./dist/index.js",
   "scripts": {
@@ -121,12 +121,19 @@
       "types": "./dist/components/input/price/index.d.ts",
       "default": "./dist/components/input/price/index.js"
     },
+    "./components/stars-rating": {
+      "types": "./dist/components/stars-rating/index.d.ts",
+      "default": "./dist/components/stars-rating/index.js"
+    },
     "./constants/enums": {
       "types": "./dist/constants/enums/index.d.ts",
       "default": "./dist/constants/enums/index.js"
     },
     "./constants/spacings": "./dist/constants/spacings/index.js",
     "./constants/colors": "./dist/constants/colors/index.js",
+    "./assets/fonts/inter": "./dist/assets/fonts/inter/inter.css",
+    "./assets/fonts/graphik": "./dist/assets/fonts/graphik/graphik.css",
+    "./assets/fonts/sfmono": "./dist/assets/fonts/sfmono/sfmono.css",
     "./assets/svgs/tiny": {
       "types": "./dist/assets/svgs/tiny/index.d.ts",
       "default": "./dist/assets/svgs/tiny/index.js"

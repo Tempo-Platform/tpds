@@ -9,8 +9,8 @@ require('clsx');
 require('../../tokens/index.js');
 
 const Button = (_a) => {
-    var { label, iconBefore, iconAfter, variant, loading } = _a, props = tslib_es6.__rest(_a, ["label", "iconBefore", "iconAfter", "variant", "loading"]);
-    return (/*#__PURE__*/React.createElement(elements_buttons_index.Button, Object.assign({ variant: variant }, props), "\n      ", iconBefore && iconBefore, "\n      ", label, "\n      ", iconAfter && iconAfter, "\n      ", loading && /*#__PURE__*/React.createElement(components_spinner_index, { className: 'block', radius: 15 }), "\n    "));
+    var { label, iconBefore, iconAfter, variant, loading, className, onClick } = _a, props = tslib_es6.__rest(_a, ["label", "iconBefore", "iconAfter", "variant", "loading", "className", "onClick"]);
+    return (/*#__PURE__*/React.createElement(elements_buttons_index.Button, Object.assign({ variant: variant, className: className, onClick: onClick }, props), "\n      ", iconBefore && iconBefore, "\n      ", label, "\n      ", iconAfter && iconAfter, "\n      ", loading && /*#__PURE__*/React.createElement(components_spinner_index, { className: 'block', radius: 15 }), "\n    "));
 };
 function ExternalLinkIcon(_a) {
     var props = tslib_es6.__rest(_a, []);

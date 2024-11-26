@@ -3,7 +3,7 @@
 var React = require('react');
 var clsx = require('clsx');
 var elements_typography_index = require('../../elements/typography/index.js');
-var index = require('../../index-CWuYkOT-.js');
+var assets_svgs_tiny_index = require('../../assets/svgs/tiny/index.js');
 var elements_input_index = require('../../elements/input/index.js');
 require('../../tslib.es6-VGxyZ2Ib.js');
 require('tailwind-merge');
@@ -100,7 +100,7 @@ const SelectMulti = ({ options, selectedIndexes, handleSelectionUpdate, idProp, 
             setIsOpen(!isOpen);
         }, className: clsx('pointer-events-none', 'w-4 h-4 absolute right-[12px] top-[11px]', 'text-tertiary', 
         //'!hover:text-black !hover:dark:text-white',
-        isOpen && 'rotate-180 !top-[12px] !right-[9px]') }, "\n        ", /*#__PURE__*/React.createElement("path", { strokeLinecap: 'round', strokeLinejoin: 'round', d: 'M19.5 8.25l-7.5 7.5-7.5-7.5' }), "\n      "), "\n      ", displayValue.length > 0 && (/*#__PURE__*/React.createElement("div", { className: 'absolute right-[34px] top-[12px]' }, "\n          ", /*#__PURE__*/React.createElement(index.Cross, { className: 'text-tertiary hover:text-black hover:dark:text-white cursor-pointer', onClick: (e) => {
+        isOpen && 'rotate-180 !top-[12px] !right-[9px]') }, "\n        ", /*#__PURE__*/React.createElement("path", { strokeLinecap: 'round', strokeLinejoin: 'round', d: 'M19.5 8.25l-7.5 7.5-7.5-7.5' }), "\n      "), "\n      ", displayValue.length > 0 && (/*#__PURE__*/React.createElement("div", { className: 'absolute right-[34px] top-[12px]' }, "\n          ", /*#__PURE__*/React.createElement(assets_svgs_tiny_index.Cross, { className: 'text-tertiary hover:text-black hover:dark:text-white cursor-pointer', onClick: (e) => {
                 e.stopPropagation();
                 e.preventDefault();
                 handleSelectionUpdate([]);

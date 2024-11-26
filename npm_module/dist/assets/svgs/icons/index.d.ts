@@ -1,17 +1,13 @@
 import React from 'react';
-export declare function Calendar({ ...props }: {
-    [x: string]: any;
-}): React.JSX.Element;
-export declare function CheckIcon({ ...props }: {
-    [x: string]: any;
-}): React.JSX.Element;
-export declare function Home({ ...props }: {
-    [x: string]: any;
-}): React.JSX.Element;
-export declare function InfoCircle(): React.JSX.Element;
-export declare function MinusIcon({ ...props }: {
-    [x: string]: any;
-}): React.JSX.Element;
-export declare function PlusIcon({ ...props }: {
-    [x: string]: any;
-}): React.JSX.Element;
+type IconProps = {
+    className?: string;
+    style?: React.CSSProperties;
+    onClick?: () => void;
+};
+export declare function Calendar({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export declare function CheckIcon({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export declare function Home({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export declare function InfoCircle({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export declare function MinusIcon({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export declare function PlusIcon({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export {};

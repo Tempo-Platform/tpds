@@ -8,6 +8,8 @@ export const Button = ({
   iconAfter,
   variant,
   loading,
+  className,
+  onClick,
   ...props
 }: {
   label: string
@@ -15,9 +17,11 @@ export const Button = ({
   iconAfter?: React.ReactNode
   variant: string
   loading?: boolean
+  className?: string
+  onClick?: () => void
 }) => {
   return (
-    <ButtonElement variant={variant} {...props}>
+    <ButtonElement variant={variant} className={className} onClick={onClick} {...props}>
       {iconBefore && iconBefore}
       {label}
       {iconAfter && iconAfter}

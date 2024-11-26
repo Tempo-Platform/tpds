@@ -1,12 +1,12 @@
 'use strict';
 
 var React = require('react');
-var index = require('../../index-B9CzeFbW.js');
+var assets_svgs_arrows_index = require('../../assets/svgs/arrows/index.js');
 var clsx = require('clsx');
 var components_datePicker_index = require('../date-picker/index.js');
 var elements_typography_index = require('../../elements/typography/index.js');
 require('../../tslib.es6-VGxyZ2Ib.js');
-require('../../index-CmBItoar.js');
+require('../../assets/svgs/icons/index.js');
 require('../../elements/input/index.js');
 require('tailwind-merge');
 
@@ -33,7 +33,7 @@ function DateRangePicker({ startDate = new Date(), endDate = new Date(), omitYea
                 }
             }
             onChangeStartDate(date);
-        }, maxYearsToPast: maxYearsToPast, maxYearsToFuture: 0, allowPast: allowPast, omitBorders: true, omitCalendarIcon: true, styleOverrides: { background: 'transparent' } }), "\n        "), "\n        ", /*#__PURE__*/React.createElement(index.ArrowRightIcon, { className: "h-[12px] text-black dark:text-white opacity-30" }), "\n        ", /*#__PURE__*/React.createElement("div", { className: "relative top-[-1px]" }, "\n          ", /*#__PURE__*/React.createElement(components_datePicker_index, { year: endDate.getFullYear(), month: endDate.getMonth(), day: endDate.getDate(), onChange: date => {
+        }, maxYearsToPast: maxYearsToPast, maxYearsToFuture: 0, allowPast: allowPast, omitBorders: true, omitCalendarIcon: true, styleOverrides: { background: 'transparent' } }), "\n        "), "\n        ", /*#__PURE__*/React.createElement(assets_svgs_arrows_index.ArrowRightIcon, { className: "h-[12px] text-black dark:text-white opacity-30" }), "\n        ", /*#__PURE__*/React.createElement("div", { className: "relative top-[-1px]" }, "\n          ", /*#__PURE__*/React.createElement(components_datePicker_index, { year: endDate.getFullYear(), month: endDate.getMonth(), day: endDate.getDate(), onChange: date => {
             if (preventWrongTiming) {
                 if (date.getTime() < startDate.getTime()) {
                     onChangeStartDate(date);

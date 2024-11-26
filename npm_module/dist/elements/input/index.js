@@ -23,12 +23,12 @@ const colorInputStyles = [
 ];
 const lightInputStyles = ['!bg-grey-light-scale-50', '!border-grey-light-scale-400'];
 const TextInput = (_a) => {
-    var { value, defaultValue, isValid, isInvalid, isWarning, outlineStyle, className, forceLightMode, onChange, onInput, onBlur, onKeyDown, onFocus, placeholder, type } = _a, props = tslib_es6.__rest(_a, ["value", "defaultValue", "isValid", "isInvalid", "isWarning", "outlineStyle", "className", "forceLightMode", "onChange", "onInput", "onBlur", "onKeyDown", "onFocus", "placeholder", "type"]);
+    var { value, defaultValue, isValid, isInvalid, isWarning, outlineStyle, className, forceLightMode, onChange, onInput, onBlur, onKeyDown, onFocus, placeholder, style, type } = _a, props = tslib_es6.__rest(_a, ["value", "defaultValue", "isValid", "isInvalid", "isWarning", "outlineStyle", "className", "forceLightMode", "onChange", "onInput", "onBlur", "onKeyDown", "onFocus", "placeholder", "style", "type"]);
     const colorStylesToUse = forceLightMode ? lightInputStyles : colorInputStyles;
     const finalClass = tailwindMerge.twMerge(clsx(...baseInputStyles, ...colorStylesToUse, 
     //outlineStyle && outlineStyles,
     className, forceLightMode && '!text-black', isValid && '!border-green focus:!border-green dark:!border-green dark:focus:!border-green', isInvalid && '!border-red focus:!border-red dark:!border-red dark:focus:!border-red', isWarning && '!border-orange focus:!border-orange dark:!border-orange dark:focus:!border-orange'));
-    return (/*#__PURE__*/React.createElement("input", Object.assign({ type: type || 'text', className: finalClass, placeholder: placeholder, value: value, defaultValue: defaultValue, onChange: onChange, onInput: onInput, onBlur: onBlur, onKeyDown: onKeyDown, onFocus: onFocus }, props)));
+    return (/*#__PURE__*/React.createElement("input", Object.assign({ type: type || 'text', className: finalClass, style: style, placeholder: placeholder, value: value, defaultValue: defaultValue, onChange: onChange, onInput: onInput, onBlur: onBlur, onKeyDown: onKeyDown, onFocus: onFocus }, props)));
 };
 
 exports.TextInput = TextInput;

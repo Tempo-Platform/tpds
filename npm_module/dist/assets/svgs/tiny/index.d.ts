@@ -1,22 +1,15 @@
 import React from 'react';
-export declare function Copy({ ...props }: {
-    [x: string]: any;
-}): React.JSX.Element;
-export declare function Cross({ ...props }: {
-    [x: string]: any;
-}): React.JSX.Element;
-export declare function DummyIcon({ ...props }: {
-    [x: string]: any;
-}): React.JSX.Element;
-export declare function Play({ ...props }: {
-    [x: string]: any;
-}): React.JSX.Element;
-export declare function PowerSwitch({ active, ...props }: {
-    active: boolean;
-}): React.JSX.Element;
-export declare function Reboot({ ...props }: {
-    [x: string]: any;
-}): React.JSX.Element;
-export declare function Stop({ ...props }: {
-    [x: string]: any;
-}): React.JSX.Element;
+type IconProps = {
+    className?: string;
+    style?: React.CSSProperties;
+    onClick?: () => void;
+    active?: boolean;
+};
+export declare function Copy({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export declare function Cross({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export declare function DummyIcon({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export declare function Play({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export declare function PowerSwitch({ active, className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export declare function Reboot({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export declare function Stop({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export {};

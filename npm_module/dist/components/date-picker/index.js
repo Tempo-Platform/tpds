@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react');
-var index = require('../../index-CmBItoar.js');
+var assets_svgs_icons_index = require('../../assets/svgs/icons/index.js');
 var elements_input_index = require('../../elements/input/index.js');
 var clsx = require('clsx');
 require('../../tslib.es6-VGxyZ2Ib.js');
@@ -60,7 +60,7 @@ function DatePicker({ year = new Date().getFullYear(), month = new Date().getMon
             renderItems.push(/*#__PURE__*/React.createElement("div", { key: 'division' + i, className: 'w-[4px] h-[2px] bg-black dark:bg-white relative opacity-30 top-[1px]' }));
         }
     }
-    return (/*#__PURE__*/React.createElement("div", { className: rootClassName, style: styleOverrides }, "\n      ", renderItems, "\n      ", !omitCalendarIcon && /*#__PURE__*/React.createElement(index.Calendar, { className: 'text-tertiary opacity-70 ml-2' }), "\n    "));
+    return (/*#__PURE__*/React.createElement("div", { className: rootClassName, style: styleOverrides }, "\n      ", renderItems, "\n      ", !omitCalendarIcon && /*#__PURE__*/React.createElement(assets_svgs_icons_index.Calendar, { className: 'text-tertiary opacity-70 ml-2' }), "\n    "));
 }
 
 module.exports = DatePicker;

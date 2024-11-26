@@ -14,6 +14,7 @@ export default {
       './src/constants/**/*.*',
       './src/tailwindcss/*.*',
       './src/tokens/*.*',
+      './src/assets/svgs/**/*.*',
       './src/css/index.tsx',
     ]).map(file => [
       // This removes `src/` as well as the file extension from each

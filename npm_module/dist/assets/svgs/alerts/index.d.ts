@@ -1,6 +1,12 @@
 import React from 'react';
-export declare function DangerIcon(): React.JSX.Element;
-export declare function DefaultIcon(): React.JSX.Element;
-export declare function InfoIcon(): React.JSX.Element;
-export declare function SuccessIcon(): React.JSX.Element;
-export declare function WarningIcon(): React.JSX.Element;
+type IconProps = {
+    className?: string;
+    style?: React.CSSProperties;
+    onClick?: () => void;
+};
+export declare function DangerIcon({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export declare function DefaultIcon({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export declare function InfoIcon({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export declare function SuccessIcon({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export declare function WarningIcon({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
+export {};

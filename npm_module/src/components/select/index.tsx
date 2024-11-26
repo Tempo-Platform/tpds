@@ -11,7 +11,7 @@ const getCurrentInputValue = (options: any[], selectedIndex: number, labelProp: 
   return labelProp ? options[selectedIndex][labelProp] : options[selectedIndex]
 }
 
-const getOptionIndexFromAllOptions = (options: any[], option: any, idProp: string): number => {
+const getOptionIndexFromAllOptions = (options: any[], option: any, idProp?: string): number => {
   const id = idProp ? option[idProp] : option
   return options.findIndex(o => {
     const idToCompare = idProp ? o[idProp] : o
@@ -32,10 +32,11 @@ const Select = ({
   isInvalid = false,
   forceLightMode = false,
   useKeyboard = false,
+  className,
 }: {
   options: any[]
   handleIndexSelection: (index: number) => void
-  idProp: string
+  idProp?: string
   selectedIndex?: number
   excludeIndexes?: number[]
   noPermanentSelection?: boolean
@@ -45,6 +46,7 @@ const Select = ({
   isInvalid?: boolean
   forceLightMode?: boolean
   useKeyboard?: boolean
+  className?: string
 }) => {
   const wrapperRef = useRef(null)
   const optionsWithoutExcludedIndexes = options.filter((option, index) => !excludeIndexes.includes(index))
@@ -103,7 +105,7 @@ const Select = ({
   )
 
   return (
-    <div className='flex w-full relative text-left' ref={wrapperRef}>
+    <div className={clsx('flex w-full relative text-left', className)} ref={wrapperRef}>
       <div
         className='w-full'
         onClick={e => {

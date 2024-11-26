@@ -1,8 +1,8 @@
 import React from 'react';
-declare const Select: ({ options, handleIndexSelection, idProp, selectedIndex, excludeIndexes, noPermanentSelection, enableClear, labelProp, placeholder, isInvalid, forceLightMode, useKeyboard, }: {
+declare const Select: ({ options, handleIndexSelection, idProp, selectedIndex, excludeIndexes, noPermanentSelection, enableClear, labelProp, placeholder, isInvalid, forceLightMode, useKeyboard, className, }: {
     options: any[];
     handleIndexSelection: (index: number) => void;
-    idProp: string;
+    idProp?: string;
     selectedIndex?: number;
     excludeIndexes?: number[];
     noPermanentSelection?: boolean;
@@ -12,5 +12,6 @@ declare const Select: ({ options, handleIndexSelection, idProp, selectedIndex, e
     isInvalid?: boolean;
     forceLightMode?: boolean;
     useKeyboard?: boolean;
+    className?: string;
 }) => React.JSX.Element;
 export default Select;

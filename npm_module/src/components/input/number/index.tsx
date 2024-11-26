@@ -4,22 +4,26 @@ import { TextInput } from '../../../elements/input'
 function InputNumber({
   initialValue,
   onChangeCallback,
-  step = 1,
   minValue = null,
   maxValue = null,
   maxLength = 100,
   allowFloats = true,
   floatPrecision = 2,
+  className,
+  placeholder,
+  isInvalid,
   ...props
 }: {
   initialValue?: string
   onChangeCallback: (value: string) => void
-  step: number
   minValue?: number | null
   maxValue?: number | null
   maxLength?: number
   allowFloats?: boolean
   floatPrecision?: number
+  isInvalid?: boolean
+  placeholder?: string
+  className?: string
 }) {
   if (initialValue === undefined || initialValue === null) {
     initialValue = ''
@@ -71,8 +75,11 @@ function InputNumber({
   return (
     <TextInput
       type='number'
+      placeholder={placeholder}
+      className={className}
       // min={minValue}
       // max={maxValue}
+      isInvalid={isInvalid}
       onInput={handleInput}
       value={value}
       onChange={handleChange}

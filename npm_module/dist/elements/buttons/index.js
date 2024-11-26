@@ -6,7 +6,7 @@ var tailwindMerge = require('tailwind-merge');
 var clsx = require('clsx');
 
 const Button = (_a) => {
-    var { onClick, children, variant = 'default', isSmall, isTiny, isLarge, isExtraLarge, forceLightMode, isDisabled, isUppercase, className } = _a, props = tslib_es6.__rest(_a, ["onClick", "children", "variant", "isSmall", "isTiny", "isLarge", "isExtraLarge", "forceLightMode", "isDisabled", "isUppercase", "className"]);
+    var { onClick, children, variant = 'default', isSmall, isTiny, isLarge, isExtraLarge, forceLightMode, isDisabled, isUppercase, className, style } = _a, props = tslib_es6.__rest(_a, ["onClick", "children", "variant", "isSmall", "isTiny", "isLarge", "isExtraLarge", "forceLightMode", "isDisabled", "isUppercase", "className", "style"]);
     if (variant === 'secondary') {
         console.log("The 'secondary' variant is deprecated. You can still use it, but it will be removed in the future.");
     }
@@ -15,7 +15,7 @@ const Button = (_a) => {
     'transition duration-400', 'select-none cursor-pointer', forceLightMode
         ? buttonVariantStylesLightOnly[variant]
         : buttonVariantStyles[variant], className, isSmall && '!text-sm', isUppercase && '!uppercase', isUppercase && '!uppercase', isTiny && 'h-[30px] px-2 py-0 text-[11px]', isSmall && 'h-[34px] px-3 py-0 text-[13px]', isLarge && 'h-[44px] px-6 py-0 text-[16px]', isExtraLarge && 'h-[52px] px-10 py-0 text-[18px]', isDisabled && 'pointer-events-none opacity-30'));
-    return (/*#__PURE__*/React.createElement("button", Object.assign({ className: finalClass, onClick: onClick }, props), "\n      ", children, "\n    "));
+    return (/*#__PURE__*/React.createElement("button", Object.assign({ className: finalClass, onClick: onClick, style: style }, props), "\n      ", children, "\n    "));
 };
 const defaultStyles = [
     // text
