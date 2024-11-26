@@ -125,14 +125,6 @@ function Table({
     )
   }
 
-  let showPagination = pagination && data.length > rowsPerPage
-
-  if (showPagination) {
-    const startIndex = (page - 1) * rowsPerPage
-    const endIndex = startIndex + rowsPerPage
-    data = data.slice(startIndex, endIndex)
-  }
-
   const handleBackToFirstPage = () => {
     router.push(window.location.pathname)
   }
@@ -151,6 +143,14 @@ function Table({
 
   if (sortByColumn) {
     data = runSort(data, sortByColumn, sortDirection)
+  }
+
+  let showPagination = pagination && data.length > rowsPerPage
+
+  if (showPagination) {
+    const startIndex = (page - 1) * rowsPerPage
+    const endIndex = startIndex + rowsPerPage
+    data = data.slice(startIndex, endIndex)
   }
 
   return (
