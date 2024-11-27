@@ -17,7 +17,6 @@ export default function Page() {
         <Window className='mt-8'>
           <NumberInput
             initialValue={number.toString()}
-            step={0.1}
             minValue={-100}
             maxValue={100}
             maxLength={100}
