@@ -3,9 +3,9 @@
 var React = require('react');
 var clsx = require('clsx');
 
-const baseStyles = 'text-primary m-0';
+const baseStyles = 'text-primary mt-0 mr-0 mb-0 ml-0';
 const calculateFinalClass = (defaultClass, props) => {
-    const finalClass = clsx(baseStyles, defaultClass, props.className && props.className, props.isSmall && '!text-sm', props.isUnderline && '!underline', props.isUppercase && '!uppercase', props.isItalic && '!italic', props.isLight && '!font-light', props.isMedium && '!font-medium', props.isBold && '!font-bold', props.isExtraBold && '!font-extrabold', props.isHeavy && '!font-black', props.isPulsing && '!animate-pulse', props.isCentered && '!text-center', props.noSelect && '!select-none', props.isWhite && '!text-white', props.isGreen && '!text-green', props.isRed && '!text-red', props.isBlue && '!text-blue', props.isOrange && '!text-orange', props.isYellow && '!text-yellow', props.leadingNone && '!leading-none', props.isLabel && '!select-none', props.isLabel && '!leading-none', props.isLabel && '!font-label', props.forceLightMode && '!text-black');
+    const finalClass = clsx(baseStyles, defaultClass, props.className, props.isSmall && '!text-sm', props.isUnderline && '!underline', props.isUppercase && '!uppercase', props.isItalic && '!italic', props.isLight && '!font-light', props.isMedium && '!font-medium', props.isBold && '!font-bold', props.isExtraBold && '!font-extrabold', props.isHeavy && '!font-black', props.isPulsing && '!animate-pulse', props.isCentered && '!text-center', props.noSelect && '!select-none', props.isWhite && '!text-white', props.isGreen && '!text-green', props.isRed && '!text-red', props.isBlue && '!text-blue', props.isOrange && '!text-orange', props.isYellow && '!text-yellow', props.leadingNone && '!leading-none', props.isLabel && '!select-none', props.isLabel && '!leading-none', props.isLabel && '!font-label', props.forceLightMode && '!text-black');
     return finalClass;
 };
 const pNanoClass = 'text-xxs md:text-xs';
@@ -121,22 +121,22 @@ const Code = (props) => {
 };
 // // form labels
 const FormLabelNano = (props) => {
-    const finalClass = clsx(pNanoClass, 'font-label text-tertiary font-medium leading-none', props.className);
+    const finalClass = calculateFinalClass(clsx(pNanoClass, 'font-label text-tertiary font-medium leading-none'), props);
     const xprops = { id: props.id };
     return (/*#__PURE__*/React.createElement("p", Object.assign({}, xprops, { className: finalClass, style: props.style }), "\n      ", props.children, "\n    "));
 };
 const FormLabelTiny = (props) => {
-    const finalClass = clsx(pTinyClass, 'font-label text-tertiary font-medium leading-none', props.className);
+    const finalClass = calculateFinalClass(clsx(pTinyClass, 'font-label text-tertiary font-medium leading-none'), props);
     const xprops = { id: props.id };
     return (/*#__PURE__*/React.createElement("p", Object.assign({}, xprops, { className: finalClass, style: props.style }), "\n      ", props.children, "\n    "));
 };
 const FormLabelSmall = (props) => {
-    const finalClass = clsx(pSmallClass, 'font-label text-tertiary font-medium leading-none', props.className);
+    const finalClass = calculateFinalClass(clsx(pSmallClass, 'font-label text-tertiary font-medium leading-none'), props);
     const xprops = { id: props.id };
     return (/*#__PURE__*/React.createElement("p", Object.assign({}, xprops, { className: finalClass, style: props.style }), "\n      ", props.children, "\n    "));
 };
 const FormLabel = (props) => {
-    const finalClass = clsx(pClass, 'font-label text-tertiary font-medium leading-none', props.className);
+    const finalClass = calculateFinalClass(clsx(pClass, 'font-label text-tertiary font-medium leading-none'), props);
     const xprops = { id: props.id };
     return (/*#__PURE__*/React.createElement("p", Object.assign({}, xprops, { className: finalClass, style: props.style }), "\n      ", props.children, "\n    "));
 };
