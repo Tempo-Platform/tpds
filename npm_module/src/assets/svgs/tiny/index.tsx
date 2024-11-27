@@ -4,7 +4,7 @@ import clsx from 'clsx'
 type IconProps = {
   className?: string
   style?: React.CSSProperties
-  onClick?: () => void
+  onClick?: (e: React.MouseEvent) => void
   active?: boolean
 }
 
