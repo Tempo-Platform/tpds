@@ -2,7 +2,7 @@ import React from 'react';
 type IconProps = {
     className?: string;
     style?: React.CSSProperties;
-    onClick?: () => void;
+    onClick?: (e: React.MouseEvent) => void;
     active?: boolean;
 };
 export declare function Copy({ className, style, onClick, ...props }: IconProps): React.JSX.Element;
