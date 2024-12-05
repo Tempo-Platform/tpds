@@ -1,5 +1,5 @@
 import PageHeader from '@/lib/components/PageHeader'
-import { PLarge } from '@tpds/elements/typography'
+import { PSmall } from '@tpds/elements/typography'
 import { Play } from '@tpds/assets/svgs/tiny'
 import { Container } from '@tpds/elements/layout'
 //import MenuDropdown from '../../../tpds/components/menudropdown'
@@ -12,28 +12,28 @@ export default function Page() {
     <div>
       <Container>
         <PageHeader title='Button' subTitle='Button component - to be used together with icons' />
-        <PLarge>Button with loading state</PLarge>
+        <PSmall>Button with loading state</PSmall>
         <br />
         <ButtonComponent loading={true} variant='secondary' label='Loading...' />
         <br />
         <CodeBlock code={codeWithLoading} />
         <br />
         <br />
-        <PLarge>Button with dark-mode ready icon (before)</PLarge>
+        <PSmall>Button with dark-mode ready icon (before)</PSmall>
         <br />
         <ButtonComponent variant='secondary' label='Button' iconBefore={<Play className='fill-current' />} />
         <br />
         <CodeBlock code={codeWithIconBefore} />
         <br />
         <br />
-        <PLarge>Button with dark-mode ready icon (after)</PLarge>
+        <PSmall>Button with dark-mode ready icon (after)</PSmall>
         <br />
         <ButtonComponent variant='secondary' label='Button' iconAfter={<Play className='fill-current' />} />
         <br />
         <CodeBlock code={codeWithIconAfter} />
         <br />
         <br />
-        <PLarge>Button with dark-mode ready icon (before and after)</PLarge>
+        <PSmall>Button with dark-mode ready icon (before and after)</PSmall>
         <br />
         <ButtonComponent
           variant='secondary'
@@ -45,7 +45,7 @@ export default function Page() {
         <CodeBlock code={codeWithIconBeforeAndAfter} />
         <br />
         <br />
-        <PLarge>Button only with icon (no label)</PLarge>
+        <PSmall>Button only with icon (no label)</PSmall>
         <br />
         <ButtonComponent label='Button' variant='secondary' iconBefore={<Play className='fill-current' />} />
         <br />
