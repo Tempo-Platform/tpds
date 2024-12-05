@@ -2,7 +2,7 @@ import React from 'react';
 export declare const baseInputStyles: string[];
 export declare const colorInputStyles: string[];
 export declare const lightInputStyles: string[];
-export declare const TextInput: ({ value, defaultValue, isValid, isInvalid, isWarning, outlineStyle, className, forceLightMode, onChange, onInput, onBlur, onKeyDown, onFocus, placeholder, style, type, ...props }: {
+export declare const TextInput: ({ value, defaultValue, isValid, isInvalid, isWarning, outlineStyle, className, forceLightMode, onChange, onInput, onBlur, onKeyDown, onFocus, placeholder, style, type, step, ...props }: {
     value?: string;
     defaultValue?: string;
     isValid?: boolean;
@@ -11,6 +11,7 @@ export declare const TextInput: ({ value, defaultValue, isValid, isInvalid, isWa
     outlineStyle?: string;
     className?: string;
     type?: string;
+    step?: number;
     style?: React.CSSProperties;
     forceLightMode?: boolean;
     placeholder?: string;

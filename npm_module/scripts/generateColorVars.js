@@ -326,4 +326,4 @@ p a {
 `
 
 fs.writeFileSync('./src/css/colors.css', styleString)
-console.log('TPDS :::Built colors CSS file')
+console.log('TPDS ::: Built colors CSS file')

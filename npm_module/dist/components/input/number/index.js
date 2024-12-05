@@ -7,7 +7,7 @@ require('clsx');
 require('tailwind-merge');
 
 function InputNumber(_a) {
-    var { initialValue, onChangeCallback, minValue = null, maxValue = null, maxLength = 100, allowFloats = true, floatPrecision = 2, className, placeholder, isInvalid } = _a, props = tslib_es6.__rest(_a, ["initialValue", "onChangeCallback", "minValue", "maxValue", "maxLength", "allowFloats", "floatPrecision", "className", "placeholder", "isInvalid"]);
+    var { initialValue, onChangeCallback, minValue = null, maxValue = null, maxLength = 100, allowFloats = true, floatPrecision = 2, className, placeholder, isInvalid, step } = _a, props = tslib_es6.__rest(_a, ["initialValue", "onChangeCallback", "minValue", "maxValue", "maxLength", "allowFloats", "floatPrecision", "className", "placeholder", "isInvalid", "step"]);
     if (initialValue === undefined || initialValue === null) {
         initialValue = '';
     }
@@ -49,7 +49,7 @@ function InputNumber(_a) {
         setValue(value);
         onChangeCallback(value);
     };
-    return (/*#__PURE__*/React.createElement(elements_input_index.TextInput, Object.assign({ type: 'number', placeholder: placeholder, className: className, 
+    return (/*#__PURE__*/React.createElement(elements_input_index.TextInput, Object.assign({ type: 'number', step: step, placeholder: placeholder, className: className, 
     // min={minValue}
     // max={maxValue}
     isInvalid: isInvalid, onInput: handleInput, value: value, onChange: handleChange, onBlur: handleBlur }, props)));

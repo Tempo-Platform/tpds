@@ -10,9 +10,7 @@ const Button = (_a) => {
     if (variant === 'secondary') {
         console.log("The 'secondary' variant is deprecated. You can still use it, but it will be removed in the future.");
     }
-    const finalClass = tailwindMerge.twMerge(clsx('flex justify-center items-center gap-x-2', 'px-3', 'h-[36px]', '!font-[600] text-[14px] leading-[100%] whitespace-nowrap', 'rounded-[4px] focus:outline-none', 
-    // 'border-2',
-    'transition duration-400', 'select-none cursor-pointer', forceLightMode
+    const finalClass = tailwindMerge.twMerge(clsx('flex justify-center items-center gap-x-2', 'px-3', 'h-[36px]', '!font-[600] text-[14px] leading-[100%] whitespace-nowrap', 'rounded-[4px] focus:outline-none', 'transition duration-400', 'select-none cursor-pointer', forceLightMode
         ? buttonVariantStylesLightOnly[variant]
         : buttonVariantStyles[variant], className, isSmall && '!text-sm', isUppercase && '!uppercase', isUppercase && '!uppercase', isTiny && 'h-[30px] px-2 py-0 text-[11px]', isSmall && 'h-[34px] px-3 py-0 text-[13px]', isLarge && 'h-[44px] px-6 py-0 text-[16px]', isExtraLarge && 'h-[52px] px-10 py-0 text-[18px]', isDisabled && 'pointer-events-none opacity-30'));
     return (/*#__PURE__*/React.createElement("button", Object.assign({ className: finalClass, onClick: onClick, style: style }, props), "\n      ", children, "\n    "));
@@ -23,7 +21,7 @@ const defaultStyles = [
     'hover:text-grey-dark-scale-800 hover:dark:text-white',
     'active:text-grey-dark-scale-900 active:dark:text-grey-light-scale-100',
     // bg
-    'bg-grey-light-scale-300 dark:bg-grey-dark-scale-400',
+    'bg-grey-light-scale-300 dark:bg-grey-dark-scale-600',
     'hover:bg-grey-light-scale-400 hover:dark:bg-grey-dark-scale-500',
     'active:bg-grey-light-scale-500 active:dark:bg-grey-dark-scale-600',
     // border
