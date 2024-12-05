@@ -43,7 +43,6 @@ export const Button = ({
       'h-[36px]',
       '!font-[600] text-[14px] leading-[100%] whitespace-nowrap',
       'rounded-[4px] focus:outline-none',
-      // 'border-2',
       'transition duration-400',
       'select-none cursor-pointer',
       forceLightMode
@@ -74,7 +73,7 @@ const defaultStyles = [
   'hover:text-grey-dark-scale-800 hover:dark:text-white',
   'active:text-grey-dark-scale-900 active:dark:text-grey-light-scale-100',
   // bg
-  'bg-grey-light-scale-300 dark:bg-grey-dark-scale-400',
+  'bg-grey-light-scale-300 dark:bg-grey-dark-scale-600',
   'hover:bg-grey-light-scale-400 hover:dark:bg-grey-dark-scale-500',
   'active:bg-grey-light-scale-500 active:dark:bg-grey-dark-scale-600',
   // border
