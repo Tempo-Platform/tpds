@@ -12,6 +12,7 @@ function InputNumber({
   className,
   placeholder,
   isInvalid,
+  step,
   ...props
 }: {
   initialValue?: string
@@ -24,6 +25,7 @@ function InputNumber({
   isInvalid?: boolean
   placeholder?: string
   className?: string
+  step?: number
 }) {
   if (initialValue === undefined || initialValue === null) {
     initialValue = ''
@@ -75,6 +77,7 @@ function InputNumber({
   return (
     <TextInput
       type='number'
+      step={step}
       placeholder={placeholder}
       className={className}
       // min={minValue}
