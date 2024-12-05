@@ -6,19 +6,17 @@ export const baseInputStyles = [
   'flex w-full',
   'transition duration-400',
   'px-2.5 rounded-[6px] !outline-none',
-  '!h-[40px] text-[13px]',
-  'border-2',
+  '!h-[38px] text-[13px]',
+  'border',
   'font-medium text-primary',
-  'placeholder:text-blue leading-none',
-  'bg-grey-light-scale-50 dark:bg-grey-dark-scale-900',
-  'border-grey-light-scale-400 dark:border-grey-dark-scale-400',
+  'leading-none',
   'focus:border-blue dark:focus:border-blue',
 ]
 export const colorInputStyles = [
-  'bg-grey-light-scale-50 dark:bg-grey-dark-scale-900',
-  'border-grey-light-scale-400 dark:border-grey-dark-scale-400',
+  'bg-grey-light-scale-200 border-grey-light-scale-400 placeholder:text-black/40',
+  'dark:bg-grey-dark-scale-600 dark:border-grey-dark-scale-400 dark:placeholder:text-white/50',
 ]
-export const lightInputStyles = ['!bg-grey-light-scale-50', '!border-grey-light-scale-400']
+export const lightInputStyles = ['!bg-grey-light-scale-200 !border-grey-light-scale-400']
 
 export const TextInput = ({
   value,
@@ -37,6 +35,7 @@ export const TextInput = ({
   placeholder,
   style,
   type,
+  step,
   ...props
 }: {
   value?: string
@@ -47,6 +46,7 @@ export const TextInput = ({
   outlineStyle?: string
   className?: string
   type?: string
+  step?: number
   style?: React.CSSProperties
   forceLightMode?: boolean
   placeholder?: string
@@ -72,6 +72,7 @@ export const TextInput = ({
   return (
     <input
       type={type || 'text'}
+      step={step}
       className={finalClass}
       style={style}
       placeholder={placeholder}
