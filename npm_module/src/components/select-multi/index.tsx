@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import clsx from 'clsx'
 import { PTiny } from '../../elements/typography'
 import { Cross } from '../../assets/svgs/tiny'
-import { baseInputStyles } from '../../elements/input'
+import { baseInputStyles, colorInputStyles } from '../../elements/input'
 
 const getCurrentInputValue = (options: any[], selectedIndexes: number[]): string[] => {
   if (!selectedIndexes || selectedIndexes.length === 0) return []
@@ -114,9 +114,9 @@ const SelectMulti = ({
   const tagRootClass = clsx(
     'text-grey-dark-scale-200 dark:text-grey-light-scale-400',
     'inline-flex shadow bg-black dark:bg-white rounded py-0.5 px-1.5',
-    'h-[24px] inline-flex rounded py-0.5 px-1.5 select-none justify-center items-center align-center gap-1',
+    'h-[22px] inline-flex rounded py-0.5 px-1.5 select-none justify-center items-center align-center gap-1',
     'inline-flex rounded py-0.5 px-1.5 select-none justify-center align-center gap-1',
-    'select-none justify-center items-center align-center gap-1',
+    'leading-none select-none justify-center items-center align-center gap-1',
     // 'hover:text-grey-dark-scale-900 dark:hover:text-white',
     // 'hover:bg-grey-light-scale-50 dark:hover:bg-grey-dark-scale-300',
   )
@@ -175,9 +175,10 @@ const SelectMulti = ({
       <div
         className={clsx(
           baseInputStyles,
+          colorInputStyles,
           'flex flex-row flex-wrap gap-2 items-center justify-between',
           'font-normal',
-          'border-2',
+          'border',
           isInvalid && '!border-red',
           'cursor-pointer',
           'select-none',
