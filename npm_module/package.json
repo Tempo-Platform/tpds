@@ -1,6 +1,6 @@
 {
   "name": "@tempoplatform/tpds",
-  "version": "2.0.31",
+  "version": "2.0.32",
   "author": "Tempo Platform Design Team",
   "main": "./dist/index.js",
   "scripts": {
@@ -165,7 +165,7 @@
     "node": ">=12.20"
   },
   "description": "Tempo Platform Design System",
-  "homepage": "https://github.com/Tempo-Platform/tpds#readme",
+  "homepage": "https://tempods.netlify.app/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Tempo-Platform/tpds.git"

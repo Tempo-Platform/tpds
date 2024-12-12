@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`bg-body h-screen w-screen ${serif_book.variable} ${sans_neutral.variable} ${monospace.variable} antialiased`}
+        className={`bg-zinc-100 dark:bg-zinc-900 h-screen w-screen ${serif_book.variable} ${sans_neutral.variable} ${monospace.variable} antialiased`}
       >
         <GlobalNav />
         <div className='lg:pl-72 bg-window'>

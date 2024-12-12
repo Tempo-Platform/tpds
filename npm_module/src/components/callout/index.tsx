@@ -9,19 +9,9 @@ import { BugIcon } from '../../assets/svgs/notifications'
 import { NoteIcon } from '../../assets/svgs/notifications'
 import { P, PSmall } from '../../elements/typography'
 
-const rootStyles = {
-  default:
-    'border-grey-light-scale-400 dark:border-grey-dark-scale-200 bg-grey-light-scale-200 dark:bg-grey-light-scale-100/5',
-  success: 'border-green/50 bg-green-scale-100/20 dark:bg-green-scale-500/5',
-  info: 'border-blue/50 bg-blue-scale-100/20 dark:bg-blue-scale-300/5',
-  danger: 'border-red/50 bg-red-scale-100/20 dark:bg-red-scale-300/5',
-  warning: 'border-orange/50 bg-orange-scale-100/20 dark:bg-orange-scale-300/5',
-  tip: 'border-purple/50 bg-purple-scale-100/20 dark:bg-purple-scale-300/5',
-  bug: 'border-orange/50 bg-orange-scale-100/20 dark:bg-orange-scale-300/5',
-  note: 'border-grey-light-scale-400 dark:border-grey-dark-scale-200 bg-grey-light-scale-200 dark:bg-grey-light-scale-100/5',
-}
+const baseStyle = 'bg-zinc-100 dark:bg-zinc-800 border-zinc-600 rounded-lg py-4 px-6'
 
-const headerBaseStyle = 'flex items-center font-medium text-lg pt-4 px-4'
+const headerBaseStyle = 'flex items-center font-medium text-lg'
 
 const headerVariantStyles = {
   default: '!text-grey-dark-scale-700 dark:!text-grey-light-scale-500',
@@ -72,7 +62,7 @@ const Callout = ({
   children?: React.ReactNode
 }) => {
   return (
-    <div {...props} className={clsx('border rounded-lg', rootStyles[variant as keyof typeof rootStyles])}>
+    <div {...props} className={baseStyle}>
       <div className={clsx(headerBaseStyle)}>
         {!customIcon && !omitIcon && variant !== 'default' && <span className='mr-2'>{getIcon(variant)}</span>}
         {customIcon && !omitIcon && <span className='mr-2'>{customIcon}</span>}
@@ -82,8 +72,8 @@ const Callout = ({
           </P>
         )}
       </div>
-      <div className='px-4 pb-4 pt-2'>
-        {text && <PSmall isMedium>{text}</PSmall>}
+      <div className='mt-2'>
+        {text && <PSmall isMedium className='!text-zinc-500 dark:!text-zinc-400'>{text}</PSmall>}
         {children}
       </div>
     </div>
