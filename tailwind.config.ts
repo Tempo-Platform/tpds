@@ -4,7 +4,7 @@ import * as tokens from './npm_module/src/tokens/index.js'
 
 export default {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './npm_module/src/**/*.{js,ts,jsx,tsx,mdx}'],
-  darkMode: 'class',
+  darkMode: 'selector',
   theme: {
     extend: {
       fontFamily: {
