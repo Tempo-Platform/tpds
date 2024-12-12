@@ -6,7 +6,7 @@ var clsx = require('clsx');
 var assets_svgs_notifications_index = require('../../assets/svgs/notifications/index.js');
 var elements_typography_index = require('../../elements/typography/index.js');
 
-const baseStyle = 'bg-zinc-100 dark:bg-zinc-800 border-zinc-600 rounded-lg py-4 px-6';
+const baseStyle = 'bg-zinc-50 dark:!bg-zinc-800 border border-zinc-200/50 dark:border-zinc-700/50 rounded-lg py-4 px-6';
 const headerBaseStyle = 'flex items-center font-medium text-lg';
 const headerVariantStyles = {
     default: '!text-grey-dark-scale-700 dark:!text-grey-light-scale-500',
