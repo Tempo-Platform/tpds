@@ -1,5 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
 const baseStyles = 'text-primary mt-0 mr-0 mb-0 ml-0'
 
@@ -38,10 +39,9 @@ type TypographElementProps = {
 }
 
 const calculateFinalClass = (defaultClass: string, props: TypographElementProps) => {
-  const finalClass = clsx(
+  const finalClass = twMerge(
     baseStyles,
     defaultClass,
-    props.className,
     props.isSmall && '!text-sm',
     props.isUnderline && '!underline',
     props.isUppercase && '!uppercase',
@@ -84,7 +84,7 @@ export const PNano = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass(pNanoClass, props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <p {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
+    <p {...xprops} className={clsx(finalClass, props.className)} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -94,7 +94,7 @@ export const PTiny = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass(pTinyClass, props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <p {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
+    <p {...xprops} className={clsx(finalClass, props.className)} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -104,7 +104,7 @@ export const PSmall = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass(pSmallClass, props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <p {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
+    <p {...xprops} className={clsx(finalClass, props.className)} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -114,7 +114,7 @@ export const P = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass(pClass, props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <p {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
+    <p {...xprops} className={clsx(finalClass, props.className)} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -124,7 +124,7 @@ export const PLarge = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass(pLargeClass, props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <p {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
+    <p {...xprops} className={clsx(finalClass, props.className)} style={props.style} onClick={props.onClick}>
       {props.children}
     </p>
   )
@@ -134,7 +134,7 @@ export const H6 = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass(h6Class, props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <h6 {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
+    <h6 {...xprops} className={clsx(finalClass, props.className)} style={props.style} onClick={props.onClick}>
       {props.children}
     </h6>
   )
@@ -144,7 +144,7 @@ export const H5 = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass(h5Class, props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <h5 {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
+    <h5 {...xprops} className={clsx(finalClass, props.className)} style={props.style} onClick={props.onClick}>
       {props.children}
     </h5>
   )
@@ -154,7 +154,7 @@ export const H4 = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass(h4Class, props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <h4 {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
+    <h4 {...xprops} className={clsx(finalClass, props.className)} style={props.style} onClick={props.onClick}>
       {props.children}
     </h4>
   )
@@ -164,7 +164,7 @@ export const H3 = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass(h3Class, props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <h3 {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
+    <h3 {...xprops} className={clsx(finalClass, props.className)} style={props.style} onClick={props.onClick}>
       {props.children}
     </h3>
   )
@@ -174,7 +174,7 @@ export const H2 = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass(h2Class, props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <h2 {...xprops} className={finalClass} style={props.style} onClick={props.onClick}>
+    <h2 {...xprops} className={clsx(finalClass, props.className)} style={props.style} onClick={props.onClick}>
       {props.children}
     </h2>
   )
@@ -183,7 +183,7 @@ export const H2 = (props: TypographElementProps) => {
 export const H1 = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass(h1Class, props)
   return (
-    <h1 className={finalClass} style={props.style} onClick={props.onClick}>
+    <h1 className={clsx(finalClass, props.className)} style={props.style} onClick={props.onClick}>
       {props.children}
     </h1>
   )
@@ -195,7 +195,7 @@ export const AccentColor = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass('!text-blue', props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <span {...xprops} className={finalClass} style={props.style}>
+    <span {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
       {props.children}
     </span>
   )
@@ -205,7 +205,7 @@ export const Bold = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass('!font-bold', props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <span {...xprops} className={finalClass} style={props.style}>
+    <span {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
       {props.children}
     </span>
   )
@@ -215,7 +215,7 @@ export const Medium = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass('!font-medium', props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <span {...xprops} className={finalClass} style={props.style}>
+    <span {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
       {props.children}
     </span>
   )
@@ -225,7 +225,7 @@ export const Underline = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass('!underline', props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <span {...xprops} className={finalClass} style={props.style}>
+    <span {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
       {props.children}
     </span>
   )
@@ -235,7 +235,7 @@ export const Red = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass('!text-red', props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <span {...xprops} className={finalClass} style={props.style}>
+    <span {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
       {props.children}
     </span>
   )
@@ -245,7 +245,7 @@ export const Blue = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass('!text-blue', props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <span {...xprops} className={finalClass} style={props.style}>
+    <span {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
       {props.children}
     </span>
   )
@@ -255,7 +255,7 @@ export const Green = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass('!text-green', props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <span {...xprops} className={finalClass} style={props.style}>
+    <span {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
       {props.children}
     </span>
   )
@@ -265,7 +265,7 @@ export const Orange = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass('!text-orange', props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <span {...xprops} className={finalClass} style={props.style}>
+    <span {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
       {props.children}
     </span>
   )
@@ -275,7 +275,7 @@ export const Code = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass('font-mono font-bold', props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <span {...xprops} className={finalClass} style={props.style}>
+    <span {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
       {props.children}
     </span>
   )
@@ -287,7 +287,7 @@ export const FormLabelNano = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass(clsx(pNanoClass, 'font-label text-tertiary font-medium leading-none'), props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <p {...xprops} className={finalClass} style={props.style}>
+    <p {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
       {props.children}
     </p>
   )
@@ -297,7 +297,7 @@ export const FormLabelTiny = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass(clsx(pTinyClass, 'font-label text-tertiary font-medium leading-none'), props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <p {...xprops} className={finalClass} style={props.style}>
+    <p {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
       {props.children}
     </p>
   )
@@ -307,7 +307,7 @@ export const FormLabelSmall = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass(clsx(pSmallClass, 'font-label text-tertiary font-medium leading-none'), props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <p {...xprops} className={finalClass} style={props.style}>
+    <p {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
       {props.children}
     </p>
   )
@@ -317,7 +317,7 @@ export const FormLabel = (props: TypographElementProps) => {
   const finalClass = calculateFinalClass(clsx(pClass, 'font-label text-tertiary font-medium leading-none'), props)
   const xprops: ExtraProps = { id: props.id }
   return (
-    <p {...xprops} className={finalClass} style={props.style}>
+    <p {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
       {props.children}
     </p>
   )
