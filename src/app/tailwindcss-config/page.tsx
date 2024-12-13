@@ -2,7 +2,7 @@ import PageHeader from '@/lib/components/PageHeader'
 import { P } from '@tpds/elements/typography'
 import { Container } from '@tpds/elements/layout'
 import CodeBlock from '@tpds/components/code'
-import configJSON from '@tpds/tailwindcss'
+// import configJSON from '@tpds/tailwindcss'
 
 export default function TailwindCSSConfig() {
   return (
@@ -38,7 +38,7 @@ export default function TailwindCSSConfig() {
         <P>Note: Some frontend frameworks may require additional configuration to work with TailwindCSS.</P>
         <br />
         <br />
-        <CodeBlock code={JSON.stringify(configJSON, null, 2)} />
+        {/* <CodeBlock code={JSON.stringify(configJSON, null, 2)} /> */}
         <br />
         <br />
       </Container>

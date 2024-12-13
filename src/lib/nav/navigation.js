@@ -34,11 +34,11 @@ export const navigationitems = [
         slug: 'design-tokens',
         description: 'Peek into the TPDS design tokens',
       },
-      {
-        name: 'TailwindCSS config',
-        slug: 'tailwindcss-config',
-        description: 'Ready-to-use TailwindCSS configuration',
-      },
+      // {
+      //   name: 'TailwindCSS config',
+      //   slug: 'tailwindcss-config',
+      //   description: 'Ready-to-use TailwindCSS configuration',
+      // },
       {
         name: 'Code',
         slug: 'code',
