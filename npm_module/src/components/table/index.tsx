@@ -94,28 +94,22 @@ function Table({
   const headerClass = clsx(
     'grid gap-2',
     columnVariants[columns.length as keyof typeof columnVariants],
-    'mb-1',
     'px-4 py-1.5',
+    'border-b border-grey-light-scale-300 dark:border-grey-dark-scale-600',
   )
   const rowClass = clsx(
-    'grid gap-4 rounded-[3px]',
-    columnVariants[columns.length as keyof typeof columnVariants],
-    'bg-grey-light-scale-50 dark:bg-grey-dark-scale-900 border border-grey-light-scale-300 dark:border-grey-dark-scale-700 dark:shadow-none',
+    'grid gap-4',
     'px-4',
+    columnVariants[columns.length as keyof typeof columnVariants],
+    'border-b border-grey-light-scale-200 dark:border-grey-dark-scale-700',
+    rowClick && 'cursor-pointer hover:bg-zinc-100/50 dark:hover:bg-zinc-900/50',
     density === 'high' && 'py-2',
     density === 'medium' && 'py-3',
     density === 'low' && 'py-4',
-    rowClick && 'cursor-pointer hover:border-grey-light-scale-500 dark:hover:border-grey-dark-scale-100',
-    rowSpacing === 'none' && '!border-b-0 last:!border-b',
+    // rowSpacing === 'none' && '!border-b-0 last:!border-b',
     customRowClass,
   )
-  const rowsContainerClass = clsx(
-    'flex flex-col mb-4',
-    rowSpacing === 'low' && 'gap-y-1',
-    rowSpacing === 'medium' && 'gap-y-2',
-    rowSpacing === 'high' && 'gap-y-3',
-    rowSpacing === 'none' && 'gap-y-0',
-  )
+  const rowsContainerClass = 'flex flex-col mb-4'
 
   const numPages = Math.ceil(data.length / rowsPerPage)
 
@@ -201,7 +195,15 @@ function Table({
       </div>
       <div className={rowsContainerClass}>
         {data.map((item, rowIndex) => (
-          <div key={`row-${rowIndex}`} className={rowClass} onClick={rowClick ? () => rowClick(item) : undefined}>
+          <div
+            key={`row-${rowIndex}`}
+            className={
+              rowIndex === data.length - 1
+                ? clsx(rowClass, '!border-grey-light-scale-300 dark:!border-grey-dark-scale-600')
+                : rowClass
+            }
+            onClick={rowClick ? () => rowClick(item) : undefined}
+          >
             {columns.map((column, elementIndex) => {
               return renderElement(item, column, rowIndex, elementIndex)
             })}

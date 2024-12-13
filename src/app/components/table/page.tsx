@@ -235,7 +235,6 @@ export default function Page() {
         <PSmall>- Define density (rows internal vertical padding)</PSmall>
         <PSmall>- Define row spacing</PSmall>
         <br />
-        <Separator />
         <br />
         <Table
           columns={tableColumns}
