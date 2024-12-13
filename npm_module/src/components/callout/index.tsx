@@ -52,6 +52,7 @@ const Callout = ({
   omitIcon = false,
   customIcon,
   children,
+  customBgClass,
   ...props
 }: {
   variant?: string
@@ -60,9 +61,10 @@ const Callout = ({
   omitIcon?: boolean
   customIcon?: React.ReactNode
   children?: React.ReactNode
+  customBgClass?: string
 }) => {
   return (
-    <div {...props} className={baseStyle}>
+    <div {...props} className={clsx(baseStyle, customBgClass)}>
       <div className={clsx(headerBaseStyle)}>
         {!customIcon && !omitIcon && variant !== 'default' && <span className='mr-2'>{getIcon(variant)}</span>}
         {customIcon && !omitIcon && <span className='mr-2'>{customIcon}</span>}
