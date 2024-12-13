@@ -6,11 +6,24 @@ export default {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './npm_module/src/**/*.{js,ts,jsx,tsx,mdx}'],
   darkMode: 'selector',
   theme: {
+    fontFamily: {
+      sans: ['Inter', 'sans-serif'],
+      serif: ['Lora', 'serif'],
+      mono: ['Inconsolata', 'mono'],
+    },
     extend: {
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Lora', 'serif'],
-        mono: ['Inconsolata', 'mono'],
+      textColor: {
+        primary: 'var(--text-primary)',
+        secondary: 'var(--text-secondary)',
+        tertiary: 'var(--text-tertiary)',
+      },
+      backgroundColor: {
+        body: 'var(--bg-body)',
+        window: 'var(--bg-window)',
+      },
+      borderColor: {
+        body: 'var(--border-body)',
+        window: 'var(--border-window)',
       },
       screens: {
         sm: tokens.breakpoints.sm,

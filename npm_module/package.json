@@ -1,6 +1,6 @@
 {
   "name": "@tempoplatform/tpds",
-  "version": "2.0.42",
+  "version": "2.0.48",
   "author": "Tempo Platform Design Team",
   "main": "./dist/index.js",
   "scripts": {
@@ -131,9 +131,9 @@
     },
     "./constants/spacings": "./dist/constants/spacings/index.js",
     "./constants/colors": "./dist/constants/colors/index.js",
-    "./assets/fonts/inter": "./dist/assets/fonts/inter/inter.css",
-    "./assets/fonts/graphik": "./dist/assets/fonts/graphik/graphik.css",
-    "./assets/fonts/sfmono": "./dist/assets/fonts/sfmono/sfmono.css",
+    "./assets/fonts/inter": "./dist/assets/fonts/inter.css",
+    "./assets/fonts/lora": "./dist/assets/fonts/lora.css",
+    "./assets/fonts/inconsolata": "./dist/assets/fonts/inconsolata.css",
     "./assets/svgs/tiny": {
       "types": "./dist/assets/svgs/tiny/index.d.ts",
       "default": "./dist/assets/svgs/tiny/index.js"
@@ -155,10 +155,6 @@
       "default": "./dist/assets/svgs/notifications/index.js"
     },
     "./css": "./dist/css/tpds.css",
-    "./tailwindcss": {
-      "types": "./dist/tailwindcss/index.d.ts",
-      "default": "./dist/tailwindcss/index.js"
-    },
     "./tokens": "./dist/tokens/index.js"
   },
   "engines": {

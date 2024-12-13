@@ -3,6 +3,7 @@
 var React = require('react');
 var elements_typography_index = require('../../elements/typography/index.js');
 require('clsx');
+require('tailwind-merge');
 
 const lastPVariants = {
     default: 'col-span-4',

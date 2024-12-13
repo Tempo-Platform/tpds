@@ -5,8 +5,8 @@ var clsx = require('clsx');
 var elements_typography_index = require('../../elements/typography/index.js');
 var elements_buttons_index = require('../../elements/buttons/index.js');
 var assets_svgs_arrows_index = require('../../assets/svgs/arrows/index.js');
-require('../../tslib.es6-VGxyZ2Ib.js');
 require('tailwind-merge');
+require('../../tslib.es6-VGxyZ2Ib.js');
 
 const getColumnAlign = (alignType) => {
     switch (alignType) {

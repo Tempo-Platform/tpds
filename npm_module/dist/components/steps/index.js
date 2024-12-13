@@ -5,6 +5,7 @@ var React = require('react');
 var elements_typography_index = require('../../elements/typography/index.js');
 var assets_svgs_icons_index = require('../../assets/svgs/icons/index.js');
 var clsx = require('clsx');
+require('tailwind-merge');
 
 const insertLines = (array) => {
     const newArray = [];

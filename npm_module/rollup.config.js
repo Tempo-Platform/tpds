@@ -12,7 +12,6 @@ export default {
       './src/elements/**/*.*',
       './src/components/**/*.*',
       './src/constants/**/*.*',
-      './src/tailwindcss/*.*',
       './src/tokens/*.*',
       './src/assets/svgs/**/*.*',
       './src/css/index.tsx',

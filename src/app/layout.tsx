@@ -4,7 +4,7 @@ import { serif_book, sans_neutral, monospace } from '@/lib/fonts'
 import './tailwind.css'
 import '@tpds/css/basestyles.css'
 import '@tpds/css/colors.css'
-import '@tpds/css/utility-classes.css'
+// import '@tpds/css/utility-classes.css'
 import 'rc-slider/assets/index.css'
 import './rc-slider.css'
 

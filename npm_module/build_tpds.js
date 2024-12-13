@@ -72,16 +72,16 @@ async function generate_colors_CSS_vars() {
   console.log(stdout)
 }
 
-async function build_base_CSS() {
-  console.log('TPDS ::: Building base CSS...')
-  const command = `postcss ./tailwind.css -o ${pathToSrcFolder}/css/tpds.css`
-  const { stdout, stderr } = await execAsync(command)
-  if (stderr) {
-    console.log('TPDS ::: Error building base CSS:')
-    throw new Error(stderr)
-  }
-  console.log(stdout)
-}
+// async function build_base_CSS() {
+//   console.log('TPDS ::: Building base CSS...')
+//   const command = `postcss ./tailwind.css -o ${pathToSrcFolder}/css/tpds.css`
+//   const { stdout, stderr } = await execAsync(command)
+//   if (stderr) {
+//     console.log('TPDS ::: Error building base CSS:')
+//     throw new Error(stderr)
+//   }
+//   console.log(stdout)
+// }
 
 async function copy_fonts_files() {
   console.log('TPDS ::: Copying fonts files...')
@@ -108,7 +108,7 @@ async function run() {
   await create_dist_folder()
   await fetch_tokens()
   await generate_colors_CSS_vars()
-  await build_base_CSS()
+  // await build_base_CSS()
   await copy_fonts_files()
   await run_compilations()
   console.log('TPDS build script finished.')

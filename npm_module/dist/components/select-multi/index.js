@@ -5,8 +5,8 @@ var clsx = require('clsx');
 var elements_typography_index = require('../../elements/typography/index.js');
 var assets_svgs_tiny_index = require('../../assets/svgs/tiny/index.js');
 var elements_input_index = require('../../elements/input/index.js');
-require('../../tslib.es6-VGxyZ2Ib.js');
 require('tailwind-merge');
+require('../../tslib.es6-VGxyZ2Ib.js');
 
 const getCurrentInputValue = (options, selectedIndexes) => {
     if (!selectedIndexes || selectedIndexes.length === 0)

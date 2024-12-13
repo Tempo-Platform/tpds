@@ -5,6 +5,7 @@ var React = require('react');
 var clsx = require('clsx');
 var assets_svgs_notifications_index = require('../../assets/svgs/notifications/index.js');
 var elements_typography_index = require('../../elements/typography/index.js');
+require('tailwind-merge');
 
 const baseStyle = 'bg-zinc-50 dark:!bg-zinc-800 border border-zinc-200/50 dark:border-zinc-700/50 rounded-lg py-4 px-6';
 const headerBaseStyle = 'flex items-center font-medium text-lg';
@@ -39,8 +40,8 @@ const getIcon = (variant) => {
     }
 };
 const Callout = (_a) => {
-    var { variant = 'default', title, text, omitIcon = false, customIcon, children } = _a, props = tslib_es6.__rest(_a, ["variant", "title", "text", "omitIcon", "customIcon", "children"]);
-    return (/*#__PURE__*/React.createElement("div", Object.assign({}, props, { className: baseStyle }), "\n      ", /*#__PURE__*/React.createElement("div", { className: clsx(headerBaseStyle) }, "\n        ", !customIcon && !omitIcon && variant !== 'default' && /*#__PURE__*/React.createElement("span", { className: 'mr-2' }, getIcon(variant)), "\n        ", customIcon && !omitIcon && /*#__PURE__*/React.createElement("span", { className: 'mr-2' }, customIcon), "\n        ", title && (/*#__PURE__*/React.createElement(elements_typography_index.P, { isMedium: true, className: clsx(headerVariantStyles[variant]) }, "\n            ", title, "\n          ")), "\n      "), "\n      ", /*#__PURE__*/React.createElement("div", { className: 'mt-2' }, "\n        ", text && /*#__PURE__*/React.createElement(elements_typography_index.PSmall, { isMedium: true, className: '!text-zinc-500 dark:!text-zinc-400' }, text), "\n        ", children, "\n      "), "\n    "));
+    var { variant = 'default', title, text, omitIcon = false, customIcon, children, customBgClass } = _a, props = tslib_es6.__rest(_a, ["variant", "title", "text", "omitIcon", "customIcon", "children", "customBgClass"]);
+    return (/*#__PURE__*/React.createElement("div", Object.assign({}, props, { className: clsx(baseStyle, customBgClass) }), "\n      ", /*#__PURE__*/React.createElement("div", { className: clsx(headerBaseStyle) }, "\n        ", !customIcon && !omitIcon && variant !== 'default' && /*#__PURE__*/React.createElement("span", { className: 'mr-2' }, getIcon(variant)), "\n        ", customIcon && !omitIcon && /*#__PURE__*/React.createElement("span", { className: 'mr-2' }, customIcon), "\n        ", title && (/*#__PURE__*/React.createElement(elements_typography_index.P, { isMedium: true, className: clsx(headerVariantStyles[variant]) }, "\n            ", title, "\n          ")), "\n      "), "\n      ", /*#__PURE__*/React.createElement("div", { className: 'mt-2' }, "\n        ", text && /*#__PURE__*/React.createElement(elements_typography_index.PSmall, { isMedium: true, className: '!text-zinc-500 dark:!text-zinc-400' }, text), "\n        ", children, "\n      "), "\n    "));
 };
 
 module.exports = Callout;
