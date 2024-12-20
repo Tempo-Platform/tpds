@@ -214,7 +214,7 @@ function Table({
         <div className='flex justify-end gap-1'>
           <Button
             className='!p-2 min-w-0 text-primary'
-            variant='secondary'
+            variant='default'
             isDisabled={page === 1}
             isSmall
             onClick={handleBackToFirstPage}
@@ -223,7 +223,7 @@ function Table({
           </Button>
           <Button
             className='!p-2 min-w-0 text-primary'
-            variant='secondary'
+            variant='default'
             isDisabled={page === 1}
             isSmall
             onClick={handleClickToPreviousPage}
@@ -233,7 +233,7 @@ function Table({
 
           <Button
             className='!p-2 min-w-0 pointer-events-none'
-            variant='secondary'
+            variant='default'
             isDisabled={page === numPages}
             isSmall
             onClick={handleClickToNextPage}
@@ -242,7 +242,7 @@ function Table({
           </Button>
           <Button
             className='!p-2 min-w-0 text-primary'
-            variant='secondary'
+            variant='default'
             isDisabled={page === numPages}
             isSmall
             onClick={handleClickToNextPage}
@@ -251,7 +251,7 @@ function Table({
           </Button>
           <Button
             className='!p-2 min-w-0 text-primary'
-            variant='secondary'
+            variant='default'
             isDisabled={page === numPages}
             isSmall
             onClick={handleGoToLastPage}
