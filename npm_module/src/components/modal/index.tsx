@@ -102,7 +102,7 @@ function Content({
       {
         callBack: () => closeModal?.(),
         label: 'Close',
-        variant: 'secondary',
+        variant: 'default',
       },
     ]
   }
