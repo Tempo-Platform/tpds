@@ -11,8 +11,7 @@ const Tag = ({
   variant = 'default',
   rootClassName = '',
   labelClassName = '',
-  className = '',
-  ...props
+  className = ''
 }: {
   onClick?: () => void
   label?: string
@@ -27,7 +26,7 @@ const Tag = ({
 }) => {
   const finalRootClass = clsx(
     className,
-    'h-[26px] inline-flex !rounded-[6px] py-1 px-2',
+    'h-[26px] inline-flex rounded-[6px] py-1 px-2',
     'select-none justify-center items-center align-center gap-1',
     'inline-flex py-0.5 px-1.5 select-none justify-center align-center gap-1',
     rootVariantStyles[variant as keyof typeof rootVariantStyles],
