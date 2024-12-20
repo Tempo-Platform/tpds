@@ -4,17 +4,17 @@ import clsx from 'clsx'
 const getClassNamesForBreakpoint = (breakpoint: string): string => {
   switch (breakpoint) {
     case 'sm':
-      return 'flex-col gap-y-[2px] h-auto sm:flex-row sm:gap-x-[2px] sm:h-[36px]'
+      return 'flex-col gap-y-[2px] h-auto sm:flex-row sm:gap-x-[2px] sm:h-[38px]'
     case 'md':
-      return 'flex-col gap-y-[2px] h-auto sm:flex-row sm:gap-x-[2px] sm:h-[36px]'
+      return 'flex-col gap-y-[2px] h-auto sm:flex-row sm:gap-x-[2px] sm:h-[38px]'
     case 'lg':
-      return 'flex-col gap-y-[2px] h-auto sm:flex-row sm:gap-x-[2px] sm:h-[36px]'
+      return 'flex-col gap-y-[2px] h-auto sm:flex-row sm:gap-x-[2px] sm:h-[38px]'
     case 'xl':
-      return 'flex-col gap-y-[2px] h-auto sm:flex-row sm:gap-x-[2px] sm:h-[36px]'
+      return 'flex-col gap-y-[2px] h-auto sm:flex-row sm:gap-x-[2px] sm:h-[38px]'
     case '2xl':
-      return 'flex-col gap-y-[2px] h-auto sm:flex-row sm:gap-x-[2px] sm:h-[36px]'
+      return 'flex-col gap-y-[2px] h-auto sm:flex-row sm:gap-x-[2px] sm:h-[38px]'
     default:
-      return 'flex-col gap-y-[2px] h-auto sm:flex-row sm:gap-x-[2px] sm:h-[36px]'
+      return 'flex-col gap-y-[2px] h-auto sm:flex-row sm:gap-x-[2px] sm:h-[38px]'
   }
 }
 
@@ -34,8 +34,9 @@ const RadioTabs = ({
   stackAtBreakpoint?: string
 }) => {
   const containerStyles = clsx(
-    'flex gap-x-[2px] rounded-[4px] p-[2px] h-[36px]',
-    'bg-transparent border-2 !border-[#ededed] dark:!border-[#384147]',
+    'flex gap-x-[2px] rounded-[6px] p-[2px] h-[38px]',
+    'bg-zinc-100 dark:bg-grey-dark-scale-600',
+    'border border-zinc-300 dark:border-grey-dark-scale-400',
     // using template strings isn't working so we're using a dumb function
     stackAtBreakpoint && getClassNamesForBreakpoint(stackAtBreakpoint),
   )
@@ -43,7 +44,7 @@ const RadioTabs = ({
     'flex-1 overflow-hidden cursor-pointer',
     '!px-[7px] py-[4px]',
     'flex justify-center',
-    'select-none !outline-none rounded-[3px]',
+    'select-none !outline-none rounded-[4px]',
   )
   const itemLabelStyles = clsx(
     'font-semibold',
@@ -60,7 +61,7 @@ const RadioTabs = ({
           <div
             className={clsx(
               itemDivStyles,
-              index === selectedIndex && 'bg-grey-light-scale-300 dark:bg-grey-dark-scale-300',
+              index === selectedIndex && 'bg-zinc-800 dark:bg-zinc-300',
             )}
             key={item.value || item.description || item.label || item}
             onClick={() => handleIndexSelection(index)}
@@ -69,8 +70,8 @@ const RadioTabs = ({
               className={clsx(
                 itemLabelStyles,
                 index === selectedIndex
-                  ? 'text-grey-dark-scale-200 dark:text-grey-light-scale-300'
-                  : 'text-grey-light-scale-600 dark:text-grey-light-scale-900',
+                  ? 'text-zinc-200 dark:text-zinc-800'
+                  : 'text-zinc-600 dark:text-zinc-500',
               )}
             >
               {item.value || item.description || item.label || item}
