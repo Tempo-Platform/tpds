@@ -68,7 +68,7 @@ const calculateFinalClass = (defaultClass: string, props: TypographElementProps)
   )
   return finalClass
 }
-const pNanoClass = 'text-xxs md:text-xs'
+const pNanoClass = 'text-[0.65rem] md:text-xs'
 const pTinyClass = 'text-xs md:text-sm'
 const pSmallClass = 'text-sm md:text-base'
 const pClass = 'text-base md:text-lg'
@@ -283,8 +283,10 @@ export const Code = (props: TypographElementProps) => {
 
 // // form labels
 
+const labelStyle = 'font-label text-zinc-500 dark:text-zinc-400 font-medium leading-none'
+
 export const FormLabelNano = (props: TypographElementProps) => {
-  const finalClass = calculateFinalClass(clsx(pNanoClass, 'font-label text-tertiary font-medium leading-none'), props)
+  const finalClass = calculateFinalClass(clsx(pNanoClass, labelStyle), props)
   const xprops: ExtraProps = { id: props.id }
   return (
     <p {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
@@ -294,7 +296,7 @@ export const FormLabelNano = (props: TypographElementProps) => {
 }
 
 export const FormLabelTiny = (props: TypographElementProps) => {
-  const finalClass = calculateFinalClass(clsx(pTinyClass, 'font-label text-tertiary font-medium leading-none'), props)
+  const finalClass = calculateFinalClass(clsx(pTinyClass, labelStyle), props)
   const xprops: ExtraProps = { id: props.id }
   return (
     <p {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
@@ -304,7 +306,7 @@ export const FormLabelTiny = (props: TypographElementProps) => {
 }
 
 export const FormLabelSmall = (props: TypographElementProps) => {
-  const finalClass = calculateFinalClass(clsx(pSmallClass, 'font-label text-tertiary font-medium leading-none'), props)
+  const finalClass = calculateFinalClass(clsx(pSmallClass, labelStyle), props)
   const xprops: ExtraProps = { id: props.id }
   return (
     <p {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
@@ -314,7 +316,7 @@ export const FormLabelSmall = (props: TypographElementProps) => {
 }
 
 export const FormLabel = (props: TypographElementProps) => {
-  const finalClass = calculateFinalClass(clsx(pClass, 'font-label text-tertiary font-medium leading-none'), props)
+  const finalClass = calculateFinalClass(clsx(pClass, labelStyle), props)
   const xprops: ExtraProps = { id: props.id }
   return (
     <p {...xprops} className={clsx(finalClass, props.className)} style={props.style}>
