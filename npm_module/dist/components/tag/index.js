@@ -1,12 +1,10 @@
 'use strict';
 
-var tslib_es6 = require('../../tslib.es6-VGxyZ2Ib.js');
 var React = require('react');
 var clsx = require('clsx');
 
-const Tag = (_a) => {
-    var { onClick, label = '', isUppercase = false, addHoverEffect = false, showCloseIcon = false, noBorder = false, variant = 'default', rootClassName = '', labelClassName = '', className = '' } = _a; tslib_es6.__rest(_a, ["onClick", "label", "isUppercase", "addHoverEffect", "showCloseIcon", "noBorder", "variant", "rootClassName", "labelClassName", "className"]);
-    const finalRootClass = clsx(className, 'h-[26px] inline-flex !rounded-[6px] py-1 px-2', 'select-none justify-center items-center align-center gap-1', 'inline-flex py-0.5 px-1.5 select-none justify-center align-center gap-1', rootVariantStyles[variant], addHoverEffect && 'cursor-pointer', addHoverEffect && rootVariantStylesWithHover[variant], noBorder && '!border-none', rootClassName);
+const Tag = ({ onClick, label = '', isUppercase = false, addHoverEffect = false, showCloseIcon = false, noBorder = false, variant = 'default', rootClassName = '', labelClassName = '', className = '' }) => {
+    const finalRootClass = clsx(className, 'h-[26px] inline-flex rounded-[6px] py-1 px-2', 'select-none justify-center items-center align-center gap-1', 'inline-flex py-0.5 px-1.5 select-none justify-center align-center gap-1', rootVariantStyles[variant], addHoverEffect && 'cursor-pointer', addHoverEffect && rootVariantStylesWithHover[variant], noBorder && '!border-none', rootClassName);
     const finalLabelClass = clsx('text-[12px] font-[600] whitespace-nowrap !text-inherit m-0 !leading-none', isUppercase && 'uppercase', labelClassName);
     return (/*#__PURE__*/React.createElement("div", { className: finalRootClass, onClick: onClick }, "\n      ", /*#__PURE__*/React.createElement("p", { className: finalLabelClass, style: { lineHeight: 'normal' } }, "\n        ", label, "\n      "), "\n      ", showCloseIcon && /*#__PURE__*/React.createElement(XIcon, { className: finalLabelClass }), "\n    "));
 };

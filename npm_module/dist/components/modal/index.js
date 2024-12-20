@@ -37,7 +37,7 @@ function Content({ title, description, content, options, titleProps, description
             {
                 callBack: () => closeModal === null || closeModal === void 0 ? void 0 : closeModal(),
                 label: 'Close',
-                variant: 'secondary',
+                variant: 'default',
             },
         ];
     }

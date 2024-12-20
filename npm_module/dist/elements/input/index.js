@@ -9,7 +9,7 @@ const baseInputStyles = [
     'flex w-full',
     'transition duration-400',
     'px-2.5 rounded-[6px] !outline-none',
-    '!h-[38px] text-[13px]',
+    'h-[38px] text-[13px]',
     'border',
     'font-medium text-primary',
     'leading-none',

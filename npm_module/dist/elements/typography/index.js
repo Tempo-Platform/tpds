@@ -9,7 +9,7 @@ const calculateFinalClass = (defaultClass, props) => {
     const finalClass = tailwindMerge.twMerge(baseStyles, defaultClass, props.isSmall && '!text-sm', props.isUnderline && '!underline', props.isUppercase && '!uppercase', props.isItalic && '!italic', props.isLight && '!font-light', props.isMedium && '!font-medium', props.isBold && '!font-bold', props.isExtraBold && '!font-extrabold', props.isHeavy && '!font-black', props.isPulsing && '!animate-pulse', props.isCentered && '!text-center', props.noSelect && '!select-none', props.isWhite && '!text-white', props.isGreen && '!text-green', props.isRed && '!text-red', props.isBlue && '!text-blue', props.isOrange && '!text-orange', props.isYellow && '!text-yellow', props.leadingNone && '!leading-none', props.isLabel && '!select-none', props.isLabel && '!leading-none', props.isLabel && '!font-label', props.forceLightMode && '!text-black');
     return finalClass;
 };
-const pNanoClass = 'text-xxs md:text-xs';
+const pNanoClass = 'text-[0.65rem] md:text-xs';
 const pTinyClass = 'text-xs md:text-sm';
 const pSmallClass = 'text-sm md:text-base';
 const pClass = 'text-base md:text-lg';
@@ -121,23 +121,24 @@ const Code = (props) => {
     return (/*#__PURE__*/React.createElement("span", Object.assign({}, xprops, { className: clsx(finalClass, props.className), style: props.style }), "\n      ", props.children, "\n    "));
 };
 // // form labels
+const labelStyle = 'font-label text-zinc-500 dark:text-zinc-400 font-medium leading-none';
 const FormLabelNano = (props) => {
-    const finalClass = calculateFinalClass(clsx(pNanoClass, 'font-label text-tertiary font-medium leading-none'), props);
+    const finalClass = calculateFinalClass(clsx(pNanoClass, labelStyle), props);
     const xprops = { id: props.id };
     return (/*#__PURE__*/React.createElement("p", Object.assign({}, xprops, { className: clsx(finalClass, props.className), style: props.style }), "\n      ", props.children, "\n    "));
 };
 const FormLabelTiny = (props) => {
-    const finalClass = calculateFinalClass(clsx(pTinyClass, 'font-label text-tertiary font-medium leading-none'), props);
+    const finalClass = calculateFinalClass(clsx(pTinyClass, labelStyle), props);
     const xprops = { id: props.id };
     return (/*#__PURE__*/React.createElement("p", Object.assign({}, xprops, { className: clsx(finalClass, props.className), style: props.style }), "\n      ", props.children, "\n    "));
 };
 const FormLabelSmall = (props) => {
-    const finalClass = calculateFinalClass(clsx(pSmallClass, 'font-label text-tertiary font-medium leading-none'), props);
+    const finalClass = calculateFinalClass(clsx(pSmallClass, labelStyle), props);
     const xprops = { id: props.id };
     return (/*#__PURE__*/React.createElement("p", Object.assign({}, xprops, { className: clsx(finalClass, props.className), style: props.style }), "\n      ", props.children, "\n    "));
 };
 const FormLabel = (props) => {
-    const finalClass = calculateFinalClass(clsx(pClass, 'font-label text-tertiary font-medium leading-none'), props);
+    const finalClass = calculateFinalClass(clsx(pClass, labelStyle), props);
     const xprops = { id: props.id };
     return (/*#__PURE__*/React.createElement("p", Object.assign({}, xprops, { className: clsx(finalClass, props.className), style: props.style }), "\n      ", props.children, "\n    "));
 };

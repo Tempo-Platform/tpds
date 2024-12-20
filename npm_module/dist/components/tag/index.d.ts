@@ -1,5 +1,5 @@
 import React from 'react';
-declare const Tag: ({ onClick, label, isUppercase, addHoverEffect, showCloseIcon, noBorder, variant, rootClassName, labelClassName, className, ...props }: {
+declare const Tag: ({ onClick, label, isUppercase, addHoverEffect, showCloseIcon, noBorder, variant, rootClassName, labelClassName, className }: {
     onClick?: () => void;
     label?: string;
     isUppercase?: boolean;
