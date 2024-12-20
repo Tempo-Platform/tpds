@@ -61,7 +61,7 @@ const RadioTabs = ({
           <div
             className={clsx(
               itemDivStyles,
-              index === selectedIndex && 'bg-zinc-800 dark:bg-zinc-300',
+              index === selectedIndex && 'bg-white dark:bg-zinc-700',
             )}
             key={item.value || item.description || item.label || item}
             onClick={() => handleIndexSelection(index)}
@@ -70,8 +70,8 @@ const RadioTabs = ({
               className={clsx(
                 itemLabelStyles,
                 index === selectedIndex
-                  ? 'text-zinc-200 dark:text-zinc-800'
-                  : 'text-zinc-600 dark:text-zinc-500',
+                  ? 'text-zinc-600 dark:text-zinc-200'
+                  : 'text-zinc-400 dark:text-zinc-500',
               )}
             >
               {item.value || item.description || item.label || item}
