@@ -11,7 +11,10 @@ const Tag = ({
   variant = 'default',
   rootClassName = '',
   labelClassName = '',
-  className = ''
+  className = '',
+  onMouseEnter,
+  onMouseLeave,
+  children,
 }: {
   onClick?: () => void
   label?: string
@@ -23,6 +26,9 @@ const Tag = ({
   rootClassName?: string
   labelClassName?: string
   className?: string
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
+  children?: React.ReactNode
 }) => {
   const finalRootClass = clsx(
     className,
@@ -42,10 +48,12 @@ const Tag = ({
   )
 
   return (
-    <div className={finalRootClass} onClick={onClick}>
-      <p className={finalLabelClass} style={{ lineHeight: 'normal' }}>
-        {label}
-      </p>
+    <div className={finalRootClass} onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+      {children || (
+        <p className={finalLabelClass} style={{ lineHeight: 'normal' }}>
+          {label}
+        </p>
+      )}
       {showCloseIcon && <XIcon className={finalLabelClass} />}
     </div>
   )
