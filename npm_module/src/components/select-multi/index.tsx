@@ -112,8 +112,7 @@ const SelectMulti = ({
   const optionsToShow = omitSelectedInDropdown ? optionsThatAreStillNotSelected : optionsThatMatchInputValue
 
   const tagRootClass = clsx(
-    'text-grey-dark-scale-200 dark:text-grey-light-scale-400',
-    'inline-flex shadow bg-black dark:bg-white rounded py-0.5 px-1.5',
+    'inline-flex shadow bg-white dark:bg-zinc-700 rounded py-0.5 px-1.5',
     'h-[22px] inline-flex rounded py-0.5 px-1.5 select-none justify-center items-center align-center gap-1',
     'inline-flex rounded py-0.5 px-1.5 select-none justify-center align-center gap-1',
     'leading-none select-none justify-center items-center align-center gap-1',
@@ -122,10 +121,10 @@ const SelectMulti = ({
   )
   const tagRootClassInverted = clsx(tagRootClass, '!bg-black dark:!bg-white !text-white')
   const tagClass = clsx(
-    'text-[11px] font-bold whitespace-nowrap !text-white dark:!text-black m-0',
+    'text-[11px] font-bold whitespace-nowrap text-zinc-600 dark:text-zinc-200 m-0',
     'relative top-[-1px]',
   )
-  const xClass = clsx('text-[11px] font-bold whitespace-nowrap !text-white dark:!text-black m-0')
+  const xClass = clsx('text-[11px] font-bold whitespace-nowrap text-zinc-600 dark:text-zinc-200 m-0')
 
   let selectedTagsToDisplay = displayValue
   if (truncateAfterNumItems !== -1 && displayValue.length > truncateAfterNumItems) {
