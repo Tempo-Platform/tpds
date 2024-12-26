@@ -119,7 +119,7 @@ const SelectMulti = ({
     // 'hover:text-grey-dark-scale-900 dark:hover:text-white',
     // 'hover:bg-grey-light-scale-50 dark:hover:bg-grey-dark-scale-300',
   )
-  const tagRootClassInverted = clsx(tagRootClass, '!bg-black dark:!bg-white !text-white')
+  const tagRootClassInverted = clsx(tagRootClass, 'text-zinc-600 dark:text-zinc-200 bg-white dark:bg-zinc-700')
   const tagClass = clsx(
     'text-[11px] font-bold whitespace-nowrap text-zinc-600 dark:text-zinc-200 m-0',
     'relative top-[-1px]',
