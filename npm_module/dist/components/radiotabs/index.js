@@ -25,9 +25,9 @@ const RadioTabs = ({ items, selectedIndex, handleIndexSelection, className, styl
     stackAtBreakpoint && getClassNamesForBreakpoint(stackAtBreakpoint));
     const itemDivStyles = clsx('flex-1 overflow-hidden cursor-pointer', '!px-[7px] py-[4px]', 'flex justify-center', 'select-none !outline-none rounded-[4px]');
     const itemLabelStyles = clsx('font-semibold', 'text-[13px]', '!outline-none', 'overflow-hidden whitespace-nowrap text-ellipsis', '!m-0 self-center', 'relative top-0');
-    return (/*#__PURE__*/React.createElement("div", { className: clsx('w-full', className), style: style }, "\n      ", /*#__PURE__*/React.createElement("div", { className: containerStyles }, "\n        ", items.map((item, index) => (/*#__PURE__*/React.createElement("div", { className: clsx(itemDivStyles, index === selectedIndex && 'bg-zinc-800 dark:bg-zinc-300'), key: item.value || item.description || item.label || item, onClick: () => handleIndexSelection(index) }, "\n            ", /*#__PURE__*/React.createElement("p", { className: clsx(itemLabelStyles, index === selectedIndex
-                ? 'text-zinc-200 dark:text-zinc-800'
-                : 'text-zinc-600 dark:text-zinc-500') }, "\n              ", item.value || item.description || item.label || item, "\n            "), "\n          "))), "\n      "), "\n    "));
+    return (/*#__PURE__*/React.createElement("div", { className: clsx('w-full', className), style: style }, "\n      ", /*#__PURE__*/React.createElement("div", { className: containerStyles }, "\n        ", items.map((item, index) => (/*#__PURE__*/React.createElement("div", { className: clsx(itemDivStyles, index === selectedIndex && 'bg-white dark:bg-zinc-700'), key: item.value || item.description || item.label || item, onClick: () => handleIndexSelection(index) }, "\n            ", /*#__PURE__*/React.createElement("p", { className: clsx(itemLabelStyles, index === selectedIndex
+                ? 'text-zinc-600 dark:text-zinc-200'
+                : 'text-zinc-400 dark:text-zinc-500') }, "\n              ", item.value || item.description || item.label || item, "\n            "), "\n          "))), "\n      "), "\n    "));
 };
 
 module.exports = RadioTabs;

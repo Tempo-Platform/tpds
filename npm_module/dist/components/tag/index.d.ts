@@ -1,5 +1,5 @@
 import React from 'react';
-declare const Tag: ({ onClick, label, isUppercase, addHoverEffect, showCloseIcon, noBorder, variant, rootClassName, labelClassName, className }: {
+declare const Tag: ({ onClick, label, isUppercase, addHoverEffect, showCloseIcon, noBorder, variant, rootClassName, labelClassName, className, onMouseEnter, onMouseLeave, children, }: {
     onClick?: () => void;
     label?: string;
     isUppercase?: boolean;
@@ -10,5 +10,8 @@ declare const Tag: ({ onClick, label, isUppercase, addHoverEffect, showCloseIcon
     rootClassName?: string;
     labelClassName?: string;
     className?: string;
+    onMouseEnter?: () => void;
+    onMouseLeave?: () => void;
+    children?: React.ReactNode;
 }) => React.JSX.Element;
 export default Tag;
