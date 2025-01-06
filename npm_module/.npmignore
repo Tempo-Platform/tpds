@@ -1,0 +1,4 @@
+.env
+rollup.config.js
+/scripts
+/src
