@@ -5,29 +5,20 @@ import { PTiny, PNano } from '../../elements/typography'
 import { Cross } from '../../assets/svgs/tiny'
 import { twMerge } from 'tailwind-merge'
 
-const getCurrentInputValue = (options: any[], selectedIndex: number, labelProp: string): string => {
+const getCurrentInputValue = (options: any[], selectedIndex: number, labelProp?: string): string => {
   if (!selectedIndex && selectedIndex !== 0) return ''
   if (!options[selectedIndex]) return ''
   return labelProp ? options[selectedIndex][labelProp] : options[selectedIndex]
 }
 
-const getOptionIndexFromAllOptions = (options: any[], option: any, idProp?: string): number => {
-  const id = idProp ? option[idProp] : option
-  return options.findIndex(o => {
-    const idToCompare = idProp ? o[idProp] : o
-    return idToCompare === id
-  })
-}
-
 const Select = ({
   options,
   handleIndexSelection,
-  idProp,
   selectedIndex = -1,
   excludeIndexes = [],
   noPermanentSelection = false,
   enableClear = false,
-  labelProp = 'value',
+  labelProp,
   placeholder = 'Select',
   isInvalid = false,
   forceLightMode = false,
@@ -36,7 +27,6 @@ const Select = ({
 }: {
   options: any[]
   handleIndexSelection: (index: number) => void
-  idProp?: string
   selectedIndex?: number
   excludeIndexes?: number[]
   noPermanentSelection?: boolean
@@ -49,9 +39,16 @@ const Select = ({
   className?: string
 }) => {
   const wrapperRef = useRef(null)
-  const optionsWithoutExcludedIndexes = options.filter((option, index) => !excludeIndexes.includes(index))
   const [inputValue, setInputValue] = useState('')
   const [isOpen, setIsOpen] = useState(false)
+
+  if (labelProp && !options[0][labelProp]) {
+    throw new Error('TPDS Select: labelProp was passed but is missing in the options')
+  }
+
+  const optionsCopy = [...options]
+  
+  const optionsWithoutExcludedIndexes = options.filter((option, index) => !excludeIndexes.includes(index))
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -74,7 +71,6 @@ const Select = ({
     handleIndexSelection,
     labelProp,
     options,
-    idProp,
     excludeIndexes,
     noPermanentSelection,
     placeholder,
@@ -91,23 +87,32 @@ const Select = ({
     ? ''
     : getCurrentInputValue(options, selectedIndex, labelProp)
 
-  const isSelected = (option: any): boolean => {
-    if (!idProp && !labelProp) return false
-    const optionIndex = getOptionIndexFromAllOptions(options, option, idProp)
-    return optionIndex === selectedIndex
-  }
-
   const drawerStyles = clsx(
-    'w-full flex flex-col space-y-1 items-start text-left',
+    '!w-full flex flex-col space-y-1 items-start text-left',
     'p-1 lg:p-2 rounded bg-window border-2 border-window shadow-md',
     'z-50 absolute top-[100%] left-0 max-h-40 overflow-auto',
     !forceLightMode && 'dark:shadow-none',
   )
 
+  const optionIsSelected = (option: any) => {
+    if (selectedIndex === -1) return false
+    if (labelProp) {
+      return option[labelProp] === optionsCopy[selectedIndex][labelProp]
+    }
+    return option === optionsCopy[selectedIndex]
+  }
+
+  const getOptionCopyIndex = (option: any) => {
+    if (labelProp) {
+      return optionsCopy.findIndex(o => o[labelProp] === option[labelProp])
+    }
+    return optionsCopy.findIndex(o => o === option)
+  }
+
   return (
     <div className={clsx('flex w-full relative text-left', className)} ref={wrapperRef}>
       <div
-        className='w-full'
+        className='w-full shrink-0 grow-0'
         onClick={e => {
           setIsOpen(true)
         }}
@@ -118,7 +123,7 @@ const Select = ({
           value={inputValueToDisplay}
           onChange={e => setInputValue(e.target.value)}
           className={clsx(
-            'w-full',
+            'w-full shrink-0 grow-0',
             baseInputStyles,
             isInvalid && forceLightMode && '!border-grey-light-scale-600',
             isInvalid && !forceLightMode && '!border-grey-light-scale-600 dark:!border-grey-dark-scale-300',
@@ -138,17 +143,16 @@ const Select = ({
         strokeWidth={1.5}
         stroke='currentColor'
         className={clsx(
-          'w-5 h-5 absolute right-3 transform top-[10px] pointer-events-none text-[#7e909c]',
+          'w-5 h-5 absolute right-3 transform top-[10px] pointer-events-none text-[#7e909c] shrink-0 grow-0',
           isOpen && 'rotate-180',
         )}
       >
         <path strokeLinecap='round' strokeLinejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5' />
       </svg>
-
-      {enableClear && selectedIndex && selectedIndex >= 0 ? (
+      {enableClear && selectedIndex > -1 ? (
         <Cross
           onClick={() => handleIndexSelection(-1)}
-          className={clsx('absolute transform top-[12px] right-[40px] cursor-pointer text-[#7e909c]')}
+          className='absolute top-[11px] right-[60px] cursor-pointer text-[#7e909c] shrink-0 grow-0'
         />
       ) : null}
 
@@ -158,7 +162,8 @@ const Select = ({
             <div
               key={index}
               onClick={() => {
-                handleIndexSelection(getOptionIndexFromAllOptions(options, option, idProp))
+                // handleIndexSelection(getOptionIndexFromAllOptions(options, option, ))
+                handleIndexSelection(getOptionCopyIndex(option))
                 setIsOpen(false)
               }}
               className={twMerge(
@@ -171,8 +176,8 @@ const Select = ({
                   'bg-window rounded',
                   forceLightMode && 'hover:bg-grey-light-scale-300',
                   !forceLightMode && 'hover:bg-grey-light-scale-300 hover:dark:bg-grey-dark-scale-600',
-                  isSelected(option) && forceLightMode && '!bg-grey-light-scale-300',
-                  isSelected(option) && !forceLightMode && '!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-500',
+                  optionIsSelected(option) && forceLightMode && '!bg-grey-light-scale-300',
+                  optionIsSelected(option) && !forceLightMode && '!bg-grey-light-scale-300 dark:!bg-grey-dark-scale-600',
                 ),
               )}
             >
@@ -180,8 +185,8 @@ const Select = ({
                 forceLightMode={forceLightMode}
                 className={clsx(
                   'text-primary text-left !text-[14px] !leading-tight',
-                  isSelected(option) && forceLightMode && '!text-black',
-                  isSelected(option) && !forceLightMode && '!text-black dark:!text-white',
+                  optionIsSelected(option) && forceLightMode && '!text-black',
+                  optionIsSelected(option) && !forceLightMode && '!text-black dark:!text-white',
                 )}
               >
                 {labelProp ? option[labelProp] : option}
@@ -190,9 +195,9 @@ const Select = ({
                 <PNano
                   forceLightMode={forceLightMode}
                   className={clsx(
-                    'mt-1 text-tertiary text-left !text-[13px] !leading-tight',
-                    isSelected(option) && forceLightMode && '!text-grey-light-scale-800',
-                    isSelected(option) &&
+                    'mt-1 text-secondary text-left !text-[13px] !leading-tight',
+                    optionIsSelected(option) && forceLightMode && '!text-grey-light-scale-800',
+                    optionIsSelected(option) &&
                       !forceLightMode &&
                       '!text-grey-light-scale-800 dark:!text-grey-light-scale-600',
                   )}

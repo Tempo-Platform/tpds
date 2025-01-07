@@ -17,15 +17,16 @@ export default function Page() {
         <Select
           handleIndexSelection={index => setSelectedIndex(index)}
           selectedIndex={selectedIndex}
-          labelProp={'label'}
-          idProp='value'
           enableClear={true}
           excludeIndexes={[2]}
+          noPermanentSelection={false}
           useKeyboard={true}
+          // options={['11111', '2222', '3333', '444444']}
+          labelProp='label'
           options={[
             {
               value: '1',
-              label: 'Option 1 lkasfhd jshdfs',
+              label: 'Option 1',
               subLabel: 'Additional information about this item',
             },
             { value: '2', label: 'Option 2' },
@@ -101,13 +102,6 @@ export default function Page() {
               default: 'value',
               required: 'no',
               description: "The property name that will be used to access the option's display label",
-            },
-            {
-              propName: 'idProp',
-              type: 'String',
-              default: 'null',
-              required: 'no',
-              description: 'The property name that will be used to identify the index of the selected option',
             },
             {
               propName: 'placeholder',
