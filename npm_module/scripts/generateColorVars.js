@@ -14,6 +14,7 @@ const styleString = `.light {
   --text-primary: ${colorsLightTheme.text_primary};
   --text-secondary: ${colorsLightTheme.text_secondary};
   --text-tertiary: ${colorsLightTheme.text_tertiary};
+  --text-negative: ${colorsLightTheme.body_bg};
 
   --bg-button: ${colorsLightTheme.buttons.default.bg.enabled};
   --bg-button-hover: ${colorsLightTheme.buttons.default.bg.hover};
@@ -113,6 +114,7 @@ const styleString = `.light {
   --text-primary: ${colorsDarkTheme.text_primary};
   --text-secondary: ${colorsDarkTheme.text_secondary};
   --text-tertiary: ${colorsDarkTheme.text_tertiary};
+  --text-negative: ${colorsDarkTheme.body_bg};
 
   --bg-button: ${colorsDarkTheme.buttons.default.bg.enabled};
   --bg-button-hover: ${colorsDarkTheme.buttons.default.bg.hover};
