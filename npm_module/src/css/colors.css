@@ -7,6 +7,7 @@
   --text-primary: #151819;
   --text-secondary: #7F888E;
   --text-tertiary: #B1BDC5;
+  --text-negative: #FDFDFD;
 
   --bg-button: #F1F3F3;
   --bg-button-hover: #DFE1E2;
@@ -106,6 +107,7 @@
   --text-primary: #F7F7F7;
   --text-secondary: #AEB3B6;
   --text-tertiary: #757E84;
+  --text-negative: #17181A;
 
   --bg-button: #282C2F;
   --bg-button-hover: #3E4347;
