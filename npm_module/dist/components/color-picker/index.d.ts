@@ -1,6 +1,10 @@
 import React from 'react';
-declare const ColorPickerInput: (props: {
+interface ColorPickerInputProps {
     onChangeHandler: (color: string) => void;
     hexColor: string;
-}) => React.JSX.Element;
+    placeholder?: string;
+    swatchSide?: 'left' | 'right';
+    omitTextInput?: boolean;
+}
+declare const ColorPickerInput: (props: ColorPickerInputProps) => React.JSX.Element;
 export default ColorPickerInput;
