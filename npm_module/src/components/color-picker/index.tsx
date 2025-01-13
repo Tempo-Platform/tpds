@@ -5,13 +5,29 @@ import clsx from 'clsx'
 
 const classColorSquare = clsx(
   'cursor-pointer',
-  'w-full max-w-[40px] h-[40px] rounded-[6px] relative',
+  'w-full max-w-[38px] h-[38px] rounded-[6px] relative',
   'bg-grey-light-scale-400 dark:bg-grey-dark-scale-400',
 )
-const classColorInnerSquare = clsx('w-[30px] h-[30px] rounded-[3px] absolute top-[5px] left-[5px]')
+const classColorInnerSquare = clsx('w-[26px] h-[26px] rounded-[3px] absolute top-[6px] left-[6px]')
 
-const ColorPickerInput = (props: { onChangeHandler: (color: string) => void; hexColor: string }) => {
-  const { onChangeHandler, hexColor } = props
+const classColorPickerWrapper = clsx('tpds-color-picker inline-flex gap-x-1 w-full relative')
+
+interface ColorPickerInputProps {
+  onChangeHandler: (color: string) => void
+  hexColor: string
+  placeholder?: string
+  swatchSide?: 'left' | 'right'
+  omitTextInput?: boolean
+}
+const ColorPickerInput = (props: ColorPickerInputProps) => {
+  let { onChangeHandler, hexColor, placeholder, swatchSide, omitTextInput } = props
+
+  if (!placeholder) {
+    placeholder = 'Hex'
+  }
+  if (!swatchSide) {
+    swatchSide = 'right'
+  }
 
   const wrapperRef = useRef(null)
 
@@ -36,17 +52,21 @@ const ColorPickerInput = (props: { onChangeHandler: (color: string) => void; hex
     }
   }, [wrapperRef])
 
+  const swatchJSX = (
+    <div className={classColorSquare} onClick={() => setColorPickerActive(!colorPickerActive)}>
+      <div className={classColorInnerSquare} style={{ backgroundColor: hexColor }} />
+    </div>
+  )
   return (
-    <div className="tpds-color-picker inline-flex gap-x-1 w-full relative" ref={wrapperRef}>
-      <div className={classColorSquare} onClick={() => setColorPickerActive(!colorPickerActive)}>
-        <div className={classColorInnerSquare} style={{ backgroundColor: hexColor }} />
-      </div>
-      <TextInput placeholder="Hex" value={hexColor} onChange={onInputChangeHandler} />
+    <div className={classColorPickerWrapper} ref={wrapperRef}>
+      {swatchSide === 'left' && swatchJSX}
+      {!omitTextInput && <TextInput placeholder={placeholder} value={hexColor} onChange={onInputChangeHandler} />}
       {colorPickerActive && (
-        <div className="absolute top-[35px] left-0 z-10">
+        <div className='absolute top-[35px] left-0 z-10'>
           <HexAlphaColorPicker color={hexColor} onChange={handlePickerColorChange} />
         </div>
       )}
+      {swatchSide === 'right' && swatchJSX}
     </div>
   )
 }

@@ -9,7 +9,7 @@ import PropsTable from '@tpds/components/props-table'
 import ColorPicker from '@tpds/components/color-picker'
 
 export default function Page() {
-  const [selectedColor, setSelectedColor] = React.useState('#ff0000')
+  const [selectedColor, setSelectedColor] = React.useState('#ff56e5')
   return (
     <div>
       <Container>
@@ -20,6 +20,7 @@ export default function Page() {
           color picker
         </PNano>
         <ColorPicker hexColor={selectedColor} onChangeHandler={value => setSelectedColor(value)} />
+        <br />
         <br />
         <CodeBlock code={code} />
         <br />
@@ -39,6 +40,27 @@ export default function Page() {
               default: 'null',
               required: 'Yes',
               description: 'Handler function to pass updates to the host component.',
+            },
+            {
+              propName: 'omitTextInput',
+              type: 'boolean',
+              default: 'false',
+              required: 'No',
+              description: 'If true, the text input will not be displayed.',
+            },
+            {
+              propName: 'swatchSide',
+              type: 'string',
+              default: 'right',
+              required: 'No',
+              description: 'The side of the swatch to display, left or right.',
+            },
+            {
+              propName: 'placeholder',
+              type: 'string',
+              default: 'Hex',
+              required: 'No',
+              description: 'The placeholder text for the text input.',
             },
           ]}
         />
