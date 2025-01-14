@@ -16,6 +16,7 @@ const Modal = ({
   titleProps = null, // any React props
   descriptionProps = null, // any React props
   dialogOnClose,
+  className,
 }: {
   title?: string
   showOpen?: boolean
@@ -28,6 +29,7 @@ const Modal = ({
   titleProps?: any
   descriptionProps?: any
   dialogOnClose?: () => void
+  className?: string
 }) => {
   let [isOpen, setIsOpen] = useState<boolean>(showOpen || false)
 
@@ -41,7 +43,7 @@ const Modal = ({
   }, [showOpen])
 
   return (
-    <div>
+    <div className={className}>
       {(showOpen || isOpen) && (
         <div
           className='fixed inset-0 z-50 overflow-y-auto'

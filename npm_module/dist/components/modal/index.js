@@ -19,12 +19,12 @@ options = [], // Array
 overlayProps = null, // any React props
 titleProps = null, // any React props
 descriptionProps = null, // any React props
-dialogOnClose, }) => {
+dialogOnClose, className, }) => {
     let [isOpen, setIsOpen] = React.useState(showOpen || false);
     React.useEffect(() => {
         setIsOpen(showOpen);
     }, [showOpen]);
-    return (/*#__PURE__*/React.createElement("div", null, "\n      ", (showOpen || isOpen) && (/*#__PURE__*/React.createElement("div", { className: 'fixed inset-0 z-50 overflow-y-auto' }, "\n          ", /*#__PURE__*/React.createElement("div", { className: 'w-full min-h-screen text-center flex items-center justify-center' }, "\n            ", /*#__PURE__*/React.createElement("div", Object.assign({ className: 'tpds-modal-background-overlay fixed w-full h-full bg-black opacity-50' }, overlayProps)), "\n            ", /*#__PURE__*/React.createElement("div", { style: { maxWidth: maxWidth }, className: 'mx-2 inline-flex flex-col w-full rounded-lg my-8 overflow-hidden text-left align-middle transition-all transform bg-window dark:border-2 border-window shadow-xl' }, "\n              ", /*#__PURE__*/React.createElement(Content, { title: title, description: description, content: content, options: options, titleProps: titleProps, descriptionProps: descriptionProps, closeModal: () => {
+    return (/*#__PURE__*/React.createElement("div", { className: className }, "\n      ", (showOpen || isOpen) && (/*#__PURE__*/React.createElement("div", { className: 'fixed inset-0 z-50 overflow-y-auto' }, "\n          ", /*#__PURE__*/React.createElement("div", { className: 'w-full min-h-screen text-center flex items-center justify-center' }, "\n            ", /*#__PURE__*/React.createElement("div", Object.assign({ className: 'tpds-modal-background-overlay fixed w-full h-full bg-black opacity-50' }, overlayProps)), "\n            ", /*#__PURE__*/React.createElement("div", { style: { maxWidth: maxWidth }, className: 'mx-2 inline-flex flex-col w-full rounded-lg my-8 overflow-hidden text-left align-middle transition-all transform bg-window dark:border-2 border-window shadow-xl' }, "\n              ", /*#__PURE__*/React.createElement(Content, { title: title, description: description, content: content, options: options, titleProps: titleProps, descriptionProps: descriptionProps, closeModal: () => {
                 setIsOpen(false);
                 dialogOnClose === null || dialogOnClose === void 0 ? void 0 : dialogOnClose();
             } }), "\n            "), "\n          "), "\n        ")), "\n      ", clickElement && (
