@@ -7,6 +7,26 @@ var clsx = require('clsx');
 require('tailwind-merge');
 require('../../tslib.es6-VGxyZ2Ib.js');
 
+function ExpandableSection({ title, children, shouldClose, excludeElementId, removeBorderTop, addBorderBottomIfOpen, lightOnly, }) {
+    const headerRef = React.useRef(null);
+    const [isOpen, toggleOpen] = React.useState(false);
+    if (children && typeof children === 'string') {
+        children = /*#__PURE__*/React.createElement(elements_typography_index.PSmall, { style: { lineHeight: '1.5 !important' } }, children);
+    }
+    if (shouldClose && isOpen) {
+        toggleOpen(false);
+    }
+    const rootClassName = lightOnly
+        ? clsx(isOpen && addBorderBottomIfOpen ? `border-b border-black/10` : '')
+        : clsx(isOpen && addBorderBottomIfOpen ? `border-b border-black/10 dark:border-white/10` : '');
+    const headerStyleBase = 'h-[44px] border-t border-b border-black/10 w-full flex justify-between items-center px-[16px] transition-all cursor-pointer';
+    const headerClassName = lightOnly
+        ? clsx(headerStyleBase, removeBorderTop && `!border-t-0`)
+        : clsx(headerStyleBase, 'dark:border-white/10', removeBorderTop && `!border-t-0`);
+    const contentClassName = clsx(`grid px-[15px]`, isOpen ? `grid-rows-[1fr]` : `grid-rows-[0fr]`);
+    const innerDivClassName = clsx('tpds-expandable-section-content', `overflow-hidden py-[0]`);
+    return (/*#__PURE__*/React.createElement(React.Fragment, null, "\n      ", /*#__PURE__*/React.createElement("div", { className: rootClassName, ref: headerRef }, "\n        ", /*#__PURE__*/React.createElement("div", { className: headerClassName, onClick: () => handleToggleHeader(isOpen, toggleOpen, headerRef, excludeElementId) }, "\n          ", /*#__PURE__*/React.createElement(elements_typography_index.PSmall, { isMedium: true }, title), "\n          ", isOpen ? /*#__PURE__*/React.createElement(assets_svgs_icons_index.MinusIcon, { className: 'text-primary' }) : /*#__PURE__*/React.createElement(assets_svgs_icons_index.PlusIcon, { className: 'text-primary' }), "\n        "), "\n        ", /*#__PURE__*/React.createElement("div", { className: contentClassName, style: { transition: 'grid-template-rows 300ms' } }, "\n          ", /*#__PURE__*/React.createElement("div", { className: innerDivClassName }, children), "\n        "), "\n      "), "\n    "));
+}
 const elementIsVisibleInViewport = (el, excludeElementId) => {
     const rect = el.getBoundingClientRect();
     let discountHeight = 0;
@@ -40,20 +60,5 @@ const handleToggleHeader = (isOpen, toggleOpen, headerRef, excludeElementId) => 
         }, 300);
     }
 };
-function ExpandableSection({ title, children, shouldClose, excludeElementId, removeBorderTop, addBorderBottomIfOpen, }) {
-    const headerRef = React.useRef(null);
-    const [isOpen, toggleOpen] = React.useState(false);
-    if (children && typeof children === 'string') {
-        children = /*#__PURE__*/React.createElement(elements_typography_index.PSmall, { style: { lineHeight: '1.5 !important' } }, children);
-    }
-    if (shouldClose && isOpen) {
-        toggleOpen(false);
-    }
-    const rootClassName = clsx(isOpen && addBorderBottomIfOpen ? `border-b border-black/10 dark:border-white/10` : '');
-    const headerClassName = clsx(`h-[44px] border-t border-b border-black/10 dark:border-white/10 w-full flex justify-between items-center px-[16px] transition-all cursor-pointer`, removeBorderTop && `!border-t-0`);
-    const contentClassName = clsx(`grid px-[15px]`, isOpen ? `grid-rows-[1fr]` : `grid-rows-[0fr]`);
-    const innerDivClassName = clsx('tpds-expandable-section-content', `overflow-hidden py-[0]`);
-    return (/*#__PURE__*/React.createElement(React.Fragment, null, "\n      ", /*#__PURE__*/React.createElement("div", { className: rootClassName, ref: headerRef }, "\n        ", /*#__PURE__*/React.createElement("div", { className: headerClassName, onClick: () => handleToggleHeader(isOpen, toggleOpen, headerRef, excludeElementId) }, "\n          ", /*#__PURE__*/React.createElement(elements_typography_index.PSmall, { isMedium: true }, title), "\n          ", isOpen ? /*#__PURE__*/React.createElement(assets_svgs_icons_index.MinusIcon, { className: 'text-primary' }) : /*#__PURE__*/React.createElement(assets_svgs_icons_index.PlusIcon, { className: 'text-primary' }), "\n        "), "\n        ", /*#__PURE__*/React.createElement("div", { className: contentClassName, style: { transition: 'grid-template-rows 300ms' } }, "\n          ", /*#__PURE__*/React.createElement("div", { className: innerDivClassName }, children), "\n        "), "\n      "), "\n    "));
-}
 
 module.exports = ExpandableSection;

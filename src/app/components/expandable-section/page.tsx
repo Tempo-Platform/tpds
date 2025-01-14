@@ -89,6 +89,13 @@ export default function Page() {
               required: 'optional',
               description: "Pass 'true' to add a border at the bottom when open.",
             },
+            {
+              propName: 'lightOnly',
+              type: 'Boolean',
+              default: 'false',
+              required: 'optional',
+              description: "Pass 'true' to apply only light mode styles.",
+            },
           ]}
         />
         <br />
