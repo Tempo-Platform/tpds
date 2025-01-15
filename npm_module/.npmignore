@@ -1,4 +1,5 @@
 .env
 rollup.config.js
+tsconfig.json
 /scripts
 /src
