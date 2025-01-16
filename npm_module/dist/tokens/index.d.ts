@@ -394,10 +394,10 @@ declare namespace _default {
             }
             let window_bg: string;
             let text_primary: string;
-            let text_tertiary: string;
             let text_secondary: string;
-            let body_bg: string;
             let window_border: string;
+            let text_tertiary: string;
+            let body_bg: string;
         }
         export { light_1 as light };
         export namespace dark_1 {

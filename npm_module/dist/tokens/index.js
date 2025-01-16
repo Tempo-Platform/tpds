@@ -261,10 +261,10 @@ var tokens = {
       },
       window_bg: '#FFFFFF',
       text_primary: '#151819',
-      text_tertiary: '#B1BDC5',
       text_secondary: '#7F888E',
-      body_bg: '#FDFDFD',
-      window_border: '#EEF0F1'
+      window_border: '#EEF0F1',
+      text_tertiary: '#A1ACB3',
+      body_bg: '#FAFAFA'
     },
     dark: {
       radio_group: {
