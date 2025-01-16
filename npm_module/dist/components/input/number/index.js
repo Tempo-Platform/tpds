@@ -8,10 +8,10 @@ require('tailwind-merge');
 
 function InputNumber(_a) {
     var { initialValue, onChangeCallback, minValue = null, maxValue = null, maxLength = 100, allowFloats = true, floatPrecision = 2, className, placeholder, isInvalid, step } = _a, props = tslib_es6.__rest(_a, ["initialValue", "onChangeCallback", "minValue", "maxValue", "maxLength", "allowFloats", "floatPrecision", "className", "placeholder", "isInvalid", "step"]);
-    if (initialValue === undefined || initialValue === null) {
+    if (initialValue === undefined || initialValue === null || isNaN(Number(initialValue))) {
         initialValue = '';
     }
-    const initialStateValue = initialValue ? initialValue.toString() : '';
+    const initialStateValue = initialValue.toString();
     const [value, setValue] = React.useState(initialStateValue);
     const validateInput = (input) => {
         let currentValueFloat = parseFloat(input);

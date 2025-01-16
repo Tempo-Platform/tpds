@@ -8,7 +8,7 @@ import NumberInput from '@tpds/components/input/number'
 import PropsTable from '@tpds/components/props-table'
 
 export default function Page() {
-  const [number, setNumber] = React.useState(10)
+  const [number, setNumber] = React.useState(0)
 
   return (
     <div>
@@ -16,7 +16,7 @@ export default function Page() {
         <PageHeader title='Number Input' subTitle='A text input optimized for numbers' />
         <Window className='mt-8'>
           <NumberInput
-            initialValue={number.toString()}
+            initialValue={number}
             step={0.1}
             minValue={-100}
             maxValue={100}

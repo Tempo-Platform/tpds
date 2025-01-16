@@ -15,7 +15,7 @@ function InputNumber({
   step,
   ...props
 }: {
-  initialValue?: string
+  initialValue?: number | string
   onChangeCallback: (value: string) => void
   minValue?: number | null
   maxValue?: number | null
@@ -27,11 +27,11 @@ function InputNumber({
   className?: string
   step?: number
 }) {
-  if (initialValue === undefined || initialValue === null) {
+  if (initialValue === undefined || initialValue === null || isNaN(Number(initialValue))) {
     initialValue = ''
   }
 
-  const initialStateValue = initialValue ? initialValue.toString() : ''
+  const initialStateValue = initialValue.toString()
   const [value, setValue] = useState(initialStateValue)
 
   const validateInput = (input: string) => {

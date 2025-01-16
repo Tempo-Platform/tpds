@@ -1,6 +1,6 @@
 import React from 'react';
 declare function InputNumber({ initialValue, onChangeCallback, minValue, maxValue, maxLength, allowFloats, floatPrecision, className, placeholder, isInvalid, step, ...props }: {
-    initialValue?: string;
+    initialValue?: number | string;
     onChangeCallback: (value: string) => void;
     minValue?: number | null;
     maxValue?: number | null;
